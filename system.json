@@ -1,0 +1,40 @@
+{
+  "id": "imagine-rpg",
+  "title": "Imagine Role Playing System",
+  "description": "A Foundry VTT system for the Imagine Role Playing System (role-playing.com), converted from its original Roll20 character sheet with permission from the rights holder.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.367"
+  },
+  "authors": [
+    {
+      "name": "W. Michael Tenery III",
+      "flags": { "role": "Original game system author" }
+    },
+    {
+      "name": "samwyz",
+      "flags": { "role": "Foundry VTT conversion" }
+    }
+  ],
+  "esmodules": ["module/imagine-rpg.mjs"],
+  "styles": ["styles/imagine-rpg.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "creature": {}
+    }
+  },
+  "url": "https://github.com/MichaelTenery/FoundryImagineSheet",
+  "manifest": "https://raw.githubusercontent.com/MichaelTenery/FoundryImagineSheet/main/system.json",
+  "readme": "README.md",
+  "bugs": "https://github.com/MichaelTenery/FoundryImagineSheet/issues"
+}
