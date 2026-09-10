@@ -1,0 +1,150 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG derivation test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Derivation tests for the character data model.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/derive-test.html
+//
+// Foundry is not present here, so the two globals the data model touches at import time are
+// stubbed. defineSchema() is never called -- these tests drive the prepare* methods directly
+// against a plain data object, which is exactly the arithmetic we care about verifying.
+globalThis.foundry = {
+	abstract: {
+		TypeDataModel: class {
+			constructor(data) { Object.assign(this, data); }
+			prepareBaseData() {}
+			prepareDerivedData() {}
+		}
+	},
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+	return ok;
+}
+
+// Build a character with known attribute ratings.
+function makeCharacter(ratings, title = 12, items = []) {
+	const attributes = {};
+	for (const k of ["str","agl","vit","int","wis","knw","app","chm","soc","aur","pty","wil"]) {
+		attributes[k] = { rating: ratings[k] ?? 10, permMod: 0, tempMod: 0 };
+	}
+	const characteristic = () => ({ titleBonus: 0, raceMod: 0, permMod: 0, tempMod: 0 });
+	const resistance = () => ({ misc: 0, immune: false });
+
+	const c = new ImagineCharacterData({
+		identity: { title },
+		attributes,
+		characteristics: {
+			endurance: characteristic(), perception: characteristic(),
+			affinity: characteristic(), fortune: characteristic()
+		},
+		resistances: {
+			magic: resistance(), illusion: resistance(), control: resistance(),
+			poison: resistance(), disease: resistance()
+		},
+		body: { bodyType: "Humanoid", areas: [] }
+	});
+	// stand in for the owning Actor document
+	c.parent = { items };
+	c.prepareBaseData();
+	c.prepareDerivedData();
+	return c;
+}
+
+// --- attribute saves, against his getAttribSave ---------------------------------
+const saves = makeCharacter({ str: 10, agl: 17, vit: 18, int: 19, wis: 20, knw: 23 });
+check("STR 10 save",  saves.attributes.str.save, 50);
+check("AGL 17 save",  saves.attributes.agl.save, 85);
+check("VIT 18 save",  saves.attributes.vit.save, 90);
+check("INT 19 save (plateaus at 90)", saves.attributes.int.save, 90);
+check("WIS 20 save (plateaus at 90)", saves.attributes.wis.save, 90);
+check("KNW 23 save (90 + 3 above 20)", saves.attributes.knw.save, 93);
+
+// --- attribute table lookups ----------------------------------------------------
+const c19 = makeCharacter({ str: 19 });
+check("STR 19 melee attack", c19.attributes.str.mods.meleeAttack, 2);
+check("STR 19 melee damage", c19.attributes.str.mods.meleeDamage, 5);
+check("STR 19 load limit",   c19.attributes.str.mods.loadLimit, 1.8);
+check("STR 19 weapon speed", c19.attributes.str.mods.weaponSpeed, -2);
+
+// --- attribute cap by title -----------------------------------------------------
+check("cap at title 0 (mundane)",     ImagineCharacterData.getAttributeCap(0), 23);
+check("cap at title 5 (mortal)",      ImagineCharacterData.getAttributeCap(5), 25);
+check("cap at title 12 (arch-mortal)",ImagineCharacterData.getAttributeCap(12), 27);
+check("cap at title 16 (deity)",      ImagineCharacterData.getAttributeCap(16), 30);
+
+const capped = makeCharacter({ str: 30 }, 1); // mortal cap is 25
+check("rating above cap is clamped", capped.attributes.str.value, 25);
+
+// --- characteristics: ceiling of each category's average ------------------------
+const ch = makeCharacter({
+	str: 19, agl: 18, vit: 18,   // physical  -> ceil(55/3) = 19
+	int: 18, wis: 18, knw: 20,   // mental    -> ceil(56/3) = 19
+	app: 14, chm: 15, soc: 15,   // personal  -> ceil(44/3) = 15
+	aur: 18, pty: 13, wil: 20    // mystical  -> ceil(51/3) = 17
+});
+check("Endurance base (physical avg)",  ch.characteristics.endurance.base, 19);
+check("Perception base (mental avg)",   ch.characteristics.perception.base, 19);
+check("Affinity base (personal avg)",   ch.characteristics.affinity.base, 15);
+check("Fortune base (mystical avg)",    ch.characteristics.fortune.base, 17);
+check("Shock = Endurance x 3",          ch.body.shock, 57);
+
+// exact-integer average must not round up
+const exact = makeCharacter({ str: 12, agl: 12, vit: 12 });
+check("exact average does not round up", exact.characteristics.endurance.base, 12);
+
+// --- skill chances --------------------------------------------------------------
+// The Player's Guide p.94 worked example: Strength 16 + Agility 14 averages to a combined 15;
+// against a skill rating of 12 that is (15 - 12) x 5% = +15% base chance.
+const skillActor = makeCharacter({ str: 16, agl: 14 }, 5, [
+	{ type: "skill", system: { attr1: "STR", attr2: "AGL", skillRating: 12,
+	  startingBonus: 7, abilityBonus: 0, misc: 0, isCommon: false, category: "class" } },
+	{ type: "skill", system: { attr1: "AGL", attr2: "", skillRating: 16,
+	  startingBonus: 0, abilityBonus: 0, misc: 0, isCommon: true, category: "class" } }
+]);
+const sk1 = skillActor.parent.items[0].system;
+const sk2 = skillActor.parent.items[1].system;
+check("book example: combined attributes", sk1.combinedAttributes, 15);
+check("book example: base chance +15%",    sk1.baseChance, 15);
+check("total = base + starting bonus",     sk1.totalChance, 22);
+check("single-attribute skill combined",   sk2.combinedAttributes, 14);
+check("common skill ignores starting bonus", sk2.totalChance, -10);
+check("common skill does not consume a slot", skillActor.skillSlots.classUsed, 1);
+
+// --- resistances ----------------------------------------------------------------
+const res = makeCharacter({ aur: 18, wis: 18, vit: 18, wil: 20, int: 18 });
+check("magic resist comes from Aura", res.resistances.magic.base, res.attributes.aur.mods.magicResist);
+check("poison resist comes from Vitality", res.resistances.poison.base, res.attributes.vit.mods.poisonResist);
+const controlExpected = (res.attributes.wil.mods.controlResist || 0)
+                      + (res.attributes.int.mods.controlResistAdjust || 0)
+                      + (res.attributes.wis.mods.controlResistAdjust || 0);
+check("control resist combines WIL + INT + WIS", res.resistances.control.base, controlExpected);
+
+const immune = makeCharacter({ aur: 18 });
+immune.resistances.magic.immune = true;
+immune.prepareDerivedData();
+check("immunity overrides the percentage", immune.resistances.magic.value, null);
+
+// --- skill slots ----------------------------------------------------------------
+const slots = makeCharacter({ knw: 20 });
+check("skill slots read off the Knowledge table",
+	[slots.skillSlots.class, slots.skillSlots.racial, slots.skillSlots.social],
+	[slots.attributes.knw.mods.classSkills, slots.attributes.knw.mods.raceSkills, slots.attributes.knw.mods.socialSkills]);
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+const failed = results.length - passed;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${failed} failed`;
+</script>

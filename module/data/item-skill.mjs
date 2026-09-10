@@ -65,24 +65,9 @@ export default class ImagineSkillData extends foundry.abstract.TypeDataModel {
 
 	// @MARKER ADD NEW skill data model functions HERE
 
-	// This is the function which produces the combined attribute value a skill is measured
-	// against. One governing attribute is used as-is; two are averaged and rounded up.
-	// Returns 0 when the skill is not on an actor, since there are no attributes to read.
-	getCombinedAttributes(actor) {
-		if (!actor) { return 0; }
-
-		var tmpattribs = actor.system.attributes;
-		var tmpfirst   = tmpattribs[this.attr1.toLowerCase()];
-		if (!tmpfirst) { return 0; }
-
-		var tmpvalue1 = tmpfirst.value ?? 0;
-		if (this.attr2 == "") { return tmpvalue1; }
-
-		var tmpsecond = tmpattribs[this.attr2.toLowerCase()];
-		if (!tmpsecond) { return tmpvalue1; }
-
-		var tmpvalue2 = tmpsecond.value ?? 0;
-		return Math.ceil((tmpvalue1 + tmpvalue2) / 2); // round up, per Player's Guide p.94
-	}
+	// Note: baseChance, totalChance and combinedAttributes are NOT computed here. Embedded
+	// items are prepared before the owning actor's derived data, so a skill calculating for
+	// itself would read attribute values that are not final yet. The actor fills these in
+	// during its own prepareDerivedData -- see _prepareSkills in data/actor-character.mjs.
 }
 // @END (CODE)

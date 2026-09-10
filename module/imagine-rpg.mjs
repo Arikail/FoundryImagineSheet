@@ -55,20 +55,9 @@ export const IMAGINE = {
 	}
 };
 
-	// This is the function which converts an attribute rating into its save percentage.
-	// Ported from getAttribSave in the original sheet-worker; branch order and behaviour are
-	// unchanged. Ratings 18 to 20 all save at 90%, and only a rating above 20 exceeds it.
-	export function getAttribSave(tmpAttribRating) {
-		var tmpSaveValue = 0;
-		if (tmpAttribRating < 18) {
-			tmpSaveValue = parseInt(tmpAttribRating * 5);
-		} else if (tmpAttribRating > 20) {
-			tmpSaveValue = parseInt(90 + (tmpAttribRating - 20));
-		} else {
-			tmpSaveValue = 90;
-		}
-		return tmpSaveValue;
-	}
+// getAttribSave and getAttributeCap live on ImagineCharacterData as static functions, so the
+// rule and the data it applies to stay in one place. Reach them via
+// ImagineCharacterData.getAttribSave(rating).
 
 // @MARKER SYSTEM INITIALISATION
 Hooks.once("init", function () {

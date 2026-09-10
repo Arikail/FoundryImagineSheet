@@ -13,6 +13,8 @@
 // in the original sheet.
 //==================================================================================================================
 
+import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
+
 const fields = foundry.data.fields;
 
 	// This is the function which builds the schema shared by all twelve attributes.
@@ -43,9 +45,12 @@ const fields = foundry.data.fields;
 	// This is the function which builds the schema for one resistance track.
 	// The base chance comes from attributes and race; misc is the manual adjustment,
 	// standing in for the sheet's various *_other fields.
+	// A resistance can also be an outright immunity, which the original sheet handled by
+	// replacing the percentage with the word "Immune" -- so it is a state, not a big number.
 	function resistanceField() {
 		return new fields.SchemaField({
-			misc: new fields.NumberField({ required: true, integer: true, initial: 0 })
+			misc:   new fields.NumberField({ required: true, integer: true, initial: 0 }),
+			immune: new fields.BooleanField({ required: true, initial: false })
 		});
 	}
 
@@ -209,6 +214,232 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			// @MARKER NOTES
 			biography: new fields.HTMLField({ required: true, initial: "" })
 		};
+	}
+
+	//==========================================================================================
+	// @MARKER BASE DATA
+	//==========================================================================================
+	// Everything Active Effects are allowed to target must exist by the end of this step,
+	// because effects are applied between prepareBaseData and prepareDerivedData.
+	//
+	// The effect target is attributes.<attr>.value. Putting it here and deriving everything
+	// else from it in the next step means a single "+2 Strength" effect correctly cascades
+	// into the save, the melee and damage modifiers, load limit, Endurance, and every skill
+	// governed by Strength -- rather than each of those needing its own effect.
+	prepareBaseData() {
+		super.prepareBaseData(); // required: skipping this silently breaks two-phase effects
+
+		for (const tmpkey of Object.keys(this.attributes)) {
+			var tmpattrib = this.attributes[tmpkey];
+			tmpattrib.value = tmpattrib.rating + tmpattrib.permMod + tmpattrib.tempMod;
+		}
+	}
+
+	//==========================================================================================
+	// @MARKER DERIVED DATA
+	//==========================================================================================
+	// Runs after Active Effects have been applied. Order matters here and follows the chain
+	// documented in docs/DATA-MODEL.md section 9 -- attributes feed the characteristics, which
+	// feed Shock. Nothing in this method may read a value computed later in it.
+	prepareDerivedData() {
+		super.prepareDerivedData();
+
+		this._prepareAttributes();
+		this._prepareCharacteristics();
+		this._prepareResistances();
+		this._prepareSkillSlots();
+		this._prepareSkills();
+
+		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
+		//   body area maxima  -- needs the race item's body chart, and buildCharacterBody in
+		//                        the original sheet also folds in the evoke mutation system
+		//                        (extra torsos, limbs, wings, tails), so it is not a simple
+		//                        Endurance x multiplier lookup.
+		//   encumbrance       -- needs equipment items to weigh.
+		//   movement rates    -- needs the race item's base rates and encumbrance penalties.
+	}
+
+	// This is the function which sets each attribute's cap, its save percentage and its
+	// table-driven modifiers. The cap is applied here rather than in prepareBaseData so that
+	// it also constrains anything an Active Effect added.
+	_prepareAttributes() {
+		var tmpcap = ImagineCharacterData.getAttributeCap(this.identity.title);
+
+		for (const tmpkey of Object.keys(this.attributes)) {
+			var tmpattrib = this.attributes[tmpkey];
+
+			tmpattrib.max = tmpcap;
+			if (tmpattrib.value > tmpcap) { tmpattrib.value = tmpcap; }
+			if (tmpattrib.value < 0) { tmpattrib.value = 0; }
+
+			tmpattrib.save = ImagineCharacterData.getAttribSave(tmpattrib.value);
+
+			// The table modifiers are irregular lookup values, not formulas -- see
+			// module/config-tables.mjs. Missing ratings fall back to an empty set rather
+			// than throwing, so a malformed actor still opens.
+			var tmptable = ATTRIBUTE_TABLES[tmpkey];
+			tmpattrib.mods = (tmptable && tmptable[tmpattrib.value]) ? tmptable[tmpattrib.value] : {};
+		}
+	}
+
+	// This is the function which calculates the four characteristics. Each is the average of
+	// one of the four attribute categories, rounded up, then adjusted.
+	//     Endurance  = physical  (STR AGL VIT)
+	//     Perception = mental    (INT WIS KNW)
+	//     Affinity   = personal  (APP CHM SOC)
+	//     Fortune    = mystical  (AUR PTY WIL)
+	// Shock is Endurance x 3, per the Player's Guide character creation steps.
+	_prepareCharacteristics() {
+		var tmpattribs = this.attributes;
+
+		this._setCharacteristic("endurance",  tmpattribs.str.value, tmpattribs.agl.value, tmpattribs.vit.value);
+		this._setCharacteristic("perception", tmpattribs.int.value, tmpattribs.wis.value, tmpattribs.knw.value);
+		this._setCharacteristic("affinity",   tmpattribs.app.value, tmpattribs.chm.value, tmpattribs.soc.value);
+		this._setCharacteristic("fortune",    tmpattribs.aur.value, tmpattribs.pty.value, tmpattribs.wil.value);
+
+		this.body.shock = this.characteristics.endurance.value * 3;
+	}
+
+	// This is the function which averages three attributes and applies the stored adjustments.
+	// The +.99 truncation is his rounding idiom from changeCharacteristics, kept as-is so the
+	// arithmetic matches his sheet exactly rather than merely closely.
+	_setCharacteristic(tmpname, tmpvalue1, tmpvalue2, tmpvalue3) {
+		var tmpchar = this.characteristics[tmpname];
+		var tmpbase = parseInt(((tmpvalue1 + tmpvalue2 + tmpvalue3) / 3) + 0.99) || 0;
+
+		tmpchar.base = tmpbase;
+		tmpchar.value = tmpbase + tmpchar.titleBonus + tmpchar.raceMod + tmpchar.permMod + tmpchar.tempMod;
+	}
+
+	// This is the function which resolves the five resistance tracks. Each has a base drawn
+	// from an attribute's table, plus manual adjustment. Class and racial bonuses arrive as
+	// Active Effects rather than the string matching the original sheet used
+	// ("+10% Magic Resist", "+5% all Resists").
+	// An immunity replaces the percentage outright, so it is checked first.
+	_prepareResistances() {
+		var tmpmods = {
+			str: this.attributes.str.mods, agl: this.attributes.agl.mods,
+			vit: this.attributes.vit.mods, int: this.attributes.int.mods,
+			wis: this.attributes.wis.mods, aur: this.attributes.aur.mods,
+			wil: this.attributes.wil.mods
+		};
+
+		this._setResistance("magic",    tmpmods.aur.magicResist);
+		this._setResistance("illusion", tmpmods.wis.illusionResist);
+		this._setResistance("poison",   tmpmods.vit.poisonResist);
+		this._setResistance("disease",  tmpmods.vit.diseaseResist);
+
+		// Control Resistance is the one that combines sources: a base from Will Force, then
+		// adjustments from both Intelligence and Wisdom.
+		var tmpcontrol = (tmpmods.wil.controlResist || 0)
+		               + (tmpmods.int.controlResistAdjust || 0)
+		               + (tmpmods.wis.controlResistAdjust || 0);
+		this._setResistance("control", tmpcontrol);
+	}
+
+	// This is the function which finalises one resistance track.
+	_setResistance(tmpname, tmpbase) {
+		var tmpresist = this.resistances[tmpname];
+		tmpresist.base = parseInt(tmpbase) || 0;
+		tmpresist.value = tmpresist.immune ? null : tmpresist.base + tmpresist.misc;
+	}
+
+	// This is the function which reads the skill slot allowances off the Knowledge table.
+	// A character may not hold more skills in a category than they have slots for it.
+	_prepareSkillSlots() {
+		var tmpknw = this.attributes.knw.mods;
+
+		this.skillSlots = {
+			class:         parseInt(tmpknw.classSkills) || 0,
+			racial:        parseInt(tmpknw.raceSkills) || 0,
+			social:        parseInt(tmpknw.socialSkills) || 0,
+			memorization:  parseInt(tmpknw.memorizationPoints) || 0,
+			classUsed:  0,
+			racialUsed: 0,
+			socialUsed: 0
+		};
+	}
+
+	// This is the function which calculates every skill chance on the character, and counts
+	// how many slots each category has consumed.
+	//
+	// Player's Guide p.94:
+	//     base chance  = (combined attributes - skill rating) x 5%
+	//     total chance = base chance + starting bonus + ability bonus + modifiers
+	// A skill being attempted untrained uses the base chance alone, with no starting bonus.
+	//
+	// This runs from the actor rather than from the skill item because embedded items are
+	// prepared BEFORE the actor's derived data, so a skill computing for itself would read
+	// attribute values that are not final yet.
+	_prepareSkills() {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return; }
+
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type != "skill") { continue; }
+			var tmpskill = tmpitem.system;
+
+			var tmpcombined = this._getCombinedAttributes(tmpskill.attr1, tmpskill.attr2);
+			tmpskill.combinedAttributes = tmpcombined;
+			tmpskill.baseChance = (tmpcombined - tmpskill.skillRating) * 5;
+
+			if (tmpskill.isCommon) {
+				tmpskill.totalChance = tmpskill.baseChance + tmpskill.misc;
+			} else {
+				tmpskill.totalChance = tmpskill.baseChance
+				                     + tmpskill.startingBonus
+				                     + tmpskill.abilityBonus
+				                     + tmpskill.misc;
+				if (tmpskill.category == "class")  { this.skillSlots.classUsed++; }
+				if (tmpskill.category == "racial") { this.skillSlots.racialUsed++; }
+				if (tmpskill.category == "social") { this.skillSlots.socialUsed++; }
+			}
+		}
+	}
+
+	// This is the function which produces the combined attribute value for a skill.
+	// One governing attribute is used as it stands; two are averaged and rounded up.
+	_getCombinedAttributes(tmpattr1, tmpattr2) {
+		var tmpfirst = this.attributes[String(tmpattr1 || "").toLowerCase()];
+		if (!tmpfirst) { return 0; }
+		if (!tmpattr2) { return tmpfirst.value; }
+
+		var tmpsecond = this.attributes[String(tmpattr2).toLowerCase()];
+		if (!tmpsecond) { return tmpfirst.value; }
+
+		return Math.ceil((tmpfirst.value + tmpsecond.value) / 2);
+	}
+
+	//==========================================================================================
+	// @MARKER GENERAL PURPOSE FUNCTIONS
+	//==========================================================================================
+
+	// This is the function which converts an attribute rating into its save percentage.
+	// Ported from getAttribSave in the original sheet-worker with the branch order intact.
+	// Ratings 18 through 20 all save at 90%; only a rating above 20 exceeds it.
+	//
+	// Note this is the BASE save only. The separate cap that applies when a save is modified
+	// at roll time -- bonuses cannot lift a save past 90%, and cannot raise it at all once the
+	// attribute is 21 or better -- belongs with the roll logic, not here.
+	static getAttribSave(tmpAttribRating) {
+		var tmpSaveValue = 0;
+		if (tmpAttribRating < 18) {
+			tmpSaveValue = parseInt(tmpAttribRating * 5);
+		} else if (tmpAttribRating > 20) {
+			tmpSaveValue = parseInt(90 + (tmpAttribRating - 20));
+		} else {
+			tmpSaveValue = 90;
+		}
+		return tmpSaveValue;
+	}
+
+	// This is the function which returns the highest attribute rating a character may reach,
+	// which depends on how powerful a being they have become. From the Master's Manual.
+	static getAttributeCap(tmpTitle) {
+		if (tmpTitle >= 16) { return 30; } // deity
+		if (tmpTitle >= 11) { return 27; } // arch-mortal
+		if (tmpTitle >= 1)  { return 25; } // mortal
+		return 23;                         // mundane
 	}
 
 	// @MARKER ADD NEW character data model functions HERE
