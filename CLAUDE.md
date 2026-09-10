@@ -38,4 +38,8 @@ Full rationale for every one of these calls is in `docs/DECISIONS.md`. Full task
 
 **Model choice for heavy work.** Before starting real implementation (non-trivial rules encoding, architecture-locking decisions, substantive system code — as opposed to planning, research, or light scaffolding), stop and ask the user whether to proceed on Opus or Fable rather than defaulting to whatever model is currently active.
 
+**Match the original developer's code style.** This project will be handed back to W. Michael Tenery III, who needs to pick it up without decoding an unfamiliar style. Study `docs/reference/sheet-worker.js` (~180k lines of his actual code) before writing anything, and follow his conventions: naming patterns (`tmp*`/`temp*` prefixes), `// @MARKER` comment markers, heavily-commented code, data dictionaries laid out with aligned column-header comments. This overrides default modern-JS idiom and the usual minimal-comments habit.
+
+**The Roll20 sheet is the rules source of truth, always.** `sheet-worker.js` and the sheet markup outrank the PDFs. The rulebooks are supplementary — consulted for prose, rationale, and gaps, never to override the sheet.
+
 **Continuity across sessions.** This file, plus `docs/DECISIONS.md` and `docs/PROGRESS.md`, are the durable record. A new conversation window should read all three before doing anything else — don't re-derive architecture from scratch or re-extract PDFs that are already in `docs/reference/`.
