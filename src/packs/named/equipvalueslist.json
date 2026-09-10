@@ -1,0 +1,1923 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "equipvalueslist",
+    "lines": [
+      80697,
+      81345
+    ]
+  },
+  "_fields": [
+    "weight"
+  ],
+  "entries": {
+    "Scabbard(Knife/Holds 1 Small Blade)": {
+      "weight": ".75"
+    },
+    "Scabbard(Sword/Holds 1 Blade)": {
+      "weight": "1.4"
+    },
+    "Strap(Holes/Hooks/Holds 4)": {
+      "weight": ".5"
+    },
+    "Bandolier(Holds 8)": {
+      "weight": ".6"
+    },
+    "Pouch(Holds 10)": {
+      "weight": ".19"
+    },
+    "Coffer(5“x 8“x 3“/Holds 12)": {
+      "weight": "1"
+    },
+    "Sack(Small/Holds 15)": {
+      "weight": ".19"
+    },
+    "Quiver(Cloth/Holds 20)": {
+      "weight": ".19"
+    },
+    "Sack(Large/Holds 30)": {
+      "weight": ".31"
+    },
+    "Quiver(Leather/Holds 40)": {
+      "weight": ".38"
+    },
+    "Wraparound Carryall(Holds 50)": {
+      "weight": ".75"
+    },
+    "Back Pack(Holds 60)": {
+      "weight": "2"
+    },
+    "Backpack": {
+      "weight": "2"
+    },
+    "Saddle Bags(Holds 80)": {
+      "weight": "2"
+    },
+    "Chest(Small:2` x 1` x 6“/Key/Holds 100)": {
+      "weight": "5"
+    },
+    "Chest(Large:3` x 5` x 2“/Key/Holds 150)": {
+      "weight": "25"
+    },
+    "Trunk(5` x 5` x 3`/Holds 200)": {
+      "weight": "10"
+    },
+    "Abacus": {
+      "weight": "3"
+    },
+    "Animal Fat(1 lb.)": {
+      "weight": "1"
+    },
+    "Arrow Head": {
+      "weight": ".1"
+    },
+    "Anvil(Light)": {
+      "weight": "30"
+    },
+    "Anvil(Small)": {
+      "weight": "70"
+    },
+    "Astrolabe": {
+      "weight": "3"
+    },
+    "Astrology Charts": {
+      "weight": "0"
+    },
+    "Axe(Woodcutting)": {
+      "weight": "3"
+    },
+    "Ball(Wooden)": {
+      "weight": ".1"
+    },
+    "Bandages(Cloth)": {
+      "weight": ".01"
+    },
+    "Barding(Wool)": {
+      "weight": "0"
+    },
+    "Battering Ram(Small Door)": {
+      "weight": "50"
+    },
+    "Bed Roll": {
+      "weight": "4"
+    },
+    "Bee Keeper Suit(Canvas)": {
+      "weight": "1"
+    },
+    "Bell(Small)": {
+      "weight": ".38"
+    },
+    "Bellows(Large)": {
+      "weight": "3"
+    },
+    "Bellows(Small)": {
+      "weight": "1"
+    },
+    "Belt Claw": {
+      "weight": ".3"
+    },
+    "Bit and Bridle": {
+      "weight": ".5"
+    },
+    "Book(Large)": {
+      "weight": "3"
+    },
+    "Book(Lock & Key)": {
+      "weight": "2.5"
+    },
+    "Book(Medium)": {
+      "weight": "2"
+    },
+    "Book(Small)": {
+      "weight": "1"
+    },
+    "Book(Divine Teachings)": {
+      "weight": "1"
+    },
+    "Book(History/1 Subject)": {
+      "weight": "1"
+    },
+    "Book(Illustrated Humanoid Anatomy)": {
+      "weight": "1"
+    },
+    "Book(Metaphysics)": {
+      "weight": "1"
+    },
+    "Book(Popular Music)": {
+      "weight": "1"
+    },
+    "Book(Popular Philosophy)": {
+      "weight": "1"
+    },
+    "Book(Popular Phrases)": {
+      "weight": "1"
+    },
+    "Book(Popular Poems)": {
+      "weight": "1"
+    },
+    "Book(Popular Politics)": {
+      "weight": "1"
+    },
+    "Book(Popular Songs)": {
+      "weight": "1"
+    },
+    "Book(Popular Story)": {
+      "weight": "1"
+    },
+    "Book(Recent Events)": {
+      "weight": "1"
+    },
+    "Book(Theories of the Mind)": {
+      "weight": "1"
+    },
+    "Boots(Leather)": {
+      "weight": "0"
+    },
+    "Boots(High/Leather)": {
+      "weight": "0"
+    },
+    "Bowl(Baked Clay)": {
+      "weight": ".38"
+    },
+    "Bowl(Fine China/Blown Glass)": {
+      "weight": ".38"
+    },
+    "Bowl(Metal)": {
+      "weight": ".38"
+    },
+    "Bowl(Wooden)": {
+      "weight": ".38"
+    },
+    "Bowstring(Sinew)": {
+      "weight": ".25"
+    },
+    "Bowstring(Wire)": {
+      "weight": ".5"
+    },
+    "Broom": {
+      "weight": "2"
+    },
+    "Brush(Animal Hair)": {
+      "weight": ".38"
+    },
+    "Brush(Horse)": {
+      "weight": ".38"
+    },
+    "Brush(Hair)": {
+      "weight": ".5"
+    },
+    "Brush(Paint/Horse Hair)": {
+      "weight": ".5"
+    },
+    "Brush(Paint/Sable Hair)": {
+      "weight": ".38"
+    },
+    "Bureau/Dresser(4’ x 5’ x 2’)": {
+      "weight": "75"
+    },
+    "Cabinet(4’ x 5’x 2’)": {
+      "weight": "50"
+    },
+    "Cage(Large: 3’ x 3’ x 3’)": {
+      "weight": "4"
+    },
+    "Cage(Small: 1’ x 1’ x 1’)": {
+      "weight": "1"
+    },
+    "Candelabra": {
+      "weight": "5"
+    },
+    "Candle(6-hour)": {
+      "weight": ".19"
+    },
+    "Candles(Magical/Rituals)": {
+      "weight": "1.5"
+    },
+    "Canvas(Paint/Cotton 1 sq.’)": {
+      "weight": "1.5"
+    },
+    "Canvas(Paint/Linen 1 sq.’)": {
+      "weight": "1.5"
+    },
+    "Canvas(Waterproof/sq.’)": {
+      "weight": "2"
+    },
+    "Canvas(Paint/Cotton 1 sq.`)": {
+      "weight": "1.5"
+    },
+    "Canvas(Paint/Linen 1 sq.`)": {
+      "weight": "1.5"
+    },
+    "Canvas(Waterproof/sq.`)": {
+      "weight": "1.2"
+    },
+    "Catches and Pulleys": {
+      "weight": "1.2"
+    },
+    "Chair(Wooden)": {
+      "weight": ".38"
+    },
+    "Chalk(5 pieces)": {
+      "weight": ".5"
+    },
+    "Chemistry Set(Advanced)": {
+      "weight": "3.5"
+    },
+    "Chemistry Set(Basic)": {
+      "weight": "2"
+    },
+    "China(Fine Porcelain)": {
+      "weight": "1"
+    },
+    "China(Porcelain)": {
+      "weight": "1"
+    },
+    "Cleaver": {
+      "weight": "2"
+    },
+    "Clock(Mechanical)": {
+      "weight": "8"
+    },
+    "Clock(Water)": {
+      "weight": "21"
+    },
+    "Cloth(Polishing)": {
+      "weight": ".75"
+    },
+    "Cobbler’s Tools": {
+      "weight": "4"
+    },
+    "Comb": {
+      "weight": ".38"
+    },
+    "Compass(Directional Lodestone)": {
+      "weight": "1"
+    },
+    "Compass(Drawing)": {
+      "weight": ".19"
+    },
+    "Costume(Dance)": {
+      "weight": "0"
+    },
+    "Costume(Dramatic)": {
+      "weight": "0"
+    },
+    "Crucible(Covered)": {
+      "weight": "2"
+    },
+    "Cup(Baked Clay)": {
+      "weight": ".19"
+    },
+    "Cup(Fine China/Blown Glass)": {
+      "weight": ".19"
+    },
+    "Cup(Metal)": {
+      "weight": ".19"
+    },
+    "Cup(Wooden)": {
+      "weight": ".19"
+    },
+    "Cup(Measuring)": {
+      "weight": ".19"
+    },
+    "Dice(Bone/Set)": {
+      "weight": ".19"
+    },
+    "Dice(Ivory/Set)": {
+      "weight": ".19"
+    },
+    "Dice(Wooden/Set)": {
+      "weight": ".19"
+    },
+    "Doll": {
+      "weight": ".2"
+    },
+    "Feathers": {
+      "weight": "0"
+    },
+    "Fishhooks(Assorted)": {
+      "weight": ".01"
+    },
+    "Fishing Line(per ’)": {
+      "weight": ".1"
+    },
+    "Fishing Line(per `)": {
+      "weight": ".1"
+    },
+    "Fishing Net (30’x 30’)": {
+      "weight": "15"
+    },
+    "Fishing Net (30`x 30`)": {
+      "weight": "15"
+    },
+    "Fishing Pole": {
+      "weight": "2"
+    },
+    "Flint and Steel": {
+      "weight": ".19"
+    },
+    "Forge(Large)": {
+      "weight": "30"
+    },
+    "Forge(Small)": {
+      "weight": "15"
+    },
+    "Fork": {
+      "weight": ".13"
+    },
+    "Frame(Wooden/Fine/per sq’)": {
+      "weight": "2"
+    },
+    "Frame(Wooden/per sq’)": {
+      "weight": "3.1"
+    },
+    "Frame(Wooden/Fine/per sq`)": {
+      "weight": "2"
+    },
+    "Frame(Wooden/per sq`)": {
+      "weight": "3.1"
+    },
+    "Gemcutting Tools": {
+      "weight": "2"
+    },
+    "Glass Flask(1 cup)": {
+      "weight": ".25"
+    },
+    "Glass Flask": {
+      "weight": ".25"
+    },
+    "Gloves(Leather)": {
+      "weight": "0"
+    },
+    "Gloves(Silk)": {
+      "weight": "0"
+    },
+    "Gloves(Climbing)": {
+      "weight": "0"
+    },
+    "Glowstone": {
+      "weight": ".5"
+    },
+    "Grappling Hook": {
+      "weight": "3"
+    },
+    "Halter(Livestock)": {
+      "weight": ".5"
+    },
+    "Hankerchief(Silk)": {
+      "weight": ".01"
+    },
+    "Highly Polished Orb": {
+      "weight": "6"
+    },
+    "Hoe": {
+      "weight": "3"
+    },
+    "Hood(Bird,Cloth)": {
+      "weight": ".01"
+    },
+    "Hood(Bird,Leather)": {
+      "weight": ".01"
+    },
+    "Hooks and Wires": {
+      "weight": ".19"
+    },
+    "Horse Shoes": {
+      "weight": "2"
+    },
+    "Indelible Ink(1 Color/1 cup)": {
+      "weight": ".5"
+    },
+    "Ink(Black)": {
+      "weight": ".5"
+    },
+    "Ink(Blue)": {
+      "weight": ".5"
+    },
+    "Ink(Green)": {
+      "weight": ".5"
+    },
+    "Ink(Indigo)": {
+      "weight": ".5"
+    },
+    "Ink(Purple)": {
+      "weight": ".5"
+    },
+    "Ink(Red)": {
+      "weight": ".5"
+    },
+    "Ink(Well)": {
+      "weight": ".25"
+    },
+    "Intricately Carved Staff": {
+      "weight": "3"
+    },
+    "Intricately Carved Wand": {
+      "weight": ".25"
+    },
+    "Iron Mallet": {
+      "weight": "6"
+    },
+    "Iron Saw": {
+      "weight": "2"
+    },
+    "Jeweled Dagger": {
+      "weight": "1"
+    },
+    "Kite(Box)": {
+      "weight": "2.2"
+    },
+    "Kite(Fighting)": {
+      "weight": "8"
+    },
+    "Kite(Person-Lifting)": {
+      "weight": "36"
+    },
+    "Kite(Plain)": {
+      "weight": "1.4"
+    },
+    "Knife(Tool)": {
+      "weight": ".13"
+    },
+    "Knife(Skinning)": {
+      "weight": ".38"
+    },
+    "Lamp(Glowworm)": {
+      "weight": "1"
+    },
+    "Lamp(Oil)": {
+      "weight": "1"
+    },
+    "Lantern": {
+      "weight": "1"
+    },
+    "Lantern(Bullseye)": {
+      "weight": "1.4"
+    },
+    "Lantern(Shuttered)": {
+      "weight": "1.2"
+    },
+    "Leather Working Tools": {
+      "weight": "4"
+    },
+    "Leecher’s Tools": {
+      "weight": ".5"
+    },
+    "Loadstone(Magnetic)": {
+      "weight": "2"
+    },
+    "Lock Picks(Assorted)": {
+      "weight": ".01"
+    },
+    "Locksmith Tools": {
+      "weight": "2"
+    },
+    "Loom": {
+      "weight": "18"
+    },
+    "Loom(Hand)": {
+      "weight": "1"
+    },
+    "Magnifying Glass": {
+      "weight": "1"
+    },
+    "Manacles": {
+      "weight": "4"
+    },
+    "Mask(Dramatic)": {
+      "weight": ".2"
+    },
+    "Marble": {
+      "weight": ".02"
+    },
+    "Marbles(1 Pair/Eyes)": {
+      "weight": ".04"
+    },
+    "Metal File": {
+      "weight": "2"
+    },
+    "Metal Flask(1 Cup)": {
+      "weight": ".75"
+    },
+    "Metal Flask": {
+      "weight": ".75"
+    },
+    "Metal Working Tools": {
+      "weight": "18"
+    },
+    "Mirror(Large/Silver)": {
+      "weight": "20"
+    },
+    "Mirror(Small/Silver)": {
+      "weight": "4"
+    },
+    "Mop": {
+      "weight": "3"
+    },
+    "Mortar and Pestle": {
+      "weight": ".5"
+    },
+    "Mug(Baked Clay)": {
+      "weight": ".5"
+    },
+    "Mug(Fine China/Blown Glass)": {
+      "weight": ".5"
+    },
+    "Mug(Metal)": {
+      "weight": ".5"
+    },
+    "Mug(Wooden)": {
+      "weight": ".5"
+    },
+    "10 Nails": {
+      "weight": ".06"
+    },
+    "Nails": {
+      "weight": ".01"
+    },
+    "Napkin(Cloth)": {
+      "weight": ".01"
+    },
+    "10 Needles(Assorted)": {
+      "weight": ".03"
+    },
+    "Needles(Assorted)": {
+      "weight": "0"
+    },
+    "Oar": {
+      "weight": "2"
+    },
+    "Oil(Rubbing)": {
+      "weight": ".33"
+    },
+    "Padlock(Complex)": {
+      "weight": ".5"
+    },
+    "Padlock(Crude)": {
+      "weight": ".5"
+    },
+    "Padlock(Simple)": {
+      "weight": ".5"
+    },
+    "Padlock(Well-Made)": {
+      "weight": ".5"
+    },
+    "Pan": {
+      "weight": "5"
+    },
+    "Paper Sheets": {
+      "weight": ".01"
+    },
+    "Papyrus/Parchment Sheets": {
+      "weight": ".02"
+    },
+    "Pen": {
+      "weight": ".06"
+    },
+    "Pick(Digging)": {
+      "weight": "5"
+    },
+    "Pigments/Dye(1 color)": {
+      "weight": ".19"
+    },
+    "Pins(Assorted)": {
+      "weight": ".01"
+    },
+    "Pipe(Glassblowing)": {
+      "weight": ".25"
+    },
+    "Pipe(Segment)": {
+      "weight": "2"
+    },
+    "Pipe(Smoking)": {
+      "weight": ".38"
+    },
+    "Pitcher/Jug(Baked Clay)": {
+      "weight": "3"
+    },
+    "Pitcher/Jug(China/Blown Glass)": {
+      "weight": "3"
+    },
+    "Pitcher/Jug(Metal)": {
+      "weight": "3"
+    },
+    "Pitcher/Jug(Wooden)": {
+      "weight": "3"
+    },
+    "Plate(Baked Clay)": {
+      "weight": "1"
+    },
+    "Plate(Fine China/Blown Glass)": {
+      "weight": "1"
+    },
+    "Plate(Metal)": {
+      "weight": "1"
+    },
+    "Plate(Wooden)": {
+      "weight": "1"
+    },
+    "Platter(Baked Clay)": {
+      "weight": "2"
+    },
+    "Platter(China/Blown Glass)": {
+      "weight": "2"
+    },
+    "Platter(Metal)": {
+      "weight": "2"
+    },
+    "Platter(Wooden)": {
+      "weight": "2"
+    },
+    "Playing Cards": {
+      "weight": ".38"
+    },
+    "Plow": {
+      "weight": "30"
+    },
+    "Plumb Line": {
+      "weight": ".5"
+    },
+    "Pole(10’ Balancing)": {
+      "weight": "5"
+    },
+    "Pole(15’ Ferrier)": {
+      "weight": "8"
+    },
+    "Pole(5’ Walking Stick)": {
+      "weight": "2.5"
+    },
+    "Pole(10` Balancing)": {
+      "weight": "5"
+    },
+    "Pole(15` Ferrier)": {
+      "weight": "8"
+    },
+    "Pole(5` Walking Stick)": {
+      "weight": "2.5"
+    },
+    "Polishing Cloth": {
+      "weight": ".01"
+    },
+    "Pot(Clay)": {
+      "weight": "3"
+    },
+    "Pot(Metal)": {
+      "weight": "8"
+    },
+    "Pottery(Earthen)": {
+      "weight": "1"
+    },
+    "Pottery(Fired)": {
+      "weight": "1"
+    },
+    "Puppet(Angry)": {
+      "weight": ".25"
+    },
+    "Puppet(Happy)": {
+      "weight": ".25"
+    },
+    "Puppet(Sad)": {
+      "weight": ".25"
+    },
+    "Puzzle Box(Wooden)": {
+      "weight": ".5"
+    },
+    "Rags(1 lb.)": {
+      "weight": "1"
+    },
+    "Rake": {
+      "weight": "3"
+    },
+    "Rare Bone Staff": {
+      "weight": "6"
+    },
+    "Rare Bone Wand": {
+      "weight": ".38"
+    },
+    "Rare Wood Staff": {
+      "weight": "5"
+    },
+    "Rare Wood Wand": {
+      "weight": ".19"
+    },
+    "Reins": {
+      "weight": "1"
+    },
+    "Rope(Hemp per’)": {
+      "weight": ".2"
+    },
+    "Rope(Silk per’)": {
+      "weight": ".04"
+    },
+    "Rope(Hemp per`)": {
+      "weight": ".2"
+    },
+    "Rope(Silk per`)": {
+      "weight": ".04"
+    },
+    "Ruler(Measure)": {
+      "weight": ".38"
+    },
+    "Saddle Buckles": {
+      "weight": "1"
+    },
+    "Saddle(Fixed Point)": {
+      "weight": "8"
+    },
+    "Saddle Harness": {
+      "weight": "2"
+    },
+    "Saddle(High)": {
+      "weight": "8"
+    },
+    "Saddle(Soft)": {
+      "weight": "6"
+    },
+    "Saddle(War)": {
+      "weight": "10"
+    },
+    "Scales(Weights/Large)": {
+      "weight": "12"
+    },
+    "Scales(Weights/Small)": {
+      "weight": "3"
+    },
+    "Scissors": {
+      "weight": ".31"
+    },
+    "Semi-precious Orb": {
+      "weight": "3"
+    },
+    "Sewing Box": {
+      "weight": "2"
+    },
+    "Sextant": {
+      "weight": "2"
+    },
+    "Shackles(Leg)": {
+      "weight": "3"
+    },
+    "Shackles(Wrist)": {
+      "weight": "2"
+    },
+    "Sheers": {
+      "weight": "1"
+    },
+    "Shepherd Crook": {
+      "weight": "3"
+    },
+    "Shoes(Running)": {
+      "weight": "0"
+    },
+    "Shoes(Dance)": {
+      "weight": "0"
+    },
+    "Shoes(Climbing)": {
+      "weight": "0"
+    },
+    "Tabard(Page/Child`s)": {
+      "weight": "1"
+    },
+    "Shovel": {
+      "weight": "6"
+    },
+    "Sieve(Large)": {
+      "weight": "2"
+    },
+    "Sieve(Small)": {
+      "weight": "2"
+    },
+    "Signet Ring": {
+      "weight": ".06"
+    },
+    "Stone Working Tools": {
+      "weight": "12"
+    },
+    "Spade/Trowel": {
+      "weight": ".38"
+    },
+    "Spectacles(Farsight)": {
+      "weight": ".03"
+    },
+    "Spectacles(Reading)": {
+      "weight": ".03"
+    },
+    "Spike": {
+      "weight": ".19"
+    },
+    "Spinning Wheel": {
+      "weight": "5"
+    },
+    "Spoon": {
+      "weight": ".06"
+    },
+    "Springs(Assorted)": {
+      "weight": ".02"
+    },
+    "Spring Snare(2-Inch)": {
+      "weight": ".5"
+    },
+    "Spring Snare(4-Inch)": {
+      "weight": "2"
+    },
+    "Spring Snare(6-Inch)": {
+      "weight": "4"
+    },
+    "Spring Snare(9-Inch)": {
+      "weight": "8"
+    },
+    "Spring Snare(1-Foot)": {
+      "weight": "16"
+    },
+    "Spring Snare(2-Foot)": {
+      "weight": "32"
+    },
+    "Spring Snare(3-Foot)": {
+      "weight": "64"
+    },
+    "Spyglass": {
+      "weight": ".5"
+    },
+    "Stain(Pint)": {
+      "weight": "1"
+    },
+    "Star Charts": {
+      "weight": "0"
+    },
+    "Stone File": {
+      "weight": "2"
+    },
+    "Sundial": {
+      "weight": "2"
+    },
+    "Surf Board": {
+      "weight": "18"
+    },
+    "Tallow(1 lb.)": {
+      "weight": "1"
+    },
+    "Table(5’x 5’)": {
+      "weight": "20"
+    },
+    "Table(5`x 5`)": {
+      "weight": "20"
+    },
+    "Tarot Cards": {
+      "weight": ".38"
+    },
+    "Tattooing Tools": {
+      "weight": "2"
+    },
+    "Telescope": {
+      "weight": "8"
+    },
+    "Tent(1-person)": {
+      "weight": "30"
+    },
+    "Tent(2-person)": {
+      "weight": "60"
+    },
+    "Tent(4-person)": {
+      "weight": "100"
+    },
+    "Tent(8-person)": {
+      "weight": "150"
+    },
+    "Thread Spool(per’)": {
+      "weight": ".01"
+    },
+    "Thread Spool(per`)": {
+      "weight": ".01"
+    },
+    "Tinder Box": {
+      "weight": "1"
+    },
+    "Tobacco Box": {
+      "weight": "1"
+    },
+    "Tongs(Large)": {
+      "weight": "5"
+    },
+    "Tongs(Small)": {
+      "weight": "1"
+    },
+    "Torch": {
+      "weight": "2"
+    },
+    "Twine(per ’)": {
+      "weight": ".03"
+    },
+    "Twine(Heavy/per ’)": {
+      "weight": ".04"
+    },
+    "Twine(Light/per ’)": {
+      "weight": ".02"
+    },
+    "Twine(Wool/per ’)": {
+      "weight": ".02"
+    },
+    "Twine(per `)": {
+      "weight": ".03"
+    },
+    "Twine(Heavy/per `)": {
+      "weight": ".04"
+    },
+    "Twine(Light/per `)": {
+      "weight": ".02"
+    },
+    "Twine(Wool/per `)": {
+      "weight": ".02"
+    },
+    "Urn": {
+      "weight": "3"
+    },
+    "Utensils(Gold/set)": {
+      "weight": ".5"
+    },
+    "Utensils(Silver/set)": {
+      "weight": ".44"
+    },
+    "Utensils(Tin/set)": {
+      "weight": ".38"
+    },
+    "Vellum Sheet": {
+      "weight": ".01"
+    },
+    "Vial(1/2 cup)": {
+      "weight": ".25"
+    },
+    "Vial": {
+      "weight": ".25"
+    },
+    "Waterskin(3-days)": {
+      "weight": ".19"
+    },
+    "Waterskin(1-week)": {
+      "weight": ".38"
+    },
+    "Weather Charts": {
+      "weight": "0"
+    },
+    "Whetstone": {
+      "weight": "2"
+    },
+    "Windlass": {
+      "weight": "4"
+    },
+    "Windlass(Large)": {
+      "weight": "8"
+    },
+    "Windlass(Small)": {
+      "weight": "2"
+    },
+    "Wire(Steel per ’)": {
+      "weight": ".19"
+    },
+    "Wire(Steel per `)": {
+      "weight": ".19"
+    },
+    "Wood Working Tools": {
+      "weight": "15"
+    },
+    "Bath Salts(Common)": {
+      "weight": "1.2"
+    },
+    "Bath Salts(Exotic/Perfumed)": {
+      "weight": "1.2"
+    },
+    "Cologne(Animal)": {
+      "weight": ".8"
+    },
+    "Cologne(Herbal)": {
+      "weight": ".8"
+    },
+    "Cologne(Exotic)": {
+      "weight": ".8"
+    },
+    "Makeup(Bright Kit)": {
+      "weight": ".5"
+    },
+    "Makeup(Full Kit)": {
+      "weight": ".5"
+    },
+    "Makeup(Exotic Kit)": {
+      "weight": ".5"
+    },
+    "Makeup(1 Color)": {
+      "weight": ".6"
+    },
+    "Perfume(Fruit)": {
+      "weight": ".6"
+    },
+    "Perfume(Herbal)": {
+      "weight": ".6"
+    },
+    "Perfume(Exotic)": {
+      "weight": ".6"
+    },
+    "Soap(Animal)": {
+      "weight": ".25"
+    },
+    "Soap(Herbal)": {
+      "weight": ".25"
+    },
+    "Soap(Exotic/Perfumed)": {
+      "weight": ".25"
+    },
+    "Talc Powder": {
+      "weight": ".5"
+    },
+    "Wig": {
+      "weight": ".5"
+    },
+    "Bagpipes": {
+      "weight": "10"
+    },
+    "Balafon": {
+      "weight": "2.8"
+    },
+    "Balalaika": {
+      "weight": "6"
+    },
+    "Bambachi": {
+      "weight": "1.5"
+    },
+    "Bamboo Flute": {
+      "weight": ".8"
+    },
+    "Bladder Pipe": {
+      "weight": "2"
+    },
+    "Branqing(Bianqing)": {
+      "weight": "62"
+    },
+    "Castanets": {
+      "weight": ".19"
+    },
+    "Clapstick": {
+      "weight": "2"
+    },
+    "Conga": {
+      "weight": "4.5"
+    },
+    "Cowhorn": {
+      "weight": ".5"
+    },
+    "Cymbal": {
+      "weight": "2.5"
+    },
+    "Didgeridoo": {
+      "weight": "5"
+    },
+    "Djembe": {
+      "weight": "3"
+    },
+    "Dramyen": {
+      "weight": "12"
+    },
+    "Drum": {
+      "weight": "2"
+    },
+    "Dulcimer": {
+      "weight": "2"
+    },
+    "Ektara": {
+      "weight": "5"
+    },
+    "Floor Harp": {
+      "weight": "28"
+    },
+    "Flute(Silver)": {
+      "weight": "2"
+    },
+    "Flute(Wooden)": {
+      "weight": "1"
+    },
+    "Gankeke": {
+      "weight": "1"
+    },
+    "Getchu Vadyam": {
+      "weight": "8"
+    },
+    "Gong": {
+      "weight": "61"
+    },
+    "Gourd Shaker": {
+      "weight": "5"
+    },
+    "Guiro": {
+      "weight": "1.2"
+    },
+    "Guqin": {
+      "weight": "20"
+    },
+    "Hammered Dulcimer": {
+      "weight": "15"
+    },
+    "Harp": {
+      "weight": "3"
+    },
+    "Harpsichord": {
+      "weight": "110"
+    },
+    "Horn": {
+      "weight": "1"
+    },
+    "Long Horn": {
+      "weight": "2"
+    },
+    "Lute": {
+      "weight": "2"
+    },
+    "Lyre": {
+      "weight": "3"
+    },
+    "Mandolin": {
+      "weight": "4"
+    },
+    "Manjeera": {
+      "weight": "2.2"
+    },
+    "Maracas": {
+      "weight": ".75"
+    },
+    "Mbira": {
+      "weight": ".6"
+    },
+    "Nadaswaram": {
+      "weight": "2.8"
+    },
+    "Ocarina": {
+      "weight": ".5"
+    },
+    "Pan Pipes": {
+      "weight": ".38"
+    },
+    "Piccolo": {
+      "weight": ".8"
+    },
+    "Pipa": {
+      "weight": "12"
+    },
+    "Psaltery": {
+      "weight": "9"
+    },
+    "Pungi": {
+      "weight": "2.2"
+    },
+    "Recorder": {
+      "weight": "1"
+    },
+    "Sacbut": {
+      "weight": "4"
+    },
+    "Sarangi": {
+      "weight": "2"
+    },
+    "Serpent": {
+      "weight": "3"
+    },
+    "Shawm": {
+      "weight": "3"
+    },
+    "Sheng": {
+      "weight": "2.5"
+    },
+    "Sitar": {
+      "weight": "18"
+    },
+    "Swarabat": {
+      "weight": "15"
+    },
+    "Tabla": {
+      "weight": "24"
+    },
+    "Tambour/Cymbal/Bell": {
+      "weight": ".38"
+    },
+    "Tongue Drum": {
+      "weight": "2"
+    },
+    "Ukulele": {
+      "weight": "1.4"
+    },
+    "Vichitra Vina": {
+      "weight": "22"
+    },
+    "Viol": {
+      "weight": ".5"
+    },
+    "Viol de gamba": {
+      "weight": ".5"
+    },
+    "Xiao": {
+      "weight": ".8"
+    },
+    "Zither": {
+      "weight": "9"
+    },
+    "Animal Feed(per day)": {
+      "weight": "1"
+    },
+    "Candy(Caramel)": {
+      "weight": "1"
+    },
+    "Candy(Chocolate)": {
+      "weight": "1"
+    },
+    "Candy(Gum)": {
+      "weight": "1"
+    },
+    "Candy(Peppermint)": {
+      "weight": "1"
+    },
+    "Candy(Sugar)": {
+      "weight": "1"
+    },
+    "Candy(Taffy)": {
+      "weight": "1"
+    },
+    "Cheese": {
+      "weight": "1"
+    },
+    "Dairy Foods": {
+      "weight": "1"
+    },
+    "Eggs(Caviar)": {
+      "weight": "1"
+    },
+    "Eggs(Fresh)": {
+      "weight": "1"
+    },
+    "Eggs(Pickled)": {
+      "weight": "1"
+    },
+    "Eggs(Roe/Fish)": {
+      "weight": "1"
+    },
+    "Fish(Dried)": {
+      "weight": "1"
+    },
+    "Fish(Smoked)": {
+      "weight": "1"
+    },
+    "Fruit(Dried)": {
+      "weight": "1"
+    },
+    "Fruit(Fresh)": {
+      "weight": "1"
+    },
+    "Fruit(Preserves)": {
+      "weight": "1"
+    },
+    "Grain": {
+      "weight": "1"
+    },
+    "Grain(Corn)": {
+      "weight": "1"
+    },
+    "Grain(Dried)": {
+      "weight": "1"
+    },
+    "Honey": {
+      "weight": "1"
+    },
+    "Iron Rations(per day)": {
+      "weight": "4"
+    },
+    "Meat(Dried)": {
+      "weight": "1"
+    },
+    "Meat(Fresh)": {
+      "weight": "1"
+    },
+    "Meat(Smoked)": {
+      "weight": "1"
+    },
+    "Mushrooms": {
+      "weight": "1"
+    },
+    "Rations(per day)": {
+      "weight": "3"
+    },
+    "Roots": {
+      "weight": "1"
+    },
+    "Salt(Bar)": {
+      "weight": ".25"
+    },
+    "Salt(Lick)": {
+      "weight": ".5"
+    },
+    "Seafood": {
+      "weight": "1"
+    },
+    "Vegetables(Cured)": {
+      "weight": "1"
+    },
+    "Vegetables(Fresh)": {
+      "weight": "1"
+    },
+    "Vegetables(Pickled)": {
+      "weight": "1"
+    },
+    "Vinegar": {
+      "weight": "2"
+    },
+    "Absinthe(Bottle)": {
+      "weight": "2"
+    },
+    "Ale(Mug)": {
+      "weight": "1"
+    },
+    "Ale(Small Keg)": {
+      "weight": "25"
+    },
+    "Beer(Mug)": {
+      "weight": "1"
+    },
+    "Beer(Small Keg)": {
+      "weight": "25"
+    },
+    "Brandy(Bottle)": {
+      "weight": "3"
+    },
+    "Caium(Bottle)": {
+      "weight": "2"
+    },
+    "Champagne(Bottle)": {
+      "weight": "3"
+    },
+    "Cognac(Bottle)": {
+      "weight": "2"
+    },
+    "Everclear(Bottle)": {
+      "weight": "2"
+    },
+    "Grain Spirits(Bottle)": {
+      "weight": "2"
+    },
+    "Grog(Mug)": {
+      "weight": "1"
+    },
+    "Hard Cider(Pitcher)": {
+      "weight": "3"
+    },
+    "Hard Cider(Small Keg)": {
+      "weight": "25"
+    },
+    "Juice(Fruit/Mug)": {
+      "weight": "1"
+    },
+    "Juice(Vegetable/Mug)": {
+      "weight": "1"
+    },
+    "Kumis(Bottle)": {
+      "weight": "3"
+    },
+    "Mead(Mug)": {
+      "weight": "1"
+    },
+    "Rum(Bottle)": {
+      "weight": "3"
+    },
+    "Sake(Bottle)": {
+      "weight": "2"
+    },
+    "Schnapps(Bottle)": {
+      "weight": "2"
+    },
+    "Scotch(Bottle)": {
+      "weight": "3"
+    },
+    "Sherry(Bottle)": {
+      "weight": "2"
+    },
+    "Sura(Bottle)": {
+      "weight": "2"
+    },
+    "Tepache(Bottle)": {
+      "weight": "2"
+    },
+    "Tiswin(Bottle)": {
+      "weight": "2"
+    },
+    "Vodka(Bottle)": {
+      "weight": "2"
+    },
+    "Water": {
+      "weight": "1"
+    },
+    "Whiskey(Bottle)": {
+      "weight": "2"
+    },
+    "Whiskey(Dwarven/Bottle)": {
+      "weight": "2"
+    },
+    "Wine(Bottle)": {
+      "weight": "3"
+    },
+    "Wine(Elven/Bottle)": {
+      "weight": "3"
+    },
+    "Wine(Fortified/Bottle)": {
+      "weight": "2"
+    },
+    "Wine(Honey/Bottle)": {
+      "weight": "2"
+    },
+    "Wine(Plum/Bottle)": {
+      "weight": "2"
+    },
+    "Wine(Watered/Bottle)": {
+      "weight": "2"
+    },
+    "Canvas(1 Sq.’)": {
+      "weight": "1"
+    },
+    "Cloth(Yard)": {
+      "weight": "1"
+    },
+    "Coal(lb.)": {
+      "weight": "1"
+    },
+    "Grease(1 Pint)": {
+      "weight": "2"
+    },
+    "Hard Leather(Sq.’)": {
+      "weight": ".75"
+    },
+    "Leather(Sq.’)": {
+      "weight": ".63"
+    },
+    "Soft Leather(Sq.’)": {
+      "weight": ".31"
+    },
+    "Leather Cord(1’)": {
+      "weight": ".06"
+    },
+    "Hard Leather(Sq.`)": {
+      "weight": ".75"
+    },
+    "Leather(Sq.`)": {
+      "weight": ".63"
+    },
+    "Soft Leather(Sq.`)": {
+      "weight": ".31"
+    },
+    "Leather Cord(1`)": {
+      "weight": ".2"
+    },
+    "Metal Bar(Brass)": {
+      "weight": "100"
+    },
+    "Metal Rod(Brass)": {
+      "weight": "20"
+    },
+    "Metal Bar(Bronze)": {
+      "weight": "100"
+    },
+    "Metal Rod(Bronze)": {
+      "weight": "20"
+    },
+    "Metal Bar(Copper)": {
+      "weight": "100"
+    },
+    "Metal Rod(Copper)": {
+      "weight": "20"
+    },
+    "Metal Bar(Iron)": {
+      "weight": "100"
+    },
+    "Metal Rod(Iron)": {
+      "weight": "20"
+    },
+    "Metal Bar(Lead)": {
+      "weight": "100"
+    },
+    "Metal Rod(Lead)": {
+      "weight": "20"
+    },
+    "Metal Bar(Steel)": {
+      "weight": "100"
+    },
+    "Metal Rod(Steel)": {
+      "weight": "20"
+    },
+    "Metal Bar(Tin)": {
+      "weight": "100"
+    },
+    "Metal Rod(Tin)": {
+      "weight": "20"
+    },
+    "Wood Beam(Soft)": {
+      "weight": "20"
+    },
+    "Wood Plank(Soft)": {
+      "weight": "2"
+    },
+    "Wood Board(Soft)": {
+      "weight": "4"
+    },
+    "Wood Dowel(Soft)": {
+      "weight": ".3"
+    },
+    "Wood Beam(Medium)": {
+      "weight": "25"
+    },
+    "Wood Plank(Medium)": {
+      "weight": "3"
+    },
+    "Wood Board(Medium)": {
+      "weight": "5"
+    },
+    "Wood Dowel(Medium)": {
+      "weight": ".5"
+    },
+    "Wood Beam(Hard)": {
+      "weight": "30"
+    },
+    "Wood Plank(Hard)": {
+      "weight": "4"
+    },
+    "Wood Board(Hard)": {
+      "weight": "6"
+    },
+    "Wood Dowel(Hard)": {
+      "weight": ".75"
+    },
+    "Wood Beam(Rare)": {
+      "weight": "25"
+    },
+    "Wood Plank(Rare)": {
+      "weight": "3"
+    },
+    "Wood Board(Rare)": {
+      "weight": "5"
+    },
+    "Wood Dowel(Rare)": {
+      "weight": ".5"
+    },
+    "Oil(Pint)": {
+      "weight": "1"
+    },
+    "Pitch(Pint)": {
+      "weight": "1"
+    },
+    "Satin(Sq.’)": {
+      "weight": ".5"
+    },
+    "Silk(Sq.’)": {
+      "weight": ".75"
+    },
+    "Satin(Sq.`)": {
+      "weight": ".5"
+    },
+    "Silk(Sq.`)": {
+      "weight": ".75"
+    },
+    "Carabineer": {
+      "weight": ".38"
+    },
+    "Climbing Hooks(Hand)": {
+      "weight": ".25"
+    },
+    "Climbing Spurs": {
+      "weight": ".32"
+    },
+    "Descender": {
+      "weight": ".5"
+    },
+    "Gloves(Climbing/Soft Leather)": {
+      "weight": ".25"
+    },
+    "Grappling Hook(Climbing)": {
+      "weight": "3"
+    },
+    "Hammer(Rock)": {
+      "weight": "4"
+    },
+    "Harness(Climbing)": {
+      "weight": "2"
+    },
+    "Knife(Hook)": {
+      "weight": ".19"
+    },
+    "Piton": {
+      "weight": ".13"
+    },
+    "Pulley": {
+      "weight": ".5"
+    },
+    "Rope(Giant Spidersilk per’)": {
+      "weight": "0.08"
+    },
+    "Rope(Giant Spidersilk per`)": {
+      "weight": "0.08"
+    },
+    "Mask(Breathing/Filter)": {
+      "weight": "1"
+    },
+    "Veil(Breathing/Cloth)": {
+      "weight": ".13"
+    },
+    "Veil(Breathing/Silk)": {
+      "weight": ".06"
+    },
+    "Veil(Breathing/Wool)": {
+      "weight": ".19"
+    },
+    "Evaporation Kit(Canister/Tarp/String/4 Poles)": {
+      "weight": "3"
+    },
+    "Extractor(Screw tap/Spout)": {
+      "weight": ".38"
+    },
+    "Goggles(Sun/Tinted)": {
+      "weight": ".32"
+    },
+    "Lotion(Sun/Grease/1 week)": {
+      "weight": "1"
+    },
+    "Air Bellows": {
+      "weight": "3"
+    },
+    "Air Bladder(10 min/no pump)": {
+      "weight": "1"
+    },
+    "Air Canister(30 min/needs pump)": {
+      "weight": "5"
+    },
+    "Air Hose(Per ’)": {
+      "weight": ".12"
+    },
+    "Air Hose(Per `)": {
+      "weight": ".12"
+    },
+    "Air Pump(Hand Pump)": {
+      "weight": "8"
+    },
+    "Air Pump(Steam)": {
+      "weight": "32"
+    },
+    "Diving Bell(Helmet)": {
+      "weight": "9"
+    },
+    "Diving Suit(Air Tight)": {
+      "weight": "15"
+    },
+    "Diving Weights": {
+      "weight": "1"
+    },
+    "Gas Valve": {
+      "weight": ".25"
+    },
+    "Goggles(Diving)": {
+      "weight": ".38"
+    },
+    "Plugs(Nose)": {
+      "weight": ".06"
+    },
+    "Plugs(Ear)": {
+      "weight": ".13"
+    },
+    "Snorkel": {
+      "weight": ".44"
+    },
+    "Webbed Fins": {
+      "weight": "2"
+    },
+    "Goggles(Snow)": {
+      "weight": ".38"
+    },
+    "Grappling Hook(Ice)": {
+      "weight": "3"
+    },
+    "Hammer(Ice)": {
+      "weight": "4"
+    },
+    "Shovel(Snow)": {
+      "weight": "4"
+    },
+    "Ski Poles": {
+      "weight": "2"
+    },
+    "Skis(Cross Country/Wide)": {
+      "weight": "4"
+    },
+    "Skis(Downhill/Thin)": {
+      "weight": "3"
+    },
+    "Backpack(Cooler)": {
+      "weight": "15"
+    },
+    "Goggles(Insulated)": {
+      "weight": ".38"
+    },
+    "Arrow(Fishing)": {
+      "weight": ".38"
+    },
+    "Bobber": {
+      "weight": ".12"
+    },
+    "Bobber(2 Color)": {
+      "weight": ".12"
+    },
+    "Bolt(Fishing)": {
+      "weight": ".25"
+    },
+    "Buoy(Small 1’)": {
+      "weight": "2"
+    },
+    "Buoy(Medium 3’)": {
+      "weight": "10"
+    },
+    "Buoy(Small 1`)": {
+      "weight": "2"
+    },
+    "Buoy(Medium 3`)": {
+      "weight": "10"
+    },
+    "Chain(Small/1“ links/per ’)": {
+      "weight": ".5"
+    },
+    "Chain(Medium/2“ links/per ’)": {
+      "weight": "2"
+    },
+    "Chain(Large/3“ links/per ’)": {
+      "weight": "5"
+    },
+    "Fishing Pole(Bamboo)": {
+      "weight": "1"
+    },
+    "Fishing Pole(Deep Sea)": {
+      "weight": "5"
+    },
+    "Fishing Pole(Metal)": {
+      "weight": "3"
+    },
+    "Fishing Line(Reinforced/per ’)": {
+      "weight": ".03"
+    },
+    "Harpoon(Fishing Javelin)": {
+      "weight": "7.2"
+    },
+    "Hook(Bone)": {
+      "weight": ".01"
+    },
+    "Hook(Deep Sea)": {
+      "weight": ".5"
+    },
+    "Hook(Metal)": {
+      "weight": ".01"
+    },
+    "Hook(Metal/3 Prong)": {
+      "weight": ".02"
+    },
+    "Lead Weight": {
+      "weight": "1"
+    },
+    "Lure(Colorful)": {
+      "weight": ".01"
+    },
+    "Lure(Flashing)": {
+      "weight": ".02"
+    },
+    "Lure(Simple)": {
+      "weight": ".01"
+    },
+    "Lure(Spinner)": {
+      "weight": ".02"
+    },
+    "Net(Drift/250’ x 250’)": {
+      "weight": "250"
+    },
+    "Net(Weighted/30’ x 30’)": {
+      "weight": "20"
+    },
+    "Net(Drift/250` x 250`)": {
+      "weight": "250"
+    },
+    "Net(Weighted/30` x 30`)": {
+      "weight": "20"
+    },
+    "Spear(Fishing)": {
+      "weight": "3"
+    },
+    "Trap(Crab/Lobster)": {
+      "weight": "2"
+    },
+    "Trap(Fish)": {
+      "weight": "1.5"
+    },
+    "Wire(Very Thin/1 32“ thick/per ’)": {
+      "weight": ".04"
+    },
+    "Wire(Thin/1 16“ thick/per ’)": {
+      "weight": ".2"
+    },
+    "Wire(Thick/1 8“ thick/per ’)": {
+      "weight": ".5"
+    },
+    "Wire(Very Thin/1 32“ thick/per`)": {
+      "weight": ".04"
+    },
+    "Wire(Thin/1 16“ thick/per`)": {
+      "weight": ".2"
+    },
+    "Wire(Thick/1 8“ thick/per`)": {
+      "weight": ".5"
+    },
+    "Air/Gas Bellows": {
+      "weight": "3"
+    },
+    "Air/Gas Bladder(10 min/no pump)": {
+      "weight": "1"
+    },
+    "Air/Gas Canister(30 min/needs pump)": {
+      "weight": "5"
+    },
+    "Air/Gas Hose(per ’)": {
+      "weight": ".12"
+    },
+    "Air/Gas Hose(per`)": {
+      "weight": ".12"
+    },
+    "Air Hose(Per`)": {
+      "weight": ".5"
+    },
+    "Air/Gas Pump(Hand Pump)": {
+      "weight": "8"
+    },
+    "Air/Gas Pump(Steam)": {
+      "weight": "32"
+    },
+    "Control(Lever)": {
+      "weight": "1.2"
+    },
+    "Goggles(Flying)": {
+      "weight": ".38"
+    },
+    "Grappling Anchor": {
+      "weight": "3"
+    },
+    "Harness(Flying)": {
+      "weight": "2"
+    },
+    "Twine(per`)": {
+      "weight": ".03"
+    },
+    "Twine(Heavy/per`)": {
+      "weight": ".04"
+    },
+    "Twine(Light/per`)": {
+      "weight": ".02"
+    },
+    "Twine(Wool/per`)": {
+      "weight": ".02"
+    },
+    "Leecher`s Tools": {
+      "weight": "2"
+    }
+  }
+}

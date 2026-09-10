@@ -1,0 +1,204 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "wilRatingValues",
+    "lines": [
+      30214,
+      30246
+    ]
+  },
+  "_fields": [
+    "controlResist",
+    "endure",
+    "specialLabel",
+    "specialNum"
+  ],
+  "entries": {
+    "0": {
+      "controlResist": 0,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "1": {
+      "controlResist": 0,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "2": {
+      "controlResist": 0,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "3": {
+      "controlResist": 0,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "4": {
+      "controlResist": 0,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "5": {
+      "controlResist": 1,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "6": {
+      "controlResist": 2,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "7": {
+      "controlResist": 4,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "8": {
+      "controlResist": 6,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "9": {
+      "controlResist": 8,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "10": {
+      "controlResist": 10,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "11": {
+      "controlResist": 15,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "12": {
+      "controlResist": 20,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "13": {
+      "controlResist": 25,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "14": {
+      "controlResist": 30,
+      "endure": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "15": {
+      "controlResist": 35,
+      "endure": 1,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "16": {
+      "controlResist": 40,
+      "endure": 2,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "17": {
+      "controlResist": 45,
+      "endure": 4,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "18": {
+      "controlResist": 50,
+      "endure": 6,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "19": {
+      "controlResist": 55,
+      "endure": 8,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "20": {
+      "controlResist": 60,
+      "endure": 10,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "21": {
+      "controlResist": 65,
+      "endure": 12,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "22": {
+      "controlResist": 70,
+      "endure": 14,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "23": {
+      "controlResist": 75,
+      "endure": 16,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "24": {
+      "controlResist": 80,
+      "endure": 18,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "25": {
+      "controlResist": 85,
+      "endure": 20,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "26": {
+      "controlResist": 90,
+      "endure": 22,
+      "specialLabel": "Will Reservoir",
+      "specialNum": "25"
+    },
+    "27": {
+      "controlResist": 99,
+      "endure": 24,
+      "specialLabel": "Will Reservoir",
+      "specialNum": "50"
+    },
+    "28": {
+      "controlResist": 100,
+      "endure": 26,
+      "specialLabel": "Will Reservoir",
+      "specialNum": "75"
+    },
+    "29": {
+      "controlResist": 100,
+      "endure": 28,
+      "specialLabel": "Will Reservoir",
+      "specialNum": "100"
+    },
+    "30": {
+      "controlResist": 100,
+      "endure": 30,
+      "specialLabel": "Will Reservoir",
+      "specialNum": "ALL"
+    }
+  }
+}

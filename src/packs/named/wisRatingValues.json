@@ -1,0 +1,172 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "wisRatingValues",
+    "lines": [
+      29878,
+      29910
+    ]
+  },
+  "_fields": [
+    "pietyControl",
+    "illusionResist",
+    "controlResistAdjust"
+  ],
+  "entries": {
+    "0": {
+      "pietyControl": -5,
+      "illusionResist": 0,
+      "controlResistAdjust": -40
+    },
+    "1": {
+      "pietyControl": -4,
+      "illusionResist": 0,
+      "controlResistAdjust": -35
+    },
+    "2": {
+      "pietyControl": -4,
+      "illusionResist": 0,
+      "controlResistAdjust": -30
+    },
+    "3": {
+      "pietyControl": -3,
+      "illusionResist": 0,
+      "controlResistAdjust": -25
+    },
+    "4": {
+      "pietyControl": -3,
+      "illusionResist": 0,
+      "controlResistAdjust": -20
+    },
+    "5": {
+      "pietyControl": -2,
+      "illusionResist": 1,
+      "controlResistAdjust": -15
+    },
+    "6": {
+      "pietyControl": -2,
+      "illusionResist": 2,
+      "controlResistAdjust": -10
+    },
+    "7": {
+      "pietyControl": -1,
+      "illusionResist": 5,
+      "controlResistAdjust": -5
+    },
+    "8": {
+      "pietyControl": -1,
+      "illusionResist": 10,
+      "controlResistAdjust": -5
+    },
+    "9": {
+      "pietyControl": 0,
+      "illusionResist": 15,
+      "controlResistAdjust": 0
+    },
+    "10": {
+      "pietyControl": 0,
+      "illusionResist": 20,
+      "controlResistAdjust": 0
+    },
+    "11": {
+      "pietyControl": 0,
+      "illusionResist": 25,
+      "controlResistAdjust": 0
+    },
+    "12": {
+      "pietyControl": 0,
+      "illusionResist": 30,
+      "controlResistAdjust": 0
+    },
+    "13": {
+      "pietyControl": 0,
+      "illusionResist": 35,
+      "controlResistAdjust": 0
+    },
+    "14": {
+      "pietyControl": 0,
+      "illusionResist": 40,
+      "controlResistAdjust": 0
+    },
+    "15": {
+      "pietyControl": 0,
+      "illusionResist": 45,
+      "controlResistAdjust": 0
+    },
+    "16": {
+      "pietyControl": 0,
+      "illusionResist": 50,
+      "controlResistAdjust": 0
+    },
+    "17": {
+      "pietyControl": 1,
+      "illusionResist": 55,
+      "controlResistAdjust": 5
+    },
+    "18": {
+      "pietyControl": 1,
+      "illusionResist": 60,
+      "controlResistAdjust": 5
+    },
+    "19": {
+      "pietyControl": 2,
+      "illusionResist": 65,
+      "controlResistAdjust": 10
+    },
+    "20": {
+      "pietyControl": 2,
+      "illusionResist": 70,
+      "controlResistAdjust": 15
+    },
+    "21": {
+      "pietyControl": 3,
+      "illusionResist": 75,
+      "controlResistAdjust": 20
+    },
+    "22": {
+      "pietyControl": 3,
+      "illusionResist": 80,
+      "controlResistAdjust": 25
+    },
+    "23": {
+      "pietyControl": 4,
+      "illusionResist": 85,
+      "controlResistAdjust": 30
+    },
+    "24": {
+      "pietyControl": 4,
+      "illusionResist": 90,
+      "controlResistAdjust": 35
+    },
+    "25": {
+      "pietyControl": 5,
+      "illusionResist": 95,
+      "controlResistAdjust": 40
+    },
+    "26": {
+      "pietyControl": 5,
+      "illusionResist": 100,
+      "controlResistAdjust": 45
+    },
+    "27": {
+      "pietyControl": 6,
+      "illusionResist": 100,
+      "controlResistAdjust": 50
+    },
+    "28": {
+      "pietyControl": 7,
+      "illusionResist": 100,
+      "controlResistAdjust": 55
+    },
+    "29": {
+      "pietyControl": 9,
+      "illusionResist": 100,
+      "controlResistAdjust": 60
+    },
+    "30": {
+      "pietyControl": 10,
+      "illusionResist": 200,
+      "controlResistAdjust": 65
+    }
+  }
+}

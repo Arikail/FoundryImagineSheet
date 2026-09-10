@@ -1,0 +1,140 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socRatingValues",
+    "lines": [
+      30068,
+      30100
+    ]
+  },
+  "_fields": [
+    "morale",
+    "rank"
+  ],
+  "entries": {
+    "0": {
+      "morale": -40,
+      "rank": "Damned Soul"
+    },
+    "1": {
+      "morale": -35,
+      "rank": "Condemned Soul"
+    },
+    "2": {
+      "morale": -30,
+      "rank": "Tortured Soul"
+    },
+    "3": {
+      "morale": -25,
+      "rank": "Tormented Soul"
+    },
+    "4": {
+      "morale": -20,
+      "rank": "Lost Soul"
+    },
+    "5": {
+      "morale": -15,
+      "rank": "Slave/Escaped Slave"
+    },
+    "6": {
+      "morale": -15,
+      "rank": "Freed Slave/Indentured"
+    },
+    "7": {
+      "morale": -10,
+      "rank": "Peasant/Serf or Tribesperson"
+    },
+    "8": {
+      "morale": -10,
+      "rank": "Peasant/Serf or Tribesperson"
+    },
+    "9": {
+      "morale": -5,
+      "rank": "Commoner/Skilled Laborer"
+    },
+    "10": {
+      "morale": -5,
+      "rank": "Commoner/Skilled Laborer"
+    },
+    "11": {
+      "morale": -2,
+      "rank": "Tradesperson/Craftsperson"
+    },
+    "12": {
+      "morale": 0,
+      "rank": "Tradesperson/Craftsperson"
+    },
+    "13": {
+      "morale": 0,
+      "rank": "Master Tradesperson/Craftsperson"
+    },
+    "14": {
+      "morale": 2,
+      "rank": "Master Tradesperson/Craftsperson"
+    },
+    "15": {
+      "morale": 5,
+      "rank": "Noble:Knight Bannerete(family of)"
+    },
+    "16": {
+      "morale": 5,
+      "rank": "Noble:Baron (family of)"
+    },
+    "17": {
+      "morale": 10,
+      "rank": "Noble:Count (family of)"
+    },
+    "18": {
+      "morale": 10,
+      "rank": "Noble:Earl (family of)"
+    },
+    "19": {
+      "morale": 15,
+      "rank": "Noble:Duke (family of)"
+    },
+    "20": {
+      "morale": 15,
+      "rank": "Noble:King (family of)"
+    },
+    "21": {
+      "morale": 20,
+      "rank": "Chosen Soul"
+    },
+    "22": {
+      "morale": 25,
+      "rank": "Honored Soul"
+    },
+    "23": {
+      "morale": 30,
+      "rank": "Privileged Soul"
+    },
+    "24": {
+      "morale": 35,
+      "rank": "Lesser Supernatural"
+    },
+    "25": {
+      "morale": 40,
+      "rank": "Minor Supernatural"
+    },
+    "26": {
+      "morale": 45,
+      "rank": "Major Supernatural"
+    },
+    "27": {
+      "morale": 50,
+      "rank": "Arch Supernatural"
+    },
+    "28": {
+      "morale": 55,
+      "rank": "Semi-Deity"
+    },
+    "29": {
+      "morale": 60,
+      "rank": "Deity"
+    },
+    "30": {
+      "morale": 65,
+      "rank": "Supreme Deity"
+    }
+  }
+}

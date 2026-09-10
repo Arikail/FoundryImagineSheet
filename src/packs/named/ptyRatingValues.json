@@ -1,0 +1,172 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "ptyRatingValues",
+    "lines": [
+      30164,
+      30196
+    ]
+  },
+  "_fields": [
+    "commune",
+    "specialLabel",
+    "specialNum"
+  ],
+  "entries": {
+    "0": {
+      "commune": 0,
+      "specialLabel": "Disfavor",
+      "specialNum": "10"
+    },
+    "1": {
+      "commune": 0,
+      "specialLabel": "Disfavor",
+      "specialNum": "8"
+    },
+    "2": {
+      "commune": 0,
+      "specialLabel": "Disfavor",
+      "specialNum": "6"
+    },
+    "3": {
+      "commune": 0,
+      "specialLabel": "Disfavor",
+      "specialNum": "4"
+    },
+    "4": {
+      "commune": 0,
+      "specialLabel": "Disfavor",
+      "specialNum": "2"
+    },
+    "5": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "6": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "7": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "8": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "9": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "10": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "11": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "12": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "13": {
+      "commune": 0,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "14": {
+      "commune": 1,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "15": {
+      "commune": 1,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "16": {
+      "commune": 2,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "17": {
+      "commune": 4,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "18": {
+      "commune": 6,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "19": {
+      "commune": 8,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "20": {
+      "commune": 10,
+      "specialLabel": "",
+      "specialNum": ""
+    },
+    "21": {
+      "commune": 12,
+      "specialLabel": "Favor",
+      "specialNum": "1"
+    },
+    "22": {
+      "commune": 14,
+      "specialLabel": "Favor",
+      "specialNum": "2"
+    },
+    "23": {
+      "commune": 16,
+      "specialLabel": "Favor",
+      "specialNum": "3"
+    },
+    "24": {
+      "commune": 18,
+      "specialLabel": "Favor",
+      "specialNum": "4"
+    },
+    "25": {
+      "commune": 20,
+      "specialLabel": "Favor",
+      "specialNum": "5"
+    },
+    "26": {
+      "commune": 22,
+      "specialLabel": "Favor",
+      "specialNum": "6"
+    },
+    "27": {
+      "commune": 24,
+      "specialLabel": "Favor",
+      "specialNum": "7"
+    },
+    "28": {
+      "commune": 26,
+      "specialLabel": "Favor",
+      "specialNum": "8"
+    },
+    "29": {
+      "commune": 28,
+      "specialLabel": "Favor",
+      "specialNum": "9"
+    },
+    "30": {
+      "commune": 30,
+      "specialLabel": "Favor",
+      "specialNum": "10"
+    }
+  }
+}

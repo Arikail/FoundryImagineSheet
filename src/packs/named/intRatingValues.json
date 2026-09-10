@@ -1,0 +1,236 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "intRatingValues",
+    "lines": [
+      29829,
+      29861
+    ]
+  },
+  "_fields": [
+    "spokenLanguages",
+    "writtenLanguages",
+    "auraControlAdjust",
+    "initiativeAdjust",
+    "controlResistAdjust"
+  ],
+  "entries": {
+    "0": {
+      "spokenLanguages": 0,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -5,
+      "initiativeAdjust": 6,
+      "controlResistAdjust": -50
+    },
+    "1": {
+      "spokenLanguages": 0,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -4,
+      "initiativeAdjust": 5,
+      "controlResistAdjust": -45
+    },
+    "2": {
+      "spokenLanguages": 0,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -4,
+      "initiativeAdjust": 4,
+      "controlResistAdjust": -40
+    },
+    "3": {
+      "spokenLanguages": 0,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -3,
+      "initiativeAdjust": 3,
+      "controlResistAdjust": -35
+    },
+    "4": {
+      "spokenLanguages": 0.25,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -3,
+      "initiativeAdjust": 2,
+      "controlResistAdjust": -25
+    },
+    "5": {
+      "spokenLanguages": 0.33,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -2,
+      "initiativeAdjust": 1,
+      "controlResistAdjust": -20
+    },
+    "6": {
+      "spokenLanguages": 0.33,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -2,
+      "initiativeAdjust": 0,
+      "controlResistAdjust": -15
+    },
+    "7": {
+      "spokenLanguages": 0.66,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -1,
+      "initiativeAdjust": 0,
+      "controlResistAdjust": -10
+    },
+    "8": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 0,
+      "auraControlAdjust": -1,
+      "initiativeAdjust": 0,
+      "controlResistAdjust": -5
+    },
+    "9": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 0.33,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": 0,
+      "controlResistAdjust": -5
+    },
+    "10": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 0.33,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -1,
+      "controlResistAdjust": 0
+    },
+    "11": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 0.66,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -1,
+      "controlResistAdjust": 0
+    },
+    "12": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 0.66,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -2,
+      "controlResistAdjust": 0
+    },
+    "13": {
+      "spokenLanguages": 1,
+      "writtenLanguages": 1,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -2,
+      "controlResistAdjust": 0
+    },
+    "14": {
+      "spokenLanguages": 2,
+      "writtenLanguages": 1,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -3,
+      "controlResistAdjust": 0
+    },
+    "15": {
+      "spokenLanguages": 2,
+      "writtenLanguages": 1,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -4,
+      "controlResistAdjust": 0
+    },
+    "16": {
+      "spokenLanguages": 3,
+      "writtenLanguages": 1,
+      "auraControlAdjust": 0,
+      "initiativeAdjust": -5,
+      "controlResistAdjust": 5
+    },
+    "17": {
+      "spokenLanguages": 3,
+      "writtenLanguages": 2,
+      "auraControlAdjust": 1,
+      "initiativeAdjust": -6,
+      "controlResistAdjust": 5
+    },
+    "18": {
+      "spokenLanguages": 4,
+      "writtenLanguages": 2,
+      "auraControlAdjust": 1,
+      "initiativeAdjust": -7,
+      "controlResistAdjust": 10
+    },
+    "19": {
+      "spokenLanguages": 5,
+      "writtenLanguages": 3,
+      "auraControlAdjust": 2,
+      "initiativeAdjust": -8,
+      "controlResistAdjust": 15
+    },
+    "20": {
+      "spokenLanguages": 6,
+      "writtenLanguages": 4,
+      "auraControlAdjust": 2,
+      "initiativeAdjust": -9,
+      "controlResistAdjust": 20
+    },
+    "21": {
+      "spokenLanguages": 7,
+      "writtenLanguages": 5,
+      "auraControlAdjust": 3,
+      "initiativeAdjust": -10,
+      "controlResistAdjust": 25
+    },
+    "22": {
+      "spokenLanguages": 8,
+      "writtenLanguages": 6,
+      "auraControlAdjust": 3,
+      "initiativeAdjust": -11,
+      "controlResistAdjust": 30
+    },
+    "23": {
+      "spokenLanguages": 9,
+      "writtenLanguages": 7,
+      "auraControlAdjust": 4,
+      "initiativeAdjust": -12,
+      "controlResistAdjust": 35
+    },
+    "24": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 8,
+      "auraControlAdjust": 4,
+      "initiativeAdjust": -13,
+      "controlResistAdjust": 40
+    },
+    "25": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 9,
+      "auraControlAdjust": 5,
+      "initiativeAdjust": -14,
+      "controlResistAdjust": 45
+    },
+    "26": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 10,
+      "auraControlAdjust": 5,
+      "initiativeAdjust": -15,
+      "controlResistAdjust": 50
+    },
+    "27": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 10,
+      "auraControlAdjust": 6,
+      "initiativeAdjust": -16,
+      "controlResistAdjust": 55
+    },
+    "28": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 10,
+      "auraControlAdjust": 8,
+      "initiativeAdjust": -17,
+      "controlResistAdjust": 60
+    },
+    "29": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 10,
+      "auraControlAdjust": 10,
+      "initiativeAdjust": -18,
+      "controlResistAdjust": 65
+    },
+    "30": {
+      "spokenLanguages": 10,
+      "writtenLanguages": 10,
+      "auraControlAdjust": 15,
+      "initiativeAdjust": -21,
+      "controlResistAdjust": 70
+    }
+  }
+}

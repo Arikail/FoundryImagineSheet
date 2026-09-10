@@ -1,0 +1,2062 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialskilldict",
+    "lines": [
+      56550,
+      56755
+    ]
+  },
+  "_fields": [
+    "attr1",
+    "attr2",
+    "skillRating",
+    "startingDice",
+    "learnTime",
+    "sourcebook",
+    "page",
+    "description"
+  ],
+  "entries": {
+    "Accounting": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The skill of managing and auditing financial transactions for an individual or organization."
+    },
+    "Acting": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The ability to entertain other beings by assuming the role of a (real or imagined) personality, either individually or in a group, and acting out that personality."
+    },
+    "Administration": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The management of any large organization."
+    },
+    "Animal Husbandry": {
+      "attr1": "KNW",
+      "attr2": "WIL",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The capacity to care for and breed livestock."
+    },
+    "Animal Training": {
+      "attr1": "INT",
+      "attr2": "WIL",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The ability to train an animal to respond to verbal, or somatic gestures to perform an action."
+    },
+    "Anthropology": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The knowledge of customs, and practices of cultures foreign to the practitioner."
+    },
+    "Archaeology": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The study of past life, and culture by the recovery, and examination of remaining material evidence, such as graves, buildings, tools, and pottery."
+    },
+    "Appraisal": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "46",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The ability to look over an object of possible value, and determine its worth, and origin."
+    },
+    "Architecture/Engineering": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The capability of conceptualizing, and drawing designs for the construction of intricate items or large structures."
+    },
+    "Armoring": {
+      "attr1": "STR",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "This skill provides the `how to` knowledge of creating and repairing armor along with the ability to determine composition, origin, and value of a piece of armor."
+    },
+    "Artisan": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "An Artisan is a virtuoso of the applied arts, allowing the practitioner to create various works of an."
+    },
+    "Astrology": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The tracking of celestial effect (real, or imagined) on an individual being."
+    },
+    "Astronomy": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The study of the stars, or heavenly bodies."
+    },
+    "Baking/Cooking": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "10",
+      "sourcebook": "Player`s Guide",
+      "page": "147",
+      "description": "The ability to cook an appetizing meal or food item."
+    },
+    "Ballooning": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The ability to create, operate, and maintain a hot air, or lighter than air balloon, or dirigible."
+    },
+    "Banker/Broker": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "164",
+      "description": "The ability to handle financial transactions, and make financial deals with individuals, and institutions."
+    },
+    "Bar/Inn Keeping": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The capacity to handle the day to day operations of a tavern or inn, including its customers."
+    },
+    "Barbering": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The ability to groom hair in a pleasing way."
+    },
+    "Barrel Making": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The skill of creating and repairing watertight, wooden, storage containers."
+    },
+    "Bartering/Haggling": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The ability to increase a profit or reduce a payment when making a business deal."
+    },
+    "Basket Weaving": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "6",
+      "startingDice": "10d6%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The ability to weave wicker, reed, bamboo, or other heavy fiber into patterns, and create, or repair a basket made of such material."
+    },
+    "Bee Keeping/Insect Handling": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The ability to breed and maintain insects in colonies, or groups, to use as food items, or harvest fiber or material they naturally produce."
+    },
+    "Begging": {
+      "attr1": "KNW",
+      "attr2": "CHM",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The capacity to appear desperate, wounded, helpless, down trodden, diseased, or otherwise unfortunate enough to warrant help of some kind."
+    },
+    "Boat Wright": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "148",
+      "description": "The skill of determining composition, origin, and value of an existing water vessel as well as designing, creating, and repairing water craft."
+    },
+    "Bookbinder": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "10",
+      "startingDice": "5dl0%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to use adhesives, string, and tension to cohere many sheets of parchment into a book."
+    },
+    "Botanist": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand the complete system of living flora within any environment or environ."
+    },
+    "Botany": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand the complete system of living flora within any environment or environ."
+    },
+    "Brewing": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The process of fermenting malt, and hops into beer, or ale using an existing recipe. This skill can also be used to experiment, and concoct a new blend of beer, ale, or other types of alcoholic spirits such as whisky."
+    },
+    "Butcher": {
+      "attr1": "STR",
+      "attr2": "KNW",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to efficiently prepare, and preserve the meat of a slaughtered animal for consumption."
+    },
+    "Butler": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "9",
+      "startingDice": "5d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The chief servant of a household with the ability to fulfill and anticipate the specific day to day needs of an employer."
+    },
+    "Cabinetry": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to create, and repair fine compartmentalized furniture such as desks, cabinets, chests, coffers and bureaus as well as identify the composition, origin, and value of such items."
+    },
+    "Cage Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The proficiency allowing creation, and repair of wooden and metal cages of various sizes."
+    },
+    "Calligraphy": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "164",
+      "description": "The ability to create beautiful writing characters, fonts, and pictographs."
+    },
+    "Candle/Oil Making": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "8",
+      "startingDice": "5dl0%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to create lamp oil, and candles from the separation of tallow, or animal fat."
+    },
+    "Carousing": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The ability to make strong acquaintances through heavy drinking, companionship, and generally rowdy merry making."
+    },
+    "Carving": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to create three-dimensional works of art, or representations by carving wood, bone, jade, or other similar substances with a sharp instrument."
+    },
+    "Chariot Driving": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The ability to control a two-wheeled, animal-drawn vehicle at high speeds."
+    },
+    "Chariot Making": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "149",
+      "description": "The skill of creating, and repairing a two-wheeled, animal-drawn vehicle."
+    },
+    "Chemistry": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "Chemistry is the basic knowledge of the results expected from combining multiple substances together (basic chemistry without knowledge of atomic structure). The ability to understand the properties of alkali and acid. base and neutralizers, mainly the observed reactions between known natural substances. The ability to comprehend three of the states of matter: solid, liquid, and gas but not plasma, Bose/Einstein condensate, or the degenerate states of matter (super fluids or super solids)."
+    },
+    "Chirugeon": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The ability to give basic medical treatment to someone injured without exacerbating existing ailments."
+    },
+    "Climatology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The understanding of climates, and their seasonal variations, and expected effects on the environment."
+    },
+    "Clowning/Jesting": {
+      "attr1": "AGL",
+      "attr2": "WIS",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The capability of moving, acting, or talking in a manner that is amusing to an audience."
+    },
+    "Cobbling": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The ability to create, and repair footwear for bipeds created out of leather, or woven fiber."
+    },
+    "Collecting": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The ability to organize, and appraise items in a collection."
+    },
+    "Composer": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The ability to produce musical compositions that are pleasing to others."
+    },
+    "Cosmetics": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The enhancement of physical appearance through makeup use."
+    },
+    "Courtesan": {
+      "attr1": "APP",
+      "attr2": "CHM",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The capacity to act as companion, and be pleasing as both a conversationalist, and a lover."
+    },
+    "Craftsman": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "A Craftsman is an artificer, and tradesperson with the ability to manufacture general goods of various kinds."
+    },
+    "Crying/Hawking": {
+      "attr1": "VIT",
+      "attr2": "CHM",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "150",
+      "description": "The ability to memorize a short speech or proclamation, and be vocally heard even in a large, boisterous crowd."
+    },
+    "Dancing": {
+      "attr1": "AGL",
+      "attr2": "VIT",
+      "skillRating": "8",
+      "startingDice": "5dl0%",
+      "learnTime": "36",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to dance alone, or in groups in a pleasing fashion, and the ability to learn new dances."
+    },
+    "Debating": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to craft, and deliver a convincing argument that may, or may not be logical, or factual."
+    },
+    "Diplomacy": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "17",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to comprehend, and negotiate a political situation for various outcomes."
+    },
+    "Diving": {
+      "attr1": "AGL",
+      "attr2": "VIT",
+      "skillRating": "9",
+      "startingDice": "5d10%",
+      "learnTime": "36",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to dive from a height, gracefully striking the water with a minimum of force, and the ability to hold one’s breath (underwater) for a longer duration than normal individuals."
+    },
+    "Doll Making": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to produce, or repair pleasing, or accurate miniature representations of children, adults and creatures out of painted wood, stuffed cloth and porcelain."
+    },
+    "Drawing/Sketching": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to sketch an existing object or scene, or something altogether imagined."
+    },
+    "Drilling": {
+      "attr1": "INT",
+      "attr2": "WIL",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "151",
+      "description": "The ability to train oneself, or others with a simple routine designed to improve general ability, or learn a specific task (such as marching in step)."
+    },
+    "Drudgery": {
+      "attr1": "STR",
+      "attr2": "VIT",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The ability to perform repetitive maintenance labor (such as cleaning, scrubbing and organizing) in an efficient and timely manner."
+    },
+    "Dyer": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The ability to create liquid dyes from natural substances (such as minerals, plants and animals), and use them to permanently change the color of a piece of glass, leather, wood, Slone, metal, or cloth to one particular color."
+    },
+    "Economics": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The art of understanding the production, and distribution of wealth, and commodities within a specific marketplace."
+    },
+    "Engraving/Etching": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The ability to engrave, or etch surfaces with an artistic, or decorative purpose."
+    },
+    "Espionage": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4dl0%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "Espionage imparts the general knowledge, and practice of techniques involving stealth, intrusion, and deception. The espionage artist uses stealth and cunning to infiltrate, subvert, and otherwise thwart detection, and discovery."
+    },
+    "Etiquette": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "Allows the proper carrying, and performance of oneself during a formal affair, or interaction with nobility, or specific culture."
+    },
+    "Excavation": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to slowly and carefully remove fossils, bones, relics, and pieces from a dig site without damaging them. Not to be confused with mining/tunneling."
+    },
+    "Explorer": {
+      "attr1": "INT",
+      "attr2": "VIT",
+      "skillRating": "17",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The desire to travel beyond the known horizon, and discover new lands, new ways, and new ideas."
+    },
+    "Exploser": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Master`s Manual",
+      "page": "88",
+      "description": "The ability to mix, and properly ignite explosive compounds."
+    },
+    "Falconry": {
+      "attr1": "INT",
+      "attr2": "WIL",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The ability to train a falcon for use in hunting."
+    },
+    "Farming/Planting": {
+      "attr1": "STR",
+      "attr2": "KNW",
+      "skillRating": "9",
+      "startingDice": "5d10%",
+      "learnTime": "36",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The capability of planting seeds, and tending to the plants as they mature."
+    },
+    "Fashion": {
+      "attr1": "APP",
+      "attr2": "CHM",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The knowledge, or creation of the latest custom, or style of dress."
+    },
+    "Ferrier": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "152",
+      "description": "The ability to steer a ferry, barge, or small boat to, and from different shores."
+    },
+    "Fire Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to produce fire even in adverse weather conditions with few tools."
+    },
+    "Fishing": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to catch fish by line, pole, net, trap, or spear in salt, or fresh water."
+    },
+    "Fletching/Bow Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "This skill provides the `how to` knowledge to create a bow, arrow (for a bow) and quarrel (for a crossbow)."
+    },
+    "Flint Knapping": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to find, and shape the correct stone to provide a variety of stone tools and weapons."
+    },
+    "Florist/Horticulturist": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand the reproduction, growth, and care of flowers, fruits, vegetables, and ornamental plants. Also allows for pleasing arrangement of flowers and ornamental plants."
+    },
+    "Foraging/Forestry": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to properly identify natural foliage (living or dead), and specific knowledge of a plant such as classification, habitat, growth, reproduction and edibility."
+    },
+    "Forensics": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The use of magic, divine magic, science of the natural world, and technology to establish facts good enough to be admitted as evidence in a court of law."
+    },
+    "Fortune Telling": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The act of pretending to predict the future through a physical medium such as a crystal ball, tea leaves, tarot cards, and chicken bones."
+    },
+    "Furniture Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to manufacture fine furniture items."
+    },
+    "Gambling": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to understand, and participate in games of chance."
+    },
+    "Gemology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand the formation, and distribution of precious, and semi-precious crystalline minerals."
+    },
+    "Genealogy": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to read, and understand, or construct a lineage for a family or individual."
+    },
+    "Geography": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "153",
+      "description": "The ability to map interrelations of land type, political boundaries, population, plant, and animal types, climates, and minerals."
+    },
+    "Geology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The study of geological processes, and the physical history of earth."
+    },
+    "Glass Blowing": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The ability form sheets, or to blow molten glass into more intricate shapes (such as globes) made of glass."
+    },
+    "Gossip Mongery": {
+      "attr1": "CHM",
+      "attr2": "",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The ability to circulate rumors within a social clique."
+    },
+    "Haberdasher": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to create, and select, and fit hats for every occasion."
+    },
+    "Harlotry": {
+      "attr1": "AGL",
+      "attr2": "APP",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The ability to entice another into having physical relations for payment, or barter as well as the performance of those physical relations."
+    },
+    "Harvesting": {
+      "attr1": "STR",
+      "attr2": "VIT",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The capability of harvesting a plant (whether it is a fruit, nut, root, or fiber)."
+    },
+    "Heavy Drinking": {
+      "attr1": "VIT",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The ability to consume intoxicants, and stave off ill effects."
+    },
+    "Heraldry": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The capacity to identify and create a symbol, flag, banner, or emblem."
+    },
+    "History": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The knowledge, and understanding of past events."
+    },
+    "Hunting/Trapping": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "Hunting, and trapping are the active, and passive pursuit (respectively) of wild animals for the purpose of catching, or killing."
+    },
+    "Hydrology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand movement, distribution, and qualities of liquids."
+    },
+    "Instruction": {
+      "attr1": "WIS",
+      "attr2": "WIL",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The general ability to leach others in the use of skills, or impart general information in a fashion the learner will likely remember."
+    },
+    "Instrument Making": {
+      "attr1": "AGL",
+      "attr2": "WIS",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "154",
+      "description": "The `know how` to craft, repair, and appraise musical instruments."
+    },
+    "Instrument Playing": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to tune an instrument as well as play nonmagical scores on a musical instrument in a pleasing manner."
+    },
+    "Inventor": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "20",
+      "startingDice": "3d10%",
+      "learnTime": "80",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "An inventor is someone who devises a new process, or machine of their own contrivance."
+    },
+    "Irrigation": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to get water to the growing crops, or trees for hydration."
+    },
+    "Juggling": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to keep multiple objects in continuous motion in the air by catching, and tossing."
+    },
+    "Kite Flying": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The ability to fly a man kite, or a free-flying hang glider."
+    },
+    "Laborer": {
+      "attr1": "STR",
+      "attr2": "AGL",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to perform manual labor."
+    },
+    "Lady Servant": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to fulfill the specific day-to-day needs of a female employer."
+    },
+    "Leadership": {
+      "attr1": "WIS",
+      "attr2": "WIL",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to size up individuals within a situation, and guide the individuals through the situation in an effective, motivating manner."
+    },
+    "Leather Working": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to work with prepared animal skins to make a pliable, and supple leather item. Leather Working also incorporates the ability to use various sorts of tools to inscribe intricate patterns upon a leather item."
+    },
+    "Leeching": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "The ability to heal an animal or being through non-magical means such as bloodletting, and non-magical herbal remedies."
+    },
+    "Lens Making": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The ability to grind glass into lenses."
+    },
+    "Librarian": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "155",
+      "description": "A Librarian is trained in organizing, preserving, and providing services for a collection of texts."
+    },
+    "Lip Reading": {
+      "attr1": "INT",
+      "attr2": "",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to understand speech based on lip movement."
+    },
+    "Locksmith": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The `know how` of identifying, creating, and mending various types of locking devices utilizing bolts, and tumblers."
+    },
+    "Logic": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand, and craft a compelling proposition based on reason without faith, or appealing to personality, or credibility."
+    },
+    "Loom Mastery": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to use a loom to produce simple woven goods from yarn."
+    },
+    "Lumberjack": {
+      "attr1": "STR",
+      "attr2": "VIT",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to fell trees in a controlled fashion."
+    },
+    "Massage Therapy": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "166",
+      "description": "The ability to utilize massage to promote wellbeing."
+    },
+    "Mathematics": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to use higher forms of general math."
+    },
+    "Metal Working": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "Provides a Smithy with the ability to create refined metal goods. Once a metal item is forged, Metal Working can also be used to inscribe detailed patterns (such as runes) as well as polish the metal to attain the brightest sheen possible. Requires a forge to shape the metal."
+    },
+    "Metallurgy": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to use a known formula or process to smelt metal alloys (such as adding silver to steel to create a silvered blade). Two minerals that have similar appearance, and properties (such as iron pyrite and gold) may be differentiated with Metallurgy."
+    },
+    "Metaphysics": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "The ability to understand, and postulate a model of how the mystical universe works."
+    },
+    "Meteorology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Legends of the Unknown",
+      "page": "72",
+      "description": "The ability to use science of the atmosphere, including cloud coverage, air pressure, velocity, and direction of wind, and various scents to predict the weather. Grants a chance at knowledge of some potential disasters."
+    },
+    "Midwife": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "156",
+      "description": "Most commonly, a midwife is a female that assists other females during childbirth."
+    },
+    "Milling": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to use a pestle, and mortar, or a large grinding wheel to grind grain into flour, or meal."
+    },
+    "Mining/Tunneling": {
+      "attr1": "STR",
+      "attr2": "AGL",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to quarry stone more mine metal ore while moving large quantities of earth. Mining/Tunneling also provides the `how to` of creating tunnels and shoring up tunnel walls."
+    },
+    "Mocking": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The ability to jibe, degrade, or denounce another with intelligence, and wit."
+    },
+    "Mountaineering": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The practice of safely scaling large obstacles."
+    },
+    "Music Theory": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "46",
+      "sourcebook": "Legends of the Unknown",
+      "page": "73",
+      "description": "The knowledge, and understanding of the science of music, including the basic relationship between harmony, melody, and rhythm."
+    },
+    "Oceanography": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Legends of the Unknown",
+      "page": "73",
+      "description": "The exploration, and scientific study of the ocean, and its phenomena. Grants a chance at knowledge of some potential disasters."
+    },
+    "Overseer/Manager": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to organize, and orchestrate factions, or work intensive projects in a socioeconomic group."
+    },
+    "Page": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to serve a political body, or in situation by memorizing all of its duties and requirements, and performing them in an efficient manner."
+    },
+    "Painting": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to create portraits of people, or places (real, or imagined) with paint, brush on woven material (such as a canvas)."
+    },
+    "Paving/Road Building": {
+      "attr1": "VIT",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to pave, or repair cleared roads, or paths using materials such as gravel, bricks, and stone blocks."
+    },
+    "Perfume/Scent Making": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to produce scented oils, liquid, powders, or potpourris."
+    },
+    "Philosophy": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "72",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The ability to rationalize, and postulate a model of how the mental universe works, or how a society of beings may coexist."
+    },
+    "Physics": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "165",
+      "description": "The ability to understand, and postulate a model of how the physical universe works."
+    },
+    "Physiology": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "157",
+      "description": "The science of studying parts of the body (muscles, bones, organs), their functions, and where they are located in a living organism."
+    },
+    "Plumbing": {
+      "attr1": "STR",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "68",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "The ability to create and service plumbing."
+    },
+    "Politics": {
+      "attr1": "KNW",
+      "attr2": "CHM",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The art of conducting governmental affairs such as proposing, and changing laws on a day-to-day basis."
+    },
+    "Pottery Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The skill of determining origin, value, and composition as well as creating, and repairing ceramic goods made of earthenware, and stoneware."
+    },
+    "Printing/Typesetting": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "Books, leaflets, pamphlets and papers that can be mass produced without scribing. Either individual type (letters) made of fired clay, metal or wood are set on a board and then inked. The paper or surface is placed against the inked type (letters) and a page of the books, leaflets, pamphlets or paper. This is repeated for each copy and then the next page is typeset, inked and produced. In information age cultures the typeset gets replaced with printing plates that are etched (either by hand or with chemicals) and can be used repeatedly to produce the pages."
+    },
+    "Prospecting": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The ability to use geographic, and geologic information to identify an area where are, minerals, or other precious materials may be found."
+    },
+    "Psychology": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "The ability to understand humanoid behavior both normal and abnormal."
+    },
+    "Pulper": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The ability to use straw, rags, wood, or other fibrous material to create paper. The process takes several days to complete."
+    },
+    "Puppetry": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The ability to entertain, or inform through use of puppets, or dolls, and voices."
+    },
+    "Pyrotechnics": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "89",
+      "description": "The `know how` to create fireworks, and weak explosives from highly combustible materials."
+    },
+    "Recite Poetry": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The ability to read and recite a non-magical poem, or verse in a pleasing fashion."
+    },
+    "Reporting/Journalism": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "The ability to craft and create a compelling storyline from factual details."
+    },
+    "Riding": {
+      "attr1": "AGL",
+      "attr2": "WIL",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The ability to correctly apply riding tack (saddle, saddle blanket, bridle, reins, saddlebags) to a riding beast, and to stay on the back of the beast under difficult conditions."
+    },
+    "Rope Making": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "The ability to create sturdy rope out of braided strands of flax, hemp, silk, or wire."
+    },
+    "Rope Use": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "158",
+      "description": "Practitioners of this skill are knowledgeable of various aspects of rope, and knots: material strengths, load limits, and how certain knots modify those values."
+    },
+    "Rowing": {
+      "attr1": "STR",
+      "attr2": "VIT",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to use an oar to row a boat alone or in harmony with others in an efficient manner."
+    },
+    "Running": {
+      "attr1": "AGL",
+      "attr2": "VIT",
+      "skillRating": "6",
+      "startingDice": "10d6%",
+      "learnTime": "24",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to jog, or run at a sustained pace over long distances."
+    },
+    "Sapping": {
+      "attr1": "STR",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The practice of undermining structures, or terrain by tunneling under them, and creating a controlled collapse."
+    },
+    "Scavenging": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "166",
+      "description": "The ability to find needed items, and shelter that are present within urban environments."
+    },
+    "Scholar": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "A Scholar is a student of knowledge, often distinguished for breadth of knowledge, and experience."
+    },
+    "Science": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "The ability to create, and evaluate hypothesis, and world models allowing for advances in many fields."
+    },
+    "Scribing": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to accurately hand copy the text of a written work."
+    },
+    "Sculpting": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to create intricate three-dimensional works of art out of stone, clay, or more exotic substances such as jade."
+    },
+    "Sewing": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "8",
+      "startingDice": "5dl0%",
+      "learnTime": "32",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The capacity to sew materials together with fiber, or thread, repair woven or thin flexible materials, and create intricate designs within cloth."
+    },
+    "Shepherdry": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to use sounds, movement, and other animals (such as dogs) to herd, tend, and guard roaming livestock such as sheep, and cattle."
+    },
+    "Signaling": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to use smoke, fire, lighting, or flags to communicate in an established non-spoken language over a great distance."
+    },
+    "Sing Songs": {
+      "attr1": "CHM",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "159",
+      "description": "The ability to read, and sing a non-magical song in a pleasing fashion."
+    },
+    "Skinning/Tanning": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The capability of skinning the hide of an animal, and treating it to prevent decay (see Leather Working)."
+    },
+    "Slave Driving": {
+      "attr1": "WIL",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The ability to handle and promote the welfare of slaves for a master in cultures that permit the ownership of other sapient beings."
+    },
+    "Smithy": {
+      "attr1": "STR",
+      "attr2": "AGL",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to remove impurities from raw metal materials by use of applied heat and force. The refined metal from this process is suitable for making, and repairing tools, armor and weapons. Any raw metal (including precious metal ore) may be forged."
+    },
+    "Soap Making": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "5",
+      "startingDice": "10d6%",
+      "learnTime": "20",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to create soap from natural materials like lye, animal fat, and plant fiber."
+    },
+    "Soldiering": {
+      "attr1": "AGL",
+      "attr2": "WIL",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The capability of following military protocol and completing actions that represent the movements and conduct of a military organization."
+    },
+    "Spelunking": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The practice of safely descending into natural caves, caverns, crevasses, sinkholes, etc."
+    },
+    "Spinning": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to spin plant, or animal fiber into thread, string, or yarn."
+    },
+    "Squire": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to serve a single figure within a political body, or institution. If this figure is a Knight, duties include the marshaling and handling of armaments, equipment, and standard."
+    },
+    "Steam Power": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "17",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The ability to use a steam to generate locomotion for many, and varied purposes. It also imparts the knowledge and ability to create a steam engine."
+    },
+    "Stone Masonry": {
+      "attr1": "STR",
+      "attr2": "AGL",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to build,or repair basic structures made of stone such as a wall or a building (but not the ceiling)."
+    },
+    "Store Keeping": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The `know how` of organizing and running a small store."
+    },
+    "Story Telling": {
+      "attr1": "WIS",
+      "attr2": "CHM",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to create, learn, and vocally tell a story (real or imagined) in an entertaining fashion."
+    },
+    "Supplier": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "160",
+      "description": "The ability to anticipate the need for goods, making quality, and quantity decisions for a faction, or patron allowing the acquisition of hard-to-find goods, or services."
+    },
+    "Surfing": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The talent of riding watery swells, or waves with a wooden (or similar material) board."
+    },
+    "Surveyor": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to accurately mark, and record the measurements of terrain. buildings, or other structures."
+    },
+    "Survival": {
+      "attr1": "VIT",
+      "attr2": "KNW",
+      "skillRating": "8",
+      "startingDice": "5d10%",
+      "learnTime": "24",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to locate food, water, and shelter resources in hostile, adverse, or unknown environments."
+    },
+    "Swimming": {
+      "attr1": "AGL",
+      "attr2": "VIT",
+      "skillRating": "6",
+      "startingDice": "10d6%",
+      "learnTime": "24",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to propel oneself through water using appendages as well as remaining afloat (without assistance) in water."
+    },
+    "Tactics/Strategy": {
+      "attr1": "INT",
+      "attr2": "WIS",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Conquest of the Eternal",
+      "page": "?",
+      "description": "The ability to craft short term tactics, and a long-term strategy."
+    },
+    "Tailoring": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to create, and then fit, or alter fancy clothing (such as shirts, pants, and gloves) to an individual."
+    },
+    "Tattoo Artistry": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to use needles, and indelible inks to create intricately designed works of art on hairless skin."
+    },
+    "Taxidermy": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The art of preparing, and preserving the entirety of an animal as well as stuffing and mounting them in lifelike form."
+    },
+    "Theology": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "18",
+      "startingDice": "6d6%",
+      "learnTime": "68",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to understand and postulate a model of how the spiritual universe works."
+    },
+    "Tightrope Walking": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "161",
+      "description": "The ability to walk on narrow ledges, beams, or ropes."
+    },
+    "Tobacconist": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The `know how` to prepare certain plants to be smoked, chewed, or inhaled."
+    },
+    "Tool Making": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to take forged metal, and create intricate and precise tools. Requires a forge to shape the metal."
+    },
+    "Torturing": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to use tools, and techniques to inflict excruciating pain in an imprisoned individual without causing death."
+    },
+    "Translating": {
+      "attr1": "KNW",
+      "attr2": "CHM",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to translate written, and spoken languages, slang, and idioms (including tone and inflection) from one language to another."
+    },
+    "Tumbling": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The talent to fall, roll, jump, spring, and catch, or support others."
+    },
+    "Undertaking": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Master`s Manual",
+      "page": "90",
+      "description": "The ability to prepare a body and carry out a plain burial, cremation, etc. according to proper form for that race. or culture."
+    },
+    "Upholstery": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "166",
+      "description": "The ability to add cushions, or inserts into furniture for comfort."
+    },
+    "Valet": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "7",
+      "startingDice": "10d6%",
+      "learnTime": "28",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to fulfill the basic day-to-day needs of a male employer."
+    },
+    "Ventriloquism": {
+      "attr1": "INT",
+      "attr2": "CHM",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to speak with little or no lip movement such that speech appears to originate from another location."
+    },
+    "Wagon/Carriage Driving": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to drive a four-wheeled, animal-drawn wagon, or carriage."
+    },
+    "Wagon/Carriage Making": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The ability to produce a four-wheeled, animal-drawn vehicle."
+    },
+    "Water/Wind Power": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": "16",
+      "startingDice": "4d10%",
+      "learnTime": "64",
+      "sourcebook": "Player`s Guide",
+      "page": "162",
+      "description": "The `know how` to harness the power of flowing water to generate mechanical force using a stationary water wheel as well as the knowledge to harness the force of the wind through low efficiency wind mills."
+    },
+    "Weapon Making": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "By itself, Weapon Making provides the `know how` to create, and repair a multitude of weapons."
+    },
+    "Weaving": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": "11",
+      "startingDice": "8d6%",
+      "learnTime": "44",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "The ability to produce basic woven goods (such as a blanket, or cloak) with hands, and simple tools."
+    },
+    "Wheel Wright": {
+      "attr1": "AGL",
+      "attr2": "KNW",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "The ability to produce, and repair perfectly circular wheels, and the mechanisms used to keep a wheel in place."
+    },
+    "Wigweaving": {
+      "attr1": "AGL",
+      "attr2": "CHM",
+      "skillRating": "12",
+      "startingDice": "8d6%",
+      "learnTime": "48",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "166",
+      "description": "The ability to create hair, and beard designs from both animal, and humanoid hair."
+    },
+    "Wood Curing": {
+      "attr1": "KNW",
+      "attr2": "",
+      "skillRating": "14",
+      "startingDice": "4d10%",
+      "learnTime": "56",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "The ability to prepare lumber to be used in a refined manner for creating wooden objects. Using water, oils, time, pressure, glue, and paint the wood curer can change the properties, or the condition of wood (such as waterproofing, bending for the curve of a boat’s hull, and joining with metal)."
+    },
+    "Wood Cutting": {
+      "attr1": "AGL",
+      "attr2": "VIT",
+      "skillRating": "10",
+      "startingDice": "5d10%",
+      "learnTime": "40",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "The ability to use a cutting device (like a saw) to remove branches, and bark from a felled tree, and cut the tree into lumber-grade wood."
+    },
+    "Wood Working": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": "13",
+      "startingDice": "8d6%",
+      "learnTime": "52",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "The ability to put several pieces of wood together to form a finished product of simple geometric shape."
+    },
+    "Writing": {
+      "attr1": "WIS",
+      "attr2": "KNW",
+      "skillRating": "15",
+      "startingDice": "4d10%",
+      "learnTime": "60",
+      "sourcebook": "Player`s Guide",
+      "page": "163",
+      "description": "Using imagination, or knowledge of events, an original written work is created."
+    },
+    "Open Slot": {
+      "attr1": "",
+      "attr2": "",
+      "skillRating": "",
+      "startingDice": "",
+      "learnTime": "",
+      "sourcebook": "?",
+      "page": "?",
+      "description": "?"
+    },
+    "Unavailable": {
+      "attr1": "",
+      "attr2": "",
+      "skillRating": "",
+      "startingDice": "",
+      "learnTime": "",
+      "sourcebook": "?",
+      "page": "?",
+      "description": "?"
+    }
+  }
+}

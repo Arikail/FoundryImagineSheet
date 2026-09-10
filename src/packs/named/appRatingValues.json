@@ -1,0 +1,204 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "appRatingValues",
+    "lines": [
+      29974,
+      30006
+    ]
+  },
+  "_fields": [
+    "morale",
+    "controlAdjust",
+    "special",
+    "specialChance"
+  ],
+  "entries": {
+    "0": {
+      "morale": -40,
+      "controlAdjust": 45,
+      "special": "Fear",
+      "specialChance": "80%"
+    },
+    "1": {
+      "morale": -35,
+      "controlAdjust": 40,
+      "special": "Fear",
+      "specialChance": "60%"
+    },
+    "2": {
+      "morale": -30,
+      "controlAdjust": 35,
+      "special": "Fear",
+      "specialChance": "40%"
+    },
+    "3": {
+      "morale": -25,
+      "controlAdjust": 30,
+      "special": "Fear",
+      "specialChance": "20%"
+    },
+    "4": {
+      "morale": -20,
+      "controlAdjust": 25,
+      "special": "Fear",
+      "specialChance": "10%"
+    },
+    "5": {
+      "morale": -15,
+      "controlAdjust": 20,
+      "special": "",
+      "specialChance": ""
+    },
+    "6": {
+      "morale": -15,
+      "controlAdjust": 15,
+      "special": "",
+      "specialChance": ""
+    },
+    "7": {
+      "morale": -10,
+      "controlAdjust": 15,
+      "special": "",
+      "specialChance": ""
+    },
+    "8": {
+      "morale": -10,
+      "controlAdjust": 10,
+      "special": "",
+      "specialChance": ""
+    },
+    "9": {
+      "morale": -5,
+      "controlAdjust": 10,
+      "special": "",
+      "specialChance": ""
+    },
+    "10": {
+      "morale": -5,
+      "controlAdjust": 5,
+      "special": "",
+      "specialChance": ""
+    },
+    "11": {
+      "morale": -2,
+      "controlAdjust": 0,
+      "special": "",
+      "specialChance": ""
+    },
+    "12": {
+      "morale": 0,
+      "controlAdjust": 0,
+      "special": "",
+      "specialChance": ""
+    },
+    "13": {
+      "morale": 0,
+      "controlAdjust": 0,
+      "special": "",
+      "specialChance": ""
+    },
+    "14": {
+      "morale": 2,
+      "controlAdjust": 0,
+      "special": "",
+      "specialChance": ""
+    },
+    "15": {
+      "morale": 5,
+      "controlAdjust": -5,
+      "special": "",
+      "specialChance": ""
+    },
+    "16": {
+      "morale": 5,
+      "controlAdjust": -10,
+      "special": "",
+      "specialChance": ""
+    },
+    "17": {
+      "morale": 10,
+      "controlAdjust": -10,
+      "special": "",
+      "specialChance": ""
+    },
+    "18": {
+      "morale": 10,
+      "controlAdjust": -15,
+      "special": "",
+      "specialChance": ""
+    },
+    "19": {
+      "morale": 15,
+      "controlAdjust": -15,
+      "special": "",
+      "specialChance": ""
+    },
+    "20": {
+      "morale": 15,
+      "controlAdjust": -20,
+      "special": "",
+      "specialChance": ""
+    },
+    "21": {
+      "morale": 20,
+      "controlAdjust": -25,
+      "special": "Awe",
+      "specialChance": "5%"
+    },
+    "22": {
+      "morale": 25,
+      "controlAdjust": -30,
+      "special": "Awe",
+      "specialChance": "10%"
+    },
+    "23": {
+      "morale": 30,
+      "controlAdjust": -35,
+      "special": "Awe",
+      "specialChance": "15%"
+    },
+    "24": {
+      "morale": 35,
+      "controlAdjust": -40,
+      "special": "Awe",
+      "specialChance": "20%"
+    },
+    "25": {
+      "morale": 40,
+      "controlAdjust": -45,
+      "special": "Awe",
+      "specialChance": "25%"
+    },
+    "26": {
+      "morale": 45,
+      "controlAdjust": -50,
+      "special": "Awe",
+      "specialChance": "30%"
+    },
+    "27": {
+      "morale": 50,
+      "controlAdjust": -55,
+      "special": "Awe",
+      "specialChance": "35%"
+    },
+    "28": {
+      "morale": 55,
+      "controlAdjust": -60,
+      "special": "Awe",
+      "specialChance": "40%"
+    },
+    "29": {
+      "morale": 60,
+      "controlAdjust": -65,
+      "special": "Awe",
+      "specialChance": "45%"
+    },
+    "30": {
+      "morale": 65,
+      "controlAdjust": -70,
+      "special": "Awe",
+      "specialChance": "50%"
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "aurRatingValues",
+    "lines": [
+      30114,
+      30146
+    ]
+  },
+  "_fields": [
+    "magicResist",
+    "regenBonusLabel",
+    "regenBonus"
+  ],
+  "entries": {
+    "0": {
+      "magicResist": 0,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "1": {
+      "magicResist": 0,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "2": {
+      "magicResist": 0,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "3": {
+      "magicResist": 0,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "4": {
+      "magicResist": 0,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "5": {
+      "magicResist": 1,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "6": {
+      "magicResist": 2,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "7": {
+      "magicResist": 4,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "8": {
+      "magicResist": 6,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "9": {
+      "magicResist": 8,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "10": {
+      "magicResist": 10,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "11": {
+      "magicResist": 15,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "12": {
+      "magicResist": 20,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "13": {
+      "magicResist": 25,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "14": {
+      "magicResist": 30,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "15": {
+      "magicResist": 35,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "16": {
+      "magicResist": 40,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "17": {
+      "magicResist": 45,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "18": {
+      "magicResist": 50,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "19": {
+      "magicResist": 55,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "20": {
+      "magicResist": 60,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "21": {
+      "magicResist": 60,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "22": {
+      "magicResist": 65,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "23": {
+      "magicResist": 70,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "24": {
+      "magicResist": 75,
+      "regenBonusLabel": "",
+      "regenBonus": ""
+    },
+    "25": {
+      "magicResist": 80,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+1 per Second"
+    },
+    "26": {
+      "magicResist": 85,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+2 per Second"
+    },
+    "27": {
+      "magicResist": 90,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+3 per Second"
+    },
+    "28": {
+      "magicResist": 95,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+4 per Second"
+    },
+    "29": {
+      "magicResist": 99,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+5 per Second"
+    },
+    "30": {
+      "magicResist": 200,
+      "regenBonusLabel": "Aura Regen",
+      "regenBonus": "+10 per Second"
+    }
+  }
+}

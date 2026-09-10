@@ -1,0 +1,204 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "aglRatingValues",
+    "lines": [
+      29728,
+      29760
+    ]
+  },
+  "_fields": [
+    "missileAttack",
+    "defensiveAdjust",
+    "initiativeAdjust",
+    "weaponSpeed"
+  ],
+  "entries": {
+    "0": {
+      "missileAttack": -8,
+      "defensiveAdjust": 10,
+      "initiativeAdjust": 6,
+      "weaponSpeed": 6
+    },
+    "1": {
+      "missileAttack": -6,
+      "defensiveAdjust": 9,
+      "initiativeAdjust": 5,
+      "weaponSpeed": 5
+    },
+    "2": {
+      "missileAttack": -5,
+      "defensiveAdjust": 8,
+      "initiativeAdjust": 4,
+      "weaponSpeed": 4
+    },
+    "3": {
+      "missileAttack": -4,
+      "defensiveAdjust": 7,
+      "initiativeAdjust": 3,
+      "weaponSpeed": 4
+    },
+    "4": {
+      "missileAttack": -3,
+      "defensiveAdjust": 6,
+      "initiativeAdjust": 2,
+      "weaponSpeed": 3
+    },
+    "5": {
+      "missileAttack": -3,
+      "defensiveAdjust": 5,
+      "initiativeAdjust": 1,
+      "weaponSpeed": 3
+    },
+    "6": {
+      "missileAttack": -2,
+      "defensiveAdjust": 4,
+      "initiativeAdjust": 0,
+      "weaponSpeed": 2
+    },
+    "7": {
+      "missileAttack": -2,
+      "defensiveAdjust": 3,
+      "initiativeAdjust": 0,
+      "weaponSpeed": 1
+    },
+    "8": {
+      "missileAttack": -1,
+      "defensiveAdjust": 2,
+      "initiativeAdjust": 0,
+      "weaponSpeed": 1
+    },
+    "9": {
+      "missileAttack": -1,
+      "defensiveAdjust": 1,
+      "initiativeAdjust": 0,
+      "weaponSpeed": 0
+    },
+    "10": {
+      "missileAttack": 0,
+      "defensiveAdjust": 1,
+      "initiativeAdjust": -1,
+      "weaponSpeed": 0
+    },
+    "11": {
+      "missileAttack": 0,
+      "defensiveAdjust": 0,
+      "initiativeAdjust": -1,
+      "weaponSpeed": 0
+    },
+    "12": {
+      "missileAttack": 0,
+      "defensiveAdjust": 0,
+      "initiativeAdjust": -2,
+      "weaponSpeed": 0
+    },
+    "13": {
+      "missileAttack": 0,
+      "defensiveAdjust": 0,
+      "initiativeAdjust": -2,
+      "weaponSpeed": 0
+    },
+    "14": {
+      "missileAttack": 0,
+      "defensiveAdjust": 0,
+      "initiativeAdjust": -3,
+      "weaponSpeed": 0
+    },
+    "15": {
+      "missileAttack": 0,
+      "defensiveAdjust": -1,
+      "initiativeAdjust": -4,
+      "weaponSpeed": 0
+    },
+    "16": {
+      "missileAttack": 1,
+      "defensiveAdjust": -1,
+      "initiativeAdjust": -5,
+      "weaponSpeed": -1
+    },
+    "17": {
+      "missileAttack": 1,
+      "defensiveAdjust": -2,
+      "initiativeAdjust": -6,
+      "weaponSpeed": -1
+    },
+    "18": {
+      "missileAttack": 2,
+      "defensiveAdjust": -3,
+      "initiativeAdjust": -7,
+      "weaponSpeed": -2
+    },
+    "19": {
+      "missileAttack": 2,
+      "defensiveAdjust": -4,
+      "initiativeAdjust": -8,
+      "weaponSpeed": -2
+    },
+    "20": {
+      "missileAttack": 3,
+      "defensiveAdjust": -5,
+      "initiativeAdjust": -9,
+      "weaponSpeed": -3
+    },
+    "21": {
+      "missileAttack": 3,
+      "defensiveAdjust": -6,
+      "initiativeAdjust": -10,
+      "weaponSpeed": -3
+    },
+    "22": {
+      "missileAttack": 4,
+      "defensiveAdjust": -7,
+      "initiativeAdjust": -11,
+      "weaponSpeed": -4
+    },
+    "23": {
+      "missileAttack": 4,
+      "defensiveAdjust": -8,
+      "initiativeAdjust": -12,
+      "weaponSpeed": -4
+    },
+    "24": {
+      "missileAttack": 5,
+      "defensiveAdjust": -9,
+      "initiativeAdjust": -13,
+      "weaponSpeed": -5
+    },
+    "25": {
+      "missileAttack": 5,
+      "defensiveAdjust": -10,
+      "initiativeAdjust": -14,
+      "weaponSpeed": -5
+    },
+    "26": {
+      "missileAttack": 6,
+      "defensiveAdjust": -11,
+      "initiativeAdjust": -15,
+      "weaponSpeed": -6
+    },
+    "27": {
+      "missileAttack": 6,
+      "defensiveAdjust": -12,
+      "initiativeAdjust": -16,
+      "weaponSpeed": -7
+    },
+    "28": {
+      "missileAttack": 7,
+      "defensiveAdjust": -13,
+      "initiativeAdjust": -17,
+      "weaponSpeed": -8
+    },
+    "29": {
+      "missileAttack": 8,
+      "defensiveAdjust": -14,
+      "initiativeAdjust": -18,
+      "weaponSpeed": -9
+    },
+    "30": {
+      "missileAttack": 10,
+      "defensiveAdjust": -15,
+      "initiativeAdjust": -21,
+      "weaponSpeed": -10
+    }
+  }
+}

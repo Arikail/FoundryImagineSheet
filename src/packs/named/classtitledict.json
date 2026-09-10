@@ -1,0 +1,1762 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "classtitledict",
+    "lines": [
+      96807,
+      96901
+    ]
+  },
+  "_fields": "LIST:titles",
+  "entries": {
+    "Acrobat": {
+      "titles": [
+        "Athlete",
+        "Dancer",
+        "Gymnast",
+        "Escape Artist",
+        "Roof Walker",
+        "Cat Burglar",
+        "Acrobat",
+        "Swift",
+        "Master Acrobat",
+        "Master Acrobat",
+        "Master Swift",
+        "Master Swift",
+        "Shadow Walker",
+        "Shadow Walker",
+        "Shadow Dancer"
+      ]
+    },
+    "Alchemist": {
+      "titles": [
+        "Novice",
+        "Cataloger",
+        "Herbalist",
+        "Botany",
+        "Botanist",
+        "Brewer",
+        "Chemist",
+        "Alchemist",
+        "Transmuter",
+        "Master Alchemist",
+        "Master Alchemist",
+        "Shaper",
+        "Shaper",
+        "Master Shaper",
+        "Master Shaper",
+        "Arch Transmuter"
+      ]
+    },
+    "Arcanist": {
+      "titles": [
+        "Compiler",
+        "Antiquary",
+        "Analyst",
+        "Specialist",
+        "Seeker",
+        "Fortune-Hunter",
+        "Arcanist",
+        "Mystic",
+        "Connoisseur",
+        "Connoisseur",
+        "Curator",
+        "Curator",
+        "High Arcanist",
+        "High Arcanist",
+        "Supreme Archivist"
+      ]
+    },
+    "Archer": {
+      "titles": [
+        "Fletcher",
+        "Guardsmen",
+        "Bowman",
+        "Scout",
+        "Quickshot",
+        "Shootist",
+        "Archer",
+        "Marksman",
+        "Master Marksman",
+        "Master Marksman",
+        "Sharpshooter",
+        "Sharpshooter",
+        "Sniper",
+        "Sniper",
+        "Grand Archer"
+      ]
+    },
+    "Archer(Arcane)": {
+      "titles": [
+        "Fletcher",
+        "Eagle Eye",
+        "Bowman",
+        "Scout",
+        "Quickshot",
+        "Arcane Shootist",
+        "Arcane Archer",
+        "Adept Marksmen",
+        "Adept Marksmen",
+        "Arcane Marksmen",
+        "Arcane Sharpshooter",
+        "Arcane Sharpshooter",
+        "Arcane Sniper",
+        "Arcane Sniper",
+        "Grand Arcane Archer"
+      ]
+    },
+    "Archer(Zen)": {
+      "titles": [
+        "Fletcher",
+        "Angel Eye",
+        "Bowman",
+        "Scout",
+        "Quickshot",
+        "Zen Shootist",
+        "Zen Archer",
+        "Divine Marksmen",
+        "Divine Marksmen",
+        "Zen Master Marksmen",
+        "Divine Sharpshooter",
+        "Divine Sharpshooter",
+        "Divine Sniper",
+        "Divine Sniper",
+        "Zen Grandmaster Archer"
+      ]
+    },
+    "Assassin": {
+      "titles": [
+        "Looter",
+        "Thug",
+        "Murderer",
+        "Killer",
+        "Cutthroat",
+        "Slayer",
+        "Assassin",
+        "Executioner",
+        "Master Assassin",
+        "Master Assassin",
+        "Master Executioner",
+        "Master Executioner",
+        "Night Blade",
+        "Night Blade",
+        "Night Stalker"
+      ]
+    },
+    "Bandit": {
+      "titles": [
+        "Filcher",
+        "Looter",
+        "Robber",
+        "Highwayman",
+        "Hood",
+        "Brigand",
+        "Bandit",
+        "Rogue",
+        "Bandit Lord",
+        "Bandit Lord",
+        "Raider",
+        "Raider",
+        "Master Raider",
+        "Master Raider",
+        "Raider Lord"
+      ]
+    },
+    "Banisher": {
+      "titles": [
+        "Seeker",
+        "Spirit Protector",
+        "Spirit Guardian",
+        "Spirit Warder",
+        "Spirit Defender",
+        "Daemon Hunter",
+        "Banisher",
+        "Banisher Knight",
+        "Banisher Knight",
+        "Banisher Lord",
+        "Daemon Knight",
+        "Daemon Knight",
+        "Daemon Lord",
+        "Daemon Lord",
+        "Daemon Knight Lord"
+      ]
+    },
+    "Bard": {
+      "titles": [
+        "Rhymer",
+        "Chanter",
+        "Troubadour",
+        "Minne Singer",
+        "Sonneteer",
+        "Skald",
+        "Bard",
+        "Lorist",
+        "Master Bard",
+        "Master Bard",
+        "Chief Skald",
+        "Chief Skald",
+        "Meister Singer",
+        "Meister Singer",
+        "Master Lorist"
+      ]
+    },
+    "Battlemancer": {
+      "titles": [
+        "Initiate",
+        "Seeker",
+        "Spellblade",
+        "Mageblade",
+        "Battlecaster",
+        "Mystic Warrior",
+        "Battlemancer",
+        "Battlemage",
+        "Battlemaster",
+        "Stormbringer",
+        "High Battlemancer",
+        "High Battlemancer",
+        "Arch Battlemancer",
+        "Arch Battlemancer",
+        "Infused Battlemancer"
+      ]
+    },
+    "Beastmaster": {
+      "titles": [
+        "Animal Trainer",
+        "Scout",
+        "Summoner",
+        "Pathfinder",
+        "Woodsman",
+        "Animalist",
+        "Beastmaster",
+        "Master Tamer",
+        "Beastmaster Lord",
+        "Beastmaster Lord",
+        "Animalist Lord",
+        "Animalist Lord",
+        "High Beastmaster",
+        "High Beastmaster",
+        "Grand Beastmaster"
+      ]
+    },
+    "Beguiler": {
+      "titles": [
+        "Whisperer",
+        "Manipulator",
+        "Illusionist",
+        "Charmer",
+        "Spellbinder",
+        "Enticer",
+        "Beguiler",
+        "Deceiver",
+        "Coercer",
+        "Coercer",
+        "Enchanter",
+        "Enchanter",
+        "Mindbender",
+        "Mindbender",
+        "Prime Enigma"
+      ]
+    },
+    "Berserker": {
+      "titles": [
+        "Tribesman",
+        "Clansman",
+        "Clan Leader",
+        "Gouger",
+        "Cleaver",
+        "Butcher",
+        "Berserker",
+        "Slayer",
+        "Reaver",
+        "Reaver",
+        "Blood Reaver",
+        "Blood Reaver",
+        "Blood Lord",
+        "Blood Lord",
+        "Dread Reaver"
+      ]
+    },
+    "Border Scout": {
+      "titles": [
+        "Pathfinder",
+        "Watcher",
+        "Guide",
+        "Cartographer",
+        "Hunter",
+        "Woodsman",
+        "Border Scout",
+        "Scout",
+        "Master Scout",
+        "Master Scout",
+        "Master Pathfinder",
+        "Master Pathfinder",
+        "Master Tracker",
+        "Master Tracker",
+        "Scout Lord"
+      ]
+    },
+    "Bounty Hunter": {
+      "titles": [
+        "Bouncer",
+        "Shadower",
+        "Bodyguard",
+        "Man Hunter",
+        "Manstopper",
+        "Thief Taker",
+        "Bounty Hunter",
+        "Finder",
+        "Stalker",
+        "Stalker",
+        "Master Hunter",
+        "Master Hunter",
+        "Master Stalker",
+        "Master Stalker",
+        "Warden"
+      ]
+    },
+    "Buccaneer": {
+      "titles": [
+        "Swabbie",
+        "Sailor",
+        "Seaman",
+        "Mate",
+        "First Mate",
+        "Navigator",
+        "Buccaneer",
+        "Pirate",
+        "Master Buccaneer",
+        "Master Buccaneer",
+        "Master Pirate",
+        "Master Pirate",
+        "Master Raider",
+        "Master Raider",
+        "Raider Lord"
+      ]
+    },
+    "Cacophonist": {
+      "titles": [
+        "Dissonant",
+        "Discordant",
+        "Absonant",
+        "Dark Choralist",
+        "Dark Hymnist",
+        "Dark Chorister",
+        "Cacophonist",
+        "Dark Chaunter",
+        "Dark Psalmist",
+        "Horrisonant",
+        "Corruptor ",
+        "Corruptor ",
+        "Dark Hymn Master",
+        "Dark Hymn Master",
+        "Master of Discord"
+      ]
+    },
+    "Cajoler": {
+      "titles": [
+        "Liar",
+        "Intimidator",
+        "Charmer",
+        "Peddler",
+        "Thief",
+        "Inciter",
+        "Cajoler",
+        "Thought Poisoner",
+        "Thought Poisoner",
+        "Deceiver",
+        "Master Deceiver",
+        "Master Deceiver",
+        "Master Cajoler",
+        "Master Cajoler",
+        "Master of Lies"
+      ]
+    },
+    "Cavalier": {
+      "titles": [
+        "Liegeman",
+        "Lawgiver",
+        "Lancer",
+        "Knight-Errant",
+        "Destrier",
+        "Campaigner",
+        "Cavalier",
+        "Dragoon",
+        "Liege Lord",
+        "Liege Lord",
+        "Field Marshall",
+        "Field Marshall",
+        "General",
+        "General",
+        "Grand Marshall"
+      ]
+    },
+    "Channeler": {
+      "titles": [
+        "Caller",
+        "Spiritist",
+        "Luminary",
+        "Life Mage",
+        "Ritualist",
+        "Diviner",
+        "Channeler",
+        "Summoner",
+        "Clairvoyant",
+        "Clairvoyant",
+        "Divine Mage",
+        "Divine Mage",
+        "Master Channeler",
+        "Master Channeler",
+        "White Wizard"
+      ]
+    },
+    "Conqueror": {
+      "titles": [
+        "Soldier",
+        "Tracker",
+        "Traveler",
+        "Adventurer",
+        "Pathfinder",
+        "Subduer",
+        "Conqueror",
+        "Conquistador",
+        "Master Conqueror",
+        "Master Conqueror",
+        "Vanquisher",
+        "Vanquisher",
+        "Warmonger",
+        "Warmonger",
+        "Warlord"
+      ]
+    },
+    "Crypt Robber": {
+      "titles": [
+        "Spelunker",
+        "Hidden",
+        "Explorer",
+        "Adventurer",
+        "Medium",
+        "Thief",
+        "Crypt Robber",
+        "Raider",
+        "Pilferer",
+        "Pilferer",
+        "Crypt Master",
+        "Crypt Master",
+        "Crypt Invader",
+        "Crypt Invader",
+        "Crypt Lord"
+      ]
+    },
+    "Curse Breaker": {
+      "titles": [
+        "Curse Finder",
+        "Identifier",
+        "Sin Eater",
+        "Counterer",
+        "Curser",
+        "Defiant",
+        "Curse Breaker",
+        "Mind Cleric",
+        "Mind Cleric",
+        "Master Defiant",
+        "Spirit Defiant",
+        "Spirit Defiant",
+        "Soul Defiant",
+        "Soul Defiant",
+        "Hexer"
+      ]
+    },
+    "Delver": {
+      "titles": [
+        "Researcher",
+        "Cataloger",
+        "Archeologist",
+        "Seeker",
+        "Finder",
+        "Filcher",
+        "Delver",
+        "Collector",
+        "Master Delver",
+        "Master Delver",
+        "Master Collector",
+        "Master Collector",
+        "Master Archeologist",
+        "Master Archeologist",
+        "Great Delver"
+      ]
+    },
+    "Dervish": {
+      "titles": [
+        "Acrobat",
+        "Dancer",
+        "Sword Dancer ",
+        "Swashbuckler",
+        "Blade Dancer",
+        "Weapon Master",
+        "Dervish",
+        "Whirling Dervish",
+        "Master Dervish",
+        "Master Dervish",
+        "Seeker ",
+        "Seeker ",
+        "Great Dervish ",
+        "Great Dervish ",
+        "Grand Dervish"
+      ]
+    },
+    "Dreamer": {
+      "titles": [
+        "Dream Reader",
+        "Dream Weaver",
+        "Dream Crafter",
+        "Dream Caster",
+        "Dream Evoker",
+        "Dream Summoner",
+        "Dreamer",
+        "Dream Master",
+        "Dream Wizard",
+        "Dream Wizard",
+        "High Dream Wizard",
+        "High Dream Wizard",
+        "Arch Dream Wizard",
+        "Arch Dream Wizard",
+        "True Dreamer"
+      ]
+    },
+    "Druid": {
+      "titles": [
+        "Acolyte",
+        "Initiate",
+        "Pathfinder",
+        "Ovate",
+        "Forester",
+        "Cultivator",
+        "Druid",
+        "High Druid",
+        "Forestall",
+        "Forestall",
+        "Arch Druid",
+        "Arch Druid",
+        "Forestall",
+        "Forestall",
+        "Arch Forestall"
+      ]
+    },
+    "Duelist": {
+      "titles": [
+        "Brawler",
+        "Soldier",
+        "Mercenary",
+        "Swordsman",
+        "Warrior",
+        "Champion",
+        "Duelist",
+        "Hero",
+        "Master Dueler",
+        "Master Dueler",
+        "Weapon Master",
+        "Weapon Master",
+        "War Master",
+        "War Master",
+        "Grand Master"
+      ]
+    },
+    "Elemental Dancer": {
+      "titles": [
+        "Meditator",
+        "Floating Dancer",
+        "Skilled Dancer",
+        "Focused Dancer",
+        "Dancer",
+        "Adept Dancer",
+        "Elemental Dancer",
+        "Heroic Dancer",
+        "Heroic Dancer",
+        "Thought Dancer",
+        "Planes Dancer",
+        "Planes Dancer",
+        "Spirit Dancer",
+        "Spirit Dancer",
+        "One with the Element"
+      ]
+    },
+    "Elementalist": {
+      "titles": [
+        "Water Mage",
+        "Air Mage",
+        "Earth Mage",
+        "Fire Mage",
+        "Stone Mage",
+        "Thaumaturge",
+        "Elementalist",
+        "Wizard",
+        "Sorcerer",
+        "Sorcerer",
+        "Master Elementalist",
+        "Master Elementalist",
+        "Master Sorcerer",
+        "Master Sorcerer",
+        "Lord of the Elements"
+      ]
+    },
+    "Enchanter": {
+      "titles": [
+        "Patterner",
+        "Imbuer",
+        "Weapon Imbuer",
+        "Armor Imbuer",
+        "Disenchanter",
+        "Mystic Patterner",
+        "Enchanter",
+        "Lorist",
+        "Spell Patterner",
+        "Master Pattener",
+        "High Enchanter",
+        "High Enchanter",
+        "Arch Enchanter",
+        "Arch Enchanter",
+        "Artificer"
+      ]
+    },
+    "Exorcist": {
+      "titles": [
+        "Sensor",
+        "Medium",
+        "Caller",
+        "Protector",
+        "Life Priest",
+        "Spiritist",
+        "Exorcist",
+        "Influencer",
+        "Greater Exorcist",
+        "Greater Exorcist",
+        "Protector of Life",
+        "Protector of Life",
+        "Master of Life",
+        "Master of Life",
+        "Restorer of Life"
+      ]
+    },
+    "Explorer": {
+      "titles": [
+        "Pathfinder",
+        "Trailblazer",
+        "Frontiersman",
+        "Traveler",
+        "Expeditionist",
+        "Wanderer",
+        "Explorer",
+        "Pioneer",
+        "Voyager",
+        "Voyager",
+        "Master Adventurer",
+        "Master Adventurer",
+        "Master Expeditionist",
+        "Master Expeditionist",
+        "Journeymaster"
+      ]
+    },
+    "Gypsy": {
+      "titles": [
+        "Migrant",
+        "Performer",
+        "Fortune Teller",
+        "Peddler",
+        "Vagrant",
+        "Story Teller",
+        "Gypsy",
+        "Jongleur",
+        "Gypsy Chieftain",
+        "Gypsy Chieftain",
+        "Wandering Minstrel",
+        "Wandering Minstrel",
+        "Vagabond",
+        "Vagabond",
+        "Lord of the Gypsies"
+      ]
+    },
+    "Harbinger": {
+      "titles": [
+        "Brother",
+        "Herald",
+        "Auspex",
+        "Prophet",
+        "Admonitor",
+        "Delegate",
+        "Harbinger",
+        "Precursor",
+        "Vanguard",
+        "Vanguard",
+        "Ambassador",
+        "Ambassador",
+        "Holy Emissary",
+        "Holy Emissary",
+        "Endbringer"
+      ]
+    },
+    "Harmonist": {
+      "titles": [
+        "Melodist",
+        "Chanter",
+        "Cantillater",
+        "Choralist",
+        "Hymnist",
+        "Chorister",
+        "Harmonist",
+        "Chaunter",
+        "Psalmist",
+        "Purist",
+        "Precenter",
+        "Precenter",
+        "Hymn Master",
+        "Hymn Master",
+        "Lord/Lady of Harmony"
+      ]
+    },
+    "Healer": {
+      "titles": [
+        "Healer",
+        "Curist",
+        "Mystic",
+        "Convalescer",
+        "Master Curist",
+        "Soother",
+        "True Healer",
+        "High Healer",
+        "Master Healer",
+        "Master Healer",
+        "Arch Healer",
+        "Arch Healer",
+        "Arch Healer",
+        "Arch Healer",
+        "Arch Healer"
+      ]
+    },
+    "Heretic": {
+      "titles": [
+        "Liar",
+        "Cheat",
+        "Divine Rogue",
+        "Diviner",
+        "Curer",
+        "Spiritualist",
+        "Heretic",
+        "Curser",
+        "Curser",
+        "Revivalist",
+        "Heretical Bishop",
+        "Heretical Bishop",
+        "Heretical Cardinal",
+        "Heretical Cardinal",
+        "Anti-pope"
+      ]
+    },
+    "Hermeticist": {
+      "titles": [
+        "Mixer",
+        "Hermit",
+        "Tamer",
+        "Mystic",
+        "Apothecary",
+        "Conjurer",
+        "Hermeticist",
+        "Distiller",
+        "Master Hermeticist",
+        "Master Hermeticist",
+        "Arch Hermeticist",
+        "Arch Hermeticist",
+        "Hermeticist Wizard",
+        "Hermeticist Wizard",
+        "Transmuter"
+      ]
+    },
+    "Hero": {
+      "titles": [
+        "Trainee",
+        "Aspirant",
+        "Vigilante",
+        "Sentinel",
+        "Guardian",
+        "Defender",
+        "Hero",
+        "Protector",
+        "Vindicator",
+        "Vindicator",
+        "Vanquisher",
+        "Vanquisher",
+        "Champion",
+        "Champion",
+        "True Hero"
+      ]
+    },
+    "Hunter": {
+      "titles": [
+        "Tracker",
+        "Guide",
+        "Beast Tamer",
+        "Beast Finder",
+        "Archer",
+        "Ambusher",
+        "Hunter",
+        "Legend Hunter ",
+        "Huntmaster",
+        "Huntmaster",
+        "Master Hunter",
+        "Master Hunter",
+        "Planes Hunter",
+        "Planes Hunter",
+        "Master of all Hunts"
+      ]
+    },
+    "Illuminator": {
+      "titles": [
+        "Light Caster",
+        "Pyrokineticist",
+        "Luminescent",
+        "Light Walker",
+        "Light Adept",
+        "Phaser",
+        "Illuminator",
+        "Lambient",
+        "Lambient Wizard",
+        "Lambient Wizard",
+        "Arch Lambient",
+        "Arch Lambient",
+        "Arch Lucent",
+        "Arch Lucent",
+        "Lord/Lady of Fire and Light"
+      ]
+    },
+    "Innominate": {
+      "titles": [
+        "The Unseen",
+        "The Inconspicuous",
+        "The Obscure",
+        "The Nameless",
+        "The Unnoticed",
+        "The Concealed",
+        "The Innominate",
+        "The Anonymous",
+        "The Enigma",
+        "The Enigma",
+        "The Riddle",
+        "The Riddle",
+        "The Conundrum",
+        "The Conundrum",
+        "The Mystery"
+      ]
+    },
+    "Inquisitor": {
+      "titles": [
+        "Moderator",
+        "Arbiter",
+        "Confessor",
+        "Investigator",
+        "Interrogator",
+        "Judge",
+        "Inquisitor",
+        "Prelate",
+        "Prelate",
+        "Inquisitor General",
+        "High Inquisitor",
+        "High Inquisitor",
+        "Grand Inquisitor",
+        "Grand Inquisitor",
+        "Lord/Lady of the Inquisition"
+      ]
+    },
+    "Intercessor": {
+      "titles": [
+        "Cleric",
+        "Defender",
+        "Confessor",
+        "Prelate",
+        "Judge",
+        "Exponent",
+        "Intercessor",
+        "Ecclesiast",
+        "Immanence",
+        "Immanence",
+        "Messenger",
+        "Messenger",
+        "Seraph",
+        "Seraph",
+        "Apotheosis"
+      ]
+    },
+    "Investigator": {
+      "titles": [
+        "Slinker",
+        "Observer",
+        "Stalker",
+        "Infiltrator",
+        "Thief Catcher",
+        "Delver",
+        "Investigator",
+        "Detective",
+        "Master Investigator",
+        "Master Investigator",
+        "Mental Investigator",
+        "Mental Investigator",
+        "Arch Investigator",
+        "Arch Investigator",
+        "Supreme Investigator"
+      ]
+    },
+    "Jester": {
+      "titles": [
+        "Performer",
+        "Mocker",
+        "Dancer",
+        "Charmer",
+        "Fool",
+        "Provoker",
+        "Jester",
+        "Thought Provoker",
+        "Thought Provoker",
+        "Joker",
+        "Master Joker",
+        "Master Joker",
+        "Master Provoker",
+        "Master Provoker",
+        "Grand Jester"
+      ]
+    },
+    "Kineticist": {
+      "titles": [
+        "Trickster",
+        "Magician",
+        "Manipulator",
+        "Watcher",
+        "Physicist",
+        "Adjuvant",
+        "Kineticist",
+        "Motivator",
+        "Esper",
+        "Esper",
+        "The Impetus",
+        "The Impetus",
+        "The Catalyst",
+        "The Catalyst",
+        "The Lord of Time and Space"
+      ]
+    },
+    "Knight": {
+      "titles": [
+        "Defender",
+        "Protector",
+        "Guardian",
+        "Warder",
+        "Champion",
+        "Cavalier",
+        "Knight",
+        "Paladin",
+        "Knight Lord",
+        "Knight Lord",
+        "Paladin Lord",
+        "Paladin Lord",
+        "Lord Protector",
+        "Lord Protector",
+        "Lord Defender"
+      ]
+    },
+    "Knight(Dark)": {
+      "titles": [
+        "Attacker",
+        "Pillager",
+        "Ransacker",
+        "Desecrater",
+        "Despiser",
+        "Destroyer",
+        "Dark Knight",
+        "Despoiler",
+        "Dark Lord",
+        "Dark Lord",
+        "Lord Despoiler",
+        "Lord Despoiler",
+        "Lord Destroyer",
+        "Lord Destroyer",
+        "Dark Lord"
+      ]
+    },
+    "Knight(Death)": {
+      "titles": [
+        "Attacker",
+        "Grave Soldier",
+        "Destroyer",
+        "Grave Knight",
+        "Shadow Knight",
+        "Dark Knight",
+        "Death Knight",
+        "Ravager",
+        "Death Lord",
+        "Death Lord",
+        "Lord Ravager",
+        "Lord Ravager",
+        "Grave Master",
+        "Grave Master",
+        "Death King"
+      ]
+    },
+    "Legendier": {
+      "titles": [
+        "Opportunist",
+        "Folklorist",
+        "Voyager",
+        "Mythist",
+        "Fortune Hunter",
+        "Glory Seeker",
+        "Legendier",
+        "Cynosure",
+        "Hero",
+        "Hero",
+        "Master of Myth",
+        "Master of Myth",
+        "Master of Legend",
+        "Master of Legend",
+        "Myth Lord"
+      ]
+    },
+    "Luckster": {
+      "titles": [
+        "Odds Shifter",
+        "Pilferer",
+        "Looter",
+        "Cutpurse",
+        "Burglar",
+        "Fate Shifter",
+        "Luckster",
+        "Thief",
+        "Thief",
+        "Master Luckster",
+        "Adept Fate Shifter",
+        "Adept Fate Shifter",
+        "Master Fate Shifter",
+        "Master Fate Shifter",
+        "Master of Destiny"
+      ]
+    },
+    "Mage": {
+      "titles": [
+        "Thaumaturgist",
+        "Magician",
+        "Conjurer",
+        "Adept",
+        "Abjurer",
+        "Enchanter",
+        "Mage",
+        "Sorcerer",
+        "Wizard",
+        "Wizard",
+        "Arch Mage",
+        "Arch Mage",
+        "Arch Wizard",
+        "Arch Wizard",
+        "Magius"
+      ]
+    },
+    "Martial Artist": {
+      "titles": [
+        "Grasshopper",
+        "Snake",
+        "Crane",
+        "Tiger",
+        "Dragon",
+        "Monkey",
+        "Martial Artist",
+        "Sensei",
+        "Master",
+        "Master",
+        "Chi Master",
+        "Chi Master",
+        "Spirit Master",
+        "Spirit Master",
+        "Grand Master"
+      ]
+    },
+    "Medium": {
+      "titles": [
+        "Spirit Talker",
+        "Spirit Walker",
+        "Diviner",
+        "Ritualist",
+        "Spirit Caller",
+        "Spirit Dancer",
+        "Medium",
+        "Prophesier ",
+        "Spirit Sender",
+        "Spirit Traveler",
+        "Master Medium",
+        "Master Medium",
+        "Arch Medium",
+        "Arch Medium",
+        "Divine Voice"
+      ]
+    },
+    "Mentalist": {
+      "titles": [
+        "Novice",
+        "Scanner",
+        "Telepath",
+        "Adept",
+        "Psychic",
+        "Psymage",
+        "Mentalist",
+        "Cerebral",
+        "Psymaster",
+        "Psymaster",
+        "Psywizard",
+        "Psywizard",
+        "Arch Psymage",
+        "Arch Psymage",
+        "Arch Psywizard"
+      ]
+    },
+    "Minstrel": {
+      "titles": [
+        "Vagabond",
+        "Player",
+        "Performer",
+        "Gypsy",
+        "Lyricist",
+        "Muse",
+        "Minstrel",
+        "Musician",
+        "Master Minstrel",
+        "Master Minstrel",
+        "Master Musician",
+        "Master Musician",
+        "Master Muse",
+        "Master Muse",
+        "Gypsy King"
+      ]
+    },
+    "Missionary": {
+      "titles": [
+        "Acolyte",
+        "Traveler",
+        "Chaplain",
+        "Evangelist",
+        "Ecclesiast",
+        "Minister",
+        "Missionary",
+        "Curate",
+        "Apostle",
+        "Apostle",
+        "Rector",
+        "Rector",
+        "Vicar",
+        "Vicar",
+        "Transcendent"
+      ]
+    },
+    "Monk": {
+      "titles": [
+        "Acolyte",
+        "Initiate",
+        "Brother",
+        "Friar",
+        "Adept",
+        "Disciple",
+        "Monk",
+        "Prophet",
+        "Master",
+        "Master",
+        "Master Monk",
+        "Master Monk",
+        "High Master",
+        "High Master",
+        "Grand Master"
+      ]
+    },
+    "Mounted Archer": {
+      "titles": [
+        "Rider",
+        "Gaurdsman",
+        "Trick Rider",
+        "Trickshot",
+        "Quickshot",
+        "Marksman",
+        "Mounted Archer",
+        "Master Marksman",
+        "Master Mounted Archer",
+        "Master Mounted Archer",
+        "Matchless",
+        "Matchless",
+        "Untouchable",
+        "Untouchable",
+        "Wind of War"
+      ]
+    },
+    "Necromancer": {
+      "titles": [
+        "Undertaker",
+        "Grave Robber",
+        "Heretic",
+        "Thaumaturgist",
+        "Reanimator",
+        "Defiler",
+        "Necromancer",
+        "Corrupter",
+        "Destroyer",
+        "Destroyer",
+        "Sorcerer",
+        "Sorcerer",
+        "Theurgist",
+        "Theurgist",
+        "Bone Lord"
+      ]
+    },
+    "Obscuratum": {
+      "titles": [
+        "The Hidden",
+        "The Esoteric",
+        "The Mystical",
+        "The Unknown",
+        "The Veiled",
+        "The Enshrouded",
+        "The Obscuratum",
+        "The Delusion",
+        "The Delusion",
+        "The Uncertainty",
+        "The Hallucination",
+        "The Hallucination",
+        "The Apparition",
+        "The Apparition",
+        "The Nightmare"
+      ]
+    },
+    "Paladin": {
+      "titles": [
+        "Defender",
+        "Holy Soldier",
+        "Light Bearer",
+        "Sanctifier",
+        "Protector",
+        "Knight",
+        "Paladin",
+        "Shield of Hope",
+        "Paladin Lord",
+        "Paladin Lord",
+        "Sword of Light",
+        "Sword of Light",
+        "Purifier",
+        "Purifier",
+        "Blessed Lord"
+      ]
+    },
+    "Plunderer": {
+      "titles": [
+        "Seeker",
+        "Appraiser",
+        "Finder",
+        "Filcher",
+        "Thief",
+        "Defier",
+        "Plunderer",
+        "Delver",
+        "Treasure Hunter",
+        "Treasure Hunter",
+        "Master Seeker",
+        "Master Seeker",
+        "Master Delver",
+        "Master Delver",
+        "Master Plunderer"
+      ]
+    },
+    "Priest": {
+      "titles": [
+        "Acolyte",
+        "Initiate",
+        "Layman",
+        "Brother",
+        "Cleric",
+        "Canon",
+        "Priest",
+        "High Priest",
+        "Arch Priest",
+        "Arch Priest",
+        "Bishop",
+        "Bishop",
+        "Cardinal",
+        "Cardinal",
+        "Pope"
+      ]
+    },
+    "Priest(Dark)": {
+      "titles": [
+        "Acolyte",
+        "Initiate",
+        "Layman",
+        "Brother",
+        "Cleric",
+        "Canon",
+        "Dark Priest",
+        "High Priest",
+        "Arch Priest",
+        "Arch Priest",
+        "Dark Bishop",
+        "Dark Bishop",
+        "Red Cardinal",
+        "Red Cardinal",
+        "Dark Pope"
+      ]
+    },
+    "Psychokineticist": {
+      "titles": [
+        "Performer",
+        "Charlatan",
+        "Manipulator",
+        "Charmer",
+        "Prestidigitator",
+        "Adept",
+        "Psychokineticist",
+        "Ascendant",
+        "The Shadow",
+        "The Shadow",
+        "The Veiled",
+        "The Veiled",
+        "The Smile",
+        "The Smile",
+        "The Whisper"
+      ]
+    },
+    "Ranger": {
+      "titles": [
+        "Scout",
+        "Woodsman",
+        "Tracker",
+        "Pathfinder",
+        "Guide",
+        "Strider",
+        "Ranger",
+        "Forester",
+        "Ranger Lord",
+        "Ranger Lord",
+        "Master Woodsman",
+        "Master Woodsman",
+        "Forest Master",
+        "Forest Master",
+        "Forest Lord"
+      ]
+    },
+    "Ritual Leader": {
+      "titles": [
+        "Acolyte",
+        "Initiate",
+        "Ritualist",
+        "Ovate",
+        "Spiritualist",
+        "Spiritual Leader",
+        "Ritual Leader",
+        "Cleric",
+        "Cleric",
+        "Ceremonialist",
+        "Spirit Guide",
+        "Spirit Guide",
+        "Soul Guide",
+        "Soul Guide",
+        "Leader of Souls"
+      ]
+    },
+    "Rogue": {
+      "titles": [
+        "Filcher",
+        "Pilferer",
+        "Looter",
+        "Cutpurse",
+        "Burglar",
+        "Bandit",
+        "Rogue",
+        "Thief",
+        "Master Rogue",
+        "Master Rogue",
+        "Master Thief",
+        "Master Thief",
+        "Shadow Walker",
+        "Shadow Walker",
+        "Shadow Master"
+      ]
+    },
+    "Runesmith": {
+      "titles": [
+        "Scribe",
+        "Scribe",
+        "Wood Etcher",
+        "Scriptor",
+        "Metal Shaper",
+        "Stone Crafter",
+        "Runesmith",
+        "Rune Guide",
+        "Rune Master",
+        "Rune Master",
+        "Rune Lord",
+        "Rune Lord",
+        "High Rune Master",
+        "High Rune Master",
+        "Grand Rune Master"
+      ]
+    },
+    "Sage": {
+      "titles": [
+        "Initiate",
+        "Cataloger",
+        "Bookkeeper",
+        "Consultant",
+        "Advisor",
+        "Oracle",
+        "Sage",
+        "Wise One",
+        "Master Sage",
+        "Master Sage",
+        "Magus",
+        "Magus",
+        "Master Magus",
+        "Master Magus",
+        "Grand Magus"
+      ]
+    },
+    "Seer": {
+      "titles": [
+        "Student",
+        "Initiate",
+        "Counselor",
+        "Advisor",
+        "Medium",
+        "Soothsayer",
+        "Seer",
+        "Prophesier",
+        "Master Seer",
+        "Master Seer",
+        "Prophet",
+        "Prophet",
+        "High Prophet",
+        "High Prophet",
+        "Grand Oracle"
+      ]
+    },
+    "Shadow Stalker": {
+      "titles": [
+        "Shadow",
+        "Lurker",
+        "Fade",
+        "Filcher",
+        "Unseen",
+        "Stalker",
+        "Shadow Stalker",
+        "Shadow Walker",
+        "Master Stalker",
+        "Master Stalker",
+        "Shadow Master",
+        "Shadow Master",
+        "Phantom",
+        "Phantom",
+        "Shadow Lord"
+      ]
+    },
+    "Shadowfrost Caster": {
+      "titles": [
+        "Shade Thrower",
+        "Cryokineticist",
+        "Fade",
+        "Shadow Walker",
+        "Shadow Adept",
+        "Shadow Shifter",
+        "Shadowfrost Caster",
+        "Shadow Master",
+        "Shadow Wizard",
+        "Shadow Wizard",
+        "Arch Umbral Master",
+        "Arch Umbral Master",
+        "Arch Umbral Wizard",
+        "Arch Umbral Wizard",
+        "Lady/Lord of Cold and Shadow"
+      ]
+    },
+    "Shaman": {
+      "titles": [
+        "Initiate",
+        "Charmer",
+        "Witch Doctor",
+        "Mystic",
+        "Healer",
+        "Voodoo Priest",
+        "Shaman",
+        "Walker",
+        "Spirit Walker",
+        "Spirit Walker",
+        "Wind Walker",
+        "Wind Walker",
+        "Spirit Master",
+        "Spirit Master",
+        "All Father/Mother"
+      ]
+    },
+    "Shaman(Drum)": {
+      "titles": [
+        "Chanter",
+        "Medicine Man",
+        "Poet",
+        "Rhythmist",
+        "Ritualist",
+        "Oracle",
+        "Drum Shaman",
+        "Witch Doctor",
+        "Percussionist",
+        "Percussionist",
+        "Rhythm Master",
+        "Rhythm Master",
+        "Spirit Dancer",
+        "Spirit Dancer",
+        "Lord of the Drum"
+      ]
+    },
+    "Shaman(Rune)": {
+      "titles": [
+        "Scribe",
+        "Detector",
+        "Diviner",
+        "Scriptor",
+        "Rune Reader",
+        "Discerner",
+        "Rune Shaman",
+        "Rune Guide",
+        "Rune Master",
+        "Rune Master",
+        "Rune Lord",
+        "Rune Lord",
+        "High Rune Master",
+        "High Rune Master",
+        "Grand Rune Master"
+      ]
+    },
+    "Sorcerer": {
+      "titles": [
+        "Protégé",
+        "Sensor",
+        "Charmer",
+        "Controller",
+        "Caller",
+        "Binder",
+        "Sorcerer",
+        "Thought Binder",
+        "Thought Binder",
+        "Master Sorcerer",
+        "High Sorcerer",
+        "High Sorcerer",
+        "Arch Sorcerer",
+        "Arch Sorcerer",
+        "Grand Sorcerer"
+      ]
+    },
+    "Summoner": {
+      "titles": [
+        "Animal Binder",
+        "Caller",
+        "Elemental Caller",
+        "Spirit Caller",
+        "Spirit Binder",
+        "Thought Caller",
+        "Summoner",
+        "Controller",
+        "Controller",
+        "Master Summoner",
+        "High Summoner",
+        "High Summoner",
+        "Arch Summoner",
+        "Arch Summoner",
+        "Grand Summoner"
+      ]
+    },
+    "Trickster": {
+      "titles": [
+        "Juggler",
+        "Actor",
+        "Mystic",
+        "Adept",
+        "Prankster",
+        "Prestidigitator",
+        "Trickster",
+        "Deceiver",
+        "Master Trickster",
+        "Master Trickster",
+        "Spell Blade",
+        "Spell Blade",
+        "Shadow Caster",
+        "Shadow Caster",
+        "Shadow Master"
+      ]
+    },
+    "Vivisectionist": {
+      "titles": [
+        "Dissector",
+        "Anatomist",
+        "Reanimator",
+        "Bone Collector",
+        "Dark Mage",
+        "Flayer",
+        "Vivisectionist",
+        "Abominator",
+        "Master Vivisector",
+        "Master Vivisector",
+        "Master Reanimator",
+        "Master Reanimator",
+        "Master Abominator",
+        "Master Abominator",
+        "Lord of Abomination"
+      ]
+    },
+    "Warden": {
+      "titles": [
+        "Defender",
+        "Seeker",
+        "Cavalier",
+        "Nature Protector",
+        "Nature Guardian",
+        "Nature Champion",
+        "Warden",
+        "Nature Warden",
+        "Warden Lord",
+        "Warden Lord",
+        "Nature Lord",
+        "Nature Lord",
+        "Great Warden",
+        "Great Warden",
+        "Grand Warden"
+      ]
+    },
+    "Warrior": {
+      "titles": [
+        "Brawler",
+        "Soldier",
+        "Mercenary",
+        "Veteran",
+        "Man-at-arms",
+        "Campaigner",
+        "Warrior",
+        "Champion",
+        "Lord",
+        "Lord",
+        "Battle Lord",
+        "Battle Lord",
+        "Warlord",
+        "Warlord",
+        "Overlord"
+      ]
+    },
+    "Wilder": {
+      "titles": [
+        "Talented",
+        "Gifted",
+        "Charmer",
+        "Tamer",
+        "Mystic",
+        "Conjurer",
+        "Wilder",
+        "Adept",
+        "Adept Wilder",
+        "Adept Wilder",
+        "Wild Sorcerer",
+        "Wild Sorcerer",
+        "Wild Wizard",
+        "Wild Wizard",
+        "Arch Wilder"
+      ]
+    },
+    "Witch(Black)": {
+      "titles": [
+        "Initiate",
+        "Novice",
+        "Witherer",
+        "Mystic",
+        "Conjurer",
+        "Adept",
+        "Black Witch",
+        "Necromancer",
+        "High Witch",
+        "High Witch",
+        "Elder Witch",
+        "Elder Witch",
+        "Arch Witch",
+        "Arch Witch",
+        "Great Witch"
+      ]
+    },
+    "Witch(Gray)": {
+      "titles": [
+        "Initiate",
+        "Novice",
+        "Diviner",
+        "Mystic",
+        "Conjurer",
+        "Adept",
+        "Gray Witch",
+        "Seer",
+        "High Witch",
+        "High Witch",
+        "Elder Witch",
+        "Elder Witch",
+        "Arch Witch",
+        "Arch Witch",
+        "Great Witch"
+      ]
+    },
+    "Witch(White)": {
+      "titles": [
+        "Initiate",
+        "Novice",
+        "Healer",
+        "Mystic",
+        "Conjurer",
+        "Adept",
+        "White Witch",
+        "Seer",
+        "High Witch",
+        "High Witch",
+        "Elder Witch",
+        "Elder Witch",
+        "Arch Witch",
+        "Arch Witch",
+        "Great Witch"
+      ]
+    },
+    "Witch Hunter": {
+      "titles": [
+        "Investigator",
+        "Shadower",
+        "Mage Stopper",
+        "Thief Taker",
+        "Cleric Catcher",
+        "Witcher",
+        "Witch Hunter",
+        "Finder",
+        "Finder",
+        "Seeker",
+        "Master Seeker",
+        "Master Seeker",
+        "Master Witcher",
+        "Master Witcher",
+        "Grand Witcher"
+      ]
+    },
+    "GME": {
+      "titles": [
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra",
+        "Extra"
+      ]
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "strRatingValues",
+    "lines": [
+      29658,
+      29690
+    ]
+  },
+  "_fields": [
+    "meleeAttack",
+    "meleeDamage",
+    "loadLimit",
+    "weaponSpeed"
+  ],
+  "entries": {
+    "0": {
+      "meleeAttack": -8,
+      "meleeDamage": -12,
+      "loadLimit": 0.005,
+      "weaponSpeed": 6
+    },
+    "1": {
+      "meleeAttack": -6,
+      "meleeDamage": -10,
+      "loadLimit": 0.01,
+      "weaponSpeed": 5
+    },
+    "2": {
+      "meleeAttack": -5,
+      "meleeDamage": -9,
+      "loadLimit": 0.02,
+      "weaponSpeed": 4
+    },
+    "3": {
+      "meleeAttack": -4,
+      "meleeDamage": -8,
+      "loadLimit": 0.03,
+      "weaponSpeed": 4
+    },
+    "4": {
+      "meleeAttack": -3,
+      "meleeDamage": -7,
+      "loadLimit": 0.04,
+      "weaponSpeed": 3
+    },
+    "5": {
+      "meleeAttack": -3,
+      "meleeDamage": -6,
+      "loadLimit": 0.05,
+      "weaponSpeed": 3
+    },
+    "6": {
+      "meleeAttack": -2,
+      "meleeDamage": -5,
+      "loadLimit": 0.1,
+      "weaponSpeed": 2
+    },
+    "7": {
+      "meleeAttack": -2,
+      "meleeDamage": -4,
+      "loadLimit": 0.2,
+      "weaponSpeed": 1
+    },
+    "8": {
+      "meleeAttack": -1,
+      "meleeDamage": -3,
+      "loadLimit": 0.4,
+      "weaponSpeed": 1
+    },
+    "9": {
+      "meleeAttack": -1,
+      "meleeDamage": -2,
+      "loadLimit": 0.6,
+      "weaponSpeed": 0
+    },
+    "10": {
+      "meleeAttack": 0,
+      "meleeDamage": -1,
+      "loadLimit": 0.8,
+      "weaponSpeed": 0
+    },
+    "11": {
+      "meleeAttack": 0,
+      "meleeDamage": 0,
+      "loadLimit": 1.0,
+      "weaponSpeed": 0
+    },
+    "12": {
+      "meleeAttack": 0,
+      "meleeDamage": 0,
+      "loadLimit": 1.1,
+      "weaponSpeed": 0
+    },
+    "13": {
+      "meleeAttack": 0,
+      "meleeDamage": 0,
+      "loadLimit": 1.2,
+      "weaponSpeed": 0
+    },
+    "14": {
+      "meleeAttack": 0,
+      "meleeDamage": 0,
+      "loadLimit": 1.3,
+      "weaponSpeed": 0
+    },
+    "15": {
+      "meleeAttack": 0,
+      "meleeDamage": 1,
+      "loadLimit": 1.4,
+      "weaponSpeed": 0
+    },
+    "16": {
+      "meleeAttack": 1,
+      "meleeDamage": 2,
+      "loadLimit": 1.5,
+      "weaponSpeed": 0
+    },
+    "17": {
+      "meleeAttack": 1,
+      "meleeDamage": 3,
+      "loadLimit": 1.6,
+      "weaponSpeed": -1
+    },
+    "18": {
+      "meleeAttack": 2,
+      "meleeDamage": 4,
+      "loadLimit": 1.7,
+      "weaponSpeed": -1
+    },
+    "19": {
+      "meleeAttack": 2,
+      "meleeDamage": 5,
+      "loadLimit": 1.8,
+      "weaponSpeed": -2
+    },
+    "20": {
+      "meleeAttack": 3,
+      "meleeDamage": 6,
+      "loadLimit": 2.0,
+      "weaponSpeed": -2
+    },
+    "21": {
+      "meleeAttack": 3,
+      "meleeDamage": 7,
+      "loadLimit": 2.2,
+      "weaponSpeed": -3
+    },
+    "22": {
+      "meleeAttack": 4,
+      "meleeDamage": 8,
+      "loadLimit": 2.4,
+      "weaponSpeed": -4
+    },
+    "23": {
+      "meleeAttack": 4,
+      "meleeDamage": 9,
+      "loadLimit": 2.6,
+      "weaponSpeed": -4
+    },
+    "24": {
+      "meleeAttack": 5,
+      "meleeDamage": 10,
+      "loadLimit": 2.8,
+      "weaponSpeed": -5
+    },
+    "25": {
+      "meleeAttack": 5,
+      "meleeDamage": 12,
+      "loadLimit": 3.0,
+      "weaponSpeed": -5
+    },
+    "26": {
+      "meleeAttack": 6,
+      "meleeDamage": 14,
+      "loadLimit": 4.0,
+      "weaponSpeed": -6
+    },
+    "27": {
+      "meleeAttack": 6,
+      "meleeDamage": 16,
+      "loadLimit": 6.0,
+      "weaponSpeed": -7
+    },
+    "28": {
+      "meleeAttack": 7,
+      "meleeDamage": 18,
+      "loadLimit": 8.0,
+      "weaponSpeed": -8
+    },
+    "29": {
+      "meleeAttack": 8,
+      "meleeDamage": 20,
+      "loadLimit": 10.0,
+      "weaponSpeed": -9
+    },
+    "30": {
+      "meleeAttack": 10,
+      "meleeDamage": 25,
+      "loadLimit": 20.0,
+      "weaponSpeed": -10
+    }
+  }
+}

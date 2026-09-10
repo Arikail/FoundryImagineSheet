@@ -1,0 +1,172 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "vitRatingValues",
+    "lines": [
+      29782,
+      29814
+    ]
+  },
+  "_fields": [
+    "healingRate",
+    "poisonResist",
+    "diseaseResist"
+  ],
+  "entries": {
+    "0": {
+      "healingRate": "1 per 2 months",
+      "poisonResist": 0,
+      "diseaseResist": 0
+    },
+    "1": {
+      "healingRate": "1 per month",
+      "poisonResist": 0,
+      "diseaseResist": 0
+    },
+    "2": {
+      "healingRate": "1 per month",
+      "poisonResist": 0,
+      "diseaseResist": 0
+    },
+    "3": {
+      "healingRate": "1 per 2 weeks",
+      "poisonResist": 0,
+      "diseaseResist": 0
+    },
+    "4": {
+      "healingRate": "1 per 2 weeks",
+      "poisonResist": 1,
+      "diseaseResist": 0
+    },
+    "5": {
+      "healingRate": "1 per week",
+      "poisonResist": 2,
+      "diseaseResist": 1
+    },
+    "6": {
+      "healingRate": "1 per week",
+      "poisonResist": 5,
+      "diseaseResist": 2
+    },
+    "7": {
+      "healingRate": "1 per 6 days",
+      "poisonResist": 10,
+      "diseaseResist": 5
+    },
+    "8": {
+      "healingRate": "1 per 6 days",
+      "poisonResist": 15,
+      "diseaseResist": 10
+    },
+    "9": {
+      "healingRate": "1 per 5 days",
+      "poisonResist": 20,
+      "diseaseResist": 15
+    },
+    "10": {
+      "healingRate": "1 per 4 days",
+      "poisonResist": 25,
+      "diseaseResist": 20
+    },
+    "11": {
+      "healingRate": "1 per 3 days",
+      "poisonResist": 30,
+      "diseaseResist": 25
+    },
+    "12": {
+      "healingRate": "1 per 3 days",
+      "poisonResist": 35,
+      "diseaseResist": 30
+    },
+    "13": {
+      "healingRate": "1 per 2 days",
+      "poisonResist": 40,
+      "diseaseResist": 35
+    },
+    "14": {
+      "healingRate": "1 per 2 days",
+      "poisonResist": 45,
+      "diseaseResist": 40
+    },
+    "15": {
+      "healingRate": "1 per day",
+      "poisonResist": 50,
+      "diseaseResist": 45
+    },
+    "16": {
+      "healingRate": "1 per day",
+      "poisonResist": 55,
+      "diseaseResist": 50
+    },
+    "17": {
+      "healingRate": "2 per day",
+      "poisonResist": 60,
+      "diseaseResist": 55
+    },
+    "18": {
+      "healingRate": "2 per day",
+      "poisonResist": 65,
+      "diseaseResist": 60
+    },
+    "19": {
+      "healingRate": "3 per day",
+      "poisonResist": 70,
+      "diseaseResist": 65
+    },
+    "20": {
+      "healingRate": "3 per day",
+      "poisonResist": 75,
+      "diseaseResist": 70
+    },
+    "21": {
+      "healingRate": "4 per day",
+      "poisonResist": 80,
+      "diseaseResist": 75
+    },
+    "22": {
+      "healingRate": "4 per day",
+      "poisonResist": 85,
+      "diseaseResist": 80
+    },
+    "23": {
+      "healingRate": "5 per day",
+      "poisonResist": 90,
+      "diseaseResist": 85
+    },
+    "24": {
+      "healingRate": "5 per day",
+      "poisonResist": 92,
+      "diseaseResist": 90
+    },
+    "25": {
+      "healingRate": "1 per hour",
+      "poisonResist": 94,
+      "diseaseResist": 92
+    },
+    "26": {
+      "healingRate": "1 per 30 minutes",
+      "poisonResist": 96,
+      "diseaseResist": 94
+    },
+    "27": {
+      "healingRate": "1 per 10 minutes",
+      "poisonResist": 98,
+      "diseaseResist": 96
+    },
+    "28": {
+      "healingRate": "1 per minute",
+      "poisonResist": 99,
+      "diseaseResist": 98
+    },
+    "29": {
+      "healingRate": "1 per 10 seconds",
+      "poisonResist": 100,
+      "diseaseResist": 99
+    },
+    "30": {
+      "healingRate": "1 per 5 seconds",
+      "poisonResist": 200,
+      "diseaseResist": 200
+    }
+  }
+}

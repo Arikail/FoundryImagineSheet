@@ -1,0 +1,384 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "goalupdict",
+    "lines": [
+      92122,
+      92215
+    ]
+  },
+  "_fields": [
+    "goalAttr1",
+    "goalAttr2"
+  ],
+  "entries": {
+    "Acrobat": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Alchemist": {
+      "goalAttr1": "KNW",
+      "goalAttr2": "AUR"
+    },
+    "Arcanist": {
+      "goalAttr1": "INT",
+      "goalAttr2": "KNW"
+    },
+    "Archer": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Archer(Arcane)": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "AUR"
+    },
+    "Archer(Zen)": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "Assassin": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Bandit": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Banisher": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "Bard": {
+      "goalAttr1": "INT",
+      "goalAttr2": "KNW"
+    },
+    "Battlemancer": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Beastmaster": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Beguiler": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Berserker": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Border Scout": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Bounty Hunter": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Buccaneer": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Cacophonist": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Cajoler": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Cavalier": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Channeler": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Conqueror": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Crypt Robber": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Curse Breaker": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Delver": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "KNW"
+    },
+    "Dervish": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "Dreamer": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Druid": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Duelist": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Elemental Dancer": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Elementalist": {
+      "goalAttr1": "INT",
+      "goalAttr2": "AUR"
+    },
+    "Enchanter": {
+      "goalAttr1": "INT",
+      "goalAttr2": "WIL"
+    },
+    "Exorcist": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Explorer": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "KNW"
+    },
+    "Gypsy": {
+      "goalAttr1": "INT",
+      "goalAttr2": "KNW"
+    },
+    "Harbinger": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Harmonist": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Healer": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Heretic": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Hermeticist": {
+      "goalAttr1": "KNW",
+      "goalAttr2": "AUR"
+    },
+    "Hero": {
+      "goalAttr1": "STR",
+      "goalAttr2": "WIL"
+    },
+    "Hunter": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Illuminator": {
+      "goalAttr1": "INT",
+      "goalAttr2": "AUR"
+    },
+    "Innominate": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Inquisitor": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Intercessor": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Investigator": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Jester": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Kineticist": {
+      "goalAttr1": "INT",
+      "goalAttr2": "AUR"
+    },
+    "Knight": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Knight(Dark)": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Knight(Death)": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Legendier": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Luckster": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "Mage": {
+      "goalAttr1": "INT",
+      "goalAttr2": "AUR"
+    },
+    "Martial Artist": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Medium": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Mentalist": {
+      "goalAttr1": "WIL",
+      "goalAttr2": "AUR"
+    },
+    "Minstrel": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Missionary": {
+      "goalAttr1": "WIS",
+      "goalAttr2": "PTY"
+    },
+    "Monk": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIS"
+    },
+    "Mounted Archer": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Necromancer": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Obscuratum": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Paladin": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Plunderer": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "Priest": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Priest(Dark)": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Psychokineticist": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "AUR"
+    },
+    "Ranger": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "KNW"
+    },
+    "Ritual Leader": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Rogue": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Runesmith": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Sage": {
+      "goalAttr1": "KNW",
+      "goalAttr2": "AUR"
+    },
+    "Seer": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Shadow Stalker": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Shadowfrost Caster": {
+      "goalAttr1": "INT",
+      "goalAttr2": "AUR"
+    },
+    "Shaman": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Shaman(Drum)": {
+      "goalAttr1": "KNW",
+      "goalAttr2": "PTY"
+    },
+    "Shaman(Rune)": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Sorcerer": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "PTY"
+    },
+    "Summoner": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "PTY"
+    },
+    "Trickster": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "INT"
+    },
+    "Vivisectionist": {
+      "goalAttr1": "INT",
+      "goalAttr2": "WIL"
+    },
+    "Warden": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "PTY"
+    },
+    "Warrior": {
+      "goalAttr1": "STR",
+      "goalAttr2": "AGL"
+    },
+    "Wilder": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Witch(Black)": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Witch(Gray)": {
+      "goalAttr1": "AUR",
+      "goalAttr2": "WIL"
+    },
+    "Witch(White)": {
+      "goalAttr1": "PTY",
+      "goalAttr2": "WIL"
+    },
+    "Witch Hunter": {
+      "goalAttr1": "AGL",
+      "goalAttr2": "WIL"
+    },
+    "GME": {
+      "goalAttr1": "",
+      "goalAttr2": ""
+    }
+  }
+}

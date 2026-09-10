@@ -1,0 +1,204 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "knwRatingValues",
+    "lines": [
+      29925,
+      29957
+    ]
+  },
+  "_fields": [
+    "classSkills",
+    "raceSkills",
+    "socialSkills",
+    "memorizationPoints"
+  ],
+  "entries": {
+    "0": {
+      "classSkills": 0,
+      "raceSkills": 0,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "1": {
+      "classSkills": 0,
+      "raceSkills": 0,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "2": {
+      "classSkills": 1,
+      "raceSkills": 0,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "3": {
+      "classSkills": 2,
+      "raceSkills": 0,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "4": {
+      "classSkills": 3,
+      "raceSkills": 0,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "5": {
+      "classSkills": 4,
+      "raceSkills": 1,
+      "socialSkills": 0,
+      "memorizationPoints": 0
+    },
+    "6": {
+      "classSkills": 8,
+      "raceSkills": 1,
+      "socialSkills": 0,
+      "memorizationPoints": 1
+    },
+    "7": {
+      "classSkills": 12,
+      "raceSkills": 1,
+      "socialSkills": 1,
+      "memorizationPoints": 1
+    },
+    "8": {
+      "classSkills": 16,
+      "raceSkills": 1,
+      "socialSkills": 1,
+      "memorizationPoints": 1
+    },
+    "9": {
+      "classSkills": 20,
+      "raceSkills": 1,
+      "socialSkills": 1,
+      "memorizationPoints": 2
+    },
+    "10": {
+      "classSkills": 24,
+      "raceSkills": 2,
+      "socialSkills": 1,
+      "memorizationPoints": 3
+    },
+    "11": {
+      "classSkills": 28,
+      "raceSkills": 3,
+      "socialSkills": 2,
+      "memorizationPoints": 4
+    },
+    "12": {
+      "classSkills": 32,
+      "raceSkills": 4,
+      "socialSkills": 3,
+      "memorizationPoints": 5
+    },
+    "13": {
+      "classSkills": 36,
+      "raceSkills": 5,
+      "socialSkills": 4,
+      "memorizationPoints": 6
+    },
+    "14": {
+      "classSkills": 40,
+      "raceSkills": 6,
+      "socialSkills": 5,
+      "memorizationPoints": 7
+    },
+    "15": {
+      "classSkills": 44,
+      "raceSkills": 7,
+      "socialSkills": 6,
+      "memorizationPoints": 8
+    },
+    "16": {
+      "classSkills": 48,
+      "raceSkills": 8,
+      "socialSkills": 7,
+      "memorizationPoints": 9
+    },
+    "17": {
+      "classSkills": 52,
+      "raceSkills": 9,
+      "socialSkills": 8,
+      "memorizationPoints": 10
+    },
+    "18": {
+      "classSkills": 56,
+      "raceSkills": 10,
+      "socialSkills": 9,
+      "memorizationPoints": 11
+    },
+    "19": {
+      "classSkills": 60,
+      "raceSkills": 12,
+      "socialSkills": 10,
+      "memorizationPoints": 12
+    },
+    "20": {
+      "classSkills": 64,
+      "raceSkills": 14,
+      "socialSkills": 12,
+      "memorizationPoints": 14
+    },
+    "21": {
+      "classSkills": 68,
+      "raceSkills": 16,
+      "socialSkills": 14,
+      "memorizationPoints": 16
+    },
+    "22": {
+      "classSkills": 72,
+      "raceSkills": 18,
+      "socialSkills": 16,
+      "memorizationPoints": 18
+    },
+    "23": {
+      "classSkills": 76,
+      "raceSkills": 20,
+      "socialSkills": 18,
+      "memorizationPoints": 20
+    },
+    "24": {
+      "classSkills": 80,
+      "raceSkills": 24,
+      "socialSkills": 20,
+      "memorizationPoints": 24
+    },
+    "25": {
+      "classSkills": 85,
+      "raceSkills": 28,
+      "socialSkills": 24,
+      "memorizationPoints": 30
+    },
+    "26": {
+      "classSkills": 90,
+      "raceSkills": 32,
+      "socialSkills": 28,
+      "memorizationPoints": 35
+    },
+    "27": {
+      "classSkills": 95,
+      "raceSkills": 36,
+      "socialSkills": 32,
+      "memorizationPoints": 40
+    },
+    "28": {
+      "classSkills": 100,
+      "raceSkills": 40,
+      "socialSkills": 36,
+      "memorizationPoints": 45
+    },
+    "29": {
+      "classSkills": 150,
+      "raceSkills": 44,
+      "socialSkills": 40,
+      "memorizationPoints": 50
+    },
+    "30": {
+      "classSkills": 150,
+      "raceSkills": 44,
+      "socialSkills": 40,
+      "memorizationPoints": 50
+    }
+  }
+}

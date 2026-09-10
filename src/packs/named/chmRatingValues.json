@@ -1,0 +1,140 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "chmRatingValues",
+    "lines": [
+      30022,
+      30054
+    ]
+  },
+  "_fields": [
+    "morale",
+    "controlAdjust"
+  ],
+  "entries": {
+    "0": {
+      "morale": -40,
+      "controlAdjust": 45
+    },
+    "1": {
+      "morale": -35,
+      "controlAdjust": 40
+    },
+    "2": {
+      "morale": -30,
+      "controlAdjust": 35
+    },
+    "3": {
+      "morale": -25,
+      "controlAdjust": 30
+    },
+    "4": {
+      "morale": -20,
+      "controlAdjust": 25
+    },
+    "5": {
+      "morale": -15,
+      "controlAdjust": 20
+    },
+    "6": {
+      "morale": -15,
+      "controlAdjust": 15
+    },
+    "7": {
+      "morale": -10,
+      "controlAdjust": 15
+    },
+    "8": {
+      "morale": -10,
+      "controlAdjust": 10
+    },
+    "9": {
+      "morale": -5,
+      "controlAdjust": 10
+    },
+    "10": {
+      "morale": -5,
+      "controlAdjust": 5
+    },
+    "11": {
+      "morale": -2,
+      "controlAdjust": 0
+    },
+    "12": {
+      "morale": 0,
+      "controlAdjust": 0
+    },
+    "13": {
+      "morale": 0,
+      "controlAdjust": 0
+    },
+    "14": {
+      "morale": 2,
+      "controlAdjust": 0
+    },
+    "15": {
+      "morale": 5,
+      "controlAdjust": -5
+    },
+    "16": {
+      "morale": 5,
+      "controlAdjust": -10
+    },
+    "17": {
+      "morale": 10,
+      "controlAdjust": -10
+    },
+    "18": {
+      "morale": 10,
+      "controlAdjust": -15
+    },
+    "19": {
+      "morale": 15,
+      "controlAdjust": -15
+    },
+    "20": {
+      "morale": 15,
+      "controlAdjust": -20
+    },
+    "21": {
+      "morale": 20,
+      "controlAdjust": -25
+    },
+    "22": {
+      "morale": 25,
+      "controlAdjust": -30
+    },
+    "23": {
+      "morale": 30,
+      "controlAdjust": -35
+    },
+    "24": {
+      "morale": 35,
+      "controlAdjust": -40
+    },
+    "25": {
+      "morale": 40,
+      "controlAdjust": -45
+    },
+    "26": {
+      "morale": 45,
+      "controlAdjust": -50
+    },
+    "27": {
+      "morale": 50,
+      "controlAdjust": -55
+    },
+    "28": {
+      "morale": 55,
+      "controlAdjust": -60
+    },
+    "29": {
+      "morale": 60,
+      "controlAdjust": -65
+    },
+    "30": {
+      "morale": 65,
+      "controlAdjust": -70
+    }
+  }
+}
