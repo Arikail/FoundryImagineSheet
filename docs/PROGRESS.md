@@ -15,7 +15,19 @@ Status values: `Backlog` / `In Progress` / `Blocked` / `Done`.
 | Extract & map Master's Manual | Done | OCR'd to `docs/reference/masters-manual-fulltext.txt`. Confirmed as GM-facing expansion (extended attribute ranges, class extensions, expanded combat, magic item design), not a base-rules source. |
 | Set up continuity scaffolding | In Progress | git initialized, `CLAUDE.md`, `docs/DECISIONS.md`, `docs/PROGRESS.md`, `docs/reference/` in place; initial commit made. |
 | Obtain Bestiary / Creature source material | Backlog | Needed before Creature/NPC epic can start in earnest. |
-| Obtain magic subsystem source material | Backlog | Needed before Epic 4 (Magic). Not blocking core phase. |
+| Obtain magic subsystem source material | Done (superseded) | No longer blocking — magic content data (`rituallist`, `evokedict`, `spellPrimers`) is already present in `sheet-worker.js`. Prose-only gaps may remain. |
+| Discover + extract embedded sheet-worker JS | Done | 180,370 lines recovered from the HTML's `<script type="text/worker">` block to `docs/reference/sheet-worker.js`. Corrects the earlier false "no JavaScript" finding. ~37 data dictionaries cataloged; shape confirmed uniform and machine-consistent (470/470 skills at 10 cols, 204/204 social at 8). |
+| Confirm `sheet-worker.js` is the dev's current ruleset | Backlog | **Blocking Epic 6.** Dev described the code from memory rather than sending it; confirm this file is not a superseded version before extracting ~7,000 rows from it. |
+
+## Epic 6 — Content Extraction Pipeline
+
+| Story | Status | Definition of Done |
+|---|---|---|
+| Generic dictionary parser (`tools/extract/parse-dictionaries.mjs`) | Backlog | Parses a `const X = { "Key": [ ... ] }` literal out of `sheet-worker.js` into JSON; round-trips all 37 dictionaries without ragged-row errors. |
+| Per-dictionary column maps | Backlog | Each dictionary's positional columns mapped to named fields, derived from its header comment and verified against a sample of entries. |
+| Generate `src/packs/*.json` for core content | Backlog | Skills, social skills, weapons, armor, equipment emitted as checked-in JSON producing reviewable diffs. |
+| Compile JSON -> Foundry compendium packs | Backlog | `packs/` builds from `src/packs/` and loads in Foundry V14. |
+| Extend extraction to magic-phase dictionaries | Backlog | `rituallist`, `evokedict`, `spellPrimers` and remaining subsystems extracted. Data ready ahead of the mechanics phase; parser cost is near-identical for 37 dictionaries vs 10. |
 
 ## Epic 1 — Roll Engine & Data Model (Layer 0)
 

@@ -1,0 +1,3 @@
+* text=auto
+docs/reference/*.txt -text
+docs/reference/*.js -text
