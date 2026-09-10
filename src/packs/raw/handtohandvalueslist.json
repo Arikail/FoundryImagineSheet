@@ -1,0 +1,132 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "handtohandvalueslist",
+    "lines": [
+      100852,
+      100868
+    ]
+  },
+  "entries": {
+    "Touch": [
+      "Touch",
+      "1",
+      "1",
+      "AGL",
+      "0",
+      "Success=attacker has made contact with the opponent."
+    ],
+    "Grapple": [
+      "Grapple",
+      "2",
+      "2",
+      "0",
+      "0",
+      "If successful touch, attacker STR Save vs opponent's AGL Save. Win=grapple."
+    ],
+    "Strangle": [
+      "Strangle",
+      "3",
+      "3",
+      "-10",
+      "2d4",
+      "If successful touch while grapple, attacker STR Save vs opponent's STR Save. win=damage at the end of each 10 second round. Rigid armor blocks this attack."
+    ],
+    "Claw": [
+      "Claw",
+      "3",
+      "2",
+      "0",
+      "1d2",
+      "If successful touch while grapple. Some races will have higher claw damage."
+    ],
+    "Bite": [
+      "Bite",
+      "4",
+      "3",
+      "0",
+      "1d2",
+      "If successful touch while grapple. Some races will have higher bite damage."
+    ],
+    "Escape": [
+      "Escape",
+      "3",
+      "3",
+      "0",
+      "0",
+      "While grapple, escaper's AGL Save vs opponent's AGL Save. Win=escape."
+    ],
+    "Ear Rip": [
+      "Ear Rip",
+      "3",
+      "3",
+      "0",
+      "1d6",
+      "If successful Called Shot while grapple. Damage to ear/antenna."
+    ],
+    "Eye Gouge": [
+      "Eye Gouge",
+      "3",
+      "3",
+      "0",
+      "1d4",
+      "If successful Called Shot while grapple. Damage to eye."
+    ],
+    "Hold": [
+      "Hold",
+      "3",
+      "3",
+      "10",
+      "0",
+      "While grapple, attacker's AGL Save vs opponent's AGL or STR Save. Win=held (no opponent attacks), Loss=still grapple."
+    ],
+    "Knee/Elbow": [
+      "Knee/Elbow",
+      "3",
+      "2",
+      "0",
+      "1d2",
+      "If successful touch while grapple."
+    ],
+    "Pin": [
+      "Pin",
+      "5",
+      "5",
+      "0",
+      "0",
+      "While grapple, attacker's AGL Save vs opponent's STR Save. Win=pinned(no opponent attacks/escape is 1/2 chance), Loss=still grapple."
+    ],
+    "Punch": [
+      "Punch",
+      "2",
+      "1",
+      "0",
+      "1",
+      "If successful touch while grapple."
+    ],
+    "Tackle": [
+      "Tackle",
+      "3",
+      "3",
+      "0",
+      "0",
+      "If successful touch, attacker STR Save vs opponent's AGL Save. Win=grapple and both attacker and opponent prone."
+    ],
+    "Throw": [
+      "Throw",
+      "5",
+      "5",
+      "0",
+      "1d4 per 10%",
+      "While grapple, attacker's STR Save vs opponent's AGL or STR Save. Win=thrown 1' and does 1d4 per 10% difference in Saves."
+    ],
+    "Slam": [
+      "Slam",
+      "5",
+      "5",
+      "0",
+      "1d4 x2 per 10%",
+      "While grapple, force skill roll,attacker's STR Save vs opponent's AGL or STR Save. Win=thrown 1' and does 1d4x2 per 10% difference in Saves."
+    ]
+  }
+}

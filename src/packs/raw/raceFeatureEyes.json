@@ -1,0 +1,476 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceFeatureEyes",
+    "lines": [
+      44083,
+      44200
+    ]
+  },
+  "entries": {
+    "Apocritara": [
+      "Compound Eyes:",
+      "Iridescent Green,Iridescent Blue"
+    ],
+    "Arachen": [
+      "Eyes:",
+      "Brown,Black,Green,Blue,Red,Yellow"
+    ],
+    "Avian(Dark)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Avian(Forest)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Avian(Mountain)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Ba’Cora": [
+      "Eyes:",
+      "Brown,Hazel,Black,Green,Red,Yellow,Silver"
+    ],
+    "Beastman": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Brachara": [
+      "Compound Eyes:",
+      "Iridescent Blue,Iridescent Purple,Iridescent Red"
+    ],
+    "Brok": [
+      "Eyes:",
+      "Green,Blue"
+    ],
+    "Brownie": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Centaur": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Cervara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Changeling": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Chetahl": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Crystori": [
+      "Light Motes:",
+      "Blue/Green,Green,Blue,Violet,Red,Yellow,Golden,White,Silver"
+    ],
+    "Dao": [
+      "Eyes:",
+      "Violet,Red,Yellow,Golden,Silver"
+    ],
+    "Djinn": [
+      "Eyes:",
+      "Bluish Green,Green,Blue,Violet,Yellow,Golden,Silver"
+    ],
+    "Dryad": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Dwarf(Civilized)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Dwarf(Dark)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Dwarf(Fire)": [
+      "Eyes:",
+      "Brown,Black,Red,Gray"
+    ],
+    "Dwarf(Iron)": [
+      "Gems:",
+      "Russet,Amber,Agate,Aquamarine,Amethyst,Carnelian,Garnet,Tiger’s Eye,Tourmaline,Topaz,Peridot,Pearl,Opal,Black Pearl,Sapphire,Ruby,Diamond,Emerald"
+    ],
+    "Dwarf(Mountain)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Dwarf(Stone)": [
+      "Gems:",
+      "Russet,Amber,Agate,Aquamarine,Amethyst,Carnelian,Garnet,Tiger’s Eye,Tourmaline,Topaz,Peridot,Pearl,Opal,Black Pearl,Sapphire,Ruby,Diamond,Emerald"
+    ],
+    "Elf(Dark)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(Desert)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Green,Violet,Red,Gold"
+    ],
+    "Elf(Dread)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Green,Red,Silver"
+    ],
+    "Elf(Gray)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(High)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(Ice)": [
+      "Eyes:",
+      "Green,Blue,Turquoise,Violet,Gold"
+    ],
+    "Elf(Sea)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Silver"
+    ],
+    "Elf(Shadow)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(Silver)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(Wild)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Elf(Wood)": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Equara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Fairy": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,White,Red,Silver"
+    ],
+    "Fairy(Dark)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,White,Red,Silver"
+    ],
+    "Famorian": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Formless": [
+      "",
+      ""
+    ],
+    "Gaunt": [
+      "Eyes:",
+      "White,Gray,Blue/Gray"
+    ],
+    "Geebra": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Giant(Civilized)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Giant(True)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Gnome": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Goblin(Forest)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Goblin(Mountain)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Goblin(Plains)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Grahl": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Gremlin": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,White,Red,Silver"
+    ],
+    "Grethen": [
+      "Eyes:",
+      "Black,Red"
+    ],
+    "Gryphara": [
+      "Eyes:",
+      "Brown,Black,Blue/Green,Green,Blue,Red,Amber"
+    ],
+    "Hippotara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Amber"
+    ],
+    "Hobgoblin": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Human(Barbaric)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Human(Civilized:City)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Human(Civilized:Port)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Human(Civilized:Town)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Human(Civilized:Village)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Ifrit": [
+      "Eyes:",
+      "Violet,Red,Yellow,Golden,Silver"
+    ],
+    "Jumara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Katara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Kenku": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Kerasara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Amber"
+    ],
+    "Lagara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Red,Amber"
+    ],
+    "Leprechaun": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Lissara": [
+      "Eyes:",
+      "Black,Blue/Green,Green,Blue,Red,Amber"
+    ],
+    "Lotara": [
+      "Eyes:",
+      "Brown,Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Loxodara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Amber"
+    ],
+    "Lutrinara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Maginos": [
+      "",
+      ""
+    ],
+    "Maginos(Clay)": [
+      "",
+      ""
+    ],
+    "Maginos(Metal)": [
+      "",
+      ""
+    ],
+    "Maginos(Stone)": [
+      "",
+      ""
+    ],
+    "Maginos(Wood)": [
+      "",
+      ""
+    ],
+    "Marid": [
+      "Eyes:",
+      "Bluish Green,Green,Blue,Golden,Silver"
+    ],
+    "Mechanos": [
+      "Lenses:",
+      "Green,Blue,Red"
+    ],
+    "Mellivara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Amber"
+    ],
+    "Mephyt(Fire)": [
+      "Eyes:",
+      "Brown,Black,Red,Orange,Yellow"
+    ],
+    "Mephyt(Ice)": [
+      "Eyes:",
+      "Green,Blue,Purple,Silver,Gray"
+    ],
+    "Merfolk": [
+      "Eyes:",
+      "Hazel,Black,Blue/Green,Green,Blue"
+    ],
+    "Midfolk(Forest)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Midfolk(River)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Midfolk(Town)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Nixie": [
+      "Eyes:",
+      "Black,Green,Blue,Silver,Gray"
+    ],
+    "Nymph": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Ogre": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Ogre(Magic)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Planar": [
+      "Eyes:",
+      "Bluish Green,Green,Blue,Violet,Red,Yellow,Golden,Silver"
+    ],
+    "Podling": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,White,Red,Silver"
+    ],
+    "Ratahl": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "S’rett": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Sasquatch/Yeti": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Satyr/Fawn": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Saurian": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Scethen": [
+      "Eyes:",
+      "Brown,Black,Green,Blue,Red,Yellow"
+    ],
+    "Se’eth": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Sha’Cora": [
+      "Eyes:",
+      "Black,Red,Gray"
+    ],
+    "Sporeling": [
+      "Eyes:",
+      "Brown,Black,Green,White,Tan,Gray"
+    ],
+    "Sura’keth": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Sura’rath": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Susara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Red,Amber"
+    ],
+    "Sylph": [
+      "Eyes:",
+      "Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Taurian": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet"
+    ],
+    "Testudara": [
+      "Eyes:",
+      "Black,Blue/Green,Green,Blue,Amber"
+    ],
+    "Troll": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Troll(Ice)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Red,Amber"
+    ],
+    "Troll(Rock)": [
+      "Eyes:",
+      "Brown,Hazel,Black,Blue/Green,Green,Blue,Violet,Red"
+    ],
+    "Ursara": [
+      "Eyes:",
+      "Brown,Hazel,Black,Amber"
+    ],
+    "Vulpara": [
+      "Eyes:",
+      "Brown,Hazel,Blue/Green,Green,Blue,Violet,Red,Silver"
+    ],
+    "Whalrog": [
+      "Eyes:",
+      "Brown,Black,Gray"
+    ],
+    "Wildling": [
+      "Eyes:",
+      "Green,Yellow,Silver,Gold(Multicolor Flecks)"
+    ],
+    "Wolfen": [
+      "Eyes:",
+      "Brown,Green,Blue,Red,Yellow,Gray,Silver"
+    ],
+    "Xar’Xeth": [
+      "Compound Eyes:",
+      "Iridescent Bluish Green,Iridescent Yellow"
+    ]
+  }
+}

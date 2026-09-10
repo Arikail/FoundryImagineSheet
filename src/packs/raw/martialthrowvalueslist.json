@@ -1,0 +1,52 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martialthrowvalueslist",
+    "lines": [
+      100765,
+      100771
+    ]
+  },
+  "entries": {
+    "Arm Throw": [
+      "Arm Throw",
+      "16",
+      "0",
+      "3",
+      "1d6",
+      "Contest of STR Save vs. opponent's AGL Save or knocked prone. 2nd AGL save to transition into Arm Hold."
+    ],
+    "Leg Throw": [
+      "Leg Throw",
+      "17",
+      "-5",
+      "4",
+      "1d4",
+      "Contest of STR Save(-20%) vs. opponent's AGL Save or knocked prone. 2nd AGL save to transition into Leg Hold."
+    ],
+    "Shoulder Throw": [
+      "Shoulder Throw",
+      "18",
+      "-10",
+      "3",
+      "1d8",
+      "Contest of STR Save(+20%) vs. opponent's AGL Save or knocked prone. 2nd AGL save to transition into Neck Hold."
+    ],
+    "Body Throw": [
+      "Body Throw",
+      "19",
+      "-15",
+      "5",
+      "1d8",
+      "Contest of STR Save(+30%) vs. opponent's AGL Save or knocked prone. 2nd AGL save to transition into Arm Hold."
+    ],
+    "Spin Throw": [
+      "Spin Throw",
+      "18",
+      "-10",
+      "+1",
+      "+2",
+      "Does not require touch before using. Add to another throw. Opponent is -20% to Agility Save. Removes hold chance as the opponent is thrown."
+    ]
+  }
+}

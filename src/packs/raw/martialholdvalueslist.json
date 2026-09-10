@@ -1,0 +1,61 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martialholdvalueslist",
+    "lines": [
+      100719,
+      100728
+    ]
+  },
+  "entries": {
+    "Half Neck": [
+      "Half Neck",
+      "18",
+      "-10",
+      "3",
+      "If success, incapacitates the head, neck and one arm. Escape requires skill versus roll vs AGL or STR Save (once per 3 sec)."
+    ],
+    "Full Neck": [
+      "Full Neck",
+      "20",
+      "-20",
+      "5",
+      "If success, incapacitates the head, neck and both arms. Escape requires skill versus roll vs AGL Save (once per 5 sec)."
+    ],
+    "Arm": [
+      "Arm",
+      "16",
+      "0",
+      "3",
+      "If success, incapacitates one arm. Escape requires skill versus roll vs Half AGL Save (once per 3 sec)."
+    ],
+    "Leg": [
+      "Leg",
+      "17",
+      "-5",
+      "4",
+      "If success, incapacitates one leg. Escape requires skill versus roll vs Half AGL Save (once per 4 sec)."
+    ],
+    "Torso": [
+      "Torso",
+      "18",
+      "-10",
+      "5",
+      "If success, incapacitates one torso. Escape requires skill versus roll vs Quarter AGL Save (once per 5 sec)."
+    ],
+    "Torso(1 Arm)": [
+      "Torso(1 Arm)",
+      "20",
+      "-20",
+      "5",
+      "If success, incapacitates one torso and one arm. Escape requires skill versus roll vs Quarter AGL Save (once per 5 sec)."
+    ],
+    "Torso(2 Arms)": [
+      "Torso(2 Arms)",
+      "22",
+      "-30",
+      "5",
+      "If success, incapacitates one torso and both arms. Escape requires skill versus roll vs Quarter AGL Save (once per 5 sec)."
+    ]
+  }
+}

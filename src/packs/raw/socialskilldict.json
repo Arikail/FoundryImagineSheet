@@ -1,0 +1,2052 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialskilldict",
+    "lines": [
+      56550,
+      56755
+    ]
+  },
+  "entries": {
+    "Accounting": [
+      "INT",
+      "WIS",
+      "14",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "147",
+      "The skill of managing and auditing financial transactions for an individual or organization."
+    ],
+    "Acting": [
+      "AGL",
+      "INT",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "147",
+      "The ability to entertain other beings by assuming the role of a (real or imagined) personality, either individually or in a group, and acting out that personality."
+    ],
+    "Administration": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "147",
+      "The management of any large organization."
+    ],
+    "Animal Husbandry": [
+      "KNW",
+      "WIL",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "147",
+      "The capacity to care for and breed livestock."
+    ],
+    "Animal Training": [
+      "INT",
+      "WIL",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "147",
+      "The ability to train an animal to respond to verbal, or somatic gestures to perform an action."
+    ],
+    "Anthropology": [
+      "WIS",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "88",
+      "The knowledge of customs, and practices of cultures foreign to the practitioner."
+    ],
+    "Archaeology": [
+      "WIS",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Legends of the Unknown",
+      "72",
+      "The study of past life, and culture by the recovery, and examination of remaining material evidence, such as graves, buildings, tools, and pottery."
+    ],
+    "Appraisal": [
+      "INT",
+      "KNW",
+      "13",
+      "8d6%",
+      "46",
+      "Legends of the Unknown",
+      "72",
+      "The ability to look over an object of possible value, and determine its worth, and origin."
+    ],
+    "Architecture/Engineering": [
+      "INT",
+      "WIS",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "147",
+      "The capability of conceptualizing, and drawing designs for the construction of intricate items or large structures."
+    ],
+    "Armoring": [
+      "STR",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "147",
+      "This skill provides the `how to` knowledge of creating and repairing armor along with the ability to determine composition, origin, and value of a piece of armor."
+    ],
+    "Artisan": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "147",
+      "An Artisan is a virtuoso of the applied arts, allowing the practitioner to create various works of an."
+    ],
+    "Astrology": [
+      "KNW",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Master`s Manual",
+      "88",
+      "The tracking of celestial effect (real, or imagined) on an individual being."
+    ],
+    "Astronomy": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "56",
+      "Master`s Manual",
+      "88",
+      "The study of the stars, or heavenly bodies."
+    ],
+    "Baking/Cooking": [
+      "KNW",
+      "",
+      "10",
+      "5d10%",
+      "10",
+      "Player`s Guide",
+      "147",
+      "The ability to cook an appetizing meal or food item."
+    ],
+    "Ballooning": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "88",
+      "The ability to create, operate, and maintain a hot air, or lighter than air balloon, or dirigible."
+    ],
+    "Banker/Broker": [
+      "INT",
+      "CHM",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "164",
+      "The ability to handle financial transactions, and make financial deals with individuals, and institutions."
+    ],
+    "Bar/Inn Keeping": [
+      "WIS",
+      "CHM",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "148",
+      "The capacity to handle the day to day operations of a tavern or inn, including its customers."
+    ],
+    "Barbering": [
+      "AGL",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "148",
+      "The ability to groom hair in a pleasing way."
+    ],
+    "Barrel Making": [
+      "KNW",
+      "",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "148",
+      "The skill of creating and repairing watertight, wooden, storage containers."
+    ],
+    "Bartering/Haggling": [
+      "WIS",
+      "CHM",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "148",
+      "The ability to increase a profit or reduce a payment when making a business deal."
+    ],
+    "Basket Weaving": [
+      "AGL",
+      "",
+      "6",
+      "10d6%",
+      "40",
+      "Player`s Guide",
+      "148",
+      "The ability to weave wicker, reed, bamboo, or other heavy fiber into patterns, and create, or repair a basket made of such material."
+    ],
+    "Bee Keeping/Insect Handling": [
+      "KNW",
+      "",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "148",
+      "The ability to breed and maintain insects in colonies, or groups, to use as food items, or harvest fiber or material they naturally produce."
+    ],
+    "Begging": [
+      "KNW",
+      "CHM",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "148",
+      "The capacity to appear desperate, wounded, helpless, down trodden, diseased, or otherwise unfortunate enough to warrant help of some kind."
+    ],
+    "Boat Wright": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "148",
+      "The skill of determining composition, origin, and value of an existing water vessel as well as designing, creating, and repairing water craft."
+    ],
+    "Bookbinder": [
+      "INT",
+      "KNW",
+      "10",
+      "5dl0%",
+      "40",
+      "Player`s Guide",
+      "149",
+      "The ability to use adhesives, string, and tension to cohere many sheets of parchment into a book."
+    ],
+    "Botanist": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand the complete system of living flora within any environment or environ."
+    ],
+    "Botany": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand the complete system of living flora within any environment or environ."
+    ],
+    "Brewing": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "149",
+      "The process of fermenting malt, and hops into beer, or ale using an existing recipe. This skill can also be used to experiment, and concoct a new blend of beer, ale, or other types of alcoholic spirits such as whisky."
+    ],
+    "Butcher": [
+      "STR",
+      "KNW",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "149",
+      "The ability to efficiently prepare, and preserve the meat of a slaughtered animal for consumption."
+    ],
+    "Butler": [
+      "INT",
+      "WIS",
+      "9",
+      "5d10%",
+      "60",
+      "Player`s Guide",
+      "149",
+      "The chief servant of a household with the ability to fulfill and anticipate the specific day to day needs of an employer."
+    ],
+    "Cabinetry": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "149",
+      "The ability to create, and repair fine compartmentalized furniture such as desks, cabinets, chests, coffers and bureaus as well as identify the composition, origin, and value of such items."
+    ],
+    "Cage Making": [
+      "AGL",
+      "INT",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "149",
+      "The proficiency allowing creation, and repair of wooden and metal cages of various sizes."
+    ],
+    "Calligraphy": [
+      "AGL",
+      "INT",
+      "15",
+      "4d10%",
+      "60",
+      "Mysteries of the Planes",
+      "164",
+      "The ability to create beautiful writing characters, fonts, and pictographs."
+    ],
+    "Candle/Oil Making": [
+      "KNW",
+      "",
+      "8",
+      "5dl0%",
+      "32",
+      "Player`s Guide",
+      "149",
+      "The ability to create lamp oil, and candles from the separation of tallow, or animal fat."
+    ],
+    "Carousing": [
+      "WIS",
+      "CHM",
+      "8",
+      "5d10%",
+      "40",
+      "Master`s Manual",
+      "88",
+      "The ability to make strong acquaintances through heavy drinking, companionship, and generally rowdy merry making."
+    ],
+    "Carving": [
+      "AGL",
+      "",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "149",
+      "The ability to create three-dimensional works of art, or representations by carving wood, bone, jade, or other similar substances with a sharp instrument."
+    ],
+    "Chariot Driving": [
+      "AGL",
+      "INT",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "149",
+      "The ability to control a two-wheeled, animal-drawn vehicle at high speeds."
+    ],
+    "Chariot Making": [
+      "AGL",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "149",
+      "The skill of creating, and repairing a two-wheeled, animal-drawn vehicle."
+    ],
+    "Chemistry": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Player`s Guide",
+      "150",
+      "Chemistry is the basic knowledge of the results expected from combining multiple substances together (basic chemistry without knowledge of atomic structure). The ability to understand the properties of alkali and acid. base and neutralizers, mainly the observed reactions between known natural substances. The ability to comprehend three of the states of matter: solid, liquid, and gas but not plasma, Bose/Einstein condensate, or the degenerate states of matter (super fluids or super solids)."
+    ],
+    "Chirugeon": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "150",
+      "The ability to give basic medical treatment to someone injured without exacerbating existing ailments."
+    ],
+    "Climatology": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Legends of the Unknown",
+      "72",
+      "The understanding of climates, and their seasonal variations, and expected effects on the environment."
+    ],
+    "Clowning/Jesting": [
+      "AGL",
+      "WIS",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "150",
+      "The capability of moving, acting, or talking in a manner that is amusing to an audience."
+    ],
+    "Cobbling": [
+      "AGL",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "150",
+      "The ability to create, and repair footwear for bipeds created out of leather, or woven fiber."
+    ],
+    "Collecting": [
+      "KNW",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "150",
+      "The ability to organize, and appraise items in a collection."
+    ],
+    "Composer": [
+      "WIS",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "88",
+      "The ability to produce musical compositions that are pleasing to others."
+    ],
+    "Cosmetics": [
+      "AGL",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Master`s Manual",
+      "88",
+      "The enhancement of physical appearance through makeup use."
+    ],
+    "Courtesan": [
+      "APP",
+      "CHM",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "150",
+      "The capacity to act as companion, and be pleasing as both a conversationalist, and a lover."
+    ],
+    "Craftsman": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "150",
+      "A Craftsman is an artificer, and tradesperson with the ability to manufacture general goods of various kinds."
+    ],
+    "Crying/Hawking": [
+      "VIT",
+      "CHM",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "150",
+      "The ability to memorize a short speech or proclamation, and be vocally heard even in a large, boisterous crowd."
+    ],
+    "Dancing": [
+      "AGL",
+      "VIT",
+      "8",
+      "5dl0%",
+      "36",
+      "Player`s Guide",
+      "151",
+      "The ability to dance alone, or in groups in a pleasing fashion, and the ability to learn new dances."
+    ],
+    "Debating": [
+      "INT",
+      "CHM",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to craft, and deliver a convincing argument that may, or may not be logical, or factual."
+    ],
+    "Diplomacy": [
+      "WIS",
+      "CHM",
+      "17",
+      "6d6%",
+      "72",
+      "Player`s Guide",
+      "151",
+      "The ability to comprehend, and negotiate a political situation for various outcomes."
+    ],
+    "Diving": [
+      "AGL",
+      "VIT",
+      "9",
+      "5d10%",
+      "36",
+      "Player`s Guide",
+      "151",
+      "The ability to dive from a height, gracefully striking the water with a minimum of force, and the ability to hold one’s breath (underwater) for a longer duration than normal individuals."
+    ],
+    "Doll Making": [
+      "AGL",
+      "",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "151",
+      "The ability to produce, or repair pleasing, or accurate miniature representations of children, adults and creatures out of painted wood, stuffed cloth and porcelain."
+    ],
+    "Drawing/Sketching": [
+      "AGL",
+      "INT",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "151",
+      "The ability to sketch an existing object or scene, or something altogether imagined."
+    ],
+    "Drilling": [
+      "INT",
+      "WIL",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "151",
+      "The ability to train oneself, or others with a simple routine designed to improve general ability, or learn a specific task (such as marching in step)."
+    ],
+    "Drudgery": [
+      "STR",
+      "VIT",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "152",
+      "The ability to perform repetitive maintenance labor (such as cleaning, scrubbing and organizing) in an efficient and timely manner."
+    ],
+    "Dyer": [
+      "KNW",
+      "",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "152",
+      "The ability to create liquid dyes from natural substances (such as minerals, plants and animals), and use them to permanently change the color of a piece of glass, leather, wood, Slone, metal, or cloth to one particular color."
+    ],
+    "Economics": [
+      "INT",
+      "WIS",
+      "15",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "152",
+      "The art of understanding the production, and distribution of wealth, and commodities within a specific marketplace."
+    ],
+    "Engraving/Etching": [
+      "AGL",
+      "KNW",
+      "15",
+      "4d10%",
+      "56",
+      "Legends of the Unknown",
+      "72",
+      "The ability to engrave, or etch surfaces with an artistic, or decorative purpose."
+    ],
+    "Espionage": [
+      "INT",
+      "KNW",
+      "14",
+      "4dl0%",
+      "56",
+      "Player`s Guide",
+      "152",
+      "Espionage imparts the general knowledge, and practice of techniques involving stealth, intrusion, and deception. The espionage artist uses stealth and cunning to infiltrate, subvert, and otherwise thwart detection, and discovery."
+    ],
+    "Etiquette": [
+      "KNW",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "152",
+      "Allows the proper carrying, and performance of oneself during a formal affair, or interaction with nobility, or specific culture."
+    ],
+    "Excavation": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to slowly and carefully remove fossils, bones, relics, and pieces from a dig site without damaging them. Not to be confused with mining/tunneling."
+    ],
+    "Explorer": [
+      "INT",
+      "VIT",
+      "17",
+      "6d6%",
+      "72",
+      "Master`s Manual",
+      "88",
+      "The desire to travel beyond the known horizon, and discover new lands, new ways, and new ideas."
+    ],
+    "Exploser": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Master`s Manual",
+      "88",
+      "The ability to mix, and properly ignite explosive compounds."
+    ],
+    "Falconry": [
+      "INT",
+      "WIL",
+      "15",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "152",
+      "The ability to train a falcon for use in hunting."
+    ],
+    "Farming/Planting": [
+      "STR",
+      "KNW",
+      "9",
+      "5d10%",
+      "36",
+      "Player`s Guide",
+      "152",
+      "The capability of planting seeds, and tending to the plants as they mature."
+    ],
+    "Fashion": [
+      "APP",
+      "CHM",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "152",
+      "The knowledge, or creation of the latest custom, or style of dress."
+    ],
+    "Ferrier": [
+      "KNW",
+      "",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "152",
+      "The ability to steer a ferry, barge, or small boat to, and from different shores."
+    ],
+    "Fire Making": [
+      "AGL",
+      "INT",
+      "10",
+      "5d10%",
+      "28",
+      "Player`s Guide",
+      "153",
+      "The ability to produce fire even in adverse weather conditions with few tools."
+    ],
+    "Fishing": [
+      "AGL",
+      "KNW",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "153",
+      "The ability to catch fish by line, pole, net, trap, or spear in salt, or fresh water."
+    ],
+    "Fletching/Bow Making": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "153",
+      "This skill provides the `how to` knowledge to create a bow, arrow (for a bow) and quarrel (for a crossbow)."
+    ],
+    "Flint Knapping": [
+      "AGL",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to find, and shape the correct stone to provide a variety of stone tools and weapons."
+    ],
+    "Florist/Horticulturist": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand the reproduction, growth, and care of flowers, fruits, vegetables, and ornamental plants. Also allows for pleasing arrangement of flowers and ornamental plants."
+    ],
+    "Foraging/Forestry": [
+      "INT",
+      "KNW",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "153",
+      "The ability to properly identify natural foliage (living or dead), and specific knowledge of a plant such as classification, habitat, growth, reproduction and edibility."
+    ],
+    "Forensics": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Legends of the Unknown",
+      "72",
+      "The use of magic, divine magic, science of the natural world, and technology to establish facts good enough to be admitted as evidence in a court of law."
+    ],
+    "Fortune Telling": [
+      "INT",
+      "WIS",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "153",
+      "The act of pretending to predict the future through a physical medium such as a crystal ball, tea leaves, tarot cards, and chicken bones."
+    ],
+    "Furniture Making": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "153",
+      "The ability to manufacture fine furniture items."
+    ],
+    "Gambling": [
+      "INT",
+      "CHM",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "153",
+      "The ability to understand, and participate in games of chance."
+    ],
+    "Gemology": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand the formation, and distribution of precious, and semi-precious crystalline minerals."
+    ],
+    "Genealogy": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to read, and understand, or construct a lineage for a family or individual."
+    ],
+    "Geography": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "153",
+      "The ability to map interrelations of land type, political boundaries, population, plant, and animal types, climates, and minerals."
+    ],
+    "Geology": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "154",
+      "The study of geological processes, and the physical history of earth."
+    ],
+    "Glass Blowing": [
+      "AGL",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "154",
+      "The ability form sheets, or to blow molten glass into more intricate shapes (such as globes) made of glass."
+    ],
+    "Gossip Mongery": [
+      "CHM",
+      "",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "154",
+      "The ability to circulate rumors within a social clique."
+    ],
+    "Haberdasher": [
+      "AGL",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to create, and select, and fit hats for every occasion."
+    ],
+    "Harlotry": [
+      "AGL",
+      "APP",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "154",
+      "The ability to entice another into having physical relations for payment, or barter as well as the performance of those physical relations."
+    ],
+    "Harvesting": [
+      "STR",
+      "VIT",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "154",
+      "The capability of harvesting a plant (whether it is a fruit, nut, root, or fiber)."
+    ],
+    "Heavy Drinking": [
+      "VIT",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Master`s Manual",
+      "89",
+      "The ability to consume intoxicants, and stave off ill effects."
+    ],
+    "Heraldry": [
+      "KNW",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "154",
+      "The capacity to identify and create a symbol, flag, banner, or emblem."
+    ],
+    "History": [
+      "WIS",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "89",
+      "The knowledge, and understanding of past events."
+    ],
+    "Hunting/Trapping": [
+      "INT",
+      "WIS",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "154",
+      "Hunting, and trapping are the active, and passive pursuit (respectively) of wild animals for the purpose of catching, or killing."
+    ],
+    "Hydrology": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand movement, distribution, and qualities of liquids."
+    ],
+    "Instruction": [
+      "WIS",
+      "WIL",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "154",
+      "The general ability to leach others in the use of skills, or impart general information in a fashion the learner will likely remember."
+    ],
+    "Instrument Making": [
+      "AGL",
+      "WIS",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "154",
+      "The `know how` to craft, repair, and appraise musical instruments."
+    ],
+    "Instrument Playing": [
+      "AGL",
+      "INT",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "155",
+      "The ability to tune an instrument as well as play nonmagical scores on a musical instrument in a pleasing manner."
+    ],
+    "Inventor": [
+      "INT",
+      "KNW",
+      "20",
+      "3d10%",
+      "80",
+      "Master`s Manual",
+      "89",
+      "An inventor is someone who devises a new process, or machine of their own contrivance."
+    ],
+    "Irrigation": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to get water to the growing crops, or trees for hydration."
+    ],
+    "Juggling": [
+      "AGL",
+      "",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "155",
+      "The ability to keep multiple objects in continuous motion in the air by catching, and tossing."
+    ],
+    "Kite Flying": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Master`s Manual",
+      "89",
+      "The ability to fly a man kite, or a free-flying hang glider."
+    ],
+    "Laborer": [
+      "STR",
+      "AGL",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "155",
+      "The ability to perform manual labor."
+    ],
+    "Lady Servant": [
+      "KNW",
+      "",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "155",
+      "The ability to fulfill the specific day-to-day needs of a female employer."
+    ],
+    "Leadership": [
+      "WIS",
+      "WIL",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "155",
+      "The ability to size up individuals within a situation, and guide the individuals through the situation in an effective, motivating manner."
+    ],
+    "Leather Working": [
+      "AGL",
+      "INT",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "155",
+      "The ability to work with prepared animal skins to make a pliable, and supple leather item. Leather Working also incorporates the ability to use various sorts of tools to inscribe intricate patterns upon a leather item."
+    ],
+    "Leeching": [
+      "WIS",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "155",
+      "The ability to heal an animal or being through non-magical means such as bloodletting, and non-magical herbal remedies."
+    ],
+    "Lens Making": [
+      "AGL",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Master`s Manual",
+      "89",
+      "The ability to grind glass into lenses."
+    ],
+    "Librarian": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "155",
+      "A Librarian is trained in organizing, preserving, and providing services for a collection of texts."
+    ],
+    "Lip Reading": [
+      "INT",
+      "",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "156",
+      "The ability to understand speech based on lip movement."
+    ],
+    "Locksmith": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "156",
+      "The `know how` of identifying, creating, and mending various types of locking devices utilizing bolts, and tumblers."
+    ],
+    "Logic": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand, and craft a compelling proposition based on reason without faith, or appealing to personality, or credibility."
+    ],
+    "Loom Mastery": [
+      "AGL",
+      "",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "156",
+      "The ability to use a loom to produce simple woven goods from yarn."
+    ],
+    "Lumberjack": [
+      "STR",
+      "VIT",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "156",
+      "The ability to fell trees in a controlled fashion."
+    ],
+    "Massage Therapy": [
+      "AGL",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "166",
+      "The ability to utilize massage to promote wellbeing."
+    ],
+    "Mathematics": [
+      "INT",
+      "KNW",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "156",
+      "The ability to use higher forms of general math."
+    ],
+    "Metal Working": [
+      "AGL",
+      "INT",
+      "13",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "156",
+      "Provides a Smithy with the ability to create refined metal goods. Once a metal item is forged, Metal Working can also be used to inscribe detailed patterns (such as runes) as well as polish the metal to attain the brightest sheen possible. Requires a forge to shape the metal."
+    ],
+    "Metallurgy": [
+      "INT",
+      "KNW",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "156",
+      "The ability to use a known formula or process to smelt metal alloys (such as adding silver to steel to create a silvered blade). Two minerals that have similar appearance, and properties (such as iron pyrite and gold) may be differentiated with Metallurgy."
+    ],
+    "Metaphysics": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Player`s Guide",
+      "156",
+      "The ability to understand, and postulate a model of how the mystical universe works."
+    ],
+    "Meteorology": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "64",
+      "Legends of the Unknown",
+      "72",
+      "The ability to use science of the atmosphere, including cloud coverage, air pressure, velocity, and direction of wind, and various scents to predict the weather. Grants a chance at knowledge of some potential disasters."
+    ],
+    "Midwife": [
+      "WIS",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "156",
+      "Most commonly, a midwife is a female that assists other females during childbirth."
+    ],
+    "Milling": [
+      "KNW",
+      "",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "157",
+      "The ability to use a pestle, and mortar, or a large grinding wheel to grind grain into flour, or meal."
+    ],
+    "Mining/Tunneling": [
+      "STR",
+      "AGL",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "157",
+      "The ability to quarry stone more mine metal ore while moving large quantities of earth. Mining/Tunneling also provides the `how to` of creating tunnels and shoring up tunnel walls."
+    ],
+    "Mocking": [
+      "INT",
+      "CHM",
+      "13",
+      "8d6%",
+      "52",
+      "Master`s Manual",
+      "89",
+      "The ability to jibe, degrade, or denounce another with intelligence, and wit."
+    ],
+    "Mountaineering": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Master`s Manual",
+      "89",
+      "The practice of safely scaling large obstacles."
+    ],
+    "Music Theory": [
+      "INT",
+      "KNW",
+      "13",
+      "8d6%",
+      "46",
+      "Legends of the Unknown",
+      "73",
+      "The knowledge, and understanding of the science of music, including the basic relationship between harmony, melody, and rhythm."
+    ],
+    "Oceanography": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "64",
+      "Legends of the Unknown",
+      "73",
+      "The exploration, and scientific study of the ocean, and its phenomena. Grants a chance at knowledge of some potential disasters."
+    ],
+    "Overseer/Manager": [
+      "WIS",
+      "CHM",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "157",
+      "The ability to organize, and orchestrate factions, or work intensive projects in a socioeconomic group."
+    ],
+    "Page": [
+      "AGL",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "157",
+      "The ability to serve a political body, or in situation by memorizing all of its duties and requirements, and performing them in an efficient manner."
+    ],
+    "Painting": [
+      "AGL",
+      "INT",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "157",
+      "The ability to create portraits of people, or places (real, or imagined) with paint, brush on woven material (such as a canvas)."
+    ],
+    "Paving/Road Building": [
+      "VIT",
+      "KNW",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "157",
+      "The ability to pave, or repair cleared roads, or paths using materials such as gravel, bricks, and stone blocks."
+    ],
+    "Perfume/Scent Making": [
+      "INT",
+      "KNW",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "157",
+      "The ability to produce scented oils, liquid, powders, or potpourris."
+    ],
+    "Philosophy": [
+      "WIS",
+      "KNW",
+      "18",
+      "6d6%",
+      "72",
+      "Player`s Guide",
+      "157",
+      "The ability to rationalize, and postulate a model of how the mental universe works, or how a society of beings may coexist."
+    ],
+    "Physics": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Mysteries of the Planes",
+      "165",
+      "The ability to understand, and postulate a model of how the physical universe works."
+    ],
+    "Physiology": [
+      "INT",
+      "KNW",
+      "14",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "157",
+      "The science of studying parts of the body (muscles, bones, organs), their functions, and where they are located in a living organism."
+    ],
+    "Plumbing": [
+      "STR",
+      "KNW",
+      "12",
+      "8d6%",
+      "68",
+      "Conquest of the Eternal",
+      "?",
+      "The ability to create and service plumbing."
+    ],
+    "Politics": [
+      "KNW",
+      "CHM",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "158",
+      "The art of conducting governmental affairs such as proposing, and changing laws on a day-to-day basis."
+    ],
+    "Pottery Making": [
+      "AGL",
+      "INT",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "158",
+      "The skill of determining origin, value, and composition as well as creating, and repairing ceramic goods made of earthenware, and stoneware."
+    ],
+    "Printing/Typesetting": [
+      "AGL",
+      "INT",
+      "12",
+      "8d6%",
+      "48",
+      "Conquest of the Eternal",
+      "?",
+      "Books, leaflets, pamphlets and papers that can be mass produced without scribing. Either individual type (letters) made of fired clay, metal or wood are set on a board and then inked. The paper or surface is placed against the inked type (letters) and a page of the books, leaflets, pamphlets or paper. This is repeated for each copy and then the next page is typeset, inked and produced. In information age cultures the typeset gets replaced with printing plates that are etched (either by hand or with chemicals) and can be used repeatedly to produce the pages."
+    ],
+    "Prospecting": [
+      "WIS",
+      "KNW",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "158",
+      "The ability to use geographic, and geologic information to identify an area where are, minerals, or other precious materials may be found."
+    ],
+    "Psychology": [
+      "INT",
+      "WIS",
+      "15",
+      "4d10%",
+      "60",
+      "Conquest of the Eternal",
+      "?",
+      "The ability to understand humanoid behavior both normal and abnormal."
+    ],
+    "Pulper": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "158",
+      "The ability to use straw, rags, wood, or other fibrous material to create paper. The process takes several days to complete."
+    ],
+    "Puppetry": [
+      "WIS",
+      "CHM",
+      "10",
+      "5d10%",
+      "40",
+      "Master`s Manual",
+      "89",
+      "The ability to entertain, or inform through use of puppets, or dolls, and voices."
+    ],
+    "Pyrotechnics": [
+      "INT",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "89",
+      "The `know how` to create fireworks, and weak explosives from highly combustible materials."
+    ],
+    "Recite Poetry": [
+      "INT",
+      "CHM",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "158",
+      "The ability to read and recite a non-magical poem, or verse in a pleasing fashion."
+    ],
+    "Reporting/Journalism": [
+      "INT",
+      "WIS",
+      "12",
+      "8d6%",
+      "48",
+      "Conquest of the Eternal",
+      "?",
+      "The ability to craft and create a compelling storyline from factual details."
+    ],
+    "Riding": [
+      "AGL",
+      "WIL",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "158",
+      "The ability to correctly apply riding tack (saddle, saddle blanket, bridle, reins, saddlebags) to a riding beast, and to stay on the back of the beast under difficult conditions."
+    ],
+    "Rope Making": [
+      "AGL",
+      "INT",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "158",
+      "The ability to create sturdy rope out of braided strands of flax, hemp, silk, or wire."
+    ],
+    "Rope Use": [
+      "AGL",
+      "INT",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "158",
+      "Practitioners of this skill are knowledgeable of various aspects of rope, and knots: material strengths, load limits, and how certain knots modify those values."
+    ],
+    "Rowing": [
+      "STR",
+      "VIT",
+      "8",
+      "5d10%",
+      "32",
+      "Player`s Guide",
+      "159",
+      "The ability to use an oar to row a boat alone or in harmony with others in an efficient manner."
+    ],
+    "Running": [
+      "AGL",
+      "VIT",
+      "6",
+      "10d6%",
+      "24",
+      "Player`s Guide",
+      "159",
+      "The ability to jog, or run at a sustained pace over long distances."
+    ],
+    "Sapping": [
+      "STR",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Master`s Manual",
+      "90",
+      "The practice of undermining structures, or terrain by tunneling under them, and creating a controlled collapse."
+    ],
+    "Scavenging": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "166",
+      "The ability to find needed items, and shelter that are present within urban environments."
+    ],
+    "Scholar": [
+      "KNW",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "159",
+      "A Scholar is a student of knowledge, often distinguished for breadth of knowledge, and experience."
+    ],
+    "Science": [
+      "INT",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Conquest of the Eternal",
+      "?",
+      "The ability to create, and evaluate hypothesis, and world models allowing for advances in many fields."
+    ],
+    "Scribing": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "159",
+      "The ability to accurately hand copy the text of a written work."
+    ],
+    "Sculpting": [
+      "AGL",
+      "KNW",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "159",
+      "The ability to create intricate three-dimensional works of art out of stone, clay, or more exotic substances such as jade."
+    ],
+    "Sewing": [
+      "AGL",
+      "",
+      "8",
+      "5dl0%",
+      "32",
+      "Player`s Guide",
+      "159",
+      "The capacity to sew materials together with fiber, or thread, repair woven or thin flexible materials, and create intricate designs within cloth."
+    ],
+    "Shepherdry": [
+      "KNW",
+      "",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "159",
+      "The ability to use sounds, movement, and other animals (such as dogs) to herd, tend, and guard roaming livestock such as sheep, and cattle."
+    ],
+    "Signaling": [
+      "KNW",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "159",
+      "The ability to use smoke, fire, lighting, or flags to communicate in an established non-spoken language over a great distance."
+    ],
+    "Sing Songs": [
+      "CHM",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "159",
+      "The ability to read, and sing a non-magical song in a pleasing fashion."
+    ],
+    "Skinning/Tanning": [
+      "AGL",
+      "KNW",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "160",
+      "The capability of skinning the hide of an animal, and treating it to prevent decay (see Leather Working)."
+    ],
+    "Slave Driving": [
+      "WIL",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Master`s Manual",
+      "90",
+      "The ability to handle and promote the welfare of slaves for a master in cultures that permit the ownership of other sapient beings."
+    ],
+    "Smithy": [
+      "STR",
+      "AGL",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "160",
+      "The ability to remove impurities from raw metal materials by use of applied heat and force. The refined metal from this process is suitable for making, and repairing tools, armor and weapons. Any raw metal (including precious metal ore) may be forged."
+    ],
+    "Soap Making": [
+      "KNW",
+      "",
+      "5",
+      "10d6%",
+      "20",
+      "Player`s Guide",
+      "160",
+      "The ability to create soap from natural materials like lye, animal fat, and plant fiber."
+    ],
+    "Soldiering": [
+      "AGL",
+      "WIL",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "160",
+      "The capability of following military protocol and completing actions that represent the movements and conduct of a military organization."
+    ],
+    "Spelunking": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Master`s Manual",
+      "90",
+      "The practice of safely descending into natural caves, caverns, crevasses, sinkholes, etc."
+    ],
+    "Spinning": [
+      "AGL",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "160",
+      "The ability to spin plant, or animal fiber into thread, string, or yarn."
+    ],
+    "Squire": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "160",
+      "The ability to serve a single figure within a political body, or institution. If this figure is a Knight, duties include the marshaling and handling of armaments, equipment, and standard."
+    ],
+    "Steam Power": [
+      "INT",
+      "KNW",
+      "17",
+      "6d6%",
+      "68",
+      "Master`s Manual",
+      "90",
+      "The ability to use a steam to generate locomotion for many, and varied purposes. It also imparts the knowledge and ability to create a steam engine."
+    ],
+    "Stone Masonry": [
+      "STR",
+      "AGL",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "160",
+      "The ability to build,or repair basic structures made of stone such as a wall or a building (but not the ceiling)."
+    ],
+    "Store Keeping": [
+      "KNW",
+      "",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "160",
+      "The `know how` of organizing and running a small store."
+    ],
+    "Story Telling": [
+      "WIS",
+      "CHM",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "160",
+      "The ability to create, learn, and vocally tell a story (real or imagined) in an entertaining fashion."
+    ],
+    "Supplier": [
+      "WIS",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "160",
+      "The ability to anticipate the need for goods, making quality, and quantity decisions for a faction, or patron allowing the acquisition of hard-to-find goods, or services."
+    ],
+    "Surfing": [
+      "AGL",
+      "",
+      "13",
+      "8d6%",
+      "52",
+      "Master`s Manual",
+      "90",
+      "The talent of riding watery swells, or waves with a wooden (or similar material) board."
+    ],
+    "Surveyor": [
+      "KNW",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "161",
+      "The ability to accurately mark, and record the measurements of terrain. buildings, or other structures."
+    ],
+    "Survival": [
+      "VIT",
+      "KNW",
+      "8",
+      "5d10%",
+      "24",
+      "Player`s Guide",
+      "161",
+      "The ability to locate food, water, and shelter resources in hostile, adverse, or unknown environments."
+    ],
+    "Swimming": [
+      "AGL",
+      "VIT",
+      "6",
+      "10d6%",
+      "24",
+      "Player`s Guide",
+      "161",
+      "The ability to propel oneself through water using appendages as well as remaining afloat (without assistance) in water."
+    ],
+    "Tactics/Strategy": [
+      "INT",
+      "WIS",
+      "15",
+      "4d10%",
+      "60",
+      "Conquest of the Eternal",
+      "?",
+      "The ability to craft short term tactics, and a long-term strategy."
+    ],
+    "Tailoring": [
+      "AGL",
+      "INT",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "161",
+      "The ability to create, and then fit, or alter fancy clothing (such as shirts, pants, and gloves) to an individual."
+    ],
+    "Tattoo Artistry": [
+      "AGL",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "161",
+      "The ability to use needles, and indelible inks to create intricately designed works of art on hairless skin."
+    ],
+    "Taxidermy": [
+      "AGL",
+      "INT",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "161",
+      "The art of preparing, and preserving the entirety of an animal as well as stuffing and mounting them in lifelike form."
+    ],
+    "Theology": [
+      "WIS",
+      "KNW",
+      "18",
+      "6d6%",
+      "68",
+      "Player`s Guide",
+      "161",
+      "The ability to understand and postulate a model of how the spiritual universe works."
+    ],
+    "Tightrope Walking": [
+      "AGL",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "161",
+      "The ability to walk on narrow ledges, beams, or ropes."
+    ],
+    "Tobacconist": [
+      "INT",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Player`s Guide",
+      "162",
+      "The `know how` to prepare certain plants to be smoked, chewed, or inhaled."
+    ],
+    "Tool Making": [
+      "AGL",
+      "KNW",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "162",
+      "The ability to take forged metal, and create intricate and precise tools. Requires a forge to shape the metal."
+    ],
+    "Torturing": [
+      "AGL",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "162",
+      "The ability to use tools, and techniques to inflict excruciating pain in an imprisoned individual without causing death."
+    ],
+    "Translating": [
+      "KNW",
+      "CHM",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "162",
+      "The ability to translate written, and spoken languages, slang, and idioms (including tone and inflection) from one language to another."
+    ],
+    "Tumbling": [
+      "AGL",
+      "",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "162",
+      "The talent to fall, roll, jump, spring, and catch, or support others."
+    ],
+    "Undertaking": [
+      "KNW",
+      "",
+      "10",
+      "5d10%",
+      "40",
+      "Master`s Manual",
+      "90",
+      "The ability to prepare a body and carry out a plain burial, cremation, etc. according to proper form for that race. or culture."
+    ],
+    "Upholstery": [
+      "AGL",
+      "KNW",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "166",
+      "The ability to add cushions, or inserts into furniture for comfort."
+    ],
+    "Valet": [
+      "KNW",
+      "",
+      "7",
+      "10d6%",
+      "28",
+      "Player`s Guide",
+      "162",
+      "The ability to fulfill the basic day-to-day needs of a male employer."
+    ],
+    "Ventriloquism": [
+      "INT",
+      "CHM",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "162",
+      "The ability to speak with little or no lip movement such that speech appears to originate from another location."
+    ],
+    "Wagon/Carriage Driving": [
+      "AGL",
+      "INT",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "162",
+      "The ability to drive a four-wheeled, animal-drawn wagon, or carriage."
+    ],
+    "Wagon/Carriage Making": [
+      "AGL",
+      "KNW",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "162",
+      "The ability to produce a four-wheeled, animal-drawn vehicle."
+    ],
+    "Water/Wind Power": [
+      "INT",
+      "KNW",
+      "16",
+      "4d10%",
+      "64",
+      "Player`s Guide",
+      "162",
+      "The `know how` to harness the power of flowing water to generate mechanical force using a stationary water wheel as well as the knowledge to harness the force of the wind through low efficiency wind mills."
+    ],
+    "Weapon Making": [
+      "AGL",
+      "KNW",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "163",
+      "By itself, Weapon Making provides the `know how` to create, and repair a multitude of weapons."
+    ],
+    "Weaving": [
+      "AGL",
+      "",
+      "11",
+      "8d6%",
+      "44",
+      "Player`s Guide",
+      "163",
+      "The ability to produce basic woven goods (such as a blanket, or cloak) with hands, and simple tools."
+    ],
+    "Wheel Wright": [
+      "AGL",
+      "KNW",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "163",
+      "The ability to produce, and repair perfectly circular wheels, and the mechanisms used to keep a wheel in place."
+    ],
+    "Wigweaving": [
+      "AGL",
+      "CHM",
+      "12",
+      "8d6%",
+      "48",
+      "Mysteries of the Planes",
+      "166",
+      "The ability to create hair, and beard designs from both animal, and humanoid hair."
+    ],
+    "Wood Curing": [
+      "KNW",
+      "",
+      "14",
+      "4d10%",
+      "56",
+      "Player`s Guide",
+      "163",
+      "The ability to prepare lumber to be used in a refined manner for creating wooden objects. Using water, oils, time, pressure, glue, and paint the wood curer can change the properties, or the condition of wood (such as waterproofing, bending for the curve of a boat’s hull, and joining with metal)."
+    ],
+    "Wood Cutting": [
+      "AGL",
+      "VIT",
+      "10",
+      "5d10%",
+      "40",
+      "Player`s Guide",
+      "163",
+      "The ability to use a cutting device (like a saw) to remove branches, and bark from a felled tree, and cut the tree into lumber-grade wood."
+    ],
+    "Wood Working": [
+      "AGL",
+      "INT",
+      "13",
+      "8d6%",
+      "52",
+      "Player`s Guide",
+      "163",
+      "The ability to put several pieces of wood together to form a finished product of simple geometric shape."
+    ],
+    "Writing": [
+      "WIS",
+      "KNW",
+      "15",
+      "4d10%",
+      "60",
+      "Player`s Guide",
+      "163",
+      "Using imagination, or knowledge of events, an original written work is created."
+    ],
+    "Open Slot": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "?",
+      "?",
+      "?"
+    ],
+    "Unavailable": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "?",
+      "?",
+      "?"
+    ]
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "balladlist",
+    "lines": [
+      136861,
+      136930
+    ]
+  },
+  "entries": {
+    "Animate": [
+      "Animate",
+      "15",
+      "10",
+      "20 sec.",
+      "Music Ends",
+      "Grants 2-5 objects the power of movement under control of the balladeer. Each object can weigh no more than 200 lb. and moves up to 10` a second."
+    ],
+    "Awaken": [
+      "Awaken",
+      "18",
+      "-5",
+      "10 min.",
+      "Music Ends",
+      "Causes 1 non-sapient plant or animal to become sapient. Treat plants as the skill Awaken Plant and animals as the spell Endow Intelligence at 2 Aura per Class Title of the balladeer. This effect has a 1% chance of permanence after the ballad is ended."
+    ],
+    "Bravery": [
+      "Bravery",
+      "16",
+      "5",
+      "30 sec.",
+      "1 hour/Title",
+      "Morale (and Control Resistance to Fear) is raised by 5% per Class Title of the balladeer for all friendly listeners."
+    ],
+    "Control": [
+      "Control",
+      "17",
+      "0",
+      "30 sec.",
+      "Music Ends",
+      "All listeners must make a Control Resistance or follow the requests of the balladeer. Those requests that could cause injury or death allow a further Control Resistance. If any Control Resistance is made, then the effects of the ballad are broken for that listener."
+    ],
+    "Deadwalk": [
+      "Deadwalk",
+      "19",
+      "-10",
+      "10 min.",
+      "Music Ends",
+      "All the dead buried within sight of the balladeer arise as zombies or skeletons depending on their condition. As long as the ballad continues with this power as its focus they will follow the direction of the balladeer. At the end of this effect they fall where they are. There is a 1% chance per zombie and skeleton of the effect remaining permanent. Those that are permanent will be hostile to all life."
+    ],
+    "Find Enemy": [
+      "Find Enemy",
+      "15",
+      "10",
+      "10 sec.",
+      "Music Ends",
+      "When this power goes into effect the balladeer can see a pale glow around those enemies who hear their song."
+    ],
+    "Healing": [
+      "Healing",
+      "17",
+      "0",
+      "1 min.",
+      "Instant",
+      "All listeners are healed 1d4 points per Class Title of the balladeer in up to one wounded area per Class Title. The areas healed can vary from listener to listener."
+    ],
+    "Illusion": [
+      "Illusion",
+      "18",
+      "-5",
+      "10 sec.",
+      "Music Ends",
+      "Creates an illusion of one type (sight, sound, smell, taste or touch.) Every ten seconds, another illusion type may be added. For purposes of damage or ill effect these illusions are considered to be at 2 Aura per Class Title of the balladeer."
+    ],
+    "Insanity": [
+      "Insanity",
+      "19",
+      "-10",
+      "30 sec.",
+      "Music Ends",
+      "All listeners must make a Control Resistance or suffer the insanity of the balladeer`s choice for the duration of the ballad."
+    ],
+    "Pain": [
+      "Pain",
+      "17",
+      "0",
+      "20 sec.",
+      "Instant",
+      "All enemy listeners take 1d4 damage per Class Title of the balladeer to one area of the balladeer`s choice."
+    ],
+    "Sorrow": [
+      "Sorrow",
+      "16",
+      "5",
+      "30 sec.",
+      "1 hour/Title",
+      "Morale is lowered by 5% per Class Title of the balladeer for one hour per Class Title of the balladeer. This applies to all enemy listeners."
+    ],
+    "Bind Magic": [
+      "Bind Magic",
+      "22",
+      "-25",
+      "30 sec.",
+      "1 hour/Title",
+      "All spells and invocations are nullified (temporarily if they are permanent). While this section of the Ballad contiunes no new spells or invocations can be cast or invoked. This has no effect on magical or divine magical skills, powers, potions, songs, poems, etc."
+    ],
+    "Chaos": [
+      "Chaos",
+      "20",
+      "-15",
+      "20 sec.",
+      "Varies",
+      "Requires a roll on the Ballad Chaos Table. Each listener must make a Control Resistance or be required to perform the actions (from the table) until the actions are complete or the until ballad or ection of ballad end. If this section of the ballad continues, those beings who made their Control Resistance must make a new one every 10 second, or suffer the chaos effect."
+    ],
+    "Repair": [
+      "Repair",
+      "20",
+      "-15",
+      "1 min.",
+      "Instant",
+      "One tear, rip, sunder or break in a structure or large object is repaired, filled in, made good as new, etc.."
+    ],
+    "Sunder": [
+      "Sunder",
+      "19",
+      "-10",
+      "1 min.",
+      "Instant",
+      "One structure or large object will be broken open allowing access for an average sized humanoid. Magical structures or objects are unaffected."
+    ],
+    "Greater Soothing": [
+      "Greater Soothing",
+      "20",
+      "-15",
+      "30 sec.",
+      "Instant",
+      "All magical animals who hear the ballad are allowed a new Control Resistance to break free of any spell, invocation, poem, song or ballad by which they are currently controlled."
+    ],
+    "Greater Animal Entrancement": [
+      "Greater Animal Entrancement",
+      "21",
+      "-20",
+      "10 sec.",
+      "Instant",
+      "All magical animals of one named type who hear the song and fail a Control Resistance will come to the balladeer and follow any requests the balladeer wishes for as long as the ballad is played. If a request will cause harm to the animal or magical animal, the creature  gets a new Control Resistance. If the Balladeer attempts to entrance an animal who has been tamed by the skill Tame Animal, then the Ballad Lore practitioner must win a contest of skills with the Tame Animal practitioner to entrance the animal."
+    ],
+    "Greater Tranquility": [
+      "Greater Tranquility",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "A sense of peace overcomes all animals and magical animals who hear the song, and they will cease all hostile action and will initiate no new hostile actions while the ballad is played. If attacked, animals and magical animals are allowed a new Control Resistance to fight back."
+    ],
+    "Plant Entrancement": [
+      "Plant Entrancement",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "All magical plants of one named type who hear the song and fail a Control Resistance will follow any requests the balladeer wishes for as long as the ballad is played. If the request will cause harm to the magical plant, the magical plant gets a new Control Resistance."
+    ],
+    "Banshee Resolve": [
+      "Banshee Resolve",
+      "20",
+      "-15",
+      "1 min.",
+      "Music Ends",
+      "One listener per Practitioner Title is immune to all Banshee Wails and Banshee Howls for the duration of the ballad."
+    ],
+    "Blood of the Vampire": [
+      "Blood of the Vampire",
+      "21",
+      "-20",
+      "30 sec.",
+      "Music Ends",
+      "Compulsion for blood is suppressed for 1 being within listening range for the duration of the ballad."
+    ],
+    "Decomposition": [
+      "Decomposition",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "The skin and muscles of 1 listener of the balladeer`s choosing rapidly decomposes, inflicting 2d4 damage per second to 1d4 random body areas for the duration of the ballad. The victim is allowed a Magic Resistance for each second of damage."
+    ],
+    "Ghoul`s Bite": [
+      "Ghoul`s Bite",
+      "18",
+      "-5",
+      "10 sec.",
+      "Music Ends",
+      "One listener per Practitioner Title is protected from the fetid bite of any ghoul, including physical, poison and disease effects, for the duration of the ballad."
+    ],
+    "Mask of Death": [
+      "Mask of Death",
+      "16",
+      "5",
+      "30 sec.",
+      "Music Ends",
+      "One listener per Practitioner Title gains an illusion of death for the duration of the ballad. Each listener smells, looks, feels, sounds and even tastes like the dead. The listener is allowed a Control Resistance if unwilling or unknowing."
+    ],
+    "Rotting Wood": [
+      "Rotting Wood",
+      "17",
+      "0",
+      "10 sec.",
+      "Music Ends",
+      "One natural, magical or undead tree or plant of the balladeer`s choosing within 5` per Practitioner Title quickly begins to rot, inflicting 1d6 damage per second for the duration of the ballad. The target is allowed a Magic Resistance for each second of damage."
+    ],
+    "Shadow`s Touch": [
+      "Shadow`s Touch",
+      "20",
+      "-15",
+      "30 sec.",
+      "Music Ends",
+      "One listener per Practitioner Title is protected from Touch effects of undead shades and wraiths (excluding dragons) for the duration of the ballad."
+    ],
+    "Awaken Volcano": [
+      "Awaken Volcano",
+      "25",
+      "-40",
+      "30 sec.",
+      "Instant",
+      "Causes 1 volcano within sight to become active and erupt."
+    ],
+    "Avalanche": [
+      "Avalanche",
+      "17",
+      "0",
+      "10 sec.",
+      "Instant",
+      "Causes up to 5 cubic feet of snow per Class Title, within sight, to loosen and give way. Anyone caught in the resulting avalanche takes 2d6 crushing damage per 5 cubic feet and has a chance of being completely embedded in snow resulting in the inability to breathe, as well as hypothermia within 40 minutes and 1d4 cold damage to head and limbs per hour."
+    ],
+    "Belief": [
+      "Belief",
+      "25",
+      "-40",
+      "15 sec.",
+      "Music Ends",
+      "Causes 1 listener per 2 Class Titles to make a Control Resistance or believe all statements spoken by another as fact for the duration of the ballad. Once the ballad ceases, the targeted listener(s) may make an Intelligence save to review the aforementioned statements and decide if it was indeed truth or not. To switch beliefs after the ballad has ended, the targeted listener(s) must make a Will Force save."
+    ],
+    "Firescreen": [
+      "Firescreen",
+      "16",
+      "5",
+      "10 sec.",
+      "Music Ends",
+      "Causes existing plants and ground formations in an area up to 2 cubic feet per Class Title to reform into any shape desired by the balladeer, as long as they are within 10` from a non-magical fire. This ballad does not affect trees taller than 5`, stone, or magically created plants and ground formations."
+    ],
+    "Firesight": [
+      "Firesight",
+      "17",
+      "0",
+      "5 sec.",
+      "Music Ends",
+      "Allows the balladeer and 1 listener per Class Title to see normally through burning flames. All non-magical flames appear transparent in the targets` line of vision for the duration of the ballad. This ballad does not allow lava to be seen through."
+    ],
+    "Icemelt": [
+      "Icemelt",
+      "19",
+      "-10",
+      "10 sec.",
+      "Music Ends",
+      "Causes up to 10 cubic feet of ice and slush to melt at a rate of 1 cubic foot per Practitioner Title every 5 minutes. This ballad can affect both magical and non-magical ice within a range of 10` per Practitioner Title. This ballad has no effect on snow or water."
+    ],
+    "Joy": [
+      "Joy",
+      "15",
+      "10",
+      "10 sec.",
+      "Music Ends",
+      "Gives all listeners an extreme sense of happiness and bliss; all sorrow, anger and fear are swept away, and a Will Force save must be made to take any detrimental or offensive action. Those unwilling or unknowing are granted a Control Resistance. This joy lasts an additional 2d6 minutes per Class Title after the ballad has ended."
+    ],
+    "Memory": [
+      "Memory",
+      "19",
+      "-10",
+      "15 sec.",
+      "Instant",
+      "The singer can either transfer one specified memory of an event that transpired no more than 5 years ago per Practitioner Title from the target to themselves, or from themselves to the target (who is allowed a Control Resistance). This particular memory exchanges minds for 1d4 minutes per Class Title, and there is a 5% chance per Practitioner title the memory will be permanently transferred. The memory can be as specific as a wedding day, slaying someone with a sword for the first time, or falling off a horse as a child; it can be as vague as living in a particular area for many years, wearing a well-worm suit of armor, or enduring many years of reading by candlelight. The receiver of the memory also gains a vague sense of emotions felt while experiencing the event and details like names and places associated with the memory. This ballad cannot be used to transfer skills, powers, abilities, etc."
+    ],
+    "Mythbreaker": [
+      "Mythbreaker",
+      "17",
+      "0",
+      "10 sec.",
+      "Music Ends",
+      "This ballad works while accompanying the telling of a myth or legend with music and refrain. Upon hearing a myth, legend or otherwise bold statement doubted by more than 75% of any given area`s population, the practitioner is given a sense of whether the myth or legend is true or false as stated. This does not grant the practitioner extra information of what actually is true; it only defines that which is not."
+    ],
+    "Oasis": [
+      "Oasis",
+      "20",
+      "-15",
+      "30 min.",
+      "Music Ends",
+      "Creates a lush, pleasant oasis with a radius of 10` per Practitioner Title from only a single drop of water and 1 berry or slice of fruit. After the first 10 minutes of the ballad`s performance, the ambient temperature is altered to 78 degrees Fahrenheit. After another 10 minutes, the targeted drop of water expands into a plentiful source of pure water fed by a never-ending underground spring. After the final 10 minutes, the targeted berry grows into a garden of lush, edible plants. Since this is a magical area, it cannot be otherwise magically or divinely affected by affects such as Blessed Ground, Enchant Area, and etc. This oasis exists only for the duration of the ballad: once the practitioner ceases, all magically created effects instantly fade away, leaving only the original drop of water and berry."
+    ],
+    "Rockfall": [
+      "Rockfall",
+      "18",
+      "-5",
+      "10 sec.",
+      "Instant",
+      "Causes up to 1 cubic foot of non-magical rock per Class Title to loosen (and fall, if applicable) in an area within 10` per Class Title."
+    ],
+    "Seafaring": [
+      "Seafaring",
+      "18",
+      "-5",
+      "10 sec.",
+      "Music Ends",
+      "Grants all friendly listeners a +5% bonus per Class Title to the skills Balance, Boat Wright, Cartography, Climb, Danger Knowledge, Direction Knowledge, Ferrier, Heavy Drinking, Navigate, Rope Use, Rowing, Sail and Sing Songs as long as they are on some sort of water vessel."
+    ],
+    "Stonespeak": [
+      "Stonespeak",
+      "18",
+      "-5",
+      "10 sec.",
+      "Music Ends",
+      "Allows the balladeer to speak to and understand an object or area of solid stone no larger than 5 cubic feet per Practitioner Title. The balladeer speaks to the stone using the ballad`s lyrics, and then pauses (while continuing to play) to listen to the stone`s response."
+    ],
+    "Translation": [
+      "Translation",
+      "18",
+      "-5",
+      "5 sec.",
+      "Music Ends",
+      "Allows all listeners to understand each other`s speech, no matter what language they are using, for the duration of the ballad."
+    ],
+    "Waterwalk": [
+      "Waterwalk",
+      "18",
+      "-5",
+      "5 sec.",
+      "Music Ends",
+      "Allows the balladeer and 1 listener per Class Title to walk on water as if on solid ground for the duration of the ballad. No ripples or other signs of passing are left behind."
+    ],
+    "Dreamweave": [
+      "Dreamweave",
+      "18",
+      "-5",
+      "10 min.",
+      "Music Ends",
+      "Creates up to one dream object per current title of the balladeer. Each item can be no more than 10 lb. per title of the balladeer. There is a 5% chance that the items will be temporarily magical at up to +1 per 3 full titles of the balladeer. This ballad only works on the plane of dreams. One designated item has a 2% chance per title of the balladeer of returning with the dreamer when leaving the dream plane."
+    ],
+    "Gateway": [
+      "Gateway",
+      "19",
+      "-10",
+      "10 min.",
+      "Music Ends",
+      "Creates a gateway up to 20 feet high and 10 feet wide that can open to one plane connected to this plane per 3 titles of the balladeer. The place the portal is connected to may also be elsewhere on the same plane. Each connecting point is described by the practitioner based on a place they have seen or had described to them (Knowledge save required for each.) The gateway appears in whatever form the practitioner desires, a door, a mirror, an archway, etc. Some form of attunement device has to be present on (or near) the gateway to allow it to be set to the particular point if there is more than one. Also, anyone passing through gateway gains 1 appropriate protection effect for the plane they are travelling to that lasts as long as they stay on that plane. The gateway itself lasts 1 day per title of the balladeer and is permanent if 1 Will Force is expended."
+    ],
+    "Place of Safety": [
+      "Place of Safety",
+      "19",
+      "-10",
+      "10 min.",
+      "Music Ends",
+      "Creates a place of safety that is up to 10 cubic feet or 10 feet in diameter (practitioner`s choice.) The place of safety provides the following effects: contains a pocket of breathable (replenishing air), temperature is kept to 72 degrees Fahrenheit, pressure is kept to sea level of earth, there is a replenishing source of water (pool, pond or fountain), the pH balance of all liquids within the area becomes neutral. The area is also surrounded by a thin barrier which keeps out all negative magical effects. A form of desired food appears on one of the surfaces that will feed up to 10 beings per practitioner title and reappears three times per day. There is also a walkable surface created as needed out of whatever normal material desired with a lip at the edge high enough to prevent unintended falls. This place of safety lasts 1 day per title of the balladeer and is permanent if 1 Will Force is expended."
+    ],
+    "Remove Supernatural Influence": [
+      "Remove Supernatural Influence",
+      "19",
+      "-10",
+      "10 sec.",
+      "Music Ends",
+      "Removes up to one negative effect caused by a supernatural being per title of the balladeer on any number of beings within sight."
+    ],
+    "Angel`s Sorrow": [
+      "Angel`s Sorrow",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "Causes 1 Angel under 10th level per balladeer`s title or Celestial Incarnate under 10th title per balladeer`s title to make a Magic Resistance at -20% or forget the balladeer, any allies present, and any tasks related to them when the ballad is sung. They must also make a Control Resistance at -20% or leave the area immediately."
+    ],
+    "Devil`s Regret": [
+      "Devil`s Regret",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "Causes 1 Devil under 10th level per balladeer`s title or Infernal Incarnate under 10th title per balladeer`s title to make a Magic Resistance at -20% or forget the balladeer, any allies present, and any tasks related to them when the ballad is sung. They must also make a Control Resistance at -20% or leave the area immediately."
+    ],
+    "Dragon`s Rest": [
+      "Dragon`s Rest",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "Makes 1 dragon sorrowful and contemplative, lulling them to sleep if they are on the ground or fly away if they are in the air. The dragon must make both a Magic Resistance at -20% and a Control Resistance at -20% and failing either leave if in the air, or fall asleep if on the ground."
+    ],
+    "Spirit`s Calm": [
+      "Spirit`s Calm",
+      "20",
+      "-15",
+      "10 sec.",
+      "Music Ends",
+      "Causes 1 Neutral Supernatural being under 10th level per balladeer`s title or Deva Incarnate under 10th title per balladeer`s title to make a Magic Resistance at -20% or forget the balladeer, any allies present, and any tasks related to them when the ballad is sung. They must also make a Control Resistance at -20% or leave the area immediately."
+    ]
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "armorpenaltydict",
+    "lines": [
+      107061,
+      107162
+    ]
+  },
+  "entries": {
+    "Armlets(Heavy Plate)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armlets(Laminar)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armlets(Stainless Steel)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armlets(Wood)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armlets(Heavy Bone)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armlets(Giant Chitin)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Armored Skirt(Heavy Plate)": [
+      -5,
+      1,
+      0,
+      0
+    ],
+    "Armored Skirt(Laminar)": [
+      -5,
+      1,
+      0,
+      0
+    ],
+    "Armored Skirt(Stainless Steel)": [
+      -5,
+      1,
+      0,
+      0
+    ],
+    "Body Suit(Banded Chain)": [
+      -10,
+      2,
+      1,
+      1
+    ],
+    "Body Suit(Chain)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Body Suit(Giant Scales)": [
+      -10,
+      2,
+      1,
+      1
+    ],
+    "Body Suit(Heavy Chain)": [
+      -5,
+      2,
+      1,
+      1
+    ],
+    "Body Suit(Heavy Scale)": [
+      -20,
+      3,
+      1,
+      2
+    ],
+    "Body Suit(Scale)": [
+      -15,
+      2,
+      1,
+      2
+    ],
+    "Breastplate(Bolted Leather)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Breastplate(Bone)": [
+      -15,
+      1,
+      1,
+      0
+    ],
+    "Breastplate(Giant Chitin)": [
+      -10,
+      1,
+      0,
+      0
+    ],
+    "Breastplate(Heavy Bone)": [
+      -20,
+      2,
+      2,
+      1
+    ],
+    "Breastplate(Heavy Plate)": [
+      -10,
+      1,
+      1,
+      1
+    ],
+    "Breastplate(Plate)": [
+      -10,
+      1,
+      1,
+      1
+    ],
+    "Breastplate(Laminar)": [
+      -10,
+      1,
+      1,
+      1
+    ],
+    "Breastplate(Stainless Steel)": [
+      -10,
+      1,
+      1,
+      1
+    ],
+    "Breastplate(Wood)": [
+      -10,
+      1,
+      0,
+      0
+    ],
+    "Footgear(Heavy Bone)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Footgear(Heavy Plate)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Footgear(Stainless Steel)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Full Headgear(Heavy Scale)": [
+      -5,
+      1,
+      0,
+      0
+    ],
+    "Full Shirt(Banded Chain)": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "Full Shirt(Giant Scales)": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "Full Shirt(Heavy Chain)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Full Shirt(Heavy Scale)": [
+      -10,
+      2,
+      1,
+      1
+    ],
+    "Full Shirt(Scale)": [
+      -5,
+      1,
+      1,
+      1
+    ],
+    "Gauntlets(Bone)": [
+      -10,
+      0,
+      0,
+      1
+    ],
+    "Gauntlets(Bronze)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Gauntlets(Giant Chitin)": [
+      -10,
+      0,
+      0,
+      0
+    ],
+    "Gauntlets(Heavy Bone)": [
+      -15,
+      0,
+      0,
+      0
+    ],
+    "Gauntlets(Heavy Plate)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Gauntlets(Plate)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Gauntlets(Laminar)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Gauntlets(Stainless Steel)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Gauntlets(Wood)": [
+      -5,
+      0,
+      0,
+      0
+    ],
+    "Great Helm(Bloodracite)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Bolted Leather)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Bone)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Heavy Bone)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Bronze)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Giant Chitin)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Heavy Plate)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Pearlacite)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Plate)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Stainless Steel)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Tempered Plate)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Titanium)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Great Helm(Wood)": [
+      -5,
+      2,
+      1,
+      0
+    ],
+    "Leggings(Banded Chain)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Leggings(Scale)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Leggings(Heavy Scale)": [
+      -5,
+      1,
+      1,
+      0
+    ],
+    "Leglets(Bone)": [
+      0,
+      2,
+      1,
+      0
+    ],
+    "Leglets(Bronze)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Leglets(Giant Chitin)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Leglets(Heavy Bone)": [
+      0,
+      2,
+      1,
+      0
+    ],
+    "Leglets(Heavy Plate)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Leglets(Plate)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Leglets(Stainless Steel)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Leglets(Wood)": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "Long Shirt(Banded Chain)": [
+      -5,
+      1,
+      1,
+      1
+    ],
+    "Long Shirt(Chain)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Long Shirt(Giant Scales)": [
+      -15,
+      2,
+      1,
+      1
+    ],
+    "Long Shirt(Heavy Chain)": [
+      -5,
+      1,
+      1,
+      1
+    ],
+    "Long Shirt(Heavy Scale)": [
+      -15,
+      2,
+      1,
+      1
+    ],
+    "Long Shirt(Scale)": [
+      -10,
+      2,
+      1,
+      1
+    ],
+    "Long Skirt(Heavy Plate)": [
+      -10,
+      0,
+      1,
+      0
+    ],
+    "Long Skirt(Plate)": [
+      -5,
+      1,
+      1,
+      0
+    ],
+    "Long Skirt(Laminar)": [
+      -10,
+      1,
+      1,
+      0
+    ],
+    "Long Skirt(Stainless Steel)": [
+      -10,
+      1,
+      1,
+      0
+    ],
+    "Armor Suit(Banded)": [
+      -10,
+      4,
+      2,
+      1
+    ],
+    "Armor Suit(Beastslayer Armor)": [
+      -10,
+      1,
+      0,
+      0
+    ],
+    "Armor Suit(Bolted Leather Armor)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Armor Suit(Bone Armor)": [
+      -15,
+      1,
+      1,
+      0
+    ],
+    "Armor Suit(Brigandine)": [
+      -25,
+      2,
+      1,
+      2
+    ],
+    "Armor Suit(Chain)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "Armor Suit(Field Plate)": [
+      -20,
+      5,
+      4,
+      2
+    ],
+    "Armor Suit(Giant Ant Armor)": [
+      -10,
+      1,
+      0,
+      0
+    ],
+    "Armor Suit(Giant Beetle Armor)": [
+      -10,
+      1,
+      0,
+      0
+    ],
+    "Armor Suit(Giant Mantis Armor)": [
+      -30,
+      5,
+      2,
+      0
+    ],
+    "Armor Suit(Giant Snake Scale Armor)": [
+      -10,
+      2,
+      1,
+      0
+    ],
+    "Armor Suit(Half Plate)": [
+      -15,
+      2,
+      1,
+      2
+    ],
+    "Armor Suit(Heavy Bone Armor)": [
+      -45,
+      7,
+      5,
+      1
+    ],
+    "Armor Suit(Heavy Chain)": [
+      -5,
+      2,
+      1,
+      1
+    ],
+    "Armor Suit(Legate/General Armor)": [
+      -25,
+      2,
+      2,
+      2
+    ],
+    "Armor Suit(Legion/Centurion Armor)": [
+      -5,
+      1,
+      2,
+      1
+    ],
+    "Armor Suit(Mercenary)": [
+      -25,
+      3,
+      2,
+      2
+    ],
+    "Armor Suit(Plate)": [
+      -20,
+      5,
+      4,
+      2
+    ],
+    "Armor Suit(Scale)": [
+      -15,
+      5,
+      3,
+      1
+    ],
+    "Armor Suit(Shining Plate/Stainless Steel)": [
+      -10,
+      0,
+      0,
+      1
+    ],
+    "Armor Suit(Tempered Plate)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Armor Suit(Titanium Plate)": [
+      -5,
+      0,
+      0,
+      1
+    ],
+    "Armor Suit(Wooden Armor)": [
+      -20,
+      1,
+      0,
+      0
+    ]
+  }
+}

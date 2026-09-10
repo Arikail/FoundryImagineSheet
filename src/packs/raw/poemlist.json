@@ -1,0 +1,471 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "poemlist",
+    "lines": [
+      141890,
+      141961
+    ]
+  },
+  "entries": {
+    "Anger": [
+      "Anger",
+      "16",
+      "0",
+      "3d6",
+      "sec.",
+      "Varies",
+      "Cause listeners to roll at +30% to Berserking and fight the opponent(s) named in the poem. Lasts until end of combat or 1d4 hours."
+    ],
+    "Binding": [
+      "Binding",
+      "20",
+      "-20",
+      "10d4",
+      "sec.",
+      "Varies",
+      "All listeners must make a Control Resistance or be held bound in place for 1d6 minutes."
+    ],
+    "Blindness": [
+      "Blindness",
+      "20",
+      "-20",
+      "10d4",
+      "sec.",
+      "Varies",
+      "All listeners must make a Control Resistance or be blinded for 1d6 minutes."
+    ],
+    "Control": [
+      "Control",
+      "21",
+      "-25",
+      "6d6",
+      "sec.",
+      "Poem Ends",
+      "All listeners must make a Control Resistance or follow instructions within the poem. All life threatening or dangerous actions called for allow a new Control Resistance roll."
+    ],
+    "Healing": [
+      "Healing",
+      "17",
+      "-5",
+      "10d4",
+      "sec.",
+      "Instant",
+      "The most damaged area on each listener is healed 1d4 per Practitioner Title."
+    ],
+    "Illusion": [
+      "Illusion",
+      "19",
+      "-15",
+      "4d6",
+      "sec.",
+      "10-40 min.",
+      "Causes an illusion to appear with visual and audio components only. Lasts 10-40 minutes."
+    ],
+    "Listening": [
+      "Listening",
+      "18",
+      "-10",
+      "3d6",
+      "sec.",
+      "10-40 min.",
+      "Causes all users to make a Control Resistance or listen to skill user for 10-40 minutes. Other actions may be taken by the listeners while they listen."
+    ],
+    "Love": [
+      "Love",
+      "14",
+      "10",
+      "2d8",
+      "sec.",
+      "1d4 hours",
+      "Causes a -20% to all Control Resistances required to be made from any effect generated from the skill user. Causes a +20% to all affinity or skill rolls against the skill user. Lasts 1d4 hours."
+    ],
+    "Luck": [
+      "Luck",
+      "17",
+      "-5",
+      "10d3",
+      "sec.",
+      "Until Used",
+      "Grants 2-5 luck points to each listener to be used (as the spell Luck)."
+    ],
+    "Pain": [
+      "Pain",
+      "18",
+      "-10",
+      "4d4",
+      "sec.",
+      "Instant",
+      "An area of the practitioner`s choice on enemies is damaged by 1d4 per Practitioner Title."
+    ],
+    "Revealing": [
+      "Revealing",
+      "19",
+      "-15",
+      "6d6",
+      "sec.",
+      "Varies",
+      "All items or beings that are invisible, or hidden by illusion are revealed to the listeners for the duration of the poem for up to 2-7 (1d6+1) minutes."
+    ],
+    "Unlucky": [
+      "Unlucky",
+      "18",
+      "-10",
+      "4d6",
+      "sec.",
+      "Until Used",
+      "The skill user grants 2-5 unlucky points against each listener to be used by the practitioner against the listeners (as the spell Unluck)."
+    ],
+    "Awaken": [
+      "Awaken",
+      "15",
+      "5",
+      "2d4",
+      "sec.",
+      "Instant",
+      "All sleeping beings awake instantly and are fully alert. All effects of fatigue are removed from awakened sleepers."
+    ],
+    "Drowsiness": [
+      "Drowsiness",
+      "19",
+      "-15",
+      "4d4",
+      "sec.",
+      "Varies",
+      "All listeners make a Control Resistance or fall into a deep slumber for 3d6 minutes."
+    ],
+    "Fire": [
+      "Fire",
+      "18",
+      "-10",
+      "3d4",
+      "sec.",
+      "Instant",
+      "Causes a small fire to begin on normal combustible material pointed to during recitation."
+    ],
+    "Springing": [
+      "Springing",
+      "16",
+      "0",
+      "4d4",
+      "sec.",
+      "Varies",
+      "Gives the lorist or one person named per Practitioner Title an enhanced ability to jump, spring, leap and move +2` to running jumps, +1` to standing and +1/2` to upward leaps. Movement is increased by +1` per second or +10` per 10 seconds and +1 mile per hour travelled. Lasts 10-60 minutes."
+    ],
+    "Water Finding": [
+      "Water Finding",
+      "14",
+      "10",
+      "10",
+      "sec.",
+      "Instant",
+      "This poem will cause all animals who hear it to go to their nearest known natural source of drinking water. Does not affect magical animals."
+    ],
+    "Soothing": [
+      "Soothing",
+      "16",
+      "0",
+      "10",
+      "sec.",
+      "Instant",
+      "All animals who hear the poem are broken free of any spell, invocation, poem, song or ballad by which they are currently controlled. Does not affect magical animals."
+    ],
+    "Darkness": [
+      "Darkness",
+      "14",
+      "10",
+      "3d6",
+      "sec.",
+      "Poem Ends",
+      "Creates a sphere of darkness with a radius of 2` per Practitioner Title appears up to 3` per Practitioner Title away from the poet for the duration of the poem. All forms of vision are negated to all within the globe, even the poet. The sphere can be centered on a fixed location, but the globe will not move from the point where it was created."
+    ],
+    "Shadow": [
+      "Shadow",
+      "16",
+      "0",
+      "2d6",
+      "sec.",
+      "Poem Ends",
+      "All shadows within 3` per Practitioner Title may be molded and shaped according to the poet`s will for the duration of the poem. Each shadow may be moved from one place to another, enlarged by up to 50%, or condensed into an area 50% of its original size."
+    ],
+    "Soothe Undead": [
+      "Soothe Undead",
+      "16",
+      "0",
+      "2d6",
+      "sec.",
+      "Poem Ends",
+      "One lesser undead being (under level 5) per Practitioner Title within 5` per Practitioner Title makes a Control Resistance or is unable to take any offensive actions for the duration of the poem."
+    ],
+    "Undead Fire Protection": [
+      "Undead Fire Protection",
+      "17",
+      "-5",
+      "2d8",
+      "sec.",
+      "Poem Ends",
+      "One listener per Practitioner Title is protected from fire-based attacks from undead, receiving a +30% to Magic Resistance (fire) involving undead during the duration of the poem."
+    ],
+    "Undead Poison Protection": [
+      "Undead Poison Protection",
+      "17",
+      "-5",
+      "2d8",
+      "sec.",
+      "Poem Ends",
+      "One listener per Practitioner Title is protected from poisons caused by contact with undead, receiving a +30% Poison Resistance involving undead during the duration of the poem. Poisons already in effect are unaffected by this poem."
+    ],
+    "Boughbreak": [
+      "Boughbreak",
+      "16",
+      "0",
+      "2d4",
+      "sec.",
+      "Instant",
+      "Causes 1d4 branches (not weighing more than 10 pounds each per Practitioner Title) on a targeted tree within 10` per Practitioner Title to break off at the trunk and fall."
+    ],
+    "Compass": [
+      "Compass",
+      "14",
+      "10",
+      "2d4",
+      "sec.",
+      "Poem Ends",
+      "Grants the Practitioner a general sense of cardinal compass directions."
+    ],
+    "Frostbite": [
+      "Frostbite",
+      "18",
+      "-10",
+      "2d4",
+      "sec.",
+      "Instant",
+      "Causes 1d4 fingers and toes of 1 listener named in the poem to become instantly frostbitten, causing 1d4 damage per Practitioner Title unless a Magic Resistance is made."
+    ],
+    "Guilt": [
+      "Guilt",
+      "19",
+      "-15",
+      "2d6",
+      "sec.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title to suddenly feel guilty about some random thing they did in the past, unless a Control Resistance is made. For the next 1d4 hours per Practitioner Title after the poem has ended, the affected being must make a Will Force save to perform any actions involving any similarities to the recalled event. For example, if the poem causes a Rogue to feel guilty about three silver pieces they stole when they were young, the Rogue will be hesitant to pickpocket at the marketplace this afternoon."
+    ],
+    "Night Vision": [
+      "Night Vision",
+      "14",
+      "10",
+      "2d6",
+      "sec.",
+      "Varies",
+      "Grants Enhanced Night Vision to the poet and 1 listener per Practitioner Title for 2d6 minutes."
+    ],
+    "Shifting Sands": [
+      "Shifting Sands",
+      "16",
+      "0",
+      "2d4",
+      "sec.",
+      "Poem Ends",
+      "Allows the poet to shape and manipulate the density of 3 cubic feet of dry sand (both magical and non-magical) per Practitioner Title, within a range of 50` per Practitioner Title. The poet can either transform a hard block of sandstone into loose sand, or vice versa, taking any shape desired. This poem has no effect on stone which is not comprised of densely packed sand. Furthermore, any attempt to manipulate mud will not work until the water is completely removed."
+    ],
+    "Sleepwalk": [
+      "Sleepwalk",
+      "19",
+      "-15",
+      "2d4",
+      "sec.",
+      "Varies",
+      "Causes 1 sleeping listener to make a Control Resistance or stand up and rigidly act out their current dream. Each dream ends in 4d4 seconds, and once the dream ends, the target has a 50% chance to either lie back down or to remain standing and begin a new dream. The target will continue to act out each dream for as long as the poem endures, but they receive a new Control Resistance (each at +5% per Practitioner Title) to perform each new dream."
+    ],
+    "Snowdrift": [
+      "Snowdrift",
+      "16",
+      "0",
+      "2d4",
+      "sec.",
+      "Poem Ends",
+      "Allows the poet to shape or displace 3 cubic feet of both magical and non-magical snow per Practitioner Title, either creating a tall snowdrift, uncovering bare ground, or simply moving it from one place to another within a range of 10` per Practitioner Title. This poem has no effect on water, slush or ice."
+    ],
+    "Snowwalk": [
+      "Snowwalk",
+      "15",
+      "5",
+      "3d4",
+      "sec.",
+      "Poem Ends",
+      "Allows the poet and 1 listener per Practitioner Title the ability to walk as if weightless on snow, slush, or ice for the duration of the poem. Affected listeners leave behind no tracks. Upon stepping onto any other surface, the listeners` weight acts normally."
+    ],
+    "Warmth": [
+      "Warmth",
+      "16",
+      "0",
+      "2d4",
+      "sec.",
+      "Poem Ends",
+      "Causes the core temperature of the poet and 1 listener per Practitioner Title to rise by .5 degrees Fahrenheit per 2 Practitioner Titles, granting each affected listener the feeling of sitting near a camp fire or standing in hot sunlight. The poet can control the maximum amount of warmth gained, and if not careful, fever will ensue."
+    ],
+    "Weather": [
+      "Weather",
+      "15",
+      "5",
+      "3d4",
+      "sec.",
+      "Instant",
+      "Grants the poet a general idea of what the weather will be like in the current area (10 square miles per Practitioner Title) over the next 24 hours per Practitioner Title."
+    ],
+    "Webfoot": [
+      "Webfoot",
+      "16",
+      "0",
+      "3d6",
+      "sec.",
+      "Poem Ends",
+      "Causes the poet and 1 listener per Practitioner Title to grow webbing between their toes, fingers and paws, resulting in a +10% bonus to the skill Swimming and -1 penalty to Appearance when visible. This poem does not affect hooves or fins."
+    ],
+    "Dreaming Slumber": [
+      "Dreaming Slumber",
+      "20",
+      "-20",
+      "1d4",
+      "min.",
+      "Instant",
+      "Causes 1 listener per Practitioner Title to make a Control Resistance or fall into a deep slumber after which they make a Magic Resistance or they are sent to the plane of dreams (without their bodies)."
+    ],
+    "Enrichment": [
+      "Enrichment",
+      "14",
+      "10",
+      "2d6",
+      "sec.",
+      "Poem Ends",
+      "Grants the power of flight 3` per Intelligent point and levitate to the reciter and 1 being per Practitioner title. The effect lasts 1d4+1 hours per Practitioner title. Only works on the ethereal plane."
+    ],
+    "Origin": [
+      "Origin",
+      "16",
+      "0",
+      "10",
+      "sec.",
+      "Varies",
+      "Makes a symbol that only the practitioner can see appear above the head of one being per Practitioner title. The symbol indicates to the practitioner what the being`s plane of origin is. Non-detection is proof against this effect. This effect lasts 1 minute per practitioner title."
+    ],
+    "Phase Door": [
+      "Phase Door",
+      "19",
+      "-15",
+      "10",
+      "sec.",
+      "Varies",
+      "Turns an ordinary door into a doorway to the Phase Plane for 1 minute per Practitioner title. Does not work on planes not connected to the Phase Plane. If used on the Phase Plane it creates a doorway to the natural universe."
+    ],
+    "Reuse Portal": [
+      "Reuse Portal",
+      "18",
+      "-10",
+      "20",
+      "sec.",
+      "Varies",
+      "Opens one portal within sight that has been used within one day per Practitioner title. The portal stays open for 10 minutes per Practitioner title."
+    ],
+    "Return": [
+      "Return",
+      "16",
+      "0",
+      "10",
+      "sec.",
+      "Instant",
+      "One supernatural being per practitioner title is afforded the opportunity to return to their plane of origin to their home or other known safe place."
+    ],
+    "Reveal Portal": [
+      "Reveal Portal",
+      "14",
+      "10",
+      "1",
+      "min.",
+      "Varies",
+      "Reveals one portal per practitioner title within sight. Above the portal a symbol(s) appears that only the practitioner can see, that reveals where the plane the portal is connected to. This effect lasts 1 minute per practitioner title."
+    ],
+    "Shadow Door": [
+      "Shadow Door",
+      "19",
+      "-15",
+      "10",
+      "sec.",
+      "Varies",
+      "Turns an ordinary door into a doorway to the Plane of Shadow for 1 minute per practitioner title. Does not work on planes not connected to the Shadow Plane. If used on the Shadow Plane it creates a doorway to the natural universe."
+    ],
+    "Assemble": [
+      "Assemble",
+      "18",
+      "-10",
+      "2d6",
+      "sec.",
+      "Instant",
+      "Causes a pile of parts to assemble into a combined object into a combined object of no more than 1 cubic foot per Practitioner title, imagined by the poet. If fasteners are present then these will screw, drive, connect, or fasten the object together otherwise magical glue (as the spell Adhere) at 20 lb. per Practitioner title of strength will do so permanently. The quality of the item will depend on the quality of the parts and/or the related social skill of the poet. Complex objects of one material type (like locks) cannot be assembled in this manner."
+    ],
+    "Deep Sight": [
+      "Deep Sight",
+      "16",
+      "0",
+      "3d6",
+      "sec.",
+      "Varies",
+      "Grants Ultravision to the poet and up to 1 other ally per Practitioner Title. Ultravision lasts for 1 hour per Class title."
+    ],
+    "Discernment": [
+      "Discernment",
+      "18",
+      "-10",
+      "3d4",
+      "sec.",
+      "Varies",
+      "Grants the practitioner and up to 1 other ally per Practitioner Title +20% to Truth Tell, Detect Alignment, Decipher, and Control Resistances for 1 hour per Class Title."
+    ],
+    "Disassemble": [
+      "Disassemble",
+      "18",
+      "-10",
+      "2d6",
+      "sec.",
+      "Instant",
+      "Causes 1 non-magical item of no more than 1 cubic foot per Practitioner title, made up of combined parts to fall apart into its constituent parts. This means fasteners of all types are removed and join the pile of parts. Complex objects of one material type (like locks) are immune to this effect."
+    ],
+    "Focus": [
+      "Focus",
+      "18",
+      "-10",
+      "3d6",
+      "sec.",
+      "Varies",
+      "Grants the practitioner and up to 1 other ally per Practitioner Title +20% to Meditate, Body Control, Sense Projection, and Spirit Travel for 10 minutes per Class Title after the poem completes."
+    ],
+    "Free Spirit": [
+      "Free Spirit",
+      "20",
+      "-20",
+      "3d6",
+      "sec.",
+      "Varies",
+      "Causes 1 ghost, insubstantial spirit, or insubstantial undead per Practitioner title to become freed of control and/or binding to a specific location or object for 1 hour per Class Title."
+    ],
+    "Preparation": [
+      "Preparation",
+      "16",
+      "0",
+      "3d4",
+      "sec.",
+      "10 min.",
+      "Grants +1/+5% per Practitioner Title towards the next named, planned action that can occur up to 10 minutes after the poem completes."
+    ],
+    "Spirit Trap": [
+      "Spirit Trap",
+      "20",
+      "-20",
+      "3d6",
+      "sec.",
+      "Varies",
+      "Causes one object to become a focus for 1 ghost, insubstantial spirit, or insubstantial undead per Practitioner title if they fail a Control Resistance. Those affected are drawn to and focused on the object and unable to leave the sight of it for 1 hour per Class Title."
+    ]
+  }
+}

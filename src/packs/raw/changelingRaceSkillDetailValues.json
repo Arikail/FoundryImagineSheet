@@ -1,0 +1,484 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "changelingRaceSkillDetailValues",
+    "lines": [
+      51980,
+      52022
+    ]
+  },
+  "entries": {
+    "": [
+      "race_skill_select_three",
+      [
+        "Blend"
+      ]
+    ],
+    "Avian(Dark)": [
+      "race_skill_select_nine",
+      [
+        "Blend",
+        "Climb",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Set Trap(w)"
+      ]
+    ],
+    "Avian(Forest)": [
+      "race_skill_select_eight",
+      [
+        "Blend",
+        "Climb",
+        "Direction Knowledge",
+        "Herb Lore",
+        "Listen",
+        "Track"
+      ]
+    ],
+    "Avian(Mountain)": [
+      "race_skill_select_nine",
+      [
+        "Climb",
+        "Direction Knowledge",
+        "Herb Lore",
+        "Listen",
+        "Set Trap(w)",
+        "Track",
+        "Truth Tell"
+      ]
+    ],
+    "Beastman": [
+      "race_skill_select_twelve",
+      [
+        "Climb",
+        "Herb Lore",
+        "Detect Trap(w)",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Set Trap(w)",
+        "Smell",
+        "Surprise Attack",
+        "Track"
+      ]
+    ],
+    "Cervara": [
+      "race_skill_select_eleven",
+      [
+        "Blend",
+        "Danger Knowledge",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Set Trap(w)",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Chetahl": [
+      "race_skill_select_eleven",
+      [
+        "Balance",
+        "Blend",
+        "Break Fall",
+        "Climb",
+        "Leap",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Smell"
+      ]
+    ],
+    "Djinn": [
+      "race_skill_select_three",
+      [
+        "Danger Knowledge"
+      ]
+    ],
+    "Dryad": [
+      "race_skill_select_six",
+      [
+        "Blend",
+        "Climb",
+        "Herb Lore",
+        "Move Unheard"
+      ]
+    ],
+    "Elf(Dark)": [
+      "race_skill_select_nine",
+      [
+        "Climb",
+        "Cover Tracks",
+        "Detect Trap(u)",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Track"
+      ]
+    ],
+    "Elf(Desert)": [
+      "race_skill_select_ten",
+      [
+        "Blend",
+        "Cover Tracks",
+        "Danger Knowledge",
+        "Direction Knowledge",
+        "Listen",
+        "Move Unseen",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Elf(Dread)": [
+      "race_skill_select_six",
+      [
+        "Blend",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard"
+      ]
+    ],
+    "Elf(Gray)": [
+      "race_skill_select_seven",
+      [
+        "Detect Alignment",
+        "Decipher",
+        "Herb Lore",
+        "Listen",
+        "Meditate"
+      ]
+    ],
+    "Elf(High)": [
+      "race_skill_select_eight",
+      [
+        "Blend",
+        "Cover Tracks",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Track"
+      ]
+    ],
+    "Elf(Ice)": [
+      "race_skill_select_six",
+      [
+        "Blend",
+        "Cover Tracks",
+        "Listen",
+        "Move Unheard"
+      ]
+    ],
+    "Elf(Sea)": [
+      "race_skill_select_seven",
+      [
+        "Blend",
+        "Direction Knowledge",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard"
+      ]
+    ],
+    "Elf(Wild)": [
+      "race_skill_select_ten",
+      [
+        "Animal Lore",
+        "Blend",
+        "Cover Tracks",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Elf(Wood)": [
+      "race_skill_select_ten",
+      [
+        "Animal Lore",
+        "Blend",
+        "Cover Tracks",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Equara": [
+      "race_skill_select_ten",
+      [
+        "Berserking",
+        "Brace",
+        "Danger Knowledge",
+        "Force",
+        "Herb Lore",
+        "Listen",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Gaunt": [
+      "race_skill_select_six",
+      [
+        "Body Control",
+        "Listen",
+        "Meditate",
+        "Smell"
+      ]
+    ],
+    "Goblin(Forest)": [
+      "race_skill_select_thirteen",
+      [
+        "Animal Lore",
+        "Balance",
+        "Blend",
+        "Climb",
+        "Cover Tracks",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Smell",
+        "Surprise Attack"
+      ]
+    ],
+    "Goblin(Plains)": [
+      "race_skill_select_eight",
+      [
+        "Berserking",
+        "Climb",
+        "Cover Tracks",
+        "Smell",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Grahl": [
+      "race_skill_select_ten",
+      [
+        "Animal Lore",
+        "Berserking",
+        "Blend",
+        "Listen",
+        "Leap",
+        "Move Unheard",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Hobgoblin": [
+      "race_skill_select_eight",
+      [
+        "Climb",
+        "Fearless",
+        "Force",
+        "Listen",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Human(Barbaric)": [
+      "race_skill_select_twelve",
+      [
+        "Animal Lore",
+        "Berserking",
+        "Blend",
+        "Climb",
+        "Cover Tracks,",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Human(Civilized:City)": [
+      "race_skill_select_fourteen",
+      [
+        "Cheat",
+        "Herb Lore",
+        "Jewelry Knowledge",
+        "Law",
+        "Lie",
+        "Listen",
+        "Meditate",
+        "Move Unheard",
+        "Move Unseen",
+        "Sleight of Hand",
+        "Steal",
+        "Street Knowledge"
+      ]
+    ],
+    "Human(Civilized:Port)": [
+      "race_skill_select_fourteen",
+      [
+        "Cheat",
+        "Herb Lore",
+        "Jewelry Knowledge",
+        "Lie",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Navigate",
+        "Sail",
+        "Sleight of Hand",
+        "Steal",
+        "Street Knowledge"
+      ]
+    ],
+    "Human(Civilized:Town)": [
+      "race_skill_select_eight",
+      [
+        "Cheat",
+        "Climb",
+        "Herb Lore",
+        "Jewelry Knowledge",
+        "Lie",
+        "Listen"
+      ]
+    ],
+    "Human(Civilized:Village)": [
+      "race_skill_select_eleven",
+      [
+        "Animal Lore",
+        "Blend",
+        "Climb",
+        "Cover Tracks",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Ifrit": [
+      "race_skill_select_four",
+      [
+        "Danger Knowledge",
+        "Leap"
+      ]
+    ],
+    "Jumara": [
+      "race_skill_select_ten",
+      [
+        "Blend",
+        "Danger Knowledge",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Set Trap(w)",
+        "Smell"
+      ]
+    ],
+    "Kenku": [
+      "race_skill_select_eleven",
+      [
+        "Blend",
+        "Climb",
+        "Detect Trap(w)",
+        "Herb Lore",
+        "Jewelry Knowledge",
+        "Listen",
+        "Move Unheard",
+        "Set Trap(w)",
+        "Track"
+      ]
+    ],
+    "Lissara": [
+      "race_skill_select_eight",
+      [
+        "Blend",
+        "Direction Knowledge",
+        "Herb Lore",
+        "Move Unseen",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Marid": [
+      "race_skill_select_five",
+      [
+        "Danger Knowledge",
+        "Fearless",
+        "Depth Knowledge"
+      ]
+    ],
+    "Merfolk": [
+      "race_skill_select_seven",
+      [
+        "Blend",
+        "Depth Knowledge",
+        "Direction Knowledge",
+        "Listen",
+        "Move Unheard"
+      ]
+    ],
+    "Nymph": [
+      "race_skill_select_eight",
+      [
+        "Blend",
+        "Charming",
+        "Herb Lore",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen"
+      ]
+    ],
+    "Planar": [
+      "race_skill_select_six",
+      [
+        "Meditate",
+        "Body Control",
+        "Fearless",
+        "Steadfast"
+      ]
+    ],
+    "Satyr/Fawn": [
+      "race_skill_select_six",
+      [
+        "Blend",
+        "Charming",
+        "Herb Lore",
+        "Move Unheard"
+      ]
+    ],
+    "Sylph": [
+      "race_skill_select_five",
+      [
+        "Blend",
+        "Herb Lore",
+        "Move Unheard"
+      ]
+    ],
+    "Testudara": [
+      "race_skill_select_nine",
+      [
+        "Blend",
+        "Direction Knowledge",
+        "Herb Lore",
+        "Move Unseen",
+        "Move Unheard",
+        "Smell",
+        "Track"
+      ]
+    ],
+    "Vulpara": [
+      "race_skill_select_eleven",
+      [
+        "Blend",
+        "Listen",
+        "Move Unheard",
+        "Move Unseen",
+        "Set Trap(w)",
+        "Smell",
+        "Steal",
+        "Surprise Attack",
+        "Track"
+      ]
+    ]
+  }
+}

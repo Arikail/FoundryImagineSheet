@@ -1,0 +1,68 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martialmovevalueslist",
+    "lines": [
+      100742,
+      100751
+    ]
+  },
+  "entries": {
+    "Jump": [
+      "Jump",
+      "14",
+      "20",
+      "1",
+      "Requires 5'. If success, jumping as if +2 AGL. To hit +2, Dam +1, +1 die. Cannot be combined with Spinning. Fail make AGL Save to remain standing."
+    ],
+    "Flying": [
+      "Flying",
+      "16",
+      "0",
+      "2",
+      "Requires 10'. If success, jumping as if +2 AGL. To hit +4, Dam x2. Cannot be combined with Spinning. Fail make AGL Save to remain standing."
+    ],
+    "Immoveable Stance": [
+      "Immoveable Stance",
+      "17",
+      "5",
+      "3",
+      "If success, amount skill roll is made by, added to any STR Saves. No Defense."
+    ],
+    "Spinning": [
+      "Spinning",
+      "15",
+      "5",
+      "+2",
+      "If success, To hit +2, +2 Dam per die. Cannot be combined with Jump or Flying. Fail make AGL Save or lose 1-3 seconds."
+    ],
+    "Sweep": [
+      "Sweep",
+      "14",
+      "10",
+      "2",
+      "After successful Martial Kick. If success, opponent makes an AGL Save or falls prone. "
+    ],
+    "Snap": [
+      "Snap",
+      "13",
+      "15",
+      "-1",
+      "If success, 1 second is reduced from another martial attack (minimum 1), but no STR modifier applies to that attack."
+    ],
+    "Tension": [
+      "Tension",
+      "15",
+      "5",
+      "2",
+      "If success, doubles STR bonus/or halves a STR penalty on an other attack."
+    ],
+    "Double Attack": [
+      "Double Attack",
+      "13",
+      "15",
+      "+1",
+      "If success, allows combo of 2 standard martial attacks(Punch/Kick) at once. Adds 1 second to each attack. Cannot attack with both legs unless prone."
+    ]
+  }
+}

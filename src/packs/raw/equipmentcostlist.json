@@ -1,0 +1,5466 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "equipmentcostlist",
+    "lines": [
+      77293,
+      77905
+    ]
+  },
+  "entries": {
+    "Scabbard(Knife/Holds 1 Small Blade)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Scabbard(Sword/Holds 1 Blade)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Strap(Holes/Hooks/Holds 4)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Bandolier(Holds 8)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Pouch(Holds 10)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Coffer(5“x 8“x 3“/Holds 12)": [
+      "2 cp",
+      "3 cp",
+      "6 sp",
+      "1 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Sack(Small/Holds 15)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Basket(Small/Holds 15)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Quiver(Cloth/Holds 20)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "1 sp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Sack(Large/Holds 30)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "1 sp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Quiver(Leather/Holds 40)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Wraparound Carryall(Holds 50)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Back Pack(Holds 60)": [
+      "2 cp",
+      "3 cp",
+      "6 sp",
+      "1 gp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Saddle Bags(Holds 80)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Chest(Small:2` x 1` x 6“/Key/Holds 100)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Chest(Large:3` x 5` x 2“/Key/Holds 150)": [
+      "14 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Trunk(5` x 5` x 3`/Holds 200)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Abacus": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Anvil(Light)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Anvil(Small)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "10 Arrow Head": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Arrow Head": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Animal Fat(1 lb.)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Astrolabe": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Astrology Charts": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Axe(Woodcutting)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Ball(Wooden)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "20 Bandages(Cloth)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Bandages(Cloth)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Battering Ram(Small Door)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Bed Roll": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bee Keeper Suit(Canvas)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Bell(Small)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Bellows(Large)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "40 sp",
+      "60 sp"
+    ],
+    "Bellows(Small)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Belt Claw": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Bit and Bridle": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Book(Large)": [
+      "4 sp",
+      "8 sp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Book(Lock & Key)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Book(Medium)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Book(Small)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Book(Divine Teachings)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(History/1 Subject)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Book(Illustrated Humanoid Anatomy)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Book(Metaphysics)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Book(Popular Music)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Philosophy)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Phrases)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Poems)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Politics)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Songs)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Popular Story)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Recent Events)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Book(Theories of the Mind)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Bowl(Baked Clay)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Bowl(Fine China/Blown Glass)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bowl(Metal)": [
+      "2 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Bowl(Wooden)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Bowstring(Sinew)": [
+      "2 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Bowstring(Wire)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Broom": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Brush(Animal Hair)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Brush(Hair)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Brush(Paint/Horse Hair)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Brush(Paint/Sable Hair)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Bureau/Dresser(4’ x 5’ x 2’)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Cabinet(4’ x 5’x 2’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Cage(Large: 3’ x 3’ x 3’)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Cage(Small: 1’ x 1’ x 1’)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Candelabra": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Candle(6-hour)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Candles(Magical/Rituals)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Canvas(Paint/Cotton 1 sq.’)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Canvas(Paint/Cotton 1 sq.`)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Canvas(Paint/Linen 1 sq.’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Canvas(Paint/Linen 1 sq.`)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Catches and Pulleys": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Chair(Wooden)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Chalk(5 pieces)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Chemistry Set(Advanced)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Chemistry Set(Basic)": [
+      "1 gp",
+      "2 gp",
+      "4 gp ",
+      "6 gp",
+      "7 gp",
+      "14 sp",
+      "21 sp"
+    ],
+    "China(Fine Porcelain)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "China(Porcelain)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Cleaver": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Clock(Mechanical)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Clock(Water)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Cobbler’s Tools": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Comb": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Compass(Directional Lodestone)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Compass(Drawing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Crucible(Covered)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Cup(Baked Clay)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Cup(Fine China/Blown Glass)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Cup(Metal)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Cup(Measuring)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1O cp",
+      "20 cp",
+      "40 cp",
+      "60 cp"
+    ],
+    "Cup(Wooden)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Dice(Bone/Set)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Dice(Ivory/Set)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Dice(Wooden/Set)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Doll": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "10 Feathers": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Feathers": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "10 Fishhooks(Assorted)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Fishhooks(Assorted)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "10 Fishing Line(per ’)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Fishing Line(per ’)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Fishing Net (30’x 30’)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Fishing Pole": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Flint and Steel": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Forge(Large)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Forge(Small)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Fork": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Frame(Wooden/Fine/per sq’)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Frame(Wooden/per sq’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Gemcutting Tools": [
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Glass Flask(1 cup)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1O cp",
+      "20 cp",
+      "40 cp",
+      "60 cp"
+    ],
+    "Glowstone": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Grappling Hook": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Halter(Livestock)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Highly Polished Orb": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "100 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Hankerchief(Silk)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Hood(Bird,Cloth)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Hood(Bird,Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Hoe": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "15 cp",
+      "20 cp",
+      "40 cp",
+      "60 cp"
+    ],
+    "Hooks and Wires": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "4 Horse Shoes": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Horse Shoes": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Indelible Ink(1 Color/1 cup)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Well)": [
+      "2 sp",
+      "3 sp",
+      "7 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Ink(Black)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Blue)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Green)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Indigo)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Purple)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Ink(Red)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Intricately Carved Staff": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "15 pp",
+      "22 pp",
+      "44 pp",
+      "66 pp"
+    ],
+    "Intricately Carved Wand": [
+      "23 gp",
+      "45 gp",
+      "90 gp",
+      "12 pp",
+      "15 pp",
+      "30 pp",
+      "45 pp"
+    ],
+    "Iron Mallet": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Iron Saw": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Jeweled Dagger": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "10 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Kite(Box)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Kite(Fighting)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Kite(Person-Lifting)": [
+      "25 sp",
+      "5 gp",
+      "10 pp",
+      "12 pp",
+      "15 pp",
+      "30 pp",
+      "45 pp"
+    ],
+    "Kite(Plain)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Knife(Tool)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Knife(Skinning)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Lamp(Glowworm)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Lamp(Oil)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Lantern": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Lantern(Bullseye)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Lantern(Shuttered)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Leather Working Tools": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Leecher’s Tools": [
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Loadstone(Magnetic)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "12 Lock Picks(Assorted)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Lock Picks(Assorted)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Locksmith Tools": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Loom": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Loom(Hand)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Magnifying Glass": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Manacles": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Marble": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Marbles(1 Pair/Eyes)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Metal File": [
+      "2 sp",
+      "3 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Metal Flask(1 Cup)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Metal Working Tools": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Mirror(Large/Silver)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Mirror(Small/Silver)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Mop": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Mortar and Pestle": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Mug(Baked Clay)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Mug(Fine China/Blown Glass)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Mug(Metal)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Mug(Wooden)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "10 Nails": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Nails": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Napkin(Cloth)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "10 Needles(Assorted)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Needles(Assorted)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Oar": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "7 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Oil(Rubbing)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1O cp",
+      "20 cp",
+      "40 cp",
+      "60 cp"
+    ],
+    "Padlock(Complex)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Padlock(Crude)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Padlock(Simple)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Padlock(Well-Made)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Pan": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "10 Paper Sheets": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Paper Sheets": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "10 Papyrus/Parchment Sheets": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Papyrus/Parchment Sheets": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Pen": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Pick(Digging)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Pigments/Dye(1 color)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "100 Pins(Assorted)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Pipe(Glassblowing)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Pipe(Segment)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Pipe(Smoking)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Pitcher/Jug(Baked Clay)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Pitcher/Jug(China/Blown Glass)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Pitcher/Jug(Metal)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Pitcher/Jug(Wooden)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Plate(Baked Clay)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Plate(Fine China/Blown Glass)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Plate(Metal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Plate(Wooden)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Platter(Baked Clay)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "20 cp",
+      "40 cp",
+      "60 cp"
+    ],
+    "Platter(China/Blown Glass)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Platter(Metal)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Platter(Wooden)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Playing Cards": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Plow": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Plumb Line": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Pole(10’ Balancing)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Pole(15’ Ferrier)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Pole(5’ Walking Stick)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Polishing Cloth": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Pot(Clay)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Pot(Metal)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Pottery(Earthen)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Pottery(Fired)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Puppet(Angry)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Puppet(Happy)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Puppet(Sad)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp"
+    ],
+    "Puzzle Box(Wooden)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Rags(1 lb.)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Rake": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Rare Bone Staff": [
+      "30 gp",
+      "60 gp",
+      "120 gp",
+      "160 gp",
+      "240 gp",
+      "480 gp",
+      "720 gp"
+    ],
+    "Rare Bone Wand": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp",
+      "200 gp",
+      "400 gp",
+      "600 gp"
+    ],
+    "Rare Wood Staff": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Rare Wood Wand": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "100 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Reins": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Rope(Hemp per’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Rope(Silk per’)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Ruler(Measure)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Saddle Buckles": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Saddle(Fixed Point)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp",
+      "150 gp",
+      "225 gp"
+    ],
+    "Saddle Harness": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Saddle(High)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Saddle(Soft)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Saddle(War)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Scales(Weights/Large)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Scales(Weights/Small)": [
+      "1 gp",
+      "2 gp",
+      "4 gp ",
+      "6 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Scissors": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Semi-precious Orb": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Sewing Box": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Sextant": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Shackles(Leg)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "24 gp",
+      "48 gp",
+      "72 gp"
+    ],
+    "Shackles(Wrist)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Sheers": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Shepherd Crook": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Shovel": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Sieve(Large)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Sieve(Small)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Signet Ring": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Stone Working Tools": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Spade/Trowel": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Spectacles(Farsight)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Spectacles(Reading)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Spike": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Spinning Wheel": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Spoon": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "10 Springs(Assorted)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Springs(Assorted)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Spring Snare(2-Inch)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Spring Snare(4-Inch)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "26 sp"
+    ],
+    "Spring Snare(6-Inch)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Spring Snare(9-Inch)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Spring Snare(1-Foot)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Spring Snare(2-Foot)": [
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "48 gp",
+      "72 gp",
+      "144 gp",
+      "216 gp"
+    ],
+    "Spring Snare(3-Foot)": [
+      "9 gp",
+      "18 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp",
+      "216 gp",
+      "324 gp"
+    ],
+    "Spyglass": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Stain(Pint)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Star Charts": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Stone File": [
+      "2 sp",
+      "3 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Sundial": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Surf Board": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Table(5’x 5’)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Tallow(1 lb.)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Tarot Cards": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Tattooing Tools": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Telescope": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Tent(1-person)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Tent(2-person)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Tent(4-person)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Tent(8-person)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "50 Thread Spool(per’)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Thread Spool(per’)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Tinder Box": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Tobacco Box": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Tongs(Large)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Tongs(Small)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Torch": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "50 Twine(per ’)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "50 Twine(Heavy/per ’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "50 Twine(Light/per ’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Twine(per ’)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Twine(Heavy/per ’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Twine(Light/per ’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Urn": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Utensils(Gold/set)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Utensils(Silver/set)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Utensils(Tin/set)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1 sp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "10 Vellum Sheet": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Vellum Sheet": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Vial(1/2 cup)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Waterskin(3-days)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1 sp",
+      "15 cp",
+      "30 cp",
+      "45 cp"
+    ],
+    "Waterskin(1-week)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Weather Charts": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Whetstone": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Windlass": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Windlass(Large)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Windlass(Small)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Wire(Steel per ’)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Wood Working Tools": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Bath Salts(Common)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bath Salts(Exotic/Perfumed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Cologne(Animal)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Cologne(Herbal)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Cologne(Exotic)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Makeup(Bright Kit)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Makeup(Full Kit)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Makeup(Exotic Kit)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Makeup(1 Color)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Perfume(Fruit)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Perfume(Herbal)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Perfume(Exotic)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Soap(Animal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "24 sp"
+    ],
+    "Soap(Herbal)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Soap(Exotic/Perfumed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Talc Powder": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Wig": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Bagpipes": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Balafon": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Balalaika": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Bambachi": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bamboo Flute": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bladder Pipe": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Branqing(Bianqing)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Castanets": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "8 cp",
+      "12 cp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Clapstick": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Conga": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Cowhorn": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Cymbal": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Didgeridoo": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Djembe": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Dramyen": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Drum": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Dulcimer": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Ektara": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Floor Harp": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Flute(Silver)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Flute(Wooden)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Gankeke": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Getchu Vadyam": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Gong": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Gourd Shaker": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Guiro": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Guqin": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hammered Dulcimer": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Harp": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Harpsichord": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Horn": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Long Horn": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Lute": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Lyre": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Mandolin": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Manjeera": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Maracas": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Mbira": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Nadaswaram": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Ocarina": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Pan Pipes": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Piccolo": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Pipa": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Psaltery": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Pungi": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Recorder": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Sacbut": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Sarangi": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Serpent": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Shawm": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Sheng": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Sitar": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Swarabat": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Tabla": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Tambour/Cymbal/Bell": [
+      "2 sp",
+      "3 sp",
+      "7 sp",
+      "10 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Tongue Drum": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Ukulele": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Vichitra Vina": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Viol": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Viol de gamba": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Xiao": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Zither": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Animal Feed(per day)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Candy(Caramel)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Candy(Chocolate)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Candy(Gum)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Candy(Peppermint)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Candy(Sugar)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Candy(Taffy)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Cheese": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp",
+      "30 cp",
+      "45 cp"
+    ],
+    "Dairy Foods": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Eggs(Caviar)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Eggs(Fresh)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Eggs(Pickled)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Eggs(Roe/Fish)": [
+      "1 cp",
+      "2 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fish(Dried)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Fish(Smoked)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Fruit(Dried)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Fruit(Fresh)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "9 cp",
+      "18 cp",
+      "27 cp"
+    ],
+    "Fruit(Preserves)": [
+      "1 cp",
+      "1 cp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Grain": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Grain(Corn)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Grain(Dried)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Honey": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Iron Rations(per day)": [
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp",
+      "90 cp",
+      "135 cp"
+    ],
+    "7 Iron Rations(per day)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Meat(Dried)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "7 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Meat(Fresh)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "24 cp",
+      "48 cp",
+      "72 cp"
+    ],
+    "Meat(Smoked)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Mushrooms": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Rations(per day)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "15 cp",
+      "30 cp",
+      "45 cp"
+    ],
+    "7 Rations(per day)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Roots": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Salt(Bar)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Salt(Lick)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Seafood": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "7 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Vegetables(Cured)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Vegetables(Fresh)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "9 cp",
+      "18 cp",
+      "24 cp"
+    ],
+    "Vegetables(Pickled)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Vinegar": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Absinthe(Bottle)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Ale(Mug)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp"
+    ],
+    "Ale(Small Keg)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "32 sp",
+      "96 sp"
+    ],
+    "Beer(Mug)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Beer(Small Keg)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Brandy(Bottle)": [
+      "1 cp",
+      "2 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Caium(Bottle)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Champagne(Bottle)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Cognac(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Everclear(Bottle)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Grain Spirits(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Grog(Mug)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Hard Cider(Pitcher)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Hard Cider(Small Keg)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Juice(Fruit/Mug)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Juice(Vegetable/Mug)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Kumis(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Mead(Mug)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Rum(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Sake(Bottle)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Schnapps(Bottle)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Scotch(Bottle)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Sherry(Bottle)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Sura(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Tepache(Bottle)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Tiswin(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Vodka(Bottle)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Water": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "1 cp",
+      "2 cp",
+      "3 cp"
+    ],
+    "Whiskey(Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Whiskey(Dwarven/Bottle)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "1 pp",
+      "2 pp",
+      "3 pp"
+    ],
+    "Wine(Bottle)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Wine(Elven/Bottle)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "1 pp",
+      "2 pp",
+      "4 pp",
+      "6 pp"
+    ],
+    "Wine(Fortified/Bottle)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Wine(Honey/Bottle)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Wine(Plum/Bottle)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Wine(Watered/Bottle)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Canvas(1 Sq.’)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Canvas(1 Sq.`)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Canvas(Waterproof/sq.’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Canvas(Waterproof/sq.`)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Cloth(Yard)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Coal(lb.)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "5 cp",
+      "10 cp",
+      "20 cp",
+      "30 cp"
+    ],
+    "Grease(1 Pint)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "40 sp"
+    ],
+    "Hard Leather(Sq.’)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Hard Leather(Sq.`)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Leather(Sq.’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Leather Cord(1’)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Metal Bar(Brass)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Metal Rod(Brass)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Metal Bar(Bronze)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "42 gp"
+    ],
+    "Metal Rod(Bronze)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Metal Bar(Copper)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Metal Rod(Copper)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Metal Bar(Iron)": [
+      "8 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Metal Rod(Iron)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Metal Bar(Lead)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Metal Rod(Lead)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Metal Bar(Steel)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Metal Rod(Steel)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "9 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Metal Bar(Tin)": [
+      "8 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Metal Rod(Tin)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Wood Beam(Soft)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Wood Plank(Soft)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Wood Board(Soft)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Wood Dowel(Soft)": [
+      "2 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Wood Beam(Medium)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Wood Plank(Medium)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Wood Board(Medium)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Wood Dowel(Medium)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Wood Beam(Hard)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Wood Plank(Hard)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Wood Board(Hard)": [
+      "2 cp",
+      "4 cp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Wood Dowel(Hard)": [
+      "8 sp",
+      "15 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Wood Beam(Rare)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Wood Plank(Rare)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Wood Board(Rare)": [
+      "3 gp",
+      "5 gp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Wood Dowel(Rare)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Oil(Pint)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Pitch(Pint)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Satin(Sq.’)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Silk(Sq.’)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Soft Leather(Sq.’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Carabineer": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Climbing Hooks(Hand)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Climbing Spurs": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Descender": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Gloves(Climbing/Soft Leather)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Grappling Hook(Climbing)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Hammer(Rock)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Harness(Climbing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Knife(Hook)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Piton": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Pulley": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "50 Rope(Giant Spidersilk per’)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Mask(Breathing/Filter)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Veil(Breathing/Cloth)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Veil(Breathing/Silk)": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Veil(Breathing/Wool)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Evaporation Kit(Canister/Tarp/String/4 Poles)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Extractor(Screw tap/Spout)": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Goggles(Sun/Tinted)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Lotion(Sun/Grease/1 week)": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Air Bellows": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "40 sp",
+      "60 sp"
+    ],
+    "Air Bladder(10 min/no pump)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Air Canister(30 min/needs pump)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "50 Air Hose(Per ’)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Air Pump(Hand Pump)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Air Pump(Steam)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Diving Bell(Helmet)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Diving Suit(Air Tight)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Diving Weights": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Gas Valve": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Goggles(Diving)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Plugs(Nose)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Plugs(Ear)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Snorkel": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Webbed Fins": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Goggles(Snow)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Grappling Hook(Ice)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Hammer(Ice)": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Shovel(Snow)": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Ski Poles": [
+      "2 cp",
+      "3 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Skis(Cross Country/Wide)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Skis(Downhill/Thin)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Backpack(Cooler)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Goggles(Insulated)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Arrow(Fishing)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Bobber": [
+      "13 cp",
+      "25 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Bobber(2 Color)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Bolt(Fishing)": [
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Buoy(Small 1’)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Buoy(Medium 3’)": [
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "50 Chain(Small/1“ links/per ’)": [
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "50 Chain(Medium/2“ links/per ’)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "50 Chain(Large/3“ links/per ’)": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Chain(Small/1“ links/per ’)": [
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Chain(Medium/2“ links/per ’)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Chain(Large/3“ links/per ’)": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Fishing Pole(Bamboo)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Fishing Pole(Deep Sea)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 sp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Fishing Pole(Metal)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "50 Fishing Line(Reinforced/per ’)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Fishing Line(Reinforced/per ’)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Harpoon(Fishing Javelin)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "12 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Hook(Bone)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp"
+    ],
+    "Hook(Deep Sea)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hook(Metal)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Hook(Metal/3 Prong)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Lead Weight": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Lure(Colorful)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Lure(Flashing)": [
+      "13 cp",
+      "25 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Lure(Simple)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Lure(Spinner)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Net(Drift/250’ x 250’)": [
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Net(Weighted/30’ x 30’)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Spear(Fishing)": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Trap(Crab/Lobster)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Trap(Fish)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "50 Wire(Very Thin/1 32“ thick/per ’)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "50 Wire(Thin/1 16“ thick/per ’)": [
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "50 Wire(Thick/1 8“ thick/per ’)": [
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Wire(Very Thin/1 32“ thick/per ’)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Wire(Thin/1 16“ thick/per ’)": [
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Wire(Thick/1 8“ thick/per ’)": [
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Air/Gas Bellows": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "10 sp",
+      "20 sp",
+      "40 sp",
+      "60 sp"
+    ],
+    "Air/Gas Bladder(10 min/no pump)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Air/Gas Canister(30 min/needs pump)": [
+      "8 gp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "50 Air/Gas Hose(per ’)": [
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Air/Gas Hose(per ’)": [
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Air/Gas Pump(Hand Pump)": [
+      "3 sp",
+      "5 gp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Air/Gas Pump(Steam)": [
+      "25 gp",
+      "5 gp",
+      "10 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Control(Lever)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Goggles(Flying)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Grappling Anchor": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Harness(Flying)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ]
+  }
+}

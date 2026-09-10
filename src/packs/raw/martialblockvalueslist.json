@@ -1,0 +1,33 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martialblockvalueslist",
+    "lines": [
+      100701,
+      100705
+    ]
+  },
+  "entries": {
+    "Arm Block": [
+      "Arm Block",
+      "10",
+      "30",
+      "1",
+      "If success, attack is blocked by arm or forearm and damage is reduced to 1/2."
+    ],
+    "Leg Block": [
+      "Leg Block",
+      "12",
+      "20",
+      "1",
+      "If success, attack is blocked by thigh or shin and damage is reduced to 1/2."
+    ],
+    "Body Block": [
+      "Body Block",
+      "14",
+      "10",
+      "1",
+      "If success, attack is blocked by a torso and damage is reduced to 1/2."
+    ]
+  }
+}

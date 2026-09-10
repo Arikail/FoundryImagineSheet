@@ -1,0 +1,362 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "brawlingvalueslist",
+    "lines": [
+      100882,
+      100933
+    ]
+  },
+  "entries": {
+    "Weapon Twist": [
+      "Weapon Twist",
+      "Thrust/Cut",
+      "3",
+      "3",
+      "3d6"
+    ],
+    "Weapon Twist(Small)": [
+      "Weapon Twist(Small)",
+      "Thrust/Cut",
+      "3",
+      "3",
+      "2d8"
+    ],
+    "Weapon Twist(Proj./Knife)": [
+      "Weapon Twist(Proj./Knife)",
+      "Thrust/Cut",
+      "3",
+      "3",
+      "3d4"
+    ],
+    "Force Twist": [
+      "Force Twist",
+      "Thrust/Cut",
+      "5",
+      "5",
+      "9d6"
+    ],
+    "Force Twist(Small)": [
+      "Force Twist(Small)",
+      "Thrust/Cut",
+      "5",
+      "5",
+      "6d8"
+    ],
+    "Force Twist(Proj./Knife)": [
+      "Force Twist(Proj./Knife)",
+      "Thrust/Cut",
+      "5",
+      "5",
+      "9d4"
+    ],
+    "Belaying Pin": [
+      "Belaying Pin",
+      "Smash",
+      "4",
+      "2",
+      "1d6"
+    ],
+    "Bench": [
+      "Bench",
+      "Smash",
+      "7",
+      "5",
+      "3d4"
+    ],
+    "Bottle": [
+      "Bottle",
+      "Smash",
+      "4",
+      "2",
+      "1d6"
+    ],
+    "Brass Knuckles": [
+      "Brass Knuckles",
+      "Smash",
+      "2",
+      "1",
+      "1d3+1"
+    ],
+    "Broken Bottle": [
+      "Broken Bottle",
+      "Cut",
+      "4",
+      "2",
+      "1d8"
+    ],
+    "Broken Mug": [
+      "Broken Mug",
+      "Cut",
+      "3",
+      "2",
+      "1d4+1"
+    ],
+    "Broken Pitcher": [
+      "Broken Pitcher",
+      "Cut",
+      "4",
+      "3",
+      "1d8+1"
+    ],
+    "Chair": [
+      "Chair",
+      "Smash",
+      "8",
+      "4",
+      "2d4"
+    ],
+    "Cleaver": [
+      "Cleaver",
+      "Cut",
+      "4",
+      "2",
+      "2d8"
+    ],
+    "Eating Utensil": [
+      "Eating Utensil",
+      "Cut",
+      "3",
+      "2",
+      "1"
+    ],
+    "Elbow": [
+      "Elbow",
+      "Smash",
+      "3",
+      "2",
+      "1d2"
+    ],
+    "Empty Keg": [
+      "Empty Keg",
+      "Smash",
+      "6",
+      "3",
+      "2d4"
+    ],
+    "Fire Poker": [
+      "Fire Poker",
+      "Smash/Thrust",
+      "5",
+      "3",
+      "2d4+1"
+    ],
+    "Fist(Punch)": [
+      "Fist(Punch)",
+      "Smash",
+      "2",
+      "1",
+      "1"
+    ],
+    "Foot(Kick)": [
+      "Foot(Kick)",
+      "Smash",
+      "4",
+      "2",
+      "1d3"
+    ],
+    "Full Keg": [
+      "Full Keg",
+      "Smash",
+      "9",
+      "5",
+      "4d4"
+    ],
+    "Grappling Hook": [
+      "Grappling Hook",
+      "Smash",
+      "6",
+      "4",
+      "2d6"
+    ],
+    "Headbutt": [
+      "Headbutt",
+      "Smash",
+      "5",
+      "4",
+      "1d4+1"
+    ],
+    "Headbutt(Helm)": [
+      "Headbutt(Helm)",
+      "Smash",
+      "5",
+      "4",
+      "1d6+1"
+    ],
+    "Hoe": [
+      "Hoe",
+      "Cut",
+      "5",
+      "4",
+      "2d6+1"
+    ],
+    "Kettle": [
+      "Kettle",
+      "Smash",
+      "8",
+      "4",
+      "2d4"
+    ],
+    "Knitting Needle": [
+      "Knitting Needle",
+      "Thrust",
+      "3",
+      "1",
+      "1d2"
+    ],
+    "Knee": [
+      "Knee",
+      "Smash",
+      "3",
+      "2",
+      "1d2"
+    ],
+    "Large Rock": [
+      "Large Rock",
+      "Smash",
+      "5",
+      "3",
+      "1d8"
+    ],
+    "Mailed Elbow": [
+      "Mailed Elbow",
+      "Smash",
+      "2",
+      "1",
+      "1d3+1"
+    ],
+    "Mailed Fist": [
+      "Mailed Fist",
+      "Smash",
+      "3",
+      "1",
+      "1d3+1"
+    ],
+    "Mailed Foot": [
+      "Mailed Foot",
+      "Smash",
+      "4",
+      "3",
+      "2d4"
+    ],
+    "Mailed Knee": [
+      "Mailed Knee",
+      "Smash",
+      "3",
+      "2",
+      "1d4+1"
+    ],
+    "Mug": [
+      "Mug",
+      "Smash",
+      "3",
+      "2",
+      "1d4"
+    ],
+    "Pitcher": [
+      "Pitcher",
+      "Smash",
+      "4",
+      "3",
+      "1d6+1"
+    ],
+    "Pitchfork": [
+      "Pitchfork",
+      "Thrust",
+      "6",
+      "3",
+      "3d4"
+    ],
+    "Platter": [
+      "Platter",
+      "Smash",
+      "4",
+      "3",
+      "1d4"
+    ],
+    "Rock": [
+      "Rock",
+      "Smash",
+      "4",
+      "2",
+      "1d4+1"
+    ],
+    "Rolling Pin": [
+      "Rolling Pin",
+      "Smash",
+      "4",
+      "3",
+      "2d6+1"
+    ],
+    "Sap": [
+      "Sap",
+      "Smash",
+      "3",
+      "1",
+      "2d4+2"
+    ],
+    "Shield Bash(metal)": [
+      "Shield Bash(metal)",
+      "Smash",
+      "5",
+      "4",
+      "2d6"
+    ],
+    "Shield Bash(wood)": [
+      "Shield Bash(wood)",
+      "Smash",
+      "3",
+      "2",
+      "1d4"
+    ],
+    "Shovel": [
+      "Shovel",
+      "Smash",
+      "5",
+      "3",
+      "4d4"
+    ],
+    "Skewer/Shiv/Ice Pick": [
+      "Skewer/Shiv/Ice Pick",
+      "Thrust",
+      "3",
+      "1",
+      "1d3"
+    ],
+    "Skillet": [
+      "Skillet",
+      "Smash",
+      "6",
+      "4",
+      "3d4"
+    ],
+    "Small Rock": [
+      "Small Rock",
+      "Smash",
+      "3",
+      "2",
+      "1d2"
+    ],
+    "Small Table": [
+      "Small Table",
+      "Smash",
+      "10",
+      "6",
+      "3d4"
+    ],
+    "Table Leg": [
+      "Table Leg",
+      "Smash",
+      "4",
+      "2",
+      "2d4"
+    ],
+    "Thick Branch": [
+      "Thick Branch",
+      "Smash",
+      "6",
+      "4",
+      "2d4"
+    ]
+  }
+}

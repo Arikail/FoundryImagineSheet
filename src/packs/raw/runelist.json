@@ -1,0 +1,1489 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "runelist",
+    "lines": [
+      143887,
+      144118
+    ]
+  },
+  "entries": {
+    "Balance": [
+      "Balance",
+      "14",
+      "10",
+      "Emanating",
+      "Gives +1 Agility to the item or individual who possesses the Balance rune."
+    ],
+    "Balance(Greater)": [
+      "Balance(Greater)",
+      "22",
+      "-30",
+      "Emanating",
+      "Gives +2 Agility to the item or individual who possesses the Balance rune(Greater)."
+    ],
+    "Endure(Ice)": [
+      "Endure(Ice)",
+      "21",
+      "-25",
+      "Emanating",
+      "Gives full protection against all normal types of cold. The possessor or surface never takes more than half damage vs. cold, even magical."
+    ],
+    "Endure(Ice,Greater)": [
+      "Endure(Ice,Greater)",
+      "29",
+      "-65",
+      "Emanating",
+      "Gives immunity to all types of cold, magical or mundane."
+    ],
+    "Endure(Fire)": [
+      "Endure(Fire)",
+      "21",
+      "-25",
+      "Emanating",
+      "Gives full protection against all normal types of heat. The possessor or surface never takes more than half damage vs. heat, even magical."
+    ],
+    "Endure(Fire,Greater)": [
+      "Endure(Fire,Greater)",
+      "29",
+      "-65",
+      "Emanating",
+      "Gives immunity to all types of heat, magical or mundane."
+    ],
+    "Endure(Lightning)": [
+      "Endure(Lightning)",
+      "21",
+      "-25",
+      "Emanating",
+      "Gives full protection against all normal types of electricity. The possessor or surface never takes more than half damage vs. electricity, even magical."
+    ],
+    "Endure(Lightning,Greater)": [
+      "Endure(Lightning,Greater)",
+      "29",
+      "-105",
+      "Emanating",
+      "Gives immunity to all types of electricity, magical or mundane."
+    ],
+    "Endure(Acid)": [
+      "Endure(Acid)",
+      "21",
+      "-25",
+      "Emanating",
+      "Gives full protection against all normal types of acid. The possessor or surface never takes more than half damage vs. acid, even magical."
+    ],
+    "Endure(Acid,Greater)": [
+      "Endure(Acid,Greater)",
+      "29",
+      "-65",
+      "Emanating",
+      "Gives immunity to all types of acid, magical or mundane."
+    ],
+    "Flame": [
+      "Flame",
+      "16",
+      "0",
+      "Emanating",
+      "If placed on an item(Radiating): Anyone viewing, touching or passing within 1` of the Flame rune will burst into flames like the spell Produce Fire. If placed on a person(Perceived): This method grants the possessor the power Produce Fire just like the spell of the same name. Both powers listed above are once per day. Treat Aura Level as that of the practitioner`s Class Title x2."
+    ],
+    "Flame(Greater)": [
+      "Flame(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "If placed on an item(Radiating): Anyone viewing, touching or passing within 2` of the Flame(Greater) rune will burst into flames like the spell Produce Fire. If placed on a person(Perceived): This method grants the possessor the power Produce Fire just like the spell of the same name. Both powers listed above are once per day. Treat Aura Level as that of the practitioner`s Class Title x4."
+    ],
+    "Health": [
+      "Health",
+      "12",
+      "30",
+      "Emanating",
+      "Gives +1 Vitality to the item or individual who possesses the Health rune. Also Poison Resistance and Disease Resistance are at an additional +5% (over the increase already for +1 Vitality)."
+    ],
+    "Health(Greater)": [
+      "Health(Greater)",
+      "20",
+      "-10",
+      "Emanating",
+      "Gives +2 Vitality to the item or individual who possesses the Health(Greater) rune. Also Poison Resistance and Disease Resistance are at an additional +10% (over the increase already for +2 Vitality)."
+    ],
+    "Luck": [
+      "Luck",
+      "11",
+      "25",
+      "Emanating",
+      "Gives one luck point to the item or individual who possesses the Luck rune per day. A luck point gives a +1 or +5% modifier to any one roll."
+    ],
+    "Luck(Greater)": [
+      "Luck(Greater)",
+      "19",
+      "-15",
+      "Emanating",
+      "Gives two luck points to the item or individual who possesses the Luck(Greater) rune per day. A luck point gives a +1 or +5% modifier to any one roll."
+    ],
+    "Might": [
+      "Might",
+      "15",
+      "5",
+      "Emanating",
+      "Gives +1 Strength to the individual possessing the rune of Might."
+    ],
+    "Might(Greater)": [
+      "Might(Greater)",
+      "23",
+      "-35",
+      "Emanating",
+      "Gives +2 Strength to the individual possessing the rune of Might(Greater)."
+    ],
+    "Power": [
+      "Power",
+      "22",
+      "-30",
+      "Emanating",
+      "Gives +3 to Aura Pool, and +3 Aura Control to the item or individual who possesses the rune of Power."
+    ],
+    "Power(Greater)": [
+      "Power(Greater)",
+      "30",
+      "-70",
+      "Emanating",
+      "Gives +6 to Aura Pool, and +6 Aura Control to the item or individual who possesses the rune of Power(Greater)."
+    ],
+    "Protection": [
+      "Protection",
+      "13",
+      "15",
+      "Emanating",
+      "Gives +10% Control Resistance to the item or individual who possesses the Protection rune."
+    ],
+    "Protection(Greater)": [
+      "Protection(Greater)",
+      "21",
+      "-25",
+      "Emanating",
+      "Gives +20% Control Resistance to the item or individual who possesses the Protection(Greater) rune."
+    ],
+    "Sight": [
+      "Sight",
+      "10",
+      "30",
+      "Emanating",
+      "The possessor of the rune of Sight gains Infravision 30`, or +30` if already having Infravision."
+    ],
+    "Sight(Greater)": [
+      "Sight(Greater)",
+      "18",
+      "-10",
+      "Emanating",
+      "The possessor of the rune of Sight(Greater) gains Infravision 60`, or +60` if already having Infravision."
+    ],
+    "Speaking(Animal)": [
+      "Speaking(Animal)",
+      "20",
+      "-20",
+      "Emanating",
+      "Able to speak to one animal at a time in a 20` area (as Speak to Animal skill)."
+    ],
+    "Speaking(Animal,Greater)": [
+      "Speaking(Animal,Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Able to speak to one animal at a time in a 40` area (as Speak to Animal skill)."
+    ],
+    "Speaking(Empathy)": [
+      "Speaking(Empathy)",
+      "20",
+      "-20",
+      "Emanating",
+      "Able to sense the emotions of one being at a time in a radius of 1` per Wisdom rating."
+    ],
+    "Speaking(Empathy,Greater)": [
+      "Speaking(Empathy,Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Able to sense the emotions of one being at a time in a radius of 2` per Wisdom rating."
+    ],
+    "Speaking(Plant)": [
+      "Speaking(Plant)",
+      "20",
+      "-20",
+      "Emanating",
+      "Able to speak to one plant at a time in a 20` area (as Speak to Plant skill)."
+    ],
+    "Speaking(Plant,Greater)": [
+      "Speaking(Plant,Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Able to speak to one plant at a time in a 40` area (as Speak to Plant skill)."
+    ],
+    "Speaking(Spirit)": [
+      "Speaking(Spirit)",
+      "20",
+      "-20",
+      "Emanating",
+      "Able to speak to one spirit at a time in a 20` area (as Speak to Dead skill)."
+    ],
+    "Speaking(Spirit,Greater)": [
+      "Speaking(Spirit,Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Able to speak to one spirit at a time in a 40` area (as Speak to Dead skill)."
+    ],
+    "Speaking(Telepathy)": [
+      "Speaking(Telepathy)",
+      "20",
+      "-20",
+      "Emanating",
+      "Able to read and/or project thoughts to or from one being at a time in a radius of 3` per Intelligence rating."
+    ],
+    "Speaking(Telepathy,Greater)": [
+      "Speaking(Telepathy,Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Able to read and/or project thoughts to or from one at a time in a radius of 6` per Intelligence rating."
+    ],
+    "Truth": [
+      "Truth",
+      "19",
+      "-15",
+      "Emanating",
+      "Gives +5% to all detection skills (such as Detect Good, Detect Magic, Detect Traps) to the item or individual who possesses the Truth rune."
+    ],
+    "Truth(Greater)": [
+      "Truth(Greater)",
+      "27",
+      "-55",
+      "Emanating",
+      "Gives +10% to all detection skills (such as Detect Good, Detect Magic, Detect Traps) to the item or individual who possesses the Truth(Greater) rune."
+    ],
+    "Veil": [
+      "Veil",
+      "17",
+      "-5",
+      "Emanating",
+      "Causes a predetermined illusion to cover the item or individual who possesses the Veil rune. The veil is an Illusion of Sight (as the spell) only and is set to the specific illusion at the time if its creation."
+    ],
+    "Veil(Greater)": [
+      "Veil(Greater)",
+      "25",
+      "-45",
+      "Emanating",
+      "Causes predetermined illusions to cover the item or individual who possesses the Veil rune. The veil is an Illusion of both Sight and Sound (as the spells) only and is set to the specific illusions at the time if its creation."
+    ],
+    "Warding(Animals)": [
+      "Warding(Animals)",
+      "18",
+      "-10",
+      "Radiating",
+      "Protection vs. animals, insects and plants. Named animal, insect or plant type must stay at least 10` away from the rune. Sapient plants/animals get a Control Resistance."
+    ],
+    "Warding(Animals,Greater)": [
+      "Warding(Animals,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Protection vs. animals, insects and plants. Named 2 animal, insect or plant types must stay at least 20` away from the rune. Sapient plants/animals get a Control Resistance."
+    ],
+    "Warding(Humanoids)": [
+      "Warding(Humanoids)",
+      "18",
+      "-10",
+      "Radiating",
+      "One specific race must be chosen at the time of its creation, and if a member of that race comes within 15` of the rune, they must make Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Humanoids,Greater)": [
+      "Warding(Humanoids,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Two specific races must be chosen at the time of its creation, and if a member of that race comes within 30` of the rune, they must make Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Undead)": [
+      "Warding(Undead)",
+      "18",
+      "-10",
+      "Radiating",
+      "One specific type of lesser or greater undead (under Creature level 9) must be chosen at the time of its creation, and if that type of undead comes within 15` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Undead,Greater)": [
+      "Warding(Undead,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Two specific types of lesser or greater undead (under Creature level 9) must be chosen at the time of its creation, and if that type of undead comes within 30` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Supernatural)": [
+      "Warding(Supernatural)",
+      "18",
+      "-10",
+      "Radiating",
+      "One specific type of supernatural must be chosen at the time of its creation, and if that type of supernatural comes within 15` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Supernatural,Greater)": [
+      "Warding(Supernatural,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Two specific types of supernatural must be chosen at the time of its creation, and if that type of supernatural comes within 30` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Accuracy": [
+      "Accuracy",
+      "20",
+      "-20",
+      "Emanating",
+      "When inscribed onto a missile weapon, this rune will give +l to hit and +ld6+1 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Accuracy(Greater)": [
+      "Accuracy(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "When inscribed onto a missile weapon, this rune will give +2 to hit and +2d6+2 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Ambidexterity": [
+      "Ambidexterity",
+      "26",
+      "-50",
+      "Emanating",
+      "Makes the rune bearer ambidextrous."
+    ],
+    "Anti-Divinity": [
+      "Anti-Divinity",
+      "28",
+      "-60",
+      "Radiating",
+      "All divine magic except Spiritual Wall and Spirit Sphere within 60` of the rune loses its magical divinity while within this range."
+    ],
+    "Anti-Divinity(Greater)": [
+      "Anti-Divinity(Greater)",
+      "36",
+      "-100",
+      "Radiating",
+      "All divine magic except Spiritual Wall and Spirit Sphere within 120` of the rune loses its magical divinity while within this range."
+    ],
+    "Anti-Magic": [
+      "Anti-Magic",
+      "28",
+      "-60",
+      "Radiating",
+      "All magic except Wall and Sphere of Protection within 60` of the rune loses its magical properties while within this range."
+    ],
+    "Anti-Magic(Greater)": [
+      "Anti-Magic(Greater)",
+      "36",
+      "-100",
+      "Radiating",
+      "All magic except Wall and Sphere of Protection within 120` of the rune loses its magical properties while within this range."
+    ],
+    "Armor": [
+      "Armor",
+      "4",
+      "60",
+      "Emanating",
+      "For each rating point above 4 (per -5% Modifier) the rune grants one point of hide only in the body area or surface it protects, up to 30 points maximum. Each body area may have one rune inscribed upon it. The rune can also be inscribed upon a piece of armor which covers multiple body areas "
+    ],
+    "Armor(Greater)": [
+      "Armor(Greater)",
+      "12",
+      "20",
+      "Emanating",
+      "For each rating point above 12 (per -5% Modifier) the rune grants two points of hide only in the body area or surface it protects, up to 30 points maximum. Each body area may have one rune inscribed upon it. The rune can also be inscribed upon a piece of armor which covers multiple body areas "
+    ],
+    "Disruption": [
+      "Disruption",
+      "20",
+      "-20",
+      "Emanating",
+      "When inscribed onto a smashing weapon, this rune will give +l to hit and +ld6+1 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Disruption(Greater)": [
+      "Disruption(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "When inscribed onto a smashing weapon, this rune will give +2 to hit and +2d6+2 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Doorway": [
+      "Doorway",
+      "22",
+      "-30",
+      "Emanating",
+      "When inscribed upon the surface of a wall, this rune will cause a shimmering door to appear, no larger than 5` wide by 10` tall. The wall cannot be more than 2 inches thick. This doorway can opened or closed by touching the rune and saying an activation word. When closed, the door appears as a normal wall but the rune can be seen. This rune includes the activation condition."
+    ],
+    "Doorway(Greater)": [
+      "Doorway(Greater)",
+      "30",
+      "-70",
+      "Emanating",
+      "When inscribed upon the surface of a wall, this rune will cause a shimmering door to appear, no larger than 10` wide by 20` tall. The wall cannot be more than 4 inches thick. This doorway can opened or closed by touching the rune and saying an activation word. When closed, the door appears as a normal wall but the rune can be seen. This rune includes the activation condition."
+    ],
+    "Mark of Death": [
+      "Mark of Death",
+      "32",
+      "-80",
+      "Perceived",
+      "Causes all of one particular type of being who see the rune to make a Control Resistance or suffer a heart attack."
+    ],
+    "Mark of Death(Greater)": [
+      "Mark of Death(Greater)",
+      "40",
+      "-160",
+      "Perceived",
+      "Causes all of two particular types of beings who see the rune to make a Control Resistance or suffer a heart attack."
+    ],
+    "Mark of Distinction": [
+      "Mark of Distinction",
+      "16",
+      "0",
+      "Emanating",
+      "Causes an apparent +2 to all Personal attributes of the rune bearer. The effects are illusionary."
+    ],
+    "Mark of Distinction(Greater)": [
+      "Mark of Distinction(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "Causes an apparent +4 to all Personal attributes of the rune bearer. The effects are illusionary."
+    ],
+    "Mark of Pain": [
+      "Mark of Pain",
+      "18",
+      "-10",
+      "Perceived",
+      "Causes all of one particular type of being who see the rune to make a Magic Resistance when first viewing it or suffer 4d6 damage in the mid torso from stomach pain."
+    ],
+    "Mark of Pain(Greater)": [
+      "Mark of Pain(Greater)",
+      "26",
+      "-50",
+      "Perceived",
+      "Causes all of one particular two types of beings who see the rune to make a Magic Resistance when first viewing it or suffer 8d6 damage in the mid torso from stomach pain."
+    ],
+    "Mark of Ruin": [
+      "Mark of Ruin",
+      "16",
+      "0",
+      "Perceived",
+      "Causes the being who sees the rune to make a Control Resistance or be forced to forget a valuable item and drop it near the rune."
+    ],
+    "Mark of Ruin(Greater)": [
+      "Mark of Ruin(Greater)",
+      "22",
+      "-40",
+      "Perceived",
+      "Causes the being who sees the rune to make a Control Resistance or be forced to forget two valuable items and drop them near the rune."
+    ],
+    "Piercing": [
+      "Piercing",
+      "20",
+      "-20",
+      "Emanating",
+      "When inscribed onto a piercing weapon, this rune will give +l to hit and +ld6+1 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Piercing(Greater)": [
+      "Piercing(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "When inscribed onto a piercing weapon, this rune will give +2 to hit and +2d6+2 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Sharpness": [
+      "Sharpness",
+      "20",
+      "-20",
+      "Emanating",
+      "When inscribed onto a cutting weapon, this rune will give +l to hit and +ld6+1 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Sharpness(Greater)": [
+      "Sharpness(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "When inscribed onto a cutting weapon, this rune will give +2 to hit and +2d6+2 to damage per 5 Class Titles of the inscriber."
+    ],
+    "Speed": [
+      "Speed",
+      "18",
+      "-10",
+      "Emanating",
+      "For every rating point above 18 (per -5% Modifier), the rune adds +l second per round per 10 second round (max +5 seconds)."
+    ],
+    "Speed(Greater)": [
+      "Speed(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "For every rating point above 26 (per -5% Modifier), the rune adds +2 seconds per round per 10 second round (max +10 seconds)."
+    ],
+    "Warding(Magical Animals)": [
+      "Warding(Magical Animals)",
+      "18",
+      "-10",
+      "Radiating",
+      "Protection vs. magical animals, magical insects and magical plants. Named type must stay at least 15` away from the rune. Sapient plants/animals get a Control Resistance."
+    ],
+    "Warding(Magical Animals,Greater)": [
+      "Warding(Magical Animals,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Protection vs. magical animals, magical insects and magical plants. Named 2 types must stay at least 30` away from the rune. Sapient plants/animals get a Control Resistance."
+    ],
+    "Rune of Dissolution": [
+      "Rune of Dissolution",
+      "22",
+      "30",
+      "Radiating",
+      "Causes All plants and non-magical animals within sight of the rune to wither and die. Plants cannot grow back as long as the rune is exposed."
+    ],
+    "Evocation": [
+      "Evocation",
+      "20",
+      "-20",
+      "Emanating",
+      "Grants the rune bearer one animal ability as per the skill Evoke. A being may only have one Evocation rune inscribed upon the body at a time. It takes 2-7 seconds to activate the ability."
+    ],
+    "Evocation(Greater)": [
+      "Evocation(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Grants the rune bearer two animal abilities as per the skill Evoke. A being may only have one Evocation(Greater) rune inscribed upon the body at a time. It takes 2-7 seconds to activate each ability, separately."
+    ],
+    "Absolve Control": [
+      "Absolve Control",
+      "20",
+      "-20",
+      "Emanating",
+      "This rune may only be placed on a being under control or possession by another being or effect. Once the rune is inscribed successfully, control is broken and the being is immune from any further control or possession of any type from that original source."
+    ],
+    "Binding": [
+      "Binding",
+      "20",
+      "-20",
+      "Perceived and Radiating",
+      "At the time of creation, the user infuses this rune with a single command. The first time a being comes into range of the rune (1` radius per Practitioner Title) or perceives it, a Control Resistance is made or the command must be obeyed. Undead and living beings with less than 16 Will Force are afforded no Control Resistance. The command cannot force the individual to kill or directly harm herself, or knowingly place herself in jeopardy of death or destruction. The command must be one sentence or less and will be obeyed for 1 minute per Practitioner Title. Thereafter, the affected being is released from the command and becomes immune to further effects from that particular rune."
+    ],
+    "Binding(Greater)": [
+      "Binding(Greater)",
+      "28",
+      "-60",
+      "Perceived and Radiating",
+      "At the time of creation, the user infuses this rune with up to two commands. The first time a being comes into range of the rune (2` radius per Practitioner Title) or perceives it, a Control Resistance is made or the command must be obeyed. Undead and living beings with less than 16 Will Force are afforded no Control Resistance. The command cannot force the individual to kill or directly harm herself, or knowingly place herself in jeopardy of death or destruction. The command must be one sentence or less and will be obeyed for 2 minute per Practitioner Title. Thereafter, the affected being is released from the command and becomes immune to further effects from that particular rune."
+    ],
+    "Corruption": [
+      "Corruption",
+      "22",
+      "-30",
+      "Emanating",
+      "This rune is placed on a living being. When that being is killed, the rune bearer will rise as an appropriate undead, depending on the situation and manner of death (GM discretion) at the next nightfall. The target may resist this with a Will Force save at -5% per Practitioner Title."
+    ],
+    "Day": [
+      "Day",
+      "26",
+      "-50",
+      "Radiating",
+      "The area illuminated by this rune (3` radius per Practitioner Title) is as bright as noon on a sunny day, though no extra heat is generated in the area affected. No shadow or darkness effects, magical or otherwise, operate in the area. Undead are affected as if surrounded in daylight."
+    ],
+    "Day(Greater)": [
+      "Day(Greater)",
+      "34",
+      "-90",
+      "Radiating",
+      "The area illuminated by this rune (6` radius per Practitioner Title) is as bright as noon on a sunny day, though no extra heat is generated in the area affected. No shadow or darkness effects, magical or otherwise, operate in the area. Undead are affected as if surrounded in daylight."
+    ],
+    "Disguise Life Force": [
+      "Disguise Life Force",
+      "24",
+      "-40",
+      "Radiating",
+      "Allows the practitioner to disguise the life force in some fashion to all beings within a 20` radius. Lesser undead (levels 1-4) cannot sense past the power of the rune, but greater undead (levels 5-8) are allowed a Life Sense skill roll at 1/4 their skill level, and arch undead (levels 9+) are allowed a Life Sense roll at 1/2."
+    ],
+    "Disguise Life Force(Greater)": [
+      "Disguise Life Force(Greater)",
+      "32",
+      "-80",
+      "Radiating",
+      "Allows the practitioner to disguise the life force in some fashion to all beings within a 40` radius. Lesser undead (levels 1-4) cannot sense past the power of the rune, but greater undead (levels 5-8) are allowed a Life Sense skill roll at 1/4 their skill level, and arch undead (levels 9+) are allowed a Life Sense roll at 1/2."
+    ],
+    "Fear": [
+      "Fear",
+      "16",
+      "0",
+      "Emanating",
+      "Causes all living beings within 15` to flee in fear. Beings with an 18 Will Force or greater are not affected."
+    ],
+    "Fear(Greater)": [
+      "Fear(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "Causes all living beings within 30` to flee in fear. Beings with an 18 Will Force or greater are not affected."
+    ],
+    "Fearless": [
+      "Fearless",
+      "18",
+      "-10",
+      "Emanating",
+      "Removes all current effects of fear and protects only the rune bearer from any future fear effects."
+    ],
+    "Gravestone": [
+      "Gravestone",
+      "22",
+      "-30",
+      "Radiating",
+      "Etching or carving this rune into a grave marker protects the body buried there from becoming undead or allowing its Spirit to be detached from its Soul."
+    ],
+    "Ignore Protection": [
+      "Ignore Protection",
+      "26",
+      "-50",
+      "Emanating",
+      "Allows the protected item or being to ignore all protection effects. This includes spells like Wall of Protection, Reflection, Deflect, runes of Warding, invocations such as Sanctuary, etc. Only one such effect can be ignored per second per Practitioner Title. When there is more than one effect, the lowest Aura Control, Piety Control or Practitioner Title effect is ignored first."
+    ],
+    "Life": [
+      "Life",
+      "30",
+      "-70",
+      "Perceived and Radiating",
+      "Causes any undead or negative life force beings who perceive the rune to make a Control Resistance or be destroyed. Beings of 5 or less average Mental or below 3rd Level are destroyed instantly without save, and those 16th Level or higher are immune to this effect."
+    ],
+    "Natural Darkness Rune": [
+      "Natural Darkness Rune",
+      "22",
+      "-30",
+      "Radiating",
+      "Creates a 10` radius sphere of natural darkness around the rune bearer. Treat vision as if it were night."
+    ],
+    "Natural Darkness Rune(Greater)": [
+      "Natural Darkness Rune(Greater)",
+      "30",
+      "-70",
+      "Radiating",
+      "Creates a 20` radius sphere of natural darkness around the rune bearer. Treat vision as if it were night."
+    ],
+    "Natural Darkness Sphere": [
+      "Natural Darkness Sphere",
+      "24",
+      "-40",
+      "Radiating",
+      "Creates a 10` radius sphere of natural darkness in an unmoving fixed location. Treat vision as if it were night."
+    ],
+    "Natural Darkness Sphere(Greater)": [
+      "Natural Darkness Sphere(Greater)",
+      "32",
+      "-80",
+      "Radiating",
+      "Creates a 20` radius sphere of natural darkness in an unmoving fixed location. Treat vision as if it were night."
+    ],
+    "Natural Sunlight Rune": [
+      "Natural Sunlight Rune",
+      "22",
+      "-30",
+      "Radiating",
+      "Creates a 10` radius sphere of natural sunlight around the rune bearer. Any beings that take damage from sunlight will suffer full effects."
+    ],
+    "Natural Sunlight Rune(Greater)": [
+      "Natural Sunlight Rune(Greater)",
+      "30",
+      "-70",
+      "Radiating",
+      "Creates a 20` radius sphere of natural sunlight around the rune bearer. Any beings that take damage from sunlight will suffer full effects."
+    ],
+    "Natural Sunlight Sphere": [
+      "Natural Sunlight Sphere",
+      "24",
+      "-40",
+      "Radiating",
+      "Creates a 10` radius sphere of natural sunlight in an unmoving fixed location. The word sunlight turns the sphere on or off. Any beings that take damage from sunlight will suffer full effects."
+    ],
+    "Natural Sunlight Sphere(Greater)": [
+      "Natural Sunlight Sphere(Greater)",
+      "32",
+      "-80",
+      "Radiating",
+      "Creates a 20` radius sphere of natural sunlight in an unmoving fixed location. The word sunlight turns the sphere on or off. Any beings that take damage from sunlight will suffer full effects."
+    ],
+    "Night": [
+      "Night",
+      "26",
+      "-50",
+      "Radiating",
+      "The area darkened by this rune (3` radius per Practitioner Title) allows no light sources to generate light, though they still generate heat. Any undead beings in the area of effect are protected from all effects of light, sunlight, and daytime."
+    ],
+    "Night(Greater)": [
+      "Night(Greater)",
+      "32",
+      "-80",
+      "Radiating",
+      "The area darkened by this rune (6` radius per Practitioner Title) allows no light sources to generate light, though they still generate heat. Any undead beings in the area of effect are protected from all effects of light, sunlight, and daytime."
+    ],
+    "Protection from Undead": [
+      "Protection from Undead",
+      "16",
+      "0",
+      "Emanating",
+      "Protects against physical attacks, targeted spells, invocations, and effects originating from undead creatures who are lower than or equal in level to the Practitioner`s Title."
+    ],
+    "Reveal Life Force": [
+      "Reveal Life Force",
+      "24",
+      "-40",
+      "Radiating",
+      "Reveal all disguised life force within a 20` radius. If any life force disguising effect is active within the radius, there is a contest of target`s Will Force vs. the ritualist`s Practitioner Title x2."
+    ],
+    "Reveal Life Force(Greater)": [
+      "Reveal Life Force(Greater)",
+      "32",
+      "-80",
+      "Radiating",
+      "Reveal all disguised life force within a 40` radius. If any life force disguising effect is active within the radius, there is a contest of target`s Will Force vs. the ritualist`s Practitioner Title x2."
+    ],
+    "Righteousness": [
+      "Righteousness",
+      "18",
+      "-10",
+      "Emanating",
+      "When this rune is placed on a living being, it blocks any form of undead conversion effects. For example, a vampire`s bite may kill, but the victim will only die, not become one of the Tainted."
+    ],
+    "Turn Undead": [
+      "Turn Undead",
+      "16",
+      "0",
+      "Perceived",
+      "This rune causes all lesser undead (levels 1-4) to flee. Greater undead (levels 5-8) are afforded a Control Resistance, and arch undead (levels 9+) are unaffected."
+    ],
+    "Twilight": [
+      "Twilight",
+      "18",
+      "-10",
+      "Radiating",
+      "The area dimmed by this rune (3` radius per Practitioner Title) allows neither light or darkness effects but in a state of perpetual of twilight. Undead affected by sunlight or daytime are not afflicted while in the area of effect. Light sources that generate heat will continue to do so, but will not brighten the area. There will be dim visibility approximately 30` for normal vision, and 10 more feet for each level of greater vision."
+    ],
+    "Twilight(Greater)": [
+      "Twilight(Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "The area dimmed by this rune (6` radius per Practitioner Title) allows neither light or darkness effects but in a state of perpetual of twilight. Undead affected by sunlight or daytime are not afflicted while in the area of effect. Light sources that generate heat will continue to do so, but will not brighten the area. There will be dim visibility approximately 60` for normal vision, and 20 more feet for each level of greater vision."
+    ],
+    "Wither": [
+      "Wither",
+      "18",
+      "-10",
+      "Perceived",
+      "Inflicts withering damage to any being that touches the rune, causing 1d4 damage per Practitioner Title if a Magic Resistance is failed. If the Resistance is made, the being takes only 1 point of damage per Practitioner Title."
+    ],
+    "Wither(Greater)": [
+      "Wither(Greater)",
+      "26",
+      "-50",
+      "Perceived",
+      "Inflicts withering damage to any being that touches the rune, causing 2d4 damage per Practitioner Title if a Magic Resistance is failed. If the Resistance is made, the being takes only 2 points of damage per Practitioner Title."
+    ],
+    "Boiling": [
+      "Boiling",
+      "21",
+      "-25",
+      "Radiating",
+      "Causes all non-magical liquids within 1` per Practitioner Title to heat at a rate of 10 degrees per minute until they reach their own particular boiling point. All boiling substances remain at this temperature until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Boiling(Greater)": [
+      "Boiling(Greater)",
+      "29",
+      "-65",
+      "Radiating",
+      "Causes all non-magical liquids within 2` per Practitioner Title to heat at a rate of 20 degrees per minute until they reach their own particular boiling point. All boiling substances remain at this temperature until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Collapse": [
+      "Collapse",
+      "19",
+      "-15",
+      "Radiating",
+      "When inscribed on the wall of a subterranean cavern, all adjoining rock within a radius of 3` per Practitioner Title will break into separate pieces no larger than 2 square feet, falling if applicable, when a living being (other than the practitioner) approaches within 1` per Practitioner Title, therefore destroying the rune in the process. The resulting cave-in inflicts 3d6 crushing damage per 10 feet of the rune`s original height above the victims, to 3d6 body areas."
+    ],
+    "Collapse(Greater)": [
+      "Collapse(Greater)",
+      "27",
+      "-55",
+      "Radiating",
+      "When inscribed on the wall of a subterranean cavern, all adjoining rock within a radius of 6` per Practitioner Title will break into separate pieces no larger than 4 square feet, falling if applicable, when a living being (other than the practitioner) approaches within 2` per Practitioner Title, therefore destroying the rune in the process. The resulting cave-in inflicts 6d6 crushing damage per 10 feet of the rune`s original height above the victims, to 3d6 body areas."
+    ],
+    "Cloudblend": [
+      "Cloudblend",
+      "15",
+      "5",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of cloud and fog, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Direction": [
+      "Direction",
+      "16",
+      "0",
+      "Perceived",
+      "Grants anyone who views the rune an innate sense of direction for the next 10 minutes per Practitioner Title."
+    ],
+    "Direction(Greater)": [
+      "Direction(Greater)",
+      "24",
+      "-40",
+      "Perceived",
+      "Grants anyone who views the rune an innate sense of direction for the next 20 minutes per Practitioner Title."
+    ],
+    "Endure(Aura)": [
+      "Endure(Aura)",
+      "22",
+      "-30",
+      "Emanating",
+      "Gives protection from Aura damage to the item or individual who possesses the rune. The target never takes more than one half damage vs. Aura from spells and effects like Aura Blast, etc."
+    ],
+    "Endure(Aura,Greater)": [
+      "Endure(Aura,Greater)",
+      "30",
+      "-70",
+      "Emanating",
+      "Gives full protection from Aura damage to the item or individual who possesses the rune. The target never takes  any damage vs. Aura from spells and effects like Aura Blast, etc."
+    ],
+    "Fireblend": [
+      "Fireblend",
+      "17",
+      "-5",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of fire and lava, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Freezing": [
+      "Freezing",
+      "20",
+      "-20",
+      "Radiating",
+      "Causes all non-magical liquids within 1` per Practitioner Title to cool at a rate of 10 degrees per minute until completely frozen. All frozen substances remain solid until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Freezing(Greater)": [
+      "Freezing(Greater)",
+      "28",
+      "-60",
+      "Radiating",
+      "Causes all non-magical liquids within 2` per Practitioner Title to cool at a rate of 20 degrees per minute until completely frozen. All frozen substances remain solid until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Foresight(Day)": [
+      "Foresight(Day)",
+      "24",
+      "-40",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 1 day hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(Week)": [
+      "Foresight(Week)",
+      "25",
+      "-45",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 1 week hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(Month)": [
+      "Foresight(Month)",
+      "26",
+      "-50",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 1 month hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(6 Months)": [
+      "Foresight(6 Months)",
+      "27",
+      "-55",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 6 months hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(Year)": [
+      "Foresight(Year)",
+      "28",
+      "-60",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to year hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(5 Years)": [
+      "Foresight(5 Years)",
+      "29",
+      "-65",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 5 years hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(10 Years)": [
+      "Foresight(10 Years)",
+      "30",
+      "-70",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 10 years hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(30 Years)": [
+      "Foresight(30 Years)",
+      "31",
+      "-75",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 30 years hence. This rune only affects a particular individual once."
+    ],
+    "Foresight(60 Years)": [
+      "Foresight(60 Years)",
+      "32",
+      "-80",
+      "Perceived",
+      "Causes anyone who perceives the rune to gain insight into a particular event in the future if they were to continue the current path of events. Though the practitioner cannot specify the foresight which the affected being will gain, it starts from the moment the target views the rune to 60 years hence. This rune only affects a particular individual once."
+    ],
+    "Giddiness": [
+      "Giddiness",
+      "16",
+      "0",
+      "Perceived",
+      "Causes anyone who perceives the rune to make a Control Resistance or feel somewhat giddy, resulting in a -5% per Practitioner Title to Wisdom saves and Wisdom-based skills for the next 1d4 minutes per Practitioner Title."
+    ],
+    "Giddiness(Greater)": [
+      "Giddiness(Greater)",
+      "24",
+      "-30",
+      "Perceived",
+      "Causes anyone who perceives the rune to make a Control Resistance or feel somewhat giddy, resulting in a -10% per Practitioner Title to Wisdom saves and Wisdom-based skills for the next 2d4 minutes per Practitioner Title."
+    ],
+    "Gravity": [
+      "Gravity",
+      "21",
+      "-15",
+      "Emanating",
+      "When inscribed on an item, its weight is increased or decreased by 10% per Practitioner Title to a maximum of 200% or a minimum of 1%. When used to lighten a weapon, for every 30% of decreased weight its damage is reduced by 1 die and its weapon speed is reduced by 1 second (no weapon can go below 1 second in this fashion). For every 30% its weight is increased, its damage is increased by 1 die and its weapon speed is increased by 1 second."
+    ],
+    "Iceblend": [
+      "Iceblend",
+      "17",
+      "-5",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of snow or ice, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Inner Chill": [
+      "Inner Chill",
+      "15",
+      "5",
+      "Emanating",
+      "Protects an individual against the effects of high ambient temperatures, reducing heat damage by -2 per Practitioner Title and reducing chance of passing out by 2% per Practitioner Title."
+    ],
+    "Inner Chill(Greater)": [
+      "Inner Chill(Greater)",
+      "23",
+      "-25",
+      "Emanating",
+      "Protects an individual against the effects of high ambient temperatures, reducing heat damage by -4 per Practitioner Title and reducing chance of passing out by 4% per Practitioner Title."
+    ],
+    "Inner Warmth": [
+      "Inner Warmth",
+      "15",
+      "5",
+      "Emanating",
+      "Protects an individual against the effects of low ambient temperatures, reducing cold damage by -2 per Practitioner Title and reducing chance of passing out by 2% per Practitioner Title."
+    ],
+    "Inner Warmth(Greater)": [
+      "Inner Warmth(Greater)",
+      "23",
+      "-25",
+      "Emanating",
+      "Protects an individual against the effects of low ambient temperatures, reducing cold damage by -4 per Practitioner Title and reducing chance of passing out by 4% per Practitioner Title."
+    ],
+    "Locking": [
+      "Locking",
+      "18",
+      "-10",
+      "Emanating",
+      "When inscribed onto a container, book, or any other object which can be opened and closed, this rune magically locks the object by sealing it shut with Aura, and allows only 1 being per Practitioner Title to open it. The names of these beings and/or the condition(s) on which it may be opened must be spoken at the time of inscribing. Note: The skill Detect Magic reveals a line of Aura (the color of the practitioner`s Aura) along the seal of the locked object."
+    ],
+    "Marksmanship": [
+      "Marksmanship",
+      "16",
+      "0",
+      "Emanating",
+      "Grants an individual +1 to hit per Practitioner Title with missile weapons."
+    ],
+    "Marksmanship(Greater)": [
+      "Marksmanship(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "Grants an individual +2 to hit per Practitioner Title with missile weapons."
+    ],
+    "Melting": [
+      "Melting",
+      "16",
+      "0",
+      "Radiating",
+      "Causes all non-magical frozen liquids within 1` per Practitioner Title to warm at a rate of 10 degrees per minute until completely melted. All melted substances remain in liquid form until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Melting(Greater)": [
+      "Melting(Greater)",
+      "24",
+      "-40",
+      "Radiating",
+      "Causes all non-magical frozen liquids within 2` per Practitioner Title to warm at a rate of 20 degrees per minute until completely melted. All melted substances remain in liquid form until taken out of the rune`s range, after which they are affected normally by the surrounding ambient temperature. This rune does not affect living beings."
+    ],
+    "Mesmerization": [
+      "Mesmerization",
+      "19",
+      "-15",
+      "Radiating",
+      "Causes anyone who sees the rune to make a Control Resistance or stare at the rune, entranced and unable to look away for 10 seconds per Practitioner Title."
+    ],
+    "Mesmerization(Greater)": [
+      "Mesmerization(Greater)",
+      "27",
+      "-55",
+      "Radiating",
+      "Causes anyone who sees the rune to make a Control Resistance or stare at the rune, entranced and unable to look away for 20 seconds per Practitioner Title."
+    ],
+    "Music": [
+      "Music",
+      "20",
+      "-20",
+      "Radiating",
+      "Causes a magical song or ballad performed by an individual no more than 5` away per Practitioner Title to double its effects. For instance, a Bard singing the Song of Replenishment would cause her target to lose 2 fatigue levels per 2 Practitioner Titles instead of the normal 1 level of fatigue. This rune effects only 1 song or ballad at a time."
+    ],
+    "Retrieval": [
+      "Retrieval",
+      "23",
+      "-25",
+      "Emanating",
+      "When inscribed upon an item, the practitioner can mentally will that item to appear in their hand in 1 second, as long as the item is within 1 mile per Practitioner Title."
+    ],
+    "Retrieval(Greater)": [
+      "Retrieval(Greater)",
+      "31",
+      "-65",
+      "Emanating",
+      "When inscribed upon an item, the practitioner can mentally will that item to appear in their hand in 1 second, as long as the item is within 2 miles per Practitioner Title."
+    ],
+    "Rhythm": [
+      "Rhythm",
+      "20",
+      "-20",
+      "Radiating",
+      "Causes a magical chant, poem or percussive beat performed by an individual no more than 5` away per Practitioner Title to double its effects. For instance, a Drum Shaman reciting the Chant of Replenishment would cause her target to lose 2 fatigue levels per 2 Practitioner Titles instead of the normal 1 level of fatigue. This rune effects only 1 chant, poem or percussive beat at a time."
+    ],
+    "Sandblend": [
+      "Sandblend",
+      "17",
+      "-5",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of sand, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Scribing": [
+      "Scribing",
+      "14",
+      "10",
+      "Emanating",
+      "When inscribed on a writing surface, or any part of a collection of attached writing surfaces (such as a book`s cover), this rune causes spoken words to appear on that writing surface, in the particular language in which they are uttered. This magical writing appears as black ink on light surfaces and white ink on dark surfaces. The writing endures for as long as the rune is active, and once the rune is destroyed, all magically created writing slowly fades from view over 5 seconds. The practitioner can activate or deactivate the rune at will to oversee which particular spoken words are recorded. Note: This rune does not record magical words, such as those associated with spell-casting."
+    ],
+    "Sobriety": [
+      "Sobriety",
+      "15",
+      "5",
+      "Perceived",
+      "Causes any drunk or drugged being who sees the rune to instantly become completely sober."
+    ],
+    "Sound": [
+      "Sound",
+      "18",
+      "-10",
+      "Radiating",
+      "Produces a constant sound effect of the practitioner`s choosing within a radius of 5` per Practitioner Title. Chosen sounds must not reach deafening level, and they must be audible by someone with a normal sense of hearing at a distance of 1`. The chosen sound can vary from a chorus of chirping crickets, to pelting rain, to the sound of steel ringing in battle. Note: This rune only creates relatively simple, vague sounds and not anything specific or varying such as a voice or the notes of a certain song."
+    ],
+    "Sound(Greater)": [
+      "Sound(Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Produces a constant sound effect of the practitioner`s choosing within a radius of 10` per Practitioner Title. Chosen sounds must not reach deafening level, and they must be audible by someone with a normal sense of hearing at a distance of 2`. The chosen sound can vary from a chorus of chirping crickets, to pelting rain, to the sound of steel ringing in battle. Note: This rune only creates relatively simple, vague sounds and not anything specific or varying such as a voice or the notes of a certain song."
+    ],
+    "Stoneblend": [
+      "Stoneblend",
+      "16",
+      "0",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of rock and stone, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Strenghthen Wood": [
+      "Strenghthen Wood",
+      "14",
+      "10",
+      "Emanating",
+      "Increases object strength or armor rating by 5 for a single continuous piece of non-living wood, no longer than 5` per Practitioner Title."
+    ],
+    "Strenghthen Wood(Greater)": [
+      "Strenghthen Wood(Greater)",
+      "22",
+      "50",
+      "Emanating",
+      "Increases object strength or armor rating by 10 for a single continuous piece of non-living wood, no longer than 10` per Practitioner Title."
+    ],
+    "Sputter": [
+      "Sputter",
+      "15",
+      "5",
+      "Radiating",
+      "Causes all non-magical flames within 1` per Practitioner Title to sputter, each with a 50% chance per minute of going out altogether."
+    ],
+    "Sputter(Greater)": [
+      "Sputter(Greater)",
+      "23",
+      "-25",
+      "Radiating",
+      "Causes all non-magical flames within 2` per Practitioner Title to sputter, and go out."
+    ],
+    "Wandering": [
+      "Wandering",
+      "19",
+      "-5",
+      "Radiating",
+      "Causes anyone who views the rune to make a Magic Resistance or suddenly lose all sense of direction. During the next 10 minutes per Practitioner Title, those affected by this rune may attempt to use the skill Direction Knowledge at -5% per Practitioner Title of the rune`s creator."
+    ],
+    "Wandering(Greater)": [
+      "Wandering(Greater)",
+      "27",
+      "-45",
+      "Perceived",
+      "Causes anyone who views the rune to make a Magic Resistance or suddenly lose all sense of direction. During the next 20 minutes per Practitioner Title, those affected by this rune may attempt to use the skill Direction Knowledge at -10% per Practitioner Title of the rune`s creator."
+    ],
+    "Warding(Elementals)": [
+      "Warding(Elementals)",
+      "18",
+      "-10",
+      "Radiating",
+      "One specific type of elementals must be chosen at the time of its creation, and if that type of elementals comes within 15` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Warding(Elementals,Greater)": [
+      "Warding(Elementals,Greater)",
+      "26",
+      "-50",
+      "Radiating",
+      "Two specific types of elementals must be chosen at the time of its creation, and if that type of elementals comes within 30` of the rune, they must a Control Resistance or be forced to leave the area immediately."
+    ],
+    "Waterblend": [
+      "Waterblend",
+      "17",
+      "-5",
+      "Emanating",
+      "Grants an individual the magical ability to blend into an environment of fresh or salt water, no matter their appearance, as long as the individual remains stationary."
+    ],
+    "Wavebreaker": [
+      "Wavebreaker",
+      "26",
+      "-60",
+      "Emanating",
+      "Protects an object or individual from all adverse effects of waves and rough seas, allowing safe passage through water, unmolested by natural forces. Although waves in the area are not altered in any way, the object or individual bearing this rune magically remains at a level elevation and breaks through the waves as if they were not there. This rune does not stop precipitation such as rain, nor does it alter the ambient temperature."
+    ],
+    "Aethermark": [
+      "Aethermark",
+      "20",
+      "-20",
+      "Emanating",
+      "Grants the wearer breathless, immunity to cold, and pressure as well as the ability to fly at up to 3 feet per Intelligence rating per second. This effect only operates while on the Ethereal Plane."
+    ],
+    "Dreammark": [
+      "Dreammark",
+      "18",
+      "-10",
+      "Emanating",
+      "Allows the wearer to have a 5% chance per practitioner title of entering the dream plane when sleeping."
+    ],
+    "Dreammark(Greater)": [
+      "Dreammark(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "Allows the wearer to have a 10% chance per practitioner title of entering the dream plane when sleeping."
+    ],
+    "Dreamward": [
+      "Dreamward",
+      "16",
+      "0",
+      "Emanating",
+      "Grants protection from mental contact while asleep and blocks entry into the dream plane whether awake or asleep."
+    ],
+    "Force Armor": [
+      "Force Armor",
+      "12",
+      "20",
+      "Emanating",
+      "For each rating point above 12 (per -5% Modifier) 1 point of Force Armor is gained protecting the entire body up to a maximum of 20 points."
+    ],
+    "Force Armor(Greater)": [
+      "Force Armor(Greater)",
+      "18",
+      "-10",
+      "Emanating",
+      "For each rating point above 18 (per -5% Modifier) 2 points of Force Armor is gained protecting the entire body up to a maximum of 40 points."
+    ],
+    "Locating": [
+      "Locating",
+      "16",
+      "0",
+      "Emanating",
+      "Allows the practitioner or a designated (owner/friend) to locate whatever the rune is placed on if within 10 miles per practitioner title."
+    ],
+    "Locating(Greater)": [
+      "Locating(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "Allows the practitioner or a designated (owner/friend) to locate whatever the rune is placed on if within 20 miles per practitioner title."
+    ],
+    "Lostmark": [
+      "Lostmark",
+      "20",
+      "-20",
+      "Emanating",
+      "Allows the wearer to have a 5% chance per practitioner title of entering the Plane of the Lost/Junk once per day when no other being can see or hear them. Also allows unlimited automatic return after 10 seconds of concentration (returning to wherever the wearer last left)."
+    ],
+    "Lostmark(Greater)": [
+      "Lostmark(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Allows the wearer to have a 10% chance per practitioner title of entering the Plane of the Lost/Junk once per day when no other being can see or hear them. Also allows unlimited automatic return after 10 seconds of concentration (returning to wherever the wearer last left)."
+    ],
+    "Lostward": [
+      "Lostward",
+      "20",
+      "-20",
+      "Emanating",
+      "Keeps the wearer from entering the Plane of the Lost/Junk. Also grants +10% to the following skills: Distance Knowledge, Direction Knowledge, Depth Knowledge, Navigate and Cartography."
+    ],
+    "Lostward(Greater)": [
+      "Lostward(Greater)",
+      "28",
+      "-60",
+      "Emanating",
+      "Keeps the wearer from entering the Plane of the Lost/Junk. Also grants +20% to the following skills: Distance Knowledge, Direction Knowledge, Depth Knowledge, Navigate and Cartography."
+    ],
+    "Planarbind": [
+      "Planarbind",
+      "22",
+      "-30",
+      "Radiating",
+      "Keeps persons, places and objects within rune`s sight in the current plane."
+    ],
+    "Planarmark": [
+      "Planarmark",
+      "16",
+      "0",
+      "Emanating",
+      "Allows the wearer to return to their plane of origin in a place the wearer identifies as home once per day."
+    ],
+    "Planarmark(Greater)": [
+      "Planarmark(Greater)",
+      "24",
+      "-40",
+      "Emanating",
+      "Allows the wearer to return to their plane of origin in a place the wearer identifies as home twice per day."
+    ],
+    "Planarward": [
+      "Planarward",
+      "19",
+      "-15",
+      "Emanating",
+      "Keeps the wearer in their current plane."
+    ],
+    "Phasemark": [
+      "Phasemark",
+      "18",
+      "-10",
+      "Emanating",
+      "Allows the wearer to have a 5% chance per practitioner title of entering or returning from the Phase Plane. Requires 10 seconds of concentration for each use and only allows 1 use per practitioner title per day."
+    ],
+    "Phasemark(Greater)": [
+      "Phasemark(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "Allows the wearer to have a 10% chance per practitioner title of entering or returning from the Phase Plane. Requires 10 seconds of concentration for each use and only allows 2 use per practitioner title per day."
+    ],
+    "Phaseward": [
+      "Phaseward",
+      "16",
+      "0",
+      "Emanating",
+      "Keeps the wearer from entering the Phase Plane."
+    ],
+    "Shadowmark": [
+      "Shadowmark",
+      "18",
+      "-10",
+      "Emanating",
+      "Allows the wearer to have a 5% chance per practitioner title of entering or returning from the Shadow Plane. Requires 10 seconds of concentration for each use and only allows 1 use per practitioner title per day."
+    ],
+    "Shadowmark(Greater)": [
+      "Shadowmark(Greater)",
+      "18",
+      "-10",
+      "Emanating",
+      "Allows the wearer to have a 10% chance per practitioner title of entering or returning from the Shadow Plane. Requires 10 seconds of concentration for each use and only allows 2 uses per practitioner title per day."
+    ],
+    "Shadowward": [
+      "Shadowward",
+      "16",
+      "0",
+      "Emanating",
+      "Keeps the wearer from entering the Shadow Plane."
+    ],
+    "Soulmark": [
+      "Soulmark",
+      "28",
+      "-60",
+      "Emanating",
+      "Protects against any effect which takes or separates the soul from the body, mind or spirit except death."
+    ],
+    "Absorption": [
+      "Absorption",
+      "4",
+      "60",
+      "Emanating",
+      "For each rating point above 4 (per -5% Modifier) 1 point of overall damage absorption from all attacks up to 25 points maximum. Each point of damage absorbed lowers the remaining damage absorption until it is gone. The rune resets to the full absorption level once per hour."
+    ],
+    "Absorption(Greater)": [
+      "Absorption(Greater)",
+      "12",
+      "20",
+      "Emanating",
+      "For each rating point above 12 (per -5% Modifier) 2 points of overall damage absorption from all attacks up to 50 points maximum. Each point of damage absorbed lowers the remaining damage absorption until it is gone. The rune resets to the full absorption level once per hour."
+    ],
+    "Angel`s Wings": [
+      "Angel`s Wings",
+      "20",
+      "-20",
+      "Emanating",
+      "When desired, a pair of magical wings will come from the rune and grant magical flight at 3` per second per point of Intelligence rating."
+    ],
+    "Deva`s Mark": [
+      "Deva`s Mark",
+      "18",
+      "-10",
+      "Emanating",
+      "Gain the ability to become invisible once per day as the Spell of the same name. It lasts until the first hostile action."
+    ],
+    "Deva`s Mark(Greater)": [
+      "Deva`s Mark(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "Gain the ability to become invisible twice per day as the Spell of the same name. It lasts until the first hostile action."
+    ],
+    "Devil`s Duplicity": [
+      "Devil`s Duplicity",
+      "18",
+      "-10",
+      "Emanating",
+      "Once per day, the first, controlling effect instead rebounds on the source of the effect and they must make a CR at -20% or be controlled by the bearer of the rune. If the rune is on an object(or structure), then they are compelled to guard the object(or structure). Control lasts 1 hour per Practitioner Title."
+    ],
+    "Devil`s Duplicity(Greater)": [
+      "Devil`s Duplicity(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "Twice per day, the first, controlling effects instead rebounds on the source of the effect and they must make a CR at -40% or be controlled by the bearer of the rune. If the rune is on an object(or structure), then they are compelled to guard the object(or structure). Control lasts 2 hours per Practitioner Title."
+    ],
+    "Endure(Light)": [
+      "Endure(Light)",
+      "10",
+      "30",
+      "Emanating",
+      "This rune offers full protection against all normal forms of light, including blindness effects for night vision, etc. The possessor or surface never takes more than one-half damage vs. light effects, even magical."
+    ],
+    "Endure(Light,Greater)": [
+      "Endure(Light,Greater)",
+      "18",
+      "-10",
+      "Emanating",
+      "Gives immunity to all types of negative light effects, magical or mundane."
+    ],
+    "Endure(Repulsion)": [
+      "Endure(Repulsion)",
+      "14",
+      "10",
+      "Emanating",
+      "This rune offers full protection to the buffeting damage of wind, water, or any non-solid object. The rune bearer never takes more than one-half damage vs. repulsion, magical wind, and water effects."
+    ],
+    "Endure(Repulsion,Greater)": [
+      "Endure(Repulsion,Greater)",
+      "22",
+      "-30",
+      "Emanating",
+      "Gives immunity to all forms of damage or negative effects from repulsion, magical wind, and water effects, whether magical or mundane."
+    ],
+    "Endure(Sound)": [
+      "Endure(Sound)",
+      "12",
+      "20",
+      "Emanating",
+      "This rune offers full protection against all normal forms of sound, including deafening effects. The rune bearer never takes more than one-half damage, or deafening duration vs. sound effects, even magical."
+    ],
+    "Endure(Sound,Greater)": [
+      "Endure(Sound,Greater)",
+      "20",
+      "-20",
+      "Emanating",
+      "Gives immunity to deafening, or damagin sound effects, whether magical or mundane."
+    ],
+    "Guardian Angel": [
+      "Guardian Angel",
+      "18",
+      "-10",
+      "Emanating",
+      "Once per day, the first, non-lethal negative effect or damage is removed from the rune bearer as if by a guardian angel."
+    ],
+    "Guardian Angel(Greater)": [
+      "Guardian Angel(Greater)",
+      "26",
+      "-50",
+      "Emanating",
+      "Twice per day, the first and second, non-lethal negative effects or damages to be removed from the rune bearer as if by a guardian angel."
+    ],
+    "Hearth": [
+      "Hearth",
+      "16",
+      "0",
+      "Emanating",
+      "This is a two-part rune. One part is inscribed on a place the skill user (or the target) considers home. The second part is inscribed on a person or object they carry. When they trace the rune (2 seconds) while remembering home they will be transported, safely and instantly to their home, even if they are on a different plane."
+    ],
+    "Infusion": [
+      "Infusion",
+      "18",
+      "-10",
+      "Emanating",
+      "This is a two-part rune. One part is on the infuser and the other is on the infused. It allows the infuser to give up 2 points of any attribute to grant the infused 1 point of the same attribute. The infused can trace the rune to turn it on, take the attribute point and then reverse trace the rune to deactivate it and return the attribute. An infused person can have no more than 1 of these runes on themselves per Class Title. An infuser cannot lower their attribute rating lower than 5."
+    ],
+    "Invulnerability": [
+      "Invulnerability",
+      "24",
+      "-40",
+      "Emanating",
+      "This rune has two uses. If placed on an object it makes the object unbreakable. If placed on a being that being now requires Bless or +1 weapons to do full physical damage to the being, while non-magical weapons do half damage."
+    ],
+    "Invulnerability(Greater)": [
+      "Invulnerability(Greater)",
+      "32",
+      "-80",
+      "Emanating",
+      "This rune has two uses. If placed on an object it makes the object unbreakable. If placed on a being that being now requires Bless or +1 weapons to do full physical damage to the being, while non-magical weapons do no damage."
+    ],
+    "Strenghthen Metal": [
+      "Strenghthen Metal",
+      "14",
+      "10",
+      "Emanating",
+      "Increases object strength or armor rating by 5 for a single object or armor piece, no longer than 5` per Practitioner Title. "
+    ],
+    "Strenghthen Metal(Greater)": [
+      "Strenghthen Metal(Greater)",
+      "22",
+      "50",
+      "Emanating",
+      "Increases object strength or armor rating by 10 for a single object or armor piece, no longer than 10` per Practitioner Title. "
+    ]
+  }
+}

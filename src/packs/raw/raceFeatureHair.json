@@ -1,0 +1,480 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceFeatureHair",
+    "lines": [
+      39827,
+      39945
+    ]
+  },
+  "entries": {
+    "Apocritara": [
+      "",
+      ""
+    ],
+    "Arachen": [
+      "Hair:",
+      "Black,Brown,Blonde,Red,Gray,Bluish Gray"
+    ],
+    "Avian(Dark)": [
+      "",
+      ""
+    ],
+    "Avian(Forest)": [
+      "Plumage:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Avian(Mountain)": [
+      "Plumage:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Ba’Cora": [
+      "Head Fur:",
+      "Mixed,Black,Dark Brown,Brown,White,Silver,Tan,Gray"
+    ],
+    "Ba’Cora(Slight Physique)": [
+      "Head Fur:",
+      "Brown,Gray"
+    ],
+    "Beastman": [
+      "Hair:",
+      "Black,White,Gray"
+    ],
+    "Brachara": [
+      "",
+      ""
+    ],
+    "Brok": [
+      "Hair:",
+      "Black,Reddish Blonde,Auburn,Red"
+    ],
+    "Brownie": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Centaur": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White,Silvery"
+    ],
+    "Cervara": [
+      "",
+      ""
+    ],
+    "Changeling": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Chetahl": [
+      "",
+      ""
+    ],
+    "Crystori": [
+      "",
+      ""
+    ],
+    "Dao": [
+      "Hair:",
+      "None,Black,Brown,Red,Gray"
+    ],
+    "Djinn": [
+      "Hair:",
+      "None,White,Silver,Gray,Blue"
+    ],
+    "Dryad": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Dwarf(Civilized)": [
+      "Hair:",
+      "Black,Dark Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Dwarf(Dark)": [
+      "Hair:",
+      "Black,Dark Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Dwarf(Fire)": [
+      "Hair:",
+      "Charcoal,Black,Auburn,Gray"
+    ],
+    "Dwarf(Iron)": [
+      "Head Casing:",
+      "Tin,Bronze,Copper,Mixed,Black Iron,Iron,Steel,Silver,Chrome,Rusted Iron,Golden"
+    ],
+    "Dwarf(Mountain)": [
+      "Hair:",
+      "Black,Dark Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Dwarf(Stone)": [
+      "Head Sculpt:",
+      "Clear,Translucent,Flecked White,Light Brown,Tan,Dark Brown,Light Gray,Gray,Dark Gray,Blue,Green,Reddish Brown,Mixed,Marbled"
+    ],
+    "Elf(Dark)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(Desert)": [
+      "Hair:",
+      "Black,Brown,Dark Blonde,Auburn"
+    ],
+    "Elf(Dread)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Auburn"
+    ],
+    "Elf(Gray)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(High)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(Ice)": [
+      "Hair:",
+      "White,Silver,Gray,Blue,Dark Blue"
+    ],
+    "Elf(Sea)": [
+      "Hair:",
+      "Black,Dark Brown,Blonde,Silver,Green,Aqua"
+    ],
+    "Elf(Shadow)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(Silver)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(Wild)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Elf(Wood)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Equara": [
+      "",
+      ""
+    ],
+    "Fairy": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,White,Green"
+    ],
+    "Fairy(Dark)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,White,Green"
+    ],
+    "Famorian": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Formless": [
+      "",
+      ""
+    ],
+    "Gaunt": [
+      "Hair:",
+      "White,Gray,Pale Blue"
+    ],
+    "Geebra": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Giant(Civilized)": [
+      "",
+      ""
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "",
+      ""
+    ],
+    "Giant(True)": [
+      "",
+      ""
+    ],
+    "Gnome": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Goblin(Forest)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Goblin(Mountain)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Goblin(Plains)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Grahl": [
+      "",
+      ""
+    ],
+    "Gremlin": [
+      "",
+      ""
+    ],
+    "Grethen": [
+      "",
+      ""
+    ],
+    "Gryphara": [
+      "",
+      ""
+    ],
+    "Hippotara": [
+      "",
+      ""
+    ],
+    "Hobgoblin": [
+      "Hair:",
+      "Black,Dark Brown,Dark Blonde,Mixed,Red,Green"
+    ],
+    "Human(Barbaric)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Human(Civilized:City)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Human(Civilized:Port)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Human(Civilized:Town)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Human(Civilized:Village)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Ifrit": [
+      "Hair:",
+      "None,Black,Red,Gray,Yellow"
+    ],
+    "Jumara": [
+      "",
+      ""
+    ],
+    "Katara": [
+      "",
+      ""
+    ],
+    "Kenku": [
+      "",
+      ""
+    ],
+    "Kerasara": [
+      "",
+      ""
+    ],
+    "Lagara": [
+      "",
+      ""
+    ],
+    "Leprechaun": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Lissara": [
+      "",
+      ""
+    ],
+    "Lotara": [
+      "",
+      ""
+    ],
+    "Loxodara": [
+      "",
+      ""
+    ],
+    "Lutrinara": [
+      "",
+      ""
+    ],
+    "Maginos": [
+      "",
+      ""
+    ],
+    "Maginos(Clay)": [
+      "",
+      ""
+    ],
+    "Maginos(Metal)": [
+      "",
+      ""
+    ],
+    "Maginos(Stone)": [
+      "",
+      ""
+    ],
+    "Maginos(Wood)": [
+      "",
+      ""
+    ],
+    "Marid": [
+      "Hair:",
+      "None,Silver,Green,Gray,Blue"
+    ],
+    "Mechanos": [
+      "",
+      ""
+    ],
+    "Mellivara": [
+      "",
+      ""
+    ],
+    "Mephyt(Fire)": [
+      "Hair:",
+      "Black,Brown,Red,Gray"
+    ],
+    "Mephyt(Ice)": [
+      "Hair:",
+      "White,Silver,Gray,Light Blue,Dark Blue"
+    ],
+    "Merfolk": [
+      "Hair:",
+      "Black,Brown,Dark Blonde,Blonde,Auburn,Red,Green"
+    ],
+    "Midfolk(Forest)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Midfolk(River)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Midfolk(Town)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,White"
+    ],
+    "Nixie": [
+      "Hair:",
+      "White,Silver,Light Green,Dark Green,Gray,Light Blue,Dark Blue"
+    ],
+    "Nymph": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Ogre": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,Green"
+    ],
+    "Ogre(Magic)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,Green"
+    ],
+    "Planar": [
+      "",
+      ""
+    ],
+    "Podling": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,White,Green"
+    ],
+    "Ratahl": [
+      "Head Fur:",
+      "Black,Brown,Mixed,White,Gray"
+    ],
+    "S’rett": [
+      "",
+      ""
+    ],
+    "Sasquatch/Yeti": [
+      "Head Fur:",
+      "Black,Brown,Russet,White"
+    ],
+    "Satyr/Fawn": [
+      "Hair:",
+      "Black,Brown,Russet,White,Green,Gray"
+    ],
+    "Saurian": [
+      "",
+      ""
+    ],
+    "Scethen": [
+      "Hair:",
+      "Black,Brown,Auburn,Brownish Gray,Bluish Gray"
+    ],
+    "Se’eth": [
+      "",
+      ""
+    ],
+    "Sha’Cora": [
+      "",
+      ""
+    ],
+    "Sporeling": [
+      "Hair:",
+      "None,Black,Brown,Auburn,White,Green,Gray"
+    ],
+    "Sura’keth": [
+      "",
+      ""
+    ],
+    "Sura’rath": [
+      "",
+      ""
+    ],
+    "Susara": [
+      "",
+      ""
+    ],
+    "Sylph": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Blonde,White,Silvery,Green"
+    ],
+    "Taurian": [
+      "Head Fur:",
+      "Black,Brown,Mixed,White,Gray"
+    ],
+    "Testudara": [
+      "",
+      ""
+    ],
+    "Troll": [
+      "Hair:",
+      "Black Tufts"
+    ],
+    "Troll(Ice)": [
+      "Hair:",
+      "Black,White,Green,Gray,Blue"
+    ],
+    "Troll(Rock)": [
+      "Hair:",
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Mixed,Red,Green"
+    ],
+    "Ursara": [
+      "",
+      ""
+    ],
+    "Vulpara": [
+      "",
+      ""
+    ],
+    "Whalrog": [
+      "Hair:",
+      "Black,Brown,Mixed,Gray"
+    ],
+    "Wildling": [
+      "Head Foliage:",
+      "Red,White,Silver,Light Green,Green,Dark Green,Dark Green,Yellow,Light Blue,Blue,Dark Blue,Bluish Gray,Violet"
+    ],
+    "Wolfen": [
+      "Head Fur:",
+      "Black,Brown,Red,White,Mixed,Gray"
+    ],
+    "Xar’Xeth": [
+      "",
+      ""
+    ]
+  }
+}

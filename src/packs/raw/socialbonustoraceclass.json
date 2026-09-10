@@ -1,0 +1,709 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialbonustoraceclass",
+    "lines": [
+      57120,
+      57328
+    ]
+  },
+  "entries": {
+    "Accounting": [
+      ""
+    ],
+    "Acting": [
+      "Disguise",
+      "+15%"
+    ],
+    "Administration": [
+      ""
+    ],
+    "Animal Husbandry": [
+      ""
+    ],
+    "Animal Training": [
+      "Speak to Animal",
+      "+15%",
+      "Tame Animal",
+      "+15%"
+    ],
+    "Anthropology": [
+      ""
+    ],
+    "Appraisal": [
+      ""
+    ],
+    "Archaeology": [
+      "Ruins Lore",
+      "+10%"
+    ],
+    "Architecture/Engineering": [
+      ""
+    ],
+    "Armoring": [
+      ""
+    ],
+    "Artisan": [
+      ""
+    ],
+    "Astrology": [
+      "Omen",
+      "+10%",
+      "Divination",
+      "+10%"
+    ],
+    "Astronomy": [
+      ""
+    ],
+    "Baking/Cooking": [
+      ""
+    ],
+    "Ballooning": [
+      ""
+    ],
+    "Banker/Broker": [
+      ""
+    ],
+    "Bar/Inn Keeping": [
+      ""
+    ],
+    "Barbering": [
+      ""
+    ],
+    "Barrel Making": [
+      ""
+    ],
+    "Bartering/Haggling": [
+      ""
+    ],
+    "Basket Weaving": [
+      ""
+    ],
+    "Bee Keeping/Insect Handling": [
+      ""
+    ],
+    "Begging": [
+      ""
+    ],
+    "Boat Wright": [
+      "Sail",
+      "+10%"
+    ],
+    "Bookbinder": [
+      ""
+    ],
+    "Botany": [
+      "Herb Lore",
+      "+10%"
+    ],
+    "Botanist": [
+      "Herb Lore",
+      "+10%"
+    ],
+    "Brewing": [
+      ""
+    ],
+    "Butcher": [
+      ""
+    ],
+    "Butler": [
+      ""
+    ],
+    "Cabinetry": [
+      ""
+    ],
+    "Cage Making": [
+      ""
+    ],
+    "Calligraphy": [
+      "Forgery",
+      "+10%"
+    ],
+    "Candle/Oil Making": [
+      ""
+    ],
+    "Carousing": [
+      ""
+    ],
+    "Carving": [
+      ""
+    ],
+    "Chariot Driving": [
+      ""
+    ],
+    "Chariot Making": [
+      ""
+    ],
+    "Chemistry": [
+      ""
+    ],
+    "Chirugeon": [
+      ""
+    ],
+    "Climatology": [
+      ""
+    ],
+    "Clowning/Jesting": [
+      ""
+    ],
+    "Cobbling": [
+      ""
+    ],
+    "Collecting": [
+      ""
+    ],
+    "Composer": [
+      ""
+    ],
+    "Cosmetics": [
+      "Disguise",
+      "+10%"
+    ],
+    "Courtesan": [
+      ""
+    ],
+    "Craftsman": [
+      ""
+    ],
+    "Crying/Hawking": [
+      ""
+    ],
+    "Dancing": [
+      ""
+    ],
+    "Debating": [
+      ""
+    ],
+    "Diplomacy": [
+      ""
+    ],
+    "Diving": [
+      ""
+    ],
+    "Doll Making": [
+      ""
+    ],
+    "Drawing/Sketching": [
+      ""
+    ],
+    "Drilling": [
+      ""
+    ],
+    "Drudgery": [
+      ""
+    ],
+    "Dyer": [
+      ""
+    ],
+    "Economics": [
+      ""
+    ],
+    "Engraving/Etching": [
+      ""
+    ],
+    "Espionage": [
+      ""
+    ],
+    "Etiquette": [
+      ""
+    ],
+    "Excavation": [
+      ""
+    ],
+    "Explorer": [
+      "Cartography",
+      "+25%",
+      "Navigate",
+      "+20%"
+    ],
+    "Exploser": [
+      ""
+    ],
+    "Falconry": [
+      ""
+    ],
+    "Farming/Planting": [
+      ""
+    ],
+    "Fashion": [
+      ""
+    ],
+    "Ferrier": [
+      ""
+    ],
+    "Fire Making": [
+      ""
+    ],
+    "Fishing": [
+      ""
+    ],
+    "Fletching/Bow Making": [
+      ""
+    ],
+    "Flint Knapping": [
+      ""
+    ],
+    "Florist/Horticulturist": [
+      ""
+    ],
+    "Foraging/Forestry": [
+      ""
+    ],
+    "Forensics": [
+      ""
+    ],
+    "Fortune Telling": [
+      ""
+    ],
+    "Furniture Making": [
+      ""
+    ],
+    "Gambling": [
+      "Cheat",
+      "+10%"
+    ],
+    "Gemology": [
+      ""
+    ],
+    "Genealogy": [
+      ""
+    ],
+    "Geography": [
+      "Cartography",
+      "+5%"
+    ],
+    "Geology": [
+      ""
+    ],
+    "Glass Blowing": [
+      ""
+    ],
+    "Gossip Mongery": [
+      ""
+    ],
+    "Haberdasher": [
+      ""
+    ],
+    "Harlotry": [
+      ""
+    ],
+    "Harvesting": [
+      ""
+    ],
+    "Heavy Drinking": [
+      ""
+    ],
+    "Heraldry": [
+      ""
+    ],
+    "History": [
+      ""
+    ],
+    "Hunting/Trapping": [
+      ""
+    ],
+    "Hydrology": [
+      "Water Lore",
+      "+10%"
+    ],
+    "Instruction": [
+      ""
+    ],
+    "Instrument Making": [
+      ""
+    ],
+    "Instrument Playing": [
+      ""
+    ],
+    "Inventor": [
+      ""
+    ],
+    "Irrigation": [
+      ""
+    ],
+    "Juggling": [
+      ""
+    ],
+    "Kite Flying": [
+      ""
+    ],
+    "Laborer": [
+      ""
+    ],
+    "Lady Servant": [
+      ""
+    ],
+    "Leadership": [
+      ""
+    ],
+    "Leather Working": [
+      ""
+    ],
+    "Leeching": [
+      ""
+    ],
+    "Lens Making": [
+      ""
+    ],
+    "Librarian": [
+      ""
+    ],
+    "Lip Reading": [
+      ""
+    ],
+    "Locksmith": [
+      "Open Locks",
+      "+15%"
+    ],
+    "Logic": [
+      ""
+    ],
+    "Loom Mastery": [
+      ""
+    ],
+    "Lumberjack": [
+      ""
+    ],
+    "Massage Therapy": [
+      ""
+    ],
+    "Mathematics": [
+      ""
+    ],
+    "Metal Working": [
+      ""
+    ],
+    "Metallurgy": [
+      ""
+    ],
+    "Metaphysics": [
+      ""
+    ],
+    "Meteorology": [
+      "Direction Knowledge",
+      "+10%",
+      "Distance Knowledge",
+      "+10%",
+      "Smell",
+      "+10%",
+      "Gaea Lore",
+      "+10%",
+      "Nature Lore",
+      "+10%",
+      "Sail",
+      "+10%"
+    ],
+    "Midwife": [
+      ""
+    ],
+    "Milling": [
+      ""
+    ],
+    "Mining/Tunneling": [
+      ""
+    ],
+    "Mocking": [
+      ""
+    ],
+    "Mountaineering": [
+      ""
+    ],
+    "Music Theory": [
+      "Ballad Lore",
+      "+10%",
+      "Chant",
+      "+10%",
+      "Drum",
+      "+10%",
+      "Play",
+      "+10%",
+      "Rhythm Lore",
+      "+10%",
+      "Rhythmic Mastery",
+      "+10%",
+      "Sing",
+      "+10%",
+      "Song Lore",
+      "+10%"
+    ],
+    "Oceanography": [
+      "Navigate",
+      "+10%",
+      "Sail",
+      "+10%"
+    ],
+    "Overseer/Manager": [
+      ""
+    ],
+    "Page": [
+      ""
+    ],
+    "Painting": [
+      ""
+    ],
+    "Paving/Road Building": [
+      ""
+    ],
+    "Perfume/Scent Making": [
+      "Herb Lore",
+      "+10%"
+    ],
+    "Philosophy": [
+      "Detect Alignment",
+      "+20%",
+      "Truth Tell",
+      "+20%"
+    ],
+    "Physics": [
+      "Kinetics Knowledge",
+      "+10%"
+    ],
+    "Physiology": [
+      ""
+    ],
+    "Plumbing": [
+      ""
+    ],
+    "Politics": [
+      ""
+    ],
+    "Pottery Making": [
+      ""
+    ],
+    "Printing/Typesetting": [
+      ""
+    ],
+    "Prospecting": [
+      ""
+    ],
+    "Psychology": [
+      "Charming",
+      "+10%",
+      "Detect Alignment",
+      "+10%",
+      "Lie",
+      "+10%",
+      "Truth Tell ",
+      "+10%",
+      "Cure Insanity",
+      "+20%",
+      "Soothe",
+      "+20%",
+      "Insanity",
+      "+20%"
+    ],
+    "Pulper": [
+      ""
+    ],
+    "Puppetry": [
+      ""
+    ],
+    "Pyrotechnics": [
+      ""
+    ],
+    "Recite Poetry": [
+      ""
+    ],
+    "Reporting/Journalism": [
+      ""
+    ],
+    "Riding": [
+      ""
+    ],
+    "Rope Making": [
+      ""
+    ],
+    "Rope Use": [
+      "Escape",
+      "+10%",
+      "Sail",
+      "+10%",
+      "Set Trap",
+      "+10%"
+    ],
+    "Rowing": [
+      ""
+    ],
+    "Running": [
+      ""
+    ],
+    "Sapping": [
+      ""
+    ],
+    "Scavenging": [
+      ""
+    ],
+    "Scholar": [
+      ""
+    ],
+    "Science": [
+      ""
+    ],
+    "Scribing": [
+      ""
+    ],
+    "Sculpting": [
+      ""
+    ],
+    "Sewing": [
+      ""
+    ],
+    "Shepherdry": [
+      ""
+    ],
+    "Signaling": [
+      ""
+    ],
+    "Sing Songs": [
+      ""
+    ],
+    "Skinning/Tanning": [
+      ""
+    ],
+    "Slave Driving": [
+      ""
+    ],
+    "Smithy": [
+      ""
+    ],
+    "Soap Making": [
+      ""
+    ],
+    "Soldiering": [
+      ""
+    ],
+    "Spelunking": [
+      ""
+    ],
+    "Spinning": [
+      ""
+    ],
+    "Squire": [
+      "Weapon Knowledge",
+      "+10%"
+    ],
+    "Steam Power": [
+      ""
+    ],
+    "Stone Masonry": [
+      ""
+    ],
+    "Store Keeping": [
+      ""
+    ],
+    "Story Telling": [
+      ""
+    ],
+    "Supplier": [
+      ""
+    ],
+    "Surfing": [
+      ""
+    ],
+    "Surveyor": [
+      "Cartography",
+      "+5%"
+    ],
+    "Survival": [
+      ""
+    ],
+    "Swimming": [
+      ""
+    ],
+    "Tactics/Strategy": [
+      ""
+    ],
+    "Tailoring": [
+      ""
+    ],
+    "Tattoo Artistry": [
+      ""
+    ],
+    "Taxidermy": [
+      ""
+    ],
+    "Theology": [
+      ""
+    ],
+    "Tightrope Walking": [
+      "Balance",
+      "+10%"
+    ],
+    "Tobacconist": [
+      ""
+    ],
+    "Tool Making": [
+      ""
+    ],
+    "Torturing": [
+      ""
+    ],
+    "Translating": [
+      "Language Lore",
+      "+10%"
+    ],
+    "Tumbling": [
+      ""
+    ],
+    "Undertaking": [
+      ""
+    ],
+    "Upholstery": [
+      ""
+    ],
+    "Valet": [
+      ""
+    ],
+    "Ventriloquism": [
+      ""
+    ],
+    "Wagon/Carriage Driving": [
+      ""
+    ],
+    "Wagon/Carriage Making": [
+      ""
+    ],
+    "Water/Wind Power": [
+      ""
+    ],
+    "Weapon Making": [
+      ""
+    ],
+    "Weaving": [
+      ""
+    ],
+    "Wheel Wright": [
+      ""
+    ],
+    "Wigweaving": [
+      ""
+    ],
+    "Wood Curing": [
+      ""
+    ],
+    "Wood Cutting": [
+      ""
+    ],
+    "Wood Working": [
+      ""
+    ],
+    "Writing": [
+      ""
+    ],
+    "Open Slot": [
+      ""
+    ],
+    "Unavailable": [
+      ""
+    ],
+    "Sacrificed": [
+      ""
+    ],
+    "Converted to Racial Skill Slot": [
+      ""
+    ],
+    "Converted to Class Skill Slot": [
+      ""
+    ]
+  }
+}

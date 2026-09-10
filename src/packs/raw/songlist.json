@@ -1,0 +1,572 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "songlist",
+    "lines": [
+      145378,
+      145468
+    ]
+  },
+  "entries": {
+    "Anger": [
+      "Anger",
+      "16",
+      "10",
+      "10 sec.",
+      "Song Ends",
+      "Cause listeners to roll at +10% to Berserking per Practitioner Title. At 4th or higher Practitioner Title, the singer can direct the listeners to fight the opponent(s) named in the song."
+    ],
+    "Blindness": [
+      "Blindness",
+      "21",
+      "-15",
+      "15 sec.",
+      "Song Ends",
+      "All listeners must make a Magic Resistance at -2% per Practitioner Title or be blinded for duration of the song."
+    ],
+    "Control": [
+      "Control",
+      "22",
+      "-20",
+      "15 sec.",
+      "Song Ends",
+      "All listeners must make a Control Resistance at -2% per Practitioner Title or follow the commands of the singer thereafter. Life threatening commands allow further resistance rolls."
+    ],
+    "Discord": [
+      "Discord",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "Causes one listener per Practitioner Title to make a Control Resistance or attack the nearest living being until it is either dead or not moving. Thereafter, a new resistance is allowed or a further target is attacked. The singer is never chosen as a target by those affected."
+    ],
+    "Electricity": [
+      "Electricity",
+      "22",
+      "-20",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical bolt of electricity that flies at one target per 10 seconds. The song can continue and produce a new bolt every 10 seconds thereafter but only one bolt per Practitioner Title can be created per day. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the bolt must make a Magic Resistance. Failure indicates 1d8 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage."
+    ],
+    "Feasting": [
+      "Feasting",
+      "14",
+      "20",
+      "30 sec.",
+      "Varies",
+      "Creates a filling meal in front of one listener per Practitioner Title. The meals only last one hour per Practitioner Title after the song ends, thereafter it will fade away if not consumed."
+    ],
+    "Fear": [
+      "Fear",
+      "18",
+      "0",
+      "15 sec.",
+      "Song Ends",
+      "Causes one enemy per Practitioner Title to make a Control Resistance or flee the sound of the song."
+    ],
+    "Fire": [
+      "Fire",
+      "20",
+      "-10",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical ball of fire that flies at one target per 10 seconds. The song can continue and produce a new ball every 10 seconds thereafter but only one ball per Practitioner Title can be created per day. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the ball must make a Magic Resistance. Failure indicates 1d6 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage."
+    ],
+    "Flying": [
+      "Flying",
+      "19",
+      "-5",
+      "1 min.",
+      "Varies",
+      "Allows the singer and one individual per Practitioner Title to fly as the spell Fly for the duration of the song and up to one minute per Practitioner Title after the song is completed."
+    ],
+    "Healing": [
+      "Healing",
+      "17",
+      "5",
+      "1 min.",
+      "Instant",
+      "The area most damaged on each listener is healed 1d4 per Practitioner Title."
+    ],
+    "Illusion": [
+      "Illusion",
+      "20",
+      "-10",
+      "15 sec.",
+      "Song Ends",
+      "Causes an illusion to appear as indicated by the song. At 1st Practitioner Title only taste and olfactory illusions are allowed, at 3rd auditory is added, at 5th visual is added, at 7th tactile sensations are added and at 9th illusion of sense (emotion, feeling) is added."
+    ],
+    "Listening": [
+      "Listening",
+      "19",
+      "-5",
+      "10 sec.",
+      "Varies",
+      "Causes all users to make a Control Resistance at -2% per Practitioner Title or listen to Skill user for 10-40 seconds per Practitioner Title after the song ends. Other actions may be taken by the listeners."
+    ],
+    "Love": [
+      "Love",
+      "15",
+      "15",
+      "30 sec.",
+      "Varies",
+      "Listeners have a -2% per Practitioner Title to Control Resistance against any effect from the practitioner. Lasts for 1d4 hours per Practitioner Title after the song ends. Followers gain +5% to morale rolls per Practitioner Title for the same period."
+    ],
+    "Luck": [
+      "Luck",
+      "18",
+      "0",
+      "1 min.",
+      "1 day",
+      "The skill grants 2-7 luck points (+1/+5% per point) to one listener per Practitioner Title as the spell Luck. This song can only be sung once per day."
+    ],
+    "Pain": [
+      "Pain",
+      "19",
+      "-5",
+      "20 sec.",
+      "Song Ends",
+      "All enemies of the singer make a Magic Resistance. Failure indicates 1d6 damage per Practitioner Title in the area named in the song. Success over 1/2 Magic Resistance indicates 1/2 damage and success equal to or under 1/2 indicates no damage. Magic Resistance is rerolled every 20 seconds of the song. This song can only be sung once a day per Practitioner Title."
+    ],
+    "Paralysis": [
+      "Paralysis",
+      "21",
+      "-15",
+      "20 sec.",
+      "Song Ends",
+      "All listeners must make a Control Resistance at -2% per Practitioner Title or be paralyzed for the duration of the song."
+    ],
+    "Protection": [
+      "Protection",
+      "16",
+      "10",
+      "30 sec.",
+      "Song Ends",
+      "Defensive adjustment is -1 per Practitioner Title, +5% to all resistances per Practitioner Title to all friendly listeners during the duration of the song."
+    ],
+    "Revealing": [
+      "Revealing",
+      "20",
+      "-10",
+      "15 sec.",
+      "Song Ends",
+      "One spell or power of concealing or illusion per Practitioner Title within the range of the skill user`s voice to be immediately dispelled with no resistance. The highest Aura, Title or level power is dispelled first. The dispel only lasts as long as the song is being sung."
+    ],
+    "Summon": [
+      "Summon",
+      "23",
+      "-25",
+      "1 min.",
+      "Song Ends",
+      "One named being per Practitioner Title (true name) will be teleported instantly to the skill user."
+    ],
+    "Traveling": [
+      "Traveling",
+      "22",
+      "-20",
+      "1 min.",
+      "Varies",
+      "Creates a gateway that opens to any place the skill user has been more than once. The gateway can be between dimensions. The portal stays open for one minute per Practitioner Title after the song ends. All present can see the portal as a shimmering oval doorway with a view to the target area."
+    ],
+    "Unlucky": [
+      "Unlucky",
+      "18",
+      "0",
+      "20 sec.",
+      "Varies",
+      "The skill grants 2-7 (-1/-5% per point) unluck points to one listener per Practitioner Title as the spell Unlucky. This song can only be sung once per day. The singer is free to use the points against the listeners during or after the song has expired, but within a 24-hour period."
+    ],
+    "Valor": [
+      "Valor",
+      "20",
+      "-10",
+      "10 sec.",
+      "Varies",
+      "One friendly listener per Practitioner Title is granted +1 to hit and +2 damage per 2 Practitioner Titles."
+    ],
+    "Warding": [
+      "Warding",
+      "19",
+      "-5",
+      "10 sec.",
+      "Varies",
+      "One being type named in the song per 3 Practitioner Titles must make a Control Resistance to get within 10` per Practitioner Title of the singer."
+    ],
+    "Burrowing": [
+      "Burrowing",
+      "19",
+      "-5",
+      "1 min.",
+      "Song Ends",
+      "Creates one 10` x 10` x 10` excavation per minute. Only works on rock and earth. The excavation is shorn up only for the duration of the song and under most conditions will collapse immediately after the end of the song unless the wall are braced."
+    ],
+    "Terror": [
+      "Terror",
+      "19",
+      "-5",
+      "30 sec.",
+      "Song Ends",
+      "All listeners of a named type must make a Control Resistance or flee the sound of the song. If the Resitance is made a new roll is required to take hostile action. This is required for each new opponent."
+    ],
+    "Animal Entrancement": [
+      "Animal Entrancement",
+      "15",
+      "15",
+      "10 sec.",
+      "Song Ends",
+      "All animals of one named type who hear the song and fail a Control Resistance (most are 0%) will come to the singer and follow any requests they wish for as long as the song is sung.  If a request will cause harm to the animal, the animal gets a new Control Resistance.  If the singer attempts to entrance an animal who has been tamed by the skill Tame Animal, then the Song Lore practitioner must win a contest of skills with the Tame Animal practitioner to entrance the animal."
+    ],
+    "Tree Parting": [
+      "Tree Parting",
+      "17",
+      "5",
+      "10 sec.",
+      "Song Ends",
+      "This song will cause all plants and tree branches to bend and sway out of the path of the singer, creating a walkway through areas of impassible vegetation. The plants will return to their normal position after the singer has passed. This song will take its effect on plants or plant walls created from spells or invocations, but will not affect creatures of type Magical Plant."
+    ],
+    "Tranquility": [
+      "Tranquility",
+      "16",
+      "10",
+      "10 sec.",
+      "Song Ends",
+      "A sense of peace overcomes all animals who hear the song, and they will cease all hostile action and will initiate no new hostile actions while the song is being sung. If attacked, animals are allowed a new Control Resistance to fight back. Only animals which have been tamed with the Tame Animal skill are allowed an initial Control Resistance; all animals are allowed one if attacked. Does not affect magical animals."
+    ],
+    "Calm Undead": [
+      "Calm Undead",
+      "16",
+      "10",
+      "10 sec.",
+      "Song Ends",
+      "One lesser or greater undead being per Practitioner Title within 5` per Practitioner Title makes a Control Resistance or is unable to take any offensive actions for the duration of the song."
+    ],
+    "Decay": [
+      "Decay",
+      "20",
+      "-10",
+      "10 sec.",
+      "Song Ends",
+      "The skin and muscles of 1 listener of the singer`s choosing slowly decays, inflicting 1d4 damage per second to 1 random body area for the duration of the song. The victim is allowed a Magic Resistance for each second of damage."
+    ],
+    "Death Warrior": [
+      "Death Warrior",
+      "22",
+      "-20",
+      "10 sec.",
+      "Song Ends",
+      "During the duration of the song, 1 being per Practitioner Title of a certain undead type (mentioned in song) is granted +1 to hit, +2 damage per 2 Practitioner Titles, a defensive adjustment of -1 per Practitioner Title, and +5% Resistances per Practitioner Title."
+    ],
+    "Frozen Bones": [
+      "Frozen Bones",
+      "17",
+      "5",
+      "10 sec.",
+      "Song Ends",
+      "One skeleton per Practitioner Title, equal to or lower level than the Practitioner Title, are held in place for the duration of the song. Each skeleton is allowed a Control Resistance. This song affects all skeletons, whether or not they are immune to Hold."
+    ],
+    "Illumination": [
+      "Illumination",
+      "14",
+      "20",
+      "10 sec.",
+      "Song Ends",
+      "Creates diffuse light with a radius of 1` per Practitioner Title appears around the practitioner for the duration of the song. The light is incapable of blinding, nor does it appear to have a particular source. It illuminates an area 4 times the area affected."
+    ],
+    "Incorruption": [
+      "Incorruption",
+      "21",
+      "-15",
+      "30 sec.",
+      "Song Ends",
+      "One being of the singer`s choice within listening range is protected from being converted into either a physical, spiritual or souled undead creature (the practitioner must choose this beforehand), for 1 minute per Practitioner Title. Any spell, power or effect attempting to raise the target as an undead creature has a 5% chance per Practitioner Title to fail, and a -5% per Practitioner Title to the skill roll."
+    ],
+    "Undead Chill Protection": [
+      "Undead Chill Protection",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "One listener per Practitioner Title is immune to cold-based touch attacks from undead for the duration of the song."
+    ],
+    "Undead Disease Protection": [
+      "Undead Disease Protection",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "One listener per Practitioner Title is immune to diseases caused by contact with undead during the duration of the song. Diseases already in effect are unaffected by this song."
+    ],
+    "Calm Waves": [
+      "Calm Waves",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "Allows the singer to lessen the size of water waves within a radius of 25` per Practitioner Title. The size of affected waves decreases by 10% per Practitioner Title. For example, if a 1st Title Bard is standing on an ocean shore whose waves average 5` high, they can change the size of the waves to be only 4.5` high. The singer can affect water within a range of 50` per Practitioner Title."
+    ],
+    "Cloudwalk": [
+      "Cloudwalk",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "Grants the singer and 1 listener per Practitioner Title the ability to walk on cloud and fog as if it were a solid surface."
+    ],
+    "Crashing Waves": [
+      "Crashing Waves",
+      "18",
+      "0",
+      "10 sec.",
+      "Song Ends",
+      "Allows the singer to create water waves within a radius of 25` per Practitioner Title. The size of affected waves increases by 10% per Practitioner Title. For example, if a 6th Title Bard is standing on an ocean shore whose waves average 21` high, they can change the size of the waves to be 60% higher, or 1`4“ taller, with a total height of 3`4“. The singer can affect water within a range of 50` per Practitioner Title."
+    ],
+    "Firewalk": [
+      "Firewalk",
+      "21",
+      "-15",
+      "10 sec.",
+      "Song Ends",
+      "Grants the singer and 1 listener per Practitioner Title the ability to walk on extremely hot surfaces (both magical and non-magical), such as burning embers or heated metal, without any adverse effects for the duration of the song. Only the part(s) of the body with which the being uses to walk are affected, and all other fire or heat will affect the targeted listeners as normal."
+    ],
+    "Remembrance": [
+      "Remembrance",
+      "22",
+      "-20",
+      "10 sec.",
+      "Song Ends",
+      "Causes 1 listener to recall a single forgotten memory of an event that transpired no more than 4 years ago per Practitioner Title."
+    ],
+    "Replenishment": [
+      "Replenishment",
+      "16",
+      "10",
+      "5 sec.",
+      "Song Ends",
+      "Causes 1 listener per Practitioner Title to suddenly become replenished and energized, losing 1 level of fatigue per 2 Practitioner Titles."
+    ],
+    "Slumber": [
+      "Slumber",
+      "17",
+      "5",
+      "5 sec.",
+      "Song Ends",
+      "Causes up to 1 listener per Practitioner Title to make a Control Resistance or instantly fall into a deep sleep for the duration of the song. Has no effect on beings with more than 15 Will Force."
+    ],
+    "Snowmelt": [
+      "Snowmelt",
+      "17",
+      "5",
+      "5 sec.",
+      "Song Ends",
+      "Causes up to 10 cubic feet of snow to melt at a rate of 1 cubic foot per Practitioner Title every 5 minutes. This song can affect both magical and non-magical snow within a range of 10` per Practitioner Title. This song has no effect on ice."
+    ],
+    "Snowsight": [
+      "Snowsight",
+      "17",
+      "5",
+      "5 sec.",
+      "Song Ends",
+      "Allows the singer and 1 listener per Practitioner Title to see normally through falling snow. All snowflakes in the affected targets` line of vision appear transparent for the duration of the song. This song does not allow vision through standing snow, such as a snowdrift."
+    ],
+    "Spirit Grip": [
+      "Spirit Grip",
+      "19",
+      "-5",
+      "10 sec.",
+      "Varies",
+      "Causes 1 listener to be unable to remove an item from their being for 10 minutes per Practitioner Title. Those unaware or unwilling receive a Magic Resistance. All magical and divine magical items receive a Magic Resistance and artifacts are unaffected."
+    ],
+    "Timeless Ruins": [
+      "Timeless Ruins",
+      "18",
+      "0",
+      "30 sec.",
+      "Song Ends",
+      "Allows the singer and 1 listener per Practitioner Title to visualize how a nowruined structure used to look when it was whole, by creating a magical, shimmering outline the color of the singer`s aura. This song affects all ruins within a radius of 50` per Practitioner Title."
+    ],
+    "Untying": [
+      "Untying",
+      "18",
+      "0",
+      "5 sec.",
+      "Song Ends",
+      "Unties 2d4 knots within 10` per Practitioner Title. Each targeted knot must have an object strength no greater than 5 points per Practitioner Title."
+    ],
+    "Waterspeak": [
+      "Waterspeak",
+      "20",
+      "-10",
+      "30 sec.",
+      "Song Ends",
+      "Allows the singer to communicate with tiny animals, plants and bacteria in an area of water up to 1 cubic foot per Practitioner Title. The singer gains a general sense of what has transpired to these various life forms within the past 24 hours. Since some water moves rapidly (such as rivers and streams) and some moves very slowly (such as ponds), the life forms in the affected area of water could have either remained in that spot for the entire 24 hours or have come from different locations and from far away. Depending on the water source, the knowledge granted to the singer is entirely up to the GM`s discretion."
+    ],
+    "Wayfaring": [
+      "Wayfaring",
+      "19",
+      "-5",
+      "15 sec.",
+      "Song Ends",
+      "Grants all friendly listeners a +5% bonus per Practitioner Title to the skills Anthropology, Archeology, Direction Knowledge, Explorer, Navigate, Rowing, Ruins Lore and Sail for the duration of the song."
+    ],
+    "Weariness": [
+      "Weariness",
+      "16",
+      "10",
+      "5 sec.",
+      "Song Ends",
+      "Causes 1 listener per Practitioner Title to suddenly become exhausted, gaining 1 level of fatigue per 2 Practitioner Titles. The targeted being(s) receive a Control Resistance to avoid the effect."
+    ],
+    "Calm Mind": [
+      "Calm Mind",
+      "19",
+      "-5",
+      "10 sec.",
+      "Song Ends",
+      "Listeners are placed in a calm, reflective state, possibly gain relief from controlling effects (a new Control Resistance) and for the duration of the song, are granted +5% to informational skills, +15% to Meditate, Body Control and Tranquil Mind (from an upcoming volume.) +10% to Will Force and concentration saves. Any hostile actions taken negate these effects, except for any control that was broken."
+    ],
+    "Dimensional Repair": [
+      "Dimensional Repair",
+      "20",
+      "-10",
+      "1d4,min.",
+      "Song Ends",
+      "Repairs one broken item held by the singer by replacing it with one from an alternate dimension. The item is now supernatural and may be subtly or greatly different than the original at the GM`s discretion. If the item (or its dimensional replacement) is magical or divine in nature then this effect only has a 5% chance per practitioner title of succeeding."
+    ],
+    "Dream Item": [
+      "Dream Item",
+      "19",
+      "-5",
+      "10 sec.",
+      "Song Ends",
+      "While on the plane of dreams the singer can sing into existence one normal dream item of no more than 5 lb. per practitioner title. The item will last 1 hour per practitioner title and has a 2% chance per practitioner title of returning with the dreamer to their plane of origin when they awaken (or leave) the dream plane."
+    ],
+    "Elemental Transit": [
+      "Elemental Transit",
+      "18",
+      "0",
+      "1 min.",
+      "Varies",
+      "Grants the singer and 1 listener per practitioner title the ability to walk on any liquid as well as immunity to pressure and one other elemental immunity (cold, heat, electricity, acid, life, death, or aura). If on the Plane of Air, the ability to fly at up to 3 feet per Intelligence rating is granted. These effects only operate on the elemental planes and last 1 hour per practitioner title."
+    ],
+    "Resist Supernatural Influence": [
+      "Resist Supernatural Influence",
+      "19",
+      "-5",
+      "5 sec.",
+      "Song Ends",
+      "Grants one new resistance to any current negative effects caused by a supernatural being for all listeners. If more than one negative effect is in place then one new resistance is granted for each until the total number of negative effects exceeds the singer`s practitioner title."
+    ],
+    "Return": [
+      "Return",
+      "17",
+      "5",
+      "10 sec.",
+      "Song Ends",
+      "One supernatural being per practitioner title is afforded the opportunity to return to their plane of origin, to their home or other known safe place."
+    ],
+    "Return of the Lost": [
+      "Return of the Lost",
+      "20",
+      "-10",
+      "1d3,min.",
+      "At Song`s End",
+      "While on the Plane of the Lost/Junk one lost item sung about is returned to the singer, at their feet, at song`s end."
+    ],
+    "Reveal Origin": [
+      "Reveal Origin",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "A symbol appears above the head of one being per practitioner title. The symbol reveals the plane of origin of the being. The symbol can either be seen only by the practitioner or is revealed to all depending on the singer`s desire. Non-detection is proof against this effect. Lasts 1 minute per practitioner title."
+    ],
+    "Sustaining": [
+      "Sustaining",
+      "18",
+      "0",
+      "1 min.",
+      "Varies",
+      "Grants the singer and 1 listener per practitioner title freedom from hunger, thirst and the need to breathe as well as granting immunity to pressure and fatigue for 1 hour per practitioner title."
+    ],
+    "Weave Plants": [
+      "Weave Plants",
+      "18",
+      "0",
+      "1 min.",
+      "Permanent",
+      "Allows the singer to weave plants into 10 feet of usable rope or 1 square foot of usable cloth per practitioner title. The quality of the material is normal unless craftsperson skills are used."
+    ],
+    "Planar Traveling": [
+      "Planar Traveling",
+      "19",
+      "-5",
+      "1 min.",
+      "Varies",
+      "Allows the practitioner to create a gateway to an alternate plane. It will remain open for 1 minute per practitioner title. It is a two-way gateway while open. Also, anyone passing through gateway gains 1 appropriate protection effect for the plane they are traveling to that lasts 1 hour per practitioner title and can be renewed by the practitioner with a 10 second refrain of the original song. Example: Plane of Fire gateway would provide Endure Heat. If the plane traveled to has no plane-wide dangers, no protections are given. If there is more than one dangerous effect the singer chooses one protection."
+    ],
+    "Acid": [
+      "Acid",
+      "24",
+      "-30",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical jet of acid that flies at one target per 10 seconds. The song can continue and produce a new jet every 10 seconds thereafter but only one jet per Practitioner Title can be created per day. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the jet must make a Magic Resistance. Failure indicates 1d10 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage."
+    ],
+    "Arms of the First": [
+      "Arms of the First",
+      "18",
+      "0",
+      "10 min.",
+      "Instant",
+      "Take the practitioner and up to 1 other ally per Class Title to the tree of life in the center of Balance where rebirth occurs for the neutral, unaligned dead."
+    ],
+    "Chaos": [
+      "Chaos",
+      "26",
+      "-40",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical jet of chaos that flies at one target per 10 seconds. The song can continue and produce a new jet every 10 seconds thereafter but only one jet per Practitioner Title can be created per day. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the jet must make a Magic Resistance. Failure indicates 1d12 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage."
+    ],
+    "Cold": [
+      "Cold",
+      "16",
+      "10",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical ray of frost that flies at one target per 10 seconds. The song can continue and produce a new ray every 10 seconds thereafter but only one ray per Practitioner Title can be created per day. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the ray must make a Magic Resistance. Failure indicates 1d4 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage."
+    ],
+    "Gates of Glory": [
+      "Gates of Glory",
+      "18",
+      "0",
+      "10 min.",
+      "Instant",
+      "Take the practitioner and up to 1 other ally per Class Title to the Gates of Heaven (outside) or if already in one of the heavenly planes to the inside of Heaven`s Gates."
+    ],
+    "Gates of Suffering": [
+      "Gates of Suffering",
+      "18",
+      "0",
+      "10 min.",
+      "Instant",
+      "Take the practitioner and up to 1 other ally per Class Title to the Gates of Hell (outside) or if already in one of the hellish planes to the inside of Hell`s Gates."
+    ],
+    "Repulsive Sound": [
+      "Repulsive Sound",
+      "14",
+      "20",
+      "10 sec.",
+      "Song Ends",
+      "Creates a magical cone of repulsion and sound that flies at one target per 10 seconds. The song can continue and produce a new cone every 10 seconds thereafter. This can be done in an unlimited fashion as long as the song is playing, unlike other energy attack songs. The singer must make an Intelligence save to strike a single target in the area desired. Range is up to 10` per Practitioner Title. Anyone struck by the cone must make a Magic Resistance. Failure indicates 1d3 and 1d4+1 damage per Practitioner Title in the area struck. Success over 1/2 the Magic Resistance indicates half damage, and success equal to or under 1/2 indicates no damage. Also, each being struck must make an Agility save at -5% per Practitioner Title (maximum -50%) or be thrown back 5 feet per Practitioner Title (maximum 50`) and knocked to the ground."
+    ],
+    "Rope Move": [
+      "Rope Move",
+      "18",
+      "0",
+      "5 sec.",
+      "Song Ends",
+      "Sends one end of a rope, cord, string, twine, wire, or chain in any direction and directs it tie a knot (or fasten) strongly where directed. It can move anywhere the practitioner can see, up to 50` per Practitioner Title."
+    ]
+  }
+}

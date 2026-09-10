@@ -1,0 +1,345 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "sympathymagiclist",
+    "lines": [
+      146295,
+      146352
+    ]
+  },
+  "entries": {
+    "Drain": [
+      "Drain",
+      "17",
+      "-10",
+      "1 min.",
+      "Instant",
+      "Cup",
+      "Allows the user to transfer one attribute point per 2 Practitioner Titles from any attribute (except Social Class) of the focus being to the practitioner. Points revert back at a rate of one per hour."
+    ],
+    "Hate": [
+      "Hate",
+      "16",
+      "-5",
+      "30 min.",
+      "Instant",
+      "Hair",
+      "Causes the focus to have a negative reaction to a being of the skill user`s choice, unless a Control Resistance is successful."
+    ],
+    "Hurt": [
+      "Hurt",
+      "15",
+      "0",
+      "10 min.",
+      "Instant",
+      "Blood",
+      "Damages 1d4 per Practitioner Titles to one named area."
+    ],
+    "Leech": [
+      "Leech",
+      "18",
+      "-15",
+      "30 min.",
+      "1 day",
+      "Gem",
+      "Allows the practitioner to steal the use of one magical skill, power or spell from the focus for one full day. During this time, the victim cannot use the ability."
+    ],
+    "Poverty": [
+      "Poverty",
+      "17",
+      "-10",
+      "1 hour",
+      "1 day",
+      "Coin",
+      "The next monetary transaction attempted by the focus being will go against them, generating a loss of money. The transaction must occur within one day of the ritual."
+    ],
+    "Unlucky": [
+      "Unlucky",
+      "16",
+      "-5",
+      "10 min.",
+      "1 day",
+      "Clover",
+      "Grants 4 unlucky points to be used against the focus by the skill user or any they inform of the unlucky ritual. Each point can be used to alter a die roll by +/- 1 or 5% (whichever is applicable) against the focus. Only one point can be used at a time."
+    ],
+    "Vulnerable": [
+      "Vulnerable",
+      "18",
+      "-15",
+      "20 min.",
+      "1 day",
+      "Clothing",
+      "Focus is -5% to Magic, Illusion and Control Resistances for one full day."
+    ],
+    "Fumble": [
+      "Fumble",
+      "20",
+      "-25",
+      "5 min.",
+      "Varies",
+      "Fingernails",
+      "Causes victim to be -2/-10% to all physical action (Agility save, combat skill, stealth/intrusive, etc.) per Practitioner Title. Lasts 1 hour per Practitioner Title."
+    ],
+    "Enfeeble": [
+      "Enfeeble",
+      "25",
+      "-50",
+      "1 hour",
+      "Varies",
+      "Sweat",
+      "The victim temporarily loses 1/10 of their lifespan per Practitioner Title. Physical and mental effects are based on age. The victim does not gain the Wisdom and Knowledge bonuses usually afforded to older beings. If 100% of lifespan is reached by this effect, the enfeebled being suffers a heart attack and organ failure. The heart attack re-occurs every hour of effect until the effect ends or the victim is dead. Enfeeble last 1 hour per Practitioner Title."
+    ],
+    "Feral Instinct": [
+      "Feral Instinct",
+      "18",
+      "-15",
+      "30 min.",
+      "1 day",
+      "Hair",
+      "Causes one named being to feel and behave with the tendencies of one chosen animal for a full day. For example, if monkey was chosen, the focus being would crave bananas, try to pick insects from the hair of others, and make occasional ooh-ooh noises."
+    ],
+    "Lycanthropy": [
+      "Lycanthropy",
+      "22",
+      "-35",
+      "1 hour",
+      "Permanent",
+      "Blood",
+      "Causes one named being to be afflicted with the lycanthropy of the practitioner`s choice. The victim is afforded a Disease Resistance to avoid."
+    ],
+    "Crack Crypt": [
+      "Crack Crypt",
+      "20",
+      "-25",
+      "1 hour",
+      "Varies",
+      "Crypt Piece",
+      "Creates an opening in a crypt or tomb, large enough to admit a humanoid being. The hole remains for 10 minutes per Practitioner Title before the crypt reseals itself. This ritual breaks the Empathy Magic Ritual Seal Crypt by using a contest of Will Force, modified by Practitioner Titles and Will Force differences (+/-5% per)."
+    ],
+    "Unholy Barrier": [
+      "Unholy Barrier",
+      "25",
+      "-50",
+      "2 hours",
+      "Varies",
+      "Divine Symbol",
+      "Creates an alignment colored barrier around the ritualist, protecting the ritualist from good-aligned divine magical spells, skills, weapons, etc. This lasts 1 day per Practitioner Title and remains in effect for the full amount of time, even after the ritualist is deceased."
+    ],
+    "Still Good": [
+      "Still Good",
+      "30",
+      "-75",
+      "1 hour",
+      "1 day",
+      "Divine Symbol",
+      "Blocks a single being from contacting their good deity for the use of any invocations or skills, including Commune, for a period of 24 hours."
+    ],
+    "Trap Psyche": [
+      "Trap Psyche",
+      "24",
+      "-45",
+      "1 hour",
+      "Varies",
+      "Gem",
+      "Places a special form of protection upon the target lasting 1 hour per Practioner Title, allowing the Mind, Spirit, and Soul to remain within the target`s Body upon death, instead of transitioning into ghost-form. The Body will house them for 1 hour per Will Force of the individual before the effects of Death of the Body take place. During this time, the Body can be animated by the trapped psyche (through Telekinesis if the focus has this skill), but all physical skills and Stats are halved."
+    ],
+    "Burning": [
+      "Burning",
+      "18",
+      "-15",
+      "30 min.",
+      "1 day",
+      "Skin",
+      "Causes the focus to be extra-susceptible to burns, resulting in a -5% per Practitioner Title to Magic Resistances against fire, an extra 1d6 fire damage (including non-magical flames), and 1d4 damage per minute to all areas exposed to the sun."
+    ],
+    "Clumsiness": [
+      "Clumsiness",
+      "18",
+      "-15",
+      "20 min.",
+      "1 day",
+      "Glove",
+      "Causes the focus to be clumsy, resulting in -5% per Practitioner Title to Agility saves."
+    ],
+    "Distraction": [
+      "Distraction",
+      "15",
+      "0",
+      "30 min.",
+      "1 day",
+      "String/Twine",
+      "Causes the focus to be easily distracted, resulting in -5% per Practitioner Title to Perception and Concentration (Intelligence save) rolls."
+    ],
+    "Doubt": [
+      "Doubt",
+      "16",
+      "-5",
+      "5 min.",
+      "1 day",
+      "Hair",
+      "Causes the focus to be doubtful of others and personal ideas, resulting in a -5% per Practitioner Title to Truth Tell and Informational skills."
+    ],
+    "Forgetfulness": [
+      "Forgetfulness",
+      "18",
+      "-15",
+      "5 min.",
+      "1 day",
+      "Blank Journal Page",
+      "Causes the focus to temporarily forget a single memory of an event that transpired no more than 4 years ago per Practitioner Title."
+    ],
+    "Frostbite": [
+      "Frostbite",
+      "17",
+      "-10",
+      "5 min.",
+      "1 day",
+      "Claw/Fingernail",
+      "Causes the focus to be extra-susceptible to low temperatures, resulting in a -5% per Practitioner Title to Magic Resistances against cold, and 1d4 damage per minute to body extremities in temperatures below freezing."
+    ],
+    "Trust": [
+      "Trust",
+      "17",
+      "-10",
+      "5 min.",
+      "1 day",
+      "Eyelash",
+      "Causes the focus to be overly trusting of others, resulting in a -5% per Practitioner Title to Truth Tell and Wisdom saves."
+    ],
+    "Wingless": [
+      "Wingless",
+      "17",
+      "-10",
+      "30 min.",
+      "1 day",
+      "Feather/Wing Skin",
+      "Weakens the focus`s natural wings, preventing them from granting the ability of flight. This ritual has no effect on mentally projected wings such as those of fairies."
+    ],
+    "Corrupt Health": [
+      "Corrupt Health",
+      "13",
+      "10",
+      "10 min.",
+      "Varies",
+      "Blood",
+      "Penalizes one target on the same plane as the ritualists to have -5% (per 3 full practitioner titles of the ritualist) to all Disease Resistance rolls for 1 hour per practitioner title."
+    ],
+    "Corrupt Mystic": [
+      "Corrupt Mystic",
+      "20",
+      "-25",
+      "10 min.",
+      "Varies",
+      "Coin/Gem",
+      "Penalizes one target on the same plane as the ritualists to have -5% (per 3 full practitioner titles of the ritualist) to all Magic Resistance rolls for 1 hour per practitioner title."
+    ],
+    "Corrupt Truth": [
+      "Corrupt Truth",
+      "15",
+      "0",
+      "10 min.",
+      "Varies",
+      "Clothing",
+      "Penalizes one target on the same plane as the ritualists to have -5% (per 3 full practitioner titles of the ritualist) to all Illusion Resistance rolls for 1 hour per practitioner title."
+    ],
+    "Corrupt Vital": [
+      "Corrupt Vital",
+      "16",
+      "-5",
+      "10 min.",
+      "Varies",
+      "Saliva",
+      "Penalizes one target on the same plane as the ritualists to have -5% (per 3 full practitioner titles of the ritualist) to all Poison Resistance rolls for 1 hour per practitioner title."
+    ],
+    "Corrupt Will": [
+      "Corrupt Will",
+      "18",
+      "-15",
+      "10 min.",
+      "Varies",
+      "Tear",
+      "Penalizes one target on the same plane as the ritualists to have -5% (per 3 full practitioner titles of the ritualist) to all Control Resistance rolls for 1 hour per practitioner title."
+    ],
+    "Forced Mind Swap": [
+      "Forced Mind Swap",
+      "17",
+      "-10",
+      "1 hour",
+      "Varies",
+      "Dried Skin",
+      "The forced swap of minds with another being. Mental probing of the target occurs during the ritual and at the end of the ritual the ritualist or one designate. Makes a Control Resistance (if desired) and swaps minds with the target. The effect lasts 1 hour per practitioner title or permanently if 1 Will Force is spent by the ritualist."
+    ],
+    "Reveal Spirit": [
+      "Reveal Spirit",
+      "15",
+      "0",
+      "10 sec.",
+      "Instant",
+      "None",
+      "Causes all supernatural spirits, recently dead beings (ghosts), etc. to appear in some form even if the spirit doesn`t normally have a form (an outline or orb of aura) is created based on the alignment of the being. See the spell Reveal Aura. No save or resistance is allowed to avoid this effect but Non-Detection and like effects are proof against it."
+    ],
+    "Bind the Dead": [
+      "Bind the Dead",
+      "18",
+      "-15",
+      "1 hour",
+      "Goal Complete",
+      "Blood",
+      "Ghosts will lose their required special requirements to be near where they died and or another item and be drawn and bound to the item the ritualist carries lasts for 1 day."
+    ],
+    "Blood Bond": [
+      "Blood Bond",
+      "18",
+      "-15",
+      "1 hour",
+      "Goal Complete",
+      "Blood",
+      "Links the practitioner and up to 2 others per class title. The practitioner cuts themselves and each being participating cuts themselves and each place wound against wound to all of the participants exchanging blood, creating the bond. After this they can all sense the direction of any other in the bond and approximate distance. They must make a Control Resistance to attack or betray any of the others. This ritual lasts until specified goal or quest is completed."
+    ],
+    "Conscript Spirit": [
+      "Conscript Spirit",
+      "17",
+      "-10",
+      "1 hour",
+      "Varies",
+      "Unholy Water",
+      "Requires the burial place or body of where the spirit died. Or any anchoring object that the spirit prizes or prized while alive. Spirit gets a Control Resistance at -20% to be controlled by the practitioner for up to 1 hour per practitioner title."
+    ],
+    "Death Pact": [
+      "Death Pact",
+      "19",
+      "-20",
+      "1 hour",
+      "Until Converted",
+      "Undead Part",
+      "Practitioner performs this ritual on themselves or a single individual. A target undead type is chosen based on the component and an indelible mark placed somewhere on the body of the target. The target now has made a dark pact and upon their death will begin a conversion process. On the next night they convert into the undead type chosen by the component."
+    ],
+    "Deny Good": [
+      "Deny Good",
+      "18",
+      "-15",
+      "1 hour",
+      "1 day",
+      "Personal Item",
+      "Requires an object handled by a good invocation user. This object and the particular good invoker are then focused on by the ritual performer who must have evil as part of their alignment or worship an evil deity. If the ritual skill roll is successful the good invoker focused on is unable to use any invocations for the remainder of the day."
+    ],
+    "Devil Debt": [
+      "Devil Debt",
+      "18",
+      "-15",
+      "10 min.",
+      "Instant",
+      "Black or Red Hoof",
+      "Calls to the nearest Devil on the same plane (under 10th level). The Devil may make a Control Resistance to resist (if desired). There is a 1% chance a Demon comes instead. The Demon will be difficult to deal with and will likely demand a sacrifice. A Devil (or Demon) may come without resisting (GM`s discretion) if they are curious. Once present it will make itself known to practitioner. At that time the practitioner can make a request. The Devil may grant it but will demand a favor in return, creating a debt. The more that is asked the higher the request."
+    ],
+    "Expulsion": [
+      "Expulsion",
+      "18",
+      "-15",
+      "1 min.",
+      "Permanent",
+      "Personal Item",
+      "One being automatically fails all Affinity checks with anyone in the named group (ritualist must be a member of). Members of that group will shun the expelled individual and any interaction with the being requires a Will Force save."
+    ]
+  }
+}

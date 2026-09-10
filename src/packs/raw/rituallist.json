@@ -1,0 +1,580 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "rituallist",
+    "lines": [
+      143037,
+      143128
+    ]
+  },
+  "entries": {
+    "Break Love": [
+      "Break Love",
+      "14",
+      "5",
+      "5 min.",
+      "Instant",
+      "Causes a rift in a love union unless both lovers make a Control Resistance."
+    ],
+    "Cause Love": [
+      "Cause Love",
+      "15",
+      "0",
+      "10 min.",
+      "Instant",
+      "Causes a favorable reaction from one individual unless a Control Resistance is made."
+    ],
+    "Control": [
+      "Control",
+      "17",
+      "-10",
+      "5 min.",
+      "1d4+1 hours",
+      "Control by verbal command a single visualized individual. If harmful, a Control Resistance is allowed to escape the commands."
+    ],
+    "Health": [
+      "Health",
+      "16",
+      "-5",
+      "30 min.",
+      "1 day",
+      "Vitality is increased by 1d4 for one day for 1 individual; new Poison Resistance and Disease Resistance at +30% thereafter for one full day."
+    ],
+    "Link": [
+      "Link",
+      "19",
+      "-20",
+      "10 min.",
+      "Varies",
+      "Links the minds of a group of people (one person per Practitioner Title). Each one senses the others` thoughts and can speak and be heard telepathically for up to one hour per Practitioner Title)."
+    ],
+    "Luck": [
+      "Luck",
+      "14",
+      "5",
+      "10 min.",
+      "1 day",
+      "Gives 2-5 luck points to any individual visualized including self. A luck point gives a +1 or +5% modifier to any roll, modifying it up or down to the lucky being`s advantage."
+    ],
+    "Power": [
+      "Power",
+      "20",
+      "-25",
+      "30 min.",
+      "1 day",
+      "Gives +10 to current Aura pool, +4 to Aura Control and +20% to Magic Resistance to 1 individual."
+    ],
+    "Protection": [
+      "Protection",
+      "17",
+      "-10",
+      "20 min.",
+      "1 day",
+      "Removes the current control effects from one individual and allows a +50% to Control Resistance for one day."
+    ],
+    "Release Dead": [
+      "Release Dead",
+      "15",
+      "0",
+      "5 min.",
+      "Instant",
+      "Lesser undead (creature level 1-4) within sight must make a Magic Resistance or be destroyed."
+    ],
+    "Scrying": [
+      "Scrying",
+      "18",
+      "-15",
+      "20 min.",
+      "Varies",
+      "Allows user to scry on an individual, object or place for one hour per Practitioner Title, as the skill Scrying."
+    ],
+    "Treasure": [
+      "Treasure",
+      "18",
+      "-15",
+      "30 min.",
+      "Instant",
+      "User gets vision of the nearest hidden treasure and is able to sense where it lies and the general contents of the treasure."
+    ],
+    "Wound Enemy": [
+      "Wound Enemy",
+      "16",
+      "-5",
+      "20 min.",
+      "1 day",
+      "Causes one opponent to make a Control Resistance or suffer -1d4 physical attributes for one full day."
+    ],
+    "Atonement": [
+      "Atonement",
+      "15",
+      "0",
+      "1 hour",
+      "Instant",
+      "An offering is made to the deity in question. If the offer is suitable, the motive clear and the ritual successful, atonement is achieved and all alignment checks are removed."
+    ],
+    "Burial": [
+      "Burial",
+      "12",
+      "15",
+      "10 min.",
+      "Permanent",
+      "If performed on the day of burial, all dead buried cannot rise as undead or ever be used for dark purposes of any kind."
+    ],
+    "Purification": [
+      "Purification",
+      "18",
+      "-15",
+      "1 hour",
+      "Instant",
+      "Remove all controlling magic from any living being. Curses and magical diseases such a lycanlhropy are unaffected."
+    ],
+    "Wedding": [
+      "Wedding",
+      "8",
+      "35",
+      "1 hour",
+      "Permanent",
+      "Used to marry two persons in a legal and binding fashion in the eye of the religion and possibly the society. The marriage is thus blessed and any attempts to disrupt the marriage involving magic are at -10% to the skill rolls and +10% to the married couple`s resistance rolls. The couple cannot be affected by the Hate or Love ritual."
+    ],
+    "Pact": [
+      "Pact",
+      "15",
+      "0",
+      "1 hour",
+      "Until broken",
+      "Both parties agree to the conditions of a pact. If either party breaks the pact, that person suffers a curse per the Curse skill rules. The modifier of the ritual should be difference of the rating of the curse used in the ritual versus Ritual Lore (15), (as the skill Curse). The Ritual Lore practitioner does not need to have the Curse skill."
+    ],
+    "Bind Magical Animal Familiar": [
+      "Bind Magical Animal Familiar",
+      "20",
+      "-25",
+      "1 hour.",
+      "Until broken",
+      "The practitioner performs this ritual and binds 1 animal or magical animal familiar to the ritualist. The effects are identical to the spell Bind Familiar, with the exception that no Will Force is given up. The familiar must be a creature of type animal or magical animal. A Ritual Lore practitioner may only have 1 animal familiar and 1 magical animal familiar at a time (allowing for 2 familiars)."
+    ],
+    "Impervious Forest": [
+      "Impervious Forest",
+      "22",
+      "-35",
+      "30 min.",
+      "Permanent",
+      "The practitioner performs this ritual in an area of forest no larger than 100 yards per practitioner Title.  All of the plants within this area become immune to fire and cannot burn as long as they remain in this area."
+    ],
+    "Locate Magical Animal": [
+      "Locate Magical Animal",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "The practitoner can find the location of one specific known and named animal or magical animal."
+    ],
+    "Sense Magical Animal": [
+      "Sense Magical Animal",
+      "16",
+      "-5",
+      "20 min.",
+      "1 day",
+      "The practitioner can sense all animals or magical animals of one type in a named area. For example, the practitioner can sense all dire wolves in the Black Forest."
+    ],
+    "Bind Form": [
+      "Bind Form",
+      "17",
+      "-10",
+      "10 min.",
+      "Varies",
+      "Allows the practitioner to bind a currently controlled physical undead creature (with neither Soul nor Spirit) to a repetitive task or guard a general area, externalizing control of the undead for 1 hour per Practitioner Title."
+    ],
+    "Conceal Dead": [
+      "Conceal Dead",
+      "18",
+      "-15",
+      "30 min.",
+      "1 day",
+      "Causes any corpses within the affected area (10` radius per Practitioner Title) to become undetectable by any sense."
+    ],
+    "Disguise Life Force": [
+      "Disguise Life Force",
+      "16",
+      "-5",
+      "5 min.",
+      "Varies",
+      "Allows the practitioner to disguise their life force as an opposite form, lasting 30 minutes per Practitioner Title."
+    ],
+    "Epitaph": [
+      "Epitaph",
+      "28",
+      "-65",
+      "1 hour",
+      "Permanent",
+      "The ritual of writing one`s Epitaph must be done in the blood of the focus being and contain their true name. This prevents the Soul from being removed from their body or controlled in any fashion. The Epitaph must remain intact and untouched by any other being; otherwise, the Epitaph is nullified."
+    ],
+    "Grave": [
+      "Grave",
+      "17",
+      "-10",
+      "30 sec.",
+      "Instant",
+      "Causes the earth to loosen and give way, opening a grave 3` wide x 7` long x 6` deep. Any beings within 5` of the area must make an Agility save at half in order not to fall in."
+    ],
+    "Magnify Shadow": [
+      "Magnify Shadow",
+      "16",
+      "-5",
+      "10 min.",
+      "1 day",
+      "The flames used in this ritual emit a dark magical light, magnifying all shadows within a 50` radius to twice their original size. Beings caught within the shadow are affected as if having to sense, act and attack in normal darkness."
+    ],
+    "Negative Life Vapor": [
+      "Negative Life Vapor",
+      "18",
+      "-15",
+      "5 min.",
+      "1 day",
+      "The smoke used in this ritual envelopes 1 being per Practitioner Title, masking them with negative life force. Any being actively Life Sensing will have a 25% chance to see past the vapor."
+    ],
+    "Neutralize Curse": [
+      "Neutralize Curse",
+      "18",
+      "-15",
+      "10 min.",
+      "Varies",
+      "Temporarily relieves the effects of a non-terminal curse on 1 present being for 1 hour per Practitioner Title."
+    ],
+    "Nightmare": [
+      "Nightmare",
+      "19",
+      "-20",
+      "1 hour",
+      "1 night",
+      "Plagues 1 being per Practitioner Title with a single night of continual nightmares. The ritualist can only use a target they can visualize. Any amount of time used to rest while inflicted with nightmares is considered at 1/2, resulting in any natural forms of fatigue. Each time the target awakens after having these nightmares, they have a 1% chance per Practitioner Title of gaining a random Insanity."
+    ],
+    "Obituary": [
+      "Obituary",
+      "35",
+      "-100",
+      "2 hours",
+      "1 night",
+      "A complex ritual, the Obituary rips a person`s Soul from the body, killing them instantly. The ritualist must have the victim`s true name, handwritten by the victim themselves in blood. A target with a written Epitaph (as per the Ritual) is immune to this ritual."
+    ],
+    "Positive Life Vapor": [
+      "Positive Life Vapor",
+      "18",
+      "-15",
+      "5 min.",
+      "1 day",
+      "The smoke used in this ritual envelopes 1 being per Practitioner Title, masking them with positive life force. Any being actively Life Sensing will have a 25% chance to see past the vapor."
+    ],
+    "Preservation": [
+      "Preservation",
+      "20",
+      "-25",
+      "10 min.",
+      "1 night",
+      "Temporarily removes conversion effects (including undead) for 1 being, preventing its Soul from being controlled. The Soul is bound to the body 30 minutes extra per Practitioner Title of the ritualist."
+    ],
+    "Release Soul": [
+      "Release Soul",
+      "25",
+      "-50",
+      "1 day",
+      "Instant",
+      "Performed over any dead or undead body, this ritual draws out the Soul, releasing it from the body."
+    ],
+    "Remove Shadow": [
+      "Remove Shadow",
+      "20",
+      "-25",
+      "20 min.",
+      "1 day",
+      "The flame used in this ritual emits a magical light, removing all shadows within a 50` radius. Beings using the skill Shadow Walk will be unable to come within 50` of the focal point."
+    ],
+    "Reveal Life Force": [
+      "Reveal Life Force",
+      "24",
+      "-45",
+      "5 min.",
+      "1 day",
+      "Allows the practitioner to reveal a disguised life force within a 20` radius. If any life force disguising effect is active within the radius, there is a contest of target`s Will Force vs. the ritualist`s Practitioner Title x2"
+    ],
+    "Trap Swarm": [
+      "Trap Swarm",
+      "22",
+      "-35",
+      "1 min.",
+      "Instant",
+      "Creates a translucent sphere that attracts swarms of insects within its grasp and then constricts around them, killing all inside. The sphere will reach a radius of 1` per Practitioner Title."
+    ],
+    "Unravel": [
+      "Unravel",
+      "16",
+      "-5",
+      "5 min.",
+      "Instant",
+      "Causes the fabric surrounding 1 being per Practitioner Title to unravel. There is a 30% chance that the unraveled cloth will entangle the affected being, causing them to lose 2d6 seconds of action."
+    ],
+    "Guide Wind": [
+      "Guide Wind",
+      "15",
+      "0",
+      "10 min.",
+      "Varies",
+      "Allows the caster to direct any currently present non-magical wind in whatever direction choosen for 30 minutes per Practitioner Title."
+    ],
+    "Rain Dance": [
+      "Rain Dance",
+      "13",
+      "10",
+      "10 min.",
+      "1 day",
+      "Causes clouds to form overhead and produce constant rain for the following 24 hours. This rain falls in a 1/2 mile radius around the point where the ritual is performed. This ritual has no effect if the ambient temperature is below freezing. Note: The rain created in this fashion is not magical in any way, nor can this ritual create rain in a magical environment such as an Enchanted Area or a magical plane or in areas where there is not enough moisture to create the clouds, such as a desert."
+    ],
+    "Resonate Stone": [
+      "Resonate Stone",
+      "17",
+      "-10",
+      "5 min.",
+      "Varies",
+      "Allows the practitioner to mentally contact a stone surface no larger than 5`x 5`x 5` for 30 seconds per Practitioner Title. The stone becomes aware of what has happened to it and around it. This temporary awareness allows the stone to have roughly equal Intelligence to the ritualist. After the allotted time, the awareness leaves, and the ritualist cannot contact that particular area of stone again that day."
+    ],
+    "Snow Storm": [
+      "Snow Storm",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Causes clouds to form overhead and produce constant snowfall and winds of 10 mph per Practitioner Title (see Masters Manual, Combat weather effects for the effects of wind) for the following 24 hours. This storm occurs in 1/2 mile radius around the point where the ritual is performed. This ritual has no effect if the ambient temperature is above freezing. Note: The snow and wind created in this fashion is not magical in any way, nor can this ritual create snow and wind in a magical environment such as an Enchanted Area or a magical plane."
+    ],
+    "Weather": [
+      "Weather",
+      "23",
+      "-40",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist to call any chosen weather conditions to occur in a radius of 2 miles per Practitioner Title around the point where the ritual is performed. The created weather effect endures for 12 hours per Practitioner Title. This ritual can be performed under any ambient temperature. Note: Weather conditions created in this fashion are not magical in any way, nor can this ritual alter weather in a magical environment such as an Enchanted Area or a magical plane."
+    ],
+    "Air Pass": [
+      "Air Pass",
+      "17",
+      "-10",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from electricity and pressure as well as be able to fly at up to 3` per Intelligence rating (requires concentration.) These effects are only active while on the Plane of Air. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin from a being or creature of the Plane of Air."
+    ],
+    "Chaos Pass": [
+      "Chaos Pass",
+      "21",
+      "-30",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from Aura and Chaos effects and pressure as well as being able to fly at up to 3` per Intelligence rating. These effects are only active while on the Plane of Chaos/Magic. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin of a being or creature of the Plane of Chaos."
+    ],
+    "Death Pass": [
+      "Death Pass",
+      "20",
+      "-25",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from death magic, aging and pressure as well as breathless and being able to fly at up to 3` per Intelligence rating. These effects are only active while on the Plane of Void/Death. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin of a being or creature of the Plane of Void/Death."
+    ],
+    "Dream Pass": [
+      "Dream Pass",
+      "19",
+      "-20",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from poison, sleep, and hold effects. They can also blink once per 10 seconds to anywhere they can see. These effects are only active while on the Dream Plane. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin of a being or creature of the Plane of Dreams."
+    ],
+    "Enhanced Breath": [
+      "Enhanced Breath",
+      "18",
+      "-15",
+      "Varies",
+      "Varies",
+      "Practitioner performs this ritual for 10 minutes+5 minutes per focus for up to 1 being (or creature) per practitioner title. For 2 hours per practitioner title, the targets are immune to pressure effects, and may subsist on 25% of their normal air volume requirement. This does not negate temperature effects, and may be renewed as often as necessary. This also enables the focuses to breathe polluted or poisoned air without consequence, provided the pollutant does not comprise more than 75% of the total volume breathed. This does not grant the ability to breathe underwater, or the ability to breathe in outer space, or other environments where air density is less than 1/4 normal. Ritual Components: A damp cloth that has been rubbed with ashes or infused with smoke."
+    ],
+    "Earth Pass": [
+      "Earth Pass",
+      "18",
+      "-15",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from acid and pressure as well as be able being able to climb any surface as if their hands and feet are adhere-able (up to 500 lb.). These effects are only active while on the Plane of Earth. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin from a being or creature of the Plane of Earth."
+    ],
+    "Fire Pass": [
+      "Fire Pass",
+      "16",
+      "-5",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from heat and pressure as well as be able being able to walk on lava or any other superheated liquid. These effects are only active while on the Plane of Fire. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin from a being or creature of the Plane of Fire."
+    ],
+    "Life Pass": [
+      "Life Pass",
+      "20",
+      "-25",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from light, life magic, and breathless, as well as be able being able to fly at up to 3` per Intelligence rating. These effects are only active while on the Plane of Light/Life. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin from a being or creature of the Plane of Light/Life."
+    ],
+    "Water Pass": [
+      "Water Pass",
+      "15",
+      "0",
+      "10 min.",
+      "Varies",
+      "Allows the ritualist and up to one other per practitioner title to be protected from cold, pressure, as well as be able to walk on water. These effects are only active while on the Plane of Water. This effect lasts 1 hour per practitioner title. Ritual Components: Blood, nails, hair, or skin from a being or creature of the Plane of Water."
+    ],
+    "Seek Portal": [
+      "Seek Portal",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "The practitioner performs the ritual while imagining a plane they want to travel to and then can feel the direction (but not distance) of the nearest planar portal to that plane up to 10 miles away per practitioner title. May only be attempted once per day."
+    ],
+    "Transcription": [
+      "Transcription",
+      "14",
+      "5",
+      "Varies",
+      "Varies",
+      "Practitioner takes 5 minutes + time spoken. All words spoken before the end of the ritual are written on a surface designated during the ritual. (The practitioner indicates the end of the ritual by touching the surface upon which the writing has appeared.) The writing and the surface become magical, being unable to be destroyed or obscured via conventional means. (For example, writing on paper will not fade or run, cannot be blotted out, and the paper will not warp when exposed to water.) The practitioner may specify a length of time for the writing to remain; otherwise, it lasts for the duration of the practitioner`s lifetime. Ritual Components: A surface to write on, and a material which can mark it. (ink and paper, chalk and stone, etc.)."
+    ],
+    "Concealment": [
+      "Concealment",
+      "18",
+      "-15",
+      "5 min.",
+      "1 day",
+      "Grants +20% to Move Unseen, Move Unheard, Blend, Shadowing for those skills for one focus. Potential opponents (non-allies) are -20% to Listen, Smell, Life Sensing, etc. for the being(s) protected. For non-allies on watch and alert, Double Perceptions to notice the concealed are converted to Single Perceptions. Ritual Components: Gray Fabric."
+    ],
+    "Clarity of Intent": [
+      "Clarity of Intent",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Intent: extra Concentration Save (INT save) when 1st fails."
+    ],
+    "Clarity of Purpose": [
+      "Clarity of Purpose",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Purpose: +5% resistances and saves when working to complete a specified goal or task."
+    ],
+    "Clarity of Reality": [
+      "Clarity of Reality",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Reality: +10% Illusion Resistance."
+    ],
+    "Clarity of Focus": [
+      "Clarity of Focus",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Focus: +10% to 1 specified skill that uses Mental or Mystical attributes."
+    ],
+    "Clarity of Order": [
+      "Clarity of Order",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Order: +10% Magic Resistance."
+    ],
+    "Clarity of Chaos": [
+      "Clarity of Chaos",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Chaos: +10% resistances/saves against Divine Effects."
+    ],
+    "Clarity of Body": [
+      "Clarity of Body",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Body: +5 END, +10% Poison/Disease Resistances."
+    ],
+    "Clarity of Mind": [
+      "Clarity of Mind",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Mind: +5% Perception, +10% resistances/saves against effects which cause insanity, control or possession."
+    ],
+    "Clarity of Spirit": [
+      "Clarity of Spirit",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Spirit: +10% to Affinity and +10% resistances/saves against effects which drain or change Personal attributes."
+    ],
+    "Clarity of Soul": [
+      "Clarity of Soul",
+      "15",
+      "0",
+      "10 min.",
+      "1 day",
+      "Grants special effect(s) by type to the practitioner and 1 other focus per class title. A being may only have 1 Clarity ritual effect at a time. Soul: +10% to Fortune and +10% resistances/saves to avoid undead effects and mystical draining effects."
+    ],
+    "Cure": [
+      "Cure",
+      "16",
+      "-5",
+      "1 min.",
+      "Instant",
+      "Removes any current poison and disease effects, as well as stabilizing all wounds to 1 END above 0 (if below). Ritual Components: 2 drops of blood from the performer and they must have affection or friendship for the focus."
+    ],
+    "Deva Demand": [
+      "Deva Demand",
+      "18",
+      "-15",
+      "10 min.",
+      "Instant",
+      "Calls to the nearest Deva on the same plane (under 10th level). There is a 1% chance a Dragon comes instead. The Dragon is unlikely to be pleased unless the reward is great. The Deva (or Dragon) may make a Control Resistance to resist (if desired). Once present it will make itself known to practitioner. At that time the practitioner can make a demand and offer something valuable as payment. If the request is a one the that the Deva approves of it may refuse the payment. If the payment is approved and the Deva can help it will take the payment and help as able. Ritual Components: Fur or skin from a magical animal."
+    ],
+    "Final Acts": [
+      "Final Acts",
+      "19",
+      "-20",
+      "10 min.",
+      "1 day",
+      "Practitioner performs the ritual only on themselves. If the ritualist dies serving their deity or a named cause then they are given a final act. This amounts to 1 full 10 seconds of action in combat (or 1 minute outside of combat) per practitioner title to perform their final acts. Death is held in abeyance during this time as if the blow that killed them never struck or action that did failed. They can continue on for the time allotted or until death occurs again. At the end of the proscribed period there is a flash and the effects that caused the original death occur and the being falls dead instantly. This final death cannot be avoided save by wish or miracle. Ritual Components: A pinch of dried skin or hair of the practitioner."
+    ],
+    "Pact of Service": [
+      "Pact of Service",
+      "16",
+      "-5",
+      "1 hour",
+      "Until Broken",
+      "Practitioner performs this ritual on themselves or a single individual. During the ritual the being swears service sacrifices some small part of themselves (see components) and then gives a token to the person they serve. This ritual allows the serving target to mentally send one message per day to the person they serve that reaches them regardless of location (even across planes). Also, the being served knows whether the server is alive and where generally where the target is (direction and distance if on the same plane, what plane they are on if not) based on holding the token. If the server dies or the pact is broken the token breaks as well. What broke the pact (death or dissolution is not known). Ritual Components: Blood, nail or hair clippings of the server and a personal token of the server to be given to the served."
+    ],
+    "Release Spirit": [
+      "Release Spirit",
+      "17",
+      "-10",
+      "1 hour",
+      "Instant",
+      "Requires the burial place or body of where the spirit died or any anchoring object that the spirit prizes or prized while alive. Spirit (and the attached soul) has all control and insanity temporarily removed, allowing the spirit a moment of clarity (for 1 minute per practitioner title.) During this time the spirit is afforded the opportunity to move on to the proper plane based on their type. Good beings go to the heavenly planes, evil to the hellish and neutral or unaligned to purgatory. Spirits or spirit beings from other planes can return to their proper place. Moving on (or returning) is a voluntary act. Ritual Components: Earth of the burial site or special item."
+    ],
+    "Spiritual Advice": [
+      "Spiritual Advice",
+      "18",
+      "-15",
+      "10 min.",
+      "Instant",
+      "A supernatural being can be asked one question and will whisper one reply only they can hear. The supernatural being is not present. If no specific supernatural being is named (by true name) any can answer and the advice may be suspect. Ritual Components: Heirloom"
+    ]
+  }
+}

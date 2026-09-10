@@ -1,0 +1,633 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialgeneralmods",
+    "lines": [
+      57367,
+      57575
+    ]
+  },
+  "entries": {
+    "Accounting": [
+      "Accounting: +10% with abacus"
+    ],
+    "Acting": [
+      ""
+    ],
+    "Administration": [
+      ""
+    ],
+    "Animal Husbandry": [
+      "Animal Husbandry: treats animal injury (1d4+1)"
+    ],
+    "Animal Training": [
+      ""
+    ],
+    "Anthropology": [
+      ""
+    ],
+    "Appraisal": [
+      "10% bonus to the skills Archeology and Ruins Lore when evaluating objects from ruins."
+    ],
+    "Archaeology": [
+      ""
+    ],
+    "Architecture/Engineering": [
+      ""
+    ],
+    "Armoring": [
+      "Armoring: repairs armor (with tools)"
+    ],
+    "Artisan": [
+      ""
+    ],
+    "Astrology": [
+      ""
+    ],
+    "Astronomy": [
+      ""
+    ],
+    "Baking/Cooking": [
+      ""
+    ],
+    "Ballooning": [
+      ""
+    ],
+    "Banker/Broker": [
+      ""
+    ],
+    "Bar/Inn Keeping": [
+      ""
+    ],
+    "Barbering": [
+      ""
+    ],
+    "Barrel Making": [
+      ""
+    ],
+    "Bartering/Haggling": [
+      "Bartering/Haggling: prices -/+1% per skill roll fail/success point (-/+50% max)"
+    ],
+    "Basket Weaving": [
+      ""
+    ],
+    "Bee Keeping/Insect Handling": [
+      ""
+    ],
+    "Begging": [
+      ""
+    ],
+    "Boat Wright": [
+      ""
+    ],
+    "Bookbinder": [
+      ""
+    ],
+    "Botany": [
+      ""
+    ],
+    "Botanist": [
+      ""
+    ],
+    "Brewing": [
+      ""
+    ],
+    "Butcher": [
+      ""
+    ],
+    "Butler": [
+      ""
+    ],
+    "Cabinetry": [
+      "Cabinetry: +10% to find secret compartments in furniture/chests"
+    ],
+    "Cage Making": [
+      ""
+    ],
+    "Calligraphy": [
+      ""
+    ],
+    "Candle/Oil Making": [
+      ""
+    ],
+    "Carousing": [
+      ""
+    ],
+    "Carving": [
+      ""
+    ],
+    "Chariot Driving": [
+      ""
+    ],
+    "Chariot Making": [
+      ""
+    ],
+    "Chemistry": [
+      ""
+    ],
+    "Chirugeon": [
+      "Chirugeon: Stabilizes shock. Treat injury (1d4+1)"
+    ],
+    "Climatology": [
+      ""
+    ],
+    "Clowning/Jesting": [
+      "Clowning/Jesting: +10% Morale/reaction among non-fanatical alignments"
+    ],
+    "Cobbling": [
+      ""
+    ],
+    "Collecting": [
+      "Collecting: +30% to crafting skills for the type of item collected"
+    ],
+    "Composer": [
+      ""
+    ],
+    "Cosmetics": [
+      "Cosmetics: provides temporary +1 to APP"
+    ],
+    "Courtesan": [
+      ""
+    ],
+    "Craftsman": [
+      ""
+    ],
+    "Crying/Hawking": [
+      ""
+    ],
+    "Dancing": [
+      "Dancing: Knows 2 dances per KNW"
+    ],
+    "Debating": [
+      ""
+    ],
+    "Diplomacy": [
+      "Diplomacy: skill success reduces Control Resist by 10% for 10 minutes"
+    ],
+    "Diving": [
+      ""
+    ],
+    "Doll Making": [
+      ""
+    ],
+    "Drawing/Sketching": [
+      ""
+    ],
+    "Drilling": [
+      "Drilling: can increase (some) attributes if maintained"
+    ],
+    "Drudgery": [
+      ""
+    ],
+    "Dyer": [
+      ""
+    ],
+    "Economics": [
+      ""
+    ],
+    "Engraving/Etching": [
+      ""
+    ],
+    "Espionage": [
+      ""
+    ],
+    "Etiquette": [
+      "Etiquette: provides temporary +2 to SOC (if below 15, in some situations)"
+    ],
+    "Excavation": [
+      ""
+    ],
+    "Explorer": [
+      ""
+    ],
+    "Exploser": [
+      ""
+    ],
+    "Falconry": [
+      ""
+    ],
+    "Farming/Planting": [
+      ""
+    ],
+    "Fashion": [
+      "Fashion: provides temporary +2 to APP"
+    ],
+    "Ferrier": [
+      ""
+    ],
+    "Fire Making": [
+      "Fire Making: starts fire in 2-7 seconds with tinderbox, 5d4 minutes without"
+    ],
+    "Fishing": [
+      ""
+    ],
+    "Fletching/Bow Making": [
+      ""
+    ],
+    "Flint Knapping": [
+      ""
+    ],
+    "Florist/Horticulturist": [
+      ""
+    ],
+    "Foraging/Forestry": [
+      ""
+    ],
+    "Forensics": [
+      ""
+    ],
+    "Fortune Telling": [
+      ""
+    ],
+    "Furniture Making": [
+      ""
+    ],
+    "Gambling": [
+      "Gambling: +10% to INT save to detect cheating"
+    ],
+    "Gemology": [
+      ""
+    ],
+    "Genealogy": [
+      ""
+    ],
+    "Geography": [
+      ""
+    ],
+    "Geology": [
+      ""
+    ],
+    "Glass Blowing": [
+      ""
+    ],
+    "Gossip Mongery": [
+      "Gossip Mongery: success over 20% (Critical) cannot be traced back to origin"
+    ],
+    "Haberdasher": [
+      ""
+    ],
+    "Harlotry": [
+      ""
+    ],
+    "Harvesting": [
+      ""
+    ],
+    "Heavy Drinking": [
+      ""
+    ],
+    "Heraldry": [
+      ""
+    ],
+    "History": [
+      "History: 1 area of study per 10% of skill"
+    ],
+    "Hunting/Trapping": [
+      ""
+    ],
+    "Hydrology": [
+      ""
+    ],
+    "Instruction": [
+      ""
+    ],
+    "Instrument Making": [
+      ""
+    ],
+    "Instrument Playing": [
+      "Instrument Playing: 1 instrument slot/known per 3 KNW, +5% to 1 instrument skill per slot not used"
+    ],
+    "Inventor": [
+      ""
+    ],
+    "Irrigation": [
+      ""
+    ],
+    "Juggling": [
+      ""
+    ],
+    "Kite Flying": [
+      ""
+    ],
+    "Laborer": [
+      ""
+    ],
+    "Lady Servant": [
+      ""
+    ],
+    "Leadership": [
+      "Leadership: Grants 2nd Morale roll at +20%"
+    ],
+    "Leather Working": [
+      ""
+    ],
+    "Leeching": [
+      "Leeching success, allows treatment +2 to +5(1d4+1) healing, failure is -2 to -5(1d4+1)"
+    ],
+    "Lens Making": [
+      ""
+    ],
+    "Librarian": [
+      ""
+    ],
+    "Lip Reading": [
+      ""
+    ],
+    "Locksmith": [
+      "Locksmith: +10% to Detect Trap/Set Trap and +5% Remove Trap (if locks are involved)"
+    ],
+    "Logic": [
+      ""
+    ],
+    "Loom Mastery": [
+      ""
+    ],
+    "Lumberjack": [
+      ""
+    ],
+    "Massage Therapy": [
+      "Massage Therapy: 10% to concentration checks (INT saves for one day after session) and +1 point of healing in next rest period"
+    ],
+    "Mathematics": [
+      ""
+    ],
+    "Metal Working": [
+      ""
+    ],
+    "Metallurgy": [
+      ""
+    ],
+    "Metaphysics": [
+      "Metaphysics: Casters are +1 Aura Control"
+    ],
+    "Meteorology": [
+      ""
+    ],
+    "Midwife": [
+      ""
+    ],
+    "Milling": [
+      ""
+    ],
+    "Mining/Tunneling": [
+      ""
+    ],
+    "Mocking": [
+      ""
+    ],
+    "Mountaineering": [
+      "Mountaineering: +20% to Climb (in mountains)"
+    ],
+    "Music Theory": [
+      "Music Theory: Learn time for music is reduced by 25%"
+    ],
+    "Oceanography": [
+      "Oceanography: +10% to Survival in marine environments"
+    ],
+    "Overseer/Manager": [
+      "Overseer/Manager: success grants +10% to work force Morale, failure -10% to work force Morale"
+    ],
+    "Page": [
+      ""
+    ],
+    "Painting": [
+      ""
+    ],
+    "Paving/Road Building": [
+      ""
+    ],
+    "Perfume/Scent Making": [
+      ""
+    ],
+    "Philosophy": [
+      ""
+    ],
+    "Physics": [
+      ""
+    ],
+    "Physiology": [
+      ""
+    ],
+    "Plumbing": [
+      ""
+    ],
+    "Politics": [
+      ""
+    ],
+    "Pottery Making": [
+      ""
+    ],
+    "Printing/Typesetting": [
+      ""
+    ],
+    "Prospecting": [
+      ""
+    ],
+    "Psychology": [
+      ""
+    ],
+    "Pulper": [
+      ""
+    ],
+    "Puppetry": [
+      ""
+    ],
+    "Pyrotechnics": [
+      ""
+    ],
+    "Recite Poetry": [
+      "Recite Poetry: 3 poems known per KNW"
+    ],
+    "Reporting/Journalism": [
+      ""
+    ],
+    "Riding": [
+      "Riding: success in difficult situations means staying on mount"
+    ],
+    "Rope Making": [
+      ""
+    ],
+    "Rope Use": [
+      ""
+    ],
+    "Rowing": [
+      ""
+    ],
+    "Running": [
+      ""
+    ],
+    "Sapping": [
+      ""
+    ],
+    "Scavenging": [
+      ""
+    ],
+    "Scholar": [
+      ""
+    ],
+    "Science": [
+      ""
+    ],
+    "Scribing": [
+      ""
+    ],
+    "Sculpting": [
+      ""
+    ],
+    "Sewing": [
+      ""
+    ],
+    "Shepherdry": [
+      ""
+    ],
+    "Signaling": [
+      ""
+    ],
+    "Sing Songs": [
+      "Sing Songs: 3 songs known per KNW"
+    ],
+    "Skinning/Tanning": [
+      ""
+    ],
+    "Slave Driving": [
+      ""
+    ],
+    "Smithy": [
+      ""
+    ],
+    "Soap Making": [
+      ""
+    ],
+    "Soldiering": [
+      "Soldiering: +1 to hit and to damage with single weapon"
+    ],
+    "Spelunking": [
+      "Spelunking: +20% to Agility saves in natural passages, caves and caverns"
+    ],
+    "Spinning": [
+      ""
+    ],
+    "Squire": [
+      ""
+    ],
+    "Steam Power": [
+      ""
+    ],
+    "Stone Masonry": [
+      ""
+    ],
+    "Store Keeping": [
+      ""
+    ],
+    "Story Telling": [
+      ""
+    ],
+    "Supplier": [
+      ""
+    ],
+    "Surfing": [
+      ""
+    ],
+    "Surveyor": [
+      ""
+    ],
+    "Survival": [
+      ""
+    ],
+    "Swimming": [
+      ""
+    ],
+    "Tactics/Strategy": [
+      "Tactics/Strategy: +1 to initiative for all those being lead. +10% Morale. Additional bonuses by stance."
+    ],
+    "Tailoring": [
+      ""
+    ],
+    "Tattoo Artistry": [
+      "Tattoo Artistry: 1d4 damage to area tattooed, heals normally"
+    ],
+    "Taxidermy": [
+      ""
+    ],
+    "Theology": [
+      "Theology: Invokers are +1 Piety Control"
+    ],
+    "Tightrope Walking": [
+      ""
+    ],
+    "Tobacconist": [
+      ""
+    ],
+    "Tool Making": [
+      ""
+    ],
+    "Torturing": [
+      ""
+    ],
+    "Translating": [
+      ""
+    ],
+    "Tumbling": [
+      ""
+    ],
+    "Undertaking": [
+      ""
+    ],
+    "Upholstery": [
+      ""
+    ],
+    "Valet": [
+      ""
+    ],
+    "Ventriloquism": [
+      "Ventriloquism: combines with Mimic to fake a person talking in their own voice"
+    ],
+    "Wagon/Carriage Driving": [
+      ""
+    ],
+    "Wagon/Carriage Making": [
+      ""
+    ],
+    "Water/Wind Power": [
+      ""
+    ],
+    "Weapon Making": [
+      "Weapon Making: 3 weapons designs are known per KNW"
+    ],
+    "Weaving": [
+      ""
+    ],
+    "Wheel Wright": [
+      ""
+    ],
+    "Wigweaving": [
+      ""
+    ],
+    "Wood Curing": [
+      ""
+    ],
+    "Wood Cutting": [
+      ""
+    ],
+    "Wood Working": [
+      ""
+    ],
+    "Writing": [
+      "Writing: can make 1 type of writing (story, poem or song) per 6 KNW"
+    ],
+    "Open Slot": [
+      ""
+    ],
+    "Unavailable": [
+      ""
+    ],
+    "Sacrificed": [
+      ""
+    ],
+    "Converted to Racial Skill Slot": [
+      ""
+    ],
+    "Converted to Class Skill Slot": [
+      ""
+    ]
+  }
+}

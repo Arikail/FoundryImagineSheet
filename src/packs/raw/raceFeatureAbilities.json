@@ -1,0 +1,637 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceFeatureAbilities",
+    "lines": [
+      45590,
+      45716
+    ]
+  },
+  "entries": {
+    "Apocritara(Slight Physique)": [
+      "Infravision60,Antennae,Hide(Chitinous),Extra Insect Limbs(Arms),Insect Wings,Vibration Sensing,Pincers/Mandibles,Stinger,Venom(Paralysis)",
+      "Compound Eyes,Loud Flier,Poor Circulation,Frost Weakness",
+      "Fire Resistant"
+    ],
+    "Apocritara": [
+      "Infravision60,Antennae,Hide(Chitinous),Extra Insect Limbs(Arms),Insect Wings,Vibration Sensing,Pincers/Mandibles",
+      "Compound Eyes,Loud Flier,Poor Circulation,Frost Weakness",
+      "Fire Resistant"
+    ],
+    "Arachen": [
+      "Infravision120,Climbing,Hide(Chitinous),Jumping,Sleepless,Vibration Sensing,Venom(Paralysis),Web Weaving,Natural Weapons(Arachen)",
+      "Insect Leg Loss",
+      ""
+    ],
+    "Avian(Dark)": [
+      "Flight(Wings),Night Vision,Silent Flight,Natural Weapons(Dark Avian)",
+      "",
+      ""
+    ],
+    "Avian(Forest)": [
+      "Flight(Wings),Farsight",
+      "",
+      "Fire Hardened"
+    ],
+    "Avian(Mountain)": [
+      "Flight(Wings),Farsight",
+      "",
+      "Fire Hardened"
+    ],
+    "Ba’Cora": [
+      "Flight(Wings),Night Vision,Infravision120,Hide(Fur),Natural Weapons(Ba’Cora)",
+      "Light Sensitivity",
+      ""
+    ],
+    "Beastman": [
+      "Exceptional Sight,Hide(5),Natural Weapons(Beastman)",
+      "",
+      ""
+    ],
+    "Brachara": [
+      "Ultravision,Extra Insect Limbs(Legs),Antennae,Hide(Chitinous),Digging,Climbing,Eyestalks,Gills,Swimming,Regeneration(Natural),Vibration Sensing,Pincers/Mandibles",
+      "Compound Eyes,Light Sensitivity,Water Dependence,Insect Leg Loss",
+      ""
+    ],
+    "Brok": [
+      "Hide(Skin),Natural Weapons(Brok)",
+      "Living Touch Aversion",
+      ""
+    ],
+    "Brownie": [
+      "Night Vision,Natural Weapons(Brownie)",
+      "Quick Temper,Iron Aversion",
+      ""
+    ],
+    "Centaur": [
+      "Quadruped,Natural Weapons(Centaur)",
+      "Climbing Impaired,No Rigid Armor(Shins),No Rigid Armor(Tail)",
+      ""
+    ],
+    "Cervara": [
+      "Ultravision,Enhanced Hearing,Hide(5),Lateral Vision,Antlers,Natural Weapons(Cervara)",
+      "",
+      ""
+    ],
+    "Changeling": [
+      "Changeling Form",
+      "Iron Aversion",
+      ""
+    ],
+    "Chetahl": [
+      "Night Vision,Hide(4),Terrain Fur,Not Easily Surprised,Natural Weapons(Chetahl)",
+      "Armor Fur Chafe,Plate Ruins Terrain Fur,Water Avoidance",
+      ""
+    ],
+    "Crystori": [
+      "Hide(Crystal),Living Crystal,Breathless,Heat as Food,Light as Water,Sleepless,Vibration Sensing,Vibration Language",
+      "Cannot Swim,Easily Tracked,No Intake,No Sense of Smell,No Sense of Taste,Weakness(Frost)",
+      "Disease,Fire Hardened,Poison(Greater),Sleep,Transformation of Form(Lesser)"
+    ],
+    "Dao": [
+      "Night Vision(Enhanced),Hide(10),Earth Elemental Form",
+      "Weakness(Electricity)",
+      "Acid,Disease,Poison(Greater)"
+    ],
+    "Djinn": [
+      "Farsight,Magical Flight,Air Elemental Form",
+      "Weakness(Acid)",
+      "Electricity,Pressure"
+    ],
+    "Dryad": [
+      "Exceptional Sight,Evoke Special(Tree)",
+      "Weakness(Fire)",
+      ""
+    ],
+    "Dwarf(Civilized)": [
+      "Infravision60",
+      "Cannot Cast Spells,Cannot Swim",
+      ""
+    ],
+    "Dwarf(Dark)": [
+      "Infravision60",
+      "Cannot Cast Spells,Cannot Swim,Light Sensitivity",
+      ""
+    ],
+    "Dwarf(Fire)": [
+      "Hide(5),Ultravision",
+      "Cannot Cast Spells,Cannot Swim,Weakness(Frost)",
+      "Fire Resistant,Pressure"
+    ],
+    "Dwarf(Iron)": [
+      "Ultravision,Hide(15),Magical Hearing,Magical Sight,Magical Smell,Magical Touch,Magical Voice",
+      "Cannot Cast Spells,Cannot Swim,Forged Form,Forged Offspring,Infertile,No Intake,No Sense of Taste",
+      "Disease,Frost Resistant,Fire,Poison(Greater),Transformation of Form(Lesser)"
+    ],
+    "Dwarf(Mountain)": [
+      "Infravision30",
+      "Cannot Cast Spells,Cannot Swim",
+      ""
+    ],
+    "Dwarf(Stone)": [
+      "Ultravision,Hide(20),Magical Hearing,Magical Sight,Magical Smell,Magical Touch,Magical Voice",
+      "Cannot Cast Spells,Cannot Swim,Sculpted Form,Sculpted Offspring,Infertile,No Intake,No Sense of Taste",
+      "Disease,Fire Resistant,Frost,Poison(Greater),Transformation of Form(Lesser)"
+    ],
+    "Elf(Dark)": [
+      "Night Vision,Infravision120",
+      "Sunlight Intolerant",
+      ""
+    ],
+    "Elf(Desert)": [
+      "Exceptional Sight,Night Vision,Reduced Consumption",
+      "Frost Sensitivity",
+      "Fire Hardened"
+    ],
+    "Elf(Dread)": [
+      "Night Vision,Call Twilight",
+      "Light Sensitivity",
+      ""
+    ],
+    "Elf(Gray)": [
+      "Exceptional Sight",
+      "",
+      ""
+    ],
+    "Elf(High)": [
+      "Exceptional Sight",
+      "",
+      ""
+    ],
+    "Elf(Ice)": [
+      "Exceptional Sight",
+      "Fire Sensitivity",
+      "Frost Hardened"
+    ],
+    "Elf(Sea)": [
+      "Exceptional Sight,Swimming,Gills,Webbed Feet/Hands",
+      "Water Dependence",
+      "Pressure"
+    ],
+    "Elf(Shadow)": [
+      "Exceptional Sight",
+      "Very Low Fertility",
+      "Aging"
+    ],
+    "Elf(Silver)": [
+      "Exceptional Sight",
+      "Very Low Fertility",
+      "Aging"
+    ],
+    "Elf(Wild)": [
+      "Exceptional Sight",
+      "",
+      ""
+    ],
+    "Elf(Wood)": [
+      "Exceptional Sight",
+      "",
+      ""
+    ],
+    "Equara": [
+      "Night Vision,Hide(10),Lateral Vision,Natural Weapons(Equara)",
+      "",
+      ""
+    ],
+    "Fairy": [
+      "Exceptional Sight,Special Shape",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Fairy(Slight Physique)": [
+      "Exceptional Sight,Special Shape,Wing Projection",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Fairy(Dark)": [
+      "Exceptional Sight,Special Dark Shape",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Fairy(Dark-Slight Physique)": [
+      "Exceptional Sight,Special Dark Shape,Wing Projection",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Famorian": [
+      "",
+      "",
+      ""
+    ],
+    "Formless": [
+      "",
+      "",
+      ""
+    ],
+    "Gaunt": [
+      "",
+      "Light Sensitivity,Thin Skinned,Slow Breeding",
+      "Fear,Transformation of Form"
+    ],
+    "Geebra": [
+      "Night Vision",
+      "Near Insanity",
+      ""
+    ],
+    "Giant(Civilized)": [
+      "Hide(10),Natural Weapons(Giant)",
+      "Cannot Cast Spells,Requires Giant Weapons",
+      ""
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "Hide(10),Natural Weapons(Giant)",
+      "Cannot Cast Spells,Requires Giant Weapons",
+      ""
+    ],
+    "Giant(True)": [
+      "Ultravision,Hide(15),Hard to Kill,Natural Weapons(True Giant)",
+      "Cannot Cast Spells,Easily Tracked,Requires Giant Weapons,Loud,Oversleeper,Very Low Fertility",
+      "Aging,Fire Resistant,Pressure,Transformation of Form"
+    ],
+    "Gnome": [
+      "Infravision120,Animal Friendship",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Goblin(Forest)": [
+      "Exceptional Sight",
+      "",
+      ""
+    ],
+    "Goblin(Mountain)": [
+      "Infravision30",
+      "",
+      ""
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Infravision30,Gift of Magic",
+      "",
+      ""
+    ],
+    "Goblin(Plains)": [
+      "Night Vision",
+      "",
+      ""
+    ],
+    "Grahl": [
+      "Infravision60,Hide(8),Hard to Surprise,Howl Communication,Natural Weapons(Grahl)",
+      "Howl Communication",
+      ""
+    ],
+    "Gremlin": [
+      "Night Vision,Flight(Wings),Entropy Touch,Natural Weapons(Gremlin)",
+      "Iron Aversion,Requires Fairy Weapons",
+      ""
+    ],
+    "Grethen": [
+      "Night Vision,Hide(10),Regeneration(Natural)",
+      "Lesser Weakness(Electricity),Lesser Weakness(Frost)",
+      "Acid Hardened,Fire Hardened"
+    ],
+    "Gryphara": [
+      "Farsight,Hide(Feathers/Fur),Magical Hearing,Magical Smell,Flight(Wings),Magical Flight,Beak,Talons/Large Claws,Raking Talons/Claws",
+      "",
+      ""
+    ],
+    "Hippotara": [
+      "Exceptional Hearing,Enhanced Smell,Hide(1/3),Hide(1/3),Natural Weapons(Hippotara)",
+      "Quick Temper",
+      "Stubborn"
+    ],
+    "Hobgoblin": [
+      "Night Vision(Enhanced)",
+      "",
+      "Fire Resistant"
+    ],
+    "Human(Barbaric)": [
+      "",
+      "",
+      ""
+    ],
+    "Human(Civilized:City)": [
+      "",
+      "",
+      ""
+    ],
+    "Human(Civilized:Port)": [
+      "",
+      "",
+      ""
+    ],
+    "Human(Civilized:Town)": [
+      "",
+      "",
+      ""
+    ],
+    "Human(Civilized:Village)": [
+      "",
+      "",
+      ""
+    ],
+    "Ifrit": [
+      "Infravision120,Fire Elemental Form",
+      "Quick Temper,Weakness(Frost)",
+      "Fire,Fatigue"
+    ],
+    "Jumara": [
+      "Exceptional Sight,Night Vision(Enhanced),Night Vision(Enhanced),Night Vision(Enhanced),Hide(5),Patterned Fur,Light Sleeper,Natural Weapons(Jumara)",
+      "",
+      ""
+    ],
+    "Katara": [
+      "Exceptional Sight,Hide(8),Natural Weapons(Katara)",
+      "Quick Temper",
+      ""
+    ],
+    "Kenku": [
+      "Farsight,Flight(Wings),Natural Weapons(Kenku)",
+      "",
+      ""
+    ],
+    "Kerasara": [
+      "Lateral Vision,Exceptional Hearing,Enhanced Smell,Hide(1/3),Hide(1/3),Lateral Vision,Horns,Natural Weapons(Kerasara)",
+      "",
+      ""
+    ],
+    "Lagara": [
+      "Exceptional Sight,Night Vision(Enhanced),Enhanced Hearing,Hide(6),Lateral Vision",
+      "",
+      ""
+    ],
+    "Leprechaun": [
+      "Exceptional Sight,Fickle Luck,Treasure Sniffing",
+      "Quick Temper,Iron Aversion",
+      ""
+    ],
+    "Lissara": [
+      "Exceptional Sight,Night Vision,Enhanced Smell,Hide(6),Regeneration(Natural),Gills,Webbed Feet/Hands,Claws,Tail Slap",
+      "",
+      ""
+    ],
+    "Lotara": [
+      "Night Vision(Enhanced),Enhanced Hearing,Hide(6),Claws",
+      "",
+      ""
+    ],
+    "Loxodara": [
+      "Enhanced Hearing,Enhanced Smell,Hide(1/3),Lateral Vision,Infrasonic Speech,Prehensile Trunk,Tusks",
+      "",
+      ""
+    ],
+    "Lutrinara": [
+      "Underwater Vision,Enhanced Hearing,Enhanced Smell,Hide(5),Webbed Feet/Hands,Claws",
+      "",
+      ""
+    ],
+    "Maginos": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/6),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos(Metal)": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/3),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos(Stone)": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/4),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos(Clay)": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/6),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos(Wood)": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/5),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos[Metal]": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/3),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos[Stone]": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/4),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos[Clay]": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/6),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste,Cannot Swim",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Maginos[Wood]": [
+      "Breathless,Construct Mind,Construct Form,Hide(1/5),Magical Hearing,Magical Sight,Magical Touch,Magical Voice",
+      "Construct Spirit,Infertile,No Intake,No Sense of Smell,No Sense of Taste",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Marid": [
+      "Ultravision,Underwater Vision,Water Elemental Form,Swimming,Swimming",
+      "Weakness(Fire)",
+      "Frost"
+    ],
+    "Mechanos": [
+      "Breathless,Mecho-Magical Mind,Metal Mechanical Form,Magical Hearing,Magical Sight,Magical Touch,Magical Voice,Natural Weapons(Mechanos)",
+      "Cannot Cast Spells,Cannot Swim,Infertile,Mechanical Engine,No Healing,No Regeneration,No Ressurection,No Intake,No Sense of Smell,No Sense of Taste",
+      "Aging,Disease,Fatigue,Fear,Fire Hardened,Frost Hardened,Poison(Greater),Hold,Shock,Sleep,Transformation of Form(Lesser)"
+    ],
+    "Mellivara": [
+      "Hide(Fur),Claws,Raking Claws,Fangs/Sharp Teeth",
+      "",
+      "Fear"
+    ],
+    "Mephyt(Fire)": [
+      "Exceptional Sight,Night Vision(Enhanced),Special Fire Shape,Skin(Heat),Wing Projection,Natural Weapons(Fire Mephyt)",
+      "Frost Sensitivity",
+      "Fire Hardened"
+    ],
+    "Mephyt(Ice)": [
+      "Exceptional Sight,Night Vision(Enhanced),Special Frost Shape,Skin(Cold),Wing Projection,Natural Weapons(Ice Mephyt)",
+      "Fire Sensitivity",
+      "Frost Hardened"
+    ],
+    "Merfolk": [
+      "Transform(Fish Tail),Swimming,Gills,Webbed Feet/Hands",
+      "Water Dependence",
+      "Pressure"
+    ],
+    "Midfolk(Forest)": [
+      "",
+      "",
+      ""
+    ],
+    "Midfolk(River)": [
+      "",
+      "",
+      ""
+    ],
+    "Midfolk(Town)": [
+      "",
+      "",
+      ""
+    ],
+    "Nixie": [
+      "Exceptional Sight,Night Vision(Enhanced),Swimming(Enhanced),Gills,Webbed Feet/Hands,Wing Projection",
+      "Requires Fairy Weapons,Water Dependence",
+      "Pressure"
+    ],
+    "Nymph": [
+      "Exceptional Sight",
+      "Weakness(Fire)",
+      ""
+    ],
+    "Ogre": [
+      "Infravision30,Hide(5)",
+      "",
+      ""
+    ],
+    "Ogre(Magic)": [
+      "Infravision30,Gift of Magic,Hide(5)",
+      "",
+      ""
+    ],
+    "Planar": [
+      "Sleepless",
+      "Obsessive,Very Low Fertility",
+      "Transformation of Form"
+    ],
+    "Podling": [
+      "Night Vision(Enhanced),Animal Friendship,Animal Shape,Regeneration(Natural)",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Podling(Slight Physique)": [
+      "Night Vision(Enhanced),Animal Friendship,Animal Shape,Regeneration(Natural),Wing Projection",
+      "Requires Fairy Weapons",
+      ""
+    ],
+    "Ratahl": [
+      "Exceptional Sight,Night Vision,Hide(8)",
+      "",
+      ""
+    ],
+    "S’rett": [
+      "Hide(Scales),Natural Weapons(S’rett)",
+      "Weakness(Frost)",
+      ""
+    ],
+    "Sasquatch/Yeti": [
+      "Hide(15),Natural Weapons(Sasquatch/Yeti)",
+      "",
+      ""
+    ],
+    "Satyr/Fawn": [
+      "Exceptional Sight,Hide(5)",
+      "",
+      ""
+    ],
+    "Saurian": [
+      "Night Vision,Hide(Scales),Keen,Balancing Tail,Terrain Blending,Tail Slap,Natural Weapons(Saurian)",
+      "Frost Magic Weakness(Greater),Scale Armor Chafe,Upper Armor Off-balance",
+      ""
+    ],
+    "Scethen": [
+      "Infravision60,Hide(Chitinous),Jumping,Sleepless,Vibration Sensing,Stinger,Natural Weapons(Scethen)",
+      "Insect Leg Loss",
+      ""
+    ],
+    "Se’eth": [
+      "Exceptional Sight,Hide(Scales),Constriction Grapple,Venom(Strong),Natural Weapons(Se’eth)",
+      "No Locomotive Limbs,Weakness(Frost)",
+      ""
+    ],
+    "Sha’Cora": [
+      "Diving(Water),Hide(Skin),Swimming,Gills,Webbed Feet/Hands,Natural Weapons(Sha’Cora)",
+      "Salt Water Dependence",
+      "Pressure"
+    ],
+    "Sporeling": [
+      "Ultravision,Infravision180",
+      "Easily Dehydrated,Requires Fairy Weapons",
+      ""
+    ],
+    "Sporeling(Slight Physique)": [
+      "Ultravision,Infravision180,Wing Projection",
+      "Easily Dehydrated,Requires Fairy Weapons",
+      ""
+    ],
+    "Sura’keth": [
+      "Farsight,Hide(Scales),Patterned Fur,Flight(Wings),Claws,Fangs/Sharp Teeth,Tail Slap",
+      "Weakness(Frost)",
+      ""
+    ],
+    "Sura’rath": [
+      "Hide(Scales),Patterned Fur,Gills,Webbed Feet/Hands,Claws,Fangs/Sharp Teeth,Tail Slap",
+      "Fire Weakness",
+      "Frost Resistant"
+    ],
+    "Susara": [
+      "Enhanced Hearing,Enhanced Smell,Hide(10),Tusks,Natural Weapons(Susara)",
+      "Quick Temper",
+      "Stubborn"
+    ],
+    "Sylph": [
+      "Exceptional Sight,Wing Projection",
+      "Weakness(Fire)",
+      ""
+    ],
+    "Taurian": [
+      "Hide(10),Natural Weapons(Taurian)",
+      "Quick Temper",
+      ""
+    ],
+    "Testudara": [
+      "Enhanced Smell,Hide(Scales/Shell),Shell Armor",
+      "Bad Swimmer,Poor Flexibility,Reduced Jumping",
+      ""
+    ],
+    "Troll": [
+      "Night Vision,Hide(4),Regeneration(Greater),Natural Weapons(Troll)",
+      "Fire Magic Weakness",
+      ""
+    ],
+    "Troll(Ice)": [
+      "Night Vision(Enhanced),Hide(8),Regeneration,Claws,Tusks",
+      "Worsened Fire Weakness",
+      "Frost"
+    ],
+    "Troll(Rock)": [
+      "Ultravision,Regeneration(Slow),Hide(15)",
+      "Fire Magic Weakness,Sunlight Conversion",
+      ""
+    ],
+    "Ursara": [
+      "Exceptional Sight,Night Vision(Enhanced),Enhanced Smell,Hide(10),Claws,Fangs/Sharp Teeth",
+      "",
+      ""
+    ],
+    "Vulpara": [
+      "Night Vision,Hide(8)",
+      "",
+      ""
+    ],
+    "Whalrog": [
+      "Diving(Water),Hide(Skin),Swimming,Webbed Feet/Hands,Natural Weapons(Whalrog)",
+      "",
+      "Frost Hardened,Pressure"
+    ],
+    "Wildling": [
+      "Night Vision(Enhanced),Regeneration(Natural),Hide(10)",
+      "Lesser Weakness(Acid),Lesser Weakness(Fire)",
+      "Electricity Hardened,Frost Hardened"
+    ],
+    "Wolfen": [
+      "Night Vision(Enhanced),Hide(15),Claws,Raking Claws,Fangs/Sharp Teeth",
+      "",
+      ""
+    ],
+    "Xar’Xeth": [
+      "Infravision60,Antennae,Hide(Chitinous),Digging Claws,Sleepless,Vibration Sensing,Natural Weapons(Xar’Xeth)",
+      "Compound Eyes,Frost Weakness,Poor Circulation,Slow Adult Learner,Infertile",
+      ""
+    ]
+  }
+}

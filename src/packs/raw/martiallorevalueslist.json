@@ -1,0 +1,96 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martiallorevalueslist",
+    "lines": [
+      100785,
+      100798
+    ]
+  },
+  "entries": {
+    "Combined Attack": [
+      "Combined Attack",
+      "Attack",
+      "17",
+      "5",
+      "Allows any two martial attacks with any two limbs. Speed for both is the longer of the two attacks."
+    ],
+    "Stunning Head Blow": [
+      "Stunning Head Blow",
+      "Attack",
+      "15",
+      "15",
+      "Two martial punches to either side of the head. Doubles chance of unconsciousness per point of physical damage (from 2% to 4%)"
+    ],
+    "Eye Gouge": [
+      "Eye Gouge",
+      "Attack",
+      "16",
+      "10",
+      "Two simultaneous Finger Punches if either are successful then an Eye Gouge is made for each. Success equals equals permanent eye loss."
+    ],
+    "Death Strike": [
+      "Death Strike",
+      "Attack",
+      "20",
+      "-10",
+      "vs. 6 or less armor. Attacker must be within 2' of target height. Rake against the neck or Hell Strike to the nose. Causes immediate death if success."
+    ],
+    "Feather Block": [
+      "Feather Block",
+      "Block",
+      "14",
+      "20",
+      "Combined with any other block, +1 second. If successful all damage is mitigated. "
+    ],
+    "Crushing Hold": [
+      "Crushing Hold",
+      "Hold",
+      "16",
+      "10",
+      "Combined with any other hold. Does 3d6 crushing damage per 5 seconds to held areas. "
+    ],
+    "Punch Throw": [
+      "Punch Throw",
+      "Throw",
+      "19",
+      "-5",
+      "Martial Punch to the upper body combined with a Leg Throw. Must make Martial Punch first to roll this skill in place of the Leg Throw. "
+    ],
+    "Kick Throw": [
+      "Kick Throw",
+      "Throw",
+      "20",
+      "-10",
+      "Martial Kick to the lower body combined with a Arm, Shoulder or Body Throw. Must make Martial Kick first to roll this skill in place of the Throw. "
+    ],
+    "Slam": [
+      "Slam",
+      "Throw",
+      "21",
+      "-15",
+      "Added to any Throw (except leg). Make a STR Save with skill roll. If both are successful, 1d6 damage per 5 full points of STR. +2 seconds to throw used."
+    ],
+    "Martial Disarm": [
+      "Martial Disarm",
+      "Throw",
+      "20",
+      "-10",
+      "Disarm an opponent as a contest of this skill roll versus the oppenent's AGL Save. If made by quarter and opponent loses AGL Save the weapon can be taken instead of disarm. "
+    ],
+    "Flip": [
+      "Flip",
+      "Move",
+      "18",
+      "0",
+      "Cannot attack. If successful -4 to be hit. Fail requires AGL Save to land on their feet."
+    ],
+    "Wall Jump": [
+      "Wall Jump",
+      "Move",
+      "15",
+      "15",
+      "Combined with jump or flying move, adds +2 more AGL for jump moves. "
+    ]
+  }
+}

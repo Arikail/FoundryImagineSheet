@@ -1,0 +1,2820 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "herblist",
+    "lines": [
+      128573,
+      128936
+    ]
+  },
+  "entries": {
+    "Aloe Vera": [
+      "Aloe Vera",
+      "Leaf",
+      "2-4 sp.",
+      "1 week/1 year",
+      "Instant",
+      "Heals 1d4+1 to burns and surface wounds."
+    ],
+    "Arnica": [
+      "Arnica",
+      "Flower",
+      "1-4 sp.",
+      "1 month/1 year",
+      "Instant",
+      "Heals 1d4+1 to burns and surface wounds."
+    ],
+    "Badger Thorn": [
+      "Badger Thorn",
+      "Thorn",
+      "4-6 gp.",
+      "6 weeks/12 weeks",
+      "1d4+1 hours",
+      "END is raised by 50%. Beings under 3' require Vitality save to use or faint for 10-30 seconds. Reroll if under stress."
+    ],
+    "Berserker Root": [
+      "Berserker Root",
+      "Root",
+      "1-3 gp.",
+      "1 year/5 years",
+      "10-40 min.",
+      "Become Berserk: END is raised by 50%, STR, AGL, VIT, WIL are +2, INT, WIS, KNW halved, immune to shock, INT save required to distinquish ally from foe (if ally interferes with attack), cannot go unconscious. After Berserk -2 STR, AGL, VIT."
+    ],
+    "Black Lotus": [
+      "Black Lotus",
+      "Flower",
+      "10-30 gp.",
+      "2 months/8 months",
+      "Instant",
+      "Ingestive poison type XV (Duration 1d4 minutes. 1d6/minute PR success, 1d6/10 seconds PR fail). Potency F (10-60 minutes). Poison Lore success can convert ingestive to contact/gaseous."
+    ],
+    "Blood Moss": [
+      "Blood Moss",
+      "Leaf",
+      "1-4 sp.",
+      "1 month/6 months",
+      "1 day",
+      "+20% Disease Resistance and a new modified DR for any current ailments."
+    ],
+    "Bloodwort": [
+      "Bloodwort",
+      "Leaf",
+      "2-5 cp.",
+      "1d4 hours/1d4 weeks",
+      "Instant",
+      "Heals 1d4+1 to open wounds only. Stops bleeding."
+    ],
+    "Bluesward": [
+      "Bluesward",
+      "Leaf",
+      "10-40 gp.",
+      "1d4 weeks/4d4 weeks",
+      "1d4+5 hours",
+      "Grants invulnerability to water pressure."
+    ],
+    "Borin`s Salve": [
+      "Borin`s Salve",
+      "Bark",
+      "2-6 sp.",
+      "6 months/2 years",
+      "Instant",
+      "Heals 1d4+1 to open wounds and bruises."
+    ],
+    "Death`s Head": [
+      "Death`s Head",
+      "Mushroom",
+      "2-6 sp.",
+      "2 weeks/48 weeks",
+      "Instant",
+      "Ingestive poison Type XV (1d6/minute PR success, 1d6/10 seconds PR fail). Potency L (1d4 minutes). Poison Lore success can convert ingestive to contact/gaseous."
+    ],
+    "Dragon`s Thorn": [
+      "Dragon`s Thorn",
+      "Thorn",
+      "40-80 gp.",
+      "1 year/4 years",
+      "Instant",
+      "Increases any other poison into potency Q (instant)."
+    ],
+    "Echinacea": [
+      "Echinacea",
+      "Flower",
+      "2-5 cp.",
+      "1 month/1 year",
+      "1 day",
+      "+10% Disease Resistance, and +5% Disease Resistance. Reduces fatigue level by 1 within 10 minutes. Healing rate is doubled."
+    ],
+    "Elderberry(Berry)": [
+      "Elderberry(Berry)",
+      "Berry",
+      "2-5 cp.",
+      "1 month/1 year",
+      "3d4 hours",
+      "Anti-toxin type V. +10% to Disease Resistance, +5% to Poison Resistance."
+    ],
+    "Elderberry(Flower)": [
+      "Elderberry(Flower)",
+      "Flower",
+      "1-4 cp.",
+      "3 months/2 years",
+      "3d4 hours",
+      "Increases APP by +1 and +10% Disease Resistance (skin rashes only)."
+    ],
+    "Elderberry(Leaves)": [
+      "Elderberry(Leaves)",
+      "Leaf",
+      "1-3 cp.",
+      "6 months/2 years",
+      "Instant",
+      "Heals 1d4+1 burn damage. Adds +4 to binding wounds if rubbed into bandages."
+    ],
+    "Elf Leaf": [
+      "Elf Leaf",
+      "Leaf",
+      "2-6 gp.",
+      "6 months/1 year",
+      "Instant",
+      "Anti-toxin type XVIII."
+    ],
+    "Eon Flower": [
+      "Eon Flower",
+      "Flower",
+      "500-800 pp.",
+      "100 years",
+      "Instant",
+      "Restores life at the cost of 1 Will Force."
+    ],
+    "Fierna`s Folly": [
+      "Fierna`s Folly",
+      "Mushroom",
+      "3-6 gp.",
+      "2 months/1 year",
+      "1d4+1 hours",
+      "Intoxicant, hallucinogen. Causes auditory and sometimes visual illusions."
+    ],
+    "Fire Cone": [
+      "Fire Cone",
+      "Seed Cone",
+      "3-5 pp.",
+      "4 weeks/8 weeks",
+      "Instant",
+      "Does 4d6 explosive damage to 1d6+1 random areas to all beings in a 5' area. All flammable objects within 10' are ignited. Everyone within 15' get struck by 1d6-2 seeds. Each seed does 3d6 damage and burns for 2d6 damage the first 10 seconds and then 1d6 damage another 10 seconds."
+    ],
+    "Fire Bark": [
+      "Fire Bark",
+      "Bark",
+      "4-8 gp.",
+      "4 months/2 years",
+      "2d4+2 hours",
+      "Grants Endure Heat."
+    ],
+    "Fool`s Ear": [
+      "Fool`s Ear",
+      "Leaf",
+      "2-5 sp.",
+      "2 months/1 year",
+      "1d4 hours",
+      "Gives headache. INT, WIS, and KNW are temporarily reduced by 1d4+1. Causes 2 levels of mental fatigue (-10% skill use) and a Intelligence save to concentrate on anything. "
+    ],
+    "Garlic": [
+      "Garlic",
+      "Root",
+      "2-4 gp.",
+      "2 months/1 year",
+      "1d4 hours",
+      "+10% Control Resistance and +10% to Will Force saves. Involuntary Will Force draining is blocked."
+    ],
+    "Ginseng": [
+      "Ginseng",
+      "Root",
+      "2-4 gp.",
+      "2 years/8 years",
+      "2d4+2 hours",
+      "+(1-2) Vitality. Removes all mental fatigue. Removes 2 levels of physical fatigue."
+    ],
+    "Ginkgo Biloba": [
+      "Ginkgo Biloba",
+      "Berry",
+      "1-2 gp.",
+      "6 months/2 years",
+      "3d4 hours",
+      "+1 Intelligence. +10% concentration(INT Save). Removes 1 level of mental fatigue."
+    ],
+    "Goblin Bane": [
+      "Goblin Bane",
+      "Bark",
+      "2-6 gp.",
+      "2 years",
+      "2d4 hours",
+      "When burned, causes all Goblins to make a Will Force save to get within 100 feet of the source of the burning."
+    ],
+    "Golden Apple": [
+      "Golden Apple",
+      "Fruit",
+      "200-400 pp.",
+      "1 week",
+      "Instant",
+      "Grants permanent +1 Intelligence."
+    ],
+    "Gorin": [
+      "Gorin",
+      "Flower",
+      "10-30 pp.",
+      "1 year",
+      "6 hours",
+      "Suppresses all magical ability."
+    ],
+    "Gotu Kola": [
+      "Gotu Kola",
+      "Leaf",
+      "1-2 gp.",
+      "6 months/2 years",
+      "1 day",
+      "+10% concentration(INT savs) and healing rate is doubled. Removes 1 level of mental fatigue."
+    ],
+    "Gray Wolf Bark": [
+      "Gray Wolf Bark",
+      "Bark",
+      "3-6 gp.",
+      "3 months/1 year",
+      "12 hours",
+      "Replaces a being's scent with that of a large wolf. Animals who catch the scent become afraid and spooked. 5% of these herbs are a disease variant (DR or hair turns gray and falls out in 1d4+1 days. -2 APP for humanoids with hair, -4 APP if furred)."
+    ],
+    "Green Berry": [
+      "Green Berry",
+      "Berry",
+      "1-2 gp.",
+      "2 weeks/8 weeks",
+      "1d4 hours",
+      "Reduces one level of fatigue, mild intoxicant."
+    ],
+    "Grent(Bark)": [
+      "Grent(Bark)",
+      "Bark",
+      "4-8 pp.",
+      "6 months/2 years",
+      "1d4 hours",
+      "Provides 3d4 points of magical hide."
+    ],
+    "Grent(Leaf)": [
+      "Grent(Leaf)",
+      "Leaf",
+      "2-5 gp.",
+      "2 weeks/8 weeks",
+      "3d4 hours",
+      "Grants Endure Cold."
+    ],
+    "Grent(Root)": [
+      "Grent(Root)",
+      "Root",
+      "2-6 pp.",
+      "6 months/1 year",
+      "3d4 hours",
+      "+1d4+1 temporary Wisdom."
+    ],
+    "Grent(Sap)": [
+      "Grent(Sap)",
+      "Sap",
+      "2-6 pp.",
+      "1 month/2 months",
+      "Instant",
+      "Strong magical healing of 2d4 points."
+    ],
+    "Handmaiden": [
+      "Handmaiden",
+      "Stalk",
+      "2-6 sp.",
+      "2 weeks/24 weeks",
+      "3 days",
+      "Acts as a contraceptive in humanoid females when chewed. If swallowed Vitality save to avoid cramps and stomach pain."
+    ],
+    "Hawthorn": [
+      "Hawthorn",
+      "Berry",
+      "3-8 sp.",
+      "2 weeks/12 weeks",
+      "1 day",
+      "Halves any remaining damage from a heart attack. Allows Vitality save to avoid future heart attacks even magical ones."
+    ],
+    "Holly": [
+      "Holly",
+      "Leafy Branches",
+      "2-4 sp.",
+      "2 weeks/12 weeks",
+      "1 day",
+      "+(1-3) temporary Wisdom."
+    ],
+    "Horse Clover": [
+      "Horse Clover",
+      "Leaf",
+      "4-6 gp.",
+      "1 month/2 months",
+      "1d4 hours",
+      "Removes 1 level of fatigue. Makes animals immune fear. Is a day's food ration for any animal of horse or smaller size."
+    ],
+    "Hubris Horns": [
+      "Hubris Horns",
+      "Flower",
+      "1-3 cp.",
+      "2 weeks/8 weeks",
+      "1d4+1 hours",
+      "Causes the illusion of +4 in a favored attribute."
+    ],
+    "Ice Melon": [
+      "Ice Melon",
+      "Fruit",
+      "2-5 sp.",
+      "2 months",
+      "1d4+1 hours",
+      "A source of magical, chilled water."
+    ],
+    "Kava Kava": [
+      "Kava Kava",
+      "Root",
+      "2-6 sp.",
+      "6 months/2 years",
+      "2d4+2 hours",
+      "A mild intoxicant and sedative that requires a Vitality Save or sleep is induced in 1 hour. Awakening from sleep takes twice as long as normal."
+    ],
+    "Mandrake": [
+      "Mandrake",
+      "Root",
+      "2-5 pp.",
+      "6 months/2 years",
+      "6 hours",
+      "Provides +1 or +2 INT and AUR. If more than 3 doses are taken in a 48 hour period it acts as a poison Type XV (1d6/minute PR success, 1d6/10 seconds PR fail). Potency L (1d4 minutes)."
+    ],
+    "Meta Root": [
+      "Meta Root",
+      "Root",
+      "8-12 pp.",
+      "6 months/2 years",
+      "1d4+2 hours",
+      "Blocks all telepathy to or from one being."
+    ],
+    "Mistletoe": [
+      "Mistletoe",
+      "Leaf+Steam",
+      "3-6 sp.",
+      "2 months/8 months",
+      "While worn",
+      "+(1-2) Piety and can be used as a holy symbol to turn or destroy undead."
+    ],
+    "Nighteyes": [
+      "Nighteyes",
+      "Berry",
+      "2-5 cp.",
+      "1 month/1 year",
+      "3d4 hours",
+      "Provides both night vision and infravision 60' even in complete darkness."
+    ],
+    "Nightshade": [
+      "Nightshade",
+      "Berry/Flower/Root/Leaf/Stalk",
+      "40-80 gp.",
+      "1 year/4 years",
+      "Instant",
+      "Ingestive/contact poison type XX (1d4/minute PR success, Death PR fail). Berry-Potency Q (Instant). Flower-Potency J (1d8 minutes). Root-Potency I (1d10 minutes). Leaf-Potency I (10-30 minutes). Stalk-Potency F (10-60 minutes). Poison Lore success can convert ingestive/contact to gaseous."
+    ],
+    "Samuel`s Pear": [
+      "Samuel`s Pear",
+      "Fruit",
+      "1-2 gp.",
+      "1 year/4 years",
+      "6 hours",
+      "Provides ultravision."
+    ],
+    "Sand Flower": [
+      "Sand Flower",
+      "Flower",
+      "8-12 gp.",
+      "3 months/2 years",
+      "6 hours",
+      "When placed in mouth provides oxygen directly. User must breathe out through nose. Will Force Save initially to keep from opening the mouth and ruining the effect."
+    ],
+    "Silver Lotus": [
+      "Silver Lotus",
+      "Flower",
+      "100-400 pp.",
+      "2 months/8 months",
+      "2d4 hours",
+      "Provides 1d6+1 AUR, +4 Aura Control, and doubles Aura regeneration rate.  2 levels of mental fatigue are applied after the effect fades."
+    ],
+    "Silver Puff": [
+      "Silver Puff",
+      "Spore Ball",
+      "4-8 sp.",
+      "2 weeks/12 weeks",
+      "1d4 hours",
+      "When spore ball is pointed at opponent and squeezed into a spray, or strikes and bursts open, the person struck must make a Poison Resistance or fall into an immediate sleep."
+    ],
+    "Silver Thistle": [
+      "Silver Thistle",
+      "Seed",
+      "10-40 pp.",
+      "2 months/8 months",
+      "1-3 hours",
+      "Grants mental power, namely improved telepathy with the ability to engage in mental combat."
+    ],
+    "St. John`s Wort": [
+      "St. John`s Wort",
+      "Flower",
+      "8-12 gp.",
+      "3 months/2 years",
+      "2d4 hours",
+      "Heals 1-3 damage when applied to an open wound. Temporarily cures depression type insanity symptoms. Removes fear and grants fear immunity."
+    ],
+    "Treasure Berries": [
+      "Treasure Berries",
+      "Berry",
+      "1-4 sp.",
+      "3 days/30 days",
+      "Instant",
+      "Each dose (3 berries) is a full day`s meal for an average humanoid."
+    ],
+    "Tree Horn": [
+      "Tree Horn",
+      "Stalk",
+      "3-4 cp.",
+      "6 months/2 years",
+      "1d4+2 hours",
+      "Grants the ability to sense the nearest location of surface water if any is within 10 miles."
+    ],
+    "Ubortha": [
+      "Ubortha",
+      "Fruit",
+      "10-40 pp.",
+      "2 weeks/4 weeks",
+      "10-40 min.",
+      "Grants either a vision (as the skill Forsee) or Scrying (as the spell) on any reflective surface. Consumer must concentrate on only one effect (not both)."
+    ],
+    "Warrior Rose": [
+      "Warrior Rose",
+      "Flower",
+      "4-8 pp.",
+      "2 months/1 year",
+      "1d4 hours",
+      "Grants +(1-3) STR, VIT and AGL, +1d4+1 END and immunity to sleep, hold, and paralysis."
+    ],
+    "White Willow Bark": [
+      "White Willow Bark",
+      "Bark",
+      "2-5 sp.",
+      "3 months/2 years",
+      "2d4 hours",
+      "Reduces 1 damage per wound, 1 level of mental fatigue, reduices fevers, in diseases which lower attributes, attribute loss is reduced by 1 point."
+    ],
+    "White Wood(Bark)": [
+      "White Wood(Bark)",
+      "Bark",
+      "40-80 pp.",
+      "Indefinite",
+      "Permanent",
+      "The bark can be used to make 22 point (+1) or 24 point (+2) wooden scale armor."
+    ],
+    "White Wood(Sap)": [
+      "White Wood(Sap)",
+      "Sap",
+      "1-4 pp.",
+      "Indefinite",
+      "Permanent",
+      "Makes an excellent magical base for mixing potions, elixirs, etc."
+    ],
+    "White Wood(Root Sap)": [
+      "White Wood(Root Sap)",
+      "Sap",
+      "10-40 pp.",
+      "Indefinite",
+      "Permanent",
+      "Ingestive poison type XII (Duration 1d6 minutes. No damage PR success, 2d6/minute PR fail). Potency Q (Instant). Poison Lore success can convert ingestive to contact/gaseous."
+    ],
+    "White Wood(Leaves)": [
+      "White Wood(Leaves)",
+      "Leaf",
+      "3-8 pp.",
+      "Indefinite",
+      "Instant",
+      "Heals 2d4 to any wounded area."
+    ],
+    "White Wood(Wood)": [
+      "White Wood(Wood)",
+      "Trunk/Branches",
+      "20 pp.",
+      "Indefinite",
+      "Permanent",
+      "+1 or +2 magical wood based on the age of the tree."
+    ],
+    "Wizard`s Cap": [
+      "Wizard`s Cap",
+      "Mushroom",
+      "100-300 pp.",
+      "2 weeks/24 weeks",
+      "1d4 hours",
+      "Provides 1d4+1 AUR, +4 Aura Control, and doubles Aura regeneration rate.  2 levels of mental fatigue are applied after the effect fades."
+    ],
+    "Wolf`s Ear": [
+      "Wolf`s Ear",
+      "Leaf",
+      "9-14 pp.",
+      "2 weeks/48 weeks",
+      "1 day",
+      "Suppresses lycantheropy. Lycantherops in non-humanoid form must make a Control Resistance or return to humanoid form."
+    ],
+    "Zazor(Fairy Fingers)": [
+      "Zazor(Fairy Fingers)",
+      "Parasitic Leaf",
+      "6-12 gp.",
+      "2 months/4 months",
+      "6 hours",
+      "Grants +20% to Poison Resistance and +25% to Disease Resistance."
+    ],
+    "Bloodberry": [
+      "Bloodberry",
+      "Berry",
+      "4-8 pp.",
+      "3d4 hours",
+      "2d4 hours",
+      "Suppresses vampiric blood compulsion."
+    ],
+    "Dragon Scale": [
+      "Dragon Scale",
+      "Mushroom",
+      "30-40 pp.",
+      "2 days/12 days",
+      "3d6 hours",
+      "Involuntary Will Force draining is blocked."
+    ],
+    "Frankincense": [
+      "Frankincense",
+      "Sap",
+      "15 gp.",
+      "Indefinite",
+      "30 min.",
+      "Temporary +20 to Affinity, +20% to Meditate Skill, -10% Control Resistance."
+    ],
+    "Lovelace(Ingested)": [
+      "Lovelace(Ingested)",
+      "Flower",
+      "2-4 gp.",
+      "2 weeks/8 weeks",
+      "1d4 hours",
+      "Grants +10% to Sing, and Sing Song skills."
+    ],
+    "Lovelace(Inhaled)": [
+      "Lovelace(Inhaled)",
+      "Flower",
+      "2-4 gp.",
+      "2 weeks/8 weeks",
+      "1d4 hours",
+      "Deeply inhaled scent causes -20% Control Resistance."
+    ],
+    "Methara": [
+      "Methara",
+      "Leaf",
+      "20 gp.",
+      "2 months/4 months",
+      "1 day",
+      "When first ingested a Poison Resistance is required to avoid stumbling to the ground. Even if resisted, an extreme tiredness takes over. For the first 12 hours 2d4 Will Force is lost per hour (not to go below 1). At the end of 12 hours they fall into a coma-like sleep and cannot be awakened. At the end of another 12 hours they awaken with 1 Will Force."
+    ],
+    "Myrrh": [
+      "Myrrh",
+      "Sap",
+      "10 gp.",
+      "Indefinite",
+      "30 min.",
+      "Grants +10% Meditation, and +10% Disease Resistance, but -10% Control Resistance."
+    ],
+    "Sunweed": [
+      "Sunweed",
+      "Leaf",
+      "2-3 pp.",
+      "1 week/5 weeks",
+      "2d6 hours",
+      "Grants Immunity to Poison and Diseases related to Ghouls."
+    ],
+    "Undead Bane": [
+      "Undead Bane",
+      "Leaf",
+      "10-20 pp.",
+      "1d6 days",
+      "1d4+2 hours",
+      "When worn on the face, it gives off a strong life force. All undead must make a Control Resistance to move within 10`."
+    ],
+    "Yellow Reed": [
+      "Yellow Reed",
+      "Leaf",
+      "5-10 pp.",
+      "2 months/2 years",
+      "6/24 hours",
+      "Suppresses the effects of skin disease for 6 hours and Mummy Rot for 1 full day."
+    ],
+    "Angel Fire": [
+      "Angel Fire",
+      "Mushroom",
+      "3-18 gp.",
+      "Indefinite",
+      "1d4 hours",
+      "Does 4d6 magical fire. Everyone within 10` of the fire gets +3 Aura."
+    ],
+    "Angelica": [
+      "Angelica",
+      "Leaf/Root/Stem",
+      "1-2 gp.",
+      "2 months",
+      "1d4 hours",
+      "Grants +5% to Baking/Cooking when used as an ingredient. If fish or meat is wrapped in the leaves it extends freshness by 2 weeks. The oil can be extracted for Perfume/Scent Making, and Brewing. If the oil is applied directly to the skin there is a 50% chance of developing an itchy rash when that skin is exposed to sunlight, resulting in -10% concentration (INT Save). More than 3 doses in a day ingested or in contact with skin causes poison Type IX (Duration 1d6 minutes. No damage PR success, 1d6/minute PR fail). Potency E (1d4 hours)."
+    ],
+    "Arctic Lupine": [
+      "Arctic Lupine",
+      "Flower/Stem/Leaf",
+      "1-2 sp.",
+      "2d4 days",
+      "1d6 min.",
+      "Ingestive poison type XIV (Duration 1d6 minutes. 1d4/minute PR success, 1d6/10 seconds PR fail). Potency I (1d10 minutes). Poison Lore success can convert ingestive to contact/gaseous."
+    ],
+    "Ardentia": [
+      "Ardentia",
+      "Flower",
+      "2-8 gp.",
+      "3d10 min.",
+      "3d4 hours",
+      "Causes an Aura of Fire to envelop user: gaining Endure Heat, 1 point of Force Armor, and anyone who touches their Aura takes 1d6 magical fire damage."
+    ],
+    "Ashbloom": [
+      "Ashbloom",
+      "Flower",
+      "2-5 gp.",
+      "3d8 hours",
+      "3d6 min.",
+      "Transforms into ashform. Gains immunity to fire, physical and magical damage save Dig/Disentegrate which kill instantly. Gains 2 points of hide, Magical Voice, Magical Sight, Magical Hearing. Can to breathe lava but takes 2d6 points to 2d4 body areas."
+    ],
+    "Baneberry(Berry)": [
+      "Baneberry(Berry)",
+      "Berry",
+      "2-4 gp.",
+      "2d4 hours",
+      "1d4 hours",
+      "Anti-toxin type XII. More than 1 oz. becomes ingestive poison type XIV (Duration 1d6 minutes. 1d4/minute PR success, 1d6/10 seconds PR fail). Potency F (10-60 minutes)."
+    ],
+    "Baneberry(Root)": [
+      "Baneberry(Root)",
+      "Root",
+      "2-5 sp.",
+      "6 days/2-3 months",
+      "6 hours",
+      "Gains a temporary +20% to Disease Resistance. Nausea for 10-40 minutes causing -(1d4) VIT. If more than 1 dose is consumed, -2 to hit, -2 damage, -5 Perception, -2 END for 1d4+1 hours."
+    ],
+    "Barrel Cactus": [
+      "Barrel Cactus",
+      "Cactus",
+      "2-4 gp.",
+      "Indefinite",
+      "2d4 hours",
+      "Anti-toxin type XII. Also, the thorns can be used for +5 Instrument Making."
+    ],
+    "Baywood Tree(Bark)": [
+      "Baywood Tree(Bark)",
+      "Bark",
+      "2-8 sp.",
+      "4 months",
+      "2d4 hours",
+      "Reduces fire-based damage by 1 dice."
+    ],
+    "Baywood Tree(Leaves-Tea)": [
+      "Baywood Tree(Leaves-Tea)",
+      "Leaf",
+      "6-12 sp.",
+      "1 month/4 months",
+      "2d4 hours",
+      "Reduces fire-based damage by 1d4 points."
+    ],
+    "Baywood Tree(Leaves-Salve)": [
+      "Baywood Tree(Leaves-Salve)",
+      "Leaf",
+      "6-12 sp.",
+      "1 month/4 months",
+      "2d4 hours",
+      "Heals 1d4+1 to a burn wound."
+    ],
+    "Blazing Camel": [
+      "Blazing Camel",
+      "Flower",
+      "1-2 gp.",
+      "2 hours/3 months",
+      "Instant",
+      "Each dose is a full day`s meal for an average humanoid. Having more than 3 doses in a day causes -1 VIT and 1 level of fatigue (overeating)."
+    ],
+    "Bloodfire Bark": [
+      "Bloodfire Bark",
+      "Bark",
+      "1-2 gp.",
+      "2d6 months",
+      "3d4 min.",
+      "1d4 minutes after physical contact, a burning rash starts, spreading to adjacent body areas 1d4 minutes later. The rash, though brief, causes an intense burning sensation, lowering base END by 1d4. Any damage sustained to rash areas is +2 per occurrence. Alternately, if ingested, the being's throat and mouth feel like they are on fire, completely incapacitating them, and the rash still spreads."
+    ],
+    "Blue Bay Creeper": [
+      "Blue Bay Creeper",
+      "Vine",
+      "1-2 sp.",
+      "1 week",
+      "Constant",
+      "While in the aroma of this herb, all sense of direction is lost with a -70% Direction Knowledge."
+    ],
+    "Bluebrine": [
+      "Bluebrine",
+      "Algae",
+      "1-4 gp.",
+      "2 weeks/4 months",
+      "3d4 hours",
+      "Relieves all symptoms of sea-sickness including lost VIT and urges to vomit."
+    ],
+    "Bluetide": [
+      "Bluetide",
+      "Flower",
+      "3-6 gp.",
+      "3 days",
+      "2d4 hours",
+      "Grants +(1-3) STR, +50% Endurance, -(1d4) INT. Second doses in the same day grant +(1d4) STR. END is increased by 100% but -(1d4) INT, and loss of hearing."
+    ],
+    "Brinytop": [
+      "Brinytop",
+      "Shrub",
+      "4-8 gp.",
+      "2 weeks",
+      "2d6 hours",
+      "Heals 1d4+1 to all areas. Removes 2 levels of fatigue. Grants +15% Disease Resistance."
+    ],
+    "Brittlebush": [
+      "Brittlebush",
+      "Stem",
+      "1-2 sp.",
+      "6 days/2-3 months",
+      "6 hours",
+      "Acts as an adhesive glue, granting +5% to skills involving crafting objects such as arrows, books, barrels, etc. When burned, the resin becomes a pleasing incense, offering +5% to Meditate and Concentration rolls."
+    ],
+    "Burning Lady": [
+      "Burning Lady",
+      "Cactus",
+      "2-5 gp.",
+      "2d4 months",
+      "2d4 hours",
+      "Relieves and blocks natural heat exhaustion. Acts as 1 full meal."
+    ],
+    "Camelback": [
+      "Camelback",
+      "Cactus",
+      "2-5 gp.",
+      "2d4 months",
+      "2d6 hours",
+      "Relieves and blocks natural heat exhaustion."
+    ],
+    "Cloudpuff": [
+      "Cloudpuff",
+      "Mushroom",
+      "6-12 gp.",
+      "3 days",
+      "1-3 hours",
+      "Grants immunity to the effects of low air pressure and removes any ill effects from fatigue and lack of oxygen due to asphyxiation or extremely high altitudes."
+    ],
+    "Crowberry(Berries)": [
+      "Crowberry(Berries)",
+      "Berry",
+      "1-2 sp.",
+      "6 months",
+      "2d4 hours",
+      "Grants +5% Disease Resistance and, when added as flavoring, +5% to Baking/Cooking."
+    ],
+    "Crowberry(Root)": [
+      "Crowberry(Root)",
+      "Root",
+      "1-2 sp.",
+      "6 months",
+      "Instant",
+      "Heals 1d4+1 to any wound."
+    ],
+    "Death Grin": [
+      "Death Grin",
+      "Mushroom",
+      "3-7 gp.",
+      "1 week",
+      "3d4 hours",
+      "Places the user in a death-like state, slowing the heartrate and removing all senses of smell, taste, touch, sight and sound. Each additional dose acts as an ingested poison Type XX (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail). Potency F (10-60 hours)."
+    ],
+    "Deeproot": [
+      "Deeproot",
+      "Root",
+      "1-3 pp.",
+      "2d4 weeks/6 months",
+      "1d6 hours",
+      "Grants breathless (as the spell) and immunity to pressure, heat, and cold."
+    ],
+    "Desert Sage": [
+      "Desert Sage",
+      "Leaf",
+      "2-4 pp.",
+      "1d4 days",
+      "1 day",
+      "Grants +30% to Meditate, +5% to Divine Magical skills, and Protection from Evil: Any evil trying to come within 20' must make a Control Resistance to do so. If they suceed they are still -2 to hit/damage and +10% all resistances against their effects."
+    ],
+    "Desert Tea": [
+      "Desert Tea",
+      "Leaf",
+      "2-5 sp.",
+      "2d4 days/3 months",
+      "2d6 hours",
+      "Grants +30% to Disease Resistance and a new resistance to any current diseases. Lowers fever."
+    ],
+    "Dwarf`s Head": [
+      "Dwarf`s Head",
+      "Mushroom",
+      "2-8 gp.",
+      "1 week/3 months",
+      "3d4 hours",
+      "Grants 6 points of removable hide, 10%(or +10%) to Speak to Stone."
+    ],
+    "Everbloom": [
+      "Everbloom",
+      "Flower",
+      "10-20 gp.",
+      "4 hours/2 weeks",
+      "6d4 hours",
+      "Heals 3d4+1 to all body areas. Grants +30% to Disease and Poison Resistance, and Immunity to Cold."
+    ],
+    "Fadegrass": [
+      "Fadegrass",
+      "Grass",
+      "1-2 pp.",
+      "3d4 days",
+      "1d4 min.",
+      "Worn as rope around the neck to grant Invisibility."
+    ],
+    "Fever Vine": [
+      "Fever Vine",
+      "Vine",
+      "3-12 sp.",
+      "1 week",
+      "1d4 min.",
+      "If a Disease Resistance is failed, the user`s body temperature raises 5 degrees (1 degree per 20 minutes), providing either relief from hypothermia or a fever, depending initial body temperature. This altered body temperature remains until affected by other means, such as magic or herbs. A second Disease Resistance is necessary to avoid losing 1 point to all Mental attributes for 1d4 hours."
+    ],
+    "Feverweed": [
+      "Feverweed",
+      "Leaf",
+      "4-8 gp.",
+      "2 months",
+      "1d4 days",
+      "Extends the time one can survive without water by 1d4 days, but causes a slight fever for the total duration, unless a Disease Resistance is made."
+    ],
+    "Fiery Fingers": [
+      "Fiery Fingers",
+      "Leaf",
+      "2-8 sp.",
+      "4 days/2 months",
+      "1d4+1 hours",
+      "Slight intoxicant, granting +(1-2) STR and VIT, +15% Perception, but -1 to INT and WIS, and -15% to Discipline skills."
+    ],
+    "Firemoon": [
+      "Firemoon",
+      "Leaf",
+      "4-8 sp.",
+      "4 months",
+      "3d4 hours",
+      "Heals 1d4 to all body areas, cures headaches and reduces fever."
+    ],
+    "Firepeak Moss": [
+      "Firepeak Moss",
+      "Moss",
+      "3-6 sp.",
+      "Varies",
+      "1 sec.",
+      "Causes flammable objects to randomly and instantaneously ignite within a 5` radius, causing 2d6 fire damage before extinguishing itself in 1 second."
+    ],
+    "Fireseed(Seed)": [
+      "Fireseed(Seed)",
+      "Seed",
+      "2-8 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Fire within lava or magma for 10 seconds, with a 10% chance of a Beta Fire Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Fireseed."
+    ],
+    "Fireseed(Tree)": [
+      "Fireseed(Tree)",
+      "Tree",
+      "2-8 pp.",
+      "Eternal",
+      "Permanent",
+      "Wood Lore can transfer the Fireseed Tree power of Heat Skin (3d6 fire damage). If using Fireseed wood to produce a weapon or piece of armor, the power remains, those wielding it should protect themselves with an immunity to fire damage. Any weapons or armor made of this wood would be considered +4 wood with an Object Strength and Armor Value of 28."
+    ],
+    "Fireweed": [
+      "Fireweed",
+      "Stem",
+      "4-12 sp.",
+      "12 hours",
+      "Instant",
+      "Heals 1d4+1 to any wound."
+    ],
+    "Flaming Skull": [
+      "Flaming Skull",
+      "Mushroom",
+      "3-6 gp.",
+      "1 week",
+      "1d4 min.",
+      "Grants the ability of levitation, as per the spell."
+    ],
+    "Fogweed": [
+      "Fogweed",
+      "Flower",
+      "2-8 gp.",
+      "Eternal*",
+      "Permanent",
+      "Creates a thick fog within a 50` radius (*as long as it remains within 30` of water). It is immune to fire and frost. Once removed from this area of effect, within 3 seconds the Fogweed`s power is expended, and the fog dissipates."
+    ],
+    "Frostbloom": [
+      "Frostbloom",
+      "Flower",
+      "2-6 gp.",
+      "1 week/3 months",
+      "3d4 hours",
+      "Removes 2 levels of fatigue and grants +1 Intelligence."
+    ],
+    "Frostseed(Seed)": [
+      "Frostseed(Seed)",
+      "Seed",
+      "2-8 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Water within icy water for 10 seconds, with a 10% chance of an Omega Water Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Frostseed."
+    ],
+    "Frostseed(Tree)": [
+      "Frostseed(Tree)",
+      "Tree",
+      "2-8 pp.",
+      "Eternal",
+      "Permanent",
+      "Wood Lore can transfer the Frostseed Tree power of Frost Skin (3d4 cold damage). If using Frostseed wood to produce a weapon or piece of armor, the power remains, those wielding it should protect themselves with an immunity to cold damage. Any weapons or armor made of this wood would be considered +4 wood with an Object Strength and Armor Value of 28."
+    ],
+    "Frostwolf": [
+      "Frostwolf",
+      "Leaf",
+      "2-5 gp.",
+      "2d4 days/3 months",
+      "2d6 hours",
+      "Provides complete relief for hypothermia, removing all adverse effects. The body`s temperature is returned to normal and cannot be altered by natural means."
+    ],
+    "Goldreed": [
+      "Goldreed",
+      "Grass",
+      "2-5 gp.",
+      "2 days",
+      "2 days",
+      "Its odor attracts 3d4 random, localized non-magical herbivore animals (from up to 1 mile away) to come within a 30` radius, where they will attempt to eat the Goldreed if no danger is perceived, and provides +50% to the skill Summon Animal. These powers endure for as long as the grass is growing; once picked, it attracts only 2d4 animals for the first day and only 1d4 for the second day. Furthermore, the skill Summon Animal is +30% for one day and only +10% for the second day. No attraction remains or bonus is given on the third day after being picked."
+    ],
+    "Gravelseed(Seed)": [
+      "Gravelseed(Seed)",
+      "Seed",
+      "2-8 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Earth within a pile of gravel for 10 seconds, with a 10% chance of a Beta Earth Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Gravelseed."
+    ],
+    "Gravelseed(Tree)": [
+      "Gravelseed(Tree)",
+      "Tree",
+      "2-8 pp.",
+      "Eternal",
+      "Permanent",
+      "Wood Lore may be used on a Gravelseed tree to transfer the power of Rock Skin (providing 2 magical layers of physical armor with a combined armor rating of 8; the inner layer is considered flexible and the outer layer is semi-flexible; this magical armor will appear below any clothing or armor already worn, and weighs 36 pounds). If using Gravelseed wood to produce a weapon or piece of armor, this power remains as well. Any weapons or armor made of this wood would be considered +4 wood with an Object Strength and Armor Value of 28 (+8 magical Rock Skin armor, +2 additional layers)."
+    ],
+    "Gypsy Rose(Flower)": [
+      "Gypsy Rose(Flower)",
+      "Flower",
+      "2-5 gp.",
+      "6 days",
+      "10-30 min.",
+      "Its odor causes all within 10` (farther depending on wind), to make a Control Resistance or become light headed and faint, losing -10% to Perception and -20% to Concentration (INT Saves). If exposed longer than a minute the victim gains a temporary random insanity for 1d4 weeks."
+    ],
+    "Gypsy Rose(Thorn)": [
+      "Gypsy Rose(Thorn)",
+      "Thorn",
+      "2-5 gp.",
+      "2 weeks",
+      "10-30 min.",
+      "Ingestive poison (thorn can also be push through the skin to enter bloodstream) type XVII (Duration 1d4 minutes. 1d8/minute PR success, 1d8/10 seconds PR fail). Potency O (10-30 seconds). Poison Lore success can convert ingestive to contact/gaseous."
+    ],
+    "Harborsong": [
+      "Harborsong",
+      "Flower",
+      "1-3 pp.",
+      "2d4 hours",
+      "1 day",
+      "Grants +2 Charm and Appearance, +1 Aura, and wards against all sea-sickness effects."
+    ],
+    "Hyssop": [
+      "Hyssop",
+      "Flower",
+      "2-6 sp.",
+      "1 week/3 months",
+      "2d4 hours",
+      "Heals 1d4+1 to bruises. Provides relief from coughing, sore throat, colic, enhances digestion, and doubles healing rate."
+    ],
+    "Icebreaker": [
+      "Icebreaker",
+      "Flower",
+      "1-4 gp.",
+      "1d4 days",
+      "1 min.",
+      "Physical contact with one petal causes 1d6 fire damage per 10 seconds, for a maximum of 60 seconds."
+    ],
+    "Icepetal": [
+      "Icepetal",
+      "Flower",
+      "1-4 gp.",
+      "1-2 hours",
+      "varies",
+      "Physical contact with one petal causes all water in an area up to 6 cubic inches to freeze solid. Any living skin tissue touched by a petal becomes frostbitten (unless a Magic Resistance is made), and that body area loses 2d4 Endurance. The freezing process takes 1d6 seconds, and the resulting ice melts at a normal rate dependent on the surrounding air temperature."
+    ],
+    "Lotus": [
+      "Lotus",
+      "Flower",
+      "4-8 gp.",
+      "3 week/4 months",
+      "3d4 hours",
+      "Heals 1-2 to all body areas. Grants +10% Disease Resistance, +5% to Control Resistance, +5% to morale checks, immunity to fear, +50% to Meditate and Body Control."
+    ],
+    "Lotus(with Alcohol)": [
+      "Lotus(with Alcohol)",
+      "Flower",
+      "4-8 gp.",
+      "3 week/4 months",
+      "3d4 hours",
+      "Heals 1-2 to all body areas. Grants +10% Disease Resistance, +5% to Control Resistance, +5% to morale checks, immunity to fear, +50% to Meditate and Body Control. Also, +5% Perception but causes a headache after its effect has worn off."
+    ],
+    "Mephyt Toe": [
+      "Mephyt Toe",
+      "Berry",
+      "2-8 gp.",
+      "2-40 sec.",
+      "5-20 hours",
+      "Completely nullifies pain and induces sleep in 2d20 seconds, unless a Vitality save is made by -60% (with a cumulative -5% per 10 seconds). The user will remain asleep for 5d4 hours and takes 1d4 minutes to waken completely. If someone attempts to waken the user before 5d4 hours, that being must make a Will Force save -60% every 10 seconds to remain awake. After the herb`s duration, and the user is fully awake, Physical and Mental attributes are reduced by 1d4, which return at a rate of 1 per hour. If 1-2 extra doses are consumed, the user sleeps for 8d4 hours, with a 20% chance of death. 3+ doses have a 60% chance of death and a -80% Will Force save to awaken."
+    ],
+    "Merweed": [
+      "Merweed",
+      "Algae",
+      "3-6 gp.",
+      "1 day",
+      "1d4 hours",
+      "Creates an illusion that the wielder transforms into a Merfolk. The user`s general features (hair color, gender, size, etc.) remain the same, but skin gains a pale, smooth quality and a sea-green tail appears instead of legs."
+    ],
+    "Monk`s Hood": [
+      "Monk`s Hood",
+      "Shrub",
+      "20-30 gp.",
+      "2d4 days/3 months",
+      "1d4 hours",
+      "Grants +10% Disease Resistance (new resistance to existing diseases). Also, reduces fever, but causes numbness when applied to the skin (resulting in -1 to hit and -15% to all skills involving complex body movements). Provides relief from extreme temperatures (hypothermia and heat exhaustion). Slight relief for shock, reducing damage to 1 point above shock level."
+    ],
+    "Moondrop": [
+      "Moondrop",
+      "Flower",
+      "2-5 gp.",
+      "1 hour",
+      "2d6 hours",
+      "Suppresses lycanthropy transformations during a full moon, as long as the flower is fresh (within 1 hour of being harvested). Also provides +1 Piety for nature-based priests (i.e. Druids, Shamans, etc.)."
+    ],
+    "Mummy Dust": [
+      "Mummy Dust",
+      "Lichen",
+      "1-3 pp.",
+      "3 weeks",
+      "Instant",
+      "Causes throat swelling and inability to breathe. Asphyxiation beings in 1d4 seconds. Cure Poison to remove effect."
+    ],
+    "Nixie Fingers": [
+      "Nixie Fingers",
+      "Algae",
+      "1-2 pp.",
+      "3d4 days",
+      "2d4 hours",
+      "Grants immunity to all adverse effects of water pressure and the ability to breathe water through a magical pair of gills, formed within 5 seconds just behind the being`s ears."
+    ],
+    "Obsidia": [
+      "Obsidia",
+      "Shrub",
+      "1-2 pp.",
+      "3 week/4 months",
+      "2d4 hours",
+      "Grants 2d10 Endurance and +1 Will Force, but lowers Intelligence and Wisdom by 2."
+    ],
+    "Pyreroot": [
+      "Pyreroot",
+      "Root",
+      "4-8 gp.",
+      "3 week/4 months",
+      "Instant",
+      "Heals 2d4+2 to burns (including sunburns) and surface wounds (including swelling due to insect bites)."
+    ],
+    "Rainberry": [
+      "Rainberry",
+      "Berry",
+      "4-6 gp.",
+      "1 week/2 weeks",
+      "2d6 hours",
+      "Enables prediction of weather over the next 2d6 hours for a 10 mile radius. After eating one berry a certain `feeling` is gained of whether it is going to rain, snow, or be windy, etc."
+    ],
+    "Reekweed(Leaves)": [
+      "Reekweed(Leaves)",
+      "Leaf",
+      "6-12 gp.",
+      "1 week/3 months",
+      "2d4 hours",
+      "Creates a repugnant stench within a 20` radius, causing all those failing a Vitality save to vomit uncontrollably for 1d4 minutes and lose 3 Vitality for 2d4 hours. If ingested, Reekweed leaves act as a Type XX poison (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail), Potency O poison (10-30 seconds)."
+    ],
+    "Reekweed(Flower)": [
+      "Reekweed(Flower)",
+      "Flower",
+      "10-20 pp.",
+      "1 week/3 months",
+      "2d4 hours",
+      "Grants +2 Intelligence and -1 Vitality (permanently), and causes 3d4 hours of uncontrollable vomiting unless a modified Vitality save is made."
+    ],
+    "Rockfist Tree(Bark)": [
+      "Rockfist Tree(Bark)",
+      "Bark",
+      "2-8 pp.",
+      "2d4 months",
+      "2d4 hours",
+      "Transforms the user into a form of rock, retaining general shape, gaining 20 points of Endurance and 10 points of hide. Magical Sight, Magical Voice and Magical Hearing are also gained."
+    ],
+    "Rockfist Tree(Root)": [
+      "Rockfist Tree(Root)",
+      "Root",
+      "3-9 pp.",
+      "1d4 months",
+      "2d4 hours",
+      "Transforms the user into a form of rock, retaining general shape, gaining 25 points of Endurance and 15 points of hide. Magical Sight, Magical Voice and Magical Hearing are also gained."
+    ],
+    "Rue": [
+      "Rue",
+      "Leaf",
+      "2-8 sp.",
+      "1 week/3 months",
+      "2d4 hours",
+      "Grants +10% Disease Resistance, and its aroma wards insects such as fleas, ticks, flies and mosquitoes."
+    ],
+    "Salamander Tail": [
+      "Salamander Tail",
+      "Vine",
+      "3-18 pp.",
+      "1 week",
+      "1d4 hours",
+      "Grants immunity to heat and fire as the spell Endure Fire for every body area rubbed in the leaves` extracted oil."
+    ],
+    "Sandthorn(Golden)": [
+      "Sandthorn(Golden)",
+      "Thorn",
+      "6-12 gp.",
+      "1 day",
+      "1d4 hours",
+      "Provides +1d4 temporary Endurance."
+    ],
+    "Sandthorn(Scarlet)": [
+      "Sandthorn(Scarlet)",
+      "Thorn",
+      "1-2 gp.",
+      "1 day",
+      "2d4 hours",
+      "Provides +1d4 temporary Intelligence."
+    ],
+    "Scarlet Tail": [
+      "Scarlet Tail",
+      "Root",
+      "10-20 gp.",
+      "1 week",
+      "Constant",
+      "Wards against desert habitat animals and magical animals (i.e. camel, hyena, scarab swarm, dune worm, etc.). They must make a Control Resistance to come within 40`, and even if made, must make a Control Resistance to attack the wearer. The effect lasts until the herb`s potency fails after 1 week."
+    ],
+    "Scorchleaf": [
+      "Scorchleaf",
+      "Leaf",
+      "20-50 gp.",
+      "1 week/2 months",
+      "5d10 sec.",
+      "Causes 3d6 fire damage per 10 seconds to internal organs (upper torso), 1d4 minutes after ingestion."
+    ],
+    "Seastalk": [
+      "Seastalk",
+      "Seaweed",
+      "30-60 pp.",
+      "2 weeks",
+      "1 hour",
+      "Grants +2-4(1-3+1) temporary Intelligence and Wisdom, but causes paralysis unless a Poison Resistance is made at -30%."
+    ],
+    "Shrivelmoss": [
+      "Shrivelmoss",
+      "Moss",
+      "3-6 pp.",
+      "2 weeks/6 months",
+      "5d6 min.",
+      "Reduces Vitality temporarily by 2d4 and causes temporary aging at a rate of 3 years per minute for 5d6 minutes. For every year of age past maximum age, there is a cumulative 10% chance of death, unless a Magic Resistance is made. After the duration, age returns to normal at a rate of 1 year per minute. This effect is considered negative energy/death."
+    ],
+    "Silvercap": [
+      "Silvercap",
+      "Mushroom",
+      "6-12 pp.",
+      "1 day",
+      "1d4 min.",
+      "Causes the user to levitate weightlessly, as if unaffected by gravity, and grants the ability to move up or down at a rate of 1` per second. The user must concentrate while moving, and must make an Intelligence save to make any difficult movements."
+    ],
+    "Sirenbane": [
+      "Sirenbane",
+      "Leaf",
+      "20-40 pp.",
+      "1 week",
+      "3d20 min.",
+      "Grants immunity to all effects of Sirens, including songs."
+    ],
+    "Skullcap": [
+      "Skullcap",
+      "Leaf",
+      "2-4 gp.",
+      "3 months",
+      "6 hours",
+      "Acts as a hallucinogen, adversely affecting the mind, resulting in +5% to Perception Check, -30% to Concentration rolls, and -30% to Intelligence and Wisdom saves. It also induces 1 level of Fatigue, and provides a +50% Disease Resistance against rabies."
+    ],
+    "Skunk Cabbage": [
+      "Skunk Cabbage",
+      "Leaf",
+      "2-7 sp.",
+      "2d4 days/2 months",
+      "1d6 hours",
+      "Acts as an ingestive poison type IX (Duration 1d6 minutes. No damage PR success, 1d6/minute PR fail). Potency H (10-30 minutes). Crushed leaves omit a strong odor of rotting meat, attracting insects. Anyone within a 10` radius is nauseated for 10-40 minutes, resulting in a temporary loss of 1d4 VIT. Newly blossomed flowers emit enough heat to melt snow."
+    ],
+    "Smoldering Eye": [
+      "Smoldering Eye",
+      "Berry",
+      "2-8 gp.",
+      "1 week",
+      "Instant",
+      "Inflicts 2d6 fire damage upon first touch (while on the plant) but also acts as 1 full meal when eaten after picked."
+    ],
+    "Snowbell": [
+      "Snowbell",
+      "Flower",
+      "2-7 gp.",
+      "1 week/3 months",
+      "2d4 min.",
+      "Provides relief for upset stomach, headache and dizziness, and reduces 1 level of fatigue."
+    ],
+    "Spider Moss": [
+      "Spider Moss",
+      "Moss",
+      "3-12 pp.",
+      "3d4 hours/1 month",
+      "1d4+1 hours",
+      "Grants the ability to communicate with the natural world, adding +50% to the following skills: Area Sense, Speak to Animal, Speak to Dead, Speak to Plant. In so doing, it also disguises the user`s life force as that of an animal and temporarily reduces Intelligence by 1. After consuming this moss twice a day for three days in a row, there is a 5% chance of permanently losing 1 point of Intelligence."
+    ],
+    "Sticklewort": [
+      "Sticklewort",
+      "Flower/Leaf/Stem",
+      "2-5 sp.",
+      "2 months",
+      "1d4 hours",
+      "Heals 1d4+1 and provides +5% to Crying/Hawking, Recite Poetry, and Singing. Because of the high amount of tannin in its oil, this herb also grants +10% to Skinning/Tanning. Also reduces fever."
+    ],
+    "Sunbeam Blossom": [
+      "Sunbeam Blossom",
+      "Flower",
+      "4-8 gp.",
+      "1d4+1 days",
+      "10-60 min.",
+      "Surrounds the body area on which it is applied in a faint golden glow, reducing fire damage by 1 die (to that particular body area) and healing 1 point per minute."
+    ],
+    "Thunderseed(Seed)": [
+      "Thunderseed(Seed)",
+      "Seed",
+      "2-8 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Air within a cloud for 10 seconds, with a 10% chance of an Omega Air Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Thunderseed."
+    ],
+    "Thunderseed(Tree)": [
+      "Thunderseed(Tree)",
+      "Tree",
+      "2-8 pp.",
+      "Eternal",
+      "Permanent",
+      "Wood Lore can transfer the Thunderseed Tree power of Electric Skin (3d8 electrical damage). If using Thunderseed wood to produce a weapon or piece of armor, the power remains, those wielding it should protect themselves with an immunity to electrical damage. Any weapons or armor made of this wood would be considered +4 wood with an Object Strength and Armor Value of 28."
+    ],
+    "Wattle Tree(Bark)": [
+      "Wattle Tree(Bark)",
+      "Bark",
+      "2-5 gp.",
+      "6 months",
+      "Permanent",
+      "Because of its great quantity of tannin, the oil from this bark grants +30% to Skinning/Tanning and can also be used as a brown dye."
+    ],
+    "Wattle Tree(Flower)": [
+      "Wattle Tree(Flower)",
+      "Flower",
+      "2-6 sp.",
+      "1-3 days",
+      "Permanent",
+      "Can be used as a minor scent, granting +5% to Perfume/Scent Making."
+    ],
+    "Whaleback": [
+      "Whaleback",
+      "Bark",
+      "2-8 gp.",
+      "6 months",
+      "3d4 hours",
+      "Grants +20% to Disease Resistance and +1d4 Endurance."
+    ],
+    "Wild Iris": [
+      "Wild Iris",
+      "Flower",
+      "2-5 sp.",
+      "1 week",
+      "10-60 min.",
+      "Ingested poison Type VII (Duration 10d60 minutes. No damage PR success, 1d4/10 minutes PR fail). Potency L (1d4 minutes)."
+    ],
+    "Witch`s Thimble": [
+      "Witch`s Thimble",
+      "Flower",
+      "2-4 gp.",
+      "1 week",
+      "Constant/1d4 days",
+      "Provides protection from evil witches. Any evil aligned witch attempting to come within 10` of the flower or perform a ritual or skill involving anyone within 10` of the flower must make a Control Resistance to do so. Failure indicates an inability to adversely affect the skill user or those within the flower`s area of influence. Even if a Control Resistance is made, physical attacks will be at -2 to hit and damage and all resistances versus effects of that witch will be at +10%."
+    ],
+    "Witherfinger": [
+      "Witherfinger",
+      "Leaf",
+      "4-8 gp.",
+      "2 weeks/3 months",
+      "3d4 hours",
+      "Increases all mental stats by 1 but reduces all physical stats by 1."
+    ],
+    "Zebra Grass": [
+      "Zebra Grass",
+      "Grass",
+      "2-4 gp.",
+      "2d6 months",
+      "3d8 hours",
+      "Allows a being to go without water for the duration, with no adverse effects. Upon ingestion, the grass reacts with water already stored in the stomach and continually refreshes the body with more, magically created water. After the powers have been expended, the grass stops creating water and is then digested normally."
+    ],
+    "Aetherwart": [
+      "Aetherwart",
+      "Spores",
+      "1-2 pp.",
+      "Eternal",
+      "1 day",
+      "Magic Resistance is reduced by 25% for 1 day."
+    ],
+    "Angelwing": [
+      "Angelwing",
+      "Flower",
+      "1-3 pp.",
+      "Eternal",
+      "Instant",
+      "Within the flower`s glow heals all wounded areas up to 50 points of damage, once every 10 seconds. Once an Angelwing has healed a total of 2000 points of damage, its light fades and its blossom shrivels and dies."
+    ],
+    "Ashbloom(Plane of Fire)": [
+      "Ashbloom(Plane of Fire)",
+      "Flower",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "20 min.",
+      "Transforms into ashform. Gains immunity to fire, physical and magical damage save Dig/Disentegrate which kill instantly. Gains 2 points of hide, Magical Voice, Magical Sight, Magical Hearing. Can breathe lava without damage. Gains Finger of Fire (at 2 Aura x title/level with a 2 minimum). Regeneration of previously inflicted wounds of 1 point per 5 seconds while touching at least 2 cubic feet of ash. Effect lasts for 20 minutes."
+    ],
+    "Ash Lotus": [
+      "Ash Lotus",
+      "Flower",
+      "1-2 pp.",
+      "1 month/3 months",
+      "1d4+1 hours",
+      "Ingested it reduces Control Resistance by 25% for 1d4+1 hours. The dust version of this can be applied liberally to an Aura container to reduce the targets Magic Resistance by 25% to a cast spell. This usage requires one dose per 5 Aura used in the spell and also lasts 1d4+1 hours."
+    ],
+    "Bane Bulb": [
+      "Bane Bulb",
+      "Flower",
+      "2-5 pp.",
+      "1 month/3 months",
+      "Instant",
+      "Removes a negative effect on an undead creature or being, or restores 3d8 points of endurance to all wounded areas on an undead."
+    ],
+    "Baneflower": [
+      "Baneflower",
+      "Flower",
+      "2-5 pp.",
+      "Instant",
+      "Eternal",
+      "Surrounds the unfortunate being who both saw and inhaled its scent with a very strong negative energy field attuned against 1d4 random races, classes, alignments, or any combination thereof (at the GM`s discretion). Beings whom the user is attuned against can feel a sense of danger within 60 feet of the user and can sense the user as the source if they can see him. If they touch him, they must make a Magic Resistance for every 10 seconds of physical contact, or die."
+    ],
+    "Bearded Djinnroot": [
+      "Bearded Djinnroot",
+      "Vine",
+      "2-5 pp.",
+      "3 weeks/18 weeks",
+      "3d4 hours",
+      "Emits a 6` spherical field of Repulsion from the extracted herb, causing anyone trying to attack or touch the vine (along with anyone holding or wearing it) to make a Strength save or be thrown back, taking 2-5 seconds to recover if an Agility save is made. Even if a Strength save is made, they are -4 to hit and do half damage. This save must be made each round or they will suffer the throwback effect. All objects (not beings or creatures) weighing less than 15 pounds will be pushed away from the user (except their own), and missile weapons are deflected away from the user. The user is unable to use missile or melee weapons while holding or wearing this vine."
+    ],
+    "Bloodbone Rose": [
+      "Bloodbone Rose",
+      "Flower/Leaf/Stem/Root",
+      "1-3 pp.",
+      "1 week",
+      "Instant",
+      "Completely restores the physical body of an undead being to its original form, removing all physical damage and decay. Once this power has been spent, the rose crumbles into dust."
+    ],
+    "Cage Vine": [
+      "Cage Vine",
+      "Vine/Berry",
+      "1-4 pp.",
+      "2 months",
+      "2d4",
+      "Grows into a domed structure fashioned of a single twisted, thorny vine entwined around itself. If any living or undead beings come within 5` of the structure`s outer wall, it will emit a loud screech. Anyone who ingests even a single bite of a berry is filled with magical Fear and will do anything possible to flee the presence of the vine for 2d4 days."
+    ],
+    "Cankermist Creeper": [
+      "Cankermist Creeper",
+      "Vine",
+      "1-4 pp.",
+      "1d4",
+      "3d4 days",
+      "Inflicts a disease within 10-30 seconds, unless a half Disease Resistance is made. If this is failed, the victim suffers painful open sores all over their body, resulting in -1d4 Vitality, -1d4 Will Force, and 2 levels of Fatigue. The victim is also surrounded by a foul-smelling brown fog stretching 3d10` wide, in which beings are -4 to hit and must make a Vitality save at -10% or become nauseated, resulting in another -1 to hit and +1 to Initiative. This disease is contagious and any being or creature that touches the victim must make a half Disease Resistance or suffer as well."
+    ],
+    "Castaway": [
+      "Castaway",
+      "Flower/Stem/Leaf/Root",
+      "11-20 pp.",
+      "1 week",
+      "4d4+4 hours",
+      "Causes the user to seem to vanish into thin air. They cannot be detected by any sense, magical or otherwise, including sight, hearing, heat patterns, odor, life sense, air movement, mental contact, detection effects, etc. To those with magical tracking abilities, the user has simply ceased to exist. This counts as Non-Detection as well. This effect lasts until the end of the duration or until the user takes any form of hostile action. Detect Protection is the only effect that detects the user and only detects that an herb is in effect."
+    ],
+    "Cinderbane": [
+      "Cinderbane",
+      "Flower",
+      "2-5 pp.",
+      "1 week",
+      "10 min.",
+      "+1 Intelligence, Wisdom, and Knowledge for the duration, and grants the user an ability to absorb up to 40 points of fire damage, store it within their own Aura for up to 10 minutes, and then release it in a torrent of fire (for up to 20 feet) that inflicts fire damage equal to the amount that was stored. If the user does not actively release this stored fire, it will release itself onto the nearest object or being from the herb user at the end of the 10 minutes. An Intelligence save is necessary to strike a single area on the target, who is allowed a Magic Resistance. If the target makes a roll by less than or equal to half the chance, no damage is taken. If the resistance was made but was greater than a half save, then half damage is taken."
+    ],
+    "Clarifyne": [
+      "Clarifyne",
+      "Fruit",
+      "1-4 pp.",
+      "2 weeks/12 weeks",
+      "3d4+1 hours",
+      "Instills an alignment tendency of Order. A Control Resistance is allowed to avoid the affect."
+    ],
+    "Cloudbloom": [
+      "Cloudbloom",
+      "Flower",
+      "2-5 pp.",
+      "3 weeks/3 months",
+      "3d4+3 min.",
+      "Transforms the user`s body into fog, granting the following abilities: immunity to physical and magical damage except for the spell Disintegrate. The user`s fog body can be molded into any shape. Gains the powers Produce Fog (at 10 Aura), Magical Voice, Magical Sight, and Magical Hearing. Regeneration of previously inflicted wounds of 1 Endurance."
+    ],
+    "Cracken Root": [
+      "Cracken Root",
+      "Root",
+      "1-2 pp.",
+      "1 week/6 weeks",
+      "1d4+1 hours",
+      "Lowers Disease Resistance by 25%."
+    ],
+    "Crown Hickory": [
+      "Crown Hickory",
+      "Nut",
+      "2-5 pp.",
+      "8 months",
+      "Instant/1d4+1",
+      "Heals 2d4 to all areas. Blocks personal attribute draining/lowering. Blocks lycantheropy animal forms."
+    ],
+    "Crowning Glory": [
+      "Crowning Glory",
+      "Bark",
+      "2-5 pp.",
+      "3 months/2 years",
+      "3d4",
+      "Provides magical coordination: removes non-magical movement penalties, -4 initiative (-11 or lower rolls produce speed seconds), +20% Agility saves, +3 to hit, -3 Defensive, +20% bonus Physical skills and cannot be critically failed. Treat critical failures as simple failures. Repeat failures, however, can still produce a critical failure if applicable. Crowning Glory magical wood is +4."
+    ],
+    "Crystalflare": [
+      "Crystalflare",
+      "Flower",
+      "1-4 pp.",
+      "Eternal",
+      "Constant",
+      "Transfers a single thought or memory from one being to a petal, or from that petal to another being. When a being ingests one petal, any thought or memory they focuses on at the time of ingesting is instantly transferred from their mind to the opposite petal on the flower. That memory is eternally stored in that petal, or until it is ingested by another being."
+    ],
+    "Crystoria": [
+      "Crystoria",
+      "Flower",
+      "Varies*",
+      "1d4 hours*",
+      "1 min.",
+      "Produces an adjoined group of crystals, growing from the base of the roots and spreading outward, culminating in a section 3“ tall and 2` in diameter. This crystal is considered +1, and the type produced depends on the color of the flower: Red: garnet, Orange: citrine, Gold: yellow topaz, Green: peridot, Blue: aquamarine, Purple: amethyst, White: clear, Gray: smoky quartz, Black: smoky quartz, Brown: banded agate. *value is equal to the gems produced. *The flower only lasts 1d4 hours after leaving the plane of order."
+    ],
+    "Dabbledew": [
+      "Dabbledew",
+      "Flower/Leaf",
+      "3-6 pp.",
+      "2 weeks/12 weeks",
+      "Varies",
+      "Induces sleep in 3d4 minutes (a Magic Resistance is allowed for those unaware or unwilling), during which the user will have a dream in which they creates one physical artistic work that they focuses on while smoking (or one at the GM`s discretion if the user does not focus on anything in particular). The user may create any type of artwork, even from a skill they do not possess (such as a musical composition, poem, painting, piece of jewelry, etching, etc.). The user`s sleeping body acts out the motions and creates this art as they dream it. Tools used (pen, paper, metal, etc.) are magically created and appear in the sleeper`s hands. Time taken to create the art depends on its complexity, typically 1d8x10 minutes. The sleeper will awaken 3d4 minutes after they completes their piece of art, after which it will remain for 2d4 minutes unless Permanency is cast on it. Any resulting pieces of art are created with no magical powers but can be enchanted or imbued once made permanent. The sleeper cannot be awakened normally while in this magical sleep unless affected by Waken or Dispel Magic and fails a Magic Resistance."
+    ],
+    "Death Berry": [
+      "Death Berry",
+      "Berry",
+      "1-2 pp.",
+      "2 weeks/6 weeks",
+      "Instant",
+      "Ingested poison Type XX (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail), Potency J (1d8 minutes). If a Poison Resistance is failed, the victim dies. Anyone who dies from this poison returns as a type of undead (1%-94% Zombie, 95%-99% Ghoul, 100% Wight) in 1-3 hours."
+    ],
+    "Death Blossom": [
+      "Death Blossom",
+      "Flower",
+      "1-4 pp.",
+      "1 month/3 months",
+      "5 sec.",
+      "Removes a negative effect from an undead creature or being. If there is no negative effect, it will restore 3d8 Endurance to each of the undead being`s wounded areas."
+    ],
+    "Deepsprout": [
+      "Deepsprout",
+      "Seaweed",
+      "3-6 pp.",
+      "2 weeks/12 weeks",
+      "2d6+2 hours",
+      "Transform into any desired salt water animal as the skill Animal Shape, keeping mental, mystical and Charm attributes."
+    ],
+    "Devil`s Grip": [
+      "Devil`s Grip",
+      "Fruit",
+      "1-4 pp.",
+      "2 weeks",
+      "Instant",
+      "Causes instant paralysis and an inability to breathe, unless a half Magic Resistance is made. Every 10 seconds, the user loses 1d4 base Endurance and lowers 1 level of fatigue. When base Endurance reaches 0 or less, the user must begin making Vitality saves to stay conscious. The usual -5% per point under 0 applies to this save. When the user`s Endurance drops below 0 minus Vitality, they die of oxygen deprivation but can be revived by any form of magical healing if healed within 10 minutes +1 minute per Vitality. A successful Physiology roll can diagnose the condition that caused death, followed by a Chirugeon skill roll to restart the user`s circulation if within the period described above. Beings that do not breathe or are under the effect of a Breathless spell are immune to this suffocation but are still paralyzed while the chunk of bitten fruit is lodged in the throat."
+    ],
+    "Devil`s Hemlock": [
+      "Devil`s Hemlock",
+      "Leaf/Root/Seed",
+      "1-2 pp.",
+      "3 months/1 year",
+      "Varies",
+      "While smelling this plant`s rotting stench, beings are -4 to hit and must make a Vitality save at -10% or become nauseated, resulting in another -1 to hit and +1 to Initiative for 2d4 minutes; furthermore, they must make a Magic Resistance or feel compelled to attack the nearest being or creature. Ingestion causes paralysis for 2d4 hours unless a Control Resistance is made, and it is a type XX poison(Duration 1d6 minutes. 1d4/minute PR success, Death PR fail), Potency J (1d8 minutes)."
+    ],
+    "Dragonfyre": [
+      "Dragonfyre",
+      "Flower",
+      "3-6 pp.",
+      "4 weeks/7.7 years",
+      "Varies",
+      "Inflicts 3d6 magical fire damage when touched, unless a Magic Resistance is made. When its extracted oil is poured onto a surface, the oil will open a one-way portal from the Plane of Fire to the user`s current plane (even if it is also the Plane of Fire). One random Fire Elemental currently on the Plane of Fire is automatically summoned through the portal, and the portal closes 1 second later. Furthermore, anyone who ingests a Dragonfyre petal instantly assumes the form of a Fire Elemental for 3d4 minutes (The level of Fire Elemental will depend on the Title of the being or level of the creature who opened the portal. Match it to the closest Fire Elemental in Mysteries of the Planes."
+    ],
+    "Dragon`s Wart": [
+      "Dragon`s Wart",
+      "Mushroom",
+      "2-5 pp.",
+      "1 week/6 weeks",
+      "Eternal",
+      "Permanently removes 1 random insanity, control, fear, or confusion (GM`s discretion)."
+    ],
+    "Dreamberry": [
+      "Dreamberry",
+      "Berry",
+      "1-4 pp.",
+      "1 week/6 weeks",
+      "1d4+1 hours",
+      "Causes the user to instantly fall asleep and experience 1d4+1 unrelated dreams for 1d4+1 hours. No Magic Resistance is allowed, and the subject matter of each dream (whether it foretells the future, is a nightmare, etc.) is up to the GM`s discretion. If on the Dream Plane when used there is a 5% something from one of those dreams will manifest. GM determines what manifests."
+    ],
+    "Drifting Spider": [
+      "Drifting Spider",
+      "Moss",
+      "2-5 pp.",
+      "1 week",
+      "1d4+1 hours",
+      "Grants the magical ability to fly in any direction at 3` per Intelligence point per second for 1d4+1 hours. The user does not need to maintain concentration while flying, but still must make Intelligence saves to successfully change direction or make any difficult moves. Furthermore, the user can harness the moss`s innate static charge once to create a Storm of Electricity 10` high by 40` wide around themselves that lasts for 1 minute 40 seconds. The herb`s effects end at the end of the storm. All who are caught in this storm must Make a Magic Resistance every 10 seconds or take 5d8 points of electrical damage to 2d4 exposed areas (protected by less than 5 points of protection). Magic Resistance is at -20% if in normal metal armor. Make a Magic Resistance or be blinded for the duration of the storm. Make an Agility save every 10 seconds or lose footing and fall to the ground. Missile weapons fired within the storm always miss their target. Missile weapons fired into the storm have an equal chance of striking any being within the area of effect."
+    ],
+    "Driftvine": [
+      "Driftvine",
+      "Vine/Leaf",
+      "11-20 pp.",
+      "Eternal",
+      "Instant",
+      "A leaf from the vine when chewed or damaged by more than 50% teleports the being who damaged it and up to 400 lb. back to the vine it came from. It can only do this once."
+    ],
+    "Drybone": [
+      "Drybone",
+      "Vine",
+      "1-2 pp.",
+      "1 week/6 weeks",
+      "4 min.",
+      "Evaporates all fog and water within 10` at a rate of 25% per minute. If a living being enters the affected area, they must make a Magic Resistance or all moisture, including sweat, is removed from 2d4 random locations, causing no ill effects other than dried skin."
+    ],
+    "Duskdawn Rose": [
+      "Duskdawn Rose",
+      "Leaf/Root",
+      "2-5 pp.",
+      "3 weeks/3 months",
+      "2d4 hours",
+      "Turns user insubstantial, shifting to the Phase Plane if the leaf is eaten, or the Shadow Plane if the root is eaten. While shifted, the user will appear transparent and shimmer slightly if phased, or shadowy and weak if shadow shifted, and is immune to all physical effects of the earthly realm. The user can pass through objects on the Phase and Shadow Planes without hindrance. Shifting takes 10 seconds."
+    ],
+    "Earthblood": [
+      "Earthblood",
+      "Moss",
+      "2-5 pp.",
+      "1 month/3 months",
+      "Varies",
+      "Cures the most harmful wound or most negative physical effect on the being or creature that ingests or has the Earthblood dose applied to them. A being can be brought back from the dead if they were killed by physical means. The Earthblood will even heal dead bodies that have been dead within the last day. Then a second application within 1 hour per Will Force of the dead being allows them to return to the living with 1 Will Force loss."
+    ],
+    "Essence Bulb": [
+      "Essence Bulb",
+      "Moss",
+      "2-5 pp.",
+      "1 month/3 months",
+      "Varies",
+      "Cures the most harmful wound or most negative physical effect on the being or creature that ingests or has the Essence Bulb dose applied to them. A being can be brought back from the dead if they were killed by physical means. The Essence Bulb will even heal dead bodies that have been dead within the last day. Then a second application within 1 hour per Will Force of the dead being allows them to return to the living with 1 Will Force loss."
+    ],
+    "Earth Heart(Bark)": [
+      "Earth Heart(Bark)",
+      "Bark",
+      "1-3 pp.",
+      "6 months",
+      "1 day per WIL under 20",
+      "Instills a feral instinct within the user, causing them to feel and behave with the tendencies of the last non-magical animal sensed (saw, heard, felt, etc.), unless a Control Resistance is made."
+    ],
+    "Earth Heart(Berry)": [
+      "Earth Heart(Berry)",
+      "Berry",
+      "1-3 pp.",
+      "2 weeks/3 months",
+      "1 day per WIL under 20",
+      "Gradually transforms the user into the last non-magical animal sensed (saw, heard, felt, etc.) at a rate of 10% per sip, unless a Magic Resistance is made. For example, one sip causes the user to sprout furry mouse ears while slowly shrinking, and after a second sip, a tail and whiskers grow while they continues to shrink. Each partial transformation remains through the duration."
+    ],
+    "Fateberry": [
+      "Fateberry",
+      "Berry",
+      "10 pp.",
+      "1 week/6 weeks",
+      "1 hour",
+      "Alters the fate of the user, guaranteeing the outcome of 1 specific action chosen with 1 hour of ingesting, but also marking the user for an equally opposite fate at a future point (see the Invocation Twist of Fate)."
+    ],
+    "Feathergrass": [
+      "Feathergrass",
+      "Grass",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "2d6 hours",
+      "Reduces weight by 75% of all objects within the user`s Aura field, besides anything being worn or held, and causes the user to levitate with the ability to move up and down no faster than 10` per second."
+    ],
+    "Fetterbone": [
+      "Fetterbone",
+      "Mushroom",
+      "1-3 pp.",
+      "1 year/2 years",
+      "3d4 hours",
+      "Causes paralysis, and the victim is prevented from leaving the current plane. A Magic Resistance is allowed for each effect."
+    ],
+    "Fireskin": [
+      "Fireskin",
+      "Lichen",
+      "11-20 pp.",
+      "8 weeks/48 weeks",
+      "2d4 hours",
+      "Envelops the user`s Aura in fire, granting 3 points of Force Armor and immunity to fire as the spell Endure Heat. Anything entering the user`s Aura while this is in effect will take 10d6 points of fire damage."
+    ],
+    "Firestone Vine": [
+      "Firestone Vine",
+      "Vine",
+      "1-3 pp.",
+      "Eternal",
+      "1d4+1 hours",
+      "Inflicts 3d6 magical fire damage every 10 seconds, unless a Magic Resistance is made, but raises the user`s Strength and Vitality by 1d4+1 for the duration."
+    ],
+    "Flash Needle": [
+      "Flash Needle",
+      "Vine",
+      "2-5 pp.",
+      "1 year",
+      "Eternal",
+      "Inflicts 4d6 magical fire damage in a small explosion every 10 seconds when struck or striking, unless a Magic Resistance is made. Acts as +6 magical wood that can be fashioned with the Armor Making skill into armor or shields with an armor value of 32, and its thorns can be fashioned into daggers, spikes, and spearheads with the skill Weapon Making."
+    ],
+    "Gagroot": [
+      "Gagroot",
+      "Root",
+      "1-3 pp.",
+      "3 weeks/18 weeks",
+      "2d20",
+      "Emits a repugnant stench of rotting flesh in a 200` radius, and all beings who smell it must make a half Vitality save or become nauseated, resulting in a -4 penalty to hit and +4 Initiative. When ingested, the user begins to see, hear, and feel hallucinations for the next 2d20 minutes (the essence and duration of each hallucination is at the GM`s discretion). Each hallucination has a 25% chance of being an actual premonition of the user`s future or that of her companions. If the user makes a Poison Resistance upon first ingesting the Gagroot, they can distinguish between the hallucinations and actual premonitions."
+    ],
+    "Gazing Heartfrond": [
+      "Gazing Heartfrond",
+      "Leaf",
+      "11-20 pp.",
+      "6 weeks/36 weeks",
+      "3d6 months",
+      "Grants the ability to view the past up to 1000 years. While viewing the past, the user cannot be seen, felt, heard, touched, or tasted. They move at normal movement rate in any direction they wishes, but magical propulsion can be added to increase speed. They have no effect whatsoever on the past and are merely an observer. During this past travel, the user is unaware of their body and it will age equal to the time spent in the past. If their body is killed while they are in the past, they turn into a ghost and may influence events as they are able to in ghost form."
+    ],
+    "Gemstar": [
+      "Gemstar",
+      "Leaf",
+      "11-20 pp.",
+      "3 weeks/24 weeks",
+      "3d4+1 hours",
+      "Grants immunity to Deterioration, Withering, and Aging effects."
+    ],
+    "Ghostberry": [
+      "Ghostberry",
+      "Berry",
+      "1-2 pp.",
+      "2 weeks/12 weeks",
+      "1d4+1 hours",
+      "Causes a -25% penalty to Illusion Resistance for 1d4+1 hours. Also, if this effect reduces Illusion Resistance to 0% then the affected being or creature must make a Will Force save once hour or they will see visual and auditory illusions of the departed. These `ghosts` that will act and behave as the being or creature thinks they would as they are projections from the affected being and not from the departed."
+    ],
+    "Ghostroot": [
+      "Ghostroot",
+      "Stem",
+      "2-5 pp.",
+      "6 months",
+      "2d4 hours",
+      "Ingested poison Type XXI (Duration 1d8 minutes. 1d6/minute PR success, Death PR fail), Potency P (1d10 seconds). If the user survives, they gain 1d4 to all mystical attributes for the next 2d4 hours. During this time, their spirit leaves their body and becomes completely intangible. The user can travel as far and as fast as they are capable of imagining in any direction. The user`s personality and mind remain with their spirit, and the body becomes an empty shell during this time. At the end of the 2d4 hours, the user`s spirit is wrenched back to the body and they wake."
+    ],
+    "Glowmoss": [
+      "Glowmoss",
+      "Moss",
+      "1-4 pp.",
+      "2 weeks/12 weeks",
+      "Instant/1d4+1 hours",
+      "Immunity to poison and disease for 1d4+1 hours, and restores 1d4 involuntarily lost Physical attributes. Glowmoss emits a diffuse white light in a 10` radius until ingested."
+    ],
+    "Glowgate": [
+      "Glowgate",
+      "Lichen",
+      "2-5 pp.",
+      "Constant",
+      "Varies",
+      "Transforms any large plant or tree into a portal leading to another large plant or tree whose trunk and branches are also completely covered in Glowgate. Living beings who make an Intelligence save may touch up to 2 other people and step through any Glowgate-covered large plant or tree and appear out of another one anywhere on the same plane. Anyone who steps through a Glowgate tree receives a magical layer of Earthskin for the next 3d6 hours, appearing under any clothing or armor already worn. This appears as a glowing suit of pale blue lichen that weighs 3 pounds and provides an armor rating of 6. Glowgate itself acts as a dim light source, illuminating a radius of 10`."
+    ],
+    "Glowscale": [
+      "Glowscale",
+      "Mushroom",
+      "1-5 pp.",
+      "1 month/1 year",
+      "Instant",
+      "Completely heals any physical damage caused by fire or magical fire and imparts permanent fire immunity (as the spell Endure Heat) to that same body area. Glowscale also serves as a magical light source, casting an orange glow in a 20` radius."
+    ],
+    "Goldcrown": [
+      "Goldcrown",
+      "Leaf",
+      "2-5 pp.",
+      "2 months/1 year",
+      "3d10 min.",
+      "Removes one insanity and grants telepathy as per the skill Thought Projection to anyone who envelops themselves in the smoke and inhales it. Once these powers activate, they remain for the duration, even after the user leaves the smoke."
+    ],
+    "Golden Silkseed": [
+      "Golden Silkseed",
+      "Seed",
+      "3-6 pp.",
+      "Eternal",
+      "10 min.",
+      "Creates a spreading area of diffuse positive life energies around the seed as it grows into a full-sized leafy flower. The surrounding area spreads 50` every minute, reaching a complete area of 500` in 10 minutes. In this area, all natural plants grow at 5 times the normal rate up to complete maturity, grasses are lush and green, and all fruit-bearing foliage produces fruit of the highest quality. If the seed is planted in a newly-sewn field, the crop will yield 30% above normal. Negative life force beings are dealt 10d4 points of damage per hour to all areas while in this area. This effect is permanent for as long as the Golden Silkseed remains alive. If removed or destroyed, the surrounding plants resume their normal growth rate."
+    ],
+    "Gorgevine": [
+      "Gorgevine",
+      "Root",
+      "1-3 pp.",
+      "10-60 hours",
+      "1 hour",
+      "Transfers all but 1 Endurance from one body area to another wounded body area."
+    ],
+    "Gray Lotus": [
+      "Gray Lotus",
+      "Flower",
+      "3-6 pp.",
+      "1 month/4 months",
+      "1 day",
+      "Grants +25% Magic Resistance."
+    ],
+    "Graymoss": [
+      "Graymoss",
+      "Moss",
+      "1-4 pp.",
+      "1 month/3 months",
+      "1d4+1 day",
+      "Grants immunity to acid for the duration."
+    ],
+    "Greybreeze(Flower)": [
+      "Greybreeze(Flower)",
+      "Flower",
+      "3-6 pp.",
+      "2d4 hours/2d4x6 hours",
+      "3d4+2 hours",
+      "Causes incapacitating pain throughout the user`s entire body, resulting in 1d4 minutes of inaction unless a Poison Resistance is made. A half Will Force save is made to remain silent through this pain. Once this pain subsides, the user begins to levitate and a breeze blowing at 10 miles per hour begins to sweep around them in a 30` radius, tossing about small objects. The user gains +25% to Magic and Control Resistance, as well as Mind Set, offering protection against all forms of mental attack or control by skill, power, or spell. The user is now unable to initiate mental combat, be scryed upon, or have their mind read through Telepathy, Improved Telepathy, or Thought Projection."
+    ],
+    "Greybreeze(Leaf)": [
+      "Greybreeze(Leaf)",
+      "Leaf",
+      "3-6 pp.",
+      "2d4 hours/2d4x6 hours",
+      "1d6 min.",
+      "Ingested poison Type XX (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail), Potency O poison (10-30 seconds)."
+    ],
+    "Grinning Zephyr": [
+      "Grinning Zephyr",
+      "Mushroom",
+      "3-6 pp.",
+      "1 week",
+      "1 hour",
+      "Grants the user an ability to absorb up to 50 points of electrical damage, store it within their own Aura for up to 10 minutes, and then release it in a bolt of lightning that inflicts electrical damage equal to the amount that was stored. This bolt can travel up to 30 feet. If the user does not actively release this stored electricity, it will release itself onto the nearest object or being at the end of the 10 minutes. An Intelligence save is necessary to strike a single area on a target, who is allowed a Magic Resistance. If the target makes a roll by less than or equal to half the chance, no damage is taken. If the resistance was made but was greater than a half save, then half damage is taken. Failure indicates full damage. Leather armor reduces damage taken equal to its armor value. Metal armor causes +2d6 points of damage. Magical armor will absorb the electricity if a successful Magic Resistance is rolled for the armor."
+    ],
+    "Harmony Rose": [
+      "Harmony Rose",
+      "Flower",
+      "1-4 pp.",
+      "1 week",
+      "1d4+1 hours",
+      "+1d4 temporary Wisdom and Appearance. Instills a feeling of peace, preventing the user from attacking anyone verbally or physically, unless a Control Resistance is made."
+    ],
+    "Jeering Skullcap": [
+      "Jeering Skullcap",
+      "Mushroom",
+      "2-5 pp.",
+      "3 week/18 weeks",
+      "2d4 hours",
+      "When applied to a being`s back, a shadowy, intangible pair of wings appear which allow flight in any direction at 3` per Intelligence per second, but the being loses 1 overall Endurance per minute of flight. The being must maintain concentration while flying and must make Intelligence saves to successfully change direction or make any difficult moves. Beings cannot fight, cast spells, or use invocations during flight. Furthermore, when applied to a being`s eyelids, they gains sight through mundane, magical, and divine magical darkness while losing 1 overall Endurance per 10 seconds. When applied to a being`s hands, their Strength is raised by 1d4 points while Vitality is lowered by an equal amount."
+    ],
+    "Kindle Rose": [
+      "Kindle Rose",
+      "Flower",
+      "1-4 pp.",
+      "2d4 hours",
+      "1d4+1 hours",
+      "Grants +4 Aura Control for fire-based magic. Also ignites once every 1d4+1 minutes (each ignition lasts for 2 seconds) inflicting 2d6 fire damage on any object or being within 3 inches of the flower."
+    ],
+    "King`s Clover": [
+      "King`s Clover",
+      "Leaf",
+      "11-20 pp.",
+      "3 weeks/6 months",
+      "Constant",
+      "Grants 5 Luck points per day until the herb loses potency."
+    ],
+    "King`s Hyacinth": [
+      "King`s Hyacinth",
+      "Flower/Leaf/Stem",
+      "1-2 pp.",
+      "3 weeks",
+      "Constant/1d4+1 hours",
+      "Causes an itchy rash to appear within 1d4 minutes of physical contact, unless a Poison Resistance is made, resulting in -30% to Intelligence saves, -2 Appearance, and a Will Force save every 30 seconds not to scratch. Furthermore, the area 10` around each living plant has the following effects: All salt, suspended materials, bacteria, viruses, and toxins are removed from water and its mineral and pH balance is appropriate for drinking. The oxygen amount in the air and water is halved, and all beings who draw near become short of breath, gaining a number of fatigue levels equal to 18 minus their Vitality rating. All breathing animals will avoid the area."
+    ],
+    "Knotted Silverstring": [
+      "Knotted Silverstring",
+      "Vine",
+      "11-20 pp.",
+      "4 weeks",
+      "Instant",
+      "Acts as a light source with a radius of 20`, which cannot be dimmed unless the plant is destroyed. This light is bright enough to blind creatures with Night Vision. This vine also restores life and limb to a living or dead being, causing all damage and scars to vanish, all poison and disease to be neutralized, the return of temporarily lost attribute points, reappearance of lost limbs, and resurrection if the being died within one minute per Will Force point. The raised being is completely refreshed and able to move freely but permanently loses one Will Force. Furthermore, anyone wrapped in this vine is also afforded the permanent ability to manipulate existing light, either moving it from one place to another or spreading and concentrating the existing brightness. Light can be expanded or concentrated at a rate of 50%. If it is concentrated into an area 50% of its original size, the brightness is considered to be a sphere of magical light, as per the spell Produce Light. This ability does not affect shadows or light which is already magical or divine magical in nature, nor does it affect any heat or lack thereof generated by the existing light source."
+    ],
+    "Licheblade": [
+      "Licheblade",
+      "Mushroom",
+      "4-7 pp.",
+      "Eternal",
+      "1d4+1 hours",
+      "Grants immunity to poison and disease, and +1 Aura. "
+    ],
+    "Life Berry": [
+      "Life Berry",
+      "Berry",
+      "2-5 pp.",
+      "1 month/3 months",
+      "Instant",
+      "Each berry restores 1d10 tenths of lost Will Force not lost voluntarily. 10 juiced berries poured on an Eon Flower will restore it, if it was used in the last month."
+    ],
+    "Lifewood Tree(Leaf)": [
+      "Lifewood Tree(Leaf)",
+      "Leaf",
+      "1-3 pp.",
+      "Constant",
+      "Instant",
+      "Heals 2d4 to all areas."
+    ],
+    "Lifewood Tree(Tree)": [
+      "Lifewood Tree(Tree)",
+      "Tree",
+      "1-4 pp.",
+      "Constant",
+      "10 sec.",
+      "Cures all poison and disease and regenerates all wounds and even lost limbs at a rate of 1 point per 5 seconds of staying within the tree`s glow. There is a 10% chance per 10 seconds that a dead being will be resurrected with fully restored attributes and 2 levels of fatigue for the remainder of that day. Its wood is considered +6 divine magical, and any object fashioned out of this wood continues to affect any who bask in its glow."
+    ],
+    "Maggot`s Kiss": [
+      "Maggot`s Kiss",
+      "Flower",
+      "2-5 pp.",
+      "1 week",
+      "3d4 hours",
+      "Acts as a Type XXIII Potency Q poison, resulting in a loss of 1d10 Endurance per minute for the next 1d4 minutes if a Poison Resistance is made, and death if it is failed. This effect begins immediately upon ingesting an entire petal. Anyone who dies from this poison has a 100% chance minus their Will Force rating to return as an appropriate undead (at the GM`s discretion). If the being who eats the first petal survives, they gain control over and immunity to damage from any other beings who become undead as a result of dying from eating the flower`s other petals. They can control up to 36 levels of undead. Greater undead get a Control Resistance to avoid being controlled. The user must be concentrating in order to control the undead creatures. Once control is established, the user need not be within sight of the controlled undead but may command them from a distance while they mentally report back to her what they sense. A cumulative +20% save is given to undead with a 15 or higher Will Force against successive control attempts for each previously failed attempt. When feeding, greater undead have their Control Resistance modified by -20%. Control over the undead may be absolved or eliminated by any other being, without any contest of skills or saves. Controlling ability lasts 3d4 hours."
+    ],
+    "Mire Cap": [
+      "Mire Cap",
+      "Mushroom",
+      "1-2 pp.",
+      "2 months",
+      "3d4 hours",
+      "Causes all slime-based creatures to make a Control Resistance or be unable to come within 10` of the user."
+    ],
+    "Misty Thistle": [
+      "Misty Thistle",
+      "Flower",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "1 min.",
+      "When the user blows off every seed from of a single thistle stalk, the seeds float through the air and begin spinning into a vortex, creating a tornado whose base is 2d10x5` wide, with a height of 2d10x100` and a top diameter of 2d20x10`. Its vortex moves with a velocity of 2d4x50 miles per hour. The tornado will begin heading in the direction in which the seeds were blown, but every 10 seconds has a 50% chance to randomly change direction (at the GM`s discretion). This tornado dissipates after 1 minute."
+    ],
+    "Misty Violet": [
+      "Misty Violet",
+      "Flower",
+      "2-4 pp.",
+      "2 weeks/12 weeks",
+      "2d4 hours",
+      "+1 Intelligence, Wisdom, and Knowledge. Grants the user the ability to walk on cloud and fog as if it were a solid surface."
+    ],
+    "Mosstoe": [
+      "Mosstoe",
+      "Flower",
+      "1-2 pp.",
+      "1 month/3 months",
+      "1 day",
+      "Grants a +25% Disease Resistance for 1 day."
+    ],
+    "Naga Scum": [
+      "Naga Scum",
+      "Algae",
+      "2-5 pp.",
+      "2 weeks/24 weeks",
+      "1d4 min.",
+      "Creates 1d4 visual scenes of either the user`s or another being`s future (GM`s discretion). The events viewed have no sound and are only likely events that are not 100% certain. The events will be no more than one week in the future, though the GM may allow for a longer foresight based on great events, etc."
+    ],
+    "Nightmoon Tears": [
+      "Nightmoon Tears",
+      "Flower",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "Varies",
+      "Creates 1d4+1 dreams during the next time the user sleeps, in which the user is the opposite alignment, unless a Poison Resistance is made. For instance, an Active Good (Order) paladin would experience dreams in which the user was Passive Evil (Chaotic). Neutral beings will dream they are either Fanatical Evil or Fanatical Good. Each dream lasts 6d6+20 seconds. Upon waking, there is a 10% chance per dream of gaining an insanity of the GM`s discretion."
+    ],
+    "Nymph Tears": [
+      "Nymph Tears",
+      "Seaweed",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "1d4 hours",
+      "+4 Aura. Causes the user to float weightless as if unaffected by gravity. The user is now at the mercy of the wind or other elements just as if they become a balloon. The user can find something solid to push off of in order to move. Each time the user wishes to change direction or perform a difficult maneuver, requires a successful Agility save. If the user is falling when the kelp is eaten, the user will float in a random direction due to wind resistance and will slowly fall to the earth like a balloon, all the while pushed by the wind."
+    ],
+    "Painted Elf Tear": [
+      "Painted Elf Tear",
+      "Flower",
+      "21-30 pp.",
+      "2 weeks",
+      "1d4 hours",
+      "Creates a portal to the location of an existing being whose physical representation is painted with watercolors made from this flower. Chance of a portal opening is based on the quality of the painting: Master=95%, High=75%, Good=50%, Average=25%, Poor=10%, Shoddy=5%. If the chance fails, the portal fails to open. If successful, the the painting becomes charged with this magical effect and anyone touching it is teleported (if desired) to the person depicted for 1d4 hours. After that time, the being will return to their original location."
+    ],
+    "Painted Toad`s Cap": [
+      "Painted Toad`s Cap",
+      "Mushroom",
+      "1-2 pp.",
+      "1 month/6 months",
+      "3d4 hours",
+      "Gives the user a sense of the nearest land mass greater than 100` in diameter within 1000 miles, as well as the ability to pass through sand, dust, dirt, and stone as if through water. This effect only works outside of the Plane of Earth as this plane is one giant landmass."
+    ],
+    "Paleberry": [
+      "Paleberry",
+      "Berry",
+      "1-2 pp.",
+      "2 weeks/12 weeks",
+      "1 day",
+      "Grants +25% Illusion Resistance for 1 day."
+    ],
+    "Pearl Grass": [
+      "Pearl Grass",
+      "Grass",
+      "3-7 pp.",
+      "6 weeks/24 weeks",
+      "3d4 min.",
+      "Grants Invisibility, as per the spell."
+    ],
+    "Plagueseed": [
+      "Plagueseed",
+      "Tree",
+      "2-5 pp.",
+      "Eternal",
+      "Varies",
+      "Inflicts a highly contagious divine plague to anyone who touches the mucous dripping from its branches and oozing down its trunk. If a -50% Disease Resistance is failed, the victim`s skin breaks out into open sores within 1d10 seconds. After 3d10x2 seconds, the sores burst and squirt more of the green mucous up to 1d4` away. Anyone who touches this must make a Disease Resistance at -50% or be infected as well. After another 3d10x2 seconds, the victim begins turning into wood and growing tree-like features. This transformation takes 10 seconds to complete, after which the victim is now another Plagueseed tree with a height and radius equal to the victim`s original height. This tree will only grow larger if transplanted to another plane. The victim`s spirit and soul are trapped within and cannot sense activities surrounding themselves."
+    ],
+    "Prism Cone": [
+      "Prism Cone",
+      "Sap",
+      "3-7 pp.",
+      "Eternal",
+      "3d4 hours",
+      "Causes a weapon to ignore the spells Rebound, Reflection, and Repulsion."
+    ],
+    "Purple Kelp": [
+      "Purple Kelp",
+      "Kelp Bulb",
+      "1-2 pp.",
+      "1 month/3 months",
+      "1 day",
+      "Grants +25% Poison Resistance for 1 day."
+    ],
+    "Rainpetal": [
+      "Rainpetal",
+      "Flower",
+      "1-3 pp.",
+      "3 weeks/18 weeks",
+      "Varies",
+      "Constantly produces a localized fog 10` high and 20` wide topped with a dense raincloud. Anyone standing in the fog must make a Magic Resistance or be blinded. Every 2d10 minutes, the raincloud produces a light rain lasting 1d10 minutes. When ingested, each of the large petals provides 1 full day of hydration. If the user ingests more than 3 petals within 5 minutes, there is a 5% chance per extra petal that the user will begin to drown from swallowing too much water, unless a Magic Resistance is made. If this occurs, every 10 seconds, the user loses 1d4 base Endurance and lowers 1 level of fatigue. When base Endurance reaches 0 or less, the user must begin making Vitality saves to stay conscious. The usual -5% per point under 0 applies to this save. When the user`s Endurance drops below 0 minus Vitality, the user has died of oxygen deprivation but can be revived by any form of magical healing if healed within 10 minutes +1 minute per Vitality. A successful Physiology roll can diagnose the condition that caused death, followed by a Chirugeon skill roll to restart the user`s circulation if within the period described above. Beings that do not breathe or are under the effect of a Breathless spell will not drown, but their lungs (if they have them) still fill with water."
+    ],
+    "Rememberries": [
+      "Rememberries",
+      "Berry",
+      "6-10 pp.",
+      "1 month/3 months",
+      "10-40 min.",
+      "Grants a +20% to knowledge-based skills or to a Knowledge saving throw."
+    ],
+    "Retchbone": [
+      "Retchbone",
+      "Mushroom",
+      "11-20 pp.",
+      "1 week/6 weeks",
+      "2d4 days",
+      "Emits a repugnant stench of rotting flesh in a 200` radius, and all beings who smell it must make a half Vitality save or become nauseated, resulting in a -4 penalty to hit and +4 Initiative. Anyone who eats this mushroom has a greater chance of becoming a souled undead upon death. Anyone using a skill or effect to raise the being`s corpse as a souled undead receives a 60% bonus to the chance of success, and any save the victim makes against spells, invocations, and other effects are lowered by 20%. Furthermore, any area within 25` of the user is filled with diffuse negative life energies, causing any natural plants to cease living and decay at 5 times the normal rate, soil to become infertile, and water to become fetid and stagnant. Living creatures are forced to leave, and positive life force beings feel uneasy and must make a Will Force save to enter the area. Magical Plants, Magical Animals, and Slimes are unaffected. As the user moves around, they creates new areas of dying earth which remain even if the user leaves that area."
+    ],
+    "Rotting Eyestalk": [
+      "Rotting Eyestalk",
+      "Mushroom",
+      "1-3 pp.",
+      "2 weeks",
+      "2d4 hours",
+      "Inflicts 2d4 magical negative energy damage, when first touched, to all body areas. If the entire stem is ingested, the user can close their eyes and magically see through the cap, even if it leaves the user`s Aura field. The cap has 4 Endurance and cannot heal itself if damaged. Two mushrooms may be used in this way as well to produce stereoscopic vision. Enhanced Sight may be cast on the user to further add to their ability to see through the cap."
+    ],
+    "Rotting Silkseed": [
+      "Rotting Silkseed",
+      "Leaf",
+      "1-3 pp.",
+      "3 weeks",
+      "Varies",
+      "Causes 4d4 acid damage and paralysis for 20 seconds when first touched, unless a Magic Resistance is made for each effect. For every 10 consecutive seconds of physical contact, a being temporarily loses 1d4 Will Force, unless a Control Resistance is made. This resistance is at a cumulative -10% every 10 seconds thereafter. For every Will Force point lost in this fashion, the being gains a 5% chance of being converted to a spiritual undead upon death. This affliction is permanent and can only be removed by Wish or Miracle."
+    ],
+    "Royal Sweetsilk": [
+      "Royal Sweetsilk",
+      "Berry",
+      "11-20 pp.",
+      "Eternal",
+      "1d4 hours",
+      "Allows two beings to produce offspring, even if they would otherwise be unable to mate or if one was infertile. When used for two incompatible races, apply the Racial Mixing formulae as though the races were compatible."
+    ],
+    "Saltweed": [
+      "Saltweed",
+      "Seaweed",
+      "2-5 pp.",
+      "3 months/18 months",
+      "Constant",
+      "Grant Immunity to pressure in water and lava, and provides the effects of the spells Breathless, Endure Heat, and Endure Cold. Also, the user gains the ability to feel for answers from plants (including algae) and tiny animals (like krill or larvae) submerged in or floating on water. The user gains a general sense of what has transpired to them within the last 24-hour period. Since some water (such as an ocean or river) is constantly moving, the user may receive many varying answers, but plants and animals in stagnant water (such as in a rain barrel or pond) will tend to have the same answer."
+    ],
+    "Scaldroot": [
+      "Scaldroot",
+      "Root",
+      "1-3 pp.",
+      "6 months/3 years",
+      "5d4 hours",
+      "Inflicts 3d6 fire damage when first touched, unless a Magic Resistance is made. When ingested, grants +2d4 Wisdom and Intelligence but inflicts -2d4 Strength and Vitality."
+    ],
+    "Scalewart": [
+      "Scalewart",
+      "Mushroom",
+      "11-20 pp.",
+      "2 weeks/12 weeks",
+      "3d4 days",
+      "Induces a heart attack unless a Poison Resistance is made, inflicting 6d6 damage to the upper torso and inaction for 1d4 minutes. A Vitality save must be made or permanently lose 1 point of Vitality rating. If the victim survives, they can now control up to 30 levels of undead beings within sight or sense. Greater undead are allowed a Control Resistance. Once control is established, the user need not be within sight of the controlled undead. The user commands them from a distance and they mentally report back to the user what they sense. A cumulative +20% save is given to undead with a 15 or higher Will Force against successive control attempts for each previously failed attempt. When feeding, greater undead have their Control Resistance modified by -20%. Arch undead (level 9+) are immune to the controlling effect of this herb. Control over the undead may be absolved or eliminated by any other being, without any contest of skills or saves."
+    ],
+    "Scourgebud": [
+      "Scourgebud",
+      "Mushroom",
+      "2-5 pp.",
+      "1 year",
+      "1d4+1 weeks",
+      "-10% Poison and Disease Resistance, and infects the user with a terminal case of Lung Rot, causing the victim to lose 1d6 Strength and Vitality per day, as well as -1 Endurance per day, until the victim has died. Each effect is allowed a Disease Resistance. If Scourgebud is transplanted onto any other plane, all natural plants cease living within a 50` radius and decay at 5 times the normal rate. Soil becomes infertile and water is made fetid and stagnant. Living creatures from the largest animals to the smallest insect leave the area."
+    ],
+    "Screaming Devilfingers": [
+      "Screaming Devilfingers",
+      "Mushroom",
+      "2-5 pp.",
+      "1 week/6 weeks",
+      "2d6 hours",
+      "-20% Illusion and Control Resistance, unless a Poison Resistance is made. The user must make a modified Control Resistance or become confused and wander about disoriented until attacked or disturbed in some way. Furthermore, each mushroom emits a continuous sound of screaming in a 100` radius until it is ingested or otherwise destroyed, causing anyone who hears it to make a Will Force save every 10 seconds or gain an insanity."
+    ],
+    "Screechberry": [
+      "Screechberry",
+      "Berry",
+      "2-5 pp.",
+      "1 week/6 weeks",
+      "2d6 hours",
+      "-20% Magic and Control Resistance, unless a Poison Resistance is made. Furthermore, the plant emits a continuous buffeting of focused dissonant sound waves within a spherical radius of 200`, and any beings or creatures that hear it suffer the following effects: Make a Magic Resistance or take 4 damage per 10 seconds to 2d4 exposed areas (any body area protected by less than 5 points of armor). Beings take 2 points of damage per 10 seconds to whichever area their hearing organs are contained in. Make a Magic Resistance or be deafened for 10-40 minutes. Make an Agility save at +20% every 10 seconds or lose their footing and fall to the ground. Make a Strength save to combat normally or suffer -4 to hit, half damage to attacks, and -20% to all Combat skills. Missile weapons fired within the area always miss their target. Missile weapons fired into the area have an equal chance of striking any being within the area of effect. Make a Will Force save every 10 seconds or gain an insanity."
+    ],
+    "Seaspray": [
+      "Seaspray",
+      "Leaf",
+      "3-6 pp.",
+      "1 week/6 weeks",
+      "2d4 hours",
+      "+1d4 Strength for the duration. Grants the ability to levitate and move up and down no more than 10` per second, but also inflicts visual and auditory hallucinations for the duration, unless a Poison Resistance is made. Each hallucination depicts an image or sound relating to water or marine animals."
+    ],
+    "Sevenstar": [
+      "Sevenstar",
+      "Leaf",
+      "5-10 pp.",
+      "1 week/6 weeks",
+      "1d4 min.",
+      "Causes 1d4 missing items to reappear at their last known locations on the user`s current Plane, and causes 1d4 random objects under 6 inches x6 inches x6 inches within 10` of the user to relocate to the Plane of the Lost. Each appearance/disappearance pair takes 1 minute."
+    ],
+    "Shadestar": [
+      "Shadestar",
+      "Leaf",
+      "11-20 pp.",
+      "3 weeks/24 weeks",
+      "Until task done",
+      "Instills a desire to complete the next task assigned to the user, unless a Control Resistance is made. A new Control Resistance is allowed each time the user is in danger during the completion of the task."
+    ],
+    "Shadowdoom Tree(Leaf)": [
+      "Shadowdoom Tree(Leaf)",
+      "Leaf",
+      "1-3 pp.",
+      "Eternal",
+      "Instant",
+      "Causes 2d4 Death damage if an Magic Resistance fails. Anyone who targets the leaf or the tree itself in order to touch or attack it does so at a -4 penalty."
+    ],
+    "Shadowdoom Tree(Tree)": [
+      "Shadowdoom Tree(Tree)",
+      "Tree",
+      "1-2 pp.",
+      "Eternal",
+      "10 sec.",
+      "Causes open wounds to fester, taking an additional 1d4+1 per 10 seconds to each wound unless a Magic Resistance is made. Only one Magic Resistance is needed for all wounds. There is a 1% that any blow struck that does at least half the Endurance of a body area will maim (make the limb useless) or kill (if in a vital area). Anyone who targets the tree in order to touch or attack it does so at a -4 penalty. Its wood is considered +6 divine magical, and any object fashioned out of this wood continues to affect any who fall under its shadow and has 32 magical armor value."
+    ],
+    "Shardleaf": [
+      "Shardleaf",
+      "Leaf",
+      "2-4 pp.",
+      "2 weeks/12 weeks",
+      "Instant",
+      "Restores physical attributes that were lost involuntarily."
+    ],
+    "Shifting Heartblade": [
+      "Shifting Heartblade",
+      "Pine Cone",
+      "1-4 pp.",
+      "Eternal",
+      "1d4 hours",
+      "Raises or lowers 1 random attribute (excluding Social Class) by 1d4 every 2d10 minutes, unless a Magic Resistance is made. The user may opt not to resist but must decide before they learn which attribute is being affected and how. Each time this herb attempts to affect an attribute, the user feels chest pain and takes 1 point of damage to their heart, unless a Poison Resistance is made."
+    ],
+    "Shrivelworm": [
+      "Shrivelworm",
+      "Mushroom",
+      "1-2 pp.",
+      "1 year",
+      "Instant",
+      "When ingested, causes 1 full day of dehydration, unless a Magic Resistance is made. When added to a water-based liquid, up to 4 gallons of water will rapidly dehydrate. If it comes in physical contact with a Water Elemental, 2d4 damage is applied to the touched body area unless a Magic Resistance is made. When Shrivelworm is placed in the mouth of a corpse, that corpse will be rapidly and completely mummified. All liquid is removed, internal organs are completely destroyed, and the body decays at a rate of 1 overall Endurance per 1000 years."
+    ],
+    "Sighing Willow": [
+      "Sighing Willow",
+      "Tree",
+      "2-5 pp.",
+      "Eternal",
+      "Varies",
+      "Induces a magical sleep, unless a Control Resistance is made. Sleep produces a mental connection to 1d4+1 other planes, including alternate realities, resulting in an equal number of dreams portraying either the past, the current situation, or a possible future in those planes. These dreams may show either different planes, or the same one in multiple ways. Each dream lasts for 6d10+10 seconds and is entirely at the GM`s discretion. The user awakens in 1d4 hours and can only be affected once by each tree."
+    ],
+    "Silverscale": [
+      "Silverscale",
+      "Tree",
+      "11-20 pp.",
+      "Eternal",
+      "Varies",
+      "Doubles a being`s Commune chance, with a 10% chance per 10 seconds than an Omen occurs for each subject prayed about and a separate 5% chance that a Divination can occur for each subject prayed about. Anyone who tries to touch or attack the tree does so at a -4 penalty. Its wood is considered +6 divine magical and 32 magical armor value, and any object fashioned out of this wood continues to affect any who bask in its glow."
+    ],
+    "Siren`s Kiss": [
+      "Siren`s Kiss",
+      "Berry",
+      "2-4 pp.",
+      "Eternal",
+      "2d4 weeks",
+      "1d4+1 Charm and Appearance, and induces deep magical sleep. Sleeping beings will not wake except by magic Waken, Dispel Magic, Wish, etc."
+    ],
+    "Skymoss": [
+      "Skymoss",
+      "Moss",
+      "2-5 pp.",
+      "1 week",
+      "1d4+1 hours",
+      "Grants the magical ability to fly in any direction at 3` per Intelligence point per second. The being does not need to maintain concentration while flying, but still must make Intelligence saves to successful change direction or make any difficult moves. Furthermore, the being can harness the moss`s innate static charge to envelop themselves in an Aura of electricity, gaining 3 points of Force Armor, immunity to electricity, and causing anything entering the user`s Aura to take 5d8 points of electrical damage. Each dose of Skymoss can create only one Aura of electricity, after which the moss`s static charge is spent."
+    ],
+    "Sludge Stalk": [
+      "Sludge Stalk",
+      "Slime Mold",
+      "2-4 pp.",
+      "2 weeks/16 weeks",
+      "4d4 min.",
+      "Grants +1d4 Will for the duration. Causes any plants, magical plants, and slimes who come within 10` of the user to obey their mental commands. Greater slimes and sapient/magical plants get a Control Resistance (6-10th level), but arch slimes (10th+ level) cannot be controlled. While under the herb`s effect, there is a 50% chance per minute of transforming into a slime equal to the user`s Title, unless a Magic Resistance is made (the type of slime is left to the GM`s discretion). While in this form, the user acquires that slime`s natural abilities and physical attributes yet retains their mental and mystical attributes, as well as their Charm. The user is restricted from using physical skills that the slime would be physically incapable of. This transformation fades after 2d4 hours."
+    ],
+    "Slumberheart": [
+      "Slumberheart",
+      "Vine",
+      "11-20 pp.",
+      "1 week",
+      "Varies",
+      "Puts a being or creature to sleep until they are fully healed. Corpses wrapped in vine within 1 hour of death per Will Force will come back to life as their lost Endurance is restored. Any ongoing damage is halted immediately upon falling asleep, but decapitations, acid damage, destroyed brain or heart, etc., will not heal. Beings regenerate while sleeping at a rate of 4 Endurance per hour to all wounded areas. Recovery from death permanently drains a Will Force and takes 30 days minus 1 day per Will Force of the being to recover. If the vine is removed from a sleeping being before they reaches total Endurance, they will awaken for 1d6 minutes and then die again. Recovery from insanity and control takes 20 days minus 1 day per Will Force. Disease, poison effects, scarring, etc. are all healed after 1 full day of sleep. All healing takes a minimum of 1 day of sleep regardless of the being`s Will Force. Affected beings sleep so deeply and so still that it takes Life Sense or Physiology (or a similar effect) to tell they are alive. When completely healed, a Will Force save is required for sleeping beings to awaken. They are afforded one of these each morning until they awaken."
+    ],
+    "Smogthorn": [
+      "Smogthorn",
+      "Root",
+      "2-5 pp.",
+      "1 month/6 months",
+      "3d6 hours",
+      "Emits a Type XV (1d6/minute PR success, 1d6/10 seconds PR fail). Potency Q (Instant) poisonous, repugnant brown fog in a 20` radius. This fog`s repugnant stench spreads over an area 200` from each root, and any being who smells it must make a half Vitality save or suffer a -4 penalty to hit and +4 Initiative. Because of Smogthorn`s stench and rancid taste, a Will Force save must be made to begin eating it, and a Vitality save must be made not to vomit. If successfully eaten, Smogthorn grants Breathless, Spell Turning, and Magical Flight in any direction at 3` per Intelligence point per second. The being does not need to maintain concentration while flying, but still must make Intelligence saves to successful change direction or make any difficult moves. Furthermore, an Agility save must be made while handling this plant to avoid 2d4 thrusting damage from thorns."
+    ],
+    "Soul Flower": [
+      "Soul Flower",
+      "Flower",
+      "4-7 pp.",
+      "1 month/3 months",
+      "1 day",
+      "Grants +25% Control Resistance for 1 day."
+    ],
+    "Speckled Dreamstar": [
+      "Speckled Dreamstar",
+      "Mushroom",
+      "2-5 pp.",
+      "1 month/3 months",
+      "6d10+10 sec.",
+      "Results in the user`s next dream portraying a magical view of someone, something, or someplace the user is thinking about as they fall asleep. The user is essentially scrying on the being, object, or place while they dream, and they can clearly hear all sound nearby as if they were actually there. Beings with Non-Detection, Sphere of Protection, Wall of Protection, Mind Set, Mind Change, or the skill Thought Projection cannot be scryed upon in this fashion, and those with Silence cannot be heard. Beings with Life Sense or Sense Projection are given an Intelligence save to feel that someone is magically spying on them through a dream."
+    ],
+    "Spiritseed(Seed)": [
+      "Spiritseed(Seed)",
+      "Seed",
+      "4-7 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Life, after being breathed on by a living being for 10 minutes, with a 10% chance of a Beta Life Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Spiritseed."
+    ],
+    "Spiritseed(Tree)": [
+      "Spiritseed(Tree)",
+      "Tree",
+      "1-4 pp.",
+      "Eternal",
+      "Varies",
+      "Upon the tree`s outer surface lies a silvery sheen of Life energy, inflicting 6d4 damage to any undead or negative life force beings to the body area touching the tree, as well as 1d4 adjacent body areas if a Magic Resistance is made, and destruction if a Magic Resistance at -6% is failed. It also heals 6d4 to the body area touched, as well as 1d4 adjacent body areas, for any living or positive life force beings. If a corpse touches the tree within 6 minutes of death, it may make a half Will Force save to be resurrected. Even if this roll is failed, if the skills Resurrection, Recover, or True Recovery is begun on the deceased within 3 minutes, the being may make a new Will Force save with a bonus of +3% to be resurrected and permanently loses 1 Will Force."
+    ],
+    "Spying Lady": [
+      "Spying Lady",
+      "Flower",
+      "2-5 pp.",
+      "1 week",
+      "Varies",
+      "Allows someone to listen in on one person, place, or thing on the user`s current plane, as if their sense of hearing was within hearing of the person, place, or thing. The user must state their target`s name aloud. Beings with Non-Detection, Sphere of Protection, Wall of Protection, Mind Set, Mind Change, Silence, or Thought Projection cannot be detected, and beings with Life Sense or Sense Projection (or similar effects) are given an Intelligence save to feel they are being eavesdropped upon."
+    ],
+    "Star Violet": [
+      "Star Violet",
+      "Flower",
+      "2-4 pp.",
+      "1 hour",
+      "1d4+1 hours",
+      "Grants immunity to the user`s mind against mental attacks, control, effects of insanity, or converting to a mental-only form of undead, such as a Horror. If the user is already insane or controlled, then these effects are temporarily removed. Furthermore, mental attributes are protected from being drained involuntarily. The user cannot themselves engage in mental combat or contact another being telepathically, nor can they be mentally contacted or probed by others while the herb is in effect."
+    ],
+    "Sunfruit": [
+      "Sunfruit",
+      "Flower",
+      "2-4 pp.",
+      "1 week/6 weeks",
+      "Instant",
+      "Restores personal attributes that were lost involuntarily."
+    ],
+    "Thornblaze": [
+      "Thornblaze",
+      "Thorn",
+      "2-5 pp.",
+      "6 weeks/36 weeks",
+      "1d4 hours",
+      "Grants +2d4 Will Force for the duration when touched, but also inflicts 2d6 magical fire damage unless a Magic Resistance is made. Its thorns inflict 1d4 thrusting damage, and anyone who takes 1 point of damage from thorns must make an Illusion Resistance or feel incredibly painful burning as the thorn`s power enters the bloodstream and flows throughout her body. If this resistance is failed, the user is incapacitated and must make a Vitality save every minute or fall unconscious for the duration."
+    ],
+    "Tombseed(Seed)": [
+      "Tombseed(Seed)",
+      "Seed",
+      "4-7 pp.",
+      "Eternal",
+      "10 min.",
+      "Opens a portal to the Plane of Death, after being placed on a corpse that died within the last 10 minutes, for 10 minutes, with a 10% chance of a Beta Death Elemental appearing. Once an elemental appears, it remains until banished/destroyed. The portal takes 10 minutes to form, destroying the Tombseed."
+    ],
+    "Tombseed(Tree)": [
+      "Tombseed(Tree)",
+      "Tree",
+      "1-4 pp.",
+      "Eternal",
+      "Varies",
+      "Upon the tree`s outer surface lies a glistening black sheen of Death energy, inflicting 6d4 damage to any living being`s body area touching the tree, as well as 1d4 adjacent body areas if a Magic Resistance is made, and death if a Magic Resistance at -6% is failed. It also heals 6d4 to the body area touched, as well as 1d4 adjacent body areas, for undead or negative life force beings. If a living target dies from this effect, there is a 15% chance they will rise as an appropriate undead of the Game Master`s choice. The target may resist this with a Will Force save at -12%."
+    ],
+    "Trance Thistle": [
+      "Trance Thistle",
+      "Flower",
+      "2-5 pp.",
+      "1 week/6 weeks",
+      "10 min.",
+      "Transfixes any who catch sight of the plant for 10 minutes, unless a Control Resistance is made. Anyone so affected must stare at the plant for the duration, having no other actions. They do, however, get a new Control Resistance each 10 seconds. If line of sight contact is broken, the affected beings are freed from this entrancement, but the released creature must make another Control Resistance if they look at the plant again or be entranced. Upon ingesting any part of the plant, the user falls into a meditative trance for 10 minutes, during which they will experience 2d4 premonitions of themselves and/or others. During this state and afterward, the following benefits apply: A new Control Resistance towards any current controlling factors and a +10% Control Resistance. +1 to hit and damage for 1 hour after the herb`s duration. Current fatigue effects are reduced by half. Fatigue effects for the duration happen twice as slowly (1 minute of fatigue is applied per 2 actual minutes). One temporarily lost attribute point is restored per 30 minutes while awake, and one per 10 minutes while asleep. The user counts as having 1 Will Force rating higher when defending against a hostile spell or effect which depends on Will Force, such as mental combat, the spell and invocation Hold, Possession, etc."
+    ],
+    "Troll`s Hair": [
+      "Troll`s Hair",
+      "Grass",
+      "1-2 pp.",
+      "4 weeks/16 weeks",
+      "1d4 days",
+      "Causes -1d4 Vitality and Agility, causes 3 levels of fatigue, and prevents the user from being healed in any way, unless a Poison Resistance is made."
+    ],
+    "Twisted Roperoot": [
+      "Twisted Roperoot",
+      "Vine",
+      "2-5 pp.",
+      "6 weeks/18 weeks",
+      "2d4 days",
+      "Protects an undead, death elemental, etc., from the damage caused by life/positive based powers, skills, spells, and effects. Thus, the effects that cause damage, blinding, burns, etc. from positive or life-based attacks have no effect on the protected undead. This does not stop turning, banishment, or destruction based positive/life effects. Furthermore, this vine grants immunity to all beings from the effects of pressure in water and in lava, as well as the benefits of Endure Heat, Endure Cold, and Breathless."
+    ],
+    "Vaporleaf": [
+      "Vaporleaf",
+      "Leaf",
+      "1-4 pp.",
+      "6 month/8 months",
+      "2 hours",
+      "Creates a magical wind to blow in the direction the incense stick is pointing. This wind has a constant speed of 50 miles per hour for as long as the incense is burning."
+    ],
+    "Vitalia": [
+      "Vitalia",
+      "Flower",
+      "1-3 pp.",
+      "Eternal",
+      "Eternal",
+      "Grants immunity to the effects of pressure in water and lava, as well as the benefits of Endure Death, Endure Heat, Endure Cold, and Breathless."
+    ],
+    "Wargweed": [
+      "Wargweed",
+      "Leaf",
+      "1-2 pp.",
+      "1 month/6 months",
+      "5d4 hours",
+      "Places the user in a death-like state. Respiration and circulation are halted, and no muscle movement can occur. The user loses the senses of smell, touch, and taste, but can still hear and see. Wounds do not bleed, and the user is immune to poison and disease while in this deathlike state."
+    ],
+    "Wanderstalk": [
+      "Wanderstalk",
+      "Varies Forms",
+      "1-3 pp.",
+      "2d4 min.",
+      "Eternal",
+      "-1d4 Knowledge when first touched, unless a Magic Resistance is made. While the user is holding or wearing a piece at least 6 inches long, they and everything they are carrying will be teleported every 1d4x10 minutes to a random location within 100`. A Magic Resistance is allowed for each teleportation. Every 2d4 minutes, this plant molds itself into various bushes, saplings, vines, mushrooms, and flowers no larger than 4 cubic feet. Each piece held or worn by a being continues to mold shape every 2d4 minutes, assuming the form of any similar-sized object of which the user has knowledge. When the user drops or puts down the piece of Wanderstalk, it will affect the next being who touches it within the next 2d4 minutes. If nobody has touched it by then, it shifts into its natural form, a dead weed, and its magic fades."
+    ],
+    "Waverider": [
+      "Waverider",
+      "Flower",
+      "1-2 pp.",
+      "1 month/3 months",
+      "1d4+1 hours",
+      "Reduces Poison Resistance by 25% for 1d4+1 hours. Can be mixed with any poison to lower the resistance against it."
+    ],
+    "Wellspring": [
+      "Wellspring",
+      "Flower",
+      "11-20 pp.",
+      "Eternal",
+      "Constant",
+      "Draws water from the surrounding terrain in the following manner: Wet earth (4 gallons), Earth (1 gallon), Wet Rock (2 quarts), Plant (2 quarts), Rock (2 pints), Dry (2 cups)."
+    ],
+    "Weeping Mindseed": [
+      "Weeping Mindseed",
+      "Tree",
+      "1-3 pp.",
+      "Constant",
+      "Within sight",
+      "Allows the user to make mental contact with a targeted being within 100` of another Weeping Mindseed tree. If the targeted being goes beyond range, the mental contact is broken."
+    ],
+    "Witherwhiff": [
+      "Witherwhiff",
+      "Flower",
+      "1-2 pp.",
+      "1 week",
+      "2d4+1 hours",
+      "Contains a static shield around it, stunning anyone who touches it for 3d4+3 seconds, unless a Magic Resistance is made. This static shield endures indefinitely while planted and for 1 week after being picked. A being must only make a new Magic Resistance if it leaves their Aura field and they attempt to touch it again. Anyone wearing or holding a Witherwhiff blossom will gain this static shield. Furthermore, the blossom also has a 2` radius air pocket around it full of breathable oxygen, but anyone inside the air pocket has a -2d4 Appearance, and all objects appear old and covered in rust or dirt."
+    ],
+    "Wild Scarlytte": [
+      "Wild Scarlytte",
+      "Flower",
+      "1-3 pp.",
+      "1 week/6 weeks",
+      "3d4 hours",
+      "Acts as a hallucinogen, unless a Magic Resistance is made, causing the user to experience a wide variety of scents, textures, tastes, and sounds, as well as a temporary -2d4 Intelligence and Wisdom. Each successive dose of Wild Scarlytte results in a cumulative -10% chance (for that attribute save) that 1 lost attribute point per dose will be permanently gone."
+    ],
+    "Witch`s Cap": [
+      "Witch`s Cap",
+      "Mushroom",
+      "2-5 pp.",
+      "3 weeks/24 weeks",
+      "2d4 hours",
+      "Allows one user who ingests half the mushroom to shroud their mind in a near complete mental copy of another user who holds the mushroom`s other half. Whenever anyone mentally contacts the being who ingested, they sense the duplicated mind and not the actual mind. If the one who ingested engages or is engaged in mental combat or a strong mental connection with another being, then the herb`s effect immediately fails. The being who ingested is allowed a double Perception Check to receive thoughts, emotions, and details from the being holding the other half of the mushroom that they were thinking and feeling at the time of mental duplication."
+    ],
+    "Withersprite": [
+      "Withersprite",
+      "Seaweed",
+      "1-3 pp.",
+      "4 weeks/24 weeks",
+      "Varies",
+      "Inflicts 3d6+3 death damage to the body area touched (unless a Magic Resistance is made), but also instills the ability to locate and speak to any spirit of a being who died by drowning, as long as the user knows that being`s True Name, as per the skill Speak to Dead. Wounding damage is only applied once, but the power of speaking to a drowned spirit continues for as long as the user is touching the Withersprite."
+    ],
+    "Wormroot": [
+      "Wormroot",
+      "Root",
+      "3-7 pp.",
+      "3 weeks/18 weeks",
+      "2d4 hours",
+      "+1d4 Strength and Vitality for the duration, and envelops the user in 2 magical layers of physical armor with a combined armor rating of 30. The inner layer is considered flexible and the outer layer is semi-flexible. This magical armor will appear below any clothing or armor already worn, and weighs 30 pounds."
+    ],
+    "Wraith Heart": [
+      "Wraith Heart",
+      "Berry",
+      "2-4 pp.",
+      "3 weeks",
+      "2d4 min.",
+      "Creates a 20` wide sphere of suffocating darkness which negates all forms of vision. All beings within the sphere begin to choke, losing 1d6 overall Endurance per 10 seconds. At the onset of asphyxiation, a Will Force save must be made to remain calm or damage is doubled. When Endurance has been reduced to 0, a being appears very pale and must make a Vitality save every 5 seconds to remain conscious (-5% to the save for every point below 0). Once Endurance reaches a being`s negative Vitality rating, the lungs have collapsed and the heart stops beating. One minute later, if Endurance is not raised above the negative Vitality rating, the being dies. A Chirugeon roll will resuscitate the suffocated being and raise overall Endurance to 1 point above negative Vitality. Should a being survive the ordeal, restoration of Endurance is based on the healing rate of the character, with minutes instead of days and a period of 10-minute intervals instead of weeks. If the being dies from suffocation, the user has a 100% chance minus the user's Will Force rating of returning as a physical undead within 10 minutes of death."
+    ],
+    "Angel`s Bane": [
+      "Angel`s Bane",
+      "Plant Pulp",
+      "10-40 pp.",
+      "1 year",
+      "1d4+1 hours",
+      "All Angels under 10th level, and Celestial Incarnates under 10th Title must make a Control Resistance to attack or even approach within 20 feet of the protected being."
+    ],
+    "Angel Feather": [
+      "Angel Feather",
+      "Seed",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +5% to Affinity permanently"
+    ],
+    "Angel`s Sight Bark": [
+      "Angel`s Sight Bark",
+      "Bark",
+      "10-40 pp.",
+      "1 year",
+      "1d4+1 hours",
+      "Grants Life Sensing at 3` per Will Force rating."
+    ],
+    "Archon`s Truth": [
+      "Archon`s Truth",
+      "Fruit",
+      "10-40 pp.",
+      "1-2 weeks",
+      "1d4+1 min.",
+      "When this golden grape (or it`s liquid contents) are consumed the being makes a Control Resistance at -20%, If they fail, they must speak the truth for the duration."
+    ],
+    "Bull`s Horn": [
+      "Bull`s Horn",
+      "Mushroom",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +5 to Endurance permanently."
+    ],
+    "Clearcap": [
+      "Clearcap",
+      "Mushroom",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +10% to Magic Resistance permanently."
+    ],
+    "Clearleaf": [
+      "Clearleaf",
+      "Leaf",
+      "10-40 pp.",
+      "1-2 weeks",
+      "Instant",
+      "Restores mental and physical well-being. All negative mental and physical effects removed (as the effect Restore). However, it does not remove possession or control."
+    ],
+    "Dead Man`s Ghost": [
+      "Dead Man`s Ghost",
+      "Seed",
+      "2-7 gp.",
+      "Eternal",
+      "1d6+6 hours",
+      "Separates the imbiber`s spirit from their body for the duration of the effect. During this time, they may travel as if under the effects of Spirit Travel, and their body, for all intents and purposes, seems completely dead, with no pulse or breath or any other signs the subject is still alive. For every 2 hours of duration, the body temporarily loses one point of Vitality. This loss can kill those whose bodies are frail. After reawakening, the points return at the rate of 1 point per hour. If two or more seeds are ground together, or more than 1 is consumed in a 12 hour period, treat it as a Type XX (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail) poison with Potency I (1d10 minutes)."
+    ],
+    "Demon`s Breath": [
+      "Demon`s Breath",
+      "Vegetable",
+      "10-40 pp.",
+      "1-2 weeks",
+      "1d4+1 min.",
+      "When this blackened tomato-like vegetable (or it`s liquid contents) are consumed the being makes a -20% Control Resistance Or they will believe the first person who speaks to them for the duration."
+    ],
+    "Devil`s Bane": [
+      "Devil`s Bane",
+      "Plant Pulp",
+      "10-40 pp.",
+      "1 year",
+      "1d4+1 hours",
+      "All Devils under 10th level, and Infernal Incarnates under 10th Title must make a Control Resistance to attack or even approach within 20 feet of the protected being."
+    ],
+    "Devil`s Crown": [
+      "Devil`s Crown",
+      "Flower",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +5% to Fortune permanently."
+    ],
+    "Devil`s Root": [
+      "Devil`s Root",
+      "Root",
+      "100-200 pp.",
+      "Eternal",
+      "Instant",
+      "It is a Type XX (Duration 1d6 minutes. 1d4/minute PR success, Death PR fail), Potency Q (Instant) poison. Whether they make a Poison Resistance or not they are transported to the beginning of the long march to the gates of the city of the damned on the first level of Hell. If they die from the poison then they arrive dead, otherwise alive, though they may not stay so for long."
+    ],
+    "Devil`s Walk": [
+      "Devil`s Walk",
+      "Mushroom",
+      "1-4 pp.",
+      "1 year",
+      "1d4+1 hours",
+      "When consumed it allows a person to mental think of an appearance and transform into that being as the spell Change True for the duration. They are limited to beings within 1` of their normal size or weight. The following attributes (Strength, Agility, Vitality, and Appearance) can be increased or decreased by up to 4 points as long as these stay within racial maximum and the minimum of 5."
+    ],
+    "Dragon`s Fruit": [
+      "Dragon`s Fruit",
+      "Fruit",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Aura."
+    ],
+    "Eagle`s Eye": [
+      "Eagle`s Eye",
+      "Berry",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +5% to Perception permanently."
+    ],
+    "Ever Bulb": [
+      "Ever Bulb",
+      "Bulb/Clove",
+      "10-40 pp.",
+      "1 year",
+      "1 day",
+      "grants +20% to all Mental Saving Throws and +20% resistance to effects which control."
+    ],
+    "First Tree Leaf": [
+      "First Tree Leaf",
+      "Leaf",
+      "100-200 pp.",
+      "Eternal",
+      "Instant",
+      "Opens a portal, surrounded by a gray fog to the tree in the center of the Plane of Balance."
+    ],
+    "Glistening Fern": [
+      "Glistening Fern",
+      "Stalk",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Wisdom."
+    ],
+    "God`s Eye": [
+      "God`s Eye",
+      "Fruit",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Piety."
+    ],
+    "Graytusk Root": [
+      "Graytusk Root",
+      "Root",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +10% to Control Resistance permanently."
+    ],
+    "Heartbean": [
+      "Heartbean",
+      "Bean",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Vitality."
+    ],
+    "Heart Flower": [
+      "Heart Flower",
+      "Flower",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +10% to Disease Resistance permanently."
+    ],
+    "Heaven`s Gate": [
+      "Heaven`s Gate",
+      "Moss",
+      "100-200 pp.",
+      "Eternal",
+      "Instant",
+      "Opens a portal, surrounded by a golden mist to the Gates of Heaven. The side of the gate the portal appears to matches the whether the moss is burned in or out of the Heavens. Burning the moss outside opens the portal to outside, and vice versa."
+    ],
+    "Hive Fruit": [
+      "Hive Fruit",
+      "Seeds Inside Fruit",
+      "100-200 pp.",
+      "Eternal",
+      "Permanent",
+      "Each person that consumes the seed becomes 1 part of a Mass Mind as the skill of the same name."
+    ],
+    "Liverbean": [
+      "Liverbean",
+      "Bean",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +10% to Poison Resistance permanently."
+    ],
+    "Platinum Thistle": [
+      "Platinum Thistle",
+      "Seed",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Knowledge."
+    ],
+    "Puissant Passionfruit": [
+      "Puissant Passionfruit",
+      "Fruit",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Strength."
+    ],
+    "Pure Sap": [
+      "Pure Sap",
+      "Sap",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Will Force."
+    ],
+    "Quickleaf": [
+      "Quickleaf",
+      "Leaf",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Agility."
+    ],
+    "Radiant Cherry": [
+      "Radiant Cherry",
+      "Berry",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Appearance."
+    ],
+    "Rainbow Leaf": [
+      "Rainbow Leaf",
+      "Leaf",
+      "10-40 pp.",
+      "1 year",
+      "Permanent",
+      "Grants +10% to Illusion Resistance permanently."
+    ],
+    "Ruler`s Root": [
+      "Ruler`s Root",
+      "Root",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Social Class."
+    ],
+    "Silver Berry": [
+      "Silver Berry",
+      "Berry",
+      "200-400 pp.",
+      "Eternal",
+      "Permanent",
+      "Grants permanent +1 Charm."
+    ],
+    "Wildtail Fern": [
+      "Wildtail Fern",
+      "Silver Fern Stalk",
+      "1-4 pp.",
+      "1 year",
+      "1d4+1 hours",
+      "When consumed it allows a being to be able to magically speak (as the spell Animal Speak) with animals of one imagined type. They also have telepathy with the that type of animal within 1 mile per Will Force of the being."
+    ],
+    "Aria`s Tee Leaf": [
+      "Aria`s Tee Leaf",
+      "Red Leaf",
+      "2-4 gp.",
+      "3 weeks/2 years",
+      "1d4+1 hours",
+      "Arastia Herb: The drinker is unable to mentally contacted, sensed or be engaged in mental combat. They also cannot use any mind reading or telepathic skills, abilities or powers of their own. Also, their dreams cannot be read nor can they be dream summoned."
+    ],
+    "Golden Gift Berry": [
+      "Golden Gift Berry",
+      "Golden Yellow Berry",
+      "2-4 gp.",
+      "2 weeks/2 months",
+      "1d4+1 hours",
+      "Arastia Herb: Each berry is a XV antitoxin removing current poison effects and will also grant a new Disease Resistance against a current disease at a +20%. The being or creature that consumed it gains +20% to Poison Resistance and Disease Resistance."
+    ],
+    "Light`s Latch": [
+      "Light`s Latch",
+      "Sap",
+      "2-4 gp.",
+      "1 year",
+      "1d4+1 hours",
+      "Arastia Herb: The body part placed on can pass through the planar boundary to the demi-plane of phase to Phase Adhere objects or surfaces on the phase plane. Lasts for the duration or until wiped off."
+    ],
+    "Monk`s Repose Spores": [
+      "Monk`s Repose Spores",
+      "Spores",
+      "2-4 gp.",
+      "2 weeks/2 months",
+      "1d4+1 hours",
+      "Arastia Herb: Spread on the face of the individual. The spores are mildly toxic and thus a Poison Resistance is required. If it is failed then the head (face) takes 1d4+1 damage from a mild withering effect that will heal when the spores are no longer active. While the spores are on the face the Life Force of the individual wearing the spores is completely masked. They cannot be life sensed, etc."
+    ],
+    "Paranoia Root": [
+      "Paranoia Root",
+      "Root",
+      "3-4 sp.",
+      "6 months/6 years",
+      "1d4+1 hours",
+      "Arastia Herb: Cause the person to have a strange sense of paranoia. The being feels they are being watched and mistrusts anyone they do not deeply love or trust. Wisdom save to see through this paranoia when requested."
+    ],
+    "Priest`s Cowl": [
+      "Priest`s Cowl",
+      "Flower",
+      "2-5 pp.",
+      "1 week/1 month",
+      "1d4+1 hours",
+      "Arastia Herb: Laid over the striking part of any weapon. The preparer rubs their hands together quickly until they are warm and then places them over the flower which is on the weapon. There is a strong tingling sensation as the heat (and being`s Aura) activates the flower. It suffuses onto the weapon. The weapon is now considered +1 magical (+1 to hit and damage) for the duration."
+    ],
+    "Seer`s Eye Beans": [
+      "Seer`s Eye Beans",
+      "Seed",
+      "2-4 gp.",
+      "1 month/1 year",
+      "1d4+1 hours",
+      "Arastia Herb: Grants Life Sensing within 3` per Will Force rating of the individual affected for 1d4+1 hours."
+    ],
+    "Shadow`s Grip": [
+      "Shadow`s Grip",
+      "Sap",
+      "2-4 gp.",
+      "1 year",
+      "1d4+1 hours",
+      "Arastia Herb: The body part placed on can pass through the planar boundary to the demi-plane of shadow to Shadow Adhere objects or surfaces on the Plane of Shadow. Lasts for the duration or until wiped off."
+    ],
+    "Shadow Sward": [
+      "Shadow Sward",
+      "Plant",
+      "2-5 pp.",
+      "1d4+1 hours",
+      "1d4+1 hours",
+      "Arastia Herb: Makes a temporary brittle-bladed, magical, shadow weapon. The blade is considered +1 and is shadow weapon extending across the planar boundary into the shadow plane as well as the natural universe. It is also magically sharp (sharpness at 5 Aura.) The blade is brittle though and every strike on any hard object (rigid armor, another weapon or shield, wood, metal, stone, etc.) does 1d4+1 damage to it. It starts off with the strength of whatever blade it has been coaxed into being."
+    ],
+    "Thessa`s Tubers": [
+      "Thessa`s Tubers",
+      "Root",
+      "3-4 sp.",
+      "6 months/6 years",
+      "1 full day",
+      "Arastia Herb: Magically hydrates and nourishes the being or animal that consumed it for one entire day."
+    ],
+    "Xavier`s Moss": [
+      "Xavier`s Moss",
+      "Moss",
+      "1-4 gp.",
+      "6 months/6 years",
+      "1 full day",
+      "Arastia Herb: To use sprinkle the powder over a person or object. As long as they do not move, they are magically hidden (as the spell Hide)."
+    ],
+    "Zera`s Nectar": [
+      "Zera`s Nectar",
+      "Nectar",
+      "1-4 gp.",
+      "1 week/1 month",
+      "Instant",
+      "Arastia Herb: Heals 3d4+3 to all wounded areas (including base Endurance). The nectar is toxic if not boiled and strained first, poison Type X (Duration 1d6 minutes. No damage PR success, 1d8/minute PR fail), Potency L (1d4 minutes)"
+    ]
+  }
+}

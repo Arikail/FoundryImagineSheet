@@ -1,0 +1,84 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "armorconditiondict",
+    "lines": [
+      107222,
+      107232
+    ]
+  },
+  "entries": {
+    "Undamaged": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "Preserved": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "Restored": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.9
+    ],
+    "Repaired": [
+      1,
+      1,
+      2,
+      0,
+      0,
+      0.8
+    ],
+    "Worn": [
+      2,
+      2,
+      3,
+      1,
+      -5,
+      0.75
+    ],
+    "Lightly Damaged": [
+      3,
+      3,
+      4,
+      2,
+      -10,
+      0.5
+    ],
+    "Damaged": [
+      4,
+      5,
+      7,
+      3,
+      -15,
+      0.25
+    ],
+    "Heavily Damaged": [
+      5,
+      6,
+      10,
+      4,
+      -20,
+      0.1
+    ],
+    "BROKEN": [
+      99,
+      99,
+      99,
+      9,
+      -99,
+      0.0
+    ]
+  }
+}

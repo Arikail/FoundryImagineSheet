@@ -1,0 +1,966 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "abilitylist",
+    "lines": [
+      45725,
+      45886
+    ]
+  },
+  "entries": {
+    "Air Elemental Form": [
+      "Air Elemental Form",
+      "",
+      "",
+      "Air Elemental Form(Being can transform into an Air Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of Air. Should be readily around.)"
+    ],
+    "Animal Friendship": [
+      "Animal Friendship",
+      "",
+      "",
+      "Animal Friendship(Animals will not willing attack this being. Controlled animals get a new CR to avoid attacking)."
+    ],
+    "Animal Shape": [
+      "Animal Shape",
+      "",
+      "",
+      "Animal Shape(can transform, without fail into a bird or flying insect)."
+    ],
+    "Antennae": [
+      "Antennae",
+      "",
+      "",
+      "Antennae(2 tendril/stalks x1/10th END that allow hearing and smell. Lost of antennae loses those senses)."
+    ],
+    "Antlers": [
+      "Antlers",
+      "",
+      "",
+      "Antlers: Gains additional natural weapon attacks in combat."
+    ],
+    "Balancing Tail": [
+      "Balancing Tail",
+      "",
+      "",
+      "Balancing Tail(+10% to movement Agility Saves)."
+    ],
+    "Beak": [
+      "Beak",
+      "",
+      "",
+      "Beak: Gains additional natural weapon attacks in combat."
+    ],
+    "Breathless": [
+      "Breathless",
+      "",
+      "",
+      "Breathless(No need to breathe to remain living)."
+    ],
+    "Call Twilight": [
+      "Call Twilight",
+      "",
+      "",
+      "Call Twilight(Remove some sunlight in a 50` sq. foot area per 4 WIL, to a height of 40'. Creates a shadowy gray landscape. Activation requires a WIL Save. Lasts 30 minutes per WIL. Has no effect on other light sources.)"
+    ],
+    "Changeling Form": [
+      "Changeling Form",
+      10,
+      "",
+      "Changeling Form(Can change into another humanoid form within 1.5 feet of their height x2 day. Disguise skill success allows copying of another humanoid`s form. Mimic allows copying of their voice.)"
+    ],
+    "Claws": [
+      "Claws",
+      "",
+      "",
+      "Claws: Gains additional natural weapon attacks in combat."
+    ],
+    "Climbing": [
+      "Climbing",
+      10,
+      "",
+      "Climbing(+10% Climb)."
+    ],
+    "Constriction Grapple": [
+      "Constriction Grapple",
+      "",
+      "",
+      "Constriction Grapple(Grapple:+20% to all saves/contests, pinned opponents take 4d4 constriction per 5 sec)."
+    ],
+    "Construct Mind": [
+      "Construct Mind",
+      "",
+      "",
+      "Construct Mind(Has a mind that is not of flesh but magical. If the mind is destroyed then the being dies. Gains immunity to Fear, Hold, and Sleep.)"
+    ],
+    "Construct Form": [
+      "Construct Form",
+      "",
+      "",
+      "Construct Form(Body made of a normal material but affected magically so that it can flex, heal, and otherwise act as flesh when needed. Hide is gained depending on material and Endurance: Clay: 1 per 6 End., Wood: 1 per 5, Stone: 1 per 4, Metal 1 per 3. Attacks are gained based on type, see combat, Clay and Wood can wear flexible and semi-flexible armor. Stone and metal can only wear flexible. Beings with the ability Construct Form gain the following immunities: Disease, Fatigue, Frost Hardened, Greater Poison, Lesser Transformation of Form, and Shock. Beings with this ability must also take the following disabilities: Cannot Swim (Clay, Metal, Stone only), Infertile, No Intake, No Sense of Smell, and No Sense of Taste.)"
+    ],
+    "Digging": [
+      "Digging",
+      "",
+      "",
+      "Digging(Additional digging speed)."
+    ],
+    "Digging Claws": [
+      "Digging Claws",
+      "",
+      "",
+      "Digging Claws(Allows easier digging)."
+    ],
+    "Diving(Water)": [
+      "Diving(Water)",
+      "",
+      "",
+      "Diving(Water):(Gain Diving Social Skill, can hold breath for up to 30 minutes)."
+    ],
+    "Earth Elemental Form": [
+      "Earth Elemental Form",
+      "",
+      "",
+      "Earth Elemental Form(Being can transform into an Earth Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of earth.)"
+    ],
+    "Enhanced Hearing": [
+      "Enhanced Hearing",
+      30,
+      "",
+      "Enhanced Hearing(+30% to Listen)."
+    ],
+    "Enhanced Smell": [
+      "Enhanced Smell",
+      30,
+      "",
+      "Enhanced Smell(+30% to Smell)."
+    ],
+    "Enhanced Taste": [
+      "Enhanced Taste",
+      30,
+      50,
+      "Enhanced Taste(Enhances the sense of taste. This gives the ability to detect poison at a 30% chance, within a single drop. Also grants a +50% to resisting Illusions of Taste.)."
+    ],
+    "Entropy Touch": [
+      "Entropy Touch",
+      "",
+      "",
+      "Entropy Touch(Items crafted from non-living material take 1d4 damage per contact per 10 seconds)."
+    ],
+    "Evoke Special(Tree)": [
+      "Evoke Special(Tree)",
+      "",
+      "",
+      "Evoke Special(Tree):(When using Evoke skill can take on tree adaptations: Barkhide+Endurance+Force of Wood+Instinct(water)+Light Regeneration+Rooted+Strength+Tree Merge+Tree Walk)."
+    ],
+    "Exceptional Sight": [
+      "Exceptional Sight",
+      1,
+      "",
+      "Exceptional Sight(Vision x2, Missile Weapons +1 to hit)."
+    ],
+    "Exceptional Hearing": [
+      "Exceptional Hearing",
+      -20,
+      30,
+      "Exceptional Hearing(-20% to Surprise, +30% to Listen)."
+    ],
+    "Extra Insect Limbs(Arms)": [
+      "Extra Insect Limbs(Arms)",
+      "",
+      "",
+      "Extra Insect Limbs/Arms(Extra pair of arms/forearms and hands with no fingers. All at 1/2 endurance. Each counts as an off hand with +5 seconds of action. +20% to Climb.)"
+    ],
+    "Extra Insect Limbs(Legs)": [
+      "Extra Insect Limbs(Legs)",
+      4,
+      20,
+      "Extra Insect Limbs/Legs(Extra pair of long thigh/shins/footpads with chitinous hide. Gains Scurry movement at x4 walk. +20% to Agility saves involving movement.)"
+    ],
+    "Eyestalks": [
+      "Eyestalks",
+      "",
+      "",
+      "Eyestalks(Can extend 3 inches per foot of being`s height/look around corners/-50% to be surprised when fully extended)."
+    ],
+    "Fangs/Sharp Teeth": [
+      "Fangs/Sharp Teeth",
+      "",
+      "",
+      "Fangs/Sharp Teeth(Gains additional attacks in combat)."
+    ],
+    "Farsight": [
+      "Farsight",
+      2,
+      25,
+      "Farsight(Vison x3/Missile Weapons +2 to hit/+25% Surprise/-25% to be surprised)."
+    ],
+    "Fickle Luck": [
+      "Fickle Luck",
+      "",
+      "",
+      "Fickle Luck(Every day: 50%/50% 1d4+1 luck points or 1d4+1 unlucky points applied by the GM to actions performed that day)."
+    ],
+    "Fire Elemental Form": [
+      "Fire Elemental Form",
+      "",
+      "",
+      "Fire Elemental Form(Being can transform into an Fire Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of Fire.)"
+    ],
+    "Flight(Wings)": [
+      "Flight(Wings)",
+      "",
+      "",
+      "Winged Flight(Gains flight at 3x walking speed)."
+    ],
+    "Gift of Magic": [
+      "Gift of Magic",
+      "",
+      "",
+      "Gift of Magic(Attribute penalties reduced to -1 INT/WIS/KNW, -2 SOC. Access to Herb Lore and Detect Magic racial skills.)"
+    ],
+    "Gills": [
+      "Gills",
+      "",
+      "",
+      "Gills(Underwater breathing)."
+    ],
+    "Hard to Kill": [
+      "Hard to Kill",
+      10,
+      "",
+      "Hard to Kill(+10% to Endure rolls)."
+    ],
+    "Hard to Surprise": [
+      "Hard to Surprise",
+      -10,
+      "",
+      "Hard to Surprise(-10% to be Surprised)."
+    ],
+    "Heat as Food": [
+      "Heat as Food",
+      "",
+      "",
+      "Heat as Food(Uses heat for food. 3 weeks of heat below the 100 degrees Fahrenheit will kill this being. 10 minutes in contact with heat above 100 degrees Fahrenheit is a meal. 3 meals are needed per day.)"
+    ],
+    "Hide(4)": [
+      "Hide(4)",
+      4,
+      "",
+      "Hide(4 points/all areas)."
+    ],
+    "Hide(5)": [
+      "Hide(5)",
+      5,
+      "",
+      "Hide(5 points/all areas)."
+    ],
+    "Hide(6)": [
+      "Hide(6)",
+      6,
+      "",
+      "Hide(6 points/all areas)."
+    ],
+    "Hide(8)": [
+      "Hide(8)",
+      8,
+      "",
+      "Hide(8 points/all areas)."
+    ],
+    "Hide(10)": [
+      "Hide(10)",
+      10,
+      "",
+      "Hide(10 points/all areas)."
+    ],
+    "Hide(15)": [
+      "Hide(15)",
+      15,
+      "",
+      "Hide(15 points/all areas)."
+    ],
+    "Hide(20)": [
+      "Hide(20)",
+      20,
+      "",
+      "Hide(20 points/all areas)."
+    ],
+    "Hide(1/1)": [
+      "Hide(1/1)",
+      1,
+      30,
+      "Hide(1 per END/30 Max.)."
+    ],
+    "Hide(1/2)": [
+      "Hide(1/2)",
+      2,
+      30,
+      "Hide(1 per 2 END/30 Max.)."
+    ],
+    "Hide(1/3)": [
+      "Hide(1/3)",
+      3,
+      25,
+      "Hide(1 per 3 END/25 Max.)."
+    ],
+    "Hide(1/4)": [
+      "Hide(1/4)",
+      4,
+      20,
+      "Hide(1 per 4 END/20 Max.)."
+    ],
+    "Hide(1/5)": [
+      "Hide(1/5)",
+      5,
+      15,
+      "Hide(1 per 5 END/15 Max.)."
+    ],
+    "Hide(1/6)": [
+      "Hide(1/6)",
+      6,
+      10,
+      "Hide(1 per 6 END/10 Max.)."
+    ],
+    "Hide(Chitinous)": [
+      "Hide(Chitinous)",
+      2,
+      30,
+      "Hide(Chitinous:1 per 2 END/30 Max.)."
+    ],
+    "Hide(Crystal)": [
+      "Hide(Crystal)",
+      2,
+      30,
+      "Hide(Crystal:1 per 2 END/30 Max.)."
+    ],
+    "Hide(Feathers/Fur)": [
+      "Hide(Feathers/Fur)",
+      6,
+      15,
+      "Hide(Feathers/Fur:1 per 6 END/15 Max.)."
+    ],
+    "Hide(Fur)": [
+      "Hide(Fur)",
+      5,
+      20,
+      "Hide(Fur:1 per 5 END/20 Max.)."
+    ],
+    "Hide(Scales/Shell)": [
+      "Hide(Scales/Shell)",
+      10,
+      20,
+      "Hide(Scales/Shell): 10 points, limbs, head, and neck. 20 points, upper, middle and lower torsos)."
+    ],
+    "Hide(Skin)": [
+      "Hide(Skin)",
+      6,
+      20,
+      "Hide(Skin:1 per 6 END/20 Max.)."
+    ],
+    "Horns": [
+      "Horns",
+      "",
+      "",
+      "Horns: Gains additional natural weapon attacks in combat."
+    ],
+    "Howl Communication": [
+      "Howl Communication",
+      "",
+      "",
+      "Howl Communication(communicate 5 miles +/-2.5 miles depending on condition)."
+    ],
+    "Infrasonic Speech": [
+      "Infrasonic Speech",
+      "",
+      "",
+      "Infrasonic Speech(Can speak in sounds so low that those without either Vibration Sensing or this ability cannot hear it. Distance goes x2 as far. Those with Vibration Sensing can feel the sound but not understand it.)"
+    ],
+    "Infravision30": [
+      "Infravision",
+      30,
+      "",
+      "Infravision 30`(distinquish 5 degree temp differences)."
+    ],
+    "Infravision60": [
+      "Infravision",
+      60,
+      "",
+      "Infravision 60`(distinquish 5 degree temp differences)."
+    ],
+    "Infravision90": [
+      "Infravision",
+      90,
+      "",
+      "Infravision 90`(distinquish 5 degree temp differences)."
+    ],
+    "Infravision120": [
+      "Infravision",
+      120,
+      "",
+      "Infravision 120`(distinquish 5 degree temp differences)."
+    ],
+    "Infravision180": [
+      "Infravision",
+      180,
+      "",
+      "Infravision 180`(distinquish 5 degree temp differences)."
+    ],
+    "Insect Wings": [
+      "Insect Wings",
+      "",
+      "",
+      "Insect Wings(Gains flight at 3x walking speed)."
+    ],
+    "Jumping": [
+      "Jumping",
+      2,
+      3,
+      "Jumping(x2 upward/x3 forward)."
+    ],
+    "Keen": [
+      "Keen",
+      "",
+      "",
+      "Keen(opponent`s make morale check or flee)."
+    ],
+    "Lateral Vision": [
+      "Lateral Vision",
+      30,
+      "",
+      "Lateral Vision(-30% to be surprised)."
+    ],
+    "Light as Water": [
+      "Light as Water",
+      "",
+      "",
+      "Light as Water(Uses light as a normal being would water. 3 days of absolute darkness will kill this being. 1 minute of light is a drink. 3 drinks are needed per day.)"
+    ],
+    "Light Sleeper": [
+      "Light Sleeper",
+      "",
+      "",
+      "Light Sleeper(Awakens in 1 second after any disturbing noise is heard or a Danger Knowledge skill roll is made)."
+    ],
+    "Living Crystal": [
+      "Living Crystal",
+      "",
+      "",
+      "Living Crystal(Gains abilities Breathless, Heat as Food, and Light as Water and is in a moving crystal form)."
+    ],
+    "Magical Flight": [
+      "Magical Flight",
+      "",
+      "",
+      "Magical Flight(Gains the magical ability to fly without wings)."
+    ],
+    "Magical Hearing": [
+      "Magical Hearing",
+      "",
+      "",
+      "Magical Hearing(Hears through magical means)."
+    ],
+    "Magical Sight": [
+      "Magical Sight",
+      "",
+      "",
+      "Magical Sight(Sees through magical means)."
+    ],
+    "Magical Smell": [
+      "Magical Smell",
+      "",
+      "",
+      "Magical Smell(Smells through magical means)."
+    ],
+    "Magical Touch": [
+      "Magical Touch",
+      "",
+      "",
+      "Magical Touch(Feels through magical means)."
+    ],
+    "Magical Voice": [
+      "Magical Voice",
+      "",
+      "",
+      "Magical Voice(Speaks through magical means)."
+    ],
+    "Mecho-Magical Mind": [
+      "Mecho-Magical Mind",
+      "",
+      "",
+      "Mecho-Magical Mind(Mind made of small parts; motorized but magical in nature. If the mind is destroyed then the being dies. Beings with this ability also gain immunity to Fear, Hold, and Sleep.)"
+    ],
+    "Metal Mechanical Form": [
+      "Metal Mechanical Form",
+      "",
+      "",
+      "Metal Mechanical Form(Metallic mechanical body that has built-in armor equaling 1 point per 3 Endurance with no maximum. Cannot wear rigid or even semi-flexible armor, as it would interfere with locomotion. Can wear any flexible armor available. Gains the following immunities: Aging, Disease, Fatigue, Frost Hardened, Fire Hardened, Greater Poison, Lesser Transformation of Form, and Shock. Also has the disabilities: Cannot Swim, Infertile, No Intake, No Healing, No Sense of Smell, and No Sense of Taste.)"
+    ],
+    "Natural Weapons(Arachen)": [
+      "Natural Weapons(Arachen)",
+      "",
+      "",
+      "Arachen: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Ba’Cora)": [
+      "Natural Weapons(Ba’Cora)",
+      "",
+      "",
+      "Ba’Cora: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Beastman)": [
+      "Natural Weapons(Beastman)",
+      "",
+      "",
+      "Beastman: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Brok)": [
+      "Natural Weapons(Brok)",
+      "",
+      "",
+      "Brok: Gains additional effects in combat (touch causes CR or loss of 1 WIL to the living thing touched.)."
+    ],
+    "Natural Weapons(Brownie)": [
+      "Natural Weapons(Brownie)",
+      "",
+      "",
+      "Brownie: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Centaur)": [
+      "Natural Weapons(Centaur)",
+      "",
+      "",
+      "Centaur: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Cervara)": [
+      "Natural Weapons(Cervara)",
+      "",
+      "",
+      "Cervara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Chetahl)": [
+      "Natural Weapons(Chetahl)",
+      "",
+      "",
+      "Chetahl: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Dark Avian)": [
+      "Natural Weapons(Dark Avian)",
+      "",
+      "",
+      "Dark Avian: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Equara)": [
+      "Natural Weapons(Equara)",
+      "",
+      "",
+      "Equara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Fire Mephyt)": [
+      "Natural Weapons(Fire Mephyt)",
+      "",
+      "",
+      "Fire Mephyt: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Grahl)": [
+      "Natural Weapons(Grahl)",
+      "",
+      "",
+      "Grahl: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Giant)": [
+      "Natural Weapons(Giant)",
+      "",
+      "",
+      "Giant: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Gremlin)": [
+      "Natural Weapons(Gremlin)",
+      "",
+      "",
+      "Gremlin: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Hippotara)": [
+      "Natural Weapons(Hippotara)",
+      "",
+      "",
+      "Hippotara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Ice Mephyt)": [
+      "Natural Weapons(Ice Mephyt)",
+      "",
+      "",
+      "Ice Mephyt: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Jumara)": [
+      "Natural Weapons(Jumara)",
+      "",
+      "",
+      "Jumara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Katara)": [
+      "Natural Weapons(Katara)",
+      "",
+      "",
+      "Katara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Kenku)": [
+      "Natural Weapons(Kenku)",
+      "",
+      "",
+      "Kenku: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Kerasara)": [
+      "Natural Weapons(Kerasara)",
+      "",
+      "",
+      "Kerasara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Mechanos)": [
+      "Natural Weapons(Mechanos)",
+      "",
+      "",
+      "Mechanos: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(S’rett)": [
+      "Natural Weapons(S’rett)",
+      "",
+      "",
+      "S’rett: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Saurian)": [
+      "Natural Weapons(Saurian)",
+      "",
+      "",
+      "Saurian: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Sasquatch/Yeti)": [
+      "Natural Weapons(Sasquatch/Yeti)",
+      "",
+      "",
+      "Sasquatch/Yeti: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Scethen)": [
+      "Natural Weapons(Scethen)",
+      "",
+      "",
+      "Scethen: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Se’eth)": [
+      "Natural Weapons(Se’eth)",
+      "",
+      "",
+      "Se’eth: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Sha’Cora)": [
+      "Natural Weapons(Sha’Cora)",
+      "",
+      "",
+      "Sha’Cora: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Susara)": [
+      "Natural Weapons(Susara)",
+      "",
+      "",
+      "Susara: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Taurian)": [
+      "Natural Weapons(Taurian)",
+      "",
+      "",
+      "Taurian: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Troll)": [
+      "Natural Weapons(Troll)",
+      "",
+      "",
+      "Troll: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(True Giant)": [
+      "Natural Weapons(True Giant)",
+      "",
+      "",
+      "True Giant: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Whalrog)": [
+      "Natural Weapons(Whalrog)",
+      "",
+      "",
+      "Whalrog: Gains additional natural weapon attacks in combat."
+    ],
+    "Natural Weapons(Xar’Xeth)": [
+      "Natural Weapons(Xar’Xeth)",
+      "",
+      "",
+      "Xar’Xeth: Gains additional natural weapon attacks in combat."
+    ],
+    "Night Vision": [
+      "Night Vision",
+      "",
+      "",
+      "Night Vision(Near darkness vision. Bright light: blinds 1d6+1 sec. -2 to hit/+1 initiative after)."
+    ],
+    "Night Vision(Enhanced)": [
+      "Night Vision(Enhanced)",
+      "",
+      "",
+      "Night Vision(Enhanced):(Near darkness vision. No bright light penalties.)"
+    ],
+    "Not Easily Surprised": [
+      "Not Easily Surprised",
+      "",
+      "",
+      "Not Easily Surprised(-15% to be Surprised)."
+    ],
+    "Patterned Fur": [
+      "Patterned Fur",
+      10,
+      5,
+      "Patterned Fur(or Scales):(+10% to Blend/+5% to Move Unseen in matching terrain)."
+    ],
+    "Pincers/Mandibles": [
+      "Pincers/Mandibles",
+      "",
+      "",
+      "Pincers(Gains additional attacks in combat. After hit being is considered grappled STR Contest to escape)."
+    ],
+    "Prehensile Trunk": [
+      "Prehensile Trunk",
+      "",
+      "",
+      "Prehensile Trunk(Acts as a third hand but without being able to delicately manipulate objects. The trunk has x1 Endurance and adds +20% to Climb.)"
+    ],
+    "Quadruped": [
+      "Quadruped",
+      20,
+      -10,
+      "Quadruped(Gains Gallop/+20% to Agility saves/except trampling at -10%)."
+    ],
+    "Quiet Flier": [
+      "Quiet Flier",
+      20,
+      "",
+      "The creature is at +20% to surprise when attacking from the air."
+    ],
+    "Raking Claws": [
+      "Raking Claws",
+      "",
+      "",
+      "Raking Claws:(Gains additional engaging/grappling attacks)."
+    ],
+    "Raking Talons/Claws": [
+      "Raking Talons/Claws",
+      "",
+      "",
+      "Raking Talons/Claws:(Gains additional engaging/grappling attacks)."
+    ],
+    "Reduced Consumption": [
+      "Reduced Consumption",
+      "",
+      "",
+      "Reduced Consumption(needs half the normal amount of food and water to survive)."
+    ],
+    "Regeneration": [
+      "Regeneration",
+      "",
+      "",
+      "Regeneration:(Regeneration(1d4 points are healed to all areas per minute. Cannot regenerate from fire or acid damage, or if the head and heart are separated.))"
+    ],
+    "Regeneration(Natural)": [
+      "Regeneration(Natural)",
+      "",
+      "",
+      "Regeneration-Natural:(Lost limbs regrow at VIT healing rate. They appear first as buds and then fill out as they heal. Being cannot regenerate from fire/acid. Death if the head and heart are seperated.)"
+    ],
+    "Regeneration(Greater)": [
+      "Regeneration(Greater)",
+      "",
+      "",
+      "Regeneration-Greater:(Regenerates 1d4 points to all wounds per 10 sec. Limbs regenerate and are restored when fully healed. Vital area loss causes death.)"
+    ],
+    "Regeneration(Slow)": [
+      "Regeneration(Slow)",
+      "",
+      "",
+      "Regeneration-Slow:(Limbs/non-head vitals heal at double normal healing rate. Beheading/fatal head damage causes death.)"
+    ],
+    "Shell Armor": [
+      "Shell Armor",
+      "",
+      "",
+      "Shell Armor(Areas covered by the shell cannot have rigid armor on them unless it is bolted on at x3 cost)."
+    ],
+    "Silent Flight": [
+      "Silent Flight",
+      20,
+      "",
+      "Silent Flight(at jogging speeds or less. +20% to surprise attack)."
+    ],
+    "Skin(Heat)": [
+      "Skin(Heat)",
+      "",
+      "",
+      "Skin(Heat):(1d6 heat damage upon touch, once per 5 seconds)."
+    ],
+    "Skin(Cold)": [
+      "Skin(Cold)",
+      "",
+      "",
+      "Skin(Cold):(1d4 cold damage upon touch, once per 5 seconds)."
+    ],
+    "Sleepless": [
+      "Sleepless",
+      "",
+      "",
+      "Sleepless(Does not sleep but needs periods of inactivity that match sleep periods where they are alert but sluggish taking x2 as long to act for 2-20 seconds)."
+    ],
+    "Special Dark Shape": [
+      "Special Dark Shape",
+      "",
+      "",
+      "Special Dark Shape(Dark Fairies with Animal Shape skill can become D`Wisps with powers at x2 the Title of the Dark Fairy)."
+    ],
+    "Special Fire Shape": [
+      "Special Fire Shape",
+      "",
+      "",
+      "Special Fire Shape(Fire Mephyts with Animal Shape skill can become Fire Wisps with powers at x2 the Title of the Mephyt)."
+    ],
+    "Special Frost Shape": [
+      "Special Frost Shape",
+      "",
+      "",
+      "Special Frost Shape(Ice Mephyts with Animal Shape skill can become Ice Wisps with powers at x2 the Title of the Mephyt)."
+    ],
+    "Special Shape": [
+      "Special Shape",
+      "",
+      "",
+      "Special Shape(Fairies with Animal Shape skill can become Will O` Wisps with powers at the x2 Title of the Fairy)."
+    ],
+    "Stinger": [
+      "Stinger",
+      "",
+      "",
+      "Stinger(Gains additional attacks in combat)."
+    ],
+    "Swimming": [
+      "Swimming",
+      "",
+      "",
+      "Swimming(+50% to Swimming skill, swim movement at x3 walking)."
+    ],
+    "Swimming(Enhanced)": [
+      "Swimming(Enhanced)",
+      "",
+      "",
+      "Swimming(Enhanced):(Swim at 5x walking speed)."
+    ],
+    "Tail Slap": [
+      "Tail Slap",
+      "",
+      "",
+      "Tail Slap: Gains additional natural weapon attacks in combat."
+    ],
+    "Talons/Large Claws": [
+      "Talons/Large Claws",
+      "",
+      "",
+      "Talons/Large Claws: Gains additional natural weapon attacks in combat."
+    ],
+    "Terrain Blending": [
+      "Terrain Blending",
+      "",
+      "",
+      "Terrain Blending(+20% to Surprise Attack/Blend in native terrain)."
+    ],
+    "Terrain Fur": [
+      "Terrain Fur",
+      20,
+      "",
+      "Terrain Fur(+20% to Blend/Move Unseen in native terrain)."
+    ],
+    "Transform(Fish Tail)": [
+      "Transform(Fish Tail)",
+      "",
+      "",
+      "Transform(Fish Tail):(transform lower body, lower torso down into a fish tail: x3 Endurance tail and a x1 Endurance fin)."
+    ],
+    "Treasure Sniffing": [
+      "Treasure Sniffing",
+      "",
+      "",
+      "Treasure Sniffing(The sense of Smell can be used to find valuables)."
+    ],
+    "Tusks": [
+      "Tusks",
+      "",
+      "",
+      "Tusks(Gains additional attacks in combat)."
+    ],
+    "Ultravision": [
+      "Ultravision",
+      "",
+      "",
+      "Ultravision(Vision in ultraviolet spectrum. Can see in darkness)."
+    ],
+    "Underwater Vision": [
+      "Underwater Vision",
+      "",
+      "",
+      "Underwater Vision(No penalties or distance modifiers when seeing in clear water)."
+    ],
+    "Venom(Paralysis)": [
+      "Venom(Paralysis)",
+      "V",
+      "P",
+      "Venom:Paralysis(Type V-Potency P)."
+    ],
+    "Venom(Strong)": [
+      "Venom(Strong)",
+      "x2",
+      "P",
+      "Venom(Strong):(Poison Type = Title x2, Potency J)."
+    ],
+    "Vibration Language": [
+      "Vibration Language",
+      "",
+      "",
+      "Vibration Sensing(sense subtle vibrations within 1000`)."
+    ],
+    "Vibration Sensing": [
+      "Vibration Sensing",
+      1000,
+      "",
+      "Vibration Language(Can speak in a language of Vibrations that can be learned by anyone who has Vibration Sensing)."
+    ],
+    "Water Elemental Form": [
+      "Water Elemental Form",
+      "",
+      "",
+      "Water Elemental Form(Being can transform into an Water Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of water.)"
+    ],
+    "Webbed Feet/Hands": [
+      "Webbed Feet/Hands",
+      "",
+      "",
+      "Webbed Feet/Hands(+30% to Swimming skill)."
+    ],
+    "Web Weaving": [
+      "Web Weaving",
+      "",
+      "",
+      "Web Weaving(Strong webs are web strength of being`s END and Hide equal to the being`s VIT. Sticky webs are 1/2 END but cause entanglement: STR Save at -50% to escape. Both types shoot to dagger range)."
+    ],
+    "Wings": [
+      "Wings",
+      "",
+      "",
+      "Wings(Natural Flight at x3 walking speed. Wings give the being the ability to fly)."
+    ],
+    "Wing Projection": [
+      "Wing Projection",
+      "",
+      "",
+      "Wing Projection(Magical Flight. Projects a mental image of wings during flight)."
+    ]
+  }
+}

@@ -1,0 +1,6366 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "armorcostlist",
+    "lines": [
+      77920,
+      78628
+    ]
+  },
+  "entries": {
+    "Belt": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Belt(Obi)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "1 sp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Belt(Rope)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Belt(w/Buckle)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "1 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Boots(Leather)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "8 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Boots(High/Leather)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Breeches(Cloth)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Breeches(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Breeches(Wool)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Breeches(Silk)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 sp"
+    ],
+    "Cap(Cloth)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Cape(Cloth)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Cape(Fur-lined)": [
+      "3 sp",
+      "4 sp",
+      "5 sp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Cape(Wool)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Cloak(Fur-lined)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "25 sp",
+      "5 gp",
+      "75 sp"
+    ],
+    "Cloak(Cloth)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Cloak(Wool)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Corset": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Costume(Animal)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Costume(Dance)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Costume(Dramatic)": [
+      "3 sp",
+      "5 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Costume(Simple)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Costume(Humor)": [
+      "3 sp",
+      "5 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Costume(Sad)": [
+      "3 sp",
+      "5 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Costume(Angry)": [
+      "3 sp",
+      "5 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Costume(Happy)": [
+      "3 sp",
+      "5 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Dress(Cloth)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Dress(Rags)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Dress(Wool)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Dress(Boubou)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Dress(Fine)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Dress(Hooped)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Gilet(Sleeveless Jacket)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Gloves(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Gloves(Wool)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Gloves(Silk)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Hakama(Cloth)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Hakama(Rags)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Hakama(Silk)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Hakama(Wool)": [
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Hanfu(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Hanfu(Silk)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Hat(Decorative)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Hat(Fez)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Hat(Fine)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Hat(Narrow-rimmed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hat(Plain)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hat(Wide-brimmed)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Hat(Wizard)": [
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Headdress(Cloth)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Headdress(Decorative)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Headdress(Silk)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Headdress(Wool)": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Hose(Silk)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Hose(Tights)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Jacket": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp"
+    ],
+    "Jacket(Haori)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Jacket(Snow)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Jacket(Waterproof)": [
+      "1 sp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Kilt": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Kilt(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Kilt(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Kilt(Wool)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Kimono(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Kimono(Silk)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Lingerie": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Mask(Animal)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Mask(Dramatic)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Mask(Simple)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Mask(Humor)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Mask(Sad)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Mask(Angry)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Mask(Happy)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Pantaloons(Cloth)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Pantaloons(Silk)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Pantaloons(Wool)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Poncho(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Poncho(Wool)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Robe(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Robe(Wool)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Robe(Caftan)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Frock(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Frock(Silk)": [
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "8 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Frock(Wool)": [
+      "1 sp",
+      "3 sp",
+      "7 sp",
+      "10 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Sandals": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "1 sp",
+      "14 cp",
+      "28 cp",
+      "42 cp"
+    ],
+    "Sandals(Zōri)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Sandals(Worn)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Sarong(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Sarong(Rags)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "8 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Sarong(Silk)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Sarong(Wool)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Scarf(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Scarf(Rags)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "8 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Scarf(Silk)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Scarf(Wool)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Shirt(Billowed)": [
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Shirt(Gusseted)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Shirt(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Shoes": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Shoes(Running)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Shoes(Dance)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Shoes(Fine)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Skirt(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Skirt(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Skirt(Silk)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Skirt(Wool)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Skirt(Hooped)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Slip": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "18 sp",
+      "27 sp"
+    ],
+    "Suit(Fine)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Tabard(Cloth)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Tabard(Satin)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Tabard(Page/Child`s)": [
+      "2 sp",
+      "3 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Tunic(Cloth)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Tunic(Silk)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Tunic(Decorative)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Tunic(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Tunic(Wool)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Veil(Cloth)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Veil(Silk)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Veil(Wool)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Wrap Skirt(Cloth)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Wrap Skirt(Rags)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Wrap Skirt(Silk)": [
+      "1 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Wrap Skirt(Wool)": [
+      "1 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Pants(Aviator)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Boots(Climbing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Boots(Aviator)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Boots(Fur-lined)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Boots(Insulated)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Boots(Insulated/Fire Resistant)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Boots(Sand)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Boots(Waterproof/Fur-lined)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Cap(Aviator)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Cloak(Hooded/Insulated)": [
+      "4 sp",
+      "7 sp",
+      "14 sp",
+      "18 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Cloak(Hooded/Insulated/Fire Resistant)": [
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "14 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Cloak(Hooded/Fur-lined)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Cloak(Hooded/Waterproof/Fur-lined)": [
+      "3 cp",
+      "5 cp",
+      "10 sp",
+      "14 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Coat(Fur-lined)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Coat(Insulated/Fire Resistant)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Coat(Insulated)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Coat(Waterproof/Fur-lined)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Hat(Fur-lined)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hat(Hooded/Forward Brim)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hat(Insulated)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hat(Insulated/Fire Resistant)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Hat(Waterproof/Fur-lined)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Hat(Wide Brim)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Jacket(Aviator)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Overalls(Wading/Watertight)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Pants(Fur-lined)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Pants(Insulated)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Pants(Insulated/Fire Resistant)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Pants(Waterproof/Fur-lined)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Sandals(Sand)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Scarf(Dust)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Scarf(Snow)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Shoes(Climbing)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Shoes(Fur-lined)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Shoes(Sand)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Shoes(Waterproof/Fur-lined)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4  gp",
+      "6 gp"
+    ],
+    "Ski Boots": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Skin Suit(Watertight)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Snow Shoe": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Thawb(Cloth)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Thawb(Silk)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Thawb(Wool)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Turban(Cloth)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Turban(Silk)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Turban(Wool)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Gauntlets(Stainless Steel/Articulated)": [
+      "9 gp",
+      "18 gp",
+      "36 gp",
+      "44 gp",
+      "72 gp",
+      "144 gp",
+      "216 gp"
+    ],
+    "Gauntlets(Tempered Plate/Articulated)": [
+      "11 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp",
+      "88 gp",
+      "176 gp",
+      "264 gp"
+    ],
+    "Gauntlets(Titanium/Articulated)": [
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp",
+      "300 pp",
+      "450 pp"
+    ],
+    "Gauntlets(Banded Chain)": [
+      "35 sp",
+      "7 gp",
+      "14 gp",
+      "18 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Gauntlets(Bolted Leather)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "14 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Gauntlets(Bone)": [
+      "3 sp",
+      "5 sp",
+      "1  gp",
+      "3  gp",
+      "5  gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Gauntlets(Heavy Bone)": [
+      "3 sp",
+      "5 sp",
+      "9 gp",
+      "12 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Gauntlets(Bronze)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "14 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Gauntlets(Chain)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "14 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Gauntlets(Giant Chitin)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Gauntlets(Giant Leather)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Gauntlets(Giant Scales)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Gauntlets(Hard Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Gauntlets(Heavy Chain)": [
+      "4 gp",
+      "7 gp",
+      "13 gp",
+      "15 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Gauntlets(Heavy Plate)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "24 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Gauntlets(Lacquered Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "12 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Gauntlets(Laminar)": [
+      "3 gp",
+      "7 gp",
+      "14 gp",
+      "18 gp",
+      "24 gp",
+      "48 gp",
+      "72 gp"
+    ],
+    "Gauntlets(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Gauntlets(Padding)": [
+      "5 sp",
+      "3 gp",
+      "5 cp",
+      "1 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Gauntlets(Plate)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Gauntlets(Soft Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Gauntlets(Stainless Steel": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "20 gp",
+      "26 gp",
+      "52 gp",
+      "78 gp"
+    ],
+    "Gauntlets(Studded Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Gauntlets(Wood)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Gauntlets(Bloodracite/Hinged)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Gauntlets(Laminar/Hinged)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "21 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Gauntlets(Pearlacite/Hinged)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Gauntlets(Stainless Steel/Hinged)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "22 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Gauntlets(Tempered Plate/Hinged)": [
+      "6 gp",
+      "11 gp",
+      "22 gp",
+      "33 gp",
+      "44 gp",
+      "88 gp",
+      "132 gp"
+    ],
+    "Gauntlets(Titanium/Hinged)": [
+      "7 pp",
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "75 pp",
+      "150 pp",
+      "225 pp"
+    ],
+    "Great Helm(Bloodracite)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Great Helm(Bolted Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Great Helm(Bone)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Great Helm(Heavy Bone)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Great Helm(Bronze)": [
+      "6 gp",
+      "11 gp",
+      "22 gp",
+      "28 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Great Helm(Giant Chitin)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Great Helm(Heavy Plate)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Great Helm(Laminar)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "22 gp",
+      "42 gp",
+      "84 gp",
+      "126 gp"
+    ],
+    "Great Helm(Pearlacite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "100 gp",
+      "160 gp",
+      "320 gp",
+      "480 gp"
+    ],
+    "Great Helm(Plate)": [
+      "3 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "35 gp",
+      "105 gp",
+      "105 gp"
+    ],
+    "Great Helm(Stainless Steel)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Great Helm(Tempered Plate)": [
+      "23 gp",
+      "45 gp",
+      "90 gp",
+      "120 gp",
+      "180 gp",
+      "360 gp",
+      "540 gp"
+    ],
+    "Great Helm(Titanium)": [
+      "18 gp",
+      "35 gp",
+      "70 pp",
+      "150 pp",
+      "180 pp",
+      "360 gp",
+      "540 gp"
+    ],
+    "Great Helm(Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Helm(Bloodracite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Helm(Bolted Leather)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Helm(Bone)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Helm(Heavy Bone)": [
+      "2 gp",
+      "3 bp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Helm(Bronze)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Helm(Giant Chitin)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Helm(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Helm(Heavy Plate)": [
+      "3 gp",
+      "7 gp",
+      "14 gp",
+      "33 gp",
+      "33 gp",
+      "66 gp",
+      "99 gp"
+    ],
+    "Helm(Laminar)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "22 gp",
+      "34 gp",
+      "68 gp",
+      "102 gp"
+    ],
+    "Helm(Laminar/Decorative)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Helm(Pearlacite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "90 gp",
+      "140 gp",
+      "280 gp",
+      "420 gp"
+    ],
+    "Helm(Plate)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "17 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Helm(Stainless Steel)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "50 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Helm(Tempered Plate)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Helm(Titanium)": [
+      "10 gp",
+      "20 gp",
+      "40 pp",
+      "90 pp",
+      "120 pp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Helm(Wood)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Composite Helm(Bone/Giant Leather)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Composite Helm(Bone/Giant Scales)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Composite Helm(Bone/Hard Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Composite Helm(Bone/Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Composite Helm(Bronze/Giant Leather)": [
+      "6 gp",
+      "11 gp",
+      "22 gp",
+      "28 gp",
+      "32 gp",
+      "64 gp",
+      "96 gp"
+    ],
+    "Composite Helm(Bronze/Giant Scales)": [
+      "8 gp",
+      "13 gp",
+      "26 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Composite Helm(Bronze/Hard Leather)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Composite Helm(Bronze/Leather)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Composite Helm(Eastern)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Composite Helm(Giant Chitin/Giant Leather)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Composite Helm(Giant Chitin/Giant Scales)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "35 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Composite Helm(Giant Chitin/Hard Leather)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "22 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Composite Helm(Giant Chitin/Leather)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Composite Helm(Heavy Bone/Giant Leather)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Composite Helm(Heavy Bone/Giant Scales)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "32 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Composite Helm(Heavy Bone/Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Composite Helm(Heavy Bone/Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Composite Helm(Heavy Plate/Banded Chain)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "40 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Composite Helm(Heavy Plate/Chain)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Composite Helm(Heavy Plate/Heavy Chain)": [
+      "6 gp",
+      "11 gp",
+      "22 gp",
+      "35 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Composite Helm(Heavy Plate/Heavy Scale)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "50 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Composite Helm(Heavy Plate/Laminar)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "50 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Composite Helm(Heavy Plate/Scale)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "45 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Composite Helm(Plate/Banded Chain)": [
+      "6 gp",
+      "11 gp",
+      "22 gp",
+      "35 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Composite Helm(Plate/Chain)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Composite Helm(Plate/Heavy Chain)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Composite Helm(Plate/Heavy Scale)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "45 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Composite Helm(Plate/Laminar)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "45 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Composite Helm(Plate/Scale)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "40 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Composite Helm(Stainless Steel/Chain)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Composite Helm(Stainless Steel/Heavy Chain)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Composite Helm(Stainless Steel/Heavy Scale)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Composite Helm(Stainless Steel/Scale)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Composite Helm(Tempered Plate/Chain)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Composite Helm(Tempered Plate/Heavy Chain)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Composite Helm(Tempered Plate/Heavy Scale)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Composite Helm(Tempered Plate/Scale)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Composite Helm(Titanium/Chain)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Composite Helm(Titanium/Heavy Chain)": [
+      "12 gp",
+      "23 gp",
+      "45 pp",
+      "50 pp",
+      "60 pp",
+      "120 pp",
+      "180 pp"
+    ],
+    "Composite Helm(Titanium/Heavy Scale)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "70 pp",
+      "80 pp",
+      "160 pp",
+      "240 pp"
+    ],
+    "Composite Helm(Titanium/Scale)": [
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "60 pp",
+      "70 pp",
+      "140 pp",
+      "210 pp"
+    ],
+    "Composite Helm(Wood/Giant Leather)": [
+      "2 gp",
+      "3 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Composite Helm(Wood/Giant Scales)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Composite Helm(Wood/Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Composite Helm(Wood/Leather)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Full Headgear(Banded Chain)": [
+      "3 gp",
+      "6 gp",
+      "11 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Full Headgear(Chain)": [
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "14 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Full Headgear(Giant Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Full Headgear(Giant Scales)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Full Headgear(Hard Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "11 gp",
+      "22 gp",
+      "33 gp"
+    ],
+    "Full Headgear(Heavy Chain)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Full Headgear(Heavy Scale)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Full Headgear(Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Full Headgear(Padding)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Full Headgear(Ring Mail)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "11 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Full Headgear(Scale)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Full Headgear(Soft Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Full Headgear(Studded Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Headgear(Banded Chain)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Headgear(Chain)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "11 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Headgear(Giant Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Headgear(Giant Scales)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "14 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Headgear(Hard Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Headgear(Heavy Chain)": [
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "14 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Headgear(Heavy Scale)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Headgear(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Headgear(Padding)": [
+      "2 gp",
+      "3 gp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Headgear(Ring Mail)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Headgear(Scale)": [
+      "3 gp",
+      "6 gp",
+      "11 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Headgear(Soft Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Headgear(Studded Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "11 gp",
+      "22 gp",
+      "33 gp"
+    ],
+    "Codpiece(Bolted Leather)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Codpiece(Bone)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Codpiece(Heavy Bone)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Codpiece(Bronze)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Codpiece(Giant Chitin)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Codpiece(Plate)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Codpiece(Wood)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Girdle(Giant Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Girdle(Hard Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Girdle(Leather)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Girdle(Soft Leather)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Gorget(Bloodracite)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Gorget(Bolted Leather)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Gorget(Bone)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Gorget(Heavy Bone)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Gorget(Bronze)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Gorget(Giant Chitin)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Gorget(Giant Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Gorget(Hard Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Gorget(Laminar)": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Gorget(Leather)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Gorget(Pearlacite)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Gorget(Plate)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Gorget(Soft Leather)": [
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Gorget(Wood)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Breastplate(Bloodracite)": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Breastplate(Bolted Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Breastplate(Bone)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Breastplate(Bronze)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Breastplate(Giant Chitin)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Breastplate(Heavy Bone)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Breastplate(Heavy Plate)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "80 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Breastplate(Lacquered Wood)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Breastplate(Laminar)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Breastplate(Pearlacite)": [
+      "30 gp",
+      "60 gp",
+      "120 gp",
+      "150 gp",
+      "180 gp",
+      "360 gp",
+      "540 gp"
+    ],
+    "Breastplate(Plate)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Breastplate(Stainless Steel)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Breastplate(Tempered Plate)": [
+      "33 gp",
+      "65 gp",
+      "130 gp",
+      "160 gp",
+      "200 gp",
+      "400 gp",
+      "600 gp"
+    ],
+    "Breastplate(Titanium)": [
+      "20 gp",
+      "40 gp",
+      "80 pp",
+      "160 pp",
+      "200 pp",
+      "400 gp",
+      "600 gp"
+    ],
+    "Breastplate(Wood)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Body Suit(Banded Chain)": [
+      "18 gp",
+      "35 gp",
+      "70 gp",
+      "80 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Body Suit(Chain)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Body Suit(Gambeson)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Body Suit(Gambeson/Heavy)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "32 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Body Suit(Gambeson/Thick)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "24 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Body Suit(Giant Leather)": [
+      "18 gp",
+      "35 gp",
+      "70 gp",
+      "90 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Body Suit(Giant Scales)": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "120 gp",
+      "180 gp",
+      "360 gp",
+      "540 gp"
+    ],
+    "Body Suit(Hard Leather)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Body Suit(Heavy Chain)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Body Suit(Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Body Suit(Padding)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Body Suit(Ring Mail)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Body Suit(Scale)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "90 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Body Suit(Heavy Scale)": [
+      "23 gp",
+      "45 gp",
+      "90 gp",
+      "100 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Body Suit(Soft Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Body Suit(Studded Leather)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Body Suit(Woven)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Full Shirt(Banded Chain)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Full Shirt(Chain)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "36 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Full Shirt(Gambeson)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Full Shirt(Gambeson/Heavy)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Full Shirt(Gambeson/Thick)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Full Shirt(Giant Leather)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Full Shirt(Giant Scales)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "60 gp",
+      "90 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Full Shirt(Hard Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Full Shirt(Heavy Chain)": [
+      "8 gp",
+      "16 gp",
+      "32 gp",
+      "40 gp",
+      "48 gp",
+      "96 gp",
+      "144 gp"
+    ],
+    "Full Shirt(Leather)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Full Shirt(Padding)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Full Shirt(Ring Mail)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Full Shirt(Scale)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Full Shirt(Heavy Scale)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Full Shirt(Soft Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Full Shirt(Studded Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Half Shirt(Banded Chain)": [
+      "8 gp",
+      "16 gp",
+      "32 gp",
+      "40 gp",
+      "48 gp",
+      "96 gp",
+      "144 gp"
+    ],
+    "Half Shirt(Chain)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Half Shirt(Gambeson)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Half Shirt(Gambeson/Heavy)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Half Shirt(Gambeson/Thick)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Half Shirt(Giant Leather)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Half Shirt(Giant Scales)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Half Shirt(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Half Shirt(Heavy Chain)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "36 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Half Shirt(Leather)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Half Shirt(Padding)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Half Shirt(Ring Mail)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Half Shirt(Scale)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Half Shirt(Heavy Scale)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Half Shirt(Soft Leather)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Half Shirt(Studded Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Long Shirt(Banded Chain)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Shirt(Chain)": [
+      "8 gp",
+      "16 gp",
+      "32 gp",
+      "40 gp",
+      "48 gp",
+      "96 gp",
+      "144 gp"
+    ],
+    "Long Shirt(Gambeson)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Long Shirt(Gambeson/Heavy)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "24 gp",
+      "48 gp",
+      "72 gp"
+    ],
+    "Long Shirt(Gambeson/Thick)": [
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "15 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Long Shirt(Giant Leather)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Shirt(Giant Scales)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "60 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Long Shirt(Hard Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Long Shirt(Heavy Chain)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Long Shirt(Leather)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Long Shirt(Padding)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Long Shirt(Ring Mail)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Long Shirt(Scale)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "36 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Long Shirt(Heavy Scale)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Long Shirt(Soft Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Long Shirt(Studded Leather)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Long Sleeve Shirt(Banded Chain)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Long Sleeve Shirt(Chain)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "36 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Long Sleeve Shirt(Gambeson)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Long Sleeve Shirt(Gambeson/Heavy)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Long Sleeve Shirt(Gambeson/Thick)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Long Sleeve Shirt(Giant Leather)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Sleeve Shirt(Giant Scales)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "60 gp",
+      "90 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Long Sleeve Shirt(Hard Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Long Sleeve Shirt(Heavy Chain)": [
+      "8 gp",
+      "16 gp",
+      "32 gp",
+      "40 gp",
+      "48 gp",
+      "96 gp",
+      "144 gp"
+    ],
+    "Long Sleeve Shirt(Leather)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Long Sleeve Shirt(Padding)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Long Sleeve Shirt(Ring Mail)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Long Sleeve Shirt(Scale)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Long Sleeve Shirt(Heavy Scale)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Sleeve Shirt(Soft Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Long Sleeve Shirt(Studded Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Armored Skirt(Bloodracite)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Armored Skirt(Bolted Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Armored Skirt(Bone)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Armored Skirt(Bronze)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Armored Skirt(Giant Chitin)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Armored Skirt(Giant Leather)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Armored Skirt(Giant Scales)": [
+      "8 gp",
+      "16 gp",
+      "32 gp",
+      "40 gp",
+      "52 gp",
+      "104 gp",
+      "156 gp"
+    ],
+    "Armored Skirt(Heavy Bone)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Armored Skirt(Heavy Plate)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Armored Skirt(Lacquered Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Armored Skirt(Laminar)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Armored Skirt(Pearlacite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Armored Skirt(Plate)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Armored Skirt(Stainless Steel)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Armored Skirt(Tempered Plate)": [
+      "30 gp",
+      "60 gp",
+      "120 gp",
+      "150 gp",
+      "180 gp",
+      "360 gp",
+      "540 gp"
+    ],
+    "Armored Skirt(Titanium)": [
+      "25 pp",
+      "50 pp",
+      "75 pp",
+      "125 pp",
+      "150 pp",
+      "300 pp",
+      "450 pp"
+    ],
+    "Armored Skirt(Wood)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Long Skirt(Bloodracite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Long Skirt(Bolted Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Long Skirt(Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Long Skirt(Bronze)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Long Skirt(Giant Chitin)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Long Skirt(Giant Leather)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Long Skirt(Giant Scales)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Skirt(Heavy Bone)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Long Skirt(Heavy Plate)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "40 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Long Skirt(Lacquered Wood)": [
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Long Skirt(Laminar)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Long Skirt(Pearlacite)": [
+      "17 gp",
+      "33 gp",
+      "65 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Long Skirt(Plate)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Long Skirt(Stainless Steel)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Long Skirt(Tempered Plate)": [
+      "35 gp",
+      "70 gp",
+      "140 gp",
+      "175 gp",
+      "210 gp",
+      "420 gp",
+      "630 gp"
+    ],
+    "Long Skirt(Titanium)": [
+      "23 pp",
+      "45 pp",
+      "90 pp",
+      "150 pp",
+      "180 pp",
+      "360 pp",
+      "540 pp"
+    ],
+    "Long Skirt(Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Leggings(Banded Chain)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Leggings(Chain)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "16 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Leggings(Gambeson)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Leggings(Gambeson/Heavy)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Leggings(Gambeson/Thick)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Leggings(Giant Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Leggings(Giant Scales)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Leggings(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Leggings(Heavy Chain)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "18 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Leggings(Heavy Scale)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Leggings(Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Leggings(Padding)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Leggings(Ring Mail)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "14 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Leggings(Scale)": [
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Leggings(Soft Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Leggings(Studded Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "12 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Leglets(Bloodracite)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "70 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Leglets(Bolted Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Leglets(Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Leglets(Bronze)": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "35 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Leglets(Giant Chitin)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Leglets(Hard Leather)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Leglets(Heavy Bone)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Leglets(Heavy Plate)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "55 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Leglets(Laminar)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "55 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Leglets(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "8 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Leglets(Pearlacite)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "75 gp",
+      "110 gp",
+      "220 gp",
+      "330 gp"
+    ],
+    "Leglets(Plate)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "50 gp",
+      "65 gp",
+      "130 gp",
+      "195 gp"
+    ],
+    "Leglets(Soft Leather)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Leglets(Stainless Steel)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "65 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Leglets(Tempered Plate)": [
+      "23 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp",
+      "170 gp",
+      "340 gp",
+      "510 gp"
+    ],
+    "Leglets(Titanium)": [
+      "18 pp",
+      "33 pp",
+      "65 pp",
+      "100 pp",
+      "140 pp",
+      "280 pp",
+      "420 pp"
+    ],
+    "Leglets(Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Boots(Hard Leather)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "9 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Boots(Soft Leather)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Boots(Giant Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Boots(Giant Scales)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "High Boots(Hard Leather)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "High Boots(Leather)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "9 sp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "High Boots(Soft Leather)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "7 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "High Boots(Giant Leather)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "High Boots(Giant Scales)": [
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Leg Bracers(Bloodracite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Leg Bracers(Bolted Leather)": [
+      "15 sp",
+      "3 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Leg Bracers(Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Leg Bracers(Bronze)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Leg Bracers(Giant Chitin)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Leg Bracers(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Leg Bracers(Heavy Bone)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Leg Bracers(Heavy Plate)": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "18 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Leg Bracers(Laminar)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Leg Bracers(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Leg Bracers(Pearlacite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Leg Bracers(Plate)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "16 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Leg Bracers(Soft Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Leg Bracers(Stainless Steel)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Leg Bracers(Tempered Plate)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Leg Bracers(Titanium)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Leg Bracers(Wood)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Footgear(Bloodracite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Footgear(Bolted Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Footgear(Bone)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Footgear(Bronze)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Footgear(Giant Chitin)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Footgear(Heavy Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Footgear(Heavy Plate)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "16 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Footgear(Laminar)": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "16 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Footgear(Pearlacite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Footgear(Plate)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "14 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Footgear(Stainless Steel)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Footgear(Tempered Plate)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Footgear(Titanium)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Footgear(Wood)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Arm Bracer(Bloodracite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Arm Bracer(Bolted Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Arm Bracer(Bone)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Arm Bracer(Bronze)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Arm Bracer(Giant Chitin)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Arm Bracer(Giant Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "10 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arm Bracer(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Arm Bracer(Heavy Bone)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Arm Bracer(Heavy Plate)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Arm Bracer(Lacquered Wood)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Arm Bracer(Laminar)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Arm Bracer(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Arm Bracer(Padding)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arm Bracer(Pearlacite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Arm Bracer(Plate)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Arm Bracer(Soft Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Arm Bracer(Stainless Steel)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Arm Bracer(Studded Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Arm Bracer(Tempered Plate)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Arm Bracer(Titanium)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Arm Bracer(Wood)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Armlets(Bloodracite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "80 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Armlets(Bolted Leather)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Armlets(Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Armlets(Bronze)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Armlets(Gambeson)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Armlets(Gambeson/Heavy)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Armlets(Gambeson/Thick)": [
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Armlets(Giant Chitin)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Armlets(Hard Leather)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Armlets(Heavy Bone)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Armlets(Heavy Plate)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Armlets(Lacquered Wood)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Armlets(Laminar)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Armlets(Leather)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Armlets(Padding)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Armlets(Pearlacite)": [
+      "22 gp",
+      "33 gp",
+      "65 gp",
+      "90 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Armlets(Plate)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Armlets(Soft Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Armlets(Stainless Steel)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "60 gp",
+      "75 gp",
+      "150 gp",
+      "225 gp"
+    ],
+    "Armlets(Studded Leather)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Armlets(Tempered Plate)": [
+      "14 gp",
+      "38 gp",
+      "75 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Armlets(Titanium)": [
+      "22 pp",
+      "33 pp",
+      "65 pp",
+      "100 pp",
+      "140 pp",
+      "280 pp",
+      "420 pp"
+    ],
+    "Armlets(Wood)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Pauldrons(Bloodracite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Pauldrons(Bolted Leather)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Pauldrons(Bone)": [
+      "2 gp",
+      "4 gp",
+      "2 gp",
+      "5 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Pauldrons(Bronze)": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "13 gp",
+      "26 gp",
+      "39 gp"
+    ],
+    "Pauldrons(Giant Chitin)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Pauldrons(Heavy Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Pauldrons(Heavy Plate)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "40 gp",
+      "45 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Sode(Lacquered Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "22 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Pauldrons(Laminar)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "45 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Pauldrons(Pearlacite)": [
+      "22 gp",
+      "33 gp",
+      "65 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Pauldrons(Plate)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Pauldrons(Stainless Steel)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Pauldrons(Tempered Plate)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Pauldrons(Titanium)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Pauldrons(Wood)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Shield(Buckler/Bloodracite)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Shield(Buckler/Bolted Leather)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Shield(Buckler/Bone)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Shield(Buckler/Bronze)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Shield(Buckler/Giant Chitin)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Shield(Buckler/Heavy Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Shield(Buckler/Heavy Plate)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Shield(Buckler/Lacquered Wood)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Shield(Buckler/Pearlacite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Shield(Buckler/Plate)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Shield(Buckler/Tempered Plate)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Shield(Buckler/Stainless Steel)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "20 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Shield(Buckler/Titanium)": [
+      "8 pp",
+      "15 pp",
+      "30 pp",
+      "40 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp"
+    ],
+    "Shield(Buckler/Wood)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Shield(Small/Bloodracite)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Shield(Small/Bolted Leather)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Shield(Small/Bone)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Shield(Small/Bronze)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Shield(Small/Giant Chitin)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Shield(Small/Heavy Bone)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Shield(Small/Heavy Plate)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Shield(Small/Lacquered Wood)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Shield(Small/Pearlacite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "55 gp",
+      "75 gp",
+      "150 gp",
+      "225 gp"
+    ],
+    "Shield(Small/Plate)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Shield(Small/Tempered Plate)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Shield(Small/Stainless Steel)": [
+      "15 gp",
+      "20 gp",
+      "60 gp",
+      "70 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Shield(Small/Titanium)": [
+      "10 pp",
+      "20 pp",
+      "40 pp",
+      "50 pp",
+      "60 pp",
+      "120 pp",
+      "180 pp"
+    ],
+    "Shield(Small/Wood)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Shield(Medium/Bloodracite)": [
+      "12 gp",
+      "23 gp",
+      "45 gp",
+      "55 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Shield(Medium/Bolted Leather)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Shield(Medium/Bone)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Shield(Medium/Bronze)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Shield(Medium/Giant Chitin)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "30 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Shield(Medium/Heavy Bone)": [
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Shield(Medium/Heavy Plate)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "25 gp",
+      "35 gp",
+      "70 gp",
+      "105 gp"
+    ],
+    "Shield(Medium/Pearlacite)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Shield(Medium/Plate)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Shield(Medium/Tempered Plate)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "35 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Shield(Medium/Stainless Steel)": [
+      "18 gp",
+      "35 gp",
+      "70 gp",
+      "80 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Shield(Medium/Titanium)": [
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "60 pp",
+      "80 pp",
+      "160 pp",
+      "240 pp"
+    ],
+    "Shield(Medium/Wood)": [
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Shield(Large/Bloodracite)": [
+      "14 gp",
+      "28 gp",
+      "55 gp",
+      "60 gp",
+      "70 gp",
+      "140 gp",
+      "210 gp"
+    ],
+    "Shield(Large/Bolted Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Shield(Large/Bone)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "13 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Shield(Large/Bronze)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Shield(Large/Giant Chitin)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Shield(Large/Heavy Bone)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Shield(Large/Heavy Plate)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "35 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Shield(Large/Pearlacite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "80 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Shield(Large/Plate)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Shield(Large/Tempered Plate)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Shield(Large/Stainless Steel)": [
+      "20 gp",
+      "40 gp",
+      "80 gp",
+      "100 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Shield(Large/Titanium)": [
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "80 pp",
+      "100 pp",
+      "200 pp",
+      "300 pp"
+    ],
+    "Shield(Large/Wood)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Shield(Body/Bloodracite)": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "60 gp",
+      "80 gp",
+      "160 gp",
+      "240 gp"
+    ],
+    "Shield(Body/Bolted Leather)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Shield(Body/Bone)": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "22 gp",
+      "44 gp",
+      "66 gp"
+    ],
+    "Shield(Body/Bronze)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Shield(Body/Giant Chitin)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "50 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Shield(Body/Heavy Bone)": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "28 gp",
+      "56 gp",
+      "84 gp"
+    ],
+    "Shield(Body/Heavy Plate)": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Shield(Body/Pearlacite)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "70 gp",
+      "100 gp",
+      "200 gp",
+      "300 gp"
+    ],
+    "Shield(Body/Plate)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Shield(Body/Tempered Plate)": [
+      "10 gp",
+      "20 gp",
+      "40 gp",
+      "45 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Shield(Body/Stainless Steel)": [
+      "18 gp",
+      "33 gp",
+      "65 gp",
+      "80 gp",
+      "120 gp",
+      "240 gp",
+      "360 gp"
+    ],
+    "Shield(Body/Titanium)": [
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "60 pp",
+      "70 pp",
+      "140 pp",
+      "210 pp"
+    ],
+    "Shield(Body/Wood)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Armor Suit(Banded)": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "14 pp",
+      "18 pp",
+      "36 pp",
+      "54 pp"
+    ],
+    "Armor Suit(Beastslayer Armor)": [
+      "65 gp",
+      "130 gp",
+      "259 gp",
+      "354 gp",
+      "46 pp",
+      "92 pp",
+      "138 pp"
+    ],
+    "Armor Suit(Bloodred Plate)": [
+      "13 pp",
+      "25 pp",
+      "50 pp",
+      "71 pp",
+      "92 pp",
+      "184 pp",
+      "276 pp"
+    ],
+    "Armor Suit(Bolted Leather Armor)": [
+      "24 gp",
+      "48 gp",
+      "95 gp",
+      "125 gp",
+      "18 pp",
+      "36 pp",
+      "54 pp"
+    ],
+    "Armor Suit(Bone Armor)": [
+      "9 gp",
+      "17 gp",
+      "33 gp",
+      "51 gp",
+      "74 gp",
+      "148 gp",
+      "222 gp"
+    ],
+    "Armor Suit(Brigandine)": [
+      "90 gp",
+      "180 gp",
+      "360 gp",
+      "475 gp",
+      "625 gp",
+      "125 pp",
+      "187 pp"
+    ],
+    "Armor Suit(Bronze Splint Armor)": [
+      "32 gp",
+      "64 gp",
+      "128 gp",
+      "172 gp",
+      "219 gp",
+      "438 gp",
+      "657 gp"
+    ],
+    "Armor Suit(Cave Bear Leather Armor)": [
+      "10 gp",
+      "19 gp",
+      "37 gp",
+      "61 gp",
+      "85 gp",
+      "17 pp",
+      "255 gp"
+    ],
+    "Armor Suit(Chain)": [
+      "2 pp",
+      "4 pp",
+      "8 pp",
+      "12 pp",
+      "14 pp",
+      "28 pp",
+      "42 pp"
+    ],
+    "Armor Suit(Eastern)": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "14 pp",
+      "18 pp",
+      "36 pp",
+      "54 pp"
+    ],
+    "Armor Suit(Field Plate)": [
+      "63 gp",
+      "125 gp",
+      "25 pp",
+      "35 pp",
+      "45 pp",
+      "90 pp",
+      "135 pp"
+    ],
+    "Armor Suit(Giant Ant Armor)": [
+      "28 gp",
+      "56 gp",
+      "112 gp",
+      "16 pp",
+      "22 pp",
+      "44 pp",
+      "66 pp"
+    ],
+    "Armor Suit(Giant Beetle Armor)": [
+      "41 gp",
+      "82 gp",
+      "161 gp",
+      "219 gp",
+      "285 gp",
+      "57 pp",
+      "855 gp"
+    ],
+    "Armor Suit(Giant Mantis Armor)": [
+      "67 gp",
+      "134 gp",
+      "268 gp",
+      "352 gp",
+      "45 pp",
+      "90 pp",
+      "135 pp"
+    ],
+    "Armor Suit(Giant Snake Scale Armor)": [
+      "35 gp",
+      "70 gp",
+      "140 gp",
+      "190 gp",
+      "245 gp",
+      "49 pp",
+      "735 gp"
+    ],
+    "Armor Suit(Half Plate)": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "20 pp",
+      "25 pp",
+      "50 pp",
+      "75 pp"
+    ],
+    "Armor Suit(Hardened Leather)": [
+      "18 gp",
+      "35 gp",
+      "7 pp",
+      "10 pp",
+      "13 pp",
+      "26 pp",
+      "39 pp"
+    ],
+    "Armor Suit(Heavy Bone Armor)": [
+      "23 gp",
+      "46 gp",
+      "91 gp",
+      "138 gp",
+      "19 pp",
+      "38 pp",
+      "57 pp"
+    ],
+    "Armor Suit(Heavy Chain)": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "125 gp",
+      "15 pp",
+      "30 pp",
+      "45 pp"
+    ],
+    "Armor Suit(Leather)": [
+      "1 pp",
+      "2 pp",
+      "4 pp",
+      "6 pp",
+      "8 pp",
+      "16 pp",
+      "24 pp"
+    ],
+    "Armor Suit(Legate/General Armor)": [
+      "4 pp",
+      "8 pp",
+      "16 pp",
+      "21 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Armor Suit(Legion/Centurion Armor)": [
+      "38 gp",
+      "55 gp",
+      "11 pp",
+      "15 pp",
+      "20 pp",
+      "40 pp",
+      "60 pp"
+    ],
+    "Armor Suit(Light Chain)": [
+      "18 gp",
+      "35 gp",
+      "7 pp",
+      "9 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Armor Suit(Light Mercenary)": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "130 gp",
+      "16 pp",
+      "32 pp",
+      "48 pp"
+    ],
+    "Armor Suit(Mercenary)": [
+      "35 gp",
+      "7 pp",
+      "14 pp",
+      "17 pp",
+      "22 pp",
+      "44 pp",
+      "66 pp"
+    ],
+    "Armor Suit(Pearlescent Plate)": [
+      "14 pp",
+      "28 pp",
+      "55 pp",
+      "80 pp",
+      "110 pp",
+      "220 pp",
+      "330 pp"
+    ],
+    "Armor Suit(Plate)": [
+      "5 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp",
+      "40 pp",
+      "80 pp",
+      "120 pp"
+    ],
+    "Armor Suit(Ring)": [
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "8 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp"
+    ],
+    "Armor Suit(Scale)": [
+      "33 gp",
+      "65 gp",
+      "13 pp",
+      "16 pp",
+      "19 pp",
+      "38 pp",
+      "57 pp"
+    ],
+    "Armor Suit(Shining Plate/Stainless Steel)": [
+      "7 pp",
+      "14 pp",
+      "38 pp",
+      "50 pp",
+      "71 pp",
+      "142 pp",
+      "213 pp"
+    ],
+    "Armor Suit(Studded Leather)": [
+      "25 gp",
+      "50 gp",
+      "100 gp",
+      "125 gp",
+      "15 pp",
+      "30 pp",
+      "45 pp"
+    ],
+    "Armor Suit(Tempered Plate)": [
+      "23 pp",
+      "45 pp",
+      "90 pp",
+      "123 pp",
+      "160 pp",
+      "320 pp",
+      "480 pp"
+    ],
+    "Armor Suit(Titanium Plate)": [
+      "150 pp",
+      "300 pp",
+      "600 pp",
+      "1010 pp",
+      "1320 pp",
+      "2640 pp",
+      "3960 pp"
+    ],
+    "Armor Suit(Wooden Armor)": [
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "8 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp"
+    ],
+    "Armor Suit(Wyvern Scale Armor)": [
+      "42 gp",
+      "83 gp",
+      "165 gp",
+      "236 gp",
+      "275 gp",
+      "55 pp",
+      "825 gp"
+    ],
+    "Barding(Chain)": [
+      "14 gp",
+      "38 gp",
+      "75 gp",
+      "100 gp",
+      "150 gp",
+      "300 gp",
+      "450 gp"
+    ],
+    "Barding(Padding)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Barding(Wool)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Barding(Cloth)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Barding(Leather)": [
+      "7 gp",
+      "13 gp",
+      "25 gp",
+      "40 gp",
+      "60 gp",
+      "120 gp",
+      "180 gp"
+    ],
+    "Barding(Plate)": [
+      "5 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp",
+      "40 pp",
+      "80 pp",
+      "120 pp"
+    ],
+    "Centaur Barding(Wool)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Centaur Barding(Cloth)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Centaur Barding(Chain)": [
+      "11 gp",
+      "29 gp",
+      "56 gp",
+      "75 gp",
+      "113 gp",
+      "226 gp",
+      "339 gp"
+    ],
+    "Centaur Barding(Padding)": [
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Centaur Barding(Leather)": [
+      "5 gp",
+      "9 gp",
+      "19 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Centaur Barding(Plate)": [
+      "3 pp",
+      "8 pp",
+      "15 pp",
+      "24 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Insectaur Barding(Wool)": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Insectaur Barding(Cloth)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Insectaur Barding(Chain)": [
+      "11 gp",
+      "29 gp",
+      "56 gp",
+      "75 gp",
+      "113 gp",
+      "226 gp",
+      "339 gp"
+    ],
+    "Insectaur Barding(Padding)": [
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Insectaur Barding(Leather)": [
+      "5 gp",
+      "9 gp",
+      "19 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ]
+  }
+}

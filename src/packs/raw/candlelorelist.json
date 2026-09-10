@@ -1,0 +1,435 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "candlelorelist",
+    "lines": [
+      137466,
+      137533
+    ]
+  },
+  "entries": {
+    "Break Love": [
+      "Break Love",
+      "12",
+      "20",
+      "1 hour",
+      "Instant",
+      "BL,BN,GY",
+      "Causes a rift in a love union (unless both make Will Force save)."
+    ],
+    "Control": [
+      "Control",
+      "19",
+      "-15",
+      "2 hours",
+      "Candles Out",
+      "P,W,OR,GR",
+      "Makes one suggestion to a single visualized individual. If harmful, a Control Resistance is needed to escape the suggestion."
+    ],
+    "Create Love": [
+      "Create Love",
+      "15",
+      "5",
+      "2 hours",
+      "Instant",
+      "2R,2GD,G",
+      "Causes favorable reaction from one individual unless a Will Force save is made."
+    ],
+    "Harm Enemy": [
+      "Harm Enemy",
+      "16",
+      "0",
+      "3 hours",
+      "1 full day",
+      "2G,B,P,GY",
+      "Causes one opponent to make a Control Resistance or suffer -1 to all physical attributes for one full day."
+    ],
+    "Health": [
+      "Health",
+      "17",
+      "5",
+      "3 hour",
+      "1 full day",
+      "3R,OR,GR",
+      "Gives a +1 Vitality for one day. New resist for poison and disease if either is in effect and a +20% to both resistances thereafter for one day."
+    ],
+    "Luck": [
+      "Luck",
+      "13",
+      "15",
+      "1 hour",
+      "Candles Out",
+      "3OR,GR,B",
+      "Gives 3 luck points to any individual visualized including self. Each point must be used individually. A luck point gives a +1 or +5% modifier to any roll, modifying it up or down to the lucky being`s advantage."
+    ],
+    "Power": [
+      "Power",
+      "22",
+      "-30",
+      "2 hour",
+      "1 full day",
+      "6P,GD,GR",
+      "Gives +10 to current Aura Pool, +2 to Aura Control and +10% to Magic Resistance for one day."
+    ],
+    "Protection": [
+      "Protection",
+      "18",
+      "-10",
+      "1 hour",
+      "1 full day",
+      "3R,3W,GR",
+      "Removes the current control effects from one individual and gives +30% to Control Resistance rolls for one day."
+    ],
+    "Soothe Dead": [
+      "Soothe Dead",
+      "14",
+      "10",
+      "2 hours",
+      "Candles Out",
+      "LB,P",
+      "Undead haunting an area make Control Resistance or remain peaceful."
+    ],
+    "Scrying": [
+      "Scrying",
+      "21",
+      "-25",
+      "2 hours",
+      "Up to 1 Hour",
+      "2OR,W,P,GR",
+      "Allows user to scry on one individual as the spell Scrying for up to one hour."
+    ],
+    "Treasure": [
+      "Treasure",
+      "20",
+      "-20",
+      "3 hours",
+      "Instant",
+      "GD,P,GR,GO",
+      "User gets vision of the nearest hidden treasure and is able to sense where it lies."
+    ],
+    "Endure Cold": [
+      "Endure Cold",
+      "15",
+      "5",
+      "2 hours",
+      "12 hours",
+      "BL,W,GD",
+      "Causes 1 named being to be immune to all cold effects for 12 hours."
+    ],
+    "Endure Fire": [
+      "Endure Fire",
+      "16",
+      "0",
+      "2 hours",
+      "12 hours",
+      "R,W,GD",
+      "Causes 1 named being to be immune to all fire effects for 12 hours."
+    ],
+    "Endure Electricity": [
+      "Endure Electricity",
+      "17",
+      "-5",
+      "2 hours",
+      "12 hours",
+      "LB,BL,GD",
+      "Causes 1 named being to be immune to all electrical effects for 12 hours."
+    ],
+    "Endure Acid": [
+      "Endure Acid",
+      "18",
+      "-10",
+      "2 hours",
+      "12 hours",
+      "G,W,GD",
+      "Causes 1 named being to be immune to all acid effects for 12 hours."
+    ],
+    "Message": [
+      "Message",
+      "15",
+      "5",
+      "1 hour",
+      "Next Dream",
+      "GY,GR,B",
+      "Send 1 message of up to 1 word per Practitioner Title that is relayed in that being`s next dream."
+    ],
+    "Bind Animal Familiar": [
+      "Bind Animal Familiar",
+      "18",
+      "-10",
+      "5 hours",
+      "Permanent",
+      "BL,BN,G",
+      "The practitioner performs this ritual and binds one animal familiar to themselves. The effects are identical to the spell Bind Familiar, with the exception that no Will Force is given up, and that the familiar must be a creature of type animal. A Candle Lore practitioner may only have one animal familiar at a time."
+    ],
+    "Divining Rod": [
+      "Divining Rod",
+      "10",
+      "30",
+      "1 hour",
+      "1 full day",
+      "BL,BN,W",
+      "The practitoner performs an hour long ritual on a piece of wood and when the ritual is complete, this piece of wood will point to the nearest source of water when held and asked to find water. The stick retains this power for one day."
+    ],
+    "Locate Animal": [
+      "Locate Animal",
+      "14",
+      "10",
+      "1 hour",
+      "Candles Out",
+      "BN,G,GY",
+      "The practitioner can find the location of one specific known and named animal."
+    ],
+    "Sense Animal": [
+      "Sense Animal",
+      "15",
+      "5",
+      "2 hours",
+      "Candles Out",
+      "2BN,2G,GY",
+      "The practitioner can sense all animals of one type in a named area. For example, the practitioner could choose to sense all wolves in the Black Forest."
+    ],
+    "Cast Shadow": [
+      "Cast Shadow",
+      "16",
+      "0",
+      "30 min.",
+      "Candles Out",
+      "2B,P,GR",
+      "The flames from the candles emit a magical light, enlarging current shadows within a 50` radius by 25% of their original size."
+    ],
+    "Coexist with Undead": [
+      "Coexist with Undead",
+      "16",
+      "0",
+      "10 min.",
+      "Candles Out",
+      "2GR,P",
+      "Causes the practitioner to be immune to paralysis, hold, sleep, and draining effects of lesser undead beings (under level 4)."
+    ],
+    "Death Stench": [
+      "Death Stench",
+      "16",
+      "0",
+      "1 min.",
+      "Candles Out",
+      "2GY,2GO",
+      "Creates an overpowering stench of death and decay in a 5` radius per Practitioner Title. Any being with smell as a natural sense must make a Vitality save or be turned away from the area. Beings with enhanced smell or the skill Smell must make an additional Vitality save at half to avoid vomiting and losing 1d6+1 seconds of action."
+    ],
+    "Mask Life Force": [
+      "Mask Life Force",
+      "18",
+      "-10",
+      "1 hour",
+      "Candles Out",
+      "B,W,BL,R,Y",
+      "The smoke of the candles envelope and cling to the user, creating a superficial disguise of their life force. Anyone actively Life Sensing will have a 50% chance to see past the disguise."
+    ],
+    "Obscure Shadow": [
+      "Obscure Shadow",
+      "17",
+      "-5",
+      "30 min.",
+      "Candles Out",
+      "2Y,W,B",
+      "The flames from the candles emit a magical light, reducing the size of shadows within a 50` radius by 50% of their original size."
+    ],
+    "Protection from Undead": [
+      "Protection from Undead",
+      "18",
+      "-10",
+      "30 min.",
+      "Candles Out",
+      "BN,GR,W",
+      "Protects 1 being per Practitioner Title against physical attacks, targeted spells, invocations, and effects originating from lesser and minor undead. This ritual does not offer protection from greater and arch undead (level 9+)."
+    ],
+    "Relieve Disease": [
+      "Relieve Disease",
+      "17",
+      "-5",
+      "1 min.",
+      "Candles Out",
+      "W,R",
+      "The smoke from the candles encircles the ritualist and the target, temporarily providing relief from the effects of non-terminal diseases for the duration of the candles."
+    ],
+    "Relieve Poison": [
+      "Relieve Poison",
+      "17",
+      "-5",
+      "1 min.",
+      "Candles Out",
+      "W,GY",
+      "The smoke from the candles encircles the ritualist and the target, temporarily providing relief from the effects of non-terminal poisons for the duration of the candles."
+    ],
+    "Brimstone": [
+      "Brimstone",
+      "16",
+      "0",
+      "1 hour",
+      "Candles Out",
+      "2R,2GR,2B",
+      "Causes 1 named being to be immune to the effects of breathing in smoke, sulfur, and brimstone. All toxic air is treated as normal, breathable air."
+    ],
+    "Calm Sea": [
+      "Calm Sea",
+      "18",
+      "-10",
+      "15 min.",
+      "Candles Out",
+      "2BL,LB,2GR",
+      "Causes all waves within 50` per Practitioner Title to decrease in size by 10% per Practitioner Title."
+    ],
+    "Comfort": [
+      "Comfort",
+      "16",
+      "0",
+      "30 min.",
+      "Candles Out",
+      "R,GD,B",
+      "Provides protection from extreme temperatures to 1 named being by negating all adverse affects such as heat exhaustion or hypothermia."
+    ],
+    "Desert": [
+      "Desert",
+      "17",
+      "-5",
+      "1 hour",
+      "1 day",
+      "4GD,OR",
+      "Protects 1 named being from extreme heat, preventing heat exhaustion and sunburn, and allows the target to survive without water for 1 day with no adverse effects."
+    ],
+    "Protection from Elements": [
+      "Protection from Elements",
+      "18",
+      "-10",
+      "30 min.",
+      "Candles Out",
+      "OR,BL,W,BN",
+      "Protects 1 being per Practitioner Title against physical attacks, targeted spells, invocations, and effects originating from Elementals."
+    ],
+    "Sailing": [
+      "Sailing",
+      "16",
+      "0",
+      "1 hour",
+      "Candles Out",
+      "3B,3GR",
+      "When performed on a water vessel, provides a bonus of 10% per Practitioner Title to the skills Balance, Boat Wright, Cartography, Ferrier, Navigate, Rope Use, Rowing, and Sail to 1 named being."
+    ],
+    "Sense Elemental": [
+      "Sense Elemental",
+      "18",
+      "-10",
+      "1 hour",
+      "Candles Out",
+      "OR,BL,W,BN",
+      "Allows the practitioner to sense all elementals of one type in a named area. For example, the practitioner could choose to sense all Fire Elementals in the Tower of Flames."
+    ],
+    "Smokescreen": [
+      "Smokescreen",
+      "16",
+      "0",
+      "5 min.",
+      "Candles Out",
+      "3W,3GR",
+      "The smoke from the candles hangs like a fog in a radius of 10` per Practitioner Title, hiding all individuals and items within. Unlike normal smoke, however, this magical fog is safe to breathe and carries no odor."
+    ],
+    "Reopening": [
+      "Reopening",
+      "18",
+      "-10",
+      "10 min.",
+      "Varies",
+      "2BL,2R,2GR",
+      "Causes any portal or gateway used within 1 day per practitioner title to reopen and stay open for up to 10 minutes per practitioner title."
+    ],
+    "Returning": [
+      "Returning",
+      "14",
+      "10",
+      "10 min.",
+      "Instant",
+      "3BL,3GR",
+      "Allows up to one supernatural being per practitioner title to return to their home plane in a place that they imagine as home or that is known and provides them with safety."
+    ],
+    "Spirit Bind": [
+      "Spirit Bind",
+      "18",
+      "-10",
+      "1 hour",
+      "Varies",
+      "2R,2W,Y,OR",
+      "Supernatural being is targeted by the practitioner and at the end of the hour long ritual that supernatural makes a Control Resistance. Failure indicates the supernatural being is bound to a specific task until they either complete that task or 1 day per practitioner title has passed."
+    ],
+    "Spirit Trace": [
+      "Spirit Trace",
+      "16",
+      "0",
+      "1 hour",
+      "Varies",
+      "R,G,BL,GD",
+      "Circle is drawn, and then the practitioner summons a spirit image of a supernatural being seen within 1 day per practitioner title. The summoned being sees and hears the practitioner and the area around the summoning circle. It can speak but is not compelled to do so. Separate control effects used on the spirit can only be used to make it speak, and/or tell the truth. All other effects do not work on the being. The spirit image will remain for 1 minute per practitioner title. The spirit image is a copy of the mind and spirit of the supernatural being, not the true being."
+    ],
+    "Spirit Speak": [
+      "Spirit Speak",
+      "16",
+      "0",
+      "10 min.",
+      "Varies",
+      "B,W,GR OR",
+      "The practitioner summons the floating spirit bust of someone they can visualize within 10 miles per practitioner title. That bust cannot move but it can see and hear and speak to the practitioner and anyone within range. It is a projection of the real being but no effects other than control used to make it speak, and/or tell the truth can be used. The bust lasts for 1 minute per practitioner title."
+    ],
+    "Bound Return": [
+      "Bound Return",
+      "20",
+      "-20",
+      "3 hours",
+      "Until Used",
+      "1Y,2B,3G",
+      "Creates a return point in the center of the ritual candles. 1 time, after the ritual ends (even after the candles burn out) the practitioner and up to 1 additional ally touching the practitioner per class title, can instantly return to the ritual location."
+    ],
+    "Delay Angel": [
+      "Delay Angel",
+      "18",
+      "-10",
+      "10 min.",
+      "Candles Out",
+      "3Y,2W",
+      "Causes the nearest Angel under 10th level on the same plane to make a Control Resistance or be summoned to the circle of candles and held there until the candles gutter out."
+    ],
+    "Delay Devil": [
+      "Delay Devil",
+      "18",
+      "-10",
+      "10 min.",
+      "Candles Out",
+      "3B,2GR",
+      "Causes the nearest Devil under 10th level on the same plane to make a Control Resistance or be summoned to the circle of candles and held there until the candles gutter out."
+    ],
+    "Endure Aura/Chaos": [
+      "Endure Aura/Chaos",
+      "16",
+      "0",
+      "2 hours",
+      "12 hours",
+      "2P,2OR,2R",
+      "Causes 1 named being to be immune to all negative Aura, and Chaos effects for 12 hours."
+    ],
+    "Endure Darkness/Death": [
+      "Endure Darkness/Death",
+      "16",
+      "0",
+      "2 hours",
+      "12 hours",
+      "2B,2GR,P",
+      "Causes 1 named being to be immune to all negative darkness, and death effects for 12 hours."
+    ],
+    "Endure Light/Life": [
+      "Endure Light/Life",
+      "16",
+      "0",
+      "2 hours",
+      "12 hours",
+      "2W,2Y,OR",
+      "Causes 1 named being to be immune to all negative light, and life effects for 12 hours."
+    ]
+  }
+}

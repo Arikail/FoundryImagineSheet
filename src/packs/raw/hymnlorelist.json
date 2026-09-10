@@ -1,0 +1,1724 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "hymnlorelist",
+    "lines": [
+      139116,
+      139341
+    ]
+  },
+  "entries": {
+    "Affinity": [
+      "Affinity",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Raises the Affinity of the hymnist and all listeners who follow the hymnist`s deity by 2% per Practitioner Title. Additional Affinity gained in this manner fade at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Alacrity": [
+      "Alacrity",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises the Agility rating by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Agility points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Annulment": [
+      "Annulment",
+      "18",
+      "0",
+      "10 sec.",
+      "Instant",
+      "Permanently dispels one previous invocation or hymn in effect, or temporarily dispels all the divine powers of one item within 2` per Practitioner Title of the hymnist (not including curses). When attempting to dispel invocations or hymn effects, a contest is rolled between the Piety Control of the singer dispelling and the being who created the divine effect. Permanent effects are at a +75% versus this Hymn."
+    ],
+    "Apparition": [
+      "Apparition",
+      "19",
+      "-5",
+      "10 min.",
+      "Hymn Ends",
+      "Causes the hymnist and all listeners who follow the hymnist`s deity to become insubstantial, leaving their bodies behind and traveling as spirits. They can travel as far and as fast as they are capable of imagining in any direction. The personalities and minds of the spirit travelers remain with the spirits, and their bodies become empty shells during this time. While in this state, the hymnist`s body continues to physically sing the hymn (through the deity`s or deity`s servant`s control), and their spirit can command their body to cease singing at any time, during which all spirits return and the effects of the hymn end. The spirit travelers are not capable of casting spells or interacting physically with the world while in spirit form. The spirit travelers can only be detected by those who have Life Sensing, Telepathy, or Thought Projection and who notice the mental presence of the spirit travelers (determined by a Will Force save). Once the hymn ends, all spirits are wrenched back into their bodies. If a spirit travelers` body is killed, they becomes a New Ghost."
+    ],
+    "Aptitude": [
+      "Aptitude",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Intelligence by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Intelligence points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Armor": [
+      "Armor",
+      "19",
+      "-5",
+      "10 sec.",
+      "Varies",
+      "Creates a barrier of divine force that surrounds the bodies of the hymnist and all listeners who follow the hymnist`s deity, on top of any armor or clothing. This divine armor provides 1 point of armor protection for each Practitioner Title and lasts for 5 minutes per Practitioner Title. This effect counts as Spiritual Armor for stacking rules."
+    ],
+    "Assurance": [
+      "Assurance",
+      "19",
+      "-5",
+      "1 min.",
+      "1 day",
+      "Provides a sign given by the hymnist`s deity to be used to determine if the choice under question is advisable or not. The GM determines if any appropriate sign is possible and then causes something representing the answer (either yes or no) to happen. It is then up to the listeners to interpret the sign. No more than one sign about a particular choice in question will be granted within a 24-hour period (GM discretion)."
+    ],
+    "Aversion": [
+      "Aversion",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Lowers the Affinity of all listeners who do not follow the hymnist`s deity by 2% per Practitioner Title. Affinity rating points lost in this manner return at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Cleansing": [
+      "Cleansing",
+      "16",
+      "10",
+      "5 sec.",
+      "Instant",
+      "Cleanses one object or area within sight no larger than 1 square foot per Practitioner Title of all disease, dust, grime, scum and bacteria. When used against slime or earth-based beings, 1d4 magical damage per Practitioner Title is applied to a single random location. If the slime or earth-based creature is supernatural, then there is a 1% chance per Practitioner Title of banishing the creature to its home plane."
+    ],
+    "Communion": [
+      "Communion",
+      "21",
+      "-15",
+      "20 sec.",
+      "Instant",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity an additional +2% per Practitioner Title to Commune Chance and an additional +5% per Practitioner Title to the skills Divination and Omen for 10 minutes per Practitioner Title."
+    ],
+    "Conversion": [
+      "Conversion",
+      "28",
+      "-50",
+      "10 min.",
+      "Permanent",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or instantly and utterly renounce their own faith and convert to the particular deity of the hymnist. This affect is permanent and can only be reversed with a new Renunciation or Conversion hymn sung by a follower of the listener`s previous deity, or a successful Convert skill roll."
+    ],
+    "Defection": [
+      "Defection",
+      "18",
+      "0",
+      "20 sec.",
+      "1 hour",
+      "Causes the hymnist and all listeners who either reside currently, or have resided in the past, in the particular land or nation named in the hymn, to be filled with an overwhelming sense of animosity and humiliation for that particular homeland for 1 hour, gaining +5% to Control Resistance, +1 to hit, and -1 defense adjustment (all per 2 Practitioner Titles) while harming anyone or anything that originates from or speaks for that particular homeland. A Control Resistance is necessary for any listeners who do not wish these effects."
+    ],
+    "Desecration": [
+      "Desecration",
+      "24",
+      "-30",
+      "10 min.",
+      "Instant",
+      "Causes winds of erosion to gust violently against one structure or altar dedicated to the worship of a deity other than the hymnist`s. For the duration of the hymn, the structure miraculously is eroded and degraded until it remains just a pile of splinters and rubble. The Will Force rating of the hymnist is permanently reduced by one."
+    ],
+    "Destruction": [
+      "Destruction",
+      "28",
+      "-50",
+      "1 min.",
+      "Instant",
+      "Causes one object or structure no larger than 5 cubic feet per Practitioner Title to shatter, melt, burn, or otherwise be permanently destroyed, in whichever fashion deemed appropriate by the hymnist`s deity. The deity must approve of the object being destroyed; if the hymn targets something which the deity does not wish to destroy, nothing will happen. The target object must be within visual range, including through scrying. Once destroyed, the object cannot be magically repaired. Magical and divine magical items receive a Magic Resistance, but this hymn has no effect on artifacts or living beings."
+    ],
+    "Determination": [
+      "Determination",
+      "23",
+      "-25",
+      "10 sec.",
+      "Instant",
+      "Permanently restores one Will Force point lost within 1 day per Practitioner Title of the hymnist, for either the hymnist or 1 listener who follows the hymnist`s deity, as long as they make a Piety save upon hearing the music of the hymn. This hymn cannot be used to restore Will Force which was voluntarily given up."
+    ],
+    "Discernment": [
+      "Discernment",
+      "20",
+      "-10",
+      "5 sec.",
+      "Instant",
+      "Allows the hymnist and all listeners who follow the hymnist`s deity to identify the divine magical powers, abilities, and usages of one particular divine item by seeing a glow of light around the being or item appropriate to the deity from which the divine magic came and visual indicators of the powers and effects."
+    ],
+    "Discipline": [
+      "Discipline",
+      "18",
+      "0",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% bonus per 2 Practitioner Titles to all Discipline skills for the hymnist and all listeners who follow the hymnist`s deity for 1 hour."
+    ],
+    "Disintegration": [
+      "Disintegration",
+      "31",
+      "65",
+      "1 min.",
+      "1 hour",
+      "Causes one being, object, or area no larger than 50 cubic feet per Practitioner Title to disintegrate into nothing but dust. The deity must approve of the target being destroyed; if the hymn targets something which the deity does not wish to destroy, nothing will happen. The target object must be within visual range, including through scrying, even if it lies on another plane. Magical and divine magical items and structures/building materials, as well as living beings, receive a Magic Resistance."
+    ],
+    "Divinity": [
+      "Divinity",
+      "19",
+      "-5",
+      "15 sec.",
+      "1 hour",
+      "Grants a +5% bonus per 2 Practitioner Titles to all Divine Magical skills for the hymnist and all listeners who follow the hymnist`s deity for 1 hour."
+    ],
+    "Doctrine": [
+      "Doctrine",
+      "19",
+      "-5",
+      "30 sec.",
+      "1 min.",
+      "Grants the skill Theology specifically in regard to the hymnist`s deity at a chance of 5% per Practitioner Title to the hymnist and all listeners who follow the deity of the hymnist. Any listeners who already have the skill gain a second skill chance rather than adding this chance to their first skill. This bonus lasts for 1 minute."
+    ],
+    "Doubt": [
+      "Doubt",
+      "23",
+      "-25",
+      "8 min.",
+      "2d4 weeks",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or doubt the entire doctrine of their own faith, resulting in a temporary loss of 2 Piety per Practitioner Title and a -5% per Practitioner Title to all saves/resistances against the hymn Renunciation or the skill Convert. This doubt lasts for 2d4 weeks, after which the listener loses all doubt and instantly regains the lost Piety points."
+    ],
+    "Endangerment": [
+      "Endangerment",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Decreases divine protection for all listeners who do not follow the hymnist`s deity, inflicting +1 defense adjustment per Practitioner Title and -2% to all resistances per Practitioner Title. Lasts for 10 minutes per Practitioner Title."
+    ],
+    "Endurance": [
+      "Endurance",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Raises the Endurance of the hymnist and all listeners who follow the hymnist`s deity by 2 points per Practitioner Title. Additional Endurance points gained in this manner fade at a rate of 2 per hour, beginning 1 hour after the hymn ends. Damage effects that would kill or maim someone with reduced Endurance go into effect immediately when lost Endurance would cause the effect, including new vitality saves, etc."
+    ],
+    "Enlightenment": [
+      "Enlightenment",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Knowledge by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Knowledge points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Erudition": [
+      "Erudition",
+      "19",
+      "-5",
+      "15 sec.",
+      "1 hour",
+      "Grants a +5% bonus per 2 Practitioner Titles to all Informational skills for the hymnist and all listeners who follow the hymnist`s deity for 1 hour."
+    ],
+    "Fear": [
+      "Fear",
+      "23",
+      "-25",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners who do not follow the hymnist`s deity to gain a sudden overwhelming fear of that deity`s power and status, unless a Control Resistance is made at -2% per Practitioner Title. For the following hour, affected listeners obey all commands spoken in that deity`s name, are +1 Piety and -1 Will Force per 2 Practitioner Titles of the hymnist, and must make a modified Will Force save every 10 minutes or fall down in prostration and worship the hymnist`s deity for 10d6 seconds, ignoring all other actions. This hymn has no effect on beings immune to fear."
+    ],
+    "Fervor": [
+      "Fervor",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Vitality by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Knowledge points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Faith": [
+      "Faith",
+      "18",
+      "0",
+      "10 sec.",
+      "1d4 hours",
+      "Instills great faith within the hymnist and all listeners who follow the hymnist`s deity, granting a bonus of +2% per Practitioner Title to all resistances against the skills Convert, Convince, Fear, Intimidation, Insanity, Possession, and Wounding, a modifier of +5% per Practitioner Title for anyone attempting the skills Cure Disease, Cure Insanity, Cure Poison, Exorcism, Healing, Remove Fear, Resurrection, and Sooth, and a bonus of +1 Piety Control per 2 Practitioner Titles. Maximum Piety Control that can be gained is +6. These effects fade 1d4 hours after the hymn ends."
+    ],
+    "Fortune": [
+      "Fortune",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Raises the Fortune of the hymnist and all listeners who follow the hymnist`s deity by 2% per Practitioner Title. Additional Fortune gained in this manner fade at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Foulness": [
+      "Foulness",
+      "18",
+      "0",
+      "20 sec.",
+      "Fades",
+      "Causes the hymnist and all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or scrutinize 1 friend or ally per Practitioner Title named in the hymn, contemplating that friend`s imperfections and recognizing any ugly, sinful qualities (thus allowing listeners to recognize lies or deceitful actions the friend never mentioned). All affected listeners feel obligated to act judgmentally, attempting to instigate violence by any means possible. All affected listeners must make a Will Force save to abstain from any hostile action. These urges fade 5 minutes per Practitioner Title after the hymn ends, but the listeners still retain all new information gained about their ally."
+    ],
+    "Hesitation": [
+      "Hesitation",
+      "25",
+      "-35",
+      "10 sec.",
+      "Permanent",
+      "Permanently reduces the Will Force rating by 1 for 1 listener who does not follow the hymnist`s deity, as long as they fail a Piety save upon hearing the music of the hymn. This effect can only be used once by a practitioner against any specific target (although the target may be affected by multiple practitioners)."
+    ],
+    "Hindrance": [
+      "Hindrance",
+      "19",
+      "-5",
+      "5 sec.",
+      "Varies",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or be immobile for 10 seconds per Practitioner Title."
+    ],
+    "History": [
+      "History",
+      "21",
+      "-15",
+      "1 min.",
+      "Instant",
+      "Allows the hymnist and 1 listener per Practitioner Title who follows the hymnist`s deity to read the history of an item or living being within physicalcontact by gaining a mental feeling or picture of all positive and negative things that happened around the item or being for the past 1 week per Practitioner Title. Items and beings protected with Non-Detection are immune to the effects of this hymn, as are artifacts, and unwilling targets are allowed a Magic Resistance."
+    ],
+    "Imbuement": [
+      "Imbuement",
+      "24",
+      "-30",
+      "10 min.",
+      "Permanent",
+      "Imbues a musical instrument with the effects of one hymn currently known by the hymnist. The power of the hymn can be activated by playing one note or chord by anyone with the skill Hymn Lore who follows the same deity. One hymn can be imbued per 2 Practitioner Titles. Each hymn imbued causes a permanent loss of half a Will Force point and requires an additional Hymn Lore skill roll at -20% while the instrument is being imbued. Activation time for the hymn is 1d4+1 seconds, which is set at the time of imbuement. The power is always activated at the Class Title of the player using the skill Hymn Lore. Although the skill Hymn Lore requires hymns to be sung in order to have effect, the Hymn of Imbuement allows an instrument to create the effects of any hymn without the hymnist having to sing the words."
+    ],
+    "Insight": [
+      "Insight",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Wisdom by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Wisdom points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Invitation": [
+      "Invitation",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or feel compelled to visit the nearest temple or worshiping place of that deity, if there is one within 5 miles per Practitioner Title. The affected listeners will use any means necessary to make their way to the temple for the next 30 minutes per Will Force of the listener. If there is no temple within range, the listeners feel compelled to cease all current activities and construct an altar of worship within the next 1 minute per Will Force. Once the listeners reach a temple or constructs an altar, they must spend at least 1 minute per Piety worshiping their deity. For the following week, every time the listeners come within sight of a temple or altar of that deity, they must make a Will Force save or visit the temple and worship for another 1 minute per Piety. Those who cannot complete their goal within the allotted time must make a Will Force save or gain an Insanity of obsession over visiting temples of that particular deity (any time they hear of a temple in the area or see one, they must go to it and worship, and they must make another Will Force save to leave)."
+    ],
+    "Invocation": [
+      "Invocation",
+      "19",
+      "-5",
+      "30 sec.",
+      "Varies",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity +1 per Practitioner Title to Piety Control and halves the prayer time required for invocations. Maximum Piety Control that can be gained is +6. This effect lasts for 1 hour per Practitioner Title."
+    ],
+    "Joy": [
+      "Joy",
+      "17",
+      "5",
+      "5 sec.",
+      "Varies",
+      "Causes all listeners (regardless of deity) to make a Control Resistance at -2% per Practitioner Title or uncontrollably laugh in ecstasy over the hymn`s subject of joy, resulting in -1 to Intelligence and Wisdom, +1 to Appearance and Charm, -20% to all Concentration checks, and +20% to Morale checks. Each listener laughs for 1d4 minutes after the hymn ends."
+    ],
+    "Lethargy": [
+      "Lethargy",
+      "20",
+      "-10",
+      "5 sec.",
+      "Varies",
+      "Slows weapon speed by 1 second per 3 Practitioner Titles for all listeners who do not follow the hymnist`s deity for 6d10 seconds."
+    ],
+    "Manifestation": [
+      "Manifestation",
+      "20",
+      "-10",
+      "1 min.",
+      "Varies",
+      "Projects an image of the hymnist`s deity in any shape and form that deity desires, visible by all listeners within 10` per Practitioner Title. The listeners who follow that deity gain +2 Piety while viewing the manifestation and may communicate with it at a +2% bonus per Practitioner Title to Commune. The manifestation remains for 1d4 minutes. Since this is only a representation of the deity and not the actual deity, it is impervious to damage and can appear anywhere, in any environment. The deity may also choose not to manifest itself at that time, at the GM`s discretion."
+    ],
+    "Martyrdom": [
+      "Martyrdom",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Causes 1 willing listener who follows the hymnist`s deity to lose all defensive actions and resistances against hostile attacks. If death occurs within 1 hour per Practitioner Title, the martyr`s spirit and soul instantly move on to the plane of that deity, and the body is immune to any undead conversions. Also, all witnesses of the martyr`s death who follow that deity temporarily gain +5% Morale per Practitioner Title as well as +1 Will Force and +1 Piety per 2 Practitioner Titles. All hostile witnesses are -5% Morale per Practitioner Title and must make a Will Force save at -5% per 2 Practitioner Titles to attempt any hostile action toward anyone who follows the deity of the hymnist. These effects last for 1 day per Will Force of the martyr."
+    ],
+    "Meditation": [
+      "Meditation",
+      "18",
+      "0",
+      "20 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance (if desired) at -2% per Practitioner Title or settle into a calm state of mind, focusing thoughts and removing anxiety, providing the following effects: A new Control Resistance towards any current controllingfactors; a +10% Control Resistance for 1 hour. +1 to hit and damage for 1 hour. Current fatigue effects are reduced by half. Fatigue effects for the next hour happen twice as slowly (1 minute of fatigue is applied per 2 actual minutes). Any temporary lost attribute points are restored at a rate of 2 per hour. While each listener is completely at rest, temporarily lost attribute points return at a rate of 1 per 10 minutes. Each listener counts as having one Will Force rating point higher when defending against a hostile spell or effect which depends on Will Force, such as mental combat, Hold, Possession, etc."
+    ],
+    "Misfortune": [
+      "Misfortune",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Lowers the Fortune of all listeners who do not follow the hymnist`s deity by 2% per Practitioner Title. Fortune lost in this manner returns at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Mourning": [
+      "Mourning",
+      "17",
+      "5",
+      "10 sec.",
+      "Varies",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title (if desired) or uncontrollably weep in grief over the hymn`s subject of loss, resulting in a -1 to Intelligence, Wisdom, Appearance, and Charm, and a -20% to all Concentration and Morale checks. Each listener weeps for 1d4 minutes after the hymn ends."
+    ],
+    "Nationalism": [
+      "Nationalism",
+      "18",
+      "0",
+      "20 sec.",
+      "1 hour",
+      "Causes all listeners who either reside currently, or have resided in the past, in the particular land or nation named in the hymn to be filled with a bursting sense of nationalistic pride for 1 hour, gaining +5% to Control Resistance, +1 to hit, and -1 defense adjustment (all per 2 Practitioner Titles) while defending that particular homeland`s people or their freedom from invading forces."
+    ],
+    "Obliviousness": [
+      "Obliviousness",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Lowers the Perception of all hostile listners by 2% per Practitioner Title. Perception lost in this manner returns at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Perception": [
+      "Perception",
+      "17",
+      "5",
+      "10 sec.",
+      "Fades",
+      "Raises the Perception of all friendly listners by 2% per Practitioner Title. Perception gained in this manner fade at a rate of 1% per hour, beginning 1 hour after the hymn ends."
+    ],
+    "Piety": [
+      "Piety",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Piety by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Piety points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Praise": [
+      "Praise",
+      "20",
+      "-10",
+      "10 sec.",
+      "Hymn Ends",
+      "Causes all listeners who follow the hymnist`s deity and 1 listener per Practitioner Title who follows another deity to make a Control Resistance at -2% per Practitioner Title (if desired) or feel an overwhelming sense of awe and praise toward the hymnist`s deity, causing all divine effects both targeting and originating from the listener to increase by 10% per Practitioner Title (including range and duration)."
+    ],
+    "Prophecy": [
+      "Prophecy",
+      "21",
+      "-15",
+      "1 min.",
+      "Instant",
+      "Allows the hymnist to look into the future of the being, place, or event named in the hymn and see the most probable outcome. This event is viewed as a mental picture with sound. There is no guarantee that the event will actually happen, only that it is the most likely future depending on current events. The prophesied event will usually be no more than 1 day per Practitioner Title into the future, but the Game Master may allow for a longer time based on great events to come. This hymn may be attempted only once per day. Note (GM discretion)."
+    ],
+    "Propitiation": [
+      "Propitiation",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title (if desired) or perform any necessary actions to placate that deity`s revealed anger over a previous action committed by the listener. Once the deity`s anger has been revealed (either directly or indirectly), a sign is given, either physically or mentally, showing each listener what must be done in order to placate that deity. Each listener will continue all attempts to follow through until the deed is completed and the deity reveals to each listener their individual propitiation. This hymn also affects ghosts and undead who worshiped that deity while living, even if they have the immunity Control (Lesser), as long as they have magical hearing."
+    ],
+    "Protection": [
+      "Protection",
+      "16",
+      "10",
+      "30 sec.",
+      "Hymn Ends",
+      "Provides divine protection for the hymnist and all listeners who follow the hymnist`s deity, granting -1 defense adjustment per 2 Practitioner Titles and +5% to all resistances per 2 Practitioner Titles."
+    ],
+    "Purity": [
+      "Purity",
+      "15",
+      "15",
+      "10 sec.",
+      "Instant",
+      "Removes all salt, suspended impurities, bacteria, viruses, and toxins from all food and water within 5` per Practitioner Title."
+    ],
+    "Refuge": [
+      "Refuge",
+      "18",
+      "0",
+      "5 sec.",
+      "Hymn Ends",
+      "Creates a semi-transparent shimmering sphere in a color of the hymnist`s deity`s choosing which prohibits magical and divine magical weapons, items, skills, spells, and invocations from passing through in either direction by instantly dispelling them. Supernatural beings of level 5 or less are returned to their plane of origin or are destroyed (in the case of lesser undead) when they touch the sphere. This effect is treated as the invocation Sphere of Protection at a Piety Control of the Practitioner`s Title x2."
+    ],
+    "Renunciation": [
+      "Renunciation",
+      "26",
+      "-40",
+      "10 min.",
+      "Permanent",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or instantly and utterly renounce their own faith, with a 1% chance per Practitioner Title of converting to the particular deity of the hymnist. This affect is permanent and can only be reversed with a new Renunciation hymn sung by a follower of the listener`s previous deity or a successful Convert skill roll. If no new faith is adopted, the listener is now considered either Agnostic or Atheist and loses the ability to perform any divine magical skills."
+    ],
+    "Requiem": [
+      "Requiem",
+      "22",
+      "-20",
+      "10 min.",
+      "Instant",
+      "Causes the soul of one being for whom the requiem is written to be immune to all transformations to undead and creates an immediate summoning of a portal through which that soul may enter the plane of its deity in the afterlife, if it had not already. The target must have worshiped the hymnist`s deity and been dead less than 1 day per Will Force of the target soul."
+    ],
+    "Restoration": [
+      "Restoration",
+      "24",
+      "-30",
+      "10 min.",
+      "Instant",
+      "Causes winds of divine magic to blow firmly amidst the ruins of one structure or altar dedicated to the worship of the hymnist`s deity. As the hymn is sung, a shimmering surrounds the rubble and splinters and divinely reconstitutes the temple or altar to its former glory, filling in areas even if material is missing. The Will Force rating for the hymnist is permanently reduced by one. No furnishings save an alter or focus of worship are fixed or replaced (a door counts as part of the temple and is restored, but a door lock counts as a fixture and is not)."
+    ],
+    "Revelation": [
+      "Revelation",
+      "22",
+      "-20",
+      "15 sec.",
+      "Instant",
+      "Allows the hymnist and all listeners who follow the hymnist`s deity to detect supernatural beings, evil, good, life force, and divine magic within 5` per Practitioner Title of the hymnist. The power of these forces and direction are felt by each listener. Once each source is detected, each listener can sense their movement and location for as long as they remain within range. Each listener can detect only the beings initially detected, and any new beings that enter the vicinity (within range) are not detected."
+    ],
+    "Ritualism": [
+      "Ritualism",
+      "16",
+      "10",
+      "10 sec.",
+      "Next Ritual",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity a +5% bonus per Practitioner Title to each listener`s next single application of any skill that requires a ritual to perform, such as Ritual Lore, Sacred Grove, Empathy Magic, etc."
+    ],
+    "Revitalization": [
+      "Revitalization",
+      "17",
+      "5",
+      "5 sec.",
+      "Instant",
+      "Instantly removes all fatigue from the hymnist and all listeners who follow the hymnist`s deity."
+    ],
+    "Shielding": [
+      "Shielding",
+      "17",
+      "5",
+      "5 sec.",
+      "Varies",
+      "Creates a divine magical shield controllable by the hymnist that can be placed between two objects or beings. The shield acts as a barrier and stops attacks between the two if the hymnist makes a Piety save. However, all magical and divine magical weapons and effects pass through the shield. The Hymn of Shielding cannot block more than one blow per second unless two or more blows are simultaneously aimed for the same area. In such cases, only a single Piety save is required to block the blows. The shield only stops 100 points of damage; any amount over 100 will damage the area below the shield. The shield can be used to protect any object or being within a 2` diameter and lasts for 10 seconds per Practitioner Title."
+    ],
+    "Stealth": [
+      "Stealth",
+      "18",
+      "0",
+      "15 sec.",
+      "1 hour",
+      "Grants a +5% bonus per 2 Practitioner Titles to all Stealth/Intrusive skills for the hymnist and all listeners who follow the hymnist`s deity for 1 hour."
+    ],
+    "Strength": [
+      "Strength",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Raises Strength by 1 per 2 Practitioner Titles (not to supersede racial maximum) of the hymnist and all listeners who follow the hymnist`s deity. Additional Strength points gained in this manner fade at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Suffocation": [
+      "Suffocation",
+      "21",
+      "-15",
+      "5 sec.",
+      "Hymn Ends",
+      "Causes all hostile listeners to make a Magic Resistance or choke, losing 1d6 overall Endurance per 10 seconds. At the onset of asphyxiation, a Will Force save must be made to remain calm or damage is doubled. When Endurance has been reduced to 0, the target appears very pale and must make a Vitality save every 5 seconds to remain conscious (-5% to the save for every point below 0). Once Endurance reaches the target`s negative Vitality rating, the lungs have collapsed and the heart stops beating. One minute later, if Endurance is not raised above the negative Vitality rating, the target dies. A Chirugeon roll will resuscitate the suffocated target and raise overall Endurance to 1 point above negative Vitality. Should the target survive the ordeal, restoration of Endurance is based on healing rate, with minutes instead of days and a period of 10 minute intervals instead of weeks."
+    ],
+    "Supplication": [
+      "Supplication",
+      "20",
+      "-10",
+      "30 sec.",
+      "Instant",
+      "Grants all listening invokers who follow the hymnist`s deity the ability to instantly gain one invocation no higher in Piety Control than 3 per Practitioner Title without having to spend the necessary prayer time, since the hymnist supplicates on behalf of the invokers."
+    ],
+    "Sustenance": [
+      "Sustenance",
+      "18",
+      "0",
+      "1 min.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to lose all need for food and water and instead rely solely on divine, spiritual sustenance for 1 day per Practitioner Title, during which the listener feels neither hunger nor thirst and takes no damage or negative effects from lack of food and water. Those unwilling are afforded a Control Resistance at -2% per Practitioner Title."
+    ],
+    "Timidity": [
+      "Timidity",
+      "22",
+      "-20",
+      "5 sec.",
+      "Fades",
+      "Lowers the Will Force rating of all hostile listeners by 1 per 2 Practitioner Titles, unless a Control Resistance at -2% per Practitioner Title is made. Will Force lost in this manner return at a rate of 1 per hour after the hymn ends."
+    ],
+    "Transformation": [
+      "Transformation",
+      "22",
+      "-20",
+      "15 sec.",
+      "Varies",
+      "Temporarily transforms the hymnist and all listeners who follow the hymnist`s deity into 1 type of object approved by the deity, no larger than 5 cubic feet per Practitioner Title. A Magic Resistance avoids this transformation if desired. While transformed, each listener appears as the object but retains each individual life force. One sense (hearing, sight, touch, smell, or taste) per 2 Practitioner Titles may be retained while transformed. This transformation begins as soon as the hymn ends, takes 1d4 seconds to complete, and lasts for 1 minute per Practitioner Title. If the deity does not approve of the listeners transforming into the type of object stated in the hymn, that deity may choose to either transform them into something else instead or do nothing. Also, each effected being can spend 1 Will Force permanently to stay transformed indefinitely. Dispel Divinity, Restore Form, Wish, or Miracle then would be required to restore a being to normal form."
+    ],
+    "Warfare": [
+      "Warfare",
+      "18",
+      "0",
+      "15 sec.",
+      "Varies",
+      "Grants a +5% bonus per 2 Practitioner Titles to all Combat skills for the hymnist and all listeners who follow the hymnist`s deity for 1 hour."
+    ],
+    "Velocity": [
+      "Velocity",
+      "20",
+      "-10",
+      "5 sec.",
+      "Varies",
+      "Quickens weapon speed by 1 second per 3 Practitioner Titles, not to go below minimum weapon speed, for the hymnist and all listeners who follow the hymnist`s deity for 6d10 seconds."
+    ],
+    "Vision(Enhanced Night Vision)": [
+      "Vision(Enhanced Night Vision)",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Grants Enhanced Night Vision to all listeners who follow the hymnist`s deity for 1 hour per Practitioner Title."
+    ],
+    "Vision(Exceptional Eyesight)": [
+      "Vision(Exceptional Eyesight)",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Grants Exceptional Eyesight to all listeners who follow the hymnist`s deity for 1 hour per Practitioner Title."
+    ],
+    "Vision(Far Sight)": [
+      "Vision(Far Sight)",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Grants Far Sight to all listeners who follow the hymnist`s deity for 1 hour per Practitioner Title."
+    ],
+    "Vision(Infravision)": [
+      "Vision(Infravision)",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Grants Infravision to all listeners who follow the hymnist`s deity for 1 hour per Practitioner Title."
+    ],
+    "Vision(Ultravision)": [
+      "Vision(Ultravision)",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Grants Ultravision to all listeners who follow the hymnist`s deity for 1 hour per Practitioner Title."
+    ],
+    "Zeal": [
+      "Zeal",
+      "20",
+      "-10",
+      "15 sec.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title to make a Control Resistance at -2% per Practitioner Title or feel enthusiastic devotion and tireless diligence toward one specific being, location, object, or idea stated in the hymn, negating all indifferent feelings and canceling any preconceived plans to act accordingly. All affected listeners must make a modified Will Force save to avoid performing any action that would prove their new zeal toward the stated target. This feeling of zeal lasts for 30 minutes per Practitioner Title."
+    ],
+    "Absolution": [
+      "Absolution",
+      "20",
+      "-10",
+      "10 sec.",
+      "Instant",
+      "Causes the sins of the hymnist and all listeners who follow the hymnist`s deity to be absolved by that deity, permanently removing all negative alignment checks. Furthermore, any undead within 5` per Practitioner Title who worshiped the hymnist`s deity while living have a 10% chance per Practitioner Title of being destroyed and if souled moving on to the plane of that deity."
+    ],
+    "Altruism": [
+      "Altruism",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title who does not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or feel a sense of total selflessness and genuine concern for the welfare of others (regardless of their alignment), resulting in a Will Force save at -5% per Practitioner Title to perform any action that would in any way be considered selfish or greedy (at the GM`s discretion). This feeling of altruism lasts for 1 minute per Practitioner Title."
+    ],
+    "Amenity": [
+      "Amenity",
+      "16",
+      "10",
+      "20 sec.",
+      "Varies",
+      "Increases the Appearance and Charm of the hymnist and all listeners who follow the hymnist`s deity by 1 per 2 Practitioner Titles while speaking about that deity or performing a skill in that deity`s name, such as Bless, Convert, Exorcism, Hymn Lore, etc. This effect lasts for 10 minutes per Practitioner Title."
+    ],
+    "Apology": [
+      "Apology",
+      "16",
+      "10",
+      "20 sec.",
+      "Until Complete",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or feel the sudden urge to apologize to 1d4 people against whom the listener caused a grievance within the past 1 day per Practitioner Title. The affected listener will perform any necessary actions (without going against alignment) to communicate with that person, no matter the cost, and will not rest until the apology has been made, no matter how long it takes."
+    ],
+    "Beauty": [
+      "Beauty",
+      "18",
+      "0",
+      "20 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity and 1 listener per Practitioner Title who follows another deity to make a Control Resistance at -2% per Practitioner Title or scrutinize 1 enemy per Practitioner Title named in the hymn, viewing that enemy`s inner beauty and recognizing any redeeming qualities. All affected listeners feel obligated to act mercifully, attempting to avoid violence by any means possible. All hostile actions must be superseded with a Will Force save. These urges fade 5 minutes per Practitioner Title after the hymn ends."
+    ],
+    "Benediction": [
+      "Benediction",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Bestows a blessing upon the hymnist and all listeners who follow the hymnist`s deity, granting +1 to hit and +5% to all resistance rolls per 3 Practitioner Titles, lasting 1 hour."
+    ],
+    "Call Celestial": [
+      "Call Celestial",
+      "23",
+      "-25",
+      "10 min.",
+      "10 min.",
+      "Summons or dismisses a Good-aligned supernatural servant by name (the hymnist must know the true name of the servant to summon or dismiss), either of which cannot be resisted by the servant. When summoning, control is automatically granted to the hymnist if the deity wishes it, unless the supernatural servant is immune to control. When dismissing, the servant must remain within earshot of the hymnist during the entire 10 minutes of the hymn."
+    ],
+    "Comfort": [
+      "Comfort",
+      "16",
+      "10",
+      "10 sec.",
+      "1d4 min.",
+      "Removes all physical and emotional pain, hunger, and thirst from the hymnist and all listeners who follow the hymnist`s deity for 1d4 minutes."
+    ],
+    "Confession": [
+      "Confession",
+      "19",
+      "-5",
+      "15 sec.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title to make a Control Resistance at -2% per Practitioner Title or feel obligated to confess the truth about anything about which they had previously lied during any point in their life. While under affect, the listener must answer all questions truthfully but will not mention any other lies until brought up by someone else. The listener will confess only to the hymnist, and this obligation ends after 1 minute per Practitioner Title."
+    ],
+    "Courage": [
+      "Courage",
+      "17",
+      "5",
+      "10 sec.",
+      "Varies",
+      "Instills in all listeners who follow the hymnist`s deity a sense of courage, gaining the following positive effects for 1 hour per Practitioner Title: +1 damage per die to melee and missile weapons in combat, +2 to hit with melee and missile weapons in combat, -2 initiative in combat, +5% to Control Resistance per 3 Practitioner Titles of the hymnist, Affected beings can go Berserk if they so desire at 5% chance per 3 Practitioner Titles of the hymnist, +10% to morale checks."
+    ],
+    "Creation(Clay/Cloth)": [
+      "Creation(Clay/Cloth)",
+      "14",
+      "20",
+      "10 min.",
+      "Varies",
+      "Allows the hymnist to create divine magical goods. The hymnist imagines the desired item and then makes their Hymn Lore skill roll. If successful, it begins as an illusion in the air of the item to be created, adding to it with note and chord, word and refrain. When the hymn is complete, the item becomes real and is considered to be +1 divine magical per 3 Practitioner Titles with a base 2 Piety Control per Class Title of the hymnist. Items created last 1 hour per practitioner title. Combining this hymn with a social skill that produces goods affords -10 to the social skill rating and thus a +50% modifier to the skill roll for producing quality goods. Will force cost for permanent items is 1/10th of a Will Force. Only one permanent item can be created per week."
+    ],
+    "Creation(Wood)": [
+      "Creation(Wood)",
+      "16",
+      "10",
+      "10 min.",
+      "Varies",
+      "Allows the hymnist to create divine magical goods. The hymnist imagines the desired item and then makes their Hymn Lore skill roll. If successful, it begins as an illusion in the air of the item to be created, adding to it with note and chord, word and refrain. When the hymn is complete, the item becomes real and is considered to be +1 divine magical per 3 Practitioner Titles with a base 2 Piety Control per Class Title of the hymnist. Items created last 1 hour per practitioner title. Combining this hymn with a social skill that produces goods affords -10 to the social skill rating and thus a +50% modifier to the skill roll for producing quality goods. Will force cost for permanent items is 1/10th of a Will Force. Only one permanent item can be created per week."
+    ],
+    "Creation(Stone/Metal/Gem)": [
+      "Creation(Stone/Metal/Gem)",
+      "18",
+      "0",
+      "10 min.",
+      "Varies",
+      "Allows the hymnist to create divine magical goods. The hymnist imagines the desired item and then makes their Hymn Lore skill roll. If successful, it begins as an illusion in the air of the item to be created, adding to it with note and chord, word and refrain. When the hymn is complete, the item becomes real and is considered to be +1 divine magical per 3 Practitioner Titles with a base 2 Piety Control per Class Title of the hymnist. Items created last 1 hour per practitioner title. Combining this hymn with a social skill that produces goods affords -10 to the social skill rating and thus a +50% modifier to the skill roll for producing quality goods. Will force cost for permanent items is 1/10th of a Will Force. Only one permanent item can be created per week."
+    ],
+    "Creation(Composite)": [
+      "Creation(Composite)",
+      "20",
+      "-10",
+      "10 min.",
+      "Varies",
+      "Allows the hymnist to create divine magical goods. The hymnist imagines the desired item and then makes their Hymn Lore skill roll. If successful, it begins as an illusion in the air of the item to be created, adding to it with note and chord, word and refrain. When the hymn is complete, the item becomes real and is considered to be +1 divine magical per 3 Practitioner Titles with a base 2 Piety Control per Class Title of the hymnist. Items created last 1 hour per practitioner title. Combining this hymn with a social skill that produces goods affords -10 to the social skill rating and thus a +50% modifier to the skill roll for producing quality goods. Will force cost for permanent items is 1/10th of a Will Force. Only one permanent item can be created per week."
+    ],
+    "Exorcism": [
+      "Exorcism",
+      "19",
+      "-5",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to 1 listener who follows a Neutral Good to Good-aligned deity to the following list for 1 hour. Skills: Call of the Light, Control Supernatural (vs. undead and ghosts), Destroy Undead, Detect Curse (when involving undead and ghosts), Exorcism, Influence the Dead, Life Sense, Life Strike, Mask Life Force, Protection from Supernatural, Remove Curse (when involving undead and ghosts), Still Life Force, Suppress Undead Compulsion, Turn Undead, Undead Lore. Candle Lore rituals: Coexist with Undead, Mask Life Force, Protection from Undead. Ritual Lore rituals: Disguise Life Force, Epitaph, Negative Life Vapor, Preservation, Release Soul, Remove Shadow, Reveal Life Force. Poems: Soothe Undead, Undead Fire Protection, Undead Poison Protection. Songs: Calm Undead, Frozen Bones, Incorruption, Undead Chill Protection, Undead Disease Protection. Ballads: Banshee Resolve, Blood of the Vampire, Ghoul`s Bite, Shadow`s Touch. Runes: Day, Disguise Life Force, Gravestone, Life, Natural Sunlight, Protection from Undead, Righteousness, Turn Undead."
+    ],
+    "Fellowship": [
+      "Fellowship",
+      "19",
+      "-5",
+      "20 sec.",
+      "1 hour",
+      "Causes all listeners who follow the hymnist`s deity to feel a close bonding with each other, gaining a total of +2% per Practitioner Title when collectively attempting to Commune with their deity. The affected listeners also gain +30% to morale and +5% per Practitioner Title to all skills performed on each other (such as Cure Poison, Bless, Mind Dance, etc.)."
+    ],
+    "Forgiveness": [
+      "Forgiveness",
+      "21",
+      "-15",
+      "15 sec.",
+      "Instant",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or forgive all personal debts or grudges previously held. This ends all desires for revenge or animosity, resulting in a -20% per Practitioner Title to Will Force rolls in collecting debts or taking hostile actions against anyone the listener has forgiven. Note: If the listener is a Revenant who worshiped the hymnist`s deity while living, they no longer is affected by the disability Compulsion: Task and falls lifeless to the ground, no longer an undead creature, but just a mundane corpse."
+    ],
+    "Glorification": [
+      "Glorification",
+      "17",
+      "5",
+      "5 sec.",
+      "1 hour",
+      "Glorifies the hymnist`s deity, resulting in a gain of 1 point of Fortune per Practitioner Title (as per the invocation) for the hymnist and all listeners who follow the hymnist`s deity, +5% per 2 Practitioner Titles to all divine magical skills, and +5% Control Resistance per 2 Practitioner Titles against any ill effects originating from a being who does not follow that deity. These effects last for 1 hour. In addition, the glorified deity may choose to intervene or additionally aid its followers in some way (at the GM`s discretion)."
+    ],
+    "Health": [
+      "Health",
+      "19",
+      "-5",
+      "10 sec.",
+      "1 hour",
+      "Grants a +2% per Practitioner Title bonus to Poison and Disease Resistances for 1 hour to all listeners who follow the hymnist`s deity and instantly heals 1d4+1 per Practitioner Title to the most wounded area of each affected listener."
+    ],
+    "Humility": [
+      "Humility",
+      "17",
+      "5",
+      "5 sec.",
+      "1 hour",
+      "Causes the hymnist and all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or lose all sense of pride and instead be filled with humility and meekness, resulting in +1 Charm and +1 Piety per 2 Practitioner Titles (not to exceed racial maximum), as well as the need to make a Will Force save at -5% per Practitioner Title to perform any action that would be considered prideful or boastful (at the GM`s discretion). This would include showing off a skill to others or taking undeserved credit."
+    ],
+    "Judgment": [
+      "Judgment",
+      "32",
+      "-70",
+      "10 sec.",
+      "1 hour",
+      "Causes all non-living souls (i.e. ghosts and souled undead) within 5` per Practitioner Title to be instantly judged by their particular deities as either deserving or undeserving of moving on to the planes of those deities, whether good, neutral, or evil. Whether or not the deity decides to allow the affected souls to move on is completely at the GM`s discretion and must be based on both the particular values and ideals of the deity and the actions committed by the souls. If a deity decides the soul is unworthy of moving on and finding peace, that soul remains in its current state and may not be judged again by this hymn, no matter the practitioner."
+    ],
+    "Justice": [
+      "Justice",
+      "20",
+      "-10",
+      "10 sec.",
+      "Instant",
+      "Causes all non-magical and non-divine locks and bindings (including rope, cuffs, etc.) to open within 1` per Practitioner Title of the hymnist and all listeners who follow the hymnist`s deity who are currently being held or imprisoned unjustly (such as for committing a crime they did not commit or preaching on behalf of their deity)."
+    ],
+    "Illumination": [
+      "Illumination",
+      "16",
+      "10",
+      "5 sec.",
+      "Varies",
+      "Creates a divine magical bright sphere of light with a radius of 3` per Will Force of the hymnist no further than 5` away per Will Force point. The sphere can either be centered on a moveable object or being or be fixed in one place. The illumination radius for normal sight is 5` per Piety rating of the hymnist. The light is a soft, slowly intensifying light which lasts 15 minutes per Practitioner Title. Only one globe per Practitioner Title may be active."
+    ],
+    "Inhibition": [
+      "Inhibition",
+      "18",
+      "0",
+      "15 sec.",
+      "1 hour",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or avoid all actions, beings, and places considered immoral or evil in any way for 1 hour."
+    ],
+    "Loyalty": [
+      "Loyalty",
+      "18",
+      "0",
+      "5 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or become extremely loyal to a particular cause or being, resulting in a -5% per Practitioner Title to Will Force saves when attempting to go against anything which furthers that cause or is requested by that being, and will attempt to defend the cause or being at all costs. Furthermore, all affected listeners gain +20% to morale whenever within the vicinity of the being or acting for the good of that being or cause. Effects last 1 day per Practitioner title."
+    ],
+    "Noontide": [
+      "Noontide",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Creates a sphere of true day, even at night, brightened with natural sunlight. All beings within the sphere are affected as if it were day. All effects which are dependent upon sunlight or daytime apply, regardless of the actual time. Thus, within the sphere of the Hymn of Noontide, a Lesser Vampire who is normally active at night will be immobilized and burn from sunlight as if it were actually exposed to the sun. The sphere, which has a radius of 10` per Practitioner Title, is centered on a fixed location (up to 2` per Practitioner Title from the hymnist) when created and cannot be moved, and it lasts for 10 minutes per Practitioner Title. The hymns of Twilight and Midnight will override the Hymn of Noontide if the latter hymnist makes their Hymn Lore roll by more than the previous hymnist."
+    ],
+    "Peace": [
+      "Peace",
+      "20",
+      "-10",
+      "10 sec.",
+      "10 min.",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or temporarily cease all hostile actions against each other, including derogatory words and offensive attacks. This hymn does not affect thoughts or emotions but rather provides control over each listener`s physical actions arising from those thoughts or emotions. Furthermore, those who fall under the hymn`s affect will also attempt to convince those still unaffected to cease hostile actions. For every 10 seconds the hymn continues, all listeners who have not yet succumbed to peace must make a new Control Resistance with a penalty of an additional cumulative -5%. The hymn cannot last more than 10 minutes total, and once the hymn is over, the temporary peace instantly and abruptly ends."
+    ],
+    "Prudence": [
+      "Prudence",
+      "15",
+      "15",
+      "15 sec.",
+      "2 hours",
+      "Raises the Will Force saves of all listeners by 5% per 2 Practitioner Titles when being tempted to take any action that would be considered evil, resulting in possible alignment checks. This effect lasts for 2 hours after the hymn ends."
+    ],
+    "Purging": [
+      "Purging",
+      "20",
+      "-10",
+      "1 min.",
+      "Instant",
+      "Instantly purges 1 named poison, disease, type of insanity, or possession per Practitioner Title from all listeners who follow the hymnist`s deity, as long as they make a Piety save upon hearing the music of the hymn. This hymn has no effect on curses or lycanthropy."
+    ],
+    "Purification": [
+      "Purification",
+      "23",
+      "-25",
+      "10 min.",
+      "Instant",
+      "Instantly cures all listeners who follow the hymnist`s deity of lycanthropy, as long as the listeners make a Piety save upon hearing the music of the hymn."
+    ],
+    "Regeneration": [
+      "Regeneration",
+      "21",
+      "-15",
+      "10 min.",
+      "Instant",
+      "Heals any one existing body area with less than 1 Endurance to exactly 1 Endurance, affecting the hymnist and 1 listener per Practitioner Title who follows the hymnist`s deity. All missing limbs of the affected listeners are instantaneously regenerated at the cost of 1 Will Force per limb restored. The Will Force cost is permanently paid by either the target or the hymnist. Vital areas that have been severed will not be regenerated. Multiple sub-areas regenerated (such as several fingers on the same hand) count as one limb."
+    ],
+    "Repentance": [
+      "Repentance",
+      "16",
+      "10",
+      "10 min.",
+      "1 hour",
+      "Causes the hymnist and all listeners who follow the hymnist`s deity to sincerely repent of all previously committed sins since their last act of repentance. All affected listeners gain +1 Piety per 2 Practitioner Titles, 2 Fortune points per Practitioner Title, and +5% Control Resistance per 2 Practitioner Titles against any Evil aligned hymn or invocation that affects one`s actions, such as the Hymn of Temptation or the invocation Aggression. These effects last for 1 hour. Furthermore, upon repenting of any actions that resulted in negative Alignment checks, the deity may decide to remove those Alignment checks (at the GM`s discretion)."
+    ],
+    "Resurrection": [
+      "Resurrection",
+      "25",
+      "-35",
+      "10 min.",
+      "Instant",
+      "Restores life to one recently deceased being who, in life, worshiped the hymnist`s deity, as long as the deceased target`s ghost makes a Piety save upon hearing the music of the hymn. Once the soul is returned to the body, one Will Force is permanently drained from the recipient. Furthermore, all bodily damage is removed, but any missing limbs remain missing. The body is in a weakened state, with all attributes drained to one. One attribute point for each attribute will be restored for each hour of complete rest. This hymn may be attempted on a deceased individual only once, regardless of the number of hymnists available to perform the hymn. Each hymnist is limited in use of this hymn to a number of times each day equal to their Class Title."
+    ],
+    "Salvation": [
+      "Salvation",
+      "28",
+      "-50",
+      "5 sec.",
+      "Varies",
+      "Invokes salvation for the hymnist and all listeners who either follow that deity or an allied deity from all hostile or potentially fatal beings, places, or events by intervening and miraculously removing that danger in whichever way that deity chooses. For example, if the hymn is being sung while a fatal avalanche is heading down a mountain slope toward the hymnist, the deity may choose to either halt the avalanche or remove the hymnist from the slope; or, if a band of goblins has ambushed the hymnist`s party of adventurers and is injuring them with arrows, the deity may choose to strike the goblins dead or cause the arrows to reflect off the adventurers and return back to the goblins. The means of salvation is completely at the GM`s discretion. However, if the GM decides that the hymnist does not warrant salvation or that removing the danger does not fit into the deity`s predestined plan, nothing happens. This hymn may only be sung once per month, and any further attempts or attempts during non-desperate situations may invoke the anger and wrath of that particular deity, resulting in divine denial."
+    ],
+    "Sanctification": [
+      "Sanctification",
+      "22",
+      "-20",
+      "1 min.",
+      "Varies",
+      "Causes all listeners who follow an Evil or Neutral-Evil deity to make a Control Resistance or become morally sanctified for the duration, resulting in desires to serve, help, heal others, and serve the cause of good. The normally belligerent and violent being would become friendly and peaceful, in all except the most extreme of circumstances. Thirty minutes per Practitioner Title after the hymn ends, each affected listener reverts back to their previous alignment and loses all memory of events that transpired while transformed."
+    ],
+    "Splendor": [
+      "Splendor",
+      "20",
+      "-10",
+      "10 sec.",
+      "Varies",
+      "Creates a divine magical sphere of intensely glowing light no further away than 2` per Will Force point. The sphere is centered on a fixed location and will not move from the location where it is created. The light is so bright that it blinds beings and creatures with night vision (non-enhanced), even the hymnist, if applicable. All negative life force beings within a radius of 10` per Practitioner Title are temporarily drained of 1 Will Force point per 10 seconds if they fail a Control Resistance in that 10 second period. The globe lasts 15 minutes per Practitioner Title, and only one globe may be active at a time."
+    ],
+    "Submission": [
+      "Submission",
+      "22",
+      "-20",
+      "10 sec.",
+      "Varies",
+      "Causes all listeners who follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or follow all commands given by the hymnist, as long as those commands do not go against the morals and commands of that deity, for 1 minute per Practitioner Title."
+    ],
+    "Thanksgiving": [
+      "Thanksgiving",
+      "17",
+      "5",
+      "10 sec.",
+      "Varies",
+      "Endows all listeners who follow the hymnist`s deity with an overwhelming thankfulness toward that particular deity for every fortune bestowed within the past 2 months per Practitioner Title, gaining +2 Piety and Wisdom and +15% to Morale. The listener must also make a Will Force save at -5% per 2 Practitioner Titles before attempting the skills Begging, Cheat, Gambling, Harlotry, Lie, Steal, or Torturing. Lasts 1 hour per Practitioner title."
+    ],
+    "Tolerance": [
+      "Tolerance",
+      "16",
+      "10",
+      "10 sec.",
+      "1 hour",
+      "Temporarily removes all effects of Xenophobia from the hymnist and all listeners for 1 hour."
+    ],
+    "Truth": [
+      "Truth",
+      "19",
+      "-5",
+      "10 sec.",
+      "1d4 min.",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or speak only the truth and be completely unable to lie in any way for 1d4 minutes. Affected beings can choose to remain silent."
+    ],
+    "Virtue": [
+      "Virtue",
+      "16",
+      "10",
+      "10 sec.",
+      "1 hour",
+      "Causes the hymnist and all listeners to make a Control Resistance at -2% per Practitioner Title or be unable to say or do anything that would be considered immoral or evil for 1 hour."
+    ],
+    "Aeromancy": [
+      "Aeromancy",
+      "19",
+      "-5",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to the hymnist and all listeners to the following for 1 hour: Skills: Call of Air, Electrokinesis, Levitation, Summon Supernatural (when targeting an Air Elemental). Candle Lore rituals: Death Stench, Endure Electricity, Sense Elemental (when sensing Air Elementals). Ritual Lore rituals: Enhanced Breath, Guide Wind, Weather. Poems: Springing, Weather. Songs: Cloudwalk, Electricity, Flying. Runes: Cloudblend, Warding vs. Air Elemental."
+    ],
+    "Alchemy": [
+      "Alchemy",
+      "20",
+      "-10",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% bonus per 2 Practitioner Titles to the hymnist and all listeners who follow the hymnist`s deity when performing the skills Potion Lore, Elixir, Matter Lore, and Transmutation for 1 hour."
+    ],
+    "Ancestry": [
+      "Ancestry",
+      "18",
+      "0",
+      "1 min.",
+      "Varies",
+      "Allows either the hymnist or 1 listener who follows the hymnist`s deity to summon a spirit of a deceased ancestor. The summoner can either allow the ancestor`s spirit to occupy their body and speak through it for a period of 1 minute per Practitioner Title, or they can simply mentally converse with the spirit for the same period. There are no guarantees that the spirit will speak or give the correct answers, but the spirit will not try to forcefully inhabit the body. The spirit can remain in the body no longer than 5 minutes per Practitioner Title."
+    ],
+    "Animalism": [
+      "Animalism",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Allows the hymnist and all listeners who follow the hymnist`s deity to assume the shape of any type of animal for up to 1 hour per Practitioner Title and return to their natural form when desired."
+    ],
+    "Apathy": [
+      "Apathy",
+      "18",
+      "0",
+      "15 sec.",
+      "Varies",
+      "Causes the hymnist and 1 listener per Practitioner Title to make a Control Resistance at -2% per Practitioner Title or feel indifferent toward one specific being, location, object, or idea stated in the hymn, negating all negative or positive feelings and canceling any preconceived plans to act accordingly. This feeling of indifference, in effect turning the listener`s alignment to True Neutral in regards to the target, lasts for 30 minutes per Practitioner Title."
+    ],
+    "Arborism": [
+      "Arborism",
+      "20",
+      "-10",
+      "10 sec.",
+      "Varies",
+      "Allows the hymnist and all listeners who follow the hymnist`s deity to communicate with up to 1 particular tree per Practitioner Title, which become aware of what has happened to and around them, with an intellect with mental attributes rating roughly equal to the hymnist. One of those trees also temporarily gains independent sapience and mobility, gaining the skill Life Sense, a magical voice, and a keen sense of hearing through vibrations. This tree has dim and clouded memories of its previous life as a non-sapient plant. See the skill Awaken Plant for more specific tree characteristics. All of these effects last for 5 minutes per Practitioner Title."
+    ],
+    "Aridity(Damage Elemental)": [
+      "Aridity(Damage Elemental)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Inflicts 1d4 per 2 Practitioner Titles to Water Elementals to a single random location every 10 seconds unless a Magic Resistance is made. If the elemental has been summoned from another plane, there is a 1% chance per Practitioner Title of banishing the creature to its home plane."
+    ],
+    "Aridity(Dry Air)": [
+      "Aridity(Dry Air)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Decreases humidity and increases aridity in the air by 10% per Practitioner Title in an area around the hymnist with a radius of no larger than 10` per Practitioner Title."
+    ],
+    "Aridity(Dry Skin)": [
+      "Aridity(Dry Skin)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Causes all moisture (including sweat) to be removed from a single random location on the epidermal layer of all beings within a radius of 10` per Practitioner Title, resulting in dried skin."
+    ],
+    "Aridity(Evaporate)": [
+      "Aridity(Evaporate)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Causes up to 1 gallon per Practitioner Title of non-magical water or water-based liquid to rapidly evaporate. For waterbased liquids, all water is evaporated, leaving a dry residue powder consisting of the ingredients."
+    ],
+    "Benevolence": [
+      "Benevolence",
+      "18",
+      "0",
+      "1 min.",
+      "Instant",
+      "Causes the hymnist and all listeners to make a Control Resistance at -2% per Practitioner Title or feel a strong sense of generosity (regardless of their alignment), resulting in a Will Force save at -5% per 2 Practitioner Titles to avoid sharing something of value with someone else that as of yet has been solely in possession of the listener`s. For example, this hymn would cause a rogue to equally share with their cohorts or friends any coins they found while alone or undetected, whereas normally they would most likely keep their find a secret and horde it for herself. This feeling of benevolence lasts only until the listener has performed a single act of generosity, after which all normal urges return."
+    ],
+    "Call Deva": [
+      "Call Deva",
+      "23",
+      "-25",
+      "10 min.",
+      "10 min.",
+      "Summons or dismisses a Neutral-aligned supernatural servant by name (the hymnist must know the true name of the servant to summon or dismiss), either of which cannot be resisted by the servant. When summoning, control is automatically granted to the hymnist if the deity wishes it, unless the supernatural servant is immune to control. When dismissing, the servant must remain within earshot of the hymnist during the entire 10 minutes of the hymn."
+    ],
+    "Clairvoyance": [
+      "Clairvoyance",
+      "20",
+      "-10",
+      "5 sec.",
+      "Varies",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity the ability to read images from or project images into the minds of each other, whether they are awake, unconscious, or in a meditative state. Images can be read or projected for 1 minute per Practitioner Title of the hymnist. Those protected by spells or powers like Mind Set are immune to the effects of this hymn. This hymn does not allow for listeners to initiate mental combat."
+    ],
+    "Cognition": [
+      "Cognition",
+      "20",
+      "-10",
+      "15 sec.",
+      "Varies",
+      "Grants temporary sapience to one non-magical plant or slime, or an area of stone, sand, earth, or water (no larger than 10 cubic feet per Practitioner Title) touched by the hymnist, causing it to become temporarily and dimly aware and allowing it to remember all that has transpired around it in its lifetime as feelings and impressions. Since these targets have no sight, they cannot give visual images. The target cannot speak but communicates through thoughts and impressions to the hymnist. Lasts 10 minutes per Practitioner Title."
+    ],
+    "Conjuration": [
+      "Conjuration",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Conjures one neutral-aligned elemental (fire, water, etc.), which is automatically under control of the hymnist. The elemental`s type is determined by the hymnist`s deity and must emerge from a source of its composition (for instance, a Fire Elemental could appear from a campfire, a Water Elemental from a puddle, etc.). Each elemental remains for 10 minutes per Practitioner Title, after which it dissipates and returns to its home plane. The elemental summoned is the same as the similar invocation type (Summon Water Elemental, etc.) and is considered to be at 2 Piety Control per Practitioner Title."
+    ],
+    "Cryomancy": [
+      "Cryomancy",
+      "19",
+      "-5",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to the hymnist and all listeners to the following for 1 hour: Skills: Cryokinesis, Crystal Lore (when involving ice). Candle Lore rituals: Endure Cold. Ritual Lore rituals: Snow Storm, Weather (when involving snow, sleet, or cold temperatures). Poems: Frostbite, Snowdrift, Snowwalk, Weather (when involving snow, sleet, or cold temperatures). Songs: Snowmelt, Snowsight, Undead Chill Protection. Ballads: Avalanche, Icemelt. Runes: Freezing, Iceblend, Inner Chill, Inner Warmth."
+    ],
+    "Decay": [
+      "Decay",
+      "19",
+      "-5",
+      "5 sec.",
+      "Hymn Ends",
+      "Causes 1 named body area on all listeners who do not follow the hymnist`s deity to slowly decay as if the body area were dead, requiring a successful Magic Resistance or suffering the loss 1d4 damage per Practitioner Title per 10 seconds."
+    ],
+    "Decomposition": [
+      "Decomposition",
+      "22",
+      "20",
+      "5 sec.",
+      "Hymn Ends",
+      "Causes 1d4 body areas (chosen by the deity) on all listeners who do not follow the hymnist`s deity to quickly decompose as if the body areas were dead, requiring a successful Magic Resistance or suffering 2d6 damage per Practitioner Title per 10 seconds."
+    ],
+    "Deterioration": [
+      "Deterioration",
+      "20",
+      "-10",
+      "5 sec.",
+      "Hymn Ends",
+      "Causes 1 non-living object touched by the hymnist to deteriorate as if quickly moving forward through time, resulting in a loss of 1d6 Object Strength per 10 seconds. Magical and divine magical items are afforded a Magic Resistance, but artifacts and living beings are immune to the effects of this hymn."
+    ],
+    "Diminishment": [
+      "Diminishment",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes either one being, animal, plant, or object to decrease in size by 5% per Practitioner Title, with a minimum size of 1%. Unwilling targets are afforded a Control Resistance at -2% per Practitioner Title, and magical and divine magical items are afforded a Magic Resistance. The target`s size remains diminished for 5 minutes per Practitioner Title, after which it reverts back."
+    ],
+    "Druidism": [
+      "Druidism",
+      "20",
+      "-10",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to 1 listener who follows the hymnist`s deity to the following for 1 hour: Skills: Animal Lore, Animal Shape, Area Sense, Awaken Forest, Awaken Plant, Botanist, Climatology, Control Growth, Evoke, Falconry, Foraging/Forestry, Gaea Lore, Haunted Grove, Herb Lore, Florist/Horticulturist, Nature`s Ground, Nature Lore, Plant Shape, Reincarnation, Sacred Grove, Speak to Animal, Speak to Plant, Summon Animal, Tame Animal, Totem Call, Weather Lore, Wood Lore. Candle Lore rituals: Bind Animal Familiar, Divining Rod, Locate Animal, Sense Animal. Ritual Lore rituals: Bind Magical Animal Familiar, Impervious Forest, Locate Magical Animal, Sense Magical Animal, Guide Wind, Weather, Wedding. Poems: Boughbreak, Compass, Water Finding, Weather. Songs: Animal Entrancement, Electricity, Tranquility, Tree Parting, Weave Plants. Ballads: Awaken, Greater Animal Entrancement, Greater Tranquility, Oasis, Plant Entrancement, Rotting Wood. Runes: Evocation, Natural Sunlight, Strengthen Wood, Wandering."
+    ],
+    "Earth": [
+      "Earth",
+      "25",
+      "-35",
+      "10 sec.",
+      "Hymn Ends",
+      "Causes the earth to tremble and shake, damaging buildings and causing fear and uncertainty to those unfamiliar with its effects, in an area up to 1 mile away per Practitioner Title within sight of the hymnist. The size of the area affected is determined by the hymnist`s deity. The first 40 seconds of the earthquake has no measurable effect as the power of the earthquake builds. After the initial buildup, the effects are as follows: Epicenter: structures suffer 10d8 structural damage per 10 seconds of the quake. All non-flying individuals will be thrown to the ground. A 1% chance per Practitioner Title exists that the ground breaks open beneath any enemies who will suffer 10d6 crushing damage per 10 seconds after falling in. After 1 minute of falling into an earthquake fissure, beings will begin to suffocate. Morale checks are required at -50% or GM characters flee in random directions. half mile per Practitioner Title from the epicenter: structures take 8d6 structural damage per 10 seconds of the quake. All individuals must make an Agility save once per 10 seconds or be thrown to the ground. Morale checks are required or GMCs flee in random directions. 1 mile per Practitioner Title from the epicenter: structures take 4d6 structural damage per 10 seconds of the quake. 10 miles per Practitioner Title from the epicenter: tremors from the quake can be felt. 100 miles per Practitioner Title from the epicenter: beings with Depth Knowledge can feel the rumblings of the quake and can determine the approximate direction to the epicenter. Buildings constructed to withstand earthquakes, as well as reinforced buildings of high-quality manufacture, suffer only half damage from the earthquake."
+    ],
+    "Elementalism": [
+      "Elementalism",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Allows the hymnist or 1 listener who follows the hymnist`s deity to transform into a neutral-aligned elemental for 1 minute per Practitioner Title. The type of element into which the being transforms is as if they have cast the corresponding invocation (Elemental Water Form, etc.) at 2 Piety Control per Practitioner Title. The necessary element must be within 1` per Practitioner Title; for instance, if the hymnist wishes to transform into a Water Elemental, they must be within range of water (a puddle, filled water skin, lake, etc.). This hymn does not allow for transforming into life or death elementals."
+    ],
+    "Evocation": [
+      "Evocation",
+      "25",
+      "-35",
+      "1 min.",
+      "Hymn Ends",
+      "Grants the ability to evoke the power of an animal to the hymnist and 1 listener per Practitioner Title who follows the hymnist`s deity. The deity chooses which animal`s characteristic will be evoked for each affected listener, unless that listener already has a totem animal. This transformation, visible or not, takes place after 1 minute and lasts for as long as the hymnist sings. Once the hymn ends, all evocation fades. Only one ability may be evoked during each singing session. Anyone who does not wish to evoke is afforded a Control Resistance at -2% per Practitioner Title."
+    ],
+    "Fertilization": [
+      "Fertilization",
+      "21",
+      "-15",
+      "10 min.",
+      "Varies",
+      "Causes a large area (25` radius per Practitioner Title) to become imbued with positive life energy, providing a tranquil feeling which draws all manner of living things to it. For each hour within the area affected by this hymn, waking beings are healed at their healing rate as if one day has passed, sleeping beings are healed as if one week had passed, disease and poison effects and duration are halved, one Control Resistance may be attempted to initiate combat per 10 seconds (those being attacked do not need to make this resistance to defend), and fertilization chance from sexual intercourse is increased by 5% per 2 Practitioner Titles. These effects last for 4d6 hours after the hymn has ended."
+    ],
+    "Geomancy": [
+      "Geomancy",
+      "19",
+      "-5",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to the hymnist and all listeners to the following for 1 hour: Skills: Call of Earth, Caustokinesis, Excavation, Flint Knapping, Gemology, Geology, Geography, Gravikinesis, Magnetokinesis, Metal Lore, Metal Working, Metallurgy, Mining/Tunneling, Speak to Stone, Stone Lore, Summon Supernatural (when targeting an Earth Elemental). Candle Lore rituals: Endure Acid, Sense Elemental (when sensing Earth Elementals). Ritual Lore rituals: Grave, Resonate Stone. Poems: Shifting Sands. Songs: Burrowing. Ballads: Rockfall, Stonespeak. Runes: Collapse, Sandblend, Stoneblend, Warding vs. Earth Elementals."
+    ],
+    "Gnosticism": [
+      "Gnosticism",
+      "20",
+      "-10",
+      "10 sec.",
+      "1 hour",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity a +5% bonus per 2 Practitioner Titles to Control Resistances against Evil-aligned supernatural beings (excluding undead), a +1 Knowledge per 2 Practitioner Titles (not to exceed racial maximum), a +2% per Practitioner Title to Commune, and immunity to Fear, Heat, Cold, Disease, Poison, and Death-based magic. All of these effects last for 1 hour."
+    ],
+    "Growth": [
+      "Growth",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes either one being, animal, plant, or object to increase in size by 5% per Practitioner Title. Unwilling targets are afforded a Control Resistance at -2% per Practitioner Title, and magical and divine magical items are afforded a Magic Resistance. The target`s size remains increased for 5 minutes per Practitioner Title, after which it reverts back."
+    ],
+    "Humidity(Create Water)": [
+      "Humidity(Create Water)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Create up to 1 gallon per Practitioner Title of non-magical water or water-based liquid in a container or area."
+    ],
+    "Humidity(Heal Elemental)": [
+      "Humidity(Heal Elemental)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Heals 1d4 per 2 Practitioner Titles to Water Elementals to a single damaged location."
+    ],
+    "Humidity(Hydromancy)": [
+      "Humidity(Hydromancy)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Grants a +5% per Practitioner Title bonus to the hymnist and all listeners to the following for 1 hour: Skills: Call of Water, Hydrology, Oceanography, Summon Supernatural (when targeting a Water Elemental), Water Lore. Candle Lore rituals: Calm Sea, Divining Rod, Sense Elemental (when sensing Water Elementals). Ritual Lore rituals: Rain Dance, Snowmelt, Weather (when involving rain, fog, and humidity). Poems: Water Finding, Weather (when involving rain, fog, and humidity). Songs: Calm Waves, Crashing Waves, Snowmelt, Waterspeak. Ballads: Icemelt, Waterwalk. Runes: Freezing, Melting, Warding vs. Water Elementals, Waterblend, Wavebreaker."
+    ],
+    "Humidity(Wet Air)": [
+      "Humidity(Wet Air)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Increases humidity and decrease aridity in the air by 10% per Practitioner Title in an area around the hymnist with a radius of no larger than 10` per Practitioner Title."
+    ],
+    "Humidity(Wet Skin)": [
+      "Humidity(Wet Skin)",
+      "16",
+      "10",
+      "10 sec.",
+      "Varies",
+      "Causes the epidermal layer of all beings within a radius of 10` per Practitioner Title to be instantly moisturized."
+    ],
+    "Immaterialism": [
+      "Immaterialism",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes an area or object within a 5` radius per Practitioner Title and no larger in size than 3 cubic feet per Practitioner Title to seem to disappear as if it did not exist. This is only an illusion, however, and may be countered with an Illusion Resistance. This hymn causes objects to remain unseen for 1 minute per Practitioner Title. Movement of the affected object or area (i.e. leaves of a tree rustling in the breeze) immediately breaks this effect."
+    ],
+    "Mediocrity": [
+      "Mediocrity",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or drift toward a Passive Neutral alignment, viewing things in `convenient` terms and avoiding confrontation and any actions that would be considered either purely good or purely evil. If confronted with combat, all affected listeners will attempt to flee or otherwise secure themselves. No Good or Evil-aligned spells, invocations, or skills may be performed (such as the invocations Aggression or Heal, the spell Call Undead, or the skills Bless and Blasphemy). These effects last for 1 hour."
+    ],
+    "Mysticism": [
+      "Mysticism",
+      "21",
+      "-15",
+      "1 min.",
+      "1 hour",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity the ability to detect all supernatural beings and sources of divinity, visible or invisible, within 10` per Practitioner Title, as well as a +2% per Practitioner Title to Commune chance for 1 hour."
+    ],
+    "Naturism": [
+      "Naturism",
+      "23",
+      "-25",
+      "1 min.",
+      "Varies",
+      "Allows the hymnist and  all listeners who follow the hymnist`s deity to communicate through mental images with the nature around them, including trees and plants, animals, water, earth, stone, and air, by entering a meditative and primal, bestial state. Affected listeners also gain the ability to understand nature`s forces, its ecosystems, weather patterns, migrations, eruptions, etc. While in effect, all mental and social attributes of each listener are reduced to 4, and listeners are incapable of reacting to speech and body language of non-animal or plant living beings, excluding each other. By entering this primal state, each listener can communicate with nature through touch (in the case of the physical elements, such as stone and wood), mind (in the case of mentally contacting animals), and breathing (in the case of air). After 1 minute per Practitioner Title, each listener rises from this primal state and attributes are returned to normal, but they retain all memory of feelings, actions, and imagery which occurred while under the effects of the hymn."
+    ],
+    "Neutralization": [
+      "Neutralization",
+      "17",
+      "5",
+      "10 sec.",
+      "Instant",
+      "Permanently neutralizes any acid or base substance and removes all beneficial or ill effects from intoxicants, non-magical herbs, and alcohol. When targeting an acid or base substance, both salt and ionizing materials are extracted. All targeted substances must be within the hymnist`s aura field while the hymn is being sung, meaning they must either be in direct contact with the substance or with a container holding the substance."
+    ],
+    "Preservation": [
+      "Preservation",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Prohibits the hymnist and all listeners who follow the hymnist`s deity from being magically healed or wounded through use of skills, spells, invocations, or herbs, as well as any magical regeneration or degeneration of limbs, for a total of 1d4 minutes per Practitioner Title. Effects that cause damage by introducing a magical energy (Finger of Fire, Storm of Daggers, etc.) still work normally."
+    ],
+    "Pyromancy": [
+      "Pyromancy",
+      "19",
+      "-5",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to the hymnist and all listeners to the following for 1 hour: Skills: Call of Flame, Fire Making, Pyrotechnics, Pyrokinesis, Summon Supernatural (when targeting a Fire Elemental). Candle Lore rituals: Brimstone, Endure Fire, Sense Elemental (when sensing Fire Elementals), Smokescreen. Ritual Lore rituals: Weather (when involving hot temperatures or aridity). Poems: Fire, Undead Fire Protection, Warmth, Weather (when involving hot temperatures or aridity). Songs: Fire, Firewalk, Snowmelt, Warding vs. Fire Elementals. Ballads: Awaken Volcano, Firescreen, Firesight, Icemelt. Runes: Boiling, Fireblend, Flame, Inner Chill, Inner Warmth, Melting, Sputter, Warding vs. Fire Elemental."
+    ],
+    "Recompense": [
+      "Recompense",
+      "20",
+      "-10",
+      "5 sec.",
+      "Until Complete",
+      "Causes any future damage inflicted (whether magical, divine magical, or mundane) on the hymnist and all listeners who follow the hymnist`s deity to be also inflicted on the being or item which causes that damage, no matter where the inflictor is (even if on another plane). The targeted being is allowed a Magic Resistance to avoid each effect. All reciprocal damage is applied one second after the initial damage and must be the exact amount. Each listener is afforded recompense in this way for up to 1 act of receiving damage per Practitioner Title. Since this reciprocal damage is divine in nature, it occurs directly to the object or being, surpassing all hide, physical armor, and spiritual/force armor. Damage includes any and all physical effects, diseases, and insanity. Only ill effects inflicted 5 seconds after this hymn begins are recompensed in this way, not any previous damage."
+    ],
+    "Reincarnation": [
+      "Reincarnation",
+      "21",
+      "-15",
+      "10 min.",
+      "Instant",
+      "Redirects the soul of an individual who followed the hymnist`s deity while alive into the body of another being at the time of its birth. The deity chooses the vessel in which to place the redirected soul, and the hymnist has no say in the matter. The new body will have just been born or have animal intelligence and must be within 5 miles per Practitioner Title of the hymnist. Also, the re-incarnate loses one Will Force point permanently at the time of its birth."
+    ],
+    "Rejuvenation": [
+      "Rejuvenation",
+      "18",
+      "0",
+      "2 min.",
+      "Instant",
+      "Counteracts unnatural aging effects of either the hymnist, one listener who follows the hymnist`s deity, one animal, or one plant, restoring any lost characteristics brought on by the aging effects. While the reverseaging effects of Rejuvenation still occur on the body of the deceased, this hymn will not restore the life of the deceased. This hymn has no effect on natural aging effects and does not restore permanently lost Will Force rating points."
+    ],
+    "Savagery": [
+      "Savagery",
+      "17",
+      "5",
+      "5 sec.",
+      "Instant",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or go berserk, as the skill Berserk."
+    ],
+    "Seasons": [
+      "Seasons",
+      "24",
+      "-30",
+      "10 min.",
+      "Varies",
+      "Causes the area around the hymnist with a radius of 100 square feet per Practitioner Title to quickly change over to the opposite season, resulting in a change of temperature, vegetation, amount of sunlight, and current population of wildlife. For example, the Hymn of Seasons would transform a forested area in winter to that of summer, therefore causing vegetation to sprout its mature foliage, any hibernating animals to awaken, flowers to bloom, and the sun to appear higher in the sky (if a planetary axial tilt exists in the setting). This seasonal change lasts for 1 hour per Practitioner Title, after which the area reverts back to its previous state over the next 1 hour (flowers die, animals go back to sleep, etc.)."
+    ],
+    "Spirit": [
+      "Spirit",
+      "20",
+      "-10",
+      "1 min.",
+      "Varies",
+      "Allows the hymnist and all listeners who follow the hymnist`s deity to fall into a meditative state and communicate with any bodiless spirits within a radius of 50` per Practitioner Title. Knowledge of the spirits` true names is not required, since this hymn does not allow for the calling of specific spirits. The effected listeners remain in this state, able to communicate with spirits, for 1 minute per Practitioner Title."
+    ],
+    "Twilight": [
+      "Twilight",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Creates a sphere with a radius of 10` per Practitioner Title, up to 2` per Practitioner Title away from the hymnist, where both light and darkness are suppressed, resulting in a shadowy, gray area devoid of bright light or deep darkness. Neither the living nor the dead receive any bonuses or penalties within the affected area. The sphere is centered on a fixed location when created and cannot be moved, and it lasts for 10 minutes per Practitioner Title. The hymns of Noontide and Midnight will override the Hymn of Twilight if the latter hymnist makes Hymn Lore roll by more than the previous hymnist."
+    ],
+    "Volcanism": [
+      "Volcanism",
+      "30",
+      "-60",
+      "10 min.",
+      "Instant",
+      "Causes one active volcano within sight to suddenly erupt, spitting hot gases, smoke, and lava into the air and into the vicinity of the volcano. See Volcanic Eruptions in Legends of the Unknown. This will only occur if the hymnist`s deity wishes for the volcano to erupt (at the GM`s discretion). The lethality and duration of the eruption are determined by conditions of the existing volcano."
+    ],
+    "Winds": [
+      "Winds",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Creates a steady gust of wind moving 5 miles per hour per Practitioner Title which blows throughout an area with a 10` radius per Practitioner Title from the hymnist, causing objects to be tossed about. When this wind is felt upon bare skin and breathed in deeply, the hymnist and all listeners who follow the hymnist`s deity are granted the skills Balance, Listen, Meditate, and Smell at 10% per Practitioner Title, lasting for as long as the listener remains within the wind. The wind lasts for 5 minutes per Practitioner Title. Furthermore, all affected listeners have a 1% chance per Practitioner Title of being soothed and cured of insanity, as per the skills, as soon as they feel the wind."
+    ],
+    "Witchcraft": [
+      "Witchcraft",
+      "20",
+      "-10",
+      "1 min.",
+      "Varies",
+      "Grants the hymnist and all listeners who follow the hymnist`s deity a +5% bonus per Practitioner Titles to the skills Candle Lore, Curse, Detect Curse, Empathy Magic, Herb Lore, Potion Lore, Ritual Lore, Speak to Dead, and Sympathy Magic for 1 hour per Practitioner title."
+    ],
+    "Abomination": [
+      "Abomination",
+      "24",
+      "-30",
+      "5 min.",
+      "Instant",
+      "Creates either 3 lesser undead or 1 greater undead per 2 Practitioner Titles from the corpses of those who, while living, followed the hymnist`s deity, by infusing those corpses the hymnist touches with negative life force. The type of undead is based upon the corpse and the conditions of its death (see Epitaph of the Fallen)."
+    ],
+    "Animosity": [
+      "Animosity",
+      "20",
+      "-10",
+      "10 sec.",
+      "10 min.",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or suddenly take hostile action against each other, including derogatory words and offensive attacks. This hymn does not affect thoughts or emotions but rather releases control over each listener`s innermost evil, immoral desires, and hidden, buried dislikes of those around them. Furthermore, those who fall under this hymn`s affect will also attempt to convince those who have not yet taken hostile action to do so. For every 10 seconds the hymn continues, all listeners who have not yet succumbed to animosity must make a new Control Resistance with a cumulative 5% penalty. This hymn cannot last more than 10 minutes total, and once the hymn is over, the temporary aggression instantly and abruptly ends."
+    ],
+    "Betrayal": [
+      "Betrayal",
+      "18",
+      "0",
+      "5 sec.",
+      "Varies",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or betray a particular cause or being, resulting in a -5% per Practitioner Title to Will Force saves when attempting to perform anything which furthers that cause or is requested by that being, and will avoid defending the cause or being at all costs. Furthermore, all affected listeners have -20% to morale whenever within the vicinity of the being or acting for the good of that being or cause. Effects last 1 day per practitioner title."
+    ],
+    "Blasphemy": [
+      "Blasphemy",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Bestows a curse upon all listeners who do not follow the hymnist`s deity, resulting in a penalty of -1 to hit and -5% to all resistance rolls per 3 Practitioner Titles, lasting 1 hour. This curse may be lifted with the skill Remove Curse."
+    ],
+    "Blindness": [
+      "Blindness",
+      "18",
+      "0",
+      "5 sec.",
+      "Varies",
+      "Strikes all listeners who do not follow the hymnist`s deity blind, unless a Control Resistance at -2% per Practitioner Title is made, for 10d6 seconds. Blind beings are -8 to hit with melee weapons, -16 to hit with missile weapons, -4 to damage, -20% to all combat skills, and have no defensive modifier. Furthermore, these listeners are immune to gaze attacks (such as Fear, Brilliance, Entrancement, Illusion of Sight, and those which transform)."
+    ],
+    "Call Infernal": [
+      "Call Infernal",
+      "23",
+      "-25",
+      "10 min.",
+      "10 min.",
+      "Summons or dismisses an Evil-aligned supernatural servant by name (the hymnist must know the true name of the servant to summon or dismiss), either of which cannot be resisted by the servant. When summoning, control is automatically granted to the hymnist if the deity wishes it, unless the supernatural servant is immune to control. When dismissing, the servant must remain within earshot of the hymnist during the entire 10 minutes of the hymn."
+    ],
+    "Concealment": [
+      "Concealment",
+      "18",
+      "0",
+      "5 sec.",
+      "Varies",
+      "Causes all listeners who do not follow the hymnist`s deity to temporarily be unable to sense a particular being or object, either through sight, sound, touch, smell, hearing, or magical and divine magical means, for 1 minute per Practitioner Title. This is only an illusion, and an Illusion Resistance negates the effect. This does not physically remove or displace the target, and the target can still be damaged or affected by outside forces. If the being or object moves more than a couple of inches, the effect is immediately broken."
+    ],
+    "Condemnation": [
+      "Condemnation",
+      "21",
+      "-15",
+      "15 sec.",
+      "Varies",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or grow hostile toward all personal debts or grudges. This creates desires for revenge, resulting in a -20% per Practitioner Title to Will Force rolls to immediately attempt to collect debts and or settle old scores through hostile action. Effects last 1 day per Practitioner title."
+    ],
+    "Contamination": [
+      "Contamination",
+      "15",
+      "15",
+      "10 sec.",
+      "Permanent",
+      "Introduces a named disease or poison to all food and water within 5` per Practitioner Title. The poison can be of a type no greater than 2 levels per Practitioner Title but takes effect immediately (Potency J) upon contact or ingestion, etc. Diseases selected cannot be magical or divine in nature. Normal Poison and Disease Resistances apply."
+    ],
+    "Covetousness": [
+      "Covetousness",
+      "18",
+      "0",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or covet that which belongs to others, whether valuable or not, resulting in the need to make a Will Force save or attempt to steal 1 item which does not belong to them every 2 minutes for the following hour."
+    ],
+    "Damnation": [
+      "Damnation",
+      "28",
+      "-50",
+      "5 sec.",
+      "Instant",
+      "Causes the hymnist`s deity to intervene in an otherwise safe situation and divinely, miraculously inflict a highly dangerous and potentially fatal event in a particular place no larger than 1 mile per Practitioner Title or on a group of beings consisting of no more than 10 individuals per Practitioner Title, in whichever way that deity chooses. The means of damnation is completely at the GM`s discretion. However, if the GM decides that the hymnist`s enemies do not warrant damnation, or that performing this act does not fit into the deity`s predestined plan, nothing happens. This hymn may only be sung once per month, and any further attempts may invoke the anger and wrath of that particular deity, resulting in divine denial."
+    ],
+    "Darkness": [
+      "Darkness",
+      "16",
+      "10",
+      "5 sec.",
+      "Varies",
+      "Causes a divine magical pure black sphere of darkness, with a radius of 1` per Practitioner Title, to appear no further than 5` away per Will Force point. The sphere can be centered on a moveable object or being, or can be fixed in one place. All light, magical or otherwise, is non-visible while the globe is in effect. Lasts 5 minutes per Will Force of the hymnist. Only one globe per Practitioner Title may be active. Fire will still be lit within the magical sphere and will still be hot, just not visible. All forms of vision that operate within the spectrum of light are nonfunctional within the sphere (such as all forms of Night Vision, Ultravision and Infravision). The hymnist`s vision is not affected by the darkness. Beings and magic items targeted get a Piety save to avoid the effects."
+    ],
+    "Deafness": [
+      "Deafness",
+      "18",
+      "0",
+      "5 sec.",
+      "Varies",
+      "Strikes all listeners who do not follow the hymnist`s deity deaf, unless a Control Resistance at -2% per Practitioner Title is made, for 10d6 seconds. Deafened beings are -1 to initiative, +50% to be surprised, and +1 to be struck during combat."
+    ],
+    "Deception": [
+      "Deception",
+      "19",
+      "-5",
+      "10 sec.",
+      "Varies",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or speak only lies and be completely unable to tell the truth in any way for 1d4 minutes. The affected beings can choose to remain silent."
+    ],
+    "Defilement": [
+      "Defilement",
+      "22",
+      "20",
+      "1 min.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title who follows a Good-aligned deity to make a Control Resistance of become morally corrupt for the duration, resulting in cravings for power, money, destruction, and other evil desires. A normally calm and peaceful being would become violent if provoked or kept from fulfilling her desires. 30 minutes per Practitioner Title after the hymn ends, each affected listener reverts back to the previous alignment and loses all memory of events that transpired while corrupted. This hymn has no effect on followers of Neutral-Good deities."
+    ],
+    "Degeneration": [
+      "Degeneration",
+      "21",
+      "-15",
+      "10 sec.",
+      "Instant",
+      "Wounds any one existing body area to exactly -1 Endurance, affecting 1 listener per Practitioner Title who does not follow the hymnist`s deity. Furthermore, up to 1 limb per 4 Practitioner Titles is instantaneously removed at the cost of 1 Will Force per limb, paid by the hymnist. Vital areas cannot be removed in this way. Multiple sub-areas removed (such as several fingers on the same hand) count as one limb."
+    ],
+    "Depravation": [
+      "Depravation",
+      "18",
+      "0",
+      "1 min.",
+      "Varies",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or gain a sudden need for food and water. Those affected must eat a full meal once per hour or begin starving (subtracting 1d4+1 Base Endurance per hour) and drink 8 oz. of liquid every hour or begin dying of dehydration (subtracting 1d6+1 Base Endurance per hour). This depravation lasts for 1 full day per Practitioner Title. If Base Endurance is reduced to 0 or below, the being must make a Vitality save at -5% per point under 0 or fall unconscious and collapse. Anyone whose Base Endurance drops to 0 minus their Vitality rating dies immediately."
+    ],
+    "Enmity": [
+      "Enmity",
+      "16",
+      "10",
+      "5 sec.",
+      "Hymn Ends",
+      "Causes all listeners who follow a Good-aligned deity to make a Control Resistance at -2% per Practitioner Title or feel intense hostility and animosity toward each other, causing them to attack the nearest living being who follows a Good-aligned deity until either dead or not moving. Thereafter, a new resistance is allowed, or the listener must attack the next nearest target. This hymn will continue to affect listeners for as long as the hymnist is singing. Once the hymn ends, affected listeners immediately lose this feeling of enmity but retain all memory of the deeds they committed while under the hymn`s influence."
+    ],
+    "Estrangement": [
+      "Estrangement",
+      "19",
+      "-5",
+      "20 sec.",
+      "Varies",
+      "Causes all listeners who follow one particular deity (either that of the hymnist or another) to lose all sense of bonding with each other and instead be filled with a nervous, uneasy estrangement, losing a total of 2% per Practitioner Title when collectively attempting to Commune with their deity. The affected listeners are also -30% to morale and -5% per 2 Practitioner Titles to all skills performed on each other (such as Cure Poison, Bless, etc.). In cases where the affected listeners of a single religion are bonded in a way other than through a deity, this hymn removes all means of mental and spiritual contact with each other, even overriding magical effects such as Mindlink and Emotion Sense. These effects last for 1 hour per Practitioner Title."
+    ],
+    "Exoneration": [
+      "Exoneration",
+      "20",
+      "-10",
+      "10 sec.",
+      "Instant",
+      "Causes all non-magical and non-divine locks and bindings (including rope, cuffs, etc.) to open within 1` per Practitioner Title of the hymnist and all listeners who follow the hymnist`s deity who are currently being held or imprisoned justly for committing a crime or evil deed."
+    ],
+    "Frailty": [
+      "Frailty",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Lowers the Strength rating by 1 per 2 Practitioner Titles (cannot be lowered below 5) of all listeners who do not follow the hymnist`s deity if they fail a Magic Resistance. Strength points lost in this manner return at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Greed": [
+      "Greed",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners to be filled with an overwhelming sense of greed unless a Control Resistance at -2% per Practitioner Title is made, resulting in a desire to steal, ask for, keep, or otherwise obtain items of any value at all. This feeling ends after 1 hour."
+    ],
+    "Hatred": [
+      "Hatred",
+      "16",
+      "10",
+      "5 sec.",
+      "1 hour",
+      "Causes the hymnist (if willing) and all listeners to make a Control Resistance at -2% per Practitioner Title or hate the hymn`s subject (being, location, object, or idea) with all their hearts. Affected listeners must go berserk whenever in the presence of the subject and will go to any length to utterly destroy that subject. These feelings of hatred fade after 1 hour."
+    ],
+    "Idiocy": [
+      "Idiocy",
+      "18",
+      "0",
+      "15 sec.",
+      "Fades",
+      "Lowers the Intelligence rating by 1 per 2 Practitioner Titles (cannot be lowered below 5) of all listeners who do not follow the hymnist`s deity if they fail a Magic Resistance. Intelligence points lost in this manner return at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Infirmity": [
+      "Infirmity",
+      "22",
+      "20",
+      "5 min.",
+      "1 hour",
+      "Inflicts a -5% per Practitioner Title penalty to Poison and Disease Resistances for 1 hour and inflicts one particular named terminal disease to all listeners who do not follow the hymnist`s deity, unless the target makes their normal Disease Resistance at -2% per Practitioner Title. This terminal disease may be either mundane, magical, or divine magical in nature."
+    ],
+    "Indulgence": [
+      "Indulgence",
+      "16",
+      "10",
+      "15 sec.",
+      "1 hour",
+      "Causes 1 listener who follows the hymnist`s deity and all listeners who follow a Neutral-Good or Good-aligned deity to make a Control Resistance or indulge in all actions, beings, and places considered immoral or evil in any way for 1 hour. Indulging in such activities includes drinking solely to get drunk, participating in less than seemly activities, overeating, etc."
+    ],
+    "Ineptness": [
+      "Ineptness",
+      "18",
+      "0",
+      "15 sec.",
+      "1 hour",
+      "Lowers the Wisdom rating by 1 per 2 Practitioner Titles (cannot be lowered below 5) of all listeners who do not follow the hymnist`s deity if they fail a Magic Resistance. Wisdom points lost in this manner return at a rate of 1 per 10 minutes, beginning 30 minutes after the hymn ends."
+    ],
+    "Infliction": [
+      "Infliction",
+      "20",
+      "-10",
+      "1 min.",
+      "Instant",
+      "Inflicts one particular mild disease to all listeners who do not follow the hymnist`s deity, unless a Disease Resistance is made. This disease may be either mundane, magical, or divine magical in nature."
+    ],
+    "Insolence": [
+      "Insolence",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners who follow a Neutral or Good-aligned deity to make a Control Resistance at -2% per Practitioner Title or become rude and insolent in deed and speech for 1 hour. This would cause affected listeners to slander their friends, refuse to help someone in need, use foul language, become drunk at an inappropriate time, etc."
+    ],
+    "Instillation": [
+      "Instillation",
+      "16",
+      "10",
+      "5 sec.",
+      "Instant",
+      "Instills in all listeners who do not follow the hymnist`s deity with Type VI, Potency Q Poison, which gradually inflicts 1d4 damage to overall Endurance per hour for a total of 2d4 hours, unless a Poison Resistance is made."
+    ],
+    "Insubordination": [
+      "Insubordination",
+      "22",
+      "20",
+      "10 sec.",
+      "Varies",
+      "Releases all listeners who follow the hymnist`s deity from all possession and other effects of control for a temporary span of 1d4 minutes. After the duration, the listeners must make another Control Resistance or fall under the effects of their previous possession or control."
+    ],
+    "Isolation": [
+      "Isolation",
+      "21",
+      "-15",
+      "20 sec.",
+      "Varies",
+      "Inflicts all listeners who do not follow the hymnist`s deity with a -2% penalty per Practitioner Title to Commune Chance and a -5% penalty per Practitioner Title to the skills Divination and Omen for 10 minutes per Practitioner Title, unless a Control Resistance at -2% per Practitioner Title is made."
+    ],
+    "Jealousy": [
+      "Jealousy",
+      "17",
+      "5",
+      "5 sec.",
+      "1 hour",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or become extremely jealous, resulting in the need for a Will Force save to avoid attempting the skill Steal each time they become aware of someone else owning a valuable item. This includes every time the listener sees someone wearing nice clothes or jewelry, living in a nice house, eating good food, etc., at the GM`s discretion. This urge lasts for 1 hour."
+    ],
+    "Malady": [
+      "Malady",
+      "19",
+      "-5",
+      "10 sec.",
+      "1 hour",
+      "Inflicts a -2% per Practitioner Title penalty to Poison and Disease Resistances for 1 hour, unless a Control Resistance at -2% per Practitioner Title is made."
+    ],
+    "Malevolence": [
+      "Malevolence",
+      "18",
+      "0",
+      "10 sec.",
+      "Varies",
+      "Causes 1 listener per Practitioner Title who does not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or feel a sense of total selfishness and lack of concern for the welfare of others, resulting in a Will Force save at -5% per Practitioner Title to perform any action that would in any way be considered selfless or generous (at the GM`s discretion). For example, this hymn would affect the listener`s attempt at the skills Healing and Exorcism, or force someone to claim a newly found magical item or object of value whether they needed it or not. Furthermore, the listener must make a Will Force save at -5% per Practitioner Title or refuse to defend someone, either in conversation or in combat. This feeling of malevolence lasts for 1 minute per Practitioner Title."
+    ],
+    "Midnight": [
+      "Midnight",
+      "23",
+      "-25",
+      "10 sec.",
+      "Varies",
+      "Creates a sphere of true night, even during the day, covering the area with the darkness of midnight. All beings within the sphere are affected as if it were night. All effects which are dependent upon darkness or nighttime apply, regardless of the actual time. Thus, within the sphere of the Hymn of Midnight, a Lesser Vampire, normally debilitated during daylight hours, would function as normal while inside the sphere. The sphere, which has a radius of 10` per Practitioner Title, is centered on a fixed location (up to 2` per Practitioner Title from the hymnist) when created and cannot be moved, and it lasts for 10 minutes per Practitioner Title. The hymns of Twilight and Noontide will override the Hymn of Midnight if the latter hymnist makes a Hymn Lore roll by more than the previous hymnist."
+    ],
+    "Murder": [
+      "Murder",
+      "20",
+      "-10",
+      "10 sec.",
+      "Varies",
+      "Causes up to 2 listeners per Practitioner Title to make a Control Resistance at -2% per Practitioner Title or feel an intense urge to immediately attack the nearest being, with the intent and focus of murdering them. Once the target being dies, a new resistance must be made to avoid attacking the next nearest being. This urge continues for as long as the hymnist is singing and fades 2d6 seconds after the hymn ends."
+    ],
+    "Necromancy": [
+      "Necromancy",
+      "20",
+      "-10",
+      "1 min.",
+      "1 hour",
+      "Grants a +5% per Practitioner Title bonus to 1 listener who follows a Neutral-Evil or Evil-aligned deity to the following for 1 hour: Control Undead, Flesh Lore. Candle Lore rituals: Coexist with Undead, Death Stench, Protection from Undead, Spirit Bind (when targeted at undead). Ritual Lore rituals: Bind Form, Conceal Dead, Magnify Shadow, Positive Life Vapor. Poems: Darkness, Shadow. Songs: Decay, Death Warrior. Ballads: Deadwalk, Decomposition, Mask of Death. Runes: Binding (when only activated by undead), Corruption, Mark of Death, Natural Darkness, Night."
+    ],
+    "Perversion": [
+      "Perversion",
+      "16",
+      "10",
+      "5 sec.",
+      "1 hour",
+      "Causes the hymnist and all listeners to make a Control Resistance at -2% per Practitioner Title (if unwilling) or be unable to avoid saying or doing anything that would be considered immoral or evil for 1 hour."
+    ],
+    "Possession": [
+      "Possession",
+      "20",
+      "-10",
+      "10 sec.",
+      "Varies",
+      "Causes 1 listener to make a Control Resistance at -2% per Practitioner Title or become possessed by the hymnist for 1 hour per Practitioner Title after the hymn is complete. Once the hymn ends after 10 seconds, the hymnist is in mental contact with the target (if they remain within sight) and may take possession with 5 seconds of simple concentration (with no additional Control Resistance afforded). While in possession, the hymnist has complete control of the target, whose will is totally subverted. The hymnist`s own body will stand or sit as it was. If the hymnist`s body takes more than 10 points of damage, then a concentration roll (Intelligence save) is required to avoid having the hymnist`s mind forcibly returned to the hymnist`s body. After 1 hour per Practitioner Title, the possession target is no longer considered controlled."
+    ],
+    "Prejudice": [
+      "Prejudice",
+      "16",
+      "10",
+      "5 sec.",
+      "1 hour",
+      "Temporarily instills Xenophobia (fear of outsiders and beings who are different) in all listeners for 1 hour."
+    ],
+    "Pride": [
+      "Pride",
+      "17",
+      "5",
+      "5 sec.",
+      "1 hour",
+      "Causes all listeners who follow a Good-aligned deity to make a Control Resistance at -2% per Practitioner Title or lose all humility and meekness and instead be filled with a false sense of pride and unseemly boastfulness, resulting in -1 Charm, -1 Piety per 2 Practitioner Titles, and the need to make a Will Force save at -5% per Practitioner Title to perform any action that would be considered humble or submissive (at the GM`s discretion). This would include thanking someone for something or allowing someone else to partake first of food, etc. These effects last for 1 hour."
+    ],
+    "Revulsion": [
+      "Revulsion",
+      "16",
+      "10",
+      "5 sec.",
+      "Varies",
+      "Decreases the Appearance and Charm of all listeners who do not follow the hymnist`s deity by 1 per 2 Practitioner Titles (not to be reduced below 5) while speaking about their own deity or performing a skill in that deity`s name, such as Bless, Convert, Exorcism, Hymn Lore, etc. This effect lasts for 10 minutes per Practitioner Title."
+    ],
+    "Sacrilege": [
+      "Sacrilege",
+      "17",
+      "5",
+      "5 sec.",
+      "Until Complete",
+      "Causes all listeners who do not follow the hymnist`s deity to make a Control Resistance at -2% per Practitioner Title or perform 2d4 actions contrary to the teachings, beliefs, or standards of their own particular deity. This would include cursing in the deity`s name, stealing a divine item imbued by that deity, speaking badly of that deity, murdering, lying, refusing to perform necessary religious rites, etc."
+    ],
+    "Temptation": [
+      "Temptation",
+      "15",
+      "15",
+      "15 sec.",
+      "2 hours",
+      "Lowers the Will Force saves of all listeners by 5% per Practitioner Title when being tempted to take any action that would be considered evil, resulting in possible alignment checks. This temptation lasts for 2 hours after the hymn ends."
+    ],
+    "Territorialism": [
+      "Territorialism",
+      "17",
+      "5",
+      "10 sec.",
+      "1 hour",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or feel an overwhelming urge to protect their territory, whether it be their residence, favorite location, campsite, etc., by attacking any outsiders or visitors (animal, plant, or otherwise) and going to any means necessary to make their territory more physically appealing by repairing, decorating, etc. The listener will also attempt to make known the fact to others that the territory belongs to them, either through writing or other means. This feeling of territorialism lasts for 1 hour."
+    ],
+    "Vanity": [
+      "Vanity",
+      "16",
+      "10",
+      "5 sec.",
+      "1 hour",
+      "Causes all listeners to make a Control Resistance at -2% per Practitioner Title or temporarily become extremely vain and obsessed over their physical appearance. Over the next hour, the affected listeners must go to any extreme to make themselves more physically attractive, no matter the cost. This may result in an increased Appearance rating and/or a decreased Charm rating, or both at the GM`s discretion."
+    ]
+  }
+}

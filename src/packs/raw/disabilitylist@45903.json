@@ -1,0 +1,414 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "disabilitylist",
+    "lines": [
+      45903,
+      45971
+    ]
+  },
+  "entries": {
+    "Armor Fur Chafe": [
+      "Armor Fur Chafe",
+      "",
+      "",
+      "Armor Fur Chafe(chain/scale as 1st layer of armor chafes losing 1 APP per week. -3 APP Max)."
+    ],
+    "Bad Eyes": [
+      "Bad Eyes",
+      "",
+      "",
+      "Bad Eyes(-2 to hit with missile weapons)."
+    ],
+    "Bad Swimmer": [
+      "Bad Swimmer",
+      "",
+      "",
+      "Bad Swimmer(Cannot swim or is such a poor swimmer that the being cannot keep its head above water for more than a few moments)."
+    ],
+    "Cannot Cast Spells": [
+      "Cannot Cast Spells",
+      "",
+      "",
+      "Cannot Cast Spells(No ability to channel or use Aura)."
+    ],
+    "Cannot Swim": [
+      "Cannot Swim",
+      "",
+      "",
+      "Cannot Swim(Has no buoyancy or ability to keep oneself at the surface of water)."
+    ],
+    "Climbing Impaired": [
+      "Climbing Impaired",
+      "",
+      "",
+      "Climbing Impaired(cannot use Climb skill)."
+    ],
+    "Compound Eyes": [
+      "Compound Eyes",
+      -4,
+      "",
+      "Compound Eyes(Poor depth perception, Missile Weapons -4 to Hit)."
+    ],
+    "Construct Spirit": [
+      "Construct Spirit",
+      "",
+      "",
+      "Construct Spirit(Spirit that has difficulty inhabiting a non-fleshed form. The being must enter a state of quiescence; a sleep like period where cannot waken from until the period completes so that the spirit can recharge and allow the being`s mind and body to function normally again. This state lasts half the normal sleep time based on VIT.)"
+    ],
+    "Easily Dehydrated": [
+      "Easily Dehydrated",
+      "",
+      "",
+      "Easily Dehydrated(Outside of a damp environment (swamp or high humidity), requires 2x water. Without it, they lose any healing or regenerative ability and fatigue x2 normal rate.)"
+    ],
+    "Easily Tracked": [
+      "Easily Tracked",
+      "",
+      "",
+      "Easily Tracked(This creature leaves clear markins when it moves over most surfaces/+50% to Track rolls to follow this being)."
+    ],
+    "Fire Sensitivity": [
+      "Fire Sensitivity",
+      -10,
+      1,
+      "Fire Sensitivity(-10% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
+    ],
+    "Forged Form": [
+      "Forged Form",
+      "",
+      "",
+      "Forged Form(Inner iron metallic body with a viscous magical metal fluid flowing throughout to provide energy and increase motion. Outer casing can be of any metal. Requires the digestion of at least 1 oz. of magical metal per month. Any wound which reduces a body area to below 0 END causes a leak of magical metallic blood which cools and hardens outside the body. This reduces Base END by 1d6 per minute until either all blood is lost and the being hardens (dies) or a source of magical fire is applied to the wound for an entire minute (sealing it). Healing does not occur naturally but requires the ingestion of 1 oz. of magical metal for each point to be healed up to the maximum normal healing for that being per day. VIT Healing Rate. Somewhere on their form is a seal. This seal is used to add and remove their metallic blood. If it is found and opened the being can be drained as noted in damage above)."
+    ],
+    "Forged Offspring": [
+      "Forged Offspring",
+      "",
+      "",
+      "Forged Offspring(reproduction occurs by gathering gems, iron and other metals, normal and magical. Then a metal body is cast and forged with many hollow areas for the flow of magical metal. Gems are used in the head in a secret arangement in fittings for the brain. They are also used as eyes. Magical metal is then superheated, mixed and the parent adds some of their own magical metal blood. The chance of the offspring coming to life varies by how much blood is used. WIL is lost from the parent whether the forged offspring comes alive or not. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
+    ],
+    "Frost Sensitivity": [
+      "Frost Sensitivity",
+      -10,
+      1,
+      "Frost Sensitivity(-10% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
+    ],
+    "Frost Weakness": [
+      "Frost Weakness",
+      -20,
+      1,
+      "Frost Weakness(-20% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
+    ],
+    "Frost Magic Weakness(Greater)": [
+      "Frost Magic Weakness(Greater)",
+      -30,
+      "",
+      "Frost Magic Weakness(Greater):(-30% Magic Resist vs cold)."
+    ],
+    "Fire Magic Weakness": [
+      "Fire Magic Weakness",
+      -20,
+      "",
+      "Fire Magic Weakness(-20% Magic Resist vs fire/heat)."
+    ],
+    "Fire Weakness": [
+      "Fire Weakness",
+      -20,
+      1,
+      "Fire Weakness(-20% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
+    ],
+    "Infertile": [
+      "Infertile",
+      "",
+      "",
+      "Infertile(Lacks ability to reproduce)."
+    ],
+    "Insect Leg Loss": [
+      "Insect Leg Loss",
+      -25,
+      "",
+      "Insect Leg Loss(-25% to Agility saves for each pair of legs incapacitated)."
+    ],
+    "Iron Aversion": [
+      "Iron Aversion",
+      "",
+      "",
+      "Iron Aversion(Iron/Blessed weapons are +1 per die against this being. Contact with iron causes 1-3 damage per 10 seconds.)"
+    ],
+    "Lesser Weakness(Acid)": [
+      "Lesser Weakness(Acid)",
+      -10,
+      1,
+      "Lesser Weakness(Acid):(+1 damage per die from acid. -10% to Magic Resistances for acid.)"
+    ],
+    "Lesser Weakness(Electricity)": [
+      "Lesser Weakness(Electricity)",
+      -10,
+      1,
+      "Lesser Weakness(Electricity):(+1 damage per die from electricity. -10% to Magic Resistances for electricity.)"
+    ],
+    "Lesser Weakness(Fire)": [
+      "Lesser Weakness(Fire)",
+      -10,
+      1,
+      "Lesser Weakness(Fire):(+1 damage per die from fire/heat. -10% to Magic Resistances for fire/heat.)"
+    ],
+    "Lesser Weakness(Frost)": [
+      "Lesser Weakness(Frost)",
+      -10,
+      1,
+      "Lesser Weakness(Frost):(+1 damage per die from frost/cold. -10% to Magic Resistances for frost/cold.)"
+    ],
+    "Light Sensitivity": [
+      "Light Sensitivity",
+      -3,
+      -2,
+      "Light Sensitivity(Blinded by bright light for 2d6+2 seconds and is -3 to hit and -2 initiative afterwards)."
+    ],
+    "Living Touch Aversion": [
+      "Living Touch Aversion",
+      "",
+      "",
+      "Living Touch Aversion(strong desire to avoid touching other living things because touch causes harm. Requires a WIL save to touch another living thing.)"
+    ],
+    "Loud": [
+      "Loud",
+      -50,
+      -20,
+      "Loud(-50% to surprise. -20% to Surprise Attack)."
+    ],
+    "Loud Flier": [
+      "Loud Flier",
+      -20,
+      "",
+      "Loud Flier(-20% to surprise when attacking from the air)."
+    ],
+    "Mechanical Engine": [
+      "Mechanical Engine",
+      "",
+      "",
+      "Mechanical Engine(Has a Mechanical engine. Must be fed energy through a described mechanism. Power sources are as follows: Clockwork: 10 minutes of winding per day; Steam: 10 gallons of water per day; Combustion: 10 pounds of flammable material per day. If this energy runs out, then the being becomes immobile and unconscious. Outside influence is needed to be restarted. This engine fills the being`s entire torso, and if destroyed, so is the being. Also has the disabilities Infertile, No Healing, No Regeneration, No Resurrection, No Sense of Smell, and No Sense of Taste.)"
+    ],
+    "Near Insanity": [
+      "Near Insanity",
+      -10,
+      "",
+      "Near Insanity(-10% to WIL saves to avoid Insanity)."
+    ],
+    "No Healing": [
+      "No Healing",
+      "",
+      "",
+      "No Healing(Unaffected by healing effects such as invocations, songs, potions, etc., may be repaired with tools and parts)."
+    ],
+    "No Intake": [
+      "No Intake",
+      "",
+      "",
+      "No Intake(Cannot imbibe food or water. Cannot use potions/ingested herbs/elixirs/etc. Those that apply to the body may be used. If they make sense.)"
+    ],
+    "No Locomotive Limbs": [
+      "No Locomotive Limbs",
+      "",
+      "",
+      "No Locomotive Limbs(No normal movement, slither or crawl at 1/4 walk)."
+    ],
+    "No Regeneration": [
+      "No Regeneration",
+      "",
+      "",
+      "No Regeneration(Cannot regenerate)."
+    ],
+    "No Ressurection": [
+      "No Ressurection",
+      "",
+      "",
+      "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
+    ],
+    "No Rigid Armor(Shins)": [
+      "No Rigid Armor(Shins)",
+      "",
+      "",
+      "No Rigid Armor(Shins):(Cannot wear rigid armor in the shins)."
+    ],
+    "No Rigid Armor(Tail)": [
+      "No Rigid Armor(Tail)",
+      "",
+      "",
+      "No Rigid Armor(Tail):(Cannot wear rigid armor in the tail)."
+    ],
+    "No Sense of Smell": [
+      "No Sense of Smell",
+      "",
+      "",
+      "No Sense of Smell(Cannot smell)."
+    ],
+    "No Sense of Taste": [
+      "No Sense of Taste",
+      "",
+      "",
+      "No Sense of Taste(Cannot taste)."
+    ],
+    "Obsessive": [
+      "Obsessive",
+      "",
+      "",
+      "Obsessive(perfection, knowledge, understanding: -10% to INT saves when obsessing about these things)."
+    ],
+    "Oversleeper": [
+      "Oversleeper",
+      "",
+      "",
+      "Oversleeper(+10-30 seconds to awaken time and +1 hour to required sleep)."
+    ],
+    "Plate Ruins Terrain Fur": [
+      "Plate Ruins Terrain Fur",
+      "",
+      "",
+      "Plate Ruins Terrain Fur(Plate causes loss of terrain bonuses unless covered/dulled)."
+    ],
+    "Poor Circulation": [
+      "Poor Circulation",
+      "",
+      "",
+      "Poor Circulation(Cannot be upside-down for more than 1 hour or their brains cease functioning due to lack of oxygen; treat as asphyxiation)."
+    ],
+    "Poor Flexibility": [
+      "Poor Flexibility",
+      "",
+      "",
+      "Poor Flexibility(+1 weapon speed and +1 defensive adjustment)."
+    ],
+    "Quick Temper": [
+      "Quick Temper",
+      10,
+      -10,
+      "Quick Temper(+10% to Berserking skill/-10% to Wisdom saves)."
+    ],
+    "Reduced Jumping": [
+      "Reduced Jumping",
+      -1,
+      -0.5,
+      "Reduced Jumping(-2 feet running, -1 foot standing, -1/2 foot upward leap)."
+    ],
+    "Requires Fairy Weapons": [
+      "Requires Fairy Weapons",
+      "",
+      "",
+      "Requires Fairy Weapons(Uses undersized weapons fitting their size)."
+    ],
+    "Requires Giant Weapons": [
+      "Requires Giant Weapons",
+      "",
+      "",
+      "Requires Giant Weapons(Uses oversized weapons fitting their size)."
+    ],
+    "Salt Water Dependence": [
+      "Salt Water Dependence",
+      "",
+      "",
+      "Salt Water Dependence(Must be submerged in salt water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
+    ],
+    "Scale Armor Chafe": [
+      "Scale Armor Chafe",
+      "",
+      "",
+      "Scale Armor Chafe(wearing chain or plate chafes scales, losing 1 point of hide per day, wearing plate/chain causes fatigue at twice normal rate from overheating)."
+    ],
+    "Sculpted Form": [
+      "Sculpted Form",
+      "",
+      "",
+      "Sculpted Form(Magical granite inner body, molten rock blood flowing throughout to provide energy and increase motion. Outer skin of any stone. Requires the application of a magical fire to skin once per month for one hour. Any wound which reduces a body area to below 0 END, causes a leak of magical molten stone. Leak loses base END by 1d6 per min. A source of magical fire applied to the wound for 1 min seals it. Healing requires magical fire applied to the wound for 1 hour per each point to be healed up to normal healing. VIT healing rate. Somewhere on their form is a seal. This seal is used to add and remove molten blood. If it is found and opened the being can be drained as noted in damage above.)"
+    ],
+    "Sculpted Offspring": [
+      "Sculpted Offspring",
+      "",
+      "",
+      "Sculpted Offspring(Reproduce by gathering normal/magical gems/stone. A granite body is cast and many hollow areas and cavities are drilled into it for flow of molten stone blood. Gems are set within the head cavity in a special arrangement for the brain and then on the surface of the face for the eyes. Magical stone is then melted and the sculpting parent has to mix their own molten blood in. This is poured into the offspring. Some of the parent essence is then transferred into the offspring; it then has a chance to come alive. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
+    ],
+    "Slow Adult Learner": [
+      "Slow Adult Learner",
+      "",
+      "",
+      "Slow Adult Learner(As adult is -20% to learn a new skill, other than starting Social Skills, Racial Skills and Class Skills. Takes x2 as long to learn.)"
+    ],
+    "Slow Breeding": [
+      "Slow Breeding",
+      "",
+      "",
+      "Slow Breeding(Is fertile half as often as similiar beings)."
+    ],
+    "Sunlight Conversion": [
+      "Sunlight Conversion",
+      "",
+      "",
+      "Sunlight Conversion(Bright light blinds for 3-30 sec. Sunlight converts body to stone permanently)."
+    ],
+    "Sunlight Intolerant": [
+      "Sunlight Intolerant",
+      -4,
+      2,
+      "Sunlight Intolerant(Bright light: blinds 3-30 sec. -4 to hit/+2 initiative after. Sunlight causes 1 damage per hour to exposed skin.)"
+    ],
+    "Thin Skinned": [
+      "Thin Skinned",
+      "",
+      "",
+      "Thin Skinned(The being has 1d4 less END than its body size would indicate)."
+    ],
+    "Upper Armor Off-balance": [
+      "Upper Armor Off-balance",
+      "",
+      "",
+      "Upper Armor Off-balance(20+ lb. armor above the waist causes -2 AGL)."
+    ],
+    "Very Low Fertility": [
+      "Very Low Fertility",
+      "",
+      "",
+      "Very Low Fertility(Able to conceive less often than once per year)."
+    ],
+    "Water Avoidance": [
+      "Water Avoidance",
+      "",
+      "",
+      "Water Avoidance(Will Force save required to enter or be upon water)."
+    ],
+    "Water Dependence": [
+      "Water Dependence",
+      "",
+      "",
+      "Water Dependence(Must be submerged in water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
+    ],
+    "Weakness(Acid)": [
+      "Weakness(Acid)",
+      -20,
+      2,
+      "Weakness(Acid):(-20% Magic Resist vs acid. x2 damage from acid.)"
+    ],
+    "Weakness(Electricity)": [
+      "Weakness(Electricity)",
+      -20,
+      2,
+      "Weakness(Electricity):(-20% Magic Resist vs electricity. x2 damage from electricity.)"
+    ],
+    "Weakness(Fire)": [
+      "Weakness(Fire)",
+      -20,
+      2,
+      "Weakness(Fire):(-20% Magic Resist vs fire/heat. x2 damage from fire/heat.)"
+    ],
+    "Weakness(Frost)": [
+      "Weakness(Frost)",
+      -20,
+      2,
+      "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
+    ],
+    "Worsened Fire Weakness": [
+      "Worsened Fire Weakness",
+      -30,
+      3,
+      "Worsened Fire Weakness(Takes x3 damage from fire/heat and is -30% to Magic Resistances involving fire/heat)."
+    ]
+  }
+}

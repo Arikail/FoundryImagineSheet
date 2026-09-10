@@ -1,0 +1,363 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceFeatureBodyHairMixed",
+    "lines": [
+      41997,
+      42115
+    ]
+  },
+  "entries": {
+    "Apocritara": [
+      ""
+    ],
+    "Arachen": [
+      ""
+    ],
+    "Avian(Dark)": [
+      ""
+    ],
+    "Avian(Forest)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red"
+    ],
+    "Avian(Mountain)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red"
+    ],
+    "Ba’Cora": [
+      "Black,Dark Brown,Brown,White,Silver,Tan,Gray"
+    ],
+    "Ba’Cora(Slight Physique)": [
+      "Brown,Gray"
+    ],
+    "Beastman": [
+      ""
+    ],
+    "Brachara": [
+      ""
+    ],
+    "Brok": [
+      ""
+    ],
+    "Brownie": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Centaur": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White,Silvery"
+    ],
+    "Cervara": [
+      ""
+    ],
+    "Changeling": [
+      ""
+    ],
+    "Chetahl": [
+      ""
+    ],
+    "Crystori": [
+      ""
+    ],
+    "Dao": [
+      ""
+    ],
+    "Djinn": [
+      ""
+    ],
+    "Dryad": [
+      ""
+    ],
+    "Dwarf(Civilized)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Dwarf(Dark)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Dwarf(Fire)": [
+      ""
+    ],
+    "Dwarf(Iron)": [
+      ""
+    ],
+    "Dwarf(Mountain)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Dwarf(Stone)": [
+      ""
+    ],
+    "Elf(Dark)": [
+      ""
+    ],
+    "Elf(Desert)": [
+      ""
+    ],
+    "Elf(Dread)": [
+      ""
+    ],
+    "Elf(Gray)": [
+      ""
+    ],
+    "Elf(High)": [
+      ""
+    ],
+    "Elf(Ice)": [
+      ""
+    ],
+    "Elf(Sea)": [
+      ""
+    ],
+    "Elf(Shadow)": [
+      ""
+    ],
+    "Elf(Silver)": [
+      ""
+    ],
+    "Elf(Wild)": [
+      ""
+    ],
+    "Elf(Wood)": [
+      ""
+    ],
+    "Equara": [
+      ""
+    ],
+    "Fairy": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White,Silvery,Green"
+    ],
+    "Fairy(Dark)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White,Silvery,Green"
+    ],
+    "Famorian": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Formless": [
+      ""
+    ],
+    "Gaunt": [
+      ""
+    ],
+    "Geebra": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Giant(Civilized)": [
+      ""
+    ],
+    "Giant(Civilized:Seafaring)": [
+      ""
+    ],
+    "Giant(True)": [
+      ""
+    ],
+    "Gnome": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Goblin(Forest)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Goblin(Mountain)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Goblin(Plains)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Grahl": [
+      "Black,Dark Brown,Brown,Tan,Gray,White,Silver"
+    ],
+    "Gremlin": [
+      "Brown,Black,Gray,Russet"
+    ],
+    "Grethen": [
+      ""
+    ],
+    "Gryphara": [
+      ""
+    ],
+    "Hippotara": [
+      ""
+    ],
+    "Hobgoblin": [
+      "Black,Dark Brown,Brown,Dark Blonde,Red,Olive"
+    ],
+    "Human(Barbaric)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Human(Civilized:City)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Human(Civilized:Port)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Human(Civilized:Town)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Human(Civilized:Village)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Ifrit": [
+      ""
+    ],
+    "Jumara": [
+      ""
+    ],
+    "Katara": [
+      ""
+    ],
+    "Kenku": [
+      ""
+    ],
+    "Kerasara": [
+      ""
+    ],
+    "Lagara": [
+      ""
+    ],
+    "Leprechaun": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Lissara": [
+      ""
+    ],
+    "Lotara": [
+      ""
+    ],
+    "Loxodara": [
+      ""
+    ],
+    "Lutrinara": [
+      ""
+    ],
+    "Maginos": [
+      ""
+    ],
+    "Maginos(Clay)": [
+      ""
+    ],
+    "Maginos(Metal)": [
+      ""
+    ],
+    "Maginos(Stone)": [
+      ""
+    ],
+    "Maginos(Wood)": [
+      ""
+    ],
+    "Marid": [
+      ""
+    ],
+    "Mechanos": [
+      ""
+    ],
+    "Mellivara": [
+      ""
+    ],
+    "Mephyt(Fire)": [
+      ""
+    ],
+    "Mephyt(Ice)": [
+      ""
+    ],
+    "Merfolk": [
+      ""
+    ],
+    "Midfolk(Forest)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Midfolk(River)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Midfolk(Town)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White"
+    ],
+    "Nixie": [
+      ""
+    ],
+    "Nymph": [
+      ""
+    ],
+    "Ogre": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,Olive"
+    ],
+    "Ogre(Magic)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,Olive"
+    ],
+    "Planar": [
+      ""
+    ],
+    "Podling": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,White,Silvery,Green"
+    ],
+    "Ratahl": [
+      "Black,Brown,Mixed,White,Gray"
+    ],
+    "S’rett": [
+      ""
+    ],
+    "Sasquatch/Yeti": [
+      ""
+    ],
+    "Satyr/Fawn": [
+      ""
+    ],
+    "Saurian": [
+      ""
+    ],
+    "Scethen": [
+      ""
+    ],
+    "Se’eth": [
+      ""
+    ],
+    "Sha’Cora": [
+      ""
+    ],
+    "Sporeling": [
+      ""
+    ],
+    "Sura’keth": [
+      ""
+    ],
+    "Sura’rath": [
+      ""
+    ],
+    "Susara": [
+      ""
+    ],
+    "Sylph": [
+      ""
+    ],
+    "Taurian": [
+      "Black,Brown,White,Gray"
+    ],
+    "Testudara": [
+      ""
+    ],
+    "Troll": [
+      ""
+    ],
+    "Troll(Ice)": [
+      ""
+    ],
+    "Troll(Rock)": [
+      "Black,Dark Brown,Brown,Dark Blonde,Blonde,Red,Olive"
+    ],
+    "Ursara": [
+      ""
+    ],
+    "Vulpara": [
+      ""
+    ],
+    "Whalrog": [
+      "Black,Brown,Gray"
+    ],
+    "Wildling": [
+      ""
+    ],
+    "Wolfen": [
+      "Black,Brown,Red,Gray,White"
+    ],
+    "Xar’Xeth": [
+      ""
+    ]
+  }
+}

@@ -1,0 +1,5367 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "weaponcostlist",
+    "lines": [
+      76680,
+      77278
+    ]
+  },
+  "entries": {
+    "Bastard Sword": [
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "18 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Broad Sword": [
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Cestus(Leather)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Cestus(Plate)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Cutlass": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Dagger": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Dagger(Parrying)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Dagger(Throwing)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Falchion": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Gladius": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Great Sword": [
+      "8 gp",
+      "13 gp",
+      "25 gp",
+      "35 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Knife": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Long Sword": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Machete": [
+      "13 sp",
+      "25 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Main Gauche": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Messer": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Rapier": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Sabre": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Scimitar": [
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Scythe": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Short Sword": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Sickle": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Sword(Sickle)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Axe": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Axe Hammer": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "7 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Bardiche": [
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "14 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Battle Axe": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Bullova": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Great Axe": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Halberd": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Hand Axe": [
+      "8 cp",
+      "14 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Poleaxe": [
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Ball and Chain": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Club": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Flail(1-Ball)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Flail(2-Ball)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Flail(3-Ball)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Flail(4-Ball)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Flail(5-Ball)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Gaff": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Hammer": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Hand Hammer": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Lucern Hammer": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Mace": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Mace(Claw)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Mace(Fist)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Mattock": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Maul": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Morning Star": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Pick": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Quarterstaff": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Rod(Metal)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Rod(Wooden)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Spiked Club": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Sword Breaker": [
+      "7 sp",
+      "13 sp",
+      "25 gp",
+      "35 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "War Club": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Warhammer": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Chain(w/Heavy Speartip)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Epee`": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Foil": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Hooked Net": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Javelin": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "10 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Lance": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Mancatcher": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Pike": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Spear": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Spear Sword": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Stake": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Stake Staff": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Trident": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "War Lance": [
+      "5 gp",
+      "8 gp",
+      "15 gp",
+      "25 gp",
+      "35 gp",
+      "70 gp",
+      "105 sp"
+    ],
+    "Whip": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Boken": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Bo Stick": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "10 sp",
+      "15 sp",
+      "3 gp",
+      "45 sp"
+    ],
+    "Cat’s Claws": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Dao Sword": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Guan Dao": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "25 gp",
+      "35 gp",
+      "70 gp",
+      "105 sp"
+    ],
+    "Jian(Tai Chi Sword)": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "14 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Kama": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Katana": [
+      "8 gp",
+      "15 gp",
+      "25 gp",
+      "35 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Naginata": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "14 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Ninja-to": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "No-Dachi": [
+      "9 gp",
+      "18 gp",
+      "35 gp",
+      "45 gp",
+      "55 gp",
+      "110 gp",
+      "165 gp"
+    ],
+    "Nunchaku": [
+      "8 sp",
+      "15 sp",
+      "3 sp",
+      "5 sp",
+      "15 sp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Sai": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "15 sp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Siangkam(Pointed Rod)": [
+      "3 sp",
+      "4 sp",
+      "9 sp",
+      "11 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Spear(Saintie/Parrying)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Staff(Bamboo)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp"
+    ],
+    "Tanto": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "1 pp",
+      "15 gp"
+    ],
+    "Tessen(Metal-framed Fan)": [
+      "2 sp",
+      "35 cp",
+      "7 sp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Tiger's Claws": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Tri-staff": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Tonfa": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Wakizashi": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Whiprod": [
+      "15 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Whiprod(Bamboo)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Whip Sword": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "7 gp",
+      "14 gp",
+      "21 gp"
+    ],
+    "Axe(Obsidian)": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Axe(Stone)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp"
+    ],
+    "Broadsword(Lacquered Wood)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "12 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Club(Stone)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp"
+    ],
+    "Knife(Obsidian)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp"
+    ],
+    "Knife(Stone)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Short Sword(Lacquered Wood)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Sword(Fish Spine)": [
+      "2 sp",
+      "35 cp",
+      "7 sp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Sword(Maquahuilt)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Sword(Tebutje/Sharktooth)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Angel Sword": [
+      "5 gp",
+      "8 gp",
+      "15 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Devil Spike": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Heroic Dagger": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Heroic Short Sword": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Heroic Long Sword": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Heroic Broad Sword": [
+      "6 gp",
+      "12 gp",
+      "14 gp",
+      "24 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Heroic Bastard Sword": [
+      "7 gp",
+      "14 gp",
+      "28 gp",
+      "36 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Heroic Great Sword": [
+      "13 gp",
+      "25 gp",
+      "50 gp",
+      "70 gp",
+      "90 gp",
+      "180 gp",
+      "270 gp"
+    ],
+    "Heroic Mace": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "6 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Heroic Morning Star": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Heroic Axe": [
+      "5 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Heroic Battle Axe": [
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Heroic Great Axe": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Heroic Hammer": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "10 gp",
+      "16 gp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Heroic War Hammer": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Heroic Maul": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Heroic Spear": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Heroic Staff": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Heroic Polearm": [
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Heroic Halberd": [
+      "3 gp",
+      "5 gp",
+      "10 gp",
+      "16 gp",
+      "20 gp",
+      "40 gp",
+      "60 gp"
+    ],
+    "Fairy Knife": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Fairy Dagger": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fairy Short Sword": [
+      "13 cp",
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Fairy Long Sword": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Fairy Broad Sword": [
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Fairy Bastard Sword": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Fairy Great Sword": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Fairy Club": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Fairy Mace": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fairy Morning Star": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Fairy Hand Axe": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fairy Battle Axe": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Fairy Great Axe": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Fairy Hand Hammer": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fairy War Hammer": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Fairy Mattock": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Fairy Spear": [
+      "8 cp",
+      "15 cp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Fairy Staff": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Fairy Polearm": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Fairy Halberd": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "8 gp",
+      "14 gp",
+      "28 gp",
+      "42 gp"
+    ],
+    "Battering Ram": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "12 pp",
+      "15 pp",
+      "30 pp",
+      "45 pp"
+    ],
+    "Giant Small Tree": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Giant Medium Tree": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Giant Large Tree": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Giant Knife": [
+      "13 gp",
+      "25 gp",
+      "5 pp",
+      "7 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp"
+    ],
+    "Giant Dagger": [
+      "2 pp",
+      "4 pp",
+      "8 pp",
+      "9 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Giant Short Sword": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "12 pp",
+      "14 pp",
+      "28 pp",
+      "42 pp"
+    ],
+    "Giant Long Sword": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Giant Broad Sword": [
+      "4 pp",
+      "7 pp",
+      "13 pp",
+      "16 pp",
+      "32 pp",
+      "64 pp",
+      "96 pp"
+    ],
+    "Giant Bastard Sword": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Giant Great Sword": [
+      "45 gp",
+      "9 pp",
+      "18 pp",
+      "20 pp",
+      "40 pp",
+      "80 pp",
+      "120 pp"
+    ],
+    "Giant Mace": [
+      "25 gp",
+      "5 pp",
+      "10 pp",
+      "12 pp",
+      "14 pp",
+      "28 pp",
+      "42 pp"
+    ],
+    "Giant Morning Star": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "15 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Giant Hand Axe": [
+      "2 pp",
+      "4 pp",
+      "8 pp",
+      "9 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Giant Battle Axe": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Giant Great Axe": [
+      "75 gp",
+      "15 pp",
+      "30 pp",
+      "40 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp"
+    ],
+    "Giant Hand Hammer": [
+      "2 pp",
+      "4 pp",
+      "8 pp",
+      "9 pp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Giant War Hammer": [
+      "4 pp",
+      "7 pp",
+      "13 pp",
+      "16 pp",
+      "32 pp",
+      "64 pp",
+      "96 pp"
+    ],
+    "Giant Mattock": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Giant Spear": [
+      "13 gp",
+      "25 gp",
+      "5 pp",
+      "7 pp",
+      "10 pp",
+      "20 pp",
+      "30 pp"
+    ],
+    "Giant Staff": [
+      "3 gp",
+      "5 gp",
+      "1 pp",
+      "2 pp",
+      "3 pp",
+      "6 pp",
+      "9 pp"
+    ],
+    "Giant Polearm": [
+      "9 pp",
+      "18 pp",
+      "35 pp",
+      "45 pp",
+      "65 pp",
+      "130 pp",
+      "195 pp"
+    ],
+    "Giant Halberd": [
+      "10 pp",
+      "20 pp",
+      "40 pp",
+      "50 pp",
+      "70 pp",
+      "140 pp",
+      "210 pp"
+    ],
+    "Titan Sword": [
+      "20 pp",
+      "40 pp",
+      "80 pp",
+      "100 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Titan Great Sword": [
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp"
+    ],
+    "Titan Axe": [
+      "9 pp",
+      "18 pp",
+      "35 pp",
+      "45 pp",
+      "65 pp",
+      "130 pp",
+      "195 pp"
+    ],
+    "Titan Hammer": [
+      "10 pp",
+      "20 pp",
+      "40 pp",
+      "50 pp",
+      "70 pp",
+      "140 pp",
+      "210 pp"
+    ],
+    "Titan Mace": [
+      "8 pp",
+      "15 pp",
+      "30 pp",
+      "40 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp"
+    ],
+    "Titan Spear": [
+      "5 pp",
+      "9 pp",
+      "18 pp",
+      "20 pp",
+      "40 pp",
+      "80 pp",
+      "120 pp"
+    ],
+    "Titan Great Tree": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Caltrops(Calvary)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Caltrops(Footmen)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Cloak(Hooked)": [
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "18 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Cloak(Weighted)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "16 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Garrote": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Bow(Composite)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Bow(Compound)": [
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp",
+      "48 gp",
+      "96 gp",
+      "144 gp"
+    ],
+    "Bow(Great)": [
+      "5 gp",
+      "9 gp",
+      "18 gp",
+      "24 gp",
+      "36 gp",
+      "72 gp",
+      "108 gp"
+    ],
+    "Bow(Horn)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Bow(Long)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Bow(Recurve)": [
+      "38 sp",
+      "75 sp",
+      "15 gp",
+      "20 gp",
+      "25 gp",
+      "50 gp",
+      "75 gp"
+    ],
+    "Bow(Short)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Bow(Welsh)": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "40 gp",
+      "50 gp",
+      "100 gp",
+      "150 gp"
+    ],
+    "Crossbow": [
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "35 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Crossbow(Double)": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Crossbow(Over-Under)": [
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "10 pp",
+      "16 pp",
+      "38 pp",
+      "48 pp"
+    ],
+    "Crossbow(Repeating)": [
+      "175 gp",
+      "35 pp",
+      "70 pp",
+      "100 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Crossbow(Hand)": [
+      "8 gp",
+      "15 gp",
+      "25 gp",
+      "30 gp",
+      "40 gp",
+      "80 gp",
+      "120 gp"
+    ],
+    "Crossbow(Hand/Double)": [
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "10 pp",
+      "16 pp",
+      "32 gp",
+      "48 gp"
+    ],
+    "Crossbow(Hand/Over-Under)": [
+      "8 gp",
+      "15 gp",
+      "3 pp",
+      "5 pp",
+      "6 pp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Crossbow(Hand/Repeating)": [
+      "125 gp",
+      "25 gp",
+      "50 pp",
+      "70 pp",
+      "100 pp",
+      "200 pp",
+      "300 pp"
+    ],
+    "Crossbow(Heavy)": [
+      "15 gp",
+      "30 gp",
+      "60 gp",
+      "80 gp",
+      "12 pp",
+      "24 pp",
+      "36 pp"
+    ],
+    "Crossbow(Heavy/Double)": [
+      "45 gp",
+      "9 pp",
+      "18 pp",
+      "20 pp",
+      "40 pp",
+      "80 pp",
+      "120 pp"
+    ],
+    "Crossbow(Heavy/Over-Under)": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Crossbow(Heavy/Repeating)": [
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp"
+    ],
+    "Sling": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "10 cp",
+      "15 cp",
+      "30 cp",
+      "45 cp"
+    ],
+    "Sling(Wrist)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Chakram(Edged Rings)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Throwing Star": [
+      "5 cp",
+      "1 sp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "At’alta(Javelin Thrower)": [
+      "14 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Blow Gun": [
+      "14 cp",
+      "25 cp",
+      "5 sp",
+      "7 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Bola": [
+      "18 cp",
+      "35 cp",
+      "7 sp",
+      "10 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Boomerang(Metal)": [
+      "25 cp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Boomerang(Wood)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Bow(Primitive)": [
+      "14 cp",
+      "25 cp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Primitive Bow)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Javelin(Wood)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Stick(Throwing)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp"
+    ],
+    "Fairy Composite Bow": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Fairy Great Bow": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "7 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Fairy Long Bow": [
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Fairy Short Bow": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Fairy Hand Crossbow": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp"
+    ],
+    "Fairy Heavy Crossbow": [
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "11 gp",
+      "18 gp",
+      "36 gp",
+      "54 gp"
+    ],
+    "Fairy Crossbow": [
+      "3 gp",
+      "25 sp",
+      "7 gp",
+      "9 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Fairy Sling": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Ballista": [
+      "175 gp",
+      "35 pp",
+      "70 pp",
+      "100 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Ballista(Light)": [
+      "130 gp",
+      "25 pp",
+      "50 pp",
+      "70 pp",
+      "100 pp",
+      "200 pp",
+      "300 pp"
+    ],
+    "Ballista(Heavy)": [
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp"
+    ],
+    "Catapult": [
+      "130 gp",
+      "25 pp",
+      "50 pp",
+      "70 pp",
+      "100 pp",
+      "200 pp",
+      "300 pp"
+    ],
+    "Trebuchet": [
+      "175 gp",
+      "35 pp",
+      "70 pp",
+      "100 pp",
+      "120 pp",
+      "240 pp",
+      "360 pp"
+    ],
+    "Giant Short Bow": [
+      "3 pp",
+      "6 pp",
+      "12 pp",
+      "15 pp ",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Giant Long Bow": [
+      "38 gp",
+      "75 gp",
+      "15 pp",
+      "18 pp",
+      "36 pp",
+      "72 pp",
+      "108 pp"
+    ],
+    "Giant Great Bow": [
+      "45 gp",
+      "9 pp",
+      "18 pp",
+      "20 pp",
+      "30 pp",
+      "60 pp",
+      "90 pp"
+    ],
+    "Titan Bow": [
+      "225 gp",
+      "45 pp",
+      "90 pp",
+      "120 pp",
+      "150 pp",
+      "300 pp",
+      "450 pp"
+    ],
+    "Early Derringer": [
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "150 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp"
+    ],
+    "Single Shot Pistol": [
+      "38 pp",
+      "75 pp",
+      "150 pp ",
+      "200 pp",
+      "250 pp",
+      "500 pp",
+      "750 pp"
+    ],
+    "Blunder Buss": [
+      "50 pp",
+      "100 pp",
+      "200 pp",
+      "250 pp",
+      "300 pp",
+      "600 pp",
+      "900 pp"
+    ],
+    "Long Rifle": [
+      "63 pp",
+      "125 pp",
+      "250 pp",
+      "300 pp",
+      "350 pp",
+      "700 pp",
+      "1050 pp"
+    ],
+    "Cannon(Early)": [
+      "125 pp",
+      "250 pp",
+      "500 gp",
+      "1000 gp",
+      "1500 gp",
+      "3000 pp",
+      "4500 pp"
+    ],
+    "Cannon": [
+      "200 pp",
+      "400 pp",
+      "800 pp",
+      "1600 pp",
+      "3000 pp",
+      "6000 pp",
+      "9000 pp"
+    ],
+    "Cannon(Heavy)": [
+      "250 pp",
+      "500 pp",
+      "1000 pp",
+      "3000 pp",
+      "5000 pp",
+      "10000 pp",
+      "15000 pp"
+    ],
+    "Arrow(Composite Bow/Far Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Composite Bow/Heavy)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Composite Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Composite Bow/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Arrow(Composite Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Composite Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Arrow(Composite Bow/Heavy/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Composite Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Composite Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Composite Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "16 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "31 sp",
+      "62 sp",
+      "93 sp"
+    ],
+    "Arrow(Composite Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Composite Bow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Composite Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "19 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "23 sp",
+      "43 sp",
+      "86 sp",
+      "129 sp"
+    ],
+    "Arrow(Composite Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "18 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Arrow(Composite Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "22 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Composite Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Compound Bow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Compound Bow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Compound Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Compound Bow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Compound Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Compound Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Compound Bow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Compound Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Compound Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Arrow(Compound Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Compound Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Compound Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Heavy/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Compound Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Piercing)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "17 sp",
+      "28 sp",
+      "56 sp",
+      "84 sp"
+    ],
+    "Arrow(Compound Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "2 gp",
+      "34 sp",
+      "68 sp",
+      "102 sp"
+    ],
+    "Arrow(Compound Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Great Bow/Far Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Great Bow/Heavy)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Great Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Great Bow/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Arrow(Great Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Great Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Arrow(Great Bow/Heavy/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Great Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Great Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Great Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "16 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "31 sp",
+      "62 sp",
+      "93 sp"
+    ],
+    "Arrow(Great Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Great Bow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Great Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "19 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "23 sp",
+      "43 sp",
+      "86 sp",
+      "129 sp"
+    ],
+    "Arrow(Great Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "18 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Arrow(Great Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "22 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Great Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Horn Bow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Horn Bow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Arrow(Horn Bow/Normal)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Arrow(Horn Bow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Horn Bow/True Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Horn Bow/Far Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Horn Bow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Horn Bow/Barbed)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Arrow(Horn Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Horn Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Arrow(Horn Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Horn Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "21 sp",
+      "42 sp",
+      "63 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "16 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Horn Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Arrow(Horn Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Long Bow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Long Bow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Long Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Long Bow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Long Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Long Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Long Bow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Long Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Long Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Arrow(Long Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Long Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Long Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Heavy/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Long Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Piercing)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "17 sp",
+      "28 sp",
+      "56 sp",
+      "84 sp"
+    ],
+    "Arrow(Long Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "2 gp",
+      "34 sp",
+      "68 sp",
+      "102 sp"
+    ],
+    "Arrow(Long Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Recurve Bow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Recurve Bow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Recurve Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Recurve Bow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "10 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Recurve Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Recurve Bow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Recurve Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Recurve Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Arrow(Recurve Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Recurve Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Heavy/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Recurve Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Piercing)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "17 sp",
+      "28 sp",
+      "56 sp",
+      "84 sp"
+    ],
+    "Arrow(Recurve Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "2 gp",
+      "34 sp",
+      "68 sp",
+      "102 sp"
+    ],
+    "Arrow(Recurve Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Short Bow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Short Bow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Arrow(Short Bow/Normal)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Arrow(Short Bow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Short Bow/True Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Far Flight)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "22 sp",
+      "33 sp"
+    ],
+    "Arrow(Short Bow/Far Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Short Bow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Short Bow/Barbed)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Arrow(Short Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Short Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Arrow(Short Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Short Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "21 sp",
+      "42 sp",
+      "63 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "16 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Short Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Arrow(Short Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Welsh Bow/Far Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Welsh Bow/Heavy)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Welsh Bow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Arrow(Welsh Bow/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "10 sp",
+      "20 sp",
+      "30 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Far Flight)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Welsh Bow/Far Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Arrow(Welsh Bow/Heavy/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Arrow(Welsh Bow/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Arrow(Welsh Bow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Arrow(Welsh Bow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "16 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "31 sp",
+      "62 sp",
+      "93 sp"
+    ],
+    "Arrow(Welsh Bow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Welsh Bow/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "15 sp",
+      "26 sp",
+      "52 sp",
+      "78 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "19 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Far Flight/Piercing/Barbed)": [
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "23 sp",
+      "43 sp",
+      "86 sp",
+      "129 sp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "18 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp"
+    ],
+    "Arrow(Welsh Bow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "22 sp",
+      "36 sp",
+      "72 sp",
+      "108 sp"
+    ],
+    "Arrow(Welsh Bow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Bolt(Crossbow/Far Flight)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Bolt(Crossbow/Heavy)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Bolt(Crossbow/Normal)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Bolt(Crossbow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Bolt(Crossbow/True Flight)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Far Flight)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "22 sp",
+      "33 sp"
+    ],
+    "Bolt(Crossbow/Far Flight/Barbed)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Bolt(Crossbow/Heavy/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Crossbow/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Bolt(Crossbow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Crossbow/Piercing/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Crossbow/Piercing/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Bolt(Crossbow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "11 sp",
+      "11 sp",
+      "33 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Piercing)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "19 sp",
+      "38 sp",
+      "57 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "16 sp",
+      "23 sp",
+      "46 sp",
+      "69 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "21 sp",
+      "42 sp",
+      "63 sp"
+    ],
+    "Bolt(Crossbow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Bolt(Crossbow/Heavy/Barbed/Piercing)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "12 sp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Bolt(Hand Crossbow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "10 sp",
+      "15 sp"
+    ],
+    "Bolt(Hand Crossbow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "16 sp",
+      "24 sp"
+    ],
+    "Bolt(Hand Crossbow/Normal)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Bolt(Hand Crossbow/Piercing)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Hand Crossbow/Far Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Hand Crossbow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "6 sp",
+      "1 gp",
+      "12 sp",
+      "18 sp"
+    ],
+    "Bolt(Hand Crossbow/Barbed)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Bolt(Hand Crossbow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "7 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "7 sp",
+      "14 sp",
+      "21 sp"
+    ],
+    "Bolt(Hand Crossbow/Piercing/Far Flight/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "8 sp",
+      "13 sp",
+      "26 sp",
+      "39 sp"
+    ],
+    "Bolt(Hand Crossbow/Piercing/Heavy)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Heavy)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Heavy/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "17 sp",
+      "34 sp",
+      "51 sp"
+    ],
+    "Bolt(Hand Crossbow/Far Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "9 sp",
+      "15 sp",
+      "30 sp",
+      "45 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "16 sp",
+      "32 sp",
+      "48 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Piercing/Barbed)": [
+      "3 sp",
+      "4 sp",
+      "7 sp",
+      "11 sp",
+      "18 sp",
+      "36 sp",
+      "54 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Far Flight/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "21 sp",
+      "42 sp",
+      "63 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Far Flight/Piercing/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "16 sp",
+      "25 sp",
+      "50 sp",
+      "75 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Heavy/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Bolt(Hand Crossbow/True Flight/Heavy/Piercing/Barbed)": [
+      "3 sp",
+      "6 sp",
+      "11 sp",
+      "18 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Bolt(Hand Crossbow/Heavy/Barbed/Piercing)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "13 sp",
+      "22 sp",
+      "44 sp",
+      "66 sp"
+    ],
+    "Bolt(Heavy Crossbow/Far Flight)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bolt(Heavy Crossbow/Heavy)": [
+      "1 sp",
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Bolt(Heavy Crossbow/Normal)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "3 gp"
+    ],
+    "Bolt(Heavy Crossbow/Piercing)": [
+      "2 sp",
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight)": [
+      "2 sp",
+      "4 sp",
+      "5 sp",
+      "8 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Far Flight)": [
+      "2 cp",
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Bolt(Heavy Crossbow/Far Flight/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "6 sp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Bolt(Heavy Crossbow/Heavy/Barbed)": [
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "7 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Bolt(Heavy Crossbow/Barbed)": [
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "6 sp",
+      "12 sp",
+      "24 sp",
+      "36 sp"
+    ],
+    "Bolt(Heavy Crossbow/Piercing/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "24 sp",
+      "48 sp",
+      "72 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Barbed)": [
+      "2 sp",
+      "3 sp",
+      "6 sp",
+      "1 gp",
+      "14 sp",
+      "28 sp",
+      "42 sp"
+    ],
+    "Bolt(Heavy Crossbow/Piercing/Far Flight/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "18 sp",
+      "38 sp",
+      "76 sp",
+      "114 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Far Flight/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "29 sp",
+      "58 sp",
+      "87 sp"
+    ],
+    "Bolt(Heavy Crossbow/Piercing/Heavy)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Heavy)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "14 sp",
+      "32 sp",
+      "64 sp",
+      "96 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Heavy/Barbed)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "17 sp",
+      "39 sp",
+      "78 sp",
+      "117 sp"
+    ],
+    "Bolt(Heavy Crossbow/Far Flight/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 sp",
+      "15 sp",
+      "32 sp",
+      "64 sp",
+      "96 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "18 sp",
+      "32 sp",
+      "64 sp",
+      "96 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Piercing/Barbed)": [
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "18 sp",
+      "38 sp",
+      "76 sp",
+      "114 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Far Flight/Piercing)": [
+      "3 sp",
+      "6 sp",
+      "12 sp",
+      "23 sp",
+      "44 sp",
+      "88 sp",
+      "132 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Far Flight/Piercing/Barbed)": [
+      "4 sp",
+      "7 sp",
+      "14 sp",
+      "28 sp",
+      "53 sp",
+      "106 sp",
+      "159 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Heavy/Piercing)": [
+      "4 sp",
+      "7 sp",
+      "13 sp",
+      "24 sp",
+      "52 sp",
+      "104 sp",
+      "156 sp"
+    ],
+    "Bolt(Heavy Crossbow/True Flight/Heavy/Piercing/Barbed)": [
+      "4 sp",
+      "8 sp",
+      "16 sp",
+      "29 sp",
+      "62 sp",
+      "124 sp",
+      "186 sp"
+    ],
+    "Bolt(Heavy Crossbow/Heavy/Barbed/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "19 sp",
+      "48 sp",
+      "96 sp",
+      "144 sp"
+    ],
+    "Bullet(Sling)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Bullet(Wrist Sling)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Dart(Blow Gun)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Lead Ball(Early Gun)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "2 sp",
+      "4 sp",
+      "8 sp",
+      "12 sp"
+    ],
+    "Rock(Sling)": [
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp"
+    ],
+    "Rock(Wrist Sling)": [
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp"
+    ],
+    "Arrow(Fairy Composite Bow/Far Flight)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Arrow(Fairy Composite Bow/Heavy)": [
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp",
+      "27 cp",
+      "54 cp",
+      "81 cp"
+    ],
+    "Arrow(Fairy Composite Bow/Normal)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Arrow(Fairy Composite Bow/Piercing)": [
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp",
+      "27 cp",
+      "54 cp",
+      "81 cp"
+    ],
+    "Arrow(Fairy Composite Bow/True Flight)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Arrow(Fairy Crossbow/Far Flight)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Arrow(Fairy Crossbow/Heavy)": [
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp",
+      "27 cp",
+      "54 cp",
+      "81 cp"
+    ],
+    "Arrow(Fairy Crossbow/Normal)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Arrow(Fairy Crossbow/Piercing)": [
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "18 cp",
+      "27 cp",
+      "54 cp",
+      "81 cp"
+    ],
+    "Arrow(Fairy Crossbow/True Flight)": [
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "12 cp",
+      "16 cp",
+      "32 cp",
+      "48 cp"
+    ],
+    "Arrow(Fairy Great Bow/Far Flight)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "14 cp",
+      "2 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Great Bow/Heavy)": [
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "21 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Arrow(Fairy Great Bow/Normal)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "7 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Great Bow/Piercing)": [
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "21 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Arrow(Fairy Great Bow/True Flight)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "14 cp",
+      "2 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Heavy Crossbow/Far Flight)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "12 cp",
+      "2 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Heavy Crossbow/Heavy)": [
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "24 cp",
+      "3 sp",
+      "6 sp",
+      "9 sp"
+    ],
+    "Arrow(Fairy Heavy Crossbow/Normal)": [
+      "1 cp",
+      "3 cp",
+      "5 cp",
+      "8 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Heavy Crossbow/Piercing)": [
+      "4 cp",
+      "8 cp",
+      "15 cp",
+      "24 cp",
+      "3 sp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Arrow(Fairy Heavy Crossbow/True Flight)": [
+      "3 cp",
+      "5 cp",
+      "1 sp",
+      "12 cp",
+      "2 sp",
+      "4 sp",
+      "6 sp"
+    ],
+    "Arrow(Fairy Hand Crossbow/Far Flight)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Hand Crossbow/Heavy)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Arrow(Fairy Hand Crossbow/Normal)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Arrow(Fairy Hand Crossbow/Piercing)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Arrow(Fairy Hand Crossbow/True Flight)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Long Bow/Far Flight)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Long Bow/Heavy)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Arrow(Fairy Long Bow/Normal)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "5 cp",
+      "10 cp",
+      "15 cp"
+    ],
+    "Arrow(Fairy Long Bow/Piercing)": [
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp",
+      "15 cp",
+      "3 sp",
+      "45 cp"
+    ],
+    "Arrow(Fairy Long Bow/True Flight)": [
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "6 cp",
+      "1 sp",
+      "2 sp",
+      "3 sp"
+    ],
+    "Arrow(Fairy Short Bow/Far Flight)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Arrow(Fairy Short Bow/Heavy)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Arrow(Fairy Short Bow/Normal)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp ",
+      "8 cp",
+      "12 cp"
+    ],
+    "Arrow(Fairy Short Bow/Piercing)": [
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "12 cp",
+      "24 cp",
+      "36 cp"
+    ],
+    "Arrow(Fairy Short Bow/True Flight)": [
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "4 cp",
+      "8 cp",
+      "16 cp",
+      "24 cp"
+    ],
+    "Bullet(Fairy Sling)": [
+      "1 cp",
+      "1 cp",
+      "1 cp",
+      "2 cp",
+      "3 cp",
+      "6 cp",
+      "9 cp"
+    ],
+    "Pebble(Fairy Sling)": [
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp",
+      "0 cp"
+    ],
+    "Bolt(Ballista/Far Flight)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Bolt(Ballista/Heavy)": [
+      "3 sp",
+      "5 sp",
+      "9 gp",
+      "18 gp",
+      "27 gp",
+      "54 gp",
+      "81 gp"
+    ],
+    "Bolt(Ballista/Normal)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Bolt(Ballista/Piercing)": [
+      "3 sp",
+      "5 sp",
+      "9 gp",
+      "18 gp",
+      "27 gp",
+      "54 gp",
+      "81 gp"
+    ],
+    "Bolt(Ballista/True Flight)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Shot(Ballista)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Bolt(Heavy Ballista/Far Flight)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "60  gp",
+      "90 gp"
+    ],
+    "Bolt(Heavy Ballista/Heavy)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Bolt(Heavy Ballista/Normal)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Bolt(Heavy Ballista/Piercing)": [
+      "4 gp",
+      "8 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp",
+      "90 gp",
+      "135 gp"
+    ],
+    "Bolt(Heavy Ballista/True Flight)": [
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Shot(Heavy Ballista)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Bolt(Light Ballista/Far Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Bolt(Light Ballista/Heavy)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Bolt(Light Ballista/Normal)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Bolt(Light Ballista/Piercing)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Bolt(Light Ballista/True Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Shot(Light Ballista)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Ball(Cannon)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "5 gp",
+      "10 gp",
+      "15 gp"
+    ],
+    "Chain Shot(Cannon)": [
+      "13 sp",
+      "25 sp",
+      "5 gp",
+      "10 gp",
+      "15 gp",
+      "30 gp",
+      "45 gp"
+    ],
+    "Grape Shot(Cannon)": [
+      "4 sp",
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "9 gp",
+      "18 gp",
+      "27 gp"
+    ],
+    "Exploding(Cannon)": [
+      "50 pp",
+      "100 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp",
+      "1200 pp",
+      "1800 pp"
+    ],
+    "Boulder(Catapult)": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Greek Fire(Catapult)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Arrow(Giant Great Bow/Far Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Great Bow/Heavy)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Arrow(Giant Great Bow/Normal)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Arrow(Giant Great Bow/Piercing)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Arrow(Giant Great Bow/True Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Long Bow/Far Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Long Bow/Heavy)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 gp",
+      "48 gp"
+    ],
+    "Arrow(Giant Long Bow/Normal)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp"
+    ],
+    "Arrow(Giant Long Bow/Piercing)": [
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "18 gp",
+      "36 sp",
+      "64 sp"
+    ],
+    "Arrow(Giant Long Bow/True Flight)": [
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Short Bow/Far Flight)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Arrow(Giant Short Bow/Heavy)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Short Bow/Normal)": [
+      "3 sp",
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "12 gp"
+    ],
+    "Arrow(Giant Short Bow/Piercing)": [
+      "8 sp",
+      "15 sp",
+      "3 gp",
+      "6 gp",
+      "12 gp",
+      "24 gp",
+      "36 gp"
+    ],
+    "Arrow(Giant Short Bow/True Flight)": [
+      "5 sp",
+      "1 gp",
+      "2 gp",
+      "4 gp",
+      "8 gp",
+      "16 gp",
+      "24 gp"
+    ],
+    "Arrow(Titan Bow/Far Flight)": [
+      "5 sp",
+      "1 gp",
+      "2 pp",
+      "4 pp",
+      "6 pp",
+      "12 pp",
+      "18 pp"
+    ],
+    "Arrow(Titan Bow/Heavy)": [
+      "8 gp",
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "9 pp",
+      "18 pp",
+      "27 pp"
+    ],
+    "Arrow(Titan Bow/Normal)": [
+      "3 sp",
+      "5 sp",
+      "1 pp",
+      "2 pp",
+      "3 pp",
+      "6 pp",
+      "9 pp"
+    ],
+    "Arrow(Titan Bow/Piercing)": [
+      "8 gp",
+      "15 gp",
+      "3 pp",
+      "6 pp",
+      "9 pp",
+      "18 pp",
+      "27 pp"
+    ],
+    "Arrow(Titan Bow/True Flight)": [
+      "5 sp",
+      "1 gp",
+      "2 pp",
+      "4 pp",
+      "6 pp",
+      "12 pp",
+      "16 pp"
+    ],
+    "Boulder(Trebuchet)": [
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp",
+      "0 gp"
+    ],
+    "Greek Fire(Trebuchet)": [
+      "5 gp",
+      "10 gp",
+      "20 gp",
+      "25 gp",
+      "30 gp",
+      "60 gp",
+      "90 gp"
+    ],
+    "Black Powder": [
+      "25 pp",
+      "50 pp",
+      "100 pp",
+      "250 pp",
+      "500 pp",
+      "1000 pp",
+      "2000 pp"
+    ],
+    "Gun Powder": [
+      "50 pp",
+      "100 pp",
+      "200 pp",
+      "400 pp",
+      "600 pp",
+      "1200 pp",
+      "1800 pp"
+    ],
+    "Liquid Explosive": [
+      "125 pp",
+      "250 pp",
+      "500 pp",
+      "1000 pp",
+      "1500 pp",
+      "3000 pp",
+      "4500 pp"
+    ],
+    "High Explosive": [
+      "250 pp",
+      "500 pp",
+      "1000 pp",
+      "2000 pp",
+      "4000 pp",
+      "8000 pp",
+      "12000 pp"
+    ]
+  }
+}

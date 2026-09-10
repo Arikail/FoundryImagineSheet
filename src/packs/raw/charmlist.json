@@ -1,0 +1,306 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "charmlist",
+    "lines": [
+      135629,
+      135673
+    ]
+  },
+  "entries": {
+    "Animal Symbol": [
+      "Animal Symbol",
+      "Animal Figurine",
+      "1/5 WIL",
+      "1 week+1d6 days per 5%/success",
+      "+10% to Animal Lore, Tame Animal and Speak to Animal Skills for that animal type."
+    ],
+    "Banishing Symbol": [
+      "Banishing Symbol",
+      "Holy Symbol",
+      "1/5 WIL",
+      "1 week+1d6 days per 5%/success",
+      "When brandished at the specific attuned supernatural being. They must make a Control Resistance or be banished. It can also be used to remove possession (or control) from the attuned supernatural being by placing the holy symbol charm against the Aura field of the person who is controlled or possessed, granting them a new Control Resistance. If the true name of the supernatural being is known then banishment from branding is at a -20% save and removal of possession or control allows the effected being a +20% to their Control Resistance."
+    ],
+    "Blessed Symbol": [
+      "Blessed Symbol",
+      "Good Holy Symbol",
+      "1/2 WIL",
+      "1 week+1d6 days per 5%/success",
+      "One chosen boon is given to the symbol. The boon is only of the Helpful level. The symbol is then given to the recipient (which cannot be the charm`s maker) and they are blessed with the boon so long as the holy symbol is kept on their person and they are not of opposite alignment or they lose favor with that deity."
+    ],
+    "Bravery Charm": [
+      "Bravery Charm",
+      "Small Token",
+      "1/5 WIL",
+      "1 day+1d4 days per 10%/success",
+      "Grants +10% to Control Resistance against fear effects."
+    ],
+    "Charm Bag": [
+      "Charm Bag",
+      "Pouch",
+      "1/2 WIL",
+      "1 day+1d4 days per 10%/success",
+      "Grants the bearer one Empathy Magic effect while carried."
+    ],
+    "Cursed Charm": [
+      "Cursed Charm",
+      "Evil Symbol/Personal Item",
+      "1/2 WIL",
+      "1 week+1d6 days per 5%/success",
+      "Forces one chosen curse of Irritant level on the bearer if it is given to or hidden on the victim to take effect."
+    ],
+    "Detecting Charm": [
+      "Detecting Charm",
+      "Bell/Crystal/Rock",
+      "1/5 WIL",
+      "1 week+1d6 days per 5%/success",
+      "Grants the detection of 1 type (Detect Aura, Detect Curse, Detect Evil, Detect Good, Detect Magic, Detect Supernatural) by the bell ringing, crystal growing, or rock heating. The chance is the same as the charm`s maker."
+    ],
+    "Diving Rod Charm": [
+      "Diving Rod Charm",
+      "Y-shaped Stick",
+      "1/5 WIL",
+      "1 week+1d6 days per 5%/success",
+      "Rod is infused with the ability to find either crystal, metal or stone type within 1000 feet + 500 feet per full 5% of the skill roll success. The bearer can hold the rod and will feel a slight tug in the direction of the nearest source."
+    ],
+    "Dowsing Rod Charm": [
+      "Dowsing Rod Charm",
+      "Y-shaped Stick",
+      "1/5 WIL",
+      "1 week+1d6 days per 5%/success",
+      "Rod is infused with the ability to find water. The bearer can hold the rod and will feel a gentle pull in the direction of any sources of water with 1 mile."
+    ],
+    "Dream Catcher Charm": [
+      "Dream Catcher Charm",
+      "Circulur Wood+Woven Pattern",
+      "1/5 WIL",
+      "1 year",
+      "Grants a +20% Control Resistance to avoid being summoned or brought to the dream plane. They are also +10% to Control Resistance in general while they are asleep or unconscious."
+    ],
+    "Dynamic Light Charm": [
+      "Dynamic Light Charm",
+      "Glass Marble/+1 Item/Lens",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Light energy. +20% to resistances against Light effects, -1 damage per die."
+    ],
+    "Dynamic Sonic Charm": [
+      "Dynamic Sonic Charm",
+      "Quartz/+1 Item/Shell",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Sonic energy. +20% to resistances against Sonic effects, -1 damage per die."
+    ],
+    "Dynamic Cold Charm": [
+      "Dynamic Cold Charm",
+      "Aquamarine/+1 Item/Bear Fur",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Cold energy. +20% to resistances against Cold effects, -1 damage per die."
+    ],
+    "Dynamic Heat Charm": [
+      "Dynamic Heat Charm",
+      "Topaz/+2 Item/Red Basilisk Scale",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Heat energy. +20% to resistances against Heat effects, -1 damage per die."
+    ],
+    "Dynamic Kinetic Charm": [
+      "Dynamic Kinetic Charm",
+      "Ruby/+3 Item/Loadstone",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Kinetic energy. +20% to resistances against Kinetic effects, -1 damage per die."
+    ],
+    "Dynamic Electricity Charm": [
+      "Dynamic Electricity Charm",
+      "Sapphire/+4 Item/Sea Salt",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Electricity energy. +20% to resistances against Electricity effects, -1 damage per die."
+    ],
+    "Dynamic Acid Charm": [
+      "Dynamic Acid Charm",
+      "Emerald/+5 Item/Pitcher Plant Sap",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Acid energy. +20% to resistances against Acid effects, -1 damage per die."
+    ],
+    "Dynamic Aura Charm": [
+      "Dynamic Aura Charm",
+      "Fire Opal/+6 Item/Acid Rain",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Aura energy. +20% to resistances against Aura effects, -1 damage per die."
+    ],
+    "Dynamic Divine Charm": [
+      "Dynamic Divine Charm",
+      "Fire Opal/+6 Item/Acid Rain",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Divine energy. +20% to resistances against Divine effects, -1 damage per die."
+    ],
+    "Dynamic Life Charm": [
+      "Dynamic Life Charm",
+      "Diamond/+7 Item/Vulture Feather",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Life energy. +20% to resistances against Life effects, -1 damage per die."
+    ],
+    "Dynamic Death Charm": [
+      "Dynamic Death Charm",
+      "Diamond/+7 Item/Vulture Feather",
+      "1/2 WIL",
+      "1 day+1d4 per 10%/success",
+      "Charged with the ability to repel Death energy. +20% to resistances against Death effects, -1 damage per die."
+    ],
+    "Elemental Water Charm": [
+      "Elemental Water Charm",
+      "Worn Pebble",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Cold effects, gains breathless on Plane of Water."
+    ],
+    "Elemental Fire Charm": [
+      "Elemental Fire Charm",
+      "Igneous Rock",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Fire effects, gains breathless on Plane of Fire."
+    ],
+    "Elemental Air Charm": [
+      "Elemental Air Charm",
+      "Ferrous Metal",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Electricity effects, gains breathless on Plane of Air."
+    ],
+    "Elemental Earth Charm": [
+      "Elemental Earth Charm",
+      "Rusted Steel",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Acid effects, gains breathless on Plane of Earth."
+    ],
+    "Elemental Life Charm": [
+      "Elemental Life Charm",
+      "Seed",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Immunity to negative Light effects, healing does +1 per die rolled, gains breathless on Plane of Light/Life."
+    ],
+    "Elemental Death Charm": [
+      "Elemental Death Charm",
+      "Bone",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Death effects, gains breathless on Plane of Death/Darkness."
+    ],
+    "Elemental Chaos Charm": [
+      "Elemental Chaos Charm",
+      "Multicolor Bead",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Half damage from Chaos effects, +1 Aura Control, gains breathless on Plane of Aura/Chaos."
+    ],
+    "Expulsion Charm": [
+      "Expulsion Charm",
+      "Personal Item",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Grants new Control Resistance to remove all forms of control and possession. While carried by that individual it also gives a +10% Control Resistance to any attempts against them to control or possess."
+    ],
+    "Fetish Charm": [
+      "Fetish Charm",
+      "Animal Part",
+      "1/4 WIL",
+      "1 day+1d4 per 5%/success",
+      "Gain 1 Evoke power from the set of those the Charm maker has that can be used by anyone who carries the charm. The original skill user does not lose the ability to evoke this power themselves when they give the charm to another. The Evoke user can use a personal-use only fetish charm to gain 1 additional Evoke power from their totem animal they have not yet gained but this costs 1 full temporary Will Force loss."
+    ],
+    "Focus Charm": [
+      "Focus Charm",
+      "Personal Item",
+      "1/2 WIL",
+      "1 week+1d6 per 5%/success",
+      "Personal only charm. +20% to the following skills Body Control, and Meditate itself. They can get into the meditative state in half the usual time. They charm bearer is are also +10% to Control Resistance while attuned."
+    ],
+    "Herb Pouch": [
+      "Herb Pouch",
+      "Sealed Pouch",
+      "1/4 WIL",
+      "1 day +1d4 per 10%/success",
+      "Grants the power of 1 herbal effect for the duration. If the herbal effect is of the immediate or instant type then it will occur once per hour. Example: Arnica is a healing herb. When it is placed in the Herbal Pouch charm, it automatically heals the most wounded area once per hour."
+    ],
+    "Hex Bag": [
+      "Hex Bag",
+      "Sealed Bag",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "Grants the power of 1 Sympathy Magic ritual when placed on, or near the target. Effects like draining an attribute only do so once but it stays drained for the duration of the Hex Bag`s efficacy."
+    ],
+    "Lucky Charm": [
+      "Lucky Charm",
+      "Small Object",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Gives a +5%/+1 to the next action if the charm is rubbed or focused on for 5 seconds prior to the action."
+    ],
+    "Ritual Charm": [
+      "Ritual Charm",
+      "Holy Symbol/Blessed Item",
+      "1/5 WIL",
+      "1 week+1d6 per 5%/success",
+      "Grants the power of 1 Ritual Lore effect to the bearer of the charm. GM discretion on these powers as not all will be applicable. If item is blessed it also stays blessed for the duration."
+    ],
+    "Spell Focus Charm": [
+      "Spell Focus Charm",
+      "Extrenal Focus",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "+1 Aura Control for any spell cast of one spell type only (alteration, energy, mind, etc.). No caster may carry and use more than one spell focus charm. If they have more than one in their aura field then their Aura Control is reduced by 1 (for all spell casting) for each additional charm carried over 1."
+    ],
+    "Warding Good Charm": [
+      "Warding Good Charm",
+      "Unholy Symbol/Decorative Eye",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "Infused with a weak power of warding against Good beings. Good enemies who attempt negative action against the bearer must make a Will Force save to do so (each time)."
+    ],
+    "Warding Evil Charm": [
+      "Warding Evil Charm",
+      "Holy Symbol/Decorative Eye",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "Infused with a weak power of warding against Evil beings. Evil enemies who attempt negative action against the bearer must make a Will Force save to do so (each time)."
+    ],
+    "Warding Supernatural Charm": [
+      "Warding Supernatural Charm",
+      "Divine Symbol/Decorative Eye",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "Infused with a weak power of warding against Supernatural beings. Supernatural enemies who attempt negative action against the bearer must make a Will Force save to do so (each time)."
+    ],
+    "Weather Charm": [
+      "Weather Charm",
+      "Water Worn Stone",
+      "1/10 WIL",
+      "1 day +1d4 per 10%/success",
+      "If a weather effect the stone is attuned to will happen later that day, the stone will behave as if affected by that weather situation, getting wet for rain, cold for wintery conditions, warm for sunny day, etc."
+    ],
+    "Will Charm": [
+      "Will Charm",
+      "Thought Symbol(Book/Eye)",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "The bearer is considered to have a +1 starting Will Force when engaging in mental combat but only during defense portions of mental combat. Zero Will Force is still 0. When there is no remaining actual Will Force the bearer no longer gets the modifier and they lose the mental combat."
+    ],
+    "Undead Ward Charm": [
+      "Undead Ward Charm",
+      "Carved Bone Item",
+      "1/2 WIL",
+      "1 day +1d4 per 10%/success",
+      "Infused with a weak power of warding against Undead beings. Undead enemies who attempt negative action against the bearer must make a Will Force save to do so (each time). Evil bearers also require undead they encounter to make Will Force saves or their undead compulsions against the being are supressed."
+    ]
+  }
+}

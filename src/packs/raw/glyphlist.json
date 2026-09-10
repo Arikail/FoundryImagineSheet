@@ -1,0 +1,90 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "glyphlist",
+    "lines": [
+      138530,
+      138551
+    ]
+  },
+  "entries": {
+    "Armor Enchantment": [
+      "Armor Enchantment",
+      "18",
+      "5",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Inscribed on a piece of armor, the object becomes magical and gives a defensive adjustment of +1 per 5 Class Titles. In addition, it grants one point of Force Armor (as the spell) per Class Title."
+    ],
+    "Weapon Enchantment": [
+      "Weapon Enchantment",
+      "18",
+      "5",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Inscribed on a weapon, the object becomes magical and gains +2 to hit and +2 to damage per 5 Class Titles."
+    ],
+    "Planar Travel": [
+      "Planar Travel",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Planeshift (takes one minute of focused concentration). Gains minimum powers necessary to survive on that plane without environmental ill effects."
+    ],
+    "Mobility": [
+      "Mobility",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: True Flight (as spell). Jump (as spell). Relocation (as spell, takes one minute of focused concentration to teleport)."
+    ],
+    "Speed": [
+      "Speed",
+      "20",
+      "-5",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Blink (as spell). Grants +10 speed seconds. Grants -1 initiative and -2 defense adjustment per 3 class titles of inscriber. Grants +1 Agility per 3 class titles of inscriber. Grants +1 Intelligence per 3 class titles of inscriber."
+    ],
+    "Health": [
+      "Health",
+      "21",
+      "-10",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Grants +1 Vitality per 3 class titles of inscriber. Grants +5 Endurance per 3 class titles of inscriber. Regeneration: 1d4 Endurance healed per minute; lost limbs may be regrown this way."
+    ],
+    "Weapons Glyph": [
+      "Weapons Glyph",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Weapon gains +1 magical bonus per 2 class titles of inscriber. Weapon gains +1 extra die of damage per 2 class titles of inscriber."
+    ],
+    "Final Peace": [
+      "Final Peace",
+      "39",
+      "-100",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Engraved within the area of a single necropolis, catacombs, cemetery, or other tomb complex, the glyph will prevent any of the dead buried there from rising as or being raised as undead of any kind; any lingering souls will be sent on to the afterlife. Any undead that enter or are otherwise caught in the area with a level equal to or lower than the class title of the inscriber will be destroyed immediately; undead of higher level than the inscriber of the glyph may enter the area, but may not use any innate powers or abilities."
+    ],
+    "Fortification": [
+      "Fortification",
+      "29",
+      "-50",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Engraved on the central keep of a fortress, this glyph doubles the structural strength of all structures of the fortress. Furthermore, any food or water stored inside the fortress will not spoil and are cleared of any contaminants."
+    ],
+    "Sensuality": [
+      "Sensuality",
+      "17",
+      "10",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Grants +1 Appearance per 3 class titles of inscriber. Grants +1 Charm per 3 class titles of inscriber. Wearer is always clean and presentable and smells faintly of perfume. Glyph is designed to be incorporated as part of another artistic tattoo; viewer must succeed at a Glyph skill roll or a quarter Rune Lore skill roll to recognize the glyph."
+    ],
+    "Angel`s Glyph": [
+      "Angel`s Glyph",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: True Flight (as spell). Endure Electricity (as spell). Healing (1d4+1 per titles, as the invocation, once per minute)."
+    ],
+    "Deva`s Glyph": [
+      "Deva`s Glyph",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Blink (as spell). Endure Cold (as spell). Greater Regeneration (Greater Regeneration: Heals 1d4 points per 10 seconds to all wounded areas including vitals. Cannot regenerate from fire, or acid damage, or if the head is separated from the heart."
+    ],
+    "Devil`s Glyph": [
+      "Devil`s Glyph",
+      "19",
+      "0",
+      "1) Item sensing: Item distance and direction on same plane. Item condition on any plane. 2) Sense Projection through the item. 3) Returned from anywhere to self for 1/10th WIL. UNIQUE: Teleport (as spell). Endure Fire (as spell). Distortion (as the spell)."
+    ]
+  }
+}

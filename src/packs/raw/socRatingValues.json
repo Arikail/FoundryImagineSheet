@@ -1,0 +1,136 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socRatingValues",
+    "lines": [
+      30068,
+      30100
+    ]
+  },
+  "entries": {
+    "0": [
+      -40,
+      "Damned Soul"
+    ],
+    "1": [
+      -35,
+      "Condemned Soul"
+    ],
+    "2": [
+      -30,
+      "Tortured Soul"
+    ],
+    "3": [
+      -25,
+      "Tormented Soul"
+    ],
+    "4": [
+      -20,
+      "Lost Soul"
+    ],
+    "5": [
+      -15,
+      "Slave/Escaped Slave"
+    ],
+    "6": [
+      -15,
+      "Freed Slave/Indentured"
+    ],
+    "7": [
+      -10,
+      "Peasant/Serf or Tribesperson"
+    ],
+    "8": [
+      -10,
+      "Peasant/Serf or Tribesperson"
+    ],
+    "9": [
+      -5,
+      "Commoner/Skilled Laborer"
+    ],
+    "10": [
+      -5,
+      "Commoner/Skilled Laborer"
+    ],
+    "11": [
+      -2,
+      "Tradesperson/Craftsperson"
+    ],
+    "12": [
+      0,
+      "Tradesperson/Craftsperson"
+    ],
+    "13": [
+      0,
+      "Master Tradesperson/Craftsperson"
+    ],
+    "14": [
+      2,
+      "Master Tradesperson/Craftsperson"
+    ],
+    "15": [
+      5,
+      "Noble:Knight Bannerete(family of)"
+    ],
+    "16": [
+      5,
+      "Noble:Baron (family of)"
+    ],
+    "17": [
+      10,
+      "Noble:Count (family of)"
+    ],
+    "18": [
+      10,
+      "Noble:Earl (family of)"
+    ],
+    "19": [
+      15,
+      "Noble:Duke (family of)"
+    ],
+    "20": [
+      15,
+      "Noble:King (family of)"
+    ],
+    "21": [
+      20,
+      "Chosen Soul"
+    ],
+    "22": [
+      25,
+      "Honored Soul"
+    ],
+    "23": [
+      30,
+      "Privileged Soul"
+    ],
+    "24": [
+      35,
+      "Lesser Supernatural"
+    ],
+    "25": [
+      40,
+      "Minor Supernatural"
+    ],
+    "26": [
+      45,
+      "Major Supernatural"
+    ],
+    "27": [
+      50,
+      "Arch Supernatural"
+    ],
+    "28": [
+      55,
+      "Semi-Deity"
+    ],
+    "29": [
+      60,
+      "Deity"
+    ],
+    "30": [
+      65,
+      "Supreme Deity"
+    ]
+  }
+}

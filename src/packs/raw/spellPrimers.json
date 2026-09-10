@@ -1,0 +1,48 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "spellPrimers",
+    "lines": [
+      171265,
+      171278
+    ]
+  },
+  "entries": {
+    "Alteration": [
+      "Alteration Primer(Spells: Clean/Color/Climb/Dig/Float/Read/Levitate/Night Vision/Fast Freeze/Ignite/Quick Dry/Soak)"
+    ],
+    "Controlling": [
+      "Controlling Primer(Spells: Distract/Hold Animal/Hold)"
+    ],
+    "Creation": [
+      "Creation Primer(Spells: Magic Skin,Magic Tongue/Produce Food/Produce Light/Produce Water/Magic Nose/Mend/Produce Smoke/Force Shield/Magic Ear/Produce Clothing/Produce Fog/Alarm/Magic Eye/Magic Voice/Mystical Mapping)"
+    ],
+    "Dimensional": [
+      "Dimensional Primer(Spell: Interdimensional Message)"
+    ],
+    "Displacing": [
+      "Displacing Primer(Spells: Move/Trip/Fumble/Jump/Catch/Force Shield/Levitate)"
+    ],
+    "Energy": [
+      "Energy Primer(Spells: Chill/Flicker/Warm/Shock/Static Charge/Produce Fire/Finger of Dissonance/Fist of Magic/Static Shield)"
+    ],
+    "Illusion": [
+      "Illusion Primer(Spells: Illusion of Taste/Illusion of Smell)"
+    ],
+    "Mental": [
+      "Mental Primer(Spells: Enhance Taste/Message/Plant Speak/Animal Speak/Read/Enhance Smell/Enhance Touch/Mystical Mapping)"
+    ],
+    "Natural": [
+      "Natural Primer(Spells: Tree Message/Clean/Produce Food/Produce Water/Tarnish/Climb/Dig/Draw Water/Produce Smoke/Freshen/Tree Sound/Entwine/Fast Freeze/Plant Move/Quick Dry)"
+    ],
+    "Sensing": [
+      "Sensing Primer(Spells: Predict Weather/Read Aura/Detect Enemy)"
+    ],
+    "Transference": [
+      "Transference Primer(Spells: Magic Skin/Magic Tongue/Draw Water/Magic Nose/Magic Ear/Magic Eye/Magic Voice)"
+    ],
+    "Warding": [
+      "Warding Primer(Spells: Endure Light/Mask Odor)"
+    ]
+  }
+}

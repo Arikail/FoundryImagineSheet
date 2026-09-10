@@ -1,0 +1,1084 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialbonusfromsocial",
+    "lines": [
+      57681,
+      57889
+    ]
+  },
+  "entries": {
+    "Accounting": [
+      "Mathematics",
+      "+10%"
+    ],
+    "Acting": [
+      "Espionage",
+      "+10%"
+    ],
+    "Administration": [
+      "Scholar",
+      "+10%"
+    ],
+    "Animal Husbandry": [
+      "Scholar",
+      "+10%"
+    ],
+    "Animal Training": [
+      ""
+    ],
+    "Anthropology": [
+      "Archaeology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Appraisal": [
+      "Scholar",
+      "+10%"
+    ],
+    "Archaeology": [
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Architecture/Engineering": [
+      "Drawing/Sketching",
+      "+10%",
+      "Mathematics",
+      "+10%"
+    ],
+    "Armoring": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Smithy",
+      "+10%"
+    ],
+    "Artisan": [
+      "Scholar",
+      "+10%"
+    ],
+    "Astrology": [
+      "Scholar",
+      "+10%"
+    ],
+    "Astronomy": [
+      "Science",
+      "+10%"
+    ],
+    "Baking/Cooking": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Ballooning": [
+      "Scholar",
+      "+10%",
+      "Meteorology",
+      "+10%"
+    ],
+    "Banker/Broker": [
+      ""
+    ],
+    "Bar/Inn Keeping": [
+      "Drudgery",
+      "+10%",
+      "Store Keeping",
+      "+10%"
+    ],
+    "Barbering": [
+      "Artisan",
+      "+10%"
+    ],
+    "Barrel Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Wood Curing",
+      "+10%"
+    ],
+    "Bartering/Haggling": [
+      "Appraisal",
+      "+20%"
+    ],
+    "Basket Weaving": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%"
+    ],
+    "Bee Keeping/Insect Handling": [
+      "Scholar",
+      "+10%"
+    ],
+    "Begging": [
+      "Acting",
+      "+15%",
+      "Scholar",
+      "+10%"
+    ],
+    "Boat Wright": [
+      "Artisan",
+      "+10%",
+      "Architecture/Engineering",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Drawing/Sketching",
+      "+10%",
+      "Laborer",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Wood Curing",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Bookbinder": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Botany": [
+      "Science",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Botanist": [
+      "Science",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Brewing": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Butcher": [
+      "Physiology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Butler": [
+      "Administration",
+      "+10%"
+    ],
+    "Cabinetry": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Furniture Making",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Cage Making": [
+      "Artisan",
+      "+10%",
+      "Rope Use",
+      "+10%"
+    ],
+    "Calligraphy": [
+      "Artisan",
+      "+10%",
+      "Scribing",
+      "+20%",
+      "Artisan",
+      "+10%"
+    ],
+    "Candle/Oil Making": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Carousing": [
+      "Heavy Drinking",
+      "+10%"
+    ],
+    "Carving": [
+      "Artisan",
+      "+10%"
+    ],
+    "Chariot Driving": [
+      "Animal Training",
+      "+10%"
+    ],
+    "Chariot Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Chemistry": [
+      "Forensics",
+      "+20%",
+      "Mathematics",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Chirugeon": [
+      "Physiology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Torturing",
+      "+10%"
+    ],
+    "Climatology": [
+      "Geography",
+      "+10%",
+      "Meteorology",
+      "+10%",
+      "Oceanography",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Clowning/Jesting": [
+      ""
+    ],
+    "Cobbling": [
+      "Artisan",
+      "+10%"
+    ],
+    "Collecting": [
+      "Scholar",
+      "+10%"
+    ],
+    "Composer": [
+      "Music Theory",
+      "+30%",
+      "Scholar",
+      "+10%"
+    ],
+    "Cosmetics": [
+      "Artisan",
+      "+10%"
+    ],
+    "Courtesan": [
+      ""
+    ],
+    "Craftsman": [
+      ""
+    ],
+    "Crying/Hawking": [
+      ""
+    ],
+    "Dancing": [
+      ""
+    ],
+    "Debating": [
+      ""
+    ],
+    "Diplomacy": [
+      "Espionage",
+      "+10%",
+      "Explorer",
+      "+10%"
+    ],
+    "Diving": [
+      ""
+    ],
+    "Doll Making": [
+      "Artisan",
+      "+10%",
+      "Tailoring",
+      "+10%"
+    ],
+    "Drawing/Sketching": [
+      "Artisan",
+      "+10%"
+    ],
+    "Drilling": [
+      ""
+    ],
+    "Drudgery": [
+      ""
+    ],
+    "Dyer": [
+      "Scholar",
+      "+10%"
+    ],
+    "Economics": [
+      "Science",
+      "+10%"
+    ],
+    "Engraving/Etching": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Espionage": [
+      "Scholar",
+      "+10%"
+    ],
+    "Etiquette": [
+      "Espionage",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Page",
+      "+10%"
+    ],
+    "Excavation": [
+      "Scholar",
+      "+10%"
+    ],
+    "Explorer": [
+      ""
+    ],
+    "Exploser": [
+      "Artisan",
+      "+10%",
+      "Mathematics",
+      "+5%",
+      "Scholar",
+      "+10%"
+    ],
+    "Falconry": [
+      ""
+    ],
+    "Farming/Planting": [
+      "Botany",
+      "Botanist",
+      "+10%",
+      "Meteorology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Fashion": [
+      "Artisan",
+      "+10%"
+    ],
+    "Ferrier": [
+      "Scholar",
+      "+10%"
+    ],
+    "Fire Making": [
+      ""
+    ],
+    "Fishing": [
+      "Scholar",
+      "+10%"
+    ],
+    "Fletching/Bow Making": [
+      "Artisan",
+      "+10%",
+      "Carving",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Wood Curing",
+      "+10%"
+    ],
+    "Flint Knapping": [
+      ""
+    ],
+    "Florist/Horticulturist": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Foraging/Forestry": [
+      "Botany",
+      "Botanist",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Forensics": [
+      "Chemistry",
+      "+20%",
+      "Physiology",
+      "+20%",
+      "Undertaking",
+      "+20%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Fortune Telling": [
+      ""
+    ],
+    "Furniture Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Gambling": [
+      ""
+    ],
+    "Gemology": [
+      "Science",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Genealogy": [
+      "Science",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Geography": [
+      "Meteorology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Geology": [
+      "Surveyor",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Glass Blowing": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Gossip Mongery": [
+      "Carousing",
+      "+10%",
+      "Espionage",
+      "+10%",
+      "Story Telling",
+      "+10%"
+    ],
+    "Haberdasher": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Harlotry": [
+      ""
+    ],
+    "Harvesting": [
+      "Drudgery",
+      "+10%"
+    ],
+    "Heavy Drinking": [
+      ""
+    ],
+    "Heraldry": [
+      "Sewing",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "History": [
+      "Scholar",
+      "+10%"
+    ],
+    "Hunting/Trapping": [
+      ""
+    ],
+    "Hydrology": [
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Instruction": [
+      ""
+    ],
+    "Instrument Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Instrument Playing": [
+      "Music Theory",
+      "+30%"
+    ],
+    "Inventor": [
+      "Scholar",
+      "+10%"
+    ],
+    "Irrigation": [
+      "Scholar",
+      "+10%"
+    ],
+    "Juggling": [
+      ""
+    ],
+    "Kite Flying": [
+      "Meteorology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Laborer": [
+      ""
+    ],
+    "Lady Servant": [
+      "Scholar",
+      "+10%"
+    ],
+    "Leadership": [
+      "Explorer",
+      "+10%"
+    ],
+    "Leather Working": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%"
+    ],
+    "Leeching": [
+      "Physiology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Torturing",
+      "+10%"
+    ],
+    "Lens Making": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Librarian": [
+      "Scholar",
+      "+10%"
+    ],
+    "Lip Reading": [
+      "Espionage",
+      "+10%"
+    ],
+    "Locksmith": [
+      "Scholar",
+      "+10%"
+    ],
+    "Logic": [
+      "Scholar",
+      "+10%"
+    ],
+    "Loom Mastery": [
+      ""
+    ],
+    "Lumberjack": [
+      "Scholar",
+      "+10%"
+    ],
+    "Massage Therapy": [
+      "Scholar",
+      "+10%"
+    ],
+    "Mathematics": [
+      ""
+    ],
+    "Metal Working": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Smithy",
+      "+10%"
+    ],
+    "Metallurgy": [
+      "Chemistry",
+      "+10%",
+      "Mathematics",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Metaphysics": [
+      "Scholar",
+      "+10%"
+    ],
+    "Meteorology": [
+      "Climatology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Midwife": [
+      "Scholar",
+      "+10%"
+    ],
+    "Milling": [
+      "Scholar",
+      "+10%"
+    ],
+    "Mining/Tunneling": [
+      "Gemology",
+      "+20%",
+      "Mathematics",
+      "+10%"
+    ],
+    "Mocking": [
+      ""
+    ],
+    "Mountaineering": [
+      "Scholar",
+      "+10%"
+    ],
+    "Music Theory": [
+      "Scholar",
+      "+10%"
+    ],
+    "Oceanography": [
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%",
+      "Survival",
+      "+10%"
+    ],
+    "Overseer/Manager": [
+      ""
+    ],
+    "Page": [
+      "Scholar",
+      "+10%"
+    ],
+    "Painting": [
+      "Artisan",
+      "+10%"
+    ],
+    "Paving/Road Building": [
+      "Drudgery",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Perfume/Scent Making": [
+      "Chemistry",
+      "+20%",
+      "Scholar",
+      "+10%"
+    ],
+    "Philosophy": [
+      "Scholar",
+      "+10%"
+    ],
+    "Physics": [
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%"
+    ],
+    "Physiology": [
+      "Forensics",
+      "+20%",
+      "Scholar",
+      "+10%",
+      "Science",
+      "+10%",
+      "Torturing",
+      "+10%"
+    ],
+    "Plumbing": [
+      "Artisan",
+      "+10%",
+      "Hydrology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Politics": [
+      "Diplomacy",
+      "+10%",
+      "Espionage",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Pottery Making": [
+      "Artisan",
+      "+10%"
+    ],
+    "Printing/Typesetting": [
+      "Artisan",
+      "+10%"
+    ],
+    "Prospecting": [
+      "Gemology",
+      "+20%",
+      "Geography",
+      "+10%",
+      "Geology",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Surveyor",
+      "+10%"
+    ],
+    "Psychology": [
+      "Science",
+      "+10%"
+    ],
+    "Pulper": [
+      "Scholar",
+      "+10%"
+    ],
+    "Puppetry": [
+      ""
+    ],
+    "Pyrotechnics": [
+      "Artisan",
+      "+10%",
+      "Chemistry",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Recite Poetry": [
+      ""
+    ],
+    "Reporting/Journalism": [
+      ""
+    ],
+    "Riding": [
+      ""
+    ],
+    "Rope Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Rope Use",
+      "+20%"
+    ],
+    "Rope Use": [
+      ""
+    ],
+    "Rowing": [
+      ""
+    ],
+    "Running": [
+      ""
+    ],
+    "Sapping": [
+      "Scholar",
+      "+10%"
+    ],
+    "Scavenging": [
+      "Scholar",
+      "+10%"
+    ],
+    "Scholar": [
+      "Librarian",
+      "+10%"
+    ],
+    "Science": [
+      "Scholar",
+      "+10%"
+    ],
+    "Scribing": [
+      "Calligraphy",
+      "+20%"
+    ],
+    "Sculpting": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Sewing": [
+      "Artisan",
+      "+10%"
+    ],
+    "Shepherdry": [
+      "Scholar",
+      "+10%"
+    ],
+    "Signaling": [
+      "Scholar",
+      "+10%"
+    ],
+    "Sing Songs": [
+      "Music Theory",
+      "+30%"
+    ],
+    "Skinning/Tanning": [
+      "Scholar",
+      "+10%"
+    ],
+    "Slave Driving": [
+      ""
+    ],
+    "Smithy": [
+      "Artisan",
+      "+10%",
+      "Metallurgy",
+      "+10%"
+    ],
+    "Soap Making": [
+      "Scholar",
+      "+10%"
+    ],
+    "Soldiering": [
+      ""
+    ],
+    "Spelunking": [
+      "Scholar",
+      "+10%"
+    ],
+    "Spinning": [
+      "Artisan",
+      "+10%"
+    ],
+    "Squire": [
+      "Scholar",
+      "+10%"
+    ],
+    "Steam Power": [
+      "Scholar",
+      "+10%"
+    ],
+    "Stone Masonry": [
+      "Artisan",
+      "+10%"
+    ],
+    "Store Keeping": [
+      "Scholar",
+      "+10%"
+    ],
+    "Story Telling": [
+      "Explorer",
+      "+15%"
+    ],
+    "Supplier": [
+      "Explorer",
+      "+5%",
+      "Espionage",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Surfing": [
+      ""
+    ],
+    "Surveyor": [
+      "Explorer",
+      "+15%",
+      "Mathematics",
+      "+20%",
+      "Scholar",
+      "+10%"
+    ],
+    "Survival": [
+      "Explorer",
+      "+20%",
+      "Foraging/Forestry",
+      "+10%",
+      "Hunting/Trapping",
+      "+10%",
+      "Meteorology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Swimming": [
+      ""
+    ],
+    "Tactics/Strategy": [
+      ""
+    ],
+    "Tailoring": [
+      "Artisan",
+      "+10%"
+    ],
+    "Tattoo Artistry": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Taxidermy": [
+      "Artisan",
+      "+10%"
+    ],
+    "Theology": [
+      "Scholar",
+      "+10%"
+    ],
+    "Tightrope Walking": [
+      ""
+    ],
+    "Tobacconist": [
+      "Scholar",
+      "+10%"
+    ],
+    "Tool Making": [
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Smithy",
+      "+10%"
+    ],
+    "Torturing": [
+      "Chirugeon",
+      "+10%",
+      "Leeching",
+      "+10%",
+      "Physiology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Translating": [
+      "Scholar",
+      "+10%"
+    ],
+    "Tumbling": [
+      ""
+    ],
+    "Undertaking": [
+      "Forensics",
+      "+20%",
+      "Scholar",
+      "+10%"
+    ],
+    "Upholstery": [
+      "Artisan",
+      "+10%"
+    ],
+    "Valet": [
+      ""
+    ],
+    "Ventriloquism": [
+      ""
+    ],
+    "Wagon/Carriage Driving": [
+      ""
+    ],
+    "Wagon/Carriage Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Wood Working",
+      "+10%"
+    ],
+    "Water/Wind Power": [
+      "Architecture/Engineering",
+      "+10%",
+      "Meteorology",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Weapon Making": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Smithy",
+      "+10%"
+    ],
+    "Weaving": [
+      "Artisan",
+      "+10%"
+    ],
+    "Wheel Wright": [
+      "Artisan",
+      "+10%",
+      "Craftsman",
+      "+10%",
+      "Scholar",
+      "+10%",
+      "Wood Curing",
+      "+10%"
+    ],
+    "Wigweaving": [
+      "Artisan",
+      "+10%"
+    ],
+    "Wood Curing": [
+      "Artisan",
+      "+10%",
+      "Scholar",
+      "+10%"
+    ],
+    "Wood Cutting": [
+      ""
+    ],
+    "Wood Working": [
+      "Craftsman",
+      "+10%"
+    ],
+    "Writing": [
+      "Scribing",
+      "+5%",
+      "Story Telling",
+      "+10%",
+      "Explorer",
+      "+15%",
+      "Scholar",
+      "+10%"
+    ],
+    "Open Slot": [
+      ""
+    ],
+    "Unavailable": [
+      ""
+    ],
+    "Sacrificed": [
+      ""
+    ],
+    "Converted to Racial Skill Slot": [
+      ""
+    ],
+    "Converted to Class Skill Slot": [
+      ""
+    ]
+  }
+}

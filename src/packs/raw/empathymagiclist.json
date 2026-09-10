@@ -1,0 +1,327 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "empathymagiclist",
+    "lines": [
+      137970,
+      138025
+    ]
+  },
+  "entries": {
+    "Heal": [
+      "Heal",
+      "15",
+      "0",
+      "10 min.",
+      "Instant",
+      "Blood",
+      "Heals 1d4 per Practitioner Title to one body area. The practitioner suffers one level of fatigue for each 10 points healed."
+    ],
+    "Love": [
+      "Love",
+      "16",
+      "-5",
+      "30 min.",
+      "Instant",
+      "Hair",
+      "Causes the focus to have a positive reaction to a being of the skill user`s choice unless a Will Force save is successful for the focus."
+    ],
+    "Luck": [
+      "Luck",
+      "16",
+      "-5",
+      "10 min.",
+      "1 day",
+      "Clover",
+      "Grants 4 luck points to the focus. Each point can be used to alter a die roll by +/- 1/5% in favor of the focus. Only 1 point can be used at a time. Luck lasts 1 day."
+    ],
+    "Power": [
+      "Power",
+      "18",
+      "-15",
+      "30 min.",
+      "1 day",
+      "Gem",
+      "Allows the practitioner to transfer the use of 1 magical skill, power or spell to the focus for 1 full day, during which time the skill user cannot use the ability."
+    ],
+    "Protection": [
+      "Protection",
+      "18",
+      "-15",
+      "20 min.",
+      "1 day",
+      "Clothing",
+      "Causes the focus to be +5% to Magic, Illusion and Control Resistances for one full day."
+    ],
+    "Transfer": [
+      "Transfer",
+      "17",
+      "-10",
+      "1 min.",
+      "1 day",
+      "Cup",
+      "Allows the user to transfer one attribute point per 2 Practitioner Titles from any attribute of the practitioner to the focus being. Points transfer back in 24 hours."
+    ],
+    "Wealth": [
+      "Wealth",
+      "17",
+      "-10",
+      "1 hour",
+      "1 day",
+      "Coin",
+      "The next monetary transaction completed by the focus will go in favor of the focus, generating more money. Transaction must be within one day of ritual."
+    ],
+    "Message": [
+      "Message",
+      "15",
+      "0",
+      "1 hour",
+      "1 day",
+      "Jewelry",
+      "One Message of up to one word per Practitioner Title is relayed in that being`s next dream."
+    ],
+    "Youthful": [
+      "Youthful",
+      "25",
+      "-50",
+      "1 hour",
+      "1 day",
+      "Hair",
+      "The victim temporarily gets younger by 1/10 of their lifespan per Practitioner Title. Attribute effects change based on age (see Aging Effects). Youthful lasts 1 hour per Practitioner Title, upon which the being returns to their normal age."
+    ],
+    "Bind Magical Animal Familiar": [
+      "Bind Magical Animal Familiar",
+      "18",
+      "-15",
+      "30 min.",
+      "Ongoing",
+      "Blood",
+      "The practitioner performs this ritual and binds one magical animal familiar to themselves. The effects are identical to the spell Bind Familiar, with the exception that no Will Force is given up. The familiar must be a creature of type animal or magical animal. An Empathy Magic practitioner may only have one animal familiar and one magical animal familiar at a time (allowing for two familiars)."
+    ],
+    "Plant Bond": [
+      "Plant Bond",
+      "18",
+      "-15",
+      "30 min.",
+      "Ongoing",
+      "Leaf",
+      "The practitioner performs a ritual and binds one magical plant to themselves. The effects are identical to the spell Symbiosis, with the exception that no Will force is given up, and that the plant must be a creature of type magical plant. An Empathy Magic practitioner may only have one plant bond at any time."
+    ],
+    "Plant Projection": [
+      "Plant Projection",
+      "17",
+      "-10",
+      "20 min.",
+      "Until Released",
+      "Leaf",
+      "The practitioner imagines a tree or plant of their choosing, and after a ritual is performed, the practitioner can sense life from through that plant as the skill Life Sense.  If a face has previously been carved into the tree, or one has been shaped into the tree with the skill Wood Lore, then the practitioner can see, hear and smell from the face on the tree as well."
+    ],
+    "Tree Meld": [
+      "Tree Meld",
+      "22",
+      "-35",
+      "1 min.",
+      "1 hour",
+      "Bark/Leaf",
+      "The practitoner performs a brief ritual and then literally melds into a tree or plant larger than the practitioner`s body.  The practitioner can stay in this form for one hour, and all possessions stay with the being when the meld occurs.  The being can sense life from within the plant identical to the skill Life Sense."
+    ],
+    "Holy Barrier": [
+      "Holy Barrier",
+      "25",
+      "-50",
+      "2 hours",
+      "Varies",
+      "Divine Symbol",
+      "Creates an alignment colored barrier around the ritualist, protecting them from evil-aligned divine magical spells, skills, weapons, etc. This lasts 1 day per Practitioner Title and remains in effect for the full amount of time, even after the ritualist is deceased."
+    ],
+    "Seal Crypt": [
+      "Seal Crypt",
+      "20",
+      "-25",
+      "1 hour",
+      "Varies",
+      "Crypt Piece",
+      "Creates a seal around a crypt or tomb, disallowing admittance of any being from any Plane for 1 day per Practitioner Title. This ritual may be counteracted by the Sympathy Magic Ritual Crack Crypt by using a contest of Will Force, modified by Practitioner Titles and Will Force differences (+/-5% per)."
+    ],
+    "Still Evil": [
+      "Still Evil",
+      "30",
+      "-75",
+      "1 hour",
+      "1 day",
+      "Divine Symbol",
+      "Uses the evil deity`s symbol to block a single being from contacting their evil deity for the use of any invocations or skills, including Commune, for a period of 24 hours."
+    ],
+    "Concentration": [
+      "Concentration",
+      "15",
+      "0",
+      "30 min.",
+      "1 day",
+      "Pen",
+      "Grants the focus an acute mental alertness, providing +5% per Practitioner Title to Perception and Concentration rolls."
+    ],
+    "Deftness": [
+      "Deftness",
+      "18",
+      "-15",
+      "20 min.",
+      "1 day",
+      "Glove",
+      "Grants dexterity to the focus, offering a +5% per Practitioner Title to Agility saves."
+    ],
+    "Remembrance": [
+      "Remembrance",
+      "18",
+      "-15",
+      "5 min.",
+      "Instant",
+      "Journal Page",
+      "Causes the focus to temporarily recall a single forgotten memory of an event that transpired no more than 4 years ago per Practitioner Title."
+    ],
+    "Scrutiny": [
+      "Scrutiny",
+      "18",
+      "-15",
+      "5 min.",
+      "Instant",
+      "Book",
+      "Causes the focus to scrutinize all new information both perceived and given, offering a second chance to perform any action, even if the first was a Critical Failure."
+    ],
+    "Wings": [
+      "Wings",
+      "17",
+      "-10",
+      "30 min.",
+      "1 day",
+      "Feather/Wing Skin",
+      "Causes wings to sprout from the focus`s back, granting normal flight. This ritual has no effect on beings who already have natural wings."
+    ],
+    "Health Binding": [
+      "Health Binding",
+      "13",
+      "10",
+      "10 min.",
+      "Varies",
+      "Blood",
+      "Grants a bonus of +5% (per 3 full practitioner titles) to all Disease Resistance rolls for the ritualist and one ally per practitioner title. This effect lasts 1 hour per practitioner title."
+    ],
+    "Mind Swap": [
+      "Mind Swap",
+      "17",
+      "-10",
+      "1 hour",
+      "Varies",
+      "Dried Skin",
+      "Swap minds with another being. Mental contact occurs during the ritual and if the target consents at the end of the ritual then ritualist or one designated (who must also consent). Swaps minds with the target. The effect lasts 1 hour per practitioner title or permanently if 1 Will Force is spent by either of the involved parties (both must still consent)."
+    ],
+    "Mystic Binding": [
+      "Mystic Binding",
+      "20",
+      "-25",
+      "10 min.",
+      "Varies",
+      "Blood",
+      "Grants a bonus of +5% (per 3 full practitioner titles) to all Magic Resistance rolls for the ritualist and one ally per practitioner title. This effect lasts 1 hour per practitioner title."
+    ],
+    "Spirit Sight": [
+      "Spirit Sight",
+      "15",
+      "0",
+      "10 sec.",
+      "Varies",
+      "None",
+      "Allows the practitioner to see all supernatural spirits, recently dead beings (ghosts), etc. Even if the spirit doesn`t normally have a form (an outline or orb of aura) is created based on the alignment of the being as the spell Reveal Aura. This effect lasts 1 hour per practitioner title."
+    ],
+    "Truth Binding": [
+      "Truth Binding",
+      "15",
+      "0",
+      "10 min.",
+      "Varies",
+      "Scale/Weights",
+      "Grants a bonus of +5% (per 3 full practitioner titles) to all Illusion Resistance rolls for the ritualist and one ally per practitioner title. This effect lasts 1 hour per practitioner title."
+    ],
+    "Vital Binding": [
+      "Vital Binding",
+      "16",
+      "-5",
+      "10 min.",
+      "Varies",
+      "Magical/Blessed Water",
+      "Grants a bonus of +5% (per 3 full practitioner titles) to all Poison Resistance rolls for the ritualist and one ally per practitioner title. This effect lasts 1 hour per practitioner title."
+    ],
+    "Will Binding": [
+      "Will Binding",
+      "18",
+      "-15",
+      "10 min.",
+      "Varies",
+      "Inspiring Object",
+      "Grants a bonus of +5% (per 3 full practitioner titles) to all Control Resistance rolls for the ritualist and one ally per practitioner title. This effect lasts 1 hour per practitioner title."
+    ],
+    "Angel Ask": [
+      "Angel Ask",
+      "18",
+      "-15",
+      "10 min.",
+      "Instant",
+      "White or Yellow Feather",
+      "Calls to the nearest Angel on the same plane (under 10th level). The Angel may make a CR to resist (if desired). There is a 1% chance an Archon comes instead. The Archon is likely to be upset unless the cause is especially just or important. If the Angel is not on a current task, they may come without resisting (GM`s discretion). Once present it will make itself known to practitioner. At that time the practitioner can make a request. If the request is a noble or a just one the Angel will grant it if it is within their power to help."
+    ],
+    "Censure": [
+      "Censure",
+      "18",
+      "-15",
+      "1 min.",
+      "1 day",
+      "Paper with Name",
+      "The paper with the name is burned. Causes one focus being to be unable to speak negatively about a person or group without a successful a Will Force save per attempt. Lasts 1 day."
+    ],
+    "Consign Spirit": [
+      "Consign Spirit",
+      "17",
+      "-10",
+      "1 hour",
+      "Instant",
+      "Salt or Holy Water",
+      "Requires the burial place or the body of the spirit (if they died to become a spirit) or any anchoring object that the spirit prizes or prized while alive. Spirit (and the attached soul) is forced to move on to the proper plane based on their type. Good beings go to the heavenly planes, evil to the hellish and neutral or unaligned to purgatory. Spirits or spirit beings from other planes are afforded a Control Resistance at -20%. Failure indicates they are banished to that plane."
+    ],
+    "Deny Evil": [
+      "Deny Evil",
+      "18",
+      "-15",
+      "1 hour",
+      "1 day",
+      "Personal Object",
+      "Requires an object handled by an evil invocation user. This object and the particular evil invoker are then focused on by the ritual performer who must have good as part of their alignment or worship a good deity. If the ritual skill roll is successful the evil invoker focused on is unable to use any invocations for the remainder of the day."
+    ],
+    "Fellowship": [
+      "Fellowship",
+      "18",
+      "-15",
+      "1 hour",
+      "Ongoing",
+      "Tokens",
+      "Links the practitioner and up to 2 others per class title. The practitioner and allies exchange small tokens with each other. When the ritual is complete, they can all sense the direction of any other in the fellowship and approximate distance. This ritual lasts until the specified goal or quest is completed."
+    ],
+    "Gather the Dead": [
+      "Gather the Dead",
+      "18",
+      "-15",
+      "1 hour",
+      "Varies",
+      "Personal Item",
+      "Ghosts will lose their special requirements to be near where they died or near a specific item. They are then drawn temporarily to the ritualist for 1 hour per class title."
+    ],
+    "Sanctify": [
+      "Sanctify",
+      "16",
+      "-5",
+      "10 min.",
+      "1 day",
+      "Good Symbol",
+      "Sanctifies an area to life and the living. Undead must make a Control Resistance to enter the specified area. Lasts for 1 day."
+    ]
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceFeatureSkin",
+    "lines": [
+      45353,
+      45470
+    ]
+  },
+  "entries": {
+    "Apocritara": [
+      "Skin:",
+      "Brown,Black,Black/White,Yellow/Black,Yellow/Brownish Yellow"
+    ],
+    "Arachen": [
+      "Skin:",
+      "Pale Blue,Bluish Gray,Brownish Gray,Tan,Gray,Brown,Black"
+    ],
+    "Avian(Dark)": [
+      "Skin:",
+      "Pink,Black,Mottled"
+    ],
+    "Avian(Forest)": [
+      "Skin:",
+      "Pale,Olive,Tan,Light Brown,Brown"
+    ],
+    "Avian(Mountain)": [
+      "Skin:",
+      "Pale,Olive,Tan,Light Brown,Brown"
+    ],
+    "Ba’Cora": [
+      "Skin:",
+      "Black,Brown,Gray"
+    ],
+    "Beastman": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Brachara": [
+      "Skin:",
+      "White,Gray,Pale Yellow,Tan,Peach,Orange,Dark Red,Reddish Brown,Greenish Brown,Blue,Brown,Black,Mottled"
+    ],
+    "Brok": [
+      "Skin:",
+      "Pale,Olive,Ruddy,Tan,Light Brown"
+    ],
+    "Brownie": [
+      "Skin:",
+      "Tan,Brown"
+    ],
+    "Centaur": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Cervara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Changeling": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Chetahl": [
+      "Skin:",
+      "Pink,Black,Mottled"
+    ],
+    "Crystori": [
+      "Form:",
+      "Translucent Gray,Translucent Yellow,Translucent Orange,Translucent Brown,Translucent Green,Translucent Blue,Translucent Pink,Translucent Purple,Translucent Red"
+    ],
+    "Dao": [
+      "Skin:",
+      "Black,Gray,Brown,Red"
+    ],
+    "Djinn": [
+      "Skin:",
+      "White,Gray,Silver,Blue"
+    ],
+    "Dryad": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Dwarf(Civilized)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Dwarf(Dark)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Dwarf(Fire)": [
+      "Skin:",
+      "Tan,Bronze,Ruddy,Red,Brown,Gray,Charcoal"
+    ],
+    "Dwarf(Iron)": [
+      "Body Shell:",
+      "Tin,Bronze,Copper,Mottled Rust,Black Iron,Iron,Steel,Gunmetal,Silver,Chrome,Rusted Iron,Golden"
+    ],
+    "Dwarf(Mountain)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Dwarf(Stone)": [
+      "Body Sculpt:",
+      "Clear,Translucent,Flecked White,Light Brown,Tan,Dark Brown,Light Gray,Gray,Dark Gray,Blue,Green,Reddish Brown,Mottled,Marbled"
+    ],
+    "Elf(Dark)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan,Black"
+    ],
+    "Elf(Desert)": [
+      "Skin:",
+      "Tan,Light Brown,Olive,Reddish,Bronze"
+    ],
+    "Elf(Dread)": [
+      "Skin:",
+      "Light Brown,Brown-Gray,Olive,Pink,Tan,Black"
+    ],
+    "Elf(Gray)": [
+      "Skin:",
+      "Blue Gray,Pale(White),Pink"
+    ],
+    "Elf(High)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Elf(Ice)": [
+      "Skin:",
+      "Bluish Gray,Blue,Pale,White"
+    ],
+    "Elf(Sea)": [
+      "Skin:",
+      "Blue,Grayish Blue,Light Green,Silver,Pale,Olive"
+    ],
+    "Elf(Shadow)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Elf(Silver)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Elf(Wild)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Elf(Wood)": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Equara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Fairy": [
+      "Skin:",
+      "Light Blue,Pale(Flesh),Olive,Green,Pink,Tan,Black"
+    ],
+    "Fairy(Dark)": [
+      "Skin:",
+      "Light Blue,Pale(Flesh),Olive,Green,Pink,Tan,Black"
+    ],
+    "Famorian": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Formless": [
+      "",
+      ""
+    ],
+    "Gaunt": [
+      "Skin:",
+      "Translucent White"
+    ],
+    "Geebra": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Giant(Civilized)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Giant(True)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Gnome": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Goblin(Forest)": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Goblin(Mountain)": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Goblin(Plains)": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Grahl": [
+      "Skin:",
+      "Pink,Black,Mottled"
+    ],
+    "Gremlin": [
+      "Skin:",
+      "Brown,Black,Gray"
+    ],
+    "Grethen": [
+      "Skin:",
+      "Gray,Green,Black,Mottled"
+    ],
+    "Gryphara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Hippotara": [
+      "Skin:",
+      "Dark Gray,Light Gray,Bluish Gray,Dark Brown,Light Brown,Brownish Silver"
+    ],
+    "Hobgoblin": [
+      "Skin:",
+      "Red,Gray,Dark Brown,Dark Green"
+    ],
+    "Human(Barbaric)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Human(Civilized:City)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Human(Civilized:Port)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Human(Civilized:Town)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Human(Civilized:Village)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Ifrit": [
+      "Skin:",
+      "Black,Gray,Red,Yellow"
+    ],
+    "Jumara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Katara": [
+      "Skin:",
+      "Pink,Black,Mottled"
+    ],
+    "Kenku": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Kerasara": [
+      "Skin:",
+      "Dark Gray,Light Gray,Bluish Gray,Dark Brown,Light Brown,Brownish Silver"
+    ],
+    "Lagara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Leprechaun": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Lissara": [
+      "Skin:",
+      "Iridescent Blue,Iridescent Green,Blue,Green,Yellow,Black,Spotted,Striped"
+    ],
+    "Lotara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Loxodara": [
+      "Skin:",
+      "Dark Gray,Light Gray,Bluish Gray,Dark Brown,Light Brown,Mottled"
+    ],
+    "Lutrinara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Maginos": [
+      "Form:",
+      "Bone,Horn,Earthern,Cloth,Hide,Crystal"
+    ],
+    "Maginos(Metal)": [
+      "Body Shell:",
+      "Tin,Bronze,Copper,Mottled Rust,Black Iron,Iron,Steel,Gunmetal,Silver,Chrome,Rusted Iron,Golden"
+    ],
+    "Maginos(Stone)": [
+      "Body Sculpt:",
+      "Clear,Translucent,Flecked White,Light Brown,Tan,Dark Brown,Light Gray,Gray,Dark Gray,Blue,Green,Reddish Brown,Marbled"
+    ],
+    "Maginos(Clay)": [
+      "Body Sculpt:",
+      "Gray,Red,Brown,Green,Blue,White"
+    ],
+    "Maginos(Wood)": [
+      "Wood Form:",
+      "White(Birch),Gray(Popular),Yellow(Pine),Light Tan(Spruce),Brown(Oak),Dark Brown(Mahogany),Red(Cedar),Purple(Purpleheart),Stripped,Mottled"
+    ],
+    "Marid": [
+      "Skin:",
+      "Blue,Gray,Green,Silver"
+    ],
+    "Mechanos": [
+      "Body Shell:",
+      "Tin,Bronze,Copper,Mottled Rust,Black Iron,Iron,Steel,Gunmetal,Silver,Chrome,Rusted Iron,Golden"
+    ],
+    "Mellivara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Mephyt(Fire)": [
+      "Skin:",
+      "Brown,Reddish Brown,Red,Orange"
+    ],
+    "Mephyt(Ice)": [
+      "Skin:",
+      "Light Blue,Gray,Silver,White"
+    ],
+    "Merfolk": [
+      "Skin:",
+      "Green,Bluish Green,Blue,Violet,Silver,Bronze,Gold"
+    ],
+    "Midfolk(Forest)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Midfolk(River)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Midfolk(Town)": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Nixie": [
+      "Skin:",
+      "Dark Blue,Light Blue,Light Green,Blue-Gray,Gray"
+    ],
+    "Nymph": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Ogre": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Ogre(Magic)": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Planar": [
+      "Skin:",
+      "White(Eggshell),Gray,Silver,Pale,Golden,Red"
+    ],
+    "Podling": [
+      "Skin:",
+      "Light Blue,Pale(Flesh),Olive,Green,Pink,Tan,Black"
+    ],
+    "Ratahl": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "S’rett": [
+      "Skin:",
+      "Pale(Arctic),Tan(Desert),Gray/Black(Forest),Black(Jungle),Brown(Mountains),Light Brown(Plains/Grassland),Tan(Savannah),Olive(Swamp),Brown(River)Gray(Ocean/Sea),Black(Wasteland)"
+    ],
+    "Sasquatch/Yeti": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Satyr/Fawn": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Saurian": [
+      "Skin:",
+      "Pale(Arctic),Tan(Desert),Gray/Black(Forest),Black(Jungle),Brown(Mountains),Light Brown(Plains/Grassland),Tan(Savannah),Olive(Swamp),Brown(River)Gray(Ocean/Sea),Black(Wasteland)"
+    ],
+    "Scethen": [
+      "Skin:",
+      "Pale Blue,Bluish Gray,Brownish Gray,Tan,Gray,Brown,Black"
+    ],
+    "Se’eth": [
+      "Skin:",
+      "Pale(Arctic),Tan(Desert),Gray/Black(Forest),Black(Jungle),Brown(Mountains),Light Brown(Plains/Grassland),Tan(Savannah),Olive(Swamp),Brown(River)Gray(Ocean/Sea),Black(Wasteland)"
+    ],
+    "Sha’Cora": [
+      "Skin:",
+      "Light Blue,Blue,Grayish Blue,White,Mottled"
+    ],
+    "Sporeling": [
+      "Skin:",
+      "Pale,Olive,Green,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Sura’keth": [
+      "Skin:",
+      "Pale(Arctic),Tan(Desert),Gray/Black(Forest),Black(Jungle),Brown(Mountains),Light Brown(Plains/Grassland),Tan(Savannah),Olive(Swamp),Brown(River)Gray(Ocean/Sea),Black(Wasteland)"
+    ],
+    "Sura’rath": [
+      "Skin:",
+      "Light Blue,Blue,Dark Blue,Teal,Light Green,Light Blue,Sea Green,Gray,Dark Gray"
+    ],
+    "Susara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Sylph": [
+      "Skin:",
+      "Pale(White),Olive,Pink,Tan"
+    ],
+    "Taurian": [
+      "Skin:",
+      "Pale,Olive,Pink,Ruddy,Tan,Light Brown,Brown,Black"
+    ],
+    "Testudara": [
+      "Skin:",
+      "Brown,Green,Yellow,Black"
+    ],
+    "Troll": [
+      "Skin:",
+      "Green,Yellowish"
+    ],
+    "Troll(Ice)": [
+      "Skin:",
+      "Pale,Gray,White,Blue,Translucent"
+    ],
+    "Troll(Rock)": [
+      "Skin:",
+      "Pale Gray"
+    ],
+    "Ursara": [
+      "Skin:",
+      "Brown,Black,Pink,Mottled"
+    ],
+    "Vulpara": [
+      "Skin:",
+      "Brown,White,Pink,Mottled"
+    ],
+    "Whalrog": [
+      "Skin:",
+      "Brown,Gray,Black,Mottled"
+    ],
+    "Wildling": [
+      "Wood Form:",
+      "White(Birch),Gray(Popular),Yellow(Pine),Light Tan(Spruce),Brown(Oak),Dark Brown(Mahogany),Red(Cedar),Purple(Purpleheart),Stripped,Mottled"
+    ],
+    "Wolfen": [
+      "Skin:",
+      "Brown,Gray,Tan,Black,Mottled"
+    ],
+    "Xar’Xeth": [
+      "Skin:",
+      "Translucent,Gray,Red,Iridescent Green,Flat Green,Brown,Black,Mottled"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "martiallorestancevalueslist",
+    "lines": [
+      100832,
+      100838
+    ]
+  },
+  "entries": {
+    "See without eyes": [
+      "See without eyes",
+      "If cannot see opponent, penalites are reduced to -2 melee. Gain full defensive modifer against their attacks. Rear/Side bonus against while in theis stance. Ignores distortion spell effects. Does not apply if target is silenced."
+    ],
+    "Flow as water": [
+      "Flow as water",
+      "-8 Defensive modifier. Dodge, Feint and Sidestep are +50%. Offensive actions are -1 to hit."
+    ],
+    "Strike as wind": [
+      "Strike as wind",
+      "+4 Melee/Missile to hit, Starting weapon speeds are -2 seconds. Initiative is -4, Critical, Focused Attack, Perfect Shot are +50%."
+    ],
+    "Calm in the storm": [
+      "Calm in the storm",
+      "+50% resistances effects which hold or affect movement. +20% Control Resistance. Parries, Disarm and Trap Weapon are +25%, AGL Saves are +40%."
+    ],
+    "Drunken fighting": [
+      "Drunken fighting",
+      "+4 to hit and +2 per die of damage after failing 1 VIT Save for intoxication. +20% to combat skills and Martial Knowledge attacks. If more than 5 VIT Saves for intoxication all modifers are lost."
+    ]
+  }
+}

@@ -1,0 +1,4768 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "raceSkillDetailValues",
+    "lines": [
+      51858,
+      51971
+    ]
+  },
+  "entries": {
+    "Apocritara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Arachen": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Fear",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          "+10%"
+        ],
+        [
+          "Surprise Attack",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Avian(Dark)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Avian(Forest)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Sing",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Avian(Mountain)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Direction Knowledge",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ],
+        [
+          "Truth Tell",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Ba’Cora": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Cause Disease",
+          ""
+        ],
+        [
+          "Channel Life Force",
+          "+20%"
+        ],
+        [
+          "Convert Negative Life Force",
+          "+30%"
+        ],
+        [
+          "Darkness",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          ""
+        ],
+        [
+          "Detect Good",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Fear",
+          ""
+        ],
+        [
+          "Life Sense",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Speak to Dead",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Beastman": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Detect Trap(w)",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          "+10%"
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Brachara": [
+      "race_skill_select_seven",
+      [
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Water Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Brok": [
+      "race_skill_select_eight",
+      [
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Speak to Animal",
+          "+30%"
+        ],
+        [
+          "Speak to Dead",
+          "+20%"
+        ],
+        [
+          "Tame Animal",
+          "-10%"
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Brownie": [
+      "race_skill_select_nine",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Mimic",
+          "+20%"
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Speak to Animal",
+          ""
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Centaur": [
+      "race_skill_select_six",
+      [
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Track",
+          "+10%"
+        ],
+        [
+          "Truth Tell",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Cervara": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Chetahl": [
+      "race_skill_select_nine",
+      [
+        [
+          "Balance",
+          "+10%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Break Fall",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Leap",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Crystori": [
+      "race_skill_select_eight",
+      [
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Metal Lore",
+          "+10%"
+        ],
+        [
+          "Soul Knowledge",
+          "+10%"
+        ],
+        [
+          "Sing",
+          "+20%"
+        ],
+        [
+          "Speak to Stone",
+          ""
+        ],
+        [
+          "Stone Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Dao": [
+      "race_skill_select_seven",
+      [
+        [
+          "Caustokinesis",
+          "+40%"
+        ],
+        [
+          "Detect Supernatural",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Stone Lore",
+          "+30%"
+        ],
+        [
+          "Metal Lore",
+          "+20%"
+        ],
+        [
+          "Crystal Lore",
+          "+10%"
+        ],
+        [
+          "Speak to Stone",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Djinn": [
+      "race_skill_select_seven",
+      [
+        [
+          "Electrokinesis",
+          "+40%"
+        ],
+        [
+          "Detect Supernatural",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Levitation",
+          "+20%"
+        ],
+        [
+          "Telekinesis",
+          "+20%"
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Spirit Travel",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Dryad": [
+      "race_skill_select_nine",
+      [
+        [
+          "Evoke",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Plant Shape",
+          "+20%"
+        ],
+        [
+          "Speak to Plant",
+          "+10%"
+        ],
+        [
+          "Control Growth",
+          "+10%"
+        ],
+        [
+          "Wood Lore",
+          "+10%"
+        ]
+      ],
+      "Evoke (special type: Tree)"
+    ],
+    "Dwarf(Civilized)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Depth Knowledge",
+          "+20%"
+        ],
+        [
+          "Detect Trap(u)",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Metal Lore",
+          "+15%"
+        ],
+        [
+          "Stone Lore",
+          "+15%"
+        ]
+      ],
+      "None"
+    ],
+    "Dwarf(Dark)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Depth Knowledge",
+          "+30%"
+        ],
+        [
+          "Detect Trap(u)",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Metal Lore",
+          "+5%"
+        ],
+        [
+          "Stone Lore",
+          "+5%"
+        ]
+      ],
+      "None"
+    ],
+    "Dwarf(Fire)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          "+20%"
+        ],
+        [
+          "Detect Trap(u)",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Metal Lore",
+          "+10%"
+        ],
+        [
+          "Speak to Stone",
+          "+20%"
+        ],
+        [
+          "Stone Lore",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Dwarf(Iron)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Danger Knowledge",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Metal Lore",
+          "+20%"
+        ],
+        [
+          "Imbue",
+          "+10%"
+        ],
+        [
+          "Empower",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Dwarf(Mountain)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Berserking",
+          "+20%"
+        ],
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Dwarf(Stone)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Danger Knowledge",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Speak to Stone",
+          "+20%"
+        ],
+        [
+          "Stone Lore",
+          "+10%"
+        ],
+        [
+          "Imbue",
+          "+10%"
+        ],
+        [
+          "Empower",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Dark)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Detect Trap(u)",
+          "+10%"
+        ],
+        [
+          "Fear",
+          "+10%"
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          "+10%"
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Desert)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Blend",
+          "+10%"
+        ],
+        [
+          "Cover Tracks",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unseen",
+          "+20%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Stone Lore",
+          "+10%"
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Dread)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Awaken Plant",
+          "+10%"
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Haunted Grove",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Speak to Dead",
+          ""
+        ],
+        [
+          "Wood Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Gray)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Detect Aura",
+          "+10%"
+        ],
+        [
+          "Detect Magic",
+          "+10%"
+        ],
+        [
+          "Decipher",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Meditate",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(High)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Sing",
+          "+20%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Ice)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          "+10%"
+        ],
+        [
+          "Crystal Lore",
+          "+10%"
+        ],
+        [
+          "Cryokinesis",
+          "+20%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Detect Aura",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Sing",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Sea)": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Sing",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Water Lore",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Shadow)": [
+      "race_skill_select_seventeen",
+      [
+        [
+          "Beguile",
+          "+20%"
+        ],
+        [
+          "Bone Lore",
+          "+20%"
+        ],
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Empower",
+          "+20%"
+        ],
+        [
+          "Flesh Lore",
+          "+20%"
+        ],
+        [
+          "Darkness",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Poison Lore",
+          "+20%"
+        ],
+        [
+          "Possession",
+          "+10%"
+        ],
+        [
+          "Scrying",
+          "+10%"
+        ],
+        [
+          "Sense Projection",
+          "+20%"
+        ],
+        [
+          "Shadow Shift",
+          "+20%"
+        ],
+        [
+          "Sing",
+          "+20%"
+        ],
+        [
+          "Song Lore",
+          "+10%"
+        ],
+        [
+          "Spirit Travel",
+          "+10%"
+        ],
+        [
+          "Thought Projection",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Silver)": [
+      "race_skill_select_seventeen",
+      [
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Empower",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          "+20%"
+        ],
+        [
+          "Light",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Phase",
+          "+20%"
+        ],
+        [
+          "Scrying",
+          "+10%"
+        ],
+        [
+          "Sense Projection",
+          "+20%"
+        ],
+        [
+          "Sing",
+          "+30%"
+        ],
+        [
+          "Song Lore",
+          "+20%"
+        ],
+        [
+          "Speak to Animal",
+          "+10%"
+        ],
+        [
+          "Spirit Travel",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Thought Projection",
+          "+20%"
+        ],
+        [
+          "Water Lore",
+          "+20%"
+        ],
+        [
+          "Wood Lore",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Wild)": [
+      "race_skill_select_thirteen",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Cover Tracks",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Speak to Animal",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ],
+        [
+          "Wood Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Elf(Wood)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          "+10%"
+        ],
+        [
+          "Wood Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Equara": [
+      "race_skill_select_eight",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Brace",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+20%"
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Famorian": [
+      "race_skill_select_six",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Formless": [
+      "race_skill_select_six",
+      [
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+10%"
+        ],
+        [
+          "Mask Life Force",
+          "+10%"
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Radiant Life Force",
+          "+10%"
+        ],
+        [
+          "Telekinesis",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Gaunt": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          ""
+        ],
+        [
+          "Detect Supernatural",
+          ""
+        ],
+        [
+          "Life Sense",
+          "+10%"
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Still Life Force",
+          "+10%"
+        ],
+        [
+          "Meditate",
+          ""
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Sense Projection",
+          "+10%"
+        ],
+        [
+          "Smell",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Geebra": [
+      "race_skill_select_eight",
+      [
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Detect Trap",
+          "+20%"
+        ],
+        [
+          "Disguise",
+          ""
+        ],
+        [
+          "Escape",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Set Trap",
+          "+20%"
+        ],
+        [
+          "Smell",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Giant(Civilized)": [
+      "race_skill_select_ten",
+      [
+        [
+          "Cartography",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Detect Trap",
+          ""
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+30%"
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Law",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Truth Tell",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "race_skill_select_ten",
+      [
+        [
+          "Cartography",
+          ""
+        ],
+        [
+          "Sail",
+          ""
+        ],
+        [
+          "Detect Trap",
+          ""
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+30%"
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Navigate",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Truth Tell",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Giant(True)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Cartography",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Distance Knowledge",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Fearless",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Truth Tell",
+          ""
+        ],
+        [
+          "Steadfast",
+          "+10%"
+        ],
+        [
+          "Stone Lore",
+          "+30%"
+        ],
+        [
+          "Speak to Stone",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Gnome": [
+      "race_skill_select_fourteen",
+      [
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Plant Shape",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Soothe",
+          ""
+        ],
+        [
+          "Speak to Animal",
+          ""
+        ],
+        [
+          "Speak to Plant",
+          ""
+        ],
+        [
+          "Tame Animal",
+          "+20%"
+        ],
+        [
+          "Track",
+          ""
+        ],
+        [
+          "Wood Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Goblin(Forest)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Balance",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Surprise Attack",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Goblin(Mountain)": [
+      "race_skill_select_five",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ]
+      ],
+      "None"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ]
+      ],
+      "None"
+    ],
+    "Goblin(Plains)": [
+      "race_skill_select_seven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Grahl": [
+      "race_skill_select_eight",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Leap",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Smell",
+          "+50%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Grethen": [
+      "race_skill_select_ten",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          "+10%"
+        ],
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Shadow Shift",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ],
+        [
+          "Stone Lore",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Gryphara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Speak to Animal",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Hippotara": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Berserking",
+          "+20%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Hobgoblin": [
+      "race_skill_select_nine",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Supernatural",
+          "+20%"
+        ],
+        [
+          "Fearless",
+          "+10%"
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Speak to Dead",
+          "+10%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Human(Barbaric)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Human(Civilized:City)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Cheat",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Law",
+          "+10%"
+        ],
+        [
+          "Lie",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Meditate",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Sleight of Hand",
+          ""
+        ],
+        [
+          "Steal",
+          ""
+        ],
+        [
+          "Street Knowledge",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Human(Civilized:Port)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Cheat",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Lie",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Navigate",
+          ""
+        ],
+        [
+          "Sail",
+          ""
+        ],
+        [
+          "Sleight of Hand",
+          ""
+        ],
+        [
+          "Steal",
+          ""
+        ],
+        [
+          "Street Knowledge",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Human(Civilized:Town)": [
+      "race_skill_select_six",
+      [
+        [
+          "Cheat",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Lie",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Human(Civilized:Village)": [
+      "race_skill_select_ten",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Ifrit": [
+      "race_skill_select_seven",
+      [
+        [
+          "Pyrokinesis",
+          "+40%"
+        ],
+        [
+          "Detect Supernatural",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Light",
+          "+20%"
+        ],
+        [
+          "Leap",
+          "+20%"
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Spirit Travel",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Jumara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Katara": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Charming",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Scrying",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Telekinesis",
+          "+10%"
+        ],
+        [
+          "Track",
+          "+25%"
+        ]
+      ],
+      "None"
+    ],
+    "Kenku": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Trap(w)",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          "+30%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Kerasara": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Berserking",
+          "+20%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Tame Animal",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Lagara": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+15%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Leap",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          "+20%"
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Leprechaun": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Curse",
+          "+20%"
+        ],
+        [
+          "Darkness",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Mimic",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Scrying",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "Scrying:only treasure owned/handled"
+    ],
+    "Lissara": [
+      "race_skill_select_six",
+      [
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Move Unseen",
+          "+10%"
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Lotara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Steal",
+          "+30%"
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ],
+        [
+          "Track",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Loxodara": [
+      "race_skill_select_eight",
+      [
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Lutrinara": [
+      "race_skill_select_eight",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Maginos": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          "+20%"
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Maginos(Clay)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          "+20%"
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Maginos(Metal)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          "+20%"
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Maginos(Stone)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          "+20%"
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Maginos(Wood)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Body Control",
+          "+20%"
+        ],
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Distance Knowledge",
+          "+10%"
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Marid": [
+      "race_skill_select_nine",
+      [
+        [
+          "Cryokinesis",
+          "+40%"
+        ],
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Detect Supernatural",
+          "+10%"
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Fearless",
+          "+20%"
+        ],
+        [
+          "Depth Knowledge",
+          "+10%"
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Spirit Travel",
+          ""
+        ],
+        [
+          "Water Lore",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Mechanos": [
+      "race_skill_select_eight",
+      [
+        [
+          "Brace",
+          ""
+        ],
+        [
+          "Cartography",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          "+20%"
+        ],
+        [
+          "Direction Knowledge",
+          "+20%"
+        ],
+        [
+          "Distance Knowledge",
+          "+20%"
+        ],
+        [
+          "Force",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Mellivara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Berserking",
+          "+10%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Martial Knowledge",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Mephyt(Fire)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Pyrokinesis",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Mephyt(Ice)": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Cryokinesis",
+          ""
+        ],
+        [
+          "Crystal Lore",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Merfolk": [
+      "race_skill_select_eight",
+      [
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          "+20%"
+        ],
+        [
+          "Direction Knowledge",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Midfolk(Forest)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Track",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+20%"
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ],
+        [
+          "Wood Lore",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Midfolk(River)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Navigate",
+          "+10%"
+        ],
+        [
+          "Sail",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Midfolk(Town)": [
+      "race_skill_select_eight",
+      [
+        [
+          "Animal Lore",
+          ""
+        ],
+        [
+          "Detect Alignment",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          "+20%"
+        ],
+        [
+          "Move Unseen",
+          "+20%"
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Nixie": [
+      "race_skill_select_ten",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Water Lore",
+          ""
+        ]
+      ],
+      "Animal Shape: (water animals only)"
+    ],
+    "Nymph": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          "+10%"
+        ],
+        [
+          "Beguile",
+          "+20%"
+        ],
+        [
+          "Charming",
+          "+15%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Sing",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Ogre": [
+      "race_skill_select_seven",
+      [
+        [
+          "Berserking",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Ogre(Magic)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Berserking",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Force",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Planar": [
+      "race_skill_select_eight",
+      [
+        [
+          "Life Sense",
+          "+20%"
+        ],
+        [
+          "Levitation",
+          "+20%"
+        ],
+        [
+          "Meditate",
+          ""
+        ],
+        [
+          "Body Control",
+          ""
+        ],
+        [
+          "Fearless",
+          "+10%"
+        ],
+        [
+          "Steadfast",
+          ""
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Spirit Travel",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Podling": [
+      "race_skill_select_thirteen",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          "+20%"
+        ],
+        [
+          "Speak to Animal",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Sing",
+          "+10%"
+        ],
+        [
+          "Summon Animal",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Ratahl": [
+      "race_skill_select_ten",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Trap(u)",
+          "+10%"
+        ],
+        [
+          "Lie",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(u)",
+          "+20%"
+        ],
+        [
+          "Smell",
+          ""
+        ],
+        [
+          "Steal",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "S’rett": [
+      "race_skill_select_nine",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Track",
+          "+30%"
+        ]
+      ],
+      "None"
+    ],
+    "Sasquatch/Yeti": [
+      "race_skill_select_nine",
+      [
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Detect Trap(w)",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+10%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          "+10%"
+        ],
+        [
+          "Smell",
+          "+15%"
+        ]
+      ],
+      "None"
+    ],
+    "Satyr/Fawn": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Charming",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Play",
+          ""
+        ],
+        [
+          "Recite",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Saurian": [
+      "race_skill_select_nine",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+20%"
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Scethen": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Fear",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Se’eth": [
+      "race_skill_select_ten",
+      [
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Darkness",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Detect Good",
+          ""
+        ],
+        [
+          "Fear",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ],
+        [
+          "Telekinesis",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Sha’Cora": [
+      "race_skill_select_six",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Surprise Attack",
+          "+10%"
+        ],
+        [
+          "Tame Animal",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Sporeling": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          "+25%"
+        ],
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Control Growth",
+          "+30%"
+        ],
+        [
+          "Crystal Lore",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Plant Speak",
+          "+20%"
+        ],
+        [
+          "Plant Shape",
+          "+10%"
+        ],
+        [
+          "Stone Lore",
+          ""
+        ]
+      ],
+      "Growth,Speak,Shape(mushroom/fungus only)"
+    ],
+    "Sura’keth": [
+      "race_skill_select_ten",
+      [
+        [
+          "Acrobatics",
+          "+20%"
+        ],
+        [
+          "Break Fall",
+          ""
+        ],
+        [
+          "Slow Fall",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          "+20%"
+        ],
+        [
+          "Danger Knowledge",
+          "+20%"
+        ],
+        [
+          "Leap",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Sura’rath": [
+      "race_skill_select_seven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Surprise Attack",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Susara": [
+      "race_skill_select_eight",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Fearless",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+30%"
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Sylph": [
+      "race_skill_select_eight",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Recite",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Taurian": [
+      "race_skill_select_five",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Intimidation",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Testudara": [
+      "race_skill_select_seven",
+      [
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Direction Knowledge",
+          "+10%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Troll": [
+      "race_skill_select_seven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+15%"
+        ],
+        [
+          "Move Unheard",
+          "+30%"
+        ]
+      ],
+      "None"
+    ],
+    "Troll(Ice)": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          "+15%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Crystal Lore",
+          "+20%"
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Lie",
+          "+20%"
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "Blend(snow/ice only)"
+    ],
+    "Troll(Rock)": [
+      "race_skill_select_six",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          "+10%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Force",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Stone Lore",
+          "+50%"
+        ]
+      ],
+      "Blend(rock surfaces only)"
+    ],
+    "Ursara": [
+      "race_skill_select_ten",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Danger Knowledge",
+          "+10%"
+        ],
+        [
+          "Fearless",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          "+20%"
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+30%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Vulpara": [
+      "race_skill_select_nine",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Set Trap(w)",
+          ""
+        ],
+        [
+          "Smell",
+          "+10%"
+        ],
+        [
+          "Steal",
+          "+10%"
+        ],
+        [
+          "Surprise Attack",
+          "+20%"
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Whalrog": [
+      "race_skill_select_eight",
+      [
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Depth Knowledge",
+          "+20%"
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Smell",
+          "+5%"
+        ],
+        [
+          "Tame Animal",
+          ""
+        ],
+        [
+          "Track",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Wildling": [
+      "race_skill_select_eleven",
+      [
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          "+10%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Phase",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ],
+        [
+          "Wood Lore",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Wolfen": [
+      "race_skill_select_nine",
+      [
+        [
+          "Berserking",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+20%"
+        ],
+        [
+          "Track",
+          "+20%"
+        ]
+      ],
+      "None"
+    ],
+    "Xar’Xeth": [
+      "race_skill_select_ten",
+      [
+        [
+          "Climb",
+          "+10%"
+        ],
+        [
+          "Depth Knowledge",
+          ""
+        ],
+        [
+          "Direction Knowledge",
+          ""
+        ],
+        [
+          "Jewelry Knowledge",
+          ""
+        ],
+        [
+          "Leap",
+          ""
+        ],
+        [
+          "Listen",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Move Unseen",
+          ""
+        ],
+        [
+          "Smell",
+          "+40%"
+        ],
+        [
+          "Speak to Stone",
+          "+20%"
+        ]
+      ],
+      "None"
+    ]
+  }
+}

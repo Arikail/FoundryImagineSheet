@@ -1,0 +1,380 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "goalupdict",
+    "lines": [
+      92122,
+      92215
+    ]
+  },
+  "entries": {
+    "Acrobat": [
+      "STR",
+      "AGL"
+    ],
+    "Alchemist": [
+      "KNW",
+      "AUR"
+    ],
+    "Arcanist": [
+      "INT",
+      "KNW"
+    ],
+    "Archer": [
+      "AGL",
+      "INT"
+    ],
+    "Archer(Arcane)": [
+      "AGL",
+      "AUR"
+    ],
+    "Archer(Zen)": [
+      "AGL",
+      "WIL"
+    ],
+    "Assassin": [
+      "AGL",
+      "INT"
+    ],
+    "Bandit": [
+      "AGL",
+      "INT"
+    ],
+    "Banisher": [
+      "AGL",
+      "WIL"
+    ],
+    "Bard": [
+      "INT",
+      "KNW"
+    ],
+    "Battlemancer": [
+      "AGL",
+      "INT"
+    ],
+    "Beastmaster": [
+      "STR",
+      "AGL"
+    ],
+    "Beguiler": [
+      "AUR",
+      "WIL"
+    ],
+    "Berserker": [
+      "STR",
+      "AGL"
+    ],
+    "Border Scout": [
+      "AGL",
+      "INT"
+    ],
+    "Bounty Hunter": [
+      "STR",
+      "AGL"
+    ],
+    "Buccaneer": [
+      "STR",
+      "AGL"
+    ],
+    "Cacophonist": [
+      "PTY",
+      "WIL"
+    ],
+    "Cajoler": [
+      "AGL",
+      "INT"
+    ],
+    "Cavalier": [
+      "STR",
+      "AGL"
+    ],
+    "Channeler": [
+      "AUR",
+      "WIL"
+    ],
+    "Conqueror": [
+      "STR",
+      "AGL"
+    ],
+    "Crypt Robber": [
+      "AGL",
+      "INT"
+    ],
+    "Curse Breaker": [
+      "PTY",
+      "WIL"
+    ],
+    "Delver": [
+      "AGL",
+      "KNW"
+    ],
+    "Dervish": [
+      "AGL",
+      "WIL"
+    ],
+    "Dreamer": [
+      "AUR",
+      "WIL"
+    ],
+    "Druid": [
+      "PTY",
+      "WIL"
+    ],
+    "Duelist": [
+      "STR",
+      "AGL"
+    ],
+    "Elemental Dancer": [
+      "STR",
+      "AGL"
+    ],
+    "Elementalist": [
+      "INT",
+      "AUR"
+    ],
+    "Enchanter": [
+      "INT",
+      "WIL"
+    ],
+    "Exorcist": [
+      "PTY",
+      "WIL"
+    ],
+    "Explorer": [
+      "AGL",
+      "KNW"
+    ],
+    "Gypsy": [
+      "INT",
+      "KNW"
+    ],
+    "Harbinger": [
+      "PTY",
+      "WIL"
+    ],
+    "Harmonist": [
+      "PTY",
+      "WIL"
+    ],
+    "Healer": [
+      "PTY",
+      "WIL"
+    ],
+    "Heretic": [
+      "AGL",
+      "PTY"
+    ],
+    "Hermeticist": [
+      "KNW",
+      "AUR"
+    ],
+    "Hero": [
+      "STR",
+      "WIL"
+    ],
+    "Hunter": [
+      "AGL",
+      "INT"
+    ],
+    "Illuminator": [
+      "INT",
+      "AUR"
+    ],
+    "Innominate": [
+      "PTY",
+      "WIL"
+    ],
+    "Inquisitor": [
+      "PTY",
+      "WIL"
+    ],
+    "Intercessor": [
+      "PTY",
+      "WIL"
+    ],
+    "Investigator": [
+      "AGL",
+      "INT"
+    ],
+    "Jester": [
+      "AGL",
+      "INT"
+    ],
+    "Kineticist": [
+      "INT",
+      "AUR"
+    ],
+    "Knight": [
+      "AGL",
+      "PTY"
+    ],
+    "Knight(Dark)": [
+      "AGL",
+      "PTY"
+    ],
+    "Knight(Death)": [
+      "AGL",
+      "PTY"
+    ],
+    "Legendier": [
+      "AGL",
+      "INT"
+    ],
+    "Luckster": [
+      "AGL",
+      "WIL"
+    ],
+    "Mage": [
+      "INT",
+      "AUR"
+    ],
+    "Martial Artist": [
+      "STR",
+      "AGL"
+    ],
+    "Medium": [
+      "PTY",
+      "WIL"
+    ],
+    "Mentalist": [
+      "WIL",
+      "AUR"
+    ],
+    "Minstrel": [
+      "AGL",
+      "INT"
+    ],
+    "Missionary": [
+      "WIS",
+      "PTY"
+    ],
+    "Monk": [
+      "AGL",
+      "WIS"
+    ],
+    "Mounted Archer": [
+      "STR",
+      "AGL"
+    ],
+    "Necromancer": [
+      "PTY",
+      "WIL"
+    ],
+    "Obscuratum": [
+      "AUR",
+      "WIL"
+    ],
+    "Paladin": [
+      "AGL",
+      "PTY"
+    ],
+    "Plunderer": [
+      "AGL",
+      "WIL"
+    ],
+    "Priest": [
+      "PTY",
+      "WIL"
+    ],
+    "Priest(Dark)": [
+      "PTY",
+      "WIL"
+    ],
+    "Psychokineticist": [
+      "AGL",
+      "AUR"
+    ],
+    "Ranger": [
+      "AGL",
+      "KNW"
+    ],
+    "Ritual Leader": [
+      "PTY",
+      "WIL"
+    ],
+    "Rogue": [
+      "AGL",
+      "INT"
+    ],
+    "Runesmith": [
+      "STR",
+      "AGL"
+    ],
+    "Sage": [
+      "KNW",
+      "AUR"
+    ],
+    "Seer": [
+      "AUR",
+      "WIL"
+    ],
+    "Shadow Stalker": [
+      "AGL",
+      "INT"
+    ],
+    "Shadowfrost Caster": [
+      "INT",
+      "AUR"
+    ],
+    "Shaman": [
+      "PTY",
+      "WIL"
+    ],
+    "Shaman(Drum)": [
+      "KNW",
+      "PTY"
+    ],
+    "Shaman(Rune)": [
+      "PTY",
+      "WIL"
+    ],
+    "Sorcerer": [
+      "AUR",
+      "PTY"
+    ],
+    "Summoner": [
+      "AUR",
+      "PTY"
+    ],
+    "Trickster": [
+      "AGL",
+      "INT"
+    ],
+    "Vivisectionist": [
+      "INT",
+      "WIL"
+    ],
+    "Warden": [
+      "AGL",
+      "PTY"
+    ],
+    "Warrior": [
+      "STR",
+      "AGL"
+    ],
+    "Wilder": [
+      "AUR",
+      "WIL"
+    ],
+    "Witch(Black)": [
+      "PTY",
+      "WIL"
+    ],
+    "Witch(Gray)": [
+      "AUR",
+      "WIL"
+    ],
+    "Witch(White)": [
+      "PTY",
+      "WIL"
+    ],
+    "Witch Hunter": [
+      "AGL",
+      "WIL"
+    ],
+    "GME": [
+      "",
+      ""
+    ]
+  }
+}

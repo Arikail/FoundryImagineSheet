@@ -1,0 +1,363 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "racefertiledict",
+    "lines": [
+      32833,
+      32951
+    ]
+  },
+  "entries": {
+    "None": [
+      "None"
+    ],
+    "Apocritara": [
+      "None"
+    ],
+    "Arachen": [
+      "None"
+    ],
+    "Avian(Dark)": [
+      "Avian(Forest)"
+    ],
+    "Avian(Forest)": [
+      "Avian(Dark),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Kenku"
+    ],
+    "Avian(Mountain)": [
+      "None"
+    ],
+    "Ba’Cora": [
+      "None"
+    ],
+    "Beastman": [
+      "None"
+    ],
+    "Brachara": [
+      "None"
+    ],
+    "Brok": [
+      "None"
+    ],
+    "Brownie": [
+      "Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Podling,Sporeling"
+    ],
+    "Centaur": [
+      "None"
+    ],
+    "Cervara": [
+      "None"
+    ],
+    "Changeling": [
+      "None"
+    ],
+    "Chetahl": [
+      "None"
+    ],
+    "Crystori": [
+      "None"
+    ],
+    "Dao": [
+      "None"
+    ],
+    "Djinn": [
+      "None"
+    ],
+    "Dryad": [
+      "Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild)"
+    ],
+    "Dwarf(Civilized)": [
+      "Dwarf(Dark),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Dwarf(Dark)": [
+      "Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Dwarf(Fire)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Dwarf(Iron)": [
+      "None"
+    ],
+    "Dwarf(Mountain)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Dwarf(Stone)": [
+      "None"
+    ],
+    "Elf(Dark)": [
+      "Avian(Forest),Dryad,Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Desert)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Dread)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Gray)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(High)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Ice)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Sea),Elf(Wild),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Sea)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Wild),Elf(Wood)),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Shadow)": [
+      "Elf(Silver)"
+    ],
+    "Elf(Silver)": [
+      "Elf(Shadow)"
+    ],
+    "Elf(Wild)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Elf(Wood)": [
+      "Avian(Forest),Dryad,Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River),Midfolk(Town),Satyr/Fawn,Sylph"
+    ],
+    "Equara": [
+      "Gryphara"
+    ],
+    "Fairy": [
+      "Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Fairy(Dark)": [
+      "Fairy,Gnome,Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Famorian": [
+      "None"
+    ],
+    "Formless": [
+      "None"
+    ],
+    "Gaunt": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Geebra": [
+      "Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin"
+    ],
+    "Giant(Civilized)": [
+      "Giant(Civilized:Seafaring),Giant(True)"
+    ],
+    "Giant(Civilized:Seafaring)": [
+      "Giant(Civilized),Giant(True)"
+    ],
+    "Giant(True)": [
+      "Giant(Civilized),Giant(Civilized:Seafaring)"
+    ],
+    "Gnome": [
+      "Fairy,Fairy(Dark),Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Goblin(Forest)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre,Ogre(Magic)"
+    ],
+    "Goblin(Mountain)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain:Magic),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre,Ogre(Magic)"
+    ],
+    "Goblin(Mountain:Magic)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre,Ogre(Magic)"
+    ],
+    "Goblin(Plains)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre,Ogre(Magic)"
+    ],
+    "Grahl": [
+      "Vulpara,Wolfen"
+    ],
+    "Gremlin": [
+      "Fairy,Fairy(Dark),Gnome,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Grethen": [
+      "None"
+    ],
+    "Gryphara": [
+      "Equara"
+    ],
+    "Hippotara": [
+      "None"
+    ],
+    "Hobgoblin": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre,Ogre(Magic)"
+    ],
+    "Human(Barbaric)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Hobgoblin,Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Human(Civilized:City)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Goblin(Plains),Hobgoblin,Human(Barbaric)Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Human(Civilized:Port)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Town),Human(Civilized:Village),Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Human(Civilized:Town)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Village),Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Human(Civilized:Village)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Goblin(Plains),Hobgoblin,Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Merfolk,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Ifrit": [
+      "None"
+    ],
+    "Jumara": [
+      "None"
+    ],
+    "Katara": [
+      "None"
+    ],
+    "Kenku": [
+      "Avian(Dark),Avian(Forest)"
+    ],
+    "Kerasara": [
+      "None"
+    ],
+    "Lagara": [
+      "None"
+    ],
+    "Leprechaun": [
+      "Fairy,Fairy(Dark),Gnome,Gremlin,Mephyt(Fire),Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Lissara": [
+      "None"
+    ],
+    "Lotara": [
+      "None"
+    ],
+    "Loxodara": [
+      "None"
+    ],
+    "Lutrinara": [
+      "None"
+    ],
+    "Maginos": [
+      "None"
+    ],
+    "Maginos(Clay)": [
+      "None"
+    ],
+    "Maginos(Metal)": [
+      "None"
+    ],
+    "Maginos(Stone)": [
+      "None"
+    ],
+    "Maginos(Wood)": [
+      "None"
+    ],
+    "Marid": [
+      "None"
+    ],
+    "Mechanos": [
+      "None"
+    ],
+    "Mellivara": [
+      "None"
+    ],
+    "Mephyt(Fire)": [
+      "Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Ice),Nixie,Podling,Sporeling"
+    ],
+    "Mephyt(Ice)": [
+      "Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Fire),Nixie,Podling,Sporeling"
+    ],
+    "Merfolk": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Human(Civilized:City),Human(Barbaric),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood),Gaunt,Hobgoblin,Midfolk(Forest),Midfolk(River),Midfolk(Town),Ogre,Ogre(Magic)"
+    ],
+    "Midfolk(Forest)": [
+      "Avian(Dark),Avian(Forest),Avian(Mountain),Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(River),Midfolk(Town)"
+    ],
+    "Midfolk(River)": [
+      "Avian(Dark),Avian(Forest),Avian(Mountain),Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(Town)"
+    ],
+    "Midfolk(Town)": [
+      "Avian(Dark),Avian(Forest),Avian(Mountain),Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Midfolk(Forest),Midfolk(River)"
+    ],
+    "Nixie": [
+      "Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Podling,Sporeling"
+    ],
+    "Nymph": [
+      "Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village)"
+    ],
+    "Ogre": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Human(Civilized:City),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Human(Barbaric),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre(Magic)"
+    ],
+    "Ogre(Magic)": [
+      "Dwarf(Dark),Dwarf(Civilized),Dwarf(Fire),Dwarf(Mountain),Human(Civilized:City),Goblin(Forest),Goblin(Mountain),Goblin(Mountain:Magic),Goblin(Plains),Human(Barbaric),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village),Ogre"
+    ],
+    "Planar": [
+      "None"
+    ],
+    "Podling": [
+      "Brownie,Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Sporeling"
+    ],
+    "Ratahl": [
+      "None"
+    ],
+    "S’rett": [
+      "Saurian,Sura’keth,Sura’rath"
+    ],
+    "Sasquatch/Yeti": [
+      "None"
+    ],
+    "Satyr/Fawn": [
+      "Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wood),Elf(Wild),Human(Barbaric),Human(Civilized:City),Human(Civilized:Port),Human(Civilized:Town),Human(Civilized:Village)"
+    ],
+    "Saurian": [
+      "S’rett,Sura’keth,Sura’rath"
+    ],
+    "Scethen": [
+      "None"
+    ],
+    "Se’eth": [
+      "None"
+    ],
+    "Sha’Cora": [
+      "None"
+    ],
+    "Sporeling": [
+      "Brownie,Fairy,Fairy(Dark),Gnome,Gremlin,Leprechaun,Mephyt(Fire),Mephyt(Ice),Nixie,Podling"
+    ],
+    "Sura’keth": [
+      "S’rett,Saurian,Sura’rath"
+    ],
+    "Sura’rath": [
+      "S’rett,Saurian,Sura’keth"
+    ],
+    "Susara": [
+      "None"
+    ],
+    "Sylph": [
+      "Elf(Dark),Elf(Desert),Elf(Dread),Elf(Gray),Elf(High),Elf(Ice),Elf(Sea),Elf(Wild),Elf(Wood)"
+    ],
+    "Taurian": [
+      "None"
+    ],
+    "Testudara": [
+      "None"
+    ],
+    "Troll": [
+      "None"
+    ],
+    "Troll(Ice)": [
+      "Troll(Rock)"
+    ],
+    "Troll(Rock)": [
+      "Troll(Ice)"
+    ],
+    "Ursara": [
+      "None"
+    ],
+    "Vulpara": [
+      "Grahl"
+    ],
+    "Whalrog": [
+      "None"
+    ],
+    "Wildling": [
+      "None"
+    ],
+    "Wolfen": [
+      "Grahl"
+    ],
+    "Xar’Xeth": [
+      "None"
+    ]
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "socialskillequiplist",
+    "lines": [
+      75599,
+      75807
+    ]
+  },
+  "entries": {
+    "Accounting": [
+      " Abacus"
+    ],
+    "Acting": [
+      " Costume(Dramatic), Mask(Dramatic)"
+    ],
+    "Administration": [
+      " Book(Small), Ink(Well), Ink(Black),Pen"
+    ],
+    "Animal Husbandry": [
+      " Brush(Animal Hair), Reins, Sheers"
+    ],
+    "Animal Training": [
+      " Bell(Small)"
+    ],
+    "Anthropology": [
+      " Book(Small), Ink(Well), Ink(Black),Pen"
+    ],
+    "Appraisal": [
+      " Ruler(Measure), Scales(Weights/Small)"
+    ],
+    "Archaeology": [
+      " Book(Small), Ink(Well),Ink(Black),Pen"
+    ],
+    "Architecture/Engineering": [
+      " Chalk(5 pieces), Compass(Drawing), Plumb Line, Ruler(Measure), 50 Twine(Light/per`)"
+    ],
+    "Armoring": [
+      " Metal Working Tools, Leather Working Tools, 2 Leather(Sq.’), 3 Leather Cord(1`)"
+    ],
+    "Artisan": [
+      " Compass(Drawing), Ink(Well), Ink(Black), 10 Paper Sheets, Pen, Ruler(Measure)"
+    ],
+    "Astrology": [
+      " Astrology Charts"
+    ],
+    "Astronomy": [
+      " Astrolabe, Telescope, Star Charts"
+    ],
+    "Baking/Cooking": [
+      " Cup(Measuring), Pan, Pot(Metal), Sieve(Small), 1 Utensils(Tin/set)"
+    ],
+    "Ballooning": [
+      " Compass(Directional Lodestone), Knife(Hook), Windlass(Small), 50 Rope(Hemp per`)"
+    ],
+    "Banker/Broker": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Bar/Inn Keeping": [
+      " Pitcher/Jug(Metal), 3 Mug(Metal), Whiskey(Bottle)"
+    ],
+    "Barbering": [
+      " Comb, Brush(Hair), Mirror(Small/Silver), Scissors"
+    ],
+    "Barrel Making": [
+      " Iron Mallet, Iron Saw, Wood Working Tools"
+    ],
+    "Bartering/Haggling": [
+      ""
+    ],
+    "Basket Weaving": [
+      " Basket(Small/Holds 15), 50 Twine(Light/per`)"
+    ],
+    "Bee Keeping/Insect Handling": [
+      " Bee Keeper Suit(Canvas)"
+    ],
+    "Begging": [
+      " Bowl(Wooden)"
+    ],
+    "Boat Wright": [
+      " Chalk(5 pieces), Compass(Drawing), Plumb Line, Ruler(Measure), Wood Working Tools"
+    ],
+    "Bookbinder": [
+      " 3 Hard Leather(Sq.`), 50 Twine(Light/per`), 50 Paper Sheets"
+    ],
+    "Botany": [
+      " Knife(Tool), Magnifying Glass, Mortar and Pestle, Sheers, Spade/Trowel"
+    ],
+    "Botanist": [
+      " Knife(Tool), Magnifying Glass, Mortar and Pestle, Sheers, Spade/Trowel"
+    ],
+    "Brewing": [
+      " Pitcher/Jug(Wooden), 3 Mug(Wooden), 2 Glass Flask(1 cup), 50 Air Hose(Per`), 2 Metal Flask(1 Cup), 3 Pipe(Segment), Urn"
+    ],
+    "Butcher": [
+      " Cleaver, Knife(Tool)"
+    ],
+    "Butler": [
+      " Comb, Mirror(Small/Silver), Scissors"
+    ],
+    "Cabinetry": [
+      " Iron Saw, Iron Mallet, 20 Nails, Wood Working Tools"
+    ],
+    "Cage Making": [
+      " Cage(Small: 1` x 1` x 1`), Iron Saw, Iron Mallet, 20 Nails, Metal File, Metal Working Tools, Padlock(Simple), Wood Working Tools"
+    ],
+    "Calligraphy": [
+      " 10 Paper Sheets, Ink(Well), Ink(Black), Pen"
+    ],
+    "Candle/Oil Making": [
+      " Animal Fat(1 lb.), 3 Candle(6-hour), Crucible(Covered), Flint and Steel, 2 Lamp(Oil), 2 Metal Flask(1 Cup), Tallow(1 lb.), 10 Twine(Light/per`)"
+    ],
+    "Carousing": [
+      " Mug(Wooden)"
+    ],
+    "Carving": [
+      " Knife(Tool), Metal File"
+    ],
+    "Chariot Driving": [
+      " Reins"
+    ],
+    "Chariot Making": [
+      " Iron Saw, Iron Mallet, 20 Nails, Metal Working Tools, Metal File, Tongs(Small), Wood Working Tools"
+    ],
+    "Chemistry": [
+      " Chemistry Set(Basic), Flint and Steel, 2 Glass Flask(1 cup), 2 Metal Flask(1 Cup), Mortar and Pestle, 2 Vial(1/2 cup)"
+    ],
+    "Chirugeon": [
+      " Coffer(5“x 8“x 3“/Holds 12), 20 Bandages(Cloth), Flint and Steel, 3 Leather Cord(1`), Magnifying Glass, 10 Needles(Assorted), Oil(Rubbing), Knife(Tool), Scissors, 50 Thread Spool(per`), 10 Twine(Light/per`), 2 Vial(1/2 cup)"
+    ],
+    "Climatology": [
+      " Astrolabe, Telescope, Spyglass, Star Charts, Weather Charts"
+    ],
+    "Clowning/Jesting": [
+      " Costume(Humor), Mask(Humor)"
+    ],
+    "Cobbling": [
+      " Cobbler`s Tools, Knife(Tool), 3 Leather Cord(1`), Leather(Sq.`)"
+    ],
+    "Collecting": [
+      ""
+    ],
+    "Composer": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Cosmetics": [
+      " Makeup(Full Kit), Mirror(Small/Silver), Talc Powder"
+    ],
+    "Courtesan": [
+      " Makeup(Exotic Kit), Comb, Brush(Hair), Mirror(Small/Silver), Perfume(Exotic), Soap(Exotic/Perfumed), Talc Powder, Wig"
+    ],
+    "Craftsman": [
+      " Chalk(5 pieces), Compass(Drawing), Ruler(Measure), Wraparound Carryall(Holds 50)"
+    ],
+    "Crying/Hawking": [
+      ""
+    ],
+    "Dancing": [
+      " Costume(Dance), Shoes(Dance)"
+    ],
+    "Debating": [
+      ""
+    ],
+    "Diplomacy": [
+      ""
+    ],
+    "Diving": [
+      " Goggles(Diving), Plugs(Ear), Plugs(Nose), Diving Weights"
+    ],
+    "Doll Making": [
+      " Doll, 10 Needles(Assorted), 100 Pins(Assorted), Scissors, 50 Thread Spool(per`), 50 Twine(Light/per`)"
+    ],
+    "Drawing/Sketching": [
+      " Chalk(5 pieces), Compass(Drawing), Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Drilling": [
+      ""
+    ],
+    "Drudgery": [
+      " Broom, Mop, Shovel"
+    ],
+    "Dyer": [
+      " 3 Pigments/Dye(1 color)"
+    ],
+    "Economics": [
+      ""
+    ],
+    "Engraving/Etching": [
+      " Metal Working Tools, Metal File"
+    ],
+    "Espionage": [
+      " Grappling Hook, Iron Mallet, Iron Saw, 12 Lock Picks(Assorted), Metal File, 50 Rope(Silk per`), Sack(Large/Holds 30), Spyglass, 50 Twine(Light/per`)"
+    ],
+    "Etiquette": [
+      " Hankerchief(Silk), Napkin(Cloth)"
+    ],
+    "Excavation": [
+      " Pick(Digging), Shovel, Spade/Trowel"
+    ],
+    "Explorer": [
+      " Book(Small), 10 Paper Sheets, 2 Ink(Well), Ink(Black), Ink(Red), Pen, Spyglass"
+    ],
+    "Exploser": [
+      " Flint and Steel, 2 Glass Flask(1 cup), 2 Metal Flask(1 Cup), Mortar and Pestle, 2 Vial(1/2 cup), 2 Oil(Pint), 1 Pitch(Pint)"
+    ],
+    "Falconry": [
+      " Gloves(Leather), 10 Twine(Light/per`), Hood(Bird,Leather)"
+    ],
+    "Farming/Planting": [
+      " Hoe, Rake, Spade/Trowel"
+    ],
+    "Fashion": [
+      " Makeup(Full Kit), Comb, Gloves(Silk), Brush(Hair), Mirror(Small/Silver), Perfume(Herbal), Soap(Herbal)"
+    ],
+    "Ferrier": [
+      " Pole(15` Ferrier)"
+    ],
+    "Fire Making": [
+      " Tinder Box"
+    ],
+    "Fishing": [
+      " 30 Fishing Line(per`), 10 Fishhooks(Assorted), Fishing Pole"
+    ],
+    "Fletching/Bow Making": [
+      " 10 Arrow Head, Bowstring(Sinew), 10 Feathers, Iron Saw, 3 Leather Cord(1`), 50 Twine(Light/per`), Wood Working Tools"
+    ],
+    "Flint Knapping": [
+      " Stone Working Tools"
+    ],
+    "Florist/Horticulturist": [
+      " Knife(Tool), Mortar and Pestle, Sheers, Spade/Trowel"
+    ],
+    "Foraging/Forestry": [
+      " Sack(Large/Holds 30)"
+    ],
+    "Forensics": [
+      " Magnifying Glass"
+    ],
+    "Fortune Telling": [
+      " Tarot Cards, Semi-precious Orb"
+    ],
+    "Furniture Making": [
+      " Iron Saw, Iron Mallet, 20 Nails, Wood Working Tools"
+    ],
+    "Gambling": [
+      " Dice(Bone/Set), Playing Cards"
+    ],
+    "Gemology": [
+      " Gemcutting Tools, Magnifying Glass"
+    ],
+    "Genealogy": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Geography": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Geology": [
+      " Book(Small), Ink(Well), Ink(Black), Magnifying Glass, Pen, Pick(Digging), Hammer(Rock), Shovel, Spade/Trowel"
+    ],
+    "Glass Blowing": [
+      " Pipe(Glassblowing), Gloves(Leather)"
+    ],
+    "Gossip Mongery": [
+      ""
+    ],
+    "Haberdasher": [
+      " Hat, Hat(Fine), Knife(Tool), 10 Needles(Assorted), 100 Pins(Assorted), Scissors, 50 Thread Spool(per`)"
+    ],
+    "Harlotry": [
+      " Makeup(Bright Kit), Mirror(Small/Silver), Perfume(Fruit), Soap(Animal)"
+    ],
+    "Harvesting": [
+      " Hoe, Sheers, Sack(Large/Holds 30)"
+    ],
+    "Heavy Drinking": [
+      " Whiskey(Bottle)"
+    ],
+    "Heraldry": [
+      ""
+    ],
+    "History": [
+      " Book(History/1 Subject), Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Hunting/Trapping": [
+      " Knife(Skinning), Iron Mallet, Spring Snare(9-Inch)"
+    ],
+    "Hydrology": [
+      " Book(Small), Glass Flask, Ink(Well), Ink(Black), Pen"
+    ],
+    "Instruction": [
+      " Bell(Small)"
+    ],
+    "Instrument Making": [
+      " Wood Working Tools"
+    ],
+    "Instrument Playing": [
+      " Book(Popular Music)"
+    ],
+    "Inventor": [
+      " Catches and Pulleys, Compass(Drawing), Hooks and Wires, Plumb Line, Ruler(Measure), Book(Small), Metal File, Metal Working Tools, Glass Flask(1 cup), Ink(Well), Ink(Black), Pen, 10 Springs(Assorted), 50 Twine(Light/per `), Wraparound Carryall(Holds 50)"
+    ],
+    "Irrigation": [
+      " Shovel, Spade/Trowel"
+    ],
+    "Juggling": [
+      " 5 Ball(Wooden)"
+    ],
+    "Kite Flying": [
+      " Kite(Plain), 100 Twine(Light/per `)"
+    ],
+    "Laborer": [
+      ""
+    ],
+    "Lady Servant": [
+      " Brush(Hair), Mirror(Small/Silver), Scissors"
+    ],
+    "Leadership": [
+      ""
+    ],
+    "Leather Working": [
+      " Leather Working Tools, 3 Leather(Sq.`), 3 Leather Cord(1`)"
+    ],
+    "Leeching": [
+      " Leecher`s Tools"
+    ],
+    "Lens Making": [
+      " Goggles(Sun/Tinted), Magnifying Glass, Metal File, Polishing Cloth, Stone File, Spectacles(Reading)"
+    ],
+    "Librarian": [
+      " Book(History/1 Subject), Book(Popular Story), Book(Large), Ink(Well), Ink(Black), Pen"
+    ],
+    "Lip Reading": [
+      " Spyglass"
+    ],
+    "Locksmith": [
+      " Locksmith Tools, 12 Lock Picks(Assorted), Padlock(Well-Made)"
+    ],
+    "Logic": [
+      " Puzzle Box(Wooden)"
+    ],
+    "Loom Mastery": [
+      " Loom(Hand)"
+    ],
+    "Lumberjack": [
+      " Axe(Woodcutting), Iron Saw"
+    ],
+    "Massage Therapy": [
+      " Oil(Rubbing), Perfume(Herbal)"
+    ],
+    "Mathematics": [
+      " Abacus, Ruler(Measure)"
+    ],
+    "Metal Working": [
+      " Iron Mallet, Metal File, Metal Working Tools"
+    ],
+    "Metallurgy": [
+      " Chemistry Set(Basic), Magnifying Glass, Metal File, Metal Working Tools"
+    ],
+    "Metaphysics": [
+      " Book(Metaphysics)"
+    ],
+    "Meteorology": [
+      " Sextant, Telescope, Spyglass, Weather Charts"
+    ],
+    "Midwife": [
+      " 20 Bandages(Cloth), 3 Leather Cord(1`), 10 Needles(Assorted), Oil(Rubbing), Knife(Tool), Scissors, 50 Thread Spool(per`)"
+    ],
+    "Milling": [
+      " Mortar and Pestle"
+    ],
+    "Mining/Tunneling": [
+      " Pick(Digging), Shovel, Spade/Trowel"
+    ],
+    "Mocking": [
+      ""
+    ],
+    "Mountaineering": [
+      " Gloves(Climbing), Grappling Hook(Climbing), Hammer(Rock), Knife(Hook), 10 Piton, 100 Rope(Silk per`), Shoes(Climbing)"
+    ],
+    "Music Theory": [
+      " Book(Popular Music), Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Oceanography": [
+      " Sextant, Spyglass"
+    ],
+    "Overseer/Manager": [
+      ""
+    ],
+    "Page": [
+      " Tabard(Page/Child`s)"
+    ],
+    "Painting": [
+      " Canvas(Paint/Linen 1 sq.`), 3 Brush(Paint/Sable Hair), 6 Pigments/Dye(1 color)"
+    ],
+    "Paving/Road Building": [
+      " Pick(Digging), Shovel, Spade/Trowel, 1 Pitch(Pint), Metal Flask(1 Cup)"
+    ],
+    "Perfume/Scent Making": [
+      " Chemistry Set(Basic), Perfume(Exotic), Perfume(Herbal), Perfume(Fruit), Mortar and Pestle, 2 Vial(1/2 cup), Glass Flask(1 cup)"
+    ],
+    "Philosophy": [
+      " Book(Popular Philosophy)"
+    ],
+    "Physics": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Physiology": [
+      " Book(Illustrated Humanoid Anatomy)"
+    ],
+    "Plumbing": [
+      " Iron Mallet, Metal File, Metal Working Tools, 3 Pipe(Segment)"
+    ],
+    "Politics": [
+      " Book(Popular Politics)"
+    ],
+    "Pottery Making": [
+      " Pitcher/Jug(Baked Clay), Mug(Baked Clay), Knife(Tool)"
+    ],
+    "Printing/Typesetting": [
+      " Book(Medium), 10 Paper Sheets, Ink(Well), Ink(Black), Pen"
+    ],
+    "Prospecting": [
+      " Pick(Digging), Shovel, Spade/Trowel, Spyglass"
+    ],
+    "Psychology": [
+      " Book(Theories of the Mind)"
+    ],
+    "Pulper": [
+      " Frame(Wooden/per sq`), 10 Paper Sheets, Rags(1 lb.), Sieve(Small)"
+    ],
+    "Puppetry": [
+      " Puppet(Angry), Puppet(Happy), Puppet(Sad)"
+    ],
+    "Pyrotechnics": [
+      " Chemistry Set(Basic), Flint and Steel, 2 Glass Flask(1 cup), 2 Metal Flask(1 Cup), Mortar and Pestle, 2 Vial(1/2 cup), Oil(2 Pints), 1 Pitch(Pint)"
+    ],
+    "Recite Poetry": [
+      " Book(Popular Poems)"
+    ],
+    "Reporting/Journalism": [
+      " Book(Recent Events)"
+    ],
+    "Riding": [
+      " Reins, Brush(Animal Hair), 50 Rope(Hemp per`)"
+    ],
+    "Rope Making": [
+      " Knife(Tool), Scissors, 50 Twine(Heavy/per `)"
+    ],
+    "Rope Use": [
+      " 50 Rope(Hemp per`)"
+    ],
+    "Rowing": [
+      " 2 Oar"
+    ],
+    "Running": [
+      " Shoes(Running)"
+    ],
+    "Sapping": [
+      " Pick(Digging), Spade/Trowel, Shovel"
+    ],
+    "Scavenging": [
+      " Sack(Large/Holds 30)"
+    ],
+    "Scholar": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Science": [
+      " Book(Small), Ink(Well), Ink(Black), Magnifying Glass, Pen"
+    ],
+    "Scribing": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Sculpting": [
+      " Stone Working Tools, Metal File, Iron Mallet"
+    ],
+    "Sewing": [
+      " 10 Needles(Assorted), 100 Pins(Assorted), Scissors, Sewing Box, 50 Thread Spool(per`)"
+    ],
+    "Shepherdry": [
+      " Shepherd Crook"
+    ],
+    "Signaling": [
+      " Flint and Steel, Spyglass"
+    ],
+    "Sing Songs": [
+      " Book(Popular Songs)"
+    ],
+    "Skinning/Tanning": [
+      " Frame(Wooden/per sq`), Knife(Skinning)"
+    ],
+    "Slave Driving": [
+      " Manacles, 50 Rope(Hemp per`), Shackles(Wrist), Shackles(Leg)"
+    ],
+    "Smithy": [
+      " Flint and Steel, Bellows(Small), Iron Mallet, Gloves(Leather), Metal File, Metal Working Tools, Tongs(Large)"
+    ],
+    "Soap Making": [
+      " Mortar and Pestle, Animal Fat(1 lb.)"
+    ],
+    "Soldiering": [
+      " Cloth(Polishing), Boots(High/Leather)"
+    ],
+    "Spelunking": [
+      " Gloves(Climbing), Grappling Hook(Climbing), Hammer(Rock), Knife(Hook), 10 Piton, 100 Rope(Silk per`), Shoes(Climbing)"
+    ],
+    "Spinning": [
+      " Loom(Hand), 100 Twine(Light/per `)"
+    ],
+    "Squire": [
+      " Back Pack(Holds 60), Cloth(Polishing), Tabard(Page/Child`s), Whetstone"
+    ],
+    "Steam Power": [
+      " Flint and Steel, Metal Working Tools, Iron Mallet, Metal File, 50 Air Hose(Per `), 3 Pipe(Segment)"
+    ],
+    "Stone Masonry": [
+      " Stone Working Tools, Metal File, Iron Mallet"
+    ],
+    "Store Keeping": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Story Telling": [
+      " Book(Popular Story)"
+    ],
+    "Supplier": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Surfing": [
+      " Surf Board"
+    ],
+    "Surveyor": [
+      " Spyglass"
+    ],
+    "Survival": [
+      " Compass(Directional Lodestone), 6 Canvas(Waterproof/sq.`), Flint and Steel"
+    ],
+    "Swimming": [
+      " Goggles(Diving), Plugs(Nose)"
+    ],
+    "Tactics/Strategy": [
+      " Book(Tactical Theory)"
+    ],
+    "Tailoring": [
+      " Chalk(5 pieces), Knife(Tool), 10 Needles(Assorted), 100 Pins(Assorted), Scissors, Sewing Box, 50 Thread Spool(per`)"
+    ],
+    "Tattoo Artistry": [
+      " Tattooing Tools, Ink(Well), Indelible Ink(1 Color/1 cup), 10 Needles(Assorted)"
+    ],
+    "Taxidermy": [
+      " 10 Needles(Assorted), Knife(Skinning), 100 Pins(Assorted), Scissors, 50 Thread Spool(per`), 5 Marbles(1 Pair/Eyes)"
+    ],
+    "Theology": [
+      " Book(Divine Teachings)"
+    ],
+    "Tightrope Walking": [
+      " 50 Rope(Hemp per`), Iron Mallet, 2 Spike"
+    ],
+    "Tobacconist": [
+      " Tobacco Box, Sheers, Knife(Tool), Flint and Steel, Pipe(Smoking)"
+    ],
+    "Tool Making": [
+      " Crucible(Covered), Metal File, Metal Working Tools, Tongs(Small), Wood Working Tools"
+    ],
+    "Torturing": [
+      " Flint and Steel, Manacles, Metal File, Knife(Tool), 50 Rope(Hemp per`), Shackles(Wrist), Shackles(Leg), Tongs(Small)"
+    ],
+    "Translating": [
+      " Book(Popular Phrases)"
+    ],
+    "Tumbling": [
+      " Costume(Animal), Mask(Animal)"
+    ],
+    "Undertaking": [
+      " Makeup(Full Kit), Knife(Tool), Perfume(Herbal), Needles(10 Assorted), Scissors, Shovel, 50 Thread Spool(per`)"
+    ],
+    "Upholstery": [
+      " Knife(Tool), Leather Working Tools, 3 Leather(Sq.`), 3 Leather Cord(1`)"
+    ],
+    "Valet": [
+      " Comb, Mirror(Small/Silver), Scissors"
+    ],
+    "Ventriloquism": [
+      ""
+    ],
+    "Wagon/Carriage Driving": [
+      " Reins"
+    ],
+    "Wagon/Carriage Making": [
+      " Iron Saw, Iron Mallet, 20 Nails, Metal Working Tools, Metal File, Tongs(Small), Wood Working Tools"
+    ],
+    "Water/Wind Power": [
+      " Wood Working Tools, Iron Mallet, Iron Saw, Catches and Pulleys, Hooks and Wires, Knife(Tool), Scissors, 50 Twine(Light/per `)"
+    ],
+    "Weapon Making": [
+      " Metal Working Tools, Metal File, Tongs(Small), Whetstone"
+    ],
+    "Weaving": [
+      " Loom(Hand), 100  Twine(Light/per `)"
+    ],
+    "Wheel Wright": [
+      " Iron Saw, Iron Mallet, 20 Nails, Metal Working Tools, Metal File, Tongs(Small), Wood Working Tools"
+    ],
+    "Wigweaving": [
+      " Scissors, Wig"
+    ],
+    "Wood Curing": [
+      " 1 Pitch(Pint), Wood Working Tools, 2 Metal Flask(1 Cup), Stain(Pint)"
+    ],
+    "Wood Cutting": [
+      " Iron Saw"
+    ],
+    "Wood Working": [
+      " Iron Saw, Iron Mallet, 20 Nails, Wood Working Tools"
+    ],
+    "Writing": [
+      " Book(Small), Ink(Well), Ink(Black), Pen"
+    ],
+    "Open Slot": [
+      ""
+    ],
+    "Unavailable": [
+      ""
+    ],
+    "Sacrificed": [
+      ""
+    ],
+    "Converted to Racial Skill Slot": [
+      ""
+    ],
+    "Converted to Class Skill Slot": [
+      ""
+    ]
+  }
+}
