@@ -31,6 +31,9 @@
     "Actor": {
       "character": {},
       "creature": {}
+    },
+    "Item": {
+      "skill": {}
     }
   },
   "url": "https://github.com/MichaelTenery/FoundryImagineSheet",

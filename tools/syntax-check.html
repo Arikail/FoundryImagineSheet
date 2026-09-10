@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG syntax check</title>
+<pre id="out">running...</pre>
+<script type="module">
+// Build-time sanity check. Imports each system module and reports whether it PARSES.
+//
+// Must be served over HTTP -- opening it as a file:// page renders a static snapshot
+// where relative module specifiers do not resolve, which produces a misleading pass.
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/syntax-check.html
+//
+// The modules cannot actually run outside Foundry -- they reference globals like
+// foundry.data.fields and Hooks that do not exist here. That is fine and expected:
+// a SyntaxError means the file is genuinely malformed, while a ReferenceError means
+// the syntax is valid and it only failed for want of Foundry. We distinguish the two.
+const files = [
+	"../module/imagine-rpg.mjs",
+	"../module/data/actor-character.mjs",
+	"../module/data/item-skill.mjs"
+];
+
+const lines = [];
+for (const f of files) {
+	try {
+		await import(f);
+		lines.push(`PARSE OK + RAN     ${f}`);
+	} catch (err) {
+		const kind = err instanceof SyntaxError ? "SYNTAX ERROR" : "parse ok";
+		lines.push(`${kind.padEnd(18)} ${f}\n                   ${err.name}: ${err.message}`);
+	}
+}
+document.getElementById("out").textContent = lines.join("\n");
+</script>
