@@ -1,0 +1,9242 @@
+[
+  {
+    "name": "Apocritara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -6,
+        "chm": -2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 21,
+        "vit": 18,
+        "int": 21,
+        "wis": 16,
+        "knw": 18,
+        "app": 12,
+        "chm": 14,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 4,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Arachen",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 1,
+        "agl": 3,
+        "vit": 1,
+        "int": 0,
+        "wis": -2,
+        "knw": -1,
+        "app": -3,
+        "chm": -4,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 21,
+        "vit": 20,
+        "int": 20,
+        "wis": 18,
+        "knw": 20,
+        "app": 15,
+        "chm": 16,
+        "soc": 14,
+        "aur": 20,
+        "pty": 18,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": -15,
+        "illusion": 0,
+        "control": -10,
+        "poison": 25,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Scurry:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 4,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 40,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 4
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Avian(Dark)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 17,
+        "chm": 17,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 10,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 3,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Avian(Forest)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": -2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 19,
+        "vit": 18,
+        "int": 18,
+        "wis": 18,
+        "knw": 19,
+        "app": 18,
+        "chm": 18,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 30,
+        "control": 20,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 3,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Avian(Mountain)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 18,
+        "int": 18,
+        "wis": 16,
+        "knw": 20,
+        "app": 18,
+        "chm": 18,
+        "soc": 17,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 40,
+        "control": 25,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 3,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Ba’Cora",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": -1,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": -1,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 20,
+        "vit": 15,
+        "int": 20,
+        "wis": 17,
+        "knw": 19,
+        "app": 14,
+        "chm": 15,
+        "soc": 14,
+        "aur": 20,
+        "pty": 18,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 0,
+        "poison": -20,
+        "disease": 35
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Beastman",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 1,
+        "agl": 1,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": -2,
+        "soc": -2,
+        "aur": 0,
+        "pty": 2,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 19,
+        "vit": 20,
+        "int": 18,
+        "wis": 18,
+        "knw": 18,
+        "app": 16,
+        "chm": 15,
+        "soc": 14,
+        "aur": 19,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 5,
+        "poison": 5,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Brachara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 0,
+        "vit": 2,
+        "int": 0,
+        "wis": 0,
+        "knw": -4,
+        "app": -4,
+        "chm": -3,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 21,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 14,
+        "chm": 16,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": -5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Brok",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": -2,
+        "vit": 4,
+        "int": -2,
+        "wis": 0,
+        "knw": 0,
+        "app": -3,
+        "chm": 0,
+        "soc": -4,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 15,
+        "vit": 22,
+        "int": 16,
+        "wis": 20,
+        "knw": 17,
+        "app": 16,
+        "chm": 18,
+        "soc": 14,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -10,
+        "affinity": 10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -10,
+        "control": 20,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Brownie",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -4,
+        "agl": 2,
+        "vit": -3,
+        "int": 1,
+        "wis": -2,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 12,
+        "agl": 19,
+        "vit": 12,
+        "int": 20,
+        "wis": 17,
+        "knw": 19,
+        "app": 18,
+        "chm": 17,
+        "soc": 15,
+        "aur": 20,
+        "pty": 20,
+        "wil": 22
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -4,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 30,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Centaur",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 0,
+        "vit": 4,
+        "int": 0,
+        "wis": 2,
+        "knw": -2,
+        "app": -2,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 17,
+        "vit": 22,
+        "int": 18,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 18,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -15,
+        "control": -10,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Gallop:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Cervara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 2,
+        "soc": -3,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 21,
+        "vit": 20,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 20,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Changeling",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 19,
+        "vit": 18,
+        "int": 19,
+        "wis": 17,
+        "knw": 18,
+        "app": 20,
+        "chm": 19,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": -10,
+        "poison": 10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Chetahl",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 4,
+        "vit": 0,
+        "int": 0,
+        "wis": -2,
+        "knw": -1,
+        "app": 0,
+        "chm": -1,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 17,
+        "int": 18,
+        "wis": 16,
+        "knw": 18,
+        "app": 18,
+        "chm": 18,
+        "soc": 15,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -10,
+        "control": 10,
+        "poison": -10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "jog": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "run": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 3,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Crystori",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 1,
+        "vit": -2,
+        "int": 0,
+        "wis": 2,
+        "knw": 2,
+        "app": -2,
+        "chm": 1,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": -2
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 19,
+        "vit": 18,
+        "int": 20,
+        "wis": 21,
+        "knw": 21,
+        "app": 18,
+        "chm": 20,
+        "soc": 20,
+        "aur": 21,
+        "pty": 20,
+        "wil": 19
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": -10,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dao",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 1,
+        "int": 0,
+        "wis": 2,
+        "knw": 0,
+        "app": 0,
+        "chm": -1,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 20,
+        "int": 18,
+        "wis": 21,
+        "knw": 21,
+        "app": 17,
+        "chm": 19,
+        "soc": 20,
+        "aur": 21,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": -10,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Djinn",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 2,
+        "vit": -2,
+        "int": 1,
+        "wis": 0,
+        "knw": 1,
+        "app": 1,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 22,
+        "vit": 18,
+        "int": 20,
+        "wis": 19,
+        "knw": 21,
+        "app": 20,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": -10,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Dryad",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 0,
+        "vit": 3,
+        "int": 0,
+        "wis": 2,
+        "knw": 0,
+        "app": 0,
+        "chm": -2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 2,
+        "wil": 3
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 18,
+        "vit": 21,
+        "int": 19,
+        "wis": 20,
+        "knw": 20,
+        "app": 20,
+        "chm": 18,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 21
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 0,
+        "titleFormula": "1d3+1",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 30,
+        "poison": -10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Dwarf(Civilized)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": -2,
+        "vit": 2,
+        "int": 1,
+        "wis": 0,
+        "knw": 2,
+        "app": -2,
+        "chm": -2,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 17,
+        "vit": 19,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 16,
+        "chm": 15,
+        "soc": 20,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 20,
+        "control": 10,
+        "poison": 10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dwarf(Dark)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 0,
+        "vit": 2,
+        "int": 1,
+        "wis": 0,
+        "knw": 2,
+        "app": -4,
+        "chm": -3,
+        "soc": 0,
+        "aur": -1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 17,
+        "vit": 18,
+        "int": 18,
+        "wis": 18,
+        "knw": 20,
+        "app": 14,
+        "chm": 15,
+        "soc": 18,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": 25,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dwarf(Fire)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": -1,
+        "vit": 2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -3,
+        "chm": -3,
+        "soc": -2,
+        "aur": -2,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 17,
+        "vit": 21,
+        "int": 19,
+        "wis": 19,
+        "knw": 18,
+        "app": 14,
+        "chm": 14,
+        "soc": 16,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": 15,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dwarf(Iron)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": -2,
+        "vit": 2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": -3,
+        "soc": 0,
+        "aur": -4,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 16,
+        "vit": 20,
+        "int": 19,
+        "wis": 20,
+        "knw": 20,
+        "app": 14,
+        "chm": 14,
+        "soc": 20,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6+3",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 3
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 0,
+        "poison": 20,
+        "disease": 20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dwarf(Mountain)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 3,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -2,
+        "chm": -4,
+        "soc": -4,
+        "aur": -3,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 17,
+        "vit": 20,
+        "int": 16,
+        "wis": 16,
+        "knw": 18,
+        "app": 15,
+        "chm": 14,
+        "soc": 14,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 25,
+        "illusion": 0,
+        "control": 0,
+        "poison": 20,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Dwarf(Stone)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": -1,
+        "vit": 1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": -3,
+        "soc": 0,
+        "aur": -4,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 17,
+        "vit": 20,
+        "int": 19,
+        "wis": 20,
+        "knw": 20,
+        "app": 15,
+        "chm": 15,
+        "soc": 20,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 0,
+        "poison": 20,
+        "disease": 20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Elf(Dark)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": -3,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 19,
+        "wis": 19,
+        "knw": 20,
+        "app": 19,
+        "chm": 18,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 10,
+        "poison": -5,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Desert)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": -3,
+        "soc": -3,
+        "aur": 1,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 18,
+        "int": 19,
+        "wis": 20,
+        "knw": 19,
+        "app": 19,
+        "chm": 16,
+        "soc": 15,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 10,
+        "control": 10,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Dread)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 1,
+        "wis": 0,
+        "knw": 0,
+        "app": -1,
+        "chm": 0,
+        "soc": -3,
+        "aur": 2,
+        "pty": 1,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 17,
+        "int": 19,
+        "wis": 18,
+        "knw": 18,
+        "app": 17,
+        "chm": 15,
+        "soc": 15,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 0,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 10,
+        "poison": -15,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Gray)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 0,
+        "vit": -2,
+        "int": 1,
+        "wis": 2,
+        "knw": 0,
+        "app": 0,
+        "chm": -3,
+        "soc": 0,
+        "aur": 3,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 19,
+        "vit": 16,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 19,
+        "chm": 19,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 25,
+        "poison": -15,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(High)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 2,
+        "soc": -2,
+        "aur": 1,
+        "pty": 0,
+        "wil": -1
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 19,
+        "wis": 18,
+        "knw": 20,
+        "app": 20,
+        "chm": 20,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Ice)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 0,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 19,
+        "vit": 17,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 19,
+        "chm": 19,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": -10,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Sea)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 1,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 19,
+        "chm": 20,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": -10,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Shadow)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": -1,
+        "int": 2,
+        "wis": 2,
+        "knw": 3,
+        "app": 3,
+        "chm": 0,
+        "soc": 0,
+        "aur": 3,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 19,
+        "vit": 18,
+        "int": 22,
+        "wis": 22,
+        "knw": 22,
+        "app": 22,
+        "chm": 20,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": -10,
+        "disease": -20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Silver)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": -1,
+        "int": 2,
+        "wis": 2,
+        "knw": 3,
+        "app": 3,
+        "chm": 0,
+        "soc": 0,
+        "aur": 3,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 19,
+        "vit": 18,
+        "int": 22,
+        "wis": 22,
+        "knw": 22,
+        "app": 22,
+        "chm": 20,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1",
+        "titleDice": "1d4",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": -10,
+        "disease": -20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Wild)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 3,
+        "vit": 1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 2,
+        "chm": -2,
+        "soc": -4,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 20,
+        "vit": 19,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 20,
+        "chm": 15,
+        "soc": 15,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 0,
+        "control": 30,
+        "poison": -5,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Elf(Wood)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": -3,
+        "soc": -3,
+        "aur": 1,
+        "pty": 2,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 18,
+        "int": 18,
+        "wis": 20,
+        "knw": 19,
+        "app": 18,
+        "chm": 17,
+        "soc": 15,
+        "aur": 19,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 0,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Equara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 1,
+        "vit": 2,
+        "int": -1,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 1,
+        "soc": -3,
+        "aur": -2,
+        "pty": 1,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 20,
+        "vit": 20,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": 0,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Gaunt",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 1,
+        "wis": 0,
+        "knw": 2,
+        "app": -2,
+        "chm": -3,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 19,
+        "vit": 16,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 16,
+        "chm": 14,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "-1d4=",
+        "startMod": 0,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 30,
+        "poison": -15,
+        "disease": -20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Geebra",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": 0,
+        "int": 1,
+        "wis": -1,
+        "knw": 0,
+        "app": -4,
+        "chm": -2,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 19,
+        "int": 20,
+        "wis": 17,
+        "knw": 19,
+        "app": 14,
+        "chm": 16,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 10,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Giant(Civilized)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 5,
+        "agl": -2,
+        "vit": 5,
+        "int": 0,
+        "wis": 2,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 24,
+        "agl": 16,
+        "vit": 25,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 18,
+        "soc": 20,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 8,
+        "titleFormula": "2d4+1",
+        "titleDice": "2",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -5,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": -25,
+        "illusion": 20,
+        "control": 0,
+        "poison": 30,
+        "disease": 30
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "jog": {
+          "hourly": 6,
+          "tenSec": 60,
+          "oneSec": 6
+        },
+        "run": {
+          "hourly": 9,
+          "tenSec": 90,
+          "oneSec": 9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Giant(Civilized:Seafaring)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 5,
+        "agl": -2,
+        "vit": 5,
+        "int": 0,
+        "wis": 2,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 24,
+        "agl": 16,
+        "vit": 25,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 18,
+        "soc": 20,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 8,
+        "titleFormula": "2d4+1",
+        "titleDice": "2",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -5,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": -25,
+        "illusion": 20,
+        "control": 0,
+        "poison": 30,
+        "disease": 30
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "jog": {
+          "hourly": 6,
+          "tenSec": 60,
+          "oneSec": 6
+        },
+        "run": {
+          "hourly": 9,
+          "tenSec": 90,
+          "oneSec": 9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Giant(True)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 6,
+        "agl": -3,
+        "vit": 6,
+        "int": -1,
+        "wis": 4,
+        "knw": 2,
+        "app": -1,
+        "chm": 0,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 26,
+        "agl": 18,
+        "vit": 26,
+        "int": 18,
+        "wis": 22,
+        "knw": 20,
+        "app": 19,
+        "chm": 20,
+        "soc": 20,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 10,
+        "titleFormula": "2d6+2",
+        "titleDice": "2",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": -25,
+        "illusion": 20,
+        "control": 0,
+        "poison": 30,
+        "disease": 30
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "jog": {
+          "hourly": 8,
+          "tenSec": 80,
+          "oneSec": 8
+        },
+        "run": {
+          "hourly": 12,
+          "tenSec": 120,
+          "oneSec": 12
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Gnome",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -4,
+        "agl": 0,
+        "vit": -4,
+        "int": 0,
+        "wis": 3,
+        "knw": 4,
+        "app": 0,
+        "chm": 0,
+        "soc": -2,
+        "aur": 0,
+        "pty": 4,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 13,
+        "agl": 18,
+        "vit": 12,
+        "int": 18,
+        "wis": 21,
+        "knw": 22,
+        "app": 20,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 22,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -6,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 30,
+        "control": 20,
+        "poison": -30,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Goblin(Forest)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 1,
+        "agl": 2,
+        "vit": 1,
+        "int": 0,
+        "wis": -2,
+        "knw": 0,
+        "app": -2,
+        "chm": -2,
+        "soc": -3,
+        "aur": -1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 18,
+        "int": 19,
+        "wis": 19,
+        "knw": 19,
+        "app": 17,
+        "chm": 16,
+        "soc": 16,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 15,
+        "control": -10,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Goblin(Mountain)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": -1,
+        "vit": 3,
+        "int": -3,
+        "wis": 0,
+        "knw": -1,
+        "app": -3,
+        "chm": -2,
+        "soc": -3,
+        "aur": -1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 18,
+        "vit": 21,
+        "int": 17,
+        "wis": 16,
+        "knw": 18,
+        "app": 16,
+        "chm": 15,
+        "soc": 15,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": -10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 15,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Goblin(Mountain:Magic)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": -1,
+        "vit": 3,
+        "int": -1,
+        "wis": -1,
+        "knw": -1,
+        "app": -3,
+        "chm": -2,
+        "soc": -2,
+        "aur": -1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 18,
+        "vit": 21,
+        "int": 17,
+        "wis": 16,
+        "knw": 18,
+        "app": 16,
+        "chm": 15,
+        "soc": 15,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": -10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 15,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Goblin(Plains)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": -1,
+        "vit": 2,
+        "int": 0,
+        "wis": -1,
+        "knw": -2,
+        "app": -4,
+        "chm": -2,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 19,
+        "vit": 20,
+        "int": 16,
+        "wis": 15,
+        "knw": 19,
+        "app": 14,
+        "chm": 16,
+        "soc": 16,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -15,
+        "control": -10,
+        "poison": 20,
+        "disease": 20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Grahl",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 1,
+        "vit": 3,
+        "int": -1,
+        "wis": 0,
+        "knw": -2,
+        "app": -2,
+        "chm": 0,
+        "soc": -3,
+        "aur": 1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 19,
+        "vit": 21,
+        "int": 16,
+        "wis": 18,
+        "knw": 18,
+        "app": 16,
+        "chm": 19,
+        "soc": 17,
+        "aur": 19,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 0,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "jog": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "run": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Gremlin",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -3,
+        "agl": 1,
+        "vit": -3,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 3,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 13,
+        "agl": 20,
+        "vit": 13,
+        "int": 20,
+        "wis": 18,
+        "knw": 19,
+        "app": 16,
+        "chm": 16,
+        "soc": 19,
+        "aur": 21,
+        "pty": 20,
+        "wil": 21
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -3,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -15,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 15,
+        "poison": -15,
+        "disease": -15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Grethen",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": -1,
+        "int": 1,
+        "wis": 0,
+        "knw": 2,
+        "app": 1,
+        "chm": -2,
+        "soc": 2,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 19,
+        "chm": 18,
+        "soc": 17,
+        "aur": 20,
+        "pty": 19,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": -10,
+        "control": 0,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Gryphara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 2,
+        "soc": -3,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 21,
+        "vit": 20,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 19,
+        "chm": 18,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Hippotara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 4,
+        "int": -1,
+        "wis": 0,
+        "knw": -2,
+        "app": -4,
+        "chm": -2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 1,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 22,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 16,
+        "chm": 16,
+        "soc": 16,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 5,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 20,
+        "poison": -5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Hobgoblin",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 2,
+        "int": -1,
+        "wis": 0,
+        "knw": -1,
+        "app": -3,
+        "chm": -3,
+        "soc": -1,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 20,
+        "vit": 21,
+        "int": 19,
+        "wis": 20,
+        "knw": 18,
+        "app": 15,
+        "chm": 16,
+        "soc": 16,
+        "aur": 19,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -20,
+        "control": 10,
+        "poison": 10,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -0.5,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Human(Barbaric)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 1,
+        "vit": 2,
+        "int": -1,
+        "wis": 0,
+        "knw": -2,
+        "app": 0,
+        "chm": 0,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 20,
+        "vit": 20,
+        "int": 17,
+        "wis": 17,
+        "knw": 18,
+        "app": 18,
+        "chm": 15,
+        "soc": 15,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 15,
+        "poison": 10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Human(Civilized:City)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 18,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Human(Civilized:Port)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 18,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Human(Civilized:Town)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 18,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Human(Civilized:Village)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 18,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 20,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Ifrit",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 2,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 19,
+        "int": 20,
+        "wis": 19,
+        "knw": 21,
+        "app": 19,
+        "chm": 22,
+        "soc": 20,
+        "aur": 21,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 10,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Jumara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 1,
+        "knw": 0,
+        "app": 0,
+        "chm": 3,
+        "soc": 0,
+        "aur": 0,
+        "pty": 2,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 20,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -5,
+        "poison": 5,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Katara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 1,
+        "vit": 0,
+        "int": 0,
+        "wis": 1,
+        "knw": 0,
+        "app": 0,
+        "chm": 1,
+        "soc": 0,
+        "aur": 1,
+        "pty": 1,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 17,
+        "int": 21,
+        "wis": 20,
+        "knw": 19,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4+2",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": 0,
+        "control": 15,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Gallop:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Kenku",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 20,
+        "vit": 16,
+        "int": 18,
+        "wis": 18,
+        "knw": 18,
+        "app": 17,
+        "chm": 19,
+        "soc": 16,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 0,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 0,
+        "control": -5,
+        "poison": 0,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 0
+        },
+        "jumpStand": 3,
+        "jumpUp": 2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Kerasara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 4,
+        "int": -1,
+        "wis": 0,
+        "knw": -2,
+        "app": -4,
+        "chm": -2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 1,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 22,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 16,
+        "chm": 16,
+        "soc": 16,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 5,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 20,
+        "poison": -5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Lagara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": 1,
+        "int": -2,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 20,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 18,
+        "chm": 20,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -5,
+        "poison": 5,
+        "disease": 5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Leprechaun",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": -1,
+        "int": 2,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 14,
+        "agl": 18,
+        "vit": 14,
+        "int": 20,
+        "wis": 18,
+        "knw": 20,
+        "app": 17,
+        "chm": 19,
+        "soc": 15,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 25,
+        "illusion": 0,
+        "control": 30,
+        "poison": -15,
+        "disease": -20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Lissara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -1,
+        "chm": 0,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 10,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Lotara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 1,
+        "knw": 0,
+        "app": 0,
+        "chm": 2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": -1
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 18
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 5,
+        "control": -10,
+        "poison": 10,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Loxodara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 0,
+        "vit": 3,
+        "int": 2,
+        "wis": 2,
+        "knw": 0,
+        "app": -4,
+        "chm": -2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 18,
+        "vit": 22,
+        "int": 20,
+        "wis": 20,
+        "knw": 18,
+        "app": 16,
+        "chm": 16,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 5,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Lutrinara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": -1,
+        "knw": 0,
+        "app": 0,
+        "chm": 2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 5,
+        "control": -5,
+        "poison": 0,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Marid",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 1,
+        "vit": -1,
+        "int": 0,
+        "wis": 0,
+        "knw": 1,
+        "app": 2,
+        "chm": 0,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 20,
+        "vit": 19,
+        "int": 20,
+        "wis": 19,
+        "knw": 21,
+        "app": 22,
+        "chm": 19,
+        "soc": 20,
+        "aur": 21,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -10,
+        "poison": -10,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Mechanos",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": -1,
+        "vit": 3,
+        "int": 0,
+        "wis": -2,
+        "knw": 3,
+        "app": -4,
+        "chm": -2,
+        "soc": 0,
+        "aur": -4,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 22,
+        "int": 20,
+        "wis": 18,
+        "knw": 21,
+        "app": 12,
+        "chm": 16,
+        "soc": 19,
+        "aur": 15,
+        "pty": 20,
+        "wil": 21
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d4+3",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 3
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": -20,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Mellivara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": -2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 21,
+        "int": 20,
+        "wis": 18,
+        "knw": 18,
+        "app": 16,
+        "chm": 18,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+2",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 10,
+        "poison": 25,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Mephyt(Fire)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -4,
+        "agl": 2,
+        "vit": -3,
+        "int": 1,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 4,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 11,
+        "agl": 21,
+        "vit": 13,
+        "int": 21,
+        "wis": 18,
+        "knw": 21,
+        "app": 18,
+        "chm": 19,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": -5,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "INT",
+          "hourlyMultiplier": 0.75,
+          "hourlyMod": 0,
+          "tenSec": "INT",
+          "tenSecMultiplier": 30,
+          "tenSecMod": 0,
+          "oneSec": "INT",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Mephyt(Ice)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -3,
+        "agl": 1,
+        "vit": -3,
+        "int": 1,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 4,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 12,
+        "agl": 20,
+        "vit": 13,
+        "int": 21,
+        "wis": 18,
+        "knw": 21,
+        "app": 19,
+        "chm": 19,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": -5,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "INT",
+          "hourlyMultiplier": 0.75,
+          "hourlyMod": 0,
+          "tenSec": "INT",
+          "tenSecMultiplier": 30,
+          "tenSecMod": 0,
+          "oneSec": "INT",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Merfolk",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 2,
+        "vit": 1,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 2,
+        "chm": 1,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 18,
+        "app": 20,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Midfolk(Forest)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 1,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": -3,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 19,
+        "vit": 18,
+        "int": 18,
+        "wis": 19,
+        "knw": 19,
+        "app": 16,
+        "chm": 16,
+        "soc": 14,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -3,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 0,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": -30,
+        "control": 10,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Midfolk(River)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 1,
+        "vit": 0,
+        "int": -1,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 2,
+        "soc": -1,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 19,
+        "vit": 17,
+        "int": 18,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -3,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 10,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 15,
+        "illusion": -20,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Midfolk(Town)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 1,
+        "vit": 1,
+        "int": 0,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": -1,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": -2
+      },
+      "attributeLimits": {
+        "str": 16,
+        "agl": 19,
+        "vit": 16,
+        "int": 18,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -3,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": -20,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -10
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Nixie",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -4,
+        "agl": 2,
+        "vit": -4,
+        "int": 1,
+        "wis": 0,
+        "knw": 1,
+        "app": 2,
+        "chm": 2,
+        "soc": 0,
+        "aur": 4,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 11,
+        "agl": 22,
+        "vit": 12,
+        "int": 21,
+        "wis": 18,
+        "knw": 21,
+        "app": 20,
+        "chm": 19,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -6,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 25,
+        "illusion": 0,
+        "control": 10,
+        "poison": -20,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Nymph",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 1,
+        "wis": 0,
+        "knw": 0,
+        "app": 2,
+        "chm": 2,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 18,
+        "knw": 19,
+        "app": 20,
+        "chm": 21,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 15,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Ogre",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 0,
+        "int": -3,
+        "wis": -3,
+        "knw": -2,
+        "app": -4,
+        "chm": -2,
+        "soc": -6,
+        "aur": -1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 16,
+        "vit": 22,
+        "int": 18,
+        "wis": 16,
+        "knw": 19,
+        "app": 15,
+        "chm": 14,
+        "soc": 14,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -10,
+        "affinity": -10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": 0,
+        "poison": 15,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Ogre(Magic)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 0,
+        "int": -1,
+        "wis": -1,
+        "knw": -1,
+        "app": -4,
+        "chm": -2,
+        "soc": -2,
+        "aur": -1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 16,
+        "vit": 22,
+        "int": 18,
+        "wis": 16,
+        "knw": 19,
+        "app": 15,
+        "chm": 14,
+        "soc": 14,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -10,
+        "affinity": -10,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": 0,
+        "poison": 15,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Planar",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 1,
+        "vit": -2,
+        "int": 1,
+        "wis": 2,
+        "knw": 3,
+        "app": -1,
+        "chm": -2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 19,
+        "vit": 18,
+        "int": 21,
+        "wis": 21,
+        "knw": 21,
+        "app": 19,
+        "chm": 17,
+        "soc": 20,
+        "aur": 20,
+        "pty": 18,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 20,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Ratahl",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 2,
+        "vit": 1,
+        "int": 1,
+        "wis": -1,
+        "knw": 0,
+        "app": -2,
+        "chm": 1,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 19,
+        "app": 16,
+        "chm": 19,
+        "soc": 15,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 0,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 0,
+        "control": -5,
+        "poison": 0,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "S’rett",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 3,
+        "vit": 0,
+        "int": 1,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 1,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 21,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 18,
+        "app": 14,
+        "chm": 16,
+        "soc": 16,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": -15,
+        "illusion": 0,
+        "control": 10,
+        "poison": 10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Sasquatch/Yeti",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 0,
+        "vit": 3,
+        "int": 0,
+        "wis": 2,
+        "knw": 0,
+        "app": 0,
+        "chm": -2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 2,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 18,
+        "vit": 21,
+        "int": 17,
+        "wis": 20,
+        "knw": 18,
+        "app": 18,
+        "chm": 18,
+        "soc": 15,
+        "aur": 15,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 20,
+        "poison": 15,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Satyr/Fawn",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -1,
+        "int": 1,
+        "wis": 0,
+        "knw": 0,
+        "app": 1,
+        "chm": 2,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 18,
+        "int": 20,
+        "wis": 18,
+        "knw": 19,
+        "app": 19,
+        "chm": 20,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 0,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 15,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": 5,
+        "poison": -10,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Saurian",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 3,
+        "int": 0,
+        "wis": 0,
+        "knw": -2,
+        "app": -2,
+        "chm": -4,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 19,
+        "vit": 21,
+        "int": 16,
+        "wis": 16,
+        "knw": 18,
+        "app": 14,
+        "chm": 13,
+        "soc": 14,
+        "aur": 16,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": 30,
+        "poison": 0,
+        "disease": 20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Scethen",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 2,
+        "int": 0,
+        "wis": 0,
+        "knw": -1,
+        "app": -4,
+        "chm": -3,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 21,
+        "vit": 20,
+        "int": 20,
+        "wis": 18,
+        "knw": 20,
+        "app": 15,
+        "chm": 16,
+        "soc": 14,
+        "aur": 20,
+        "pty": 18,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 5,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -5,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": -15,
+        "illusion": 0,
+        "control": -10,
+        "poison": 25,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Scurry:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 4,
+          "hourlyMod": 4,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 4,
+          "tenSecMod": 40,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 4,
+          "oneSecMod": 4
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Se’eth",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 3,
+        "vit": 0,
+        "int": 2,
+        "wis": 1,
+        "knw": 0,
+        "app": 0,
+        "chm": 1,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 19,
+        "agl": 21,
+        "vit": 19,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 14,
+        "chm": 20,
+        "soc": 19,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 25,
+        "poison": 20,
+        "disease": -15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "Slither:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 0.25,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 0.25,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 0.25,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Sha’Cora",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 1,
+        "agl": 3,
+        "vit": -2,
+        "int": 0,
+        "wis": 0,
+        "knw": -2,
+        "app": -3,
+        "chm": -1,
+        "soc": -2,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 20,
+        "agl": 21,
+        "vit": 20,
+        "int": 19,
+        "wis": 18,
+        "knw": 18,
+        "app": 17,
+        "chm": 19,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 0,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 0,
+        "disease": 50
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 5
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Sura’keth",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 1,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -3,
+        "chm": -2,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 20,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 14,
+        "chm": 15,
+        "soc": 15,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": 20,
+        "poison": 0,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Sura’rath",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 0,
+        "agl": 2,
+        "vit": 0,
+        "int": 0,
+        "wis": 2,
+        "knw": 0,
+        "app": -2,
+        "chm": -3,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 20,
+        "int": 17,
+        "wis": 19,
+        "knw": 19,
+        "app": 15,
+        "chm": 14,
+        "soc": 15,
+        "aur": 19,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": 15,
+        "poison": 0,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Susara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": -1,
+        "vit": 2,
+        "int": -2,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 20,
+        "vit": 21,
+        "int": 18,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": -10,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 10,
+        "poison": 5,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "jog": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "run": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Sylph",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": -2,
+        "int": 1,
+        "wis": 0,
+        "knw": 0,
+        "app": 2,
+        "chm": 1,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 17,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 18,
+        "knw": 19,
+        "app": 21,
+        "chm": 20,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -1,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Taurian",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 2,
+        "int": -1,
+        "wis": 1,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": -2,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 20,
+        "int": 16,
+        "wis": 18,
+        "knw": 17,
+        "app": 16,
+        "chm": 19,
+        "soc": 16,
+        "aur": 15,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": -15,
+        "illusion": 0,
+        "control": 25,
+        "poison": 0,
+        "disease": -15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Testudara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": -2,
+        "vit": 0,
+        "int": 0,
+        "wis": 2,
+        "knw": 0,
+        "app": -1,
+        "chm": 0,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 17,
+        "vit": 20,
+        "int": 18,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 16,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d6",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 5,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 0,
+        "poison": 10,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -10
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -1,
+        "jumpUp": -0.5
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Troll",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 1,
+        "vit": 4,
+        "int": -4,
+        "wis": 0,
+        "knw": -2,
+        "app": -6,
+        "chm": -4,
+        "soc": -6,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 18,
+        "vit": 24,
+        "int": 17,
+        "wis": 15,
+        "knw": 16,
+        "app": 10,
+        "chm": 14,
+        "soc": 10,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 4,
+        "titleFormula": "1d4+2",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -15,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 10,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Troll(Ice)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 1,
+        "vit": 4,
+        "int": -2,
+        "wis": 0,
+        "knw": -2,
+        "app": -5,
+        "chm": -4,
+        "soc": -6,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 19,
+        "vit": 23,
+        "int": 18,
+        "wis": 19,
+        "knw": 18,
+        "app": 11,
+        "chm": 15,
+        "soc": 10,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d4+2",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": -15,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": -5,
+        "poison": 5,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Troll(Rock)",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 3,
+        "int": -4,
+        "wis": 0,
+        "knw": -2,
+        "app": -4,
+        "chm": -4,
+        "soc": -4,
+        "aur": -2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 23,
+        "agl": 17,
+        "vit": 22,
+        "int": 16,
+        "wis": 14,
+        "knw": 15,
+        "app": 15,
+        "chm": 15,
+        "soc": 14,
+        "aur": 15,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 6,
+        "titleFormula": "1d6+2",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 2
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -15,
+        "fortune": -10
+      },
+      "resistanceMods": {
+        "magic": 10,
+        "illusion": 0,
+        "control": -20,
+        "poison": 20,
+        "disease": 20
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 2,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -3,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": false
+    }
+  },
+  {
+    "name": "Ursara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 1,
+        "vit": 2,
+        "int": -2,
+        "wis": 0,
+        "knw": 0,
+        "app": 0,
+        "chm": 0,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 1
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 19,
+        "vit": 21,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 18,
+        "chm": 20,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 10,
+        "poison": 5,
+        "disease": -5
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 1,
+          "tenSec": 10,
+          "oneSec": 1
+        },
+        "jog": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "run": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Vulpara",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -1,
+        "agl": 2,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": 2,
+        "chm": 2,
+        "soc": -3,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 21,
+        "vit": 18,
+        "int": 20,
+        "wis": 20,
+        "knw": 20,
+        "app": 18,
+        "chm": 20,
+        "soc": 18,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d3",
+        "titleDice": "1",
+        "titleMax": 3,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 0,
+        "affinity": 10,
+        "fortune": 10
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 0,
+        "control": 10,
+        "poison": 0,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "jog": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "run": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Whalrog",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 3,
+        "agl": 0,
+        "vit": 2,
+        "int": 0,
+        "wis": 0,
+        "knw": 0,
+        "app": -4,
+        "chm": 0,
+        "soc": -2,
+        "aur": 0,
+        "pty": 2,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 22,
+        "agl": 19,
+        "vit": 21,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 16,
+        "chm": 19,
+        "soc": 14,
+        "aur": 20,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": 0,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 5,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "jog": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "run": {
+          "hourly": -2,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "specialName": "Swim:",
+        "special": {
+          "hourly": "Walk",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Walk",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Walk",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0.5,
+        "jumpUp": 5
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Wildling",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": -2,
+        "agl": 2,
+        "vit": -1,
+        "int": -1,
+        "wis": 0,
+        "knw": 2,
+        "app": 2,
+        "chm": -2,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 18,
+        "agl": 20,
+        "vit": 17,
+        "int": 20,
+        "wis": 19,
+        "knw": 20,
+        "app": 19,
+        "chm": 18,
+        "soc": 17,
+        "aur": 20,
+        "pty": 19,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 1,
+        "titleFormula": "1d4",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": -10,
+        "control": 0,
+        "poison": -10,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -2,
+          "tenSec": -20,
+          "oneSec": -2
+        },
+        "jog": {
+          "hourly": -1,
+          "tenSec": -10,
+          "oneSec": -1
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": -1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Wolfen",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 2,
+        "agl": 2,
+        "vit": 1,
+        "int": 0,
+        "wis": 0,
+        "knw": -2,
+        "app": -3,
+        "chm": 0,
+        "soc": -2,
+        "aur": -1,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 20,
+        "vit": 21,
+        "int": 18,
+        "wis": 20,
+        "knw": 18,
+        "app": 17,
+        "chm": 19,
+        "soc": 14,
+        "aur": 17,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d6+1",
+        "titleDice": "1",
+        "titleMax": 6,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 5,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -5,
+        "illusion": 0,
+        "control": -10,
+        "poison": 10,
+        "disease": 15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 2,
+          "tenSec": 20,
+          "oneSec": 2
+        },
+        "jog": {
+          "hourly": 3,
+          "tenSec": 30,
+          "oneSec": 3
+        },
+        "run": {
+          "hourly": 4,
+          "tenSec": 40,
+          "oneSec": 4
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  },
+  {
+    "name": "Xar’Xeth",
+    "type": "race",
+    "system": {
+      "attributeMods": {
+        "str": 4,
+        "agl": 0,
+        "vit": 0,
+        "int": 2,
+        "wis": 0,
+        "knw": 0,
+        "app": -6,
+        "chm": -4,
+        "soc": 0,
+        "aur": 0,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 23,
+        "agl": 18,
+        "vit": 18,
+        "int": 21,
+        "wis": 15,
+        "knw": 18,
+        "app": 12,
+        "chm": 15,
+        "soc": 18,
+        "aur": 18,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 3,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -5,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": 10,
+        "control": -15,
+        "poison": -15,
+        "disease": 10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 2,
+        "jumpUp": 1
+      },
+      "formless": false,
+      "canSwim": true
+    }
+  }
+]

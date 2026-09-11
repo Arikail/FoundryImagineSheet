@@ -1,0 +1,5508 @@
+[
+  {
+    "name": "Acrobat",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "STR, AGL, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Athlete",
+          "Dancer",
+          "Gymnast",
+          "Escape Artist",
+          "Roof Walker",
+          "Cat Burglar",
+          "Acrobat",
+          "Swift",
+          "Master Acrobat",
+          "Master Acrobat",
+          "Master Swift",
+          "Master Swift",
+          "Shadow Walker",
+          "Shadow Walker",
+          "Shadow Dancer"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather/hide except long shirt. Any composite helm. Any arm or leg bracers.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 9, Master at 12",
+      "classType": "Rogue subclass",
+      "description": "A gifted athlete that makes what seem to be impossible moves. They also have supplemented this with many of the stealthy skills of a Rogue. They make excellent spies and have the ability to get in and out of places others couldn't."
+    }
+  },
+  {
+    "name": "Alchemist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 5,
+        "invokerStartTitle": 8,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AUR, KNW, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          15,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Novice",
+          "Cataloger",
+          "Herbalist",
+          "Botany",
+          "Botanist",
+          "Brewer",
+          "Chemist",
+          "Alchemist",
+          "Transmuter",
+          "Master Alchemist",
+          "Master Alchemist",
+          "Shaper",
+          "Shaper",
+          "Master Shaper",
+          "Master Shaper",
+          "Arch Transmuter"
+        ],
+        "goalAttr1": "KNW",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm but great helm. No headgear but leather/hide. Any half shirt. Any arm or leg bracers.",
+      "weaponUsage": "Club, crossbow, dagger, hand hammer, knife, long sword, quarterstaff, rapier, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 7, Advanced at 10, Expert at 13, Master at 16",
+      "classType": "Mage subclass",
+      "description": "Alchemists focus on herbs and magical concoctions, including potions, poisons, elixirs, and recipes for these and more. At mid titles they gain spellcasting."
+    }
+  },
+  {
+    "name": "Arcanist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "KNW, INT, AUR",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          15,
+          0,
+          15,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Compiler",
+          "Antiquary",
+          "Analyst",
+          "Specialist",
+          "Seeker",
+          "Fortune-Hunter",
+          "Arcanist",
+          "Mystic",
+          "Connoisseur",
+          "Connoisseur",
+          "Curator",
+          "Curator",
+          "High Arcanist",
+          "High Arcanist",
+          "Supreme Archivist"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm but great helm. No headgear but leather/hide. Any half shirt. Any arm or leg bracers.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rapier, rod, scimitar.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "Arcanists focus on lost and legendary magics at the expense of their early casting ability. They are steeped in folklore, legends, and the history of all things arcane. They seek lost or new implements of power, lost spells, and ways of magic rarely seen or used."
+    }
+  },
+  {
+    "name": "Archer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, STR",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Fletcher",
+          "Guardsmen",
+          "Bowman",
+          "Scout",
+          "Quickshot",
+          "Shootist",
+          "Archer",
+          "Marksman",
+          "Master Marksman",
+          "Master Marksman",
+          "Sharpshooter",
+          "Sharpshooter",
+          "Sniper",
+          "Sniper",
+          "Grand Archer"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any chain, any leather, any scale, any shield, composite or half helm, breast plate, arm bracers, leg bracers.",
+      "weaponUsage": "Any missile weapon. Any one-handed weapon.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Warrior subclass",
+      "description": "A Warrior with a focus on missile weapons. They are unrivaled with missile weapons and can make everything from trick shots, to specialized attacks with them."
+    }
+  },
+  {
+    "name": "Archer(Arcane)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, AUR",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Fletcher",
+          "Eagle Eye",
+          "Bowman",
+          "Scout",
+          "Quickshot",
+          "Arcane Shootist",
+          "Arcane Archer",
+          "Adept Marksmen",
+          "Adept Marksmen",
+          "Arcane Marksmen",
+          "Arcane Sharpshooter",
+          "Arcane Sharpshooter",
+          "Arcane Sniper",
+          "Arcane Sniper",
+          "Grand Arcane Archer"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any flexible. Semi-flexible up to chain with no armor penalties. Any arm or leg bracers. Any helm or composite helm but great.",
+      "weaponUsage": "Must select one bow or crossbow of any size or type. Any other weapons.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Warrior subclass",
+      "description": "Depending on your outlook, the Arcane Archer is either the highest of the arcane and military arts, or a dangerous and ad hoc improvisation of it. Capable of delivering a spell effect farther out than normally possible with regular spell-casting, only those with a basic understanding of Metaphysics are able to become Arcane Archers."
+    }
+  },
+  {
+    "name": "Archer(Zen)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 4,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil, Order",
+        "focusAttributes": "AGL, PTY, WIL",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Fletcher",
+          "Angel Eye",
+          "Bowman",
+          "Scout",
+          "Quickshot",
+          "Zen Shootist",
+          "Zen Archer",
+          "Divine Marksmen",
+          "Divine Marksmen",
+          "Zen Master Marksmen",
+          "Divine Sharpshooter",
+          "Divine Sharpshooter",
+          "Divine Sniper",
+          "Divine Sniper",
+          "Zen Grandmaster Archer"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to disciplined skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any flexible. Any semi-flexible up to ring mail. May wear lamellar half, full, or long shirt. Any arm or leg bracers. Any helm or composite helm but great.",
+      "weaponUsage": "Any bow except crossbow. Any one-handed weapon.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Warrior subclass",
+      "description": "Though a competent archer and warrior, the Zen Archer seeks enlightenment through meditation and the way of the bow. The Zen archer has a spiritual path centered on their use of missile weapons with a divine focus. At mid titles they gain divine invoking."
+    }
+  },
+  {
+    "name": "Assassin",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Good",
+        "focusAttributes": "AGL, STR, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Looter",
+          "Thug",
+          "Murderer",
+          "Killer",
+          "Cutthroat",
+          "Slayer",
+          "Assassin",
+          "Executioner",
+          "Master Assassin",
+          "Master Assassin",
+          "Master Executioner",
+          "Master Executioner",
+          "Night Blade",
+          "Night Blade",
+          "Night Stalker"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "No plate except arm or leg bracers. Any helm but great helm. Any headgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Rogue subclass",
+      "description": "Assassins use stealth and deceit to ply their trade; death. Some are merely excellent spies. Many see murder as an art form and one they hone to perfection."
+    }
+  },
+  {
+    "name": "Bandit",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Filcher",
+          "Looter",
+          "Robber",
+          "Highwayman",
+          "Hood",
+          "Brigand",
+          "Bandit",
+          "Rogue",
+          "Bandit Lord",
+          "Bandit Lord",
+          "Raider",
+          "Raider",
+          "Master Raider",
+          "Master Raider",
+          "Raider Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Rogue subclass",
+      "description": "This class has a simply focus; taking the loot from its owners. They use straight forward thuggery and force to do so. They have some stealth skills but generally this is used to setup an ambush rather than for careful infiltration."
+    }
+  },
+  {
+    "name": "Banisher",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 4,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "AGL, PTY, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Seeker",
+          "Spirit Protector",
+          "Spirit Guardian",
+          "Spirit Warder",
+          "Spirit Defender",
+          "Daemon Hunter",
+          "Banisher",
+          "Banisher Knight",
+          "Banisher Knight",
+          "Banisher Lord",
+          "Daemon Knight",
+          "Daemon Knight",
+          "Daemon Lord",
+          "Daemon Lord",
+          "Daemon Knight Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Warrior subclass",
+      "description": "A Knight class focused on removal of dark influences and dangers. Their foes are the supernatural and beings that do not belong in this world. They endeavor to end these threats or at least send them back to where they came from."
+    }
+  },
+  {
+    "name": "Bard",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 6,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "INT, KNW, AGL",
+        "attribQualify": [
+          0,
+          12,
+          0,
+          15,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Rhymer",
+          "Chanter",
+          "Troubadour",
+          "Minne Singer",
+          "Sonneteer",
+          "Skald",
+          "Bard",
+          "Lorist",
+          "Master Bard",
+          "Master Bard",
+          "Chief Skald",
+          "Chief Skald",
+          "Meister Singer",
+          "Meister Singer",
+          "Master Lorist"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to magical skills",
+        "+5% to informational skills",
+        "+10% Morale adjustment"
+      ],
+      "armorUsage": "No shield except buckler. Any pieces or suits that do not contain plate or heavy plate except for arm or leg bracers and helm but great helm.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11",
+      "classType": "Warrior subclass",
+      "description": "A Warrior with magical reciting, singing and playing skills. They boost their allies and harm their foes, directly and indirectly with their various physical and magical skills."
+    }
+  },
+  {
+    "name": "Battlemancer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, AGL, AUR",
+        "attribQualify": [
+          0,
+          15,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Seeker",
+          "Spellblade",
+          "Mageblade",
+          "Battlecaster",
+          "Mystic Warrior",
+          "Battlemancer",
+          "Battlemage",
+          "Battlemaster",
+          "Stormbringer",
+          "High Battlemancer",
+          "High Battlemancer",
+          "Arch Battlemancer",
+          "Arch Battlemancer",
+          "Infused Battlemancer"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to magical skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any except breastplate, armlet, gauntlets, plate long skirt or plate armored skirt, plate leg lets or plate footgear. No Shield but buckler or small.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 10, Grandmaster(mastered weapons at 10)",
+      "classType": "Mage/Warrior crossover",
+      "description": "A crossover between the Mage and Warrior having some skills of both. They can enchant weapons, armor temporarily, and eventually permanently. They gain spell casting in the early titles though they are neither the best fighters or casters but a combination of both."
+    }
+  },
+  {
+    "name": "Beastmaster",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, INT",
+        "attribQualify": [
+          14,
+          14,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Animal Trainer",
+          "Scout",
+          "Summoner",
+          "Pathfinder",
+          "Woodsman",
+          "Animalist",
+          "Beastmaster",
+          "Master Tamer",
+          "Beastmaster Lord",
+          "Beastmaster Lord",
+          "Animalist Lord",
+          "Animalist Lord",
+          "High Beastmaster",
+          "High Beastmaster",
+          "Grand Beastmaster"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any except plate breastplate, plate long skirt or plate armored skirt, plate leglets or plate footgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "This class is an animal trainer, tamer, as well as a hunter of dangerous beasts. They have many abilities to fight both man and beast with many combat skills. They gain some magical skills to deal with their animal focus."
+    }
+  },
+  {
+    "name": "Beguiler",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Active or Fanatical Good",
+        "focusAttributes": "AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Whisperer",
+          "Manipulator",
+          "Illusionist",
+          "Charmer",
+          "Spellbinder",
+          "Enticer",
+          "Beguiler",
+          "Deceiver",
+          "Coercer",
+          "Coercer",
+          "Enchanter",
+          "Enchanter",
+          "Mindbender",
+          "Mindbender",
+          "Prime Enigma"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide. Any arm bracer. Half helm or composite helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 12",
+      "classType": "This class has the focus of illusions and uses these skills to dazzle and confuse their foes. They have some ability to control as well, starting with animals and moving to manipulation and eventually outright control of other beings in ways both subtle and overt.",
+      "description": "Mage subclass"
+    }
+  },
+  {
+    "name": "Berserker",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Active",
+        "focusAttributes": "AGL, STR, WIL",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Tribesman",
+          "Clansman",
+          "Clan Leader",
+          "Gouger",
+          "Cleaver",
+          "Butcher",
+          "Berserker",
+          "Slayer",
+          "Reaver",
+          "Reaver",
+          "Blood Reaver",
+          "Blood Reaver",
+          "Blood Lord",
+          "Blood Lord",
+          "Dread Reaver"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "A class that fights well, taking to extremes their physical combat skills. They use strength and force to overwhelm their foes, in mid titles sweeping whole groups of enemies in mere moments."
+    }
+  },
+  {
+    "name": "Border Scout",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, KNW",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Pathfinder",
+          "Watcher",
+          "Guide",
+          "Cartographer",
+          "Hunter",
+          "Woodsman",
+          "Border Scout",
+          "Scout",
+          "Master Scout",
+          "Master Scout",
+          "Master Pathfinder",
+          "Master Pathfinder",
+          "Master Tracker",
+          "Master Tracker",
+          "Scout Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to informational skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half shirt. Full or long shirt of ringmail. Half or composite helm. Any headgear. Arm or leg bracers of any type. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Rogue subclass",
+      "description": "The Rogue of the wilderness. This class is focused on going to the edges, exploring them and finding out what is there without being seen. As they grow, they begin to gain skills both mundane and magical in dealing with animals, creatures and other threats found in the wild."
+    }
+  },
+  {
+    "name": "Bounty Hunter",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Bouncer",
+          "Shadower",
+          "Bodyguard",
+          "Man Hunter",
+          "Manstopper",
+          "Thief Taker",
+          "Bounty Hunter",
+          "Finder",
+          "Stalker",
+          "Stalker",
+          "Master Hunter",
+          "Master Hunter",
+          "Master Stalker",
+          "Master Stalker",
+          "Warden"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any save plate breastplate, plate long or armored skirt, plate leglets or footgear. Any medium or smaller shield.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "This class is focused on getting their target. While the assassin does so outside the law, these Warriors are dispensers of justice, capturing or eliminating law breakers, often for reward."
+    }
+  },
+  {
+    "name": "Buccaneer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Swabbie",
+          "Sailor",
+          "Seaman",
+          "Mate",
+          "First Mate",
+          "Navigator",
+          "Buccaneer",
+          "Pirate",
+          "Master Buccaneer",
+          "Master Buccaneer",
+          "Master Pirate",
+          "Master Pirate",
+          "Master Raider",
+          "Master Raider",
+          "Raider Lord"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Rogue subclass",
+      "description": "The Rogue of the sea. This stealthy, skilled combatant has all of the skills to ply the sea and additional combat and stealth skills that make them a danger to others upon it."
+    }
+  },
+  {
+    "name": "Cacophonist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Good",
+        "focusAttributes": "PTY, WIL, KNW",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Dissonant",
+          "Discordant",
+          "Absonant",
+          "Dark Choralist",
+          "Dark Hymnist",
+          "Dark Chorister",
+          "Cacophonist",
+          "Dark Chaunter",
+          "Dark Psalmist",
+          "Horrisonant",
+          "Corruptor",
+          "Corruptor",
+          "Dark Hymn Master",
+          "Dark Hymn Master",
+          "Master of Discord"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather. No plate except bracers and composite helm or half helm.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 7, Advanced at 10, Expert at 15, Master at 19, Grandmaster(mastered weapons at 19)",
+      "classType": "Priest subclass",
+      "description": "A Priest that uses divine dissonance, waves of harmful sounds, chants and hymns that show the power of their deity over their foes. They also summon and strengthen the undead. The Harmonist class is their mortal foe."
+    }
+  },
+  {
+    "name": "Cajoler",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Good",
+        "focusAttributes": "AGL, AUR, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Liar",
+          "Intimidator",
+          "Charmer",
+          "Peddler",
+          "Thief",
+          "Inciter",
+          "Cajoler",
+          "Thought Poisoner",
+          "Thought Poisoner",
+          "Deceiver",
+          "Master Deceiver",
+          "Master Deceiver",
+          "Master Cajoler",
+          "Master Cajoler",
+          "Master of Lies"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+10% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide. Any leg or arm bracer. Any helm. Any half-shirt, full shirt or long shirt of ringmail.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "This class is the quintessential provocateur. They create trouble wherever they go and generally profit from it. This class plays the role of confidant, informant, apparent ally and information peddler. They are masters of social power and control."
+    }
+  },
+  {
+    "name": "Cavalier",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, WIS, SOC",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Liegeman",
+          "Lawgiver",
+          "Lancer",
+          "Knight-Errant",
+          "Destrier",
+          "Campaigner",
+          "Cavalier",
+          "Dragoon",
+          "Liege Lord",
+          "Liege Lord",
+          "Field Marshall",
+          "Field Marshall",
+          "General",
+          "General",
+          "Grand Marshall"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any non-missile",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Cavaliers are liegemen trained in both arms and the fine use of riding a steed. They are non-divine warrior-knights. They are well-trained and ready for both war and pursuit of the liege's justice."
+    }
+  },
+  {
+    "name": "Channeler",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 9,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "AUR, PTY, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          13,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Caller",
+          "Spiritist",
+          "Luminary",
+          "Life Mage",
+          "Ritualist",
+          "Diviner",
+          "Channeler",
+          "Summoner",
+          "Clairvoyant",
+          "Clairvoyant",
+          "Divine Mage",
+          "Divine Mage",
+          "Master Channeler",
+          "Master Channeler",
+          "White Wizard"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any leather or hide. Half helm or composite helm. No headgear but leather. Any half-shirt. Any bracers.",
+      "weaponUsage": "Club, crossbow, dagger, hand hammer, knife, longsword, quarterstaff, rapier, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 6, Advanced at 10, Expert at 14, Master at 18",
+      "classType": "Mage subclass",
+      "description": "Channelers are divine mages adept at both the chaos of magic and order of divinity. They use their gifts of magic for a higher purpose, dedicating their lives to ensure the purity of life and the downfall of evil. These mages serve as conduits for life force, either transforming it into much-needed Aura or siphoning it from one being to another, channelling it through their own bodies."
+    }
+  },
+  {
+    "name": "Conqueror",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Active",
+        "focusAttributes": "STR, AGL, INT",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Soldier",
+          "Tracker",
+          "Traveler",
+          "Adventurer",
+          "Pathfinder",
+          "Subduer",
+          "Conqueror",
+          "Conquistador",
+          "Master Conqueror",
+          "Master Conqueror",
+          "Vanquisher",
+          "Vanquisher",
+          "Warmonger",
+          "Warmonger",
+          "Warlord"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "No plate except helms and bracers. Any shield.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Conquerors seek challenges to overcome and the unknown, to best it. They search for new lands and the rarest of beasts against which to test their mettle. Conquerors are masters of all they survey; they are exploiters of the unknown. They generally profit from their conquests, either in coin or reputation."
+    }
+  },
+  {
+    "name": "Crypt Robber",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "AGL, INT, PTY",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Spelunker",
+          "Hidden",
+          "Explorer",
+          "Adventurer",
+          "Medium",
+          "Thief",
+          "Crypt Robber",
+          "Raider",
+          "Pilferer",
+          "Pilferer",
+          "Crypt Master",
+          "Crypt Master",
+          "Crypt Invader",
+          "Crypt Invader",
+          "Crypt Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "No plate except arm or leg bracers and half or composite helm. Any headgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "Crypt Robbers have associations with divinity; many good deities appoint them to steal resources from the minions of evil. These rogues delve into deep tombs, relinquishing artifacts of power, stealing from the dead; after all, what use are trinkets to a corpse?"
+    }
+  },
+  {
+    "name": "Curse Breaker",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "WIL, PTY, AUR",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15,
+          16
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Curse Finder",
+          "Identifier",
+          "Sin Eater",
+          "Counterer",
+          "Curser",
+          "Defiant",
+          "Curse Breaker",
+          "Mind Cleric",
+          "Mind Cleric",
+          "Master Defiant",
+          "Spirit Defiant",
+          "Spirit Defiant",
+          "Soul Defiant",
+          "Soul Defiant",
+          "Hexer"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any flexible, any helm, any bracers.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Priest subclass",
+      "description": "Often called in to deal with lingering curses, the Curse Breaker is adept at finding and removing such effects. As not every 'curse' is in fact a curse, they are adept with dealing with rogue magical effects as well. Perhaps most surprising to many, a Curse Breaker may impose their own curses. This is often done to either protect someone or to punish another, especially when the law offers no remedy."
+    }
+  },
+  {
+    "name": "Delver",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "KNW, INT, AGL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          14,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Researcher",
+          "Cataloger",
+          "Archeologist",
+          "Seeker",
+          "Finder",
+          "Filcher",
+          "Delver",
+          "Collector",
+          "Master Delver",
+          "Master Delver",
+          "Master Collector",
+          "Master Collector",
+          "Master Archeologist",
+          "Master Archeologist",
+          "Great Delver"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half helm or composite. Any half-shirt, full shirt or long shirt of ringmail. Any arm or leg bracers. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Rogue subclass",
+      "description": "Delvers are hunters of lost treasures, and lost lore. Some search to increase their power, others from a lust for collecting rare and unusual items, while others search for adventure itself. They are rumor watchers and treasure seekers, as likely to be buried in a book as talking to a ship's captain or caravan master from a faraway land. By necessity they are archeologists, sagacious in their researching, and roguish because delvers often ignore the laws to seek their treasures."
+    }
+  },
+  {
+    "name": "Dervish",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, AUR, WIL",
+        "attribQualify": [
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acrobat",
+          "Dancer",
+          "Sword Dancer",
+          "Swashbuckler",
+          "Blade Dancer",
+          "Weapon Master",
+          "Dervish",
+          "Whirling Dervish",
+          "Master Dervish",
+          "Master Dervish",
+          "Seeker",
+          "Seeker",
+          "Great Dervish",
+          "Great Dervish",
+          "Grand Dervish"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any flexible. Any semi-flexible leggings, skirts, or shirts. Any bracers. Any helm but great.",
+      "weaponUsage": "Any, as long as the adjusted weapon speed is 3 seconds or less.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 7, Master at 9, Grandmaster(mastered weapons at 9)",
+      "classType": "Warrior subclass",
+      "description": "Representing the pinnacle of weapon speed and focus, the Dervish place emphasis on speed over strength and dazzle their opponents with acrobatic and disciplined feats of wonder. As the Dervish advances, they gain mystical abilities over themselves and the weapons they use. They become a blur of motion and eventually they can even anticipate an opponent's action before it occurs. Where the duelist excels at fighting a single opponent, the dervish can handle multiples at ease, though dealing less damage to each opponent."
+    }
+  },
+  {
+    "name": "Dreamer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 4,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Dream Reader",
+          "Dream Weaver",
+          "Dream Crafter",
+          "Dream Caster",
+          "Dream Evoker",
+          "Dream Summoner",
+          "Dreamer",
+          "Dream Master",
+          "Dream Wizard",
+          "Dream Wizard",
+          "High Dream Wizard",
+          "High Dream Wizard",
+          "Arch Dream Wizard",
+          "Arch Dream Wizard",
+          "True Dreamer"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to divine skills",
+        "+10% Illusion Resist"
+      ],
+      "armorUsage": "Any leather or hide. Any arm bracer. Any half helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Dreamer walks the dreamscape with the rare ability to control their dreams and eventually the shared dream with others. In this world they understand the patterns of magic and are comparable to a Gray Witch in magical efficacy with their ability to work with animals, perform magical rituals, and eventually cast spells. A Dreamer's special type of dreaming gives them unique insights into the future, resulting in gifts of prophecy and prediction while awake. Dreamers learn to focus their abilities in such a way as to project both themselves and allies into the Plane of Dreams. As a Dreamer grows in power, they learns to create objects on the Plane of Dreams and eventually to draw those objects back to the waking worlds. They can call dream animals both onto the Plane of Dreams and the natural universe, and ultimately, even dream their own imagined animal into existence. Experienced Dreamers gain the power to summon non-allies into the Plane of Dreams, as well as summon beings from the Plane of Dreams back to the waking world. As their power grows even further, Dreamers can enchant animals, creatures, and objects that originate in the Plane of Dreams or that they have created there."
+    }
+  },
+  {
+    "name": "Druid",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 7,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 1,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "PTY, KNW, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Initiate",
+          "Pathfinder",
+          "Ovate",
+          "Forester",
+          "Cultivator",
+          "Druid",
+          "High Druid",
+          "Forestall",
+          "Forestall",
+          "Arch Druid",
+          "Arch Druid",
+          "Forestall",
+          "Forestall",
+          "Arch Forestall"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half shirt. Long shirt or full shirt of ringmail. Any bracer, Any helm but great helm. Wooden shield.",
+      "weaponUsage": "Bola, bow, club, dagger, knife, quarterstaff, rod, saber, scimitar, sling, spear, spear sword, stake, stake staff, trident.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 9, Expert at 13, Master at 17",
+      "classType": "Priest subclass",
+      "description": "Druids worship the forces and deities of nature. The power they invoke is drawn from the earth, the air, the water, and all living things within them. Druids are caretakers of the natural order, and seek to maintain a balance within the natural world and within themselves. As the Druid grows in power, they begin to manipulate the power of magic as well as the divine forces of nature."
+    }
+  },
+  {
+    "name": "Duelist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Brawler",
+          "Soldier",
+          "Mercenary",
+          "Swordsman",
+          "Warrior",
+          "Champion",
+          "Duelist",
+          "Hero",
+          "Master Dueler",
+          "Master Dueler",
+          "Weapon Master",
+          "Weapon Master",
+          "War Master",
+          "War Master",
+          "Grand Master"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 7, Master at 9, Grandmaster(mastered weapons at 9)",
+      "classType": "Warrior subclass",
+      "description": "Duelists are the practitioners of one-to-one combat. They practice skills that will affect their chances of success in a duel. Whereas the Warrior can be very physical and brutish, fighting many opponents at once, the Duelist prefers to defeat a single opponent through skill and mastery of arms. Even when surrounded by opponents, the Duelist can still hold their own."
+    }
+  },
+  {
+    "name": "Enchanter",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, WIL, AUR",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Patterner",
+          "Imbuer",
+          "Weapon Imbuer",
+          "Armor Imbuer",
+          "Disenchanter",
+          "Mystic Patterner",
+          "Enchanter",
+          "Lorist",
+          "Spell Patterner",
+          "Master Pattener",
+          "High Enchanter",
+          "High Enchanter",
+          "Arch Enchanter",
+          "Arch Enchanter",
+          "Artificer"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills"
+      ],
+      "armorUsage": "Any flexible armor. Any semi-flexible half shirt. Any arm or leg bracers. Any helm or composite helm but great helm. Any flexible headgear.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, sling; may also choose one bow, one sword, and one hammer or mace.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Enchanter focuses on the creation and control of magical items at the expense of spell casting. They are the best producers of magical items both temporary and permanent. Enchanters have the added ability to disenchant items and reuse the Will Force stored within them for other enchantments and imbues. They can enchant more with less, faster than any other class. They are the ideal ally to prepare for nearly any encounter or situation provided."
+    }
+  },
+  {
+    "name": "Exorcist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 5,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Good",
+        "focusAttributes": "PTY, WIL, WIS",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Sensor",
+          "Medium",
+          "Caller",
+          "Protector",
+          "Life Priest",
+          "Spiritist",
+          "Exorcist",
+          "Influencer",
+          "Greater Exorcist",
+          "Greater Exorcist",
+          "Protector of Life",
+          "Protector of Life",
+          "Master of Life",
+          "Master of Life",
+          "Restorer of Life"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any chain or leather. Any half-shirt, long-shirt, bracer, and half-helm. Any small shield.",
+      "weaponUsage": "Club, dagger, hammer, knife, mace, quarterstaff, rod, stake, stake staff.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 10, Master at 13",
+      "classType": "Priest subclass",
+      "description": "Exorcists are a medium between the world of the living and the realm of the dead. They call to spirits and souls of the departed, boldly conversing with them, either to seek their wisdom or end their torment of undeath. These priests protect the living from evil and supernatural forces and steer hesitant spirits in the right direction; very few can withstand their commanding will. These priests are masters of life force, sensing it, disguising it, and returning it completely to those who have been drained of will. With a steady calm and determination, it is the Exorcists who open the spirit portals, suppress the maddening compulsions of undead, and cleanse those who have been tainted by possession, magic, and evil."
+    }
+  },
+  {
+    "name": "Explorer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, KNW",
+        "attribQualify": [
+          0,
+          12,
+          0,
+          14,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Pathfinder",
+          "Trailblazer",
+          "Frontiersman",
+          "Traveler",
+          "Expeditionist",
+          "Wanderer",
+          "Explorer",
+          "Pioneer",
+          "Voyager",
+          "Voyager",
+          "Master Adventurer",
+          "Master Adventurer",
+          "Master Expeditionist",
+          "Master Expeditionist",
+          "Journeymaster"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to informational skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather or hide. Any leg or arm bracer. Any helm. Any half-shirt, full shirt or long shirt of ringmail. No shield but buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "Every race has its explorers: those brave and adventurous souls who are taken by wanderlust, to see new lands, meet new people, and discover new things. Whether it is the source of a great river, the new trade route, riches, lost legends, or ancient relics, their real purpose is to go where none have gone before. Explorers always wonder what's over the next hill, what's at the bottom of the deepest hole, what's at the end of the trail, or where is the next sea or the farthest shore. They often garner fame for their discoveries and wealth from curiosities they bring back. Explorers are pure adventurers driven only to seek the unexplored, and as soon as their discovery has been mapped and recorded, they move on to further parts unknown."
+    }
+  },
+  {
+    "name": "Gypsy",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 10,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "KNW, INT, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Migrant",
+          "Performer",
+          "Fortune Teller",
+          "Peddler",
+          "Vagrant",
+          "Story Teller",
+          "Gypsy",
+          "Jongleur",
+          "Gypsy Chieftain",
+          "Gypsy Chieftain",
+          "Wandering Minstrel",
+          "Wandering Minstrel",
+          "Vagabond",
+          "Vagabond",
+          "Lord of the Gypsies"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half shirt. Full or long shirt of ringmail. Half or composite helm. Arm bracers and leg bracers of any type. No shield but buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 9, Master at 12",
+      "classType": "Rogue subclass",
+      "description": "The elusive and wandering Gypsies come and go seemingly at a whim. They are tellers and seekers of legends and obscure tales and talents. While they are often mistrusted, due to their desire to stay away from entanglements that would anchor them to any one place, they can be fast friends with surprising abilities. They know much that is forgotten, if you can ferret their lies from truth."
+    }
+  },
+  {
+    "name": "Harbinger",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Good (Active), Fanatical Good (Active)",
+        "focusAttributes": "STR, PTY, WIL",
+        "attribQualify": [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Brother",
+          "Herald",
+          "Auspex",
+          "Prophet",
+          "Admonitor",
+          "Delegate",
+          "Harbinger",
+          "Precursor",
+          "Vanguard",
+          "Vanguard",
+          "Ambassador",
+          "Ambassador",
+          "Holy Emissary",
+          "Holy Emissary",
+          "Endbringer"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Priest subclass",
+      "description": "Harbingers appear before a possible or eventual disaster, war, or the end-times. They pave the way, warning of what is to come, preparing those for it and in some cases stopping it through direct and specific action. They fight the foes of their deity and aid those who follow the cause. It is through their acts that catastrophe is averted, or barring that, that some are spared and go on to keep the fire alive as even civilization itself sputters to a halt. They are the flame and the light before the dark times. Their appearance is filled with danger and yet offers hope that all is not yet lost."
+    }
+  },
+  {
+    "name": "Harmonist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "PTY, WIL, KNW",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Melodist",
+          "Chanter",
+          "Cantillater",
+          "Choralist",
+          "Hymnist",
+          "Chorister",
+          "Harmonist",
+          "Chaunter",
+          "Psalmist",
+          "Purist",
+          "Precenter",
+          "Precenter",
+          "Hymn Master",
+          "Hymn Master",
+          "Lord/Lady of Harmony"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather. No plate except bracers and composite helm or half helm.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 7, Advanced at 10, Expert at 15, Master at 19, Grandmaster(mastered weapons at 19)",
+      "classType": "Priest subclass",
+      "description": "Divinely gifted with a natural talent for musical ability, these priests dedicate their lives to worshiping their gods through the beauty of harmony. Typically serving as temple musicians who compose both divine and mundane psalms and spiritual songs, these priests sometimes find themselves leading not only religious services, but sometimes whole armies into battle. Powerful harmonists can even tap into the perfect, divine music of the physical world, using its supernatural beauty to heal and to destroy undead-for it is torturous for those who are evil to hear something as perfectly sublime as the music of the gods. Harmonists are fair in combat, and even in heavy melee can divinely amplify their sung hymns of protection and healing. A Harmonist's worst enemy is a Cacophonist."
+    }
+  },
+  {
+    "name": "Healer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "PTY, WIL, WIS",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Healer",
+          "Curist",
+          "Mystic",
+          "Convalescer",
+          "Master Curist",
+          "Soother",
+          "True Healer",
+          "High Healer",
+          "Master Healer",
+          "Master Healer",
+          "Arch Healer",
+          "Arch Healer",
+          "Arch Healer",
+          "Arch Healer",
+          "Arch Healer"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide, any half-helm or composite helm.",
+      "weaponUsage": "Dagger, club, rod, knife, sling, quarterstaff.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 9, Advanced at 13, Expert at 17, Master at 25",
+      "classType": "Priest subclass",
+      "description": "Healers are individuals with a special gift for curing. Their purpose in life is to bring good health to the sick and injured, and they often do this without hope of monetary compensation. Healers are generally pacifists, using their weapons primarily for self-defense. Unlike Priests, healers feel that their purpose of helping the wounded supersedes alignment, and thus they will often heal both good and evil individuals alike. This is not to say that they will sanction or aid evil acts, but simply that they find it hard to tum away the injured. Only if the Healer has been personally attacked or threatened do they tend to refuse help to someone."
+    }
+  },
+  {
+    "name": "Heretic",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "PTY, AGL, WIS",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Liar",
+          "Cheat",
+          "Divine Rogue",
+          "Diviner",
+          "Curer",
+          "Spiritualist",
+          "Heretic",
+          "Curser",
+          "Curser",
+          "Revivalist",
+          "Heretical Bishop",
+          "Heretical Bishop",
+          "Heretical Cardinal",
+          "Heretical Cardinal",
+          "Anti-pope"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+10% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather armor. Any half shirt. Full or long shin of ringmail. Half or composite helm. Any headgear. Any Arm or leg bracers. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue/Priest crossover",
+      "description": "The Heretic refuses to follow the doctrines of a religion or established belief system; they have a different calling. Heretics have enough divine favor to have some of the gifts of the priesthood and yet they are just as willing to use a little roguishness to achieve their ends. A heretic may be setting up a different branch of belief or just out to achieve ends the normal clergy would find anathema. Either way the heretic is a Rogue Priest, one who is often difficult to trust and hard to follow. They are not a shepherd of the flock, and if they take this role it is not held for long. Sometimes heretics will be found among the normal clergy but this is usually because they are trying to achieve some temporary goal. Generally, a heretic is in the neutral spectrum (neutral good to neutral evil) although heretics of all alignments exist, the ones not neutral will generally have more trouble sticking to their alignments."
+    }
+  },
+  {
+    "name": "Hermeticist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AUR, KNW, INT",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          14,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Mixer",
+          "Hermit",
+          "Tamer",
+          "Mystic",
+          "Apothecary",
+          "Conjurer",
+          "Hermeticist",
+          "Distiller",
+          "Master Hermeticist",
+          "Master Hermeticist",
+          "Arch Hermeticist",
+          "Arch Hermeticist",
+          "Hermeticist Wizard",
+          "Hermeticist Wizard",
+          "Transmuter"
+        ],
+        "goalAttr1": "KNW",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to divine skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather or hide. Half helm or composite helm. Any leather headgear.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling and any one sword.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 6, Advanced at 10, Expert at 14, Master at 18",
+      "classType": "Mage subclass",
+      "description": "A Mage whose focus is on wildcraft and casting through gathered ingedients and concoctions as they lack the ability to do so directly. This Mage is so named because in their training periods they often avoided people, and has learned to work with the animals, both for food and as allies in order to survive. They often have only a limited number of spells and are forced to depend more on their other skills. They sets traps for animals and intruders."
+    }
+  },
+  {
+    "name": "Hero",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Good",
+        "focusAttributes": "STR, AGL, WIL",
+        "attribQualify": [
+          15,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Trainee",
+          "Aspirant",
+          "Vigilante",
+          "Sentinel",
+          "Guardian",
+          "Defender",
+          "Hero",
+          "Protector",
+          "Vindicator",
+          "Vindicator",
+          "Vanquisher",
+          "Vanquisher",
+          "Champion",
+          "Champion",
+          "True Hero"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to disciplined skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather/hide. Any bracers Any half-shirt, ring, long or full shirt, ring leggings. Any half-helm or composite.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "The Hero class is a street warrior. They know where trouble is and find a way to face it. Sometimes with nothing more than their fists, they bring justice to the streets. They are fearless in battle and can defy magic and the power of the gods themselves as they grow in experience. They are focused in mind and body becoming something almost superhuman as their training enables them to hone their reflexes, instincts and determination. If heroes run and hide, who will stay and fight?"
+    }
+  },
+  {
+    "name": "Hunter",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, WIL",
+        "attribQualify": [
+          0,
+          15,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Tracker",
+          "Guide",
+          "Beast Tamer",
+          "Beast Finder",
+          "Archer",
+          "Ambusher",
+          "Hunter",
+          "Legend Hunter",
+          "Huntmaster",
+          "Huntmaster",
+          "Master Hunter",
+          "Master Hunter",
+          "Planes Hunter",
+          "Planes Hunter",
+          "Master of all Hunts"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any save rigid armlets, leglets, footgear, gauntlets, or great helm.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13, Grandmaster(mastered weapons at 13)",
+      "classType": "Rogue subclass",
+      "description": "While the Hunter is skilled at hunting animals, it does not end there; they are also trained to hunt magical animals and eventually legendary and planar beasts. This specialized hunter often captures and trains animal companions to hunt beside them. Both stealthy and a master of traps, the Hunter is adept at using terrain, stealth, and missile weapon skills against their prey. These fearless rogues are steadfast in their pursuit and eventually can even defy their target's magical abilities. A Hunter can be of any alignment; those who are Good tend to thrill in the chase and capture, killing only when necessary. Those who are evil, however, will hunt an animal to extinction just for the thrill and profit. Most Hunters tend to be somewhere between these extremes."
+    }
+  },
+  {
+    "name": "Illuminator",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Light Caster",
+          "Pyrokineticist",
+          "Luminescent",
+          "Light Walker",
+          "Light Adept",
+          "Phaser",
+          "Illuminator",
+          "Lambient",
+          "Lambient Wizard",
+          "Lambient Wizard",
+          "Arch Lambient",
+          "Arch Lambient",
+          "Arch Lucent",
+          "Arch Lucent",
+          "Lord/Lady of Fire and Light"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any leather/hide. Half helm or composite helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling; may choose any one sword.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Illuminator's power is tied into the Phase Plane and the elemental powers of light and fire. As such, Illuminators are strongest when on the Phase Plane and weakest when on the Shadow Plane. Their spellcasting ability is similar to that of a standard Mage, but every spell is lit with incandescence. Once an opponent realizes this fact, they are allowed to make an Illusion Resistance for half effect of the spell, removing the influence of phase. For the Illuminator, this weakness is offset by the ability to cast-and eventually master-all spells that involve light or fire without having to learn and memorize them. As for an Illuminator's mastery over fire, they are similar to a Kineticist in that they are adept at the additional abilities of Pyrokinesis. Eventually, when this Mage of illumination becomes a master of light and fire, wherever they go, they are surrounded by a shroud of fire causing it to be perpetually lit as if it were day."
+    }
+  },
+  {
+    "name": "Innominate",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Good (Active), Fanatical Good (Active)",
+        "focusAttributes": "AGL, PTY, WIL",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "The Unseen",
+          "The Inconspicuous",
+          "The Obscure",
+          "The Nameless",
+          "The Unnoticed",
+          "The Concealed",
+          "The Innominate",
+          "The Anonymous",
+          "The Enigma",
+          "The Enigma",
+          "The Riddle",
+          "The Riddle",
+          "The Conundrum",
+          "The Conundrum",
+          "The Mystery"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "No plate except arm or leg bracers and half or composite helm. Any headgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 9, Master at 12, Grandmaster(mastered weapons at 10)",
+      "classType": "Rogue/Priest crossover",
+      "description": "These nameless individuals are recruited from the ranks of aspiring priests.  Chosen for their prowess in single combat and their fervent commitment to their deity's cause, the Innominate are trained as the covert arm of their church's power.  Skilled in the art of stealth and clandestine works, they master veiling their activism or fanaticism and project an air of composure and control.  Though they may form friendships within their own circle, their lives are usually solitary and lonely; they draw their strength from the belief that they are doing the right and necessary thing."
+    }
+  },
+  {
+    "name": "Intercessor",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Good (Active), Fanatical Good (Active)",
+        "focusAttributes": "STR, PTY, WIL",
+        "attribQualify": [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Cleric",
+          "Defender",
+          "Confessor",
+          "Prelate",
+          "Judge",
+          "Exponent",
+          "Intercessor",
+          "Ecclesiast",
+          "Immanence",
+          "Immanence",
+          "Messenger",
+          "Messenger",
+          "Seraph",
+          "Seraph",
+          "Apotheosis"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Priest subclass",
+      "description": "There are times when a little faith is all you need. For other times, there's the Intercessor. An instrument of divine justice and retribution, mercy and wrath, the Intercessor is a shining beacon of faith in a world of darkness. Whether standing between you and your foes, or mediating between you and your god, the Intercessor is the friend you want to have and the enemy you never want to face."
+    }
+  },
+  {
+    "name": "Investigator",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Slinker",
+          "Observer",
+          "Stalker",
+          "Infiltrator",
+          "Thief Catcher",
+          "Delver",
+          "Investigator",
+          "Detective",
+          "Master Investigator",
+          "Master Investigator",
+          "Mental Investigator",
+          "Mental Investigator",
+          "Arch Investigator",
+          "Arch Investigator",
+          "Supreme Investigator"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any flexible armor. Any half shirt. Full or long shirt of ringmail. Helm or composite helm. Any headgear. Arm or leg bracers of any type. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "The Investigator is a dabbler. They have to know a little bit about everything to be good at what they do. They are primarily a Rogue, focused on the skills of criminals to apprehend them by observing, uncovering and if necessary, infiltrating. They are enough of a Warrior to catch their target once determined. They gain enough of a Mage to have a rudimentary understanding of magic for their investigations. Eventually they acquire a bit of Priest to determine if supernatural, curses or evil was involved. Their purpose is to uncover mysteries, finding the source and slowly gain abilities to stop mysterious threats, thwarting the plans of criminal and evil doers. Like Sages they are well studied. Like Delvers they are prepared to enter dangerous areas. Like Bounty Hunters they are prepared to apprehend and bring to justice culprits. An Investigator can be of any alignment."
+    }
+  },
+  {
+    "name": "Jester",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, AUR, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Performer",
+          "Mocker",
+          "Dancer",
+          "Charmer",
+          "Fool",
+          "Provoker",
+          "Jester",
+          "Thought Provoker",
+          "Thought Provoker",
+          "Joker",
+          "Master Joker",
+          "Master Joker",
+          "Master Provoker",
+          "Master Provoker",
+          "Grand Jester"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+10% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather or hide. Any leg or arm bracer. Any helm. Any half-shirt, full shirt or long shirt of ringmail.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "Sometimes there are wild cards; things happen people don't expect and don't know how to react to. The Jester often appears to be a foolish entertainer, singing and reciting as the Minstrel but with a comedic theme. They often dress outlandishly and act in completely non-conforming ways all the while influencing those around them. The have many skills a Rogue has and use these in their 'performances'but they have the ability to mock and cause confusion, anger in some, indecision in others, etc. Their ability to understand events and see the patterns grants gifts of prophecy. They can see what is ahead for others, though not for themselves. As they grow in power, they begin to control others directly, first taking over those who are already controlled and then controlling themselves. They are an X factor and while their motives can vary, few can argue that they do not cause unforeseen circumstances wherever they go. Though they may share many skills with the cajoler, they operate in plain sight."
+    }
+  },
+  {
+    "name": "Kineticist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Trickster",
+          "Magician",
+          "Manipulator",
+          "Watcher",
+          "Physicist",
+          "Adjuvant",
+          "Kineticist",
+          "Motivator",
+          "Esper",
+          "Esper",
+          "The Impetus",
+          "The Impetus",
+          "The Catalyst",
+          "The Catalyst",
+          "The Lord of Time and Space"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Cloth, leather, and wood only. Clasps, buckles, jewelry, and other metals worn or carried must be made of a material that cannot hold a magnetic charge, such as pure copper or gold. Armor such as chain shirts and plate bracers must also be made from non-magnetic metal, such as titanium or brass, as available. Magnetic properties of magical metals are at the GM's discretion.",
+      "weaponUsage": "Wooden, leather, or stone weapons only, such as quarterstaff, whip, or stone dagger. Weapons may also be made from any non-magnetic metal, such as titanium or brass, as available. Magnetic properties of magical metals are at the GM's discretion.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Kineticist is a direct manipulator of magical energy and physical forces. These masters of physics forgo and eschew the casting of spells to tap into elemental and natural forces bound up with magic, which they employ directly for varied effects. This begins lightly, at first manipulating light and sound, but grows to cold, fire, telekinesis, electricity, and then on to forces no others tame: acidic energies, magnetism, gravity, spatial control, direct Aura manipulation, and even time itself. While many other magic practitioners speak of Kineticists as if they are lesser form of magic, these unique practitioners have the potential to grow to use their special understanding of how magic interreacts with the physical world to bend the very fabric of reality to their will."
+    }
+  },
+  {
+    "name": "Knight",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Good (Active), Fanatical Good (Active)",
+        "focusAttributes": "PTY, AGL, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Defender",
+          "Protector",
+          "Guardian",
+          "Warder",
+          "Champion",
+          "Cavalier",
+          "Knight",
+          "Paladin",
+          "Knight Lord",
+          "Knight Lord",
+          "Paladin Lord",
+          "Paladin Lord",
+          "Lord Protector",
+          "Lord Protector",
+          "Lord Defender"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any melee weapon",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Knights are the keepers of faith through arms. They follow strict moral codes and serve a deity and a divine order. Service and sacrifice define their life, and they pride themselves on their immunities to the weaknesses of lesser beings who succumb to the desires of flesh and fortune. A Knight uses their weapons to enforce the morals of their order and faith, and can call upon divine powers to aid in battle. Knights may come from wealth and privilege, but are not necessarily of an elevated social class. Those that are sponsored may rise to privileged status and be allowed to bear their own colors, as well as those of their deity or church."
+    }
+  },
+  {
+    "name": "Knight(Dark)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Evil (Active), Fanatical Evil (Active)",
+        "focusAttributes": "PTY, AGL, STR",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Attacker",
+          "Pillager",
+          "Ransacker",
+          "Desecrater",
+          "Despiser",
+          "Destroyer",
+          "Dark Knight",
+          "Despoiler",
+          "Dark Lord",
+          "Dark Lord",
+          "Lord Despoiler",
+          "Lord Despoiler",
+          "Lord Destroyer",
+          "Lord Destroyer",
+          "Dark Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Dark Knights are the knights who have chosen to follow an evil deity or supernatural force. They walk the bleak paths of power gained through their subservience to darkness. Depravity and destruction define their life. They pride themselves on the power they can wield against the weakness of lesser beings. A Dark Knight uses whatever they have to overcome conflict: force of arms, intimidation, and manipulation, whichever is easiest or produces the most enjoyment. Cruel they are, yet still they adhere to a code understood only by them and their divine order. Dark Knights either strayed early in their training at a good order, or were specially trained in an evil one."
+    }
+  },
+  {
+    "name": "Knight(Death)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Evil (Active), Fanatical Evil (Active)",
+        "focusAttributes": "PTY, STR, AGL",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Attacker",
+          "Grave Soldier",
+          "Destroyer",
+          "Grave Knight",
+          "Shadow Knight",
+          "Dark Knight",
+          "Death Knight",
+          "Ravager",
+          "Death Lord",
+          "Death Lord",
+          "Lord Ravager",
+          "Lord Ravager",
+          "Grave Master",
+          "Grave Master",
+          "Death King"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Death Knights are those depraved few who serve the gods of death. They bring fear, pain, and destruction wherever they travel and are harbingers of suffering and doom. These knights are Warriors of Death; they serve as leaders and generals in Necromancers' armies, devoting their formidable combat prowess and skills to dark arts. With this combination of power, a Death Knight is a daunting foe. Many servants of light have met their ends by the hands of a Death Knight, only to rise again in servitude to one. Many Death Knights are still living, but most strive to attain their twisted ideal of perfection: to be granted immortality by means of induction into the ranks of the undead as a Wight. It is this goal that drives many to their dark masters in the first place."
+    }
+  },
+  {
+    "name": "Legendier",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "STR, AGL, INT",
+        "attribQualify": [
+          13,
+          14,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Opportunist",
+          "Folklorist",
+          "Voyager",
+          "Mythist",
+          "Fortune Hunter",
+          "Glory Seeker",
+          "Legendier",
+          "Cynosure",
+          "Hero",
+          "Hero",
+          "Master of Myth",
+          "Master of Myth",
+          "Master of Legend",
+          "Master of Legend",
+          "Myth Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Legendiers primarily seek fame and glory. They search out the rarest of lost items or power, but whether they go to save the world, sell for profit, or to curry favor with a god, what they really desire is renown for 'slaying the beast' and 'braving the unknown.' In the end, they desire their name to be remembered on the lips of even the gods for their great deeds."
+    }
+  },
+  {
+    "name": "Luckster",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Odds Shifter",
+          "Pilferer",
+          "Looter",
+          "Cutpurse",
+          "Burglar",
+          "Fate Shifter",
+          "Luckster",
+          "Thief",
+          "Thief",
+          "Master Luckster",
+          "Adept Fate Shifter",
+          "Adept Fate Shifter",
+          "Master Fate Shifter",
+          "Master Fate Shifter",
+          "Master of Destiny"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills",
+        "+5% Fortune"
+      ],
+      "armorUsage": "Any flexible armor. Any half shirt. Full or long shirt of ringmail. Any half or composite helm. Any headgear. Any arm or leg bracers. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13, Grandmaster(mastered weapons at 13)",
+      "classType": "Rogue subclass",
+      "description": "The Luckster begins their career as a odds shaver, cheating to make their way. They continue as a huckster, charming their way with social manipulation. They use their innate magical gifts to bend luck in their favor. Eventually they learn to do this for their friends and against their enemies, becoming increasingly good at this until they cause nearly miraculous events to proceed. The Luckstrer can use their ability to store bad luck that occurs to them and eventually around them to later alter events to their advantage. Gambling is the Luckster's friend. They have a keen sense of when things are turning against them with Danger Knowledge. They also can see and identify magic. Late in their careers the Luckster learns to craft potions and scry. Their reliance on luck and magic makes them less reliant on other roguish staples like Street Knowledge, etc. as they count on their magic to handle these situations. Just being a Luckster's friend can be a boon while their enemies find that fate works against them."
+    }
+  },
+  {
+    "name": "Mage",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AUR, INT, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Thaumaturgist",
+          "Magician",
+          "Conjurer",
+          "Adept",
+          "Abjurer",
+          "Enchanter",
+          "Mage",
+          "Sorcerer",
+          "Wizard",
+          "Wizard",
+          "Arch Mage",
+          "Arch Mage",
+          "Arch Wizard",
+          "Arch Wizard",
+          "Magius"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% Fortune"
+      ],
+      "armorUsage": "Any leather or hide. Any helm but great helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling; may choose anyone sword.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 9, Advanced at 13, Expert at 17, Master at 21",
+      "classType": "Primary class",
+      "description": "Manipulating the mysterious forces of Aura and magic is the everyday accomplishment of the Mage. The Mage uses their mind and innate magical talent to shape Aura into effects called spells. Aura is a fickle and chaotic force, and the Mage who is not careful may find their spells failing and creating wild effects. These spells must be first studied and are not easily learned. The Mage is wholly dependent on the ability to find spells, searching far and wide to discover the notes and writings necessary to learn new spells."
+    }
+  },
+  {
+    "name": "Martial Artist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any, Order",
+        "focusAttributes": "AGL, STR, WIS",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Grasshopper",
+          "Snake",
+          "Crane",
+          "Tiger",
+          "Dragon",
+          "Monkey",
+          "Martial Artist",
+          "Sensei",
+          "Master",
+          "Master",
+          "Chi Master",
+          "Chi Master",
+          "Spirit Master",
+          "Spirit Master",
+          "Grand Master"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any leather/hide. Any bracers. Any half shirt, ring long or full shirt, ring leggings. Any half helm or composite.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "The Martial Artist is a master who can use their body as a fighting machine. Their are also trained in the use of weapons as a literal extension of their bodies. The Martial Artist devotes their life to training and discipline in an attempt to achieve perfection of body, mind and spirit."
+    }
+  },
+  {
+    "name": "Medium",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "PTY, WIS, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Spirit Talker",
+          "Spirit Walker",
+          "Diviner",
+          "Ritualist",
+          "Spirit Caller",
+          "Spirit Dancer",
+          "Medium",
+          "Prophesier",
+          "Spirit Sender",
+          "Spirit Traveler",
+          "Master Medium",
+          "Master Medium",
+          "Arch Medium",
+          "Arch Medium",
+          "Divine Voice"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any flexible. Any helm. Any bracers.",
+      "weaponUsage": "Dagger, club, rod, knife, sling, quarterstaff.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 9, Advanced at 13, Expert at 17, Master at 21",
+      "classType": "Priest subclass",
+      "description": "A Medium serves as an intermediary between the mortal world and the realms beyond. While all divine classes claim this to some extent, Mediums do so by actually speaking to a supernatural on a petitioner's behalf. Some Mediums serve a single deity, while other serve a pantheon. The rarest few serve all and none, speaking to all deities and their servants equally. More dubiously, some Mediums also will interact with forces mortals are not meant to know, risking the petitioner's and their own sanity in the process."
+    }
+  },
+  {
+    "name": "Mentalist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 6,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "WIL, AUR, INT",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Novice",
+          "Scanner",
+          "Telepath",
+          "Adept",
+          "Psychic",
+          "Psymage",
+          "Mentalist",
+          "Cerebral",
+          "Psymaster",
+          "Psymaster",
+          "Psywizard",
+          "Psywizard",
+          "Arch Psymage",
+          "Arch Psymage",
+          "Arch Psywizard"
+        ],
+        "goalAttr1": "WIL",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any leather/hide. No helm.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling, may choose anyone sword.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 10, Advanced at 15, Expert at 20, Master at 25",
+      "classType": "Mage subclass",
+      "description": "The Mentalist is the master of the mind. The Mentalist uses their mind to directly manipulate forces around them, and where necessary, employs focused mental magic. Many other classes learn some of these mental tricks later in their careers, but few are as adept as the Mentalist at any of them. The special talents required to become a Mentalist are similar to the rare gift of the foresight required to become a Seer. Late in the Mentalist's career they develop the gifts of future sight, and some skills shared only by the Seer class. The Mentalist is usually feared by the society from which they come, and they are often forced to practice in secret. As such, they tend to be reclusive."
+    }
+  },
+  {
+    "name": "Minstrel",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 5,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, KNW, AGL",
+        "attribQualify": [
+          0,
+          12,
+          0,
+          15,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Vagabond",
+          "Player",
+          "Performer",
+          "Gypsy",
+          "Lyricist",
+          "Muse",
+          "Minstrel",
+          "Musician",
+          "Master Minstrel",
+          "Master Minstrel",
+          "Master Musician",
+          "Master Musician",
+          "Master Muse",
+          "Master Muse",
+          "Gypsy King"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any armor or piece of leather/hide. Any half shirt. Full or long shirt of ringmail. Any helm but great helm. Any arm or leg bracers. Any headgear. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "Gypsy, troubadour, and fool are just some of the names by which the Minstrel is known. These wandering vagabonds are the tellers of tales, the singers of songs and the weavers of legend. No other class exceeds the prowess of the Minstrel in the performing arts. Whereas the Bard marches with warriors to the battlefield, Minstrels are widely known by the common folk as performers who journey from town to town, telling and singing their stories, always searching for new legends with which they can entertain. However, Minstrels are much more than simple storytellers. They can be advisors to kings while being fools at which to laugh, and can solve mysteries by simply listening to the gossip that fills the marketplace. No secret is safe from the roving ear of the Minstrel. Later in their careers the great Minstrels learn even the secrets of magic."
+    }
+  },
+  {
+    "name": "Missionary",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 2,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Non-Neutral",
+        "focusAttributes": "PTY, WIS, KNW",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Traveler",
+          "Chaplain",
+          "Evangelist",
+          "Ecclesiast",
+          "Minister",
+          "Missionary",
+          "Curate",
+          "Apostle",
+          "Apostle",
+          "Rector",
+          "Rector",
+          "Vicar",
+          "Vicar",
+          "Transcendent"
+        ],
+        "goalAttr1": "WIS",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to disciplined skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 15",
+      "classType": "Priest subclass",
+      "description": "Missionaries bring the word of the divine to new peoples. They explore not for their own ends, but the ever expanding power of their deities. They are adept at survival away from civilized bastions, while understanding natives, narrating teachings, and convincing them of the truths of the divine. A successful missionary can create whole new branches of the tree of faith."
+    }
+  },
+  {
+    "name": "Mounted Archer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "STR, AGL",
+        "attribQualify": [
+          14,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Rider",
+          "Gaurdsman",
+          "Trick Rider",
+          "Trickshot",
+          "Quickshot",
+          "Marksman",
+          "Mounted Archer",
+          "Master Marksman",
+          "Master Mounted Archer",
+          "Master Mounted Archer",
+          "Matchless",
+          "Matchless",
+          "Untouchable",
+          "Untouchable",
+          "Wind of War"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills"
+      ],
+      "armorUsage": "Any flexible. Semi-flexible leggings, skirts, and shirts. Any bracers. Any helm but full. Any shield.",
+      "weaponUsage": "Any but must choose at least 1 missile weapon at 1st Title.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 7, Master at 9, Grandmaster(mastered weapons at 9)",
+      "classType": "Warrior subclass",
+      "description": "The Mounted Archer uses archery and riding skills to masterfully defeat any and all opponents. Since they can brace in the saddle, resulting in bonuses to missile weapons, they can fire nearly as well from the saddle as the ground, making them champions of hit and run tactics. A Mounted Archer trains their horse (or other riding beast) so that they need only use their knees and body position to give commands, thus leaving their hands free for missile weapons and/or shields. A select few Mounted Archers are charioteers as well as riders. The best of them are well-schooled in martial arts. Because of their focus in archery, Mounted Archers gain little skill with melee weapons beyond basic training."
+    }
+  },
+  {
+    "name": "Necromancer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 5,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 1,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "No Good",
+        "focusAttributes": "PTY, WIL, AUR",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Undertaker",
+          "Grave Robber",
+          "Heretic",
+          "Thaumaturgist",
+          "Reanimator",
+          "Defiler",
+          "Necromancer",
+          "Corrupter",
+          "Destroyer",
+          "Destroyer",
+          "Sorcerer",
+          "Sorcerer",
+          "Theurgist",
+          "Theurgist",
+          "Bone Lord"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half-helm or composite helm.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Priest subclass",
+      "description": "Perhaps it is a morbid lust that compels Necromancers. Maybe it is simply an amoral curiosity. Whatever the driving force, these corrupters of life ruin all that is good and defile that which is holy. They use their dark skills to pervert the once-sacred bodies of the dead, bringing them from their restful slumber to walk again upon the land. The world of the Necromancer is one of deepest darkness and vilest thought, where the husks of the departed are but pawns in a game to gain power and control over those still living. Perhaps it is this hunger for power that consumes them so; it is doubtful that they themselves know."
+    }
+  },
+  {
+    "name": "Obscuratum",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Active",
+        "focusAttributes": "AGL, AUR, WIL",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "The Hidden",
+          "The Esoteric",
+          "The Mystical",
+          "The Unknown",
+          "The Veiled",
+          "The Enshrouded",
+          "The Obscuratum",
+          "The Delusion",
+          "The Delusion",
+          "The Uncertainty",
+          "The Hallucination",
+          "The Hallucination",
+          "The Apparition",
+          "The Apparition",
+          "The Nightmare"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to magical skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "No plate except arm or leg bracers and half or composite helm. Any headgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "classType": "Mage subclass",
+      "description": "A Rogue Mage that uses a special skill set to infiltrate or overcome enemies. They hide themselves away using magical skills and mental focus. They are as much mental magic-users as magical stealth adepts. They hide themselves away, walk unseen, achieve the goal and are out before anyone even knows what happened. They have a particular set of skills you don't want to be the focus of."
+    }
+  },
+  {
+    "name": "Paladin",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Good (Active), Fanatical Good (Active)",
+        "focusAttributes": "PTY, AGL, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Defender",
+          "Holy Soldier",
+          "Light Bearer",
+          "Sanctifier",
+          "Protector",
+          "Knight",
+          "Paladin",
+          "Shield of Hope",
+          "Paladin Lord",
+          "Paladin Lord",
+          "Sword of Light",
+          "Sword of Light",
+          "Purifier",
+          "Purifier",
+          "Blessed Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Paladins are the quintessential warriors of light and life. They serve gods of good and purity, and they defend the very sanctity of life from the ravages of evil and vileness. Although they are opposed to anything that threatens life, they are especially revolted by undead and seek them out with purpose. Paladins see undeath as the ultimate perversion of the natural cycle, an abomination fit only to be destroyed. These warriors possess a multitude of specialized skills that allow them to seek out and destroy the undead with ability that few can master. They see themselves as the last line of defense between the living and the undead, and they take their holy vows seriously. These brave men and women are willing to go to any length to ensure the destruction of undead, even if it means their own demise. While there is breath in their lungs and strength in their muscles, these warriors will combat undeath wherever it may appear with fanatical fervor."
+    }
+  },
+  {
+    "name": "Plunderer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, KNW, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Seeker",
+          "Appraiser",
+          "Finder",
+          "Filcher",
+          "Thief",
+          "Defier",
+          "Plunderer",
+          "Delver",
+          "Treasure Hunter",
+          "Treasure Hunter",
+          "Master Seeker",
+          "Master Seeker",
+          "Master Delver",
+          "Master Delver",
+          "Master Plunderer"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to informational skills",
+        "+10% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather/hide. Any leg or arm bracer. Any helm. Any half shirt, full shirt, or long shirt of ringmail.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "The Plunderer is a treasure seeker, trained in the arts of avoiding and removing all kinds of normal, magical, and divine protections, including locks, traps, magical effects, curses, divine effects, etc. Their wide variety of skills relies on vastly different attributes, requiring experience and training to overcome any attribute deficits they possess. Although Plunderers are not adept at offensive combat skills, their dabbling in magic lends insight into magical items and magical dangers, and their knowledge of the divine is just enough to avoid or overcome magical curses and divine protections. As far as the pursuit of treasure, these specialized Rogues reign supreme, outshining even Delvers in all but the most sagely pursuits and Crypt Robbers in matters of the undead."
+    }
+  },
+  {
+    "name": "Priest",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Good",
+        "focusAttributes": "PTY, WIS, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Initiate",
+          "Layman",
+          "Brother",
+          "Cleric",
+          "Canon",
+          "Priest",
+          "High Priest",
+          "Arch Priest",
+          "Arch Priest",
+          "Bishop",
+          "Bishop",
+          "Cardinal",
+          "Cardinal",
+          "Pope"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5 Affinity"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 10",
+      "classType": "Primary class",
+      "description": "Priests are faithful servants who have the blessing and favor of a deity. They devote their lives to serving the deity, and are granted divine power to wield in return for their faith. Priests follow the narrow paths of holiness and truth, whether they be found in the halls of an abbey or deep within the dark crevices of the earth. Because they are the divine instrument of a deity, many fear them and the wrath that can be brought down upon their enemies. Priests are powerful because they have the power of the divine, yet can fight effectively in combat as well."
+    }
+  },
+  {
+    "name": "Priest(Dark)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Evil",
+        "focusAttributes": "PTY, WIS, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Initiate",
+          "Layman",
+          "Brother",
+          "Cleric",
+          "Canon",
+          "Dark Priest",
+          "High Priest",
+          "Arch Priest",
+          "Arch Priest",
+          "Dark Bishop",
+          "Dark Bishop",
+          "Red Cardinal",
+          "Red Cardinal",
+          "Dark Pope"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5 Affinity"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 10",
+      "classType": "Primary class",
+      "description": "Dark Priests search for power to spread the reach and influence of their evil deity. These unholy characters seek to manipulate and subjugate all who are weaker, using the fear and terror that their deity's name inspires. They lead the righteous astray and call upon the power of divinity to serve an evil cause. When divinity is not enough, they use weapons, lies, and even poison."
+    }
+  },
+  {
+    "name": "Psychokineticist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, AUR, WIL",
+        "attribQualify": [
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Performer",
+          "Charlatan",
+          "Manipulator",
+          "Charmer",
+          "Prestidigitator",
+          "Adept",
+          "Psychokineticist",
+          "Ascendant",
+          "The Shadow",
+          "The Shadow",
+          "The Veiled",
+          "The Veiled",
+          "The Smile",
+          "The Smile",
+          "The Whisper"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any flexible armor. Any shirt save long. Any bracers. Any helm but great.",
+      "weaponUsage": "Club, crossbow, dagger, knife, long sword, quarterstaff, rapier, rod, scimitar, short sword, or sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Rogue subclass",
+      "description": "The Psychokineticist's initial magical abilities are more of the charlatan variety, stealthy and manipulative, yet becoming more and more versatile as the Psychokineticist learns to manipulate magical energy directly through several kinetics skills. Though these rogues cannot tap into the most elemental and powerful kinetics, they use what control they have to manipulate light, shadow, perception, objects, and ultimately themselves. Eventually, Psychokineticists even gain influence over other minds, allowing them to perform feats ordinary rogues could not even attempt and making them both valuable allies and dangerous foes."
+    }
+  },
+  {
+    "name": "Ranger",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Evil",
+        "focusAttributes": "AGL, INT, KNW",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          12,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Scout",
+          "Woodsman",
+          "Tracker",
+          "Pathfinder",
+          "Guide",
+          "Strider",
+          "Ranger",
+          "Forester",
+          "Ranger Lord",
+          "Ranger Lord",
+          "Master Woodsman",
+          "Master Woodsman",
+          "Forest Master",
+          "Forest Master",
+          "Forest Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "KNW"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to stealth/intrusive skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any except plate breastplate, plate long skirt or plate armored skirt, plate leglets or plate footgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Rangers are champions of the wilds. They are trackers and tamers, keepers and scouts. Rangers will take only what they need from the wilds, and survive by an unshakable respect of nature's ways. They can deal with civilized folk easily enough, but have learned to defend themselves well in those encounters that go astray. Thus, they prefer to avoid the constraints of cities and the 'civilized' world. They are especially proficient with missile weapons, as they often have a great deal of experience in hunting. Late in their professional life a Ranger can call upon the divine forces of nature."
+    }
+  },
+  {
+    "name": "Ritual Leader",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 1,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "PTY, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Initiate",
+          "Ritualist",
+          "Ovate",
+          "Spiritualist",
+          "Spiritual Leader",
+          "Ritual Leader",
+          "Cleric",
+          "Cleric",
+          "Ceremonialist",
+          "Spirit Guide",
+          "Spirit Guide",
+          "Soul Guide",
+          "Soul Guide",
+          "Leader of Souls"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any flexible armor. Any bracers. Any helm.",
+      "weaponUsage": "Dagger, club, rod, knife, sling, quarterstaff",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 10, Advanced at 15, Expert at 20, Master at 25",
+      "classType": "Priest subclass",
+      "description": "A specialist priest, these exceedingly rare individuals possess the extraordinary ability to help others feel divinity or magic directly. Particularly on holidays or significant events, a Ritual Leader can be seen leading the populace through the particular rituals of that holiday. Later on, as a Ritual Leader gains experience, they may begin to incorporate some stronger magics into the rituals of the holiday, though they must balance potency with ease of manifestation."
+    }
+  },
+  {
+    "name": "Rogue",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Filcher",
+          "Pilferer",
+          "Looter",
+          "Cutpurse",
+          "Burglar",
+          "Bandit",
+          "Rogue",
+          "Thief",
+          "Master Rogue",
+          "Master Rogue",
+          "Master Thief",
+          "Master Thief",
+          "Shadow Walker",
+          "Shadow Walker",
+          "Shadow Master"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to combat skills",
+        "+5% Perception"
+      ],
+      "armorUsage": "Any leather/hide. Any half shirt. Full or long shin of ringmail. Any helm but great helm. Any headgear. Any arm or leg bracers. No shield except buckler.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13, Grandmaster(mastered weapons at 13)",
+      "classType": "Primary class",
+      "description": "Rogues are pragmatic followers of fortune. They use stealth, deception and practiced technique to gather wealth. The wily Rogue avoids or escapes conflict. When there is treasure to be had, the Rogue will be most likely to risk danger. A Rogue's pride lies in quickness of feet, sureness of hand and deepness of pocket. They usually avoid notoriety, and would prefer the light remain firmly fixed on others rather than illuminate their own lives. They prefer cities and towns where their talents can be put to best use."
+    }
+  },
+  {
+    "name": "Runesmith",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR, AUR",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Scribe",
+          "Scribe",
+          "Wood Etcher",
+          "Scriptor",
+          "Metal Shaper",
+          "Stone Crafter",
+          "Runesmith",
+          "Rune Guide",
+          "Rune Master",
+          "Rune Master",
+          "Rune Lord",
+          "Rune Lord",
+          "High Rune Master",
+          "High Rune Master",
+          "Grand Rune Master"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Trained as a warrior and skilled in the ancient arts of runes and the anima, the Runesmith is master of the oldest lore. In times before spells through Aura magic were known, when animals and runes contained the only known Aura power, the art of the Runesmith was crafted and passed from generation to generation. The Runesmith is one of the few paths that allow Dwarves to follow the ways of magic, as spellcasting has so oft eluded the Dwarven people."
+    }
+  },
+  {
+    "name": "Sage",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 4,
+        "invokerStartTitle": 7,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "KNW, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          14,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Cataloger",
+          "Bookkeeper",
+          "Consultant",
+          "Advisor",
+          "Oracle",
+          "Sage",
+          "Wise One",
+          "Master Sage",
+          "Master Sage",
+          "Magus",
+          "Magus",
+          "Master Magus",
+          "Master Magus",
+          "Grand Magus"
+        ],
+        "goalAttr1": "KNW",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills",
+        "+5% to informational skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm but great helm. No headgear but leather",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rapier, rod, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 10, Advanced at 15, Expert at 20, Master at 25",
+      "classType": "Mage subclass",
+      "description": "The Sage is a purist who seeks knowledge for its own sake. Their expert consultation can mean knowing the weakness of an offending beast or creature, or simply knowing the antidote to a fatal poison. The Sage is a ferret for bits of information, and finding lost nuggets of knowledge that may seem trivial to others. At first glance the Sage comes off as sedentary for the ways of adventuring; however, their usefulness becomes apparent in situations where information is the key to success or failure. Thus, the Sage will often venture out with others to gain the new arcana. The Sage can employ some weapons but prefers words to overcome conflict. Later knowledge leads them to the use of magic."
+    }
+  },
+  {
+    "name": "Seer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 7,
+        "invokerStartTitle": 4,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "AUR, WIS, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Student",
+          "Initiate",
+          "Counselor",
+          "Advisor",
+          "Medium",
+          "Soothsayer",
+          "Seer",
+          "Prophesier",
+          "Master Seer",
+          "Master Seer",
+          "Prophet",
+          "Prophet",
+          "High Prophet",
+          "High Prophet",
+          "Grand Oracle"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm but great helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 10, Advanced at 15, Expert at 20, Master at 25",
+      "classType": "Priest subclass",
+      "description": "Those born with the rare gift of prescience are trained as Seers. Seers learn to harness the magical ability to see shadows of the future, and their power grows with experience. These prophets soon learn to call upon the divine powers to aid them and those they choose. The shadow of the future the Seer sees is but one of many possible outcomes, usually the most likely one."
+    }
+  },
+  {
+    "name": "Shadow Stalker",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "No Good",
+        "focusAttributes": "AGL, INT",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Shadow",
+          "Lurker",
+          "Fade",
+          "Filcher",
+          "Unseen",
+          "Stalker",
+          "Shadow Stalker",
+          "Shadow Walker",
+          "Master Stalker",
+          "Master Stalker",
+          "Shadow Master",
+          "Shadow Master",
+          "Phantom",
+          "Phantom",
+          "Shadow Lord"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to stealth/intrusive skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "No plate except arm or leg bracers and half or composite helm. Any headgear.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 13",
+      "classType": "Rogue subclass",
+      "description": "Shadow Stalkers are masters of the night. They travel the streets, slinking into one shadow and stepping out from another. While they prefer to lurk in darkness, these rogues can easily hold their own in combat if need be. They also have ties to the undead realm, calling upon denizens of death to aid in their dark, twisted career. Every Shadow Stalker dreams of the day they can transform their very own body into a wisp of shadow, slipping into darkness and slithering along the streets. Neither the living nor the dead is safe from the stealth of these nefarious masters of shadow."
+    }
+  },
+  {
+    "name": "Shadowfrost Caster",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "INT, AUR, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          0,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Shade Thrower",
+          "Cryokineticist",
+          "Fade",
+          "Shadow Walker",
+          "Shadow Adept",
+          "Shadow Shifter",
+          "Shadowfrost Caster",
+          "Shadow Master",
+          "Shadow Wizard",
+          "Shadow Wizard",
+          "Arch Umbral Master",
+          "Arch Umbral Master",
+          "Arch Umbral Wizard",
+          "Arch Umbral Wizard",
+          "Lady/Lord of Cold and Shadow"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "AUR"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to magical skills"
+      ],
+      "armorUsage": "Any leather/hide. Half helm or composite helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, sling; may choose any one sword.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The power of the Shadowfrost Caster stems from the Shadow Plane and the powers of darkness and cold, and therefore is strongest when on the Shadow Plane and weakest when on the Phase Plane. Each spell cast is infused with shadow, but its effects can be halved if the caster's opponent realizes this fact and makes an Illusion Resistance. Even though this may be considered a weakness for the Shadowfrost Caster, this is offset by being able to cast all spells that involve shadows, darkness, or cold without having to learn or memorize them as a standard Mage would. These specialized mages are so adept at manipulating magical cold that they can use the extended abilities of the skill Cryokinesis just like a Kineticist. Eventually the Shadowfrost Caster becomes a master of cold and darkness, and wherever they go, they are surrounded by a shroud of cold which makes it perpetually dark around them as if it is night."
+    }
+  },
+  {
+    "name": "Shaman",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "PTY, KNW, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Charmer",
+          "Witch Doctor",
+          "Mystic",
+          "Healer",
+          "Voodoo Priest",
+          "Shaman",
+          "Walker",
+          "Spirit Walker",
+          "Spirit Walker",
+          "Wind Walker",
+          "Wind Walker",
+          "Spirit Master",
+          "Spirit Master",
+          "All Father/Mother"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm, half-shirt or bracer.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 10, Master at 13",
+      "classType": "Priest subclass",
+      "description": "Those born in the wild places seek divinity in their own ways. The Shaman is the tribal Priest or the lone wanderer who wields divine magic. The Shaman commands the powers of the spirit world and the animal world. They are often a tribe's sole access to the spirit world and the deities that guide and watch over the tribe. The Shaman is chosen by an aging Shaman and taught the old ways passed down through the oral tradition of their people. They choose a totem spirit that will be an animal guardian and guide; soon learns to take on the form of this totem, becoming a fearsome opponent."
+    }
+  },
+  {
+    "name": "Shaman(Drum)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 1,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "WIS, PTY, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Chanter",
+          "Medicine Man",
+          "Poet",
+          "Rhythmist",
+          "Ritualist",
+          "Oracle",
+          "Drum Shaman",
+          "Witch Doctor",
+          "Percussionist",
+          "Percussionist",
+          "Rhythm Master",
+          "Rhythm Master",
+          "Spirit Dancer",
+          "Spirit Dancer",
+          "Lord of the Drum"
+        ],
+        "goalAttr1": "KNW",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any leather/hide. Any helm, half-shirt or bracer. Any small shield.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 15",
+      "classType": "Priest subclass",
+      "description": "Drum Shamans are masters of tribal lore and the divine power of dance, drum, poem, and song. They are at home in wild places surrounded by those most would consider barbaric. Their rhythms echo throughout the wilds. They call their people to battle and dance for rain. They know the animals, plants, and peoples around them and see the divine magic that weaves through it all, connecting the individuals to the whole."
+    }
+  },
+  {
+    "name": "Shaman(Rune)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "PTY, WIL, KNW",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Scribe",
+          "Detector",
+          "Diviner",
+          "Scriptor",
+          "Rune Reader",
+          "Discerner",
+          "Rune Shaman",
+          "Rune Guide",
+          "Rune Master",
+          "Rune Master",
+          "Rune Lord",
+          "Rune Lord",
+          "High Rune Master",
+          "High Rune Master",
+          "Grand Rune Master"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to magical skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 9, Master at 12",
+      "classType": "Priest subclass",
+      "description": "In an age before Mages learned to direct Aura magic into spells, when natural substances and runes contained the only known Aura power, the craft of the Rune Shaman was greatly valued and passed from generation to generation. The Rune Shaman is one who is trained in the ancient arts of runes, and has the ability to harness the Aura within themselves. Relying on runes and rituals to augment their fighting prowess, they are a fierce opponent in battle. As master of the oldest lore, they are also adept at the animal and plant skills connecting them to the animal and plant spirits of the wild. Traditionally, they were dependent on the ability to understand and release the magic found within items of power, as well as the secret power locked away in the stones, woods and metals of the world."
+    }
+  },
+  {
+    "name": "Sorcerer",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any (but must match one part of the Patron's)",
+        "focusAttributes": "WIL, AUR, PTY",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Protégé",
+          "Sensor",
+          "Charmer",
+          "Controller",
+          "Caller",
+          "Binder",
+          "Sorcerer",
+          "Thought Binder",
+          "Thought Binder",
+          "Master Sorcerer",
+          "High Sorcerer",
+          "High Sorcerer",
+          "Arch Sorcerer",
+          "Arch Sorcerer",
+          "Grand Sorcerer"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any except plate breastplate, plate armlet, plate gauntlets, plate long skirt or plate armored skirt, plate leglets or plate footgear. No Shield but buckler or small.",
+      "weaponUsage": "Any",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 8, Expert at 10, Master at 12",
+      "classType": "Mage subclass",
+      "description": "The Sorcerer get most of their power through a magical pact with a magic-using patron. These patrons can be powerful magic-using planeswalkers, fae, devils, angelic beings, even demons or archons. The latter two can prove to be demanding and difficult masters. Through Arcane Pact an agreement is made, providing the Sorceress their power and ability to cast all of their patron's spells they are capable of understanding (Arcane Control) of one chosen or offered spell type and gaining more spell types every 3rd title thereafter. They do not maintain a spell book nor can these powers be lost unless the Sorcerer is cut off from their patron due to non-detection, mind set, or like effect. They gain the use of familiars that match their patron type and are trained in and acquire magical and summoning powers, similar to both Mages and Summoners. The Sorcerer either have their patron's arcane pact mark on their body or the patron retains an item or contract. It gives the patron power to know where the Sorcerer is and the ability to summon them. Patrons can be demanding and mercurial, their purposes and methods are their own but the strings they hold can be costly. The Sorcerer's Divine skills are not granted by deities but the patron and this often means Sorcerer's are seen as heretical by religious organizations."
+    }
+  },
+  {
+    "name": "Trickster",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "INT, KNW, AGL",
+        "attribQualify": [
+          0,
+          12,
+          0,
+          15,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Juggler",
+          "Actor",
+          "Mystic",
+          "Adept",
+          "Prankster",
+          "Prestidigitator",
+          "Trickster",
+          "Deceiver",
+          "Master Trickster",
+          "Master Trickster",
+          "Spell Blade",
+          "Spell Blade",
+          "Shadow Caster",
+          "Shadow Caster",
+          "Shadow Master"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "INT"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to stealth/intrusive skills"
+      ],
+      "armorUsage": "Any leather or hide. Any half shirt. A long or full shin of ringmail. Any leg or arm bracer. Any helm but great helm.",
+      "weaponUsage": "Club, crossbow, dagger, knife, long sword, quarterstaff, rapier, rod, sabre, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 3, Intermediate at 6, Advanced at 10, Expert at 13, Master at 16",
+      "classType": "Mage subclass",
+      "description": "Most Mages begin their training under the tutelage of a master. The Trickster begins life in the streets and uses their talent for magic to survive and profit. They are usually taught magic only after learning other necessary skills for survival, and can use sleight of hand and quickness of foot when their magic fails. Tricksters acquire spell casting ability early enough in their careers to be excellent spellcasters, yet their rogue-like tendencies cause them to have difficulty fitting into a structured Mage organization."
+    }
+  },
+  {
+    "name": "Vivisectionist",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Evil (Active), Fanatical Evil (Active), Immoral",
+        "focusAttributes": "INT, PTY, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Dissector",
+          "Anatomist",
+          "Reanimator",
+          "Bone Collector",
+          "Dark Mage",
+          "Flayer",
+          "Vivisectionist",
+          "Abominator",
+          "Master Vivisector",
+          "Master Vivisector",
+          "Master Reanimator",
+          "Master Reanimator",
+          "Master Abominator",
+          "Master Abominator",
+          "Lord of Abomination"
+        ],
+        "goalAttr1": "INT",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any leather/hide. Half helm or composite helm. No headgear but leather.",
+      "weaponUsage": "Any one-handed bladed weapon.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 5, Intermediate at 9, Advanced at 13, Expert at 17, Master at 21",
+      "classType": "Mage subclass",
+      "description": "Vivisectionists have no regard for life. They use living beings as grist for a mill, producing undead abominations in hideous experiments for myriad dark purposes. They are masters of animal and humanoid anatomy as well as the undead Spirit. These mages seek out former living beings in graveyards and crypts, or take the living and convert them directly into undead, discarding unwanted parts without care. They usually conduct themselves in secret, preferring to operate on their victims in chambers where their screams echo off the walls."
+    }
+  },
+  {
+    "name": "Warden",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "PTY, AGL, WIL",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Defender",
+          "Seeker",
+          "Cavalier",
+          "Nature Protector",
+          "Nature Guardian",
+          "Nature Champion",
+          "Warden",
+          "Nature Warden",
+          "Warden Lord",
+          "Warden Lord",
+          "Nature Lord",
+          "Nature Lord",
+          "Great Warden",
+          "Great Warden",
+          "Grand Warden"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "PTY"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% to divine skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "Nature's Knight, the Warden walks the wild places from ancient forests, hidden valleys, ocean grottos, and mushroom forests of the deep. Wardens protect these places from the depredations of both Evil and Good beings. Able to hold their own in most fights and excel against non-neutral beings, Wardens defend the wilds with the force of arms and the divine abilities granted them by the deities of nature. A Warden is often part of a secret society or an order dedicated to eternal protective causes. Neutral Good Wardens practice the removal of desecrators and despoilers with force short of death, if possible. Neutral Evil Wardens revel in the destruction of all nature's foes. The True Neutrals walk the balance, dealing with each foe as it deserves. Those that can be turned back are, and those that can't are dealt with permanently."
+    }
+  },
+  {
+    "name": "Warrior",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, STR",
+        "attribQualify": [
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Brawler",
+          "Soldier",
+          "Mercenary",
+          "Veteran",
+          "Man-at-arms",
+          "Campaigner",
+          "Warrior",
+          "Champion",
+          "Lord",
+          "Lord",
+          "Battle Lord",
+          "Battle Lord",
+          "Warlord",
+          "Warlord",
+          "Overlord"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5 Endurance"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 7, Master at 9, Grandmaster(mastered weapons at 9)",
+      "classType": "Primary class",
+      "description": "Warriors are the masters of brutal fighting. They hone the skills of war and combat, and seek accomplishment through force of arms and military training. A Warrior must be strong and healthy, for even weaponless, they must be a formidable opponent. Warriors advance quickly in the ability to strike accurately (attack skill)."
+    }
+  },
+  {
+    "name": "Wilder",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": false,
+        "casterStartTitle": 1,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "WIL, AUR, INT",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Talented",
+          "Gifted",
+          "Charmer",
+          "Tamer",
+          "Mystic",
+          "Conjurer",
+          "Wilder",
+          "Adept",
+          "Adept Wilder",
+          "Adept Wilder",
+          "Wild Sorcerer",
+          "Wild Sorcerer",
+          "Wild Wizard",
+          "Wild Wizard",
+          "Arch Wilder"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% Affinity(Animals Only)"
+      ],
+      "armorUsage": "Any leather/hide. Half helm or composite helm.",
+      "weaponUsage": "Club, dagger, knife, rod, quarterstaff, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 9, Advanced at 11, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "Beings of this class have been born with a special talent: the gift of wild magic. This class is an exception in that the practitioner need not train to learn their spellcasting skills. Generally, a teacher guides the individual's talents for a time and in such cases the normal apprentice training time is halved. The Wilder does not cast spells in the typical fashion, but simply concentrates and makes spell-like effects with the skill Wild Magic. Though not as powerful as the true Mage, the Wilder makes up for this with versatility. Wilders also have a minor gift with animals that is divine though they often do not recognize it as such. An early sign that a being might be a Wilder is that animals show a natural affinity to these beings."
+    }
+  },
+  {
+    "name": "Witch(Black)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 3,
+        "invokerStartTitle": 6,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Evil",
+        "focusAttributes": "WIL, PTY, AUR",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          14,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Novice",
+          "Witherer",
+          "Mystic",
+          "Conjurer",
+          "Adept",
+          "Black Witch",
+          "Necromancer",
+          "High Witch",
+          "High Witch",
+          "Elder Witch",
+          "Elder Witch",
+          "Arch Witch",
+          "Arch Witch",
+          "Great Witch"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to divine skills",
+        "+5% to Class Skills per Black Witch over 1 who aids (up to 12). +1 practitioner title per 3 aiding the practitioner."
+      ],
+      "armorUsage": "Any leather/hide. Helm but no composite or great helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Witch gathers their power from the magic of their Aura as well the forces of the divine. They use the simple magic of herbs as well as more powerful spell casting. The Black Witch deals in the world of the dead and supernatural, and later in the realm of the undead. The purposes of a Black Witch are always twisted and evil, and it is they who are often the cause for the reputation of all Witches. A Witch is not as adept as an equal titled Mage or Priest in direct power, but has cruel tricks not accessible to the Priest or Mage."
+    }
+  },
+  {
+    "name": "Witch(Gray)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 4,
+        "invokerStartTitle": 5,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Neutral",
+        "focusAttributes": "AUR, PTY, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Novice",
+          "Diviner",
+          "Mystic",
+          "Conjurer",
+          "Adept",
+          "Gray Witch",
+          "Seer",
+          "High Witch",
+          "High Witch",
+          "Elder Witch",
+          "Elder Witch",
+          "Arch Witch",
+          "Arch Witch",
+          "Great Witch"
+        ],
+        "goalAttr1": "AUR",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to divine skills",
+        "+5% to Class Skills per Gray Witch over 1 who aids (up to 12). +1 practitioner title per 3 aiding the practitioner."
+      ],
+      "armorUsage": "Any leather/hide. Helm but no composite or great helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "Witches gather their powers from magic, divine or otherwise. This openness grants a greater range of magical skills. The Gray Witch is a neutral being who uses their power to deal in the supernatural. Thus, the Gray Witch is often a mistrusted individual and blamed for all manner of ailment. Generally, the schemes of the Gray Witch are tied into the ideals of balance, but none are certain why they act as they do. A Witch is not as adept as a Mage in magic or a Priest in the divine, but will learn abilities neither can."
+    }
+  },
+  {
+    "name": "Witch(White)",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": true,
+        "isInvoker": true,
+        "casterStartTitle": 4,
+        "invokerStartTitle": 5,
+        "communeTitleMod": 0,
+        "castingNotes": "True"
+      },
+      "requirements": {
+        "alignment": "Any Good",
+        "focusAttributes": "AUR, PTY, WIL",
+        "attribQualify": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14,
+          14
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Initiate",
+          "Novice",
+          "Healer",
+          "Mystic",
+          "Conjurer",
+          "Adept",
+          "White Witch",
+          "Seer",
+          "High Witch",
+          "High Witch",
+          "Elder Witch",
+          "Elder Witch",
+          "Arch Witch",
+          "Arch Witch",
+          "Great Witch"
+        ],
+        "goalAttr1": "PTY",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+5% to divine skills",
+        "+5% to Class Skills per White Witch over 1 who aids (up to 12). +1 practitioner title per 3 aiding the practitioner."
+      ],
+      "armorUsage": "Any leather/hide. Helm but no composite or great helm. No headgear but leather.",
+      "weaponUsage": "Club, dagger, knife, quarterstaff, rod, scimitar, short sword, sling.",
+      "attackSkill": "Beginner",
+      "attackSkillList": "Beginner at 1, Novice at 4, Intermediate at 8, Advanced at 12, Expert at 16, Master at 20",
+      "classType": "Mage subclass",
+      "description": "The Witch gathers their power from magic, both divine and otherwise. They use the common magic of herbs as well as more powerful forms such as ritual magics and spellcasting. Later, the Witch ties their  service more closely to the supernatural and gains divine power as well. White Witches prefer to use their power to help and for good. While a Witch is usually not directly as powerful as a Mage or Priest, they  knows tricks the Mage or Priest never learns."
+    }
+  },
+  {
+    "name": "Witch Hunter",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, INT, WIL",
+        "attribQualify": [
+          0,
+          13,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Investigator",
+          "Shadower",
+          "Mage Stopper",
+          "Thief Taker",
+          "Cleric Catcher",
+          "Witcher",
+          "Witch Hunter",
+          "Finder",
+          "Finder",
+          "Seeker",
+          "Master Seeker",
+          "Master Seeker",
+          "Master Witcher",
+          "Master Witcher",
+          "Grand Witcher"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to combat skills",
+        "+5% all Resists"
+      ],
+      "armorUsage": "Any save breastplate, rigid long or armored skirt, rigid leglets or footgear. Any shield.",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11, Grandmaster(mastered weapons at 11)",
+      "classType": "Warrior subclass",
+      "description": "The Witch Hunter, like their Bounty Hunter cousins, tracks, captures, and sometimes kills targeted individuals, in their case wanted or dangerous casters and invokers. They specialize in seeking criminals who use magic and as the Witch Hunter grows more powerful, eventually divine practitioners become their targets as well. They achieve this through their ability to avoid or lessen magical and divine attacks. They forgo the general use of magic and divine items because using them interferes with their defenses. They are hard to stop and are fearless in their pursuit of a target, steadfastly seeking their goal until the deed is done and the caster or invoker is captured or put down."
+    }
+  }
+]

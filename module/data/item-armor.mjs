@@ -35,8 +35,25 @@ export default class ImagineArmorData extends foundry.abstract.TypeDataModel {
 			// @MARKER CONSTRUCTION
 			// flexibility drives the whole layering engine -- see the rules quoted above.
 			material:    new fields.StringField({ required: true, initial: "" }),
+
+			// Some pieces are composite, built from two materials of different flexibility --
+			// a helm with a rigid shell over a flexible lining, for instance. The source
+			// records these as "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid" or
+			// "Mixed".
+			//
+			// This is the data encoding of a real rule: "Some pieces of armor come with their
+			// own padding or flexible layer built in, such as skull caps and some gauntlets.
+			// In these cases, it is acceptable to use one layer of rigid armor against the
+			// body." A composite piece with a flexible inner face may therefore sit in the
+			// first layer, which a plain rigid piece may not.
+			//
+			// "Rigid/Rigid" looks contradictory against the no-rigid-on-rigid rule, but the
+			// rules allow it: "A few suits allow two sections of rigid armor because they do
+			// not touch."
 			flexibility: new fields.StringField({ required: true, initial: "Flexible",
-			                 choices: ["Clothing", "Flexible", "Semi-Flexible", "Rigid"] }),
+			                 choices: ["Clothing", "Flexible", "Semi-Flexible", "Rigid",
+			                           "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid",
+			                           "Mixed"] }),
 
 			// Shields are worn over armour as a fourth layer and are used actively with the
 			// Shield Parry skill, so they are flagged rather than being their own item type.
@@ -67,6 +84,16 @@ export default class ImagineArmorData extends foundry.abstract.TypeDataModel {
 				footLeft:      coverageField(),
 				footRight:     coverageField()
 			}),
+
+			// Locations whose armour value is not fixed on the piece but derived from the
+			// material it is made of -- the source writes "S" there rather than a number.
+			// Giant-material armour (chitin, scales, hide) works this way, resolved in the
+			// original sheet by getArmorGiantArmorValue.
+			//
+			// The location names are kept rather than being flattened to zero, because a zero
+			// would assert the piece offers no protection there, which is false. Resolving
+			// these needs the giant-material rules, which are not implemented yet.
+			coverageFromMaterial: new fields.ArrayField(new fields.StringField(), { initial: [] }),
 
 			// @MARKER PENALTIES
 			// Worn armour costs the wearer skill, defence, initiative and speed. Values come

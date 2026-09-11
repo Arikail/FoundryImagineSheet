@@ -39,6 +39,21 @@ export default class ImagineWeaponData extends foundry.abstract.TypeDataModel {
 			minSpeed: new fields.NumberField({ required: true, integer: true, initial: 0 }),
 			length:   new fields.StringField({ required: true, initial: "" }),
 
+			// Some weapons have no ordinary swing speed at all -- a lance depends on the
+			// charge, caltrops are placed rather than swung, a garrote is a grapple. The
+			// source writes "S" for these, and the Game Master sets the timing in play.
+			speedSpecial: new fields.BooleanField({ required: true, initial: false }),
+
+			// A dual-headed weapon carries a second set of values for its other head, which
+			// the source records in parentheses: an Axe Hammer is "5d6(2d6)" damage at speed
+			// "8(6)" -- the axe head at 5d6 speed 8, the hammer head at 2d6 speed 6.
+			alternateHead: new fields.SchemaField({
+				exists:   new fields.BooleanField({ required: true, initial: false }),
+				damage:   new fields.StringField({ required: true, initial: "" }),
+				speed:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
+				minSpeed: new fields.NumberField({ required: true, integer: true, initial: 0 })
+			}),
+
 			// @MARKER ATTACK MODES
 			missile: attackModeField(),
 			thrust:  attackModeField(),

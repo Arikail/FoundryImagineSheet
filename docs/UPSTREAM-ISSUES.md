@@ -47,3 +47,22 @@ He described `getArmorCombatValues` from memory rather than sending the file, so
 His attribute-save handlers compute `halfChance = chance / 2` and report a distinct "succeeded by half" tier (sheet-worker.js:47). The Player's Guide (p.93) instead defines critical success/failure as beating or missing by more than 20%.
 
 These are different mechanics. Possibly saves and skills genuinely use different rules — needs confirming which applies where. His code wins regardless; the question is only scope.
+
+## 5. Data edge cases found while converting 2,814 entries
+
+**Status:** open · **Severity:** minor, mostly rules clarifications
+
+The conversion runs 99.75% clean. These seven entries do not convert to a plain value and currently degrade to a default. None is urgent, but each wants a one-line answer:
+
+| Entry | Field | Value | Question |
+|---|---|---|---|
+| `Sense Supernatural` | skill rating | `"Special"` | How is a skill with no numeric rating resolved? |
+| `Garrote` | cut mode | `"S"` | Situational cut, as with its speed? |
+| `Centaur` | jumpStand / jumpUp | `"Half"` | Half of the normal jump distance, presumably? |
+| `Gaunt` | startEnduranceMod | `0-getDieRoll(4)` | Same as item 2 above — random by design? |
+
+**Resolved without needing input** (recording them so the reasoning is visible):
+- `"S"` in an armour coverage slot means the value comes from the material rather than the piece (giant chitin/scales/leather gauntlets). Preserved as a `coverageFromMaterial` list rather than flattened to 0, since a 0 would falsely claim the piece offers no protection there. Resolving them properly needs the giant-material rules.
+- `"S"` as a weapon speed means no ordinary swing timing — lances, caltrops, garrotes. Now a `speedSpecial` flag.
+- Parenthesised values like `"8(6)"` and `"5d6(2d6)"` are a dual-headed weapon's second head — the Axe Hammer's axe at 5d6/speed 8 and hammer at 2d6/speed 6. Now an `alternateHead`.
+- Composite flexibility (`Rigid/Flexible`, `Rigid/Semi-Flexible`, `Rigid/Rigid`, `Mixed`) is the data encoding of the built-in-padding rule, which lets a rigid piece with a flexible inner face sit against the body. `Rigid/Rigid` is legitimate too: "a few suits allow two sections of rigid armor because they do not touch."
