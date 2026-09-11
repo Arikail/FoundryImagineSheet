@@ -270,17 +270,65 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareAttributes();
 		this._prepareCharacteristics();
 		this._prepareResistances();
+		this._prepareEncumbrance();
 		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
 
 		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
-		//   body area maxima  -- needs the race item's body chart, and buildCharacterBody in
-		//                        the original sheet also folds in the evoke mutation system
-		//                        (extra torsos, limbs, wings, tails), so it is not a simple
-		//                        Endurance x multiplier lookup.
-		//   encumbrance       -- needs equipment items to weigh, which also gates the
-		//                        encumbrance penalties applied to movement.
+		//   body area maxima     -- needs the race item's body chart, and buildCharacterBody
+		//                           in the original sheet also folds in the evoke mutation
+		//                           system (extra torsos, limbs, wings, tails), so it is not
+		//                           a simple Endurance x multiplier lookup.
+		//   movement penalties   -- encumbrance is now calculated, but the penalty each band
+		//                           applies to movement has not been confirmed against his
+		//                           code yet, so it is not applied.
+	}
+
+	// This is the function which totals carried weight and works out how encumbered the
+	// character is.
+	//
+	// Maximum load is the Strength table's load limit multiplied by the character's own body
+	// weight, so a heavier character of the same Strength carries more. The bands fall at a
+	// quarter, half, three quarters and the whole of that maximum, which is how
+	// changeAttribs sets them in the original sheet.
+	//
+	// Only what is worn or carried counts. Anything left on a mount or in a stash is not on
+	// the character. Tagalong items are skipped because their weight is already counted as
+	// part of another item -- a scabbard is part of the sword.
+	_prepareEncumbrance() {
+		var tmploadlimit = parseFloat(this.attributes.str.mods.loadLimit) || 0;
+		var tmpbodyweight = parseFloat(this.physical.weight) || 0;
+		var tmpmaxload = tmploadlimit * tmpbodyweight;
+
+		var tmpcarried = 0;
+		var tmpactor = this.parent;
+		if (tmpactor && tmpactor.items) {
+			for (const tmpitem of tmpactor.items) {
+				var tmpsys = tmpitem.system;
+				if (tmpsys.weight === undefined) { continue; }
+				if (tmpsys.isTagalong) { continue; }
+				if (tmpsys.location != "equipped" && tmpsys.location != "carried") { continue; }
+				tmpcarried = tmpcarried + ((parseFloat(tmpsys.weight) || 0) * (tmpsys.quantity ?? 1));
+			}
+		}
+
+		this.encumbrance = {
+			carried: parseFloat(tmpcarried.toFixed(1)),
+			maxLoad: parseFloat(tmpmaxload.toFixed(1)),
+			none:    parseFloat((tmpmaxload * 0.25).toFixed(1)),
+			slight:  parseFloat((tmpmaxload * 0.5).toFixed(1)),
+			moderate:parseFloat((tmpmaxload * 0.75).toFixed(1)),
+			heavy:   parseFloat(tmpmaxload.toFixed(1)),
+			status:  ""
+		};
+
+		var tmpenc = this.encumbrance;
+		if      (tmpcarried <= tmpenc.none)     { tmpenc.status = "Unencumbered"; }
+		else if (tmpcarried <= tmpenc.slight)   { tmpenc.status = "Slight"; }
+		else if (tmpcarried <= tmpenc.moderate) { tmpenc.status = "Moderate"; }
+		else if (tmpcarried <= tmpenc.heavy)    { tmpenc.status = "Heavy"; }
+		else                                    { tmpenc.status = "Overloaded"; }
 	}
 
 	// This is the function which fills in the identity values that come from the class item.

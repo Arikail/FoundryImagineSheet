@@ -10,15 +10,23 @@
   "authors": [
     {
       "name": "W. Michael Tenery III",
-      "flags": { "role": "Original game system author" }
+      "flags": {
+        "role": "Original game system author"
+      }
     },
     {
       "name": "samwyz",
-      "flags": { "role": "Foundry VTT conversion" }
+      "flags": {
+        "role": "Foundry VTT conversion"
+      }
     }
   ],
-  "esmodules": ["module/imagine-rpg.mjs"],
-  "styles": ["styles/imagine-rpg.css"],
+  "esmodules": [
+    "module/imagine-rpg.mjs"
+  ],
+  "styles": [
+    "styles/imagine-rpg.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -35,7 +43,10 @@
     "Item": {
       "skill": {},
       "race": {},
-      "class": {}
+      "class": {},
+      "weapon": {},
+      "armor": {},
+      "equipment": {}
     }
   },
   "url": "https://github.com/MichaelTenery/FoundryImagineSheet",

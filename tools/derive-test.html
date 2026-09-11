@@ -55,6 +55,7 @@ function makeCharacter(ratings, title = 12, items = []) {
 		},
 		body: { bodyType: "Humanoid", areas: [] },
 		// The real schema always provides these; the fixture has to supply them too.
+		physical: { weight: 0 },
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
 			jog:  { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -217,6 +218,47 @@ check("class type surfaces on identity", classed.identity.classType, "Primary cl
 check("title name resolves for the title held", classed.identity.titleName, "Soldier");
 const overTitle = makeCharacter({ str: 14 }, 9, [classItem]);
 check("title beyond the class list returns empty", overTitle.identity.titleName, "");
+
+// --- encumbrance ----------------------------------------------------------------
+// STR 11 has a load limit of 1.0, so a 200 lb character maxes out at 200 lb carried.
+// Bands fall at a quarter, half, three quarters and the whole of that.
+function gear(weight, location = "carried", extra = {}) {
+	return { type: "equipment", name: "thing",
+	         system: { weight, quantity: 1, location, isTagalong: false, ...extra } };
+}
+function encumbered(items) {
+	const c = makeCharacter({ str: 11 }, 5, items);
+	c.physical = { weight: 200 };
+	c.prepareDerivedData();
+	return c.encumbrance;
+}
+
+const e0 = encumbered([]);
+check("max load = load limit x body weight", e0.maxLoad, 200);
+check("band thresholds at 25/50/75/100%",
+	[e0.none, e0.slight, e0.moderate, e0.heavy], [50, 100, 150, 200]);
+check("nothing carried is unencumbered", e0.status, "Unencumbered");
+
+check("carried weight totals up",        encumbered([gear(30), gear(25)]).carried, 55);
+check("just over a quarter is Slight",   encumbered([gear(60)]).status, "Slight");
+check("just over a half is Moderate",    encumbered([gear(120)]).status, "Moderate");
+check("just over three quarters is Heavy", encumbered([gear(175)]).status, "Heavy");
+check("beyond the load limit is Overloaded", encumbered([gear(250)]).status, "Overloaded");
+
+// Things not on your person do not weigh you down.
+check("stashed gear does not count",  encumbered([gear(500, "stash")]).carried, 0);
+check("gear on a mount does not count", encumbered([gear(500, "mount")]).carried, 0);
+check("equipped gear does count",     encumbered([gear(40, "equipped")]).carried, 40);
+
+// Tagalong items are already counted inside another item's weight -- charging them again
+// would double-bill the character.
+check("tagalong items are not double counted",
+	encumbered([gear(10), gear(999, "carried", { isTagalong: true })]).carried, 10);
+
+// Quantity multiplies.
+check("quantity multiplies weight",
+	encumbered([{ type: "equipment", name: "arrows",
+	  system: { weight: 0.1, quantity: 20, location: "carried", isTagalong: false } }]).carried, 2);
 
 // --- skill slots ----------------------------------------------------------------
 const slots = makeCharacter({ knw: 20 });

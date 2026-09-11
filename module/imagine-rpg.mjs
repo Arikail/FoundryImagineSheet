@@ -16,6 +16,9 @@ import ImagineCharacterData from "./data/actor-character.mjs";
 import ImagineSkillData from "./data/item-skill.mjs";
 import ImagineRaceData from "./data/item-race.mjs";
 import ImagineClassData from "./data/item-class.mjs";
+import ImagineWeaponData from "./data/item-weapon.mjs";
+import ImagineArmorData from "./data/item-armor.mjs";
+import ImagineEquipmentData from "./data/item-equipment.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -72,6 +75,9 @@ Hooks.once("init", function () {
 	CONFIG.Item.dataModels.skill = ImagineSkillData;
 	CONFIG.Item.dataModels.race  = ImagineRaceData;
 	CONFIG.Item.dataModels.class = ImagineClassData;
+	CONFIG.Item.dataModels.weapon = ImagineWeaponData;
+	CONFIG.Item.dataModels.armor = ImagineArmorData;
+	CONFIG.Item.dataModels.equipment = ImagineEquipmentData;
 
 	// The creature actor is still a placeholder. Its schema is deliberately empty until the
 	// Bestiary source material is in hand -- the creature sheet normalises to roughly 1,455
