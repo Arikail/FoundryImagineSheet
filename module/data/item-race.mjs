@@ -129,9 +129,11 @@ export default class ImagineRaceData extends foundry.abstract.TypeDataModel {
 			formless: new fields.BooleanField({ required: true, initial: false }),
 			canSwim:  new fields.BooleanField({ required: true, initial: false }),
 
-			// The body chart is NOT modelled yet. buildCharacterBody in the original sheet
-			// folds the evoke mutation system into it (extra torsos, limbs, wings, tails), so
-			// it is not a simple list of areas and multipliers. Left out rather than guessed.
+			// The body chart this race uses, by name -- one of the 45 in BODY_CHARTS
+			// (module/combat-tables.mjs), taken from getRacialBodyType in the original sheet.
+			// Evoke mutations (extra torsos, limbs, wings, tails) add areas on top of the
+			// chart in his sheet; that part is not modelled yet.
+			bodyType: new fields.StringField({ required: true, initial: "Humanoid" }),
 
 			// @MARKER PROVENANCE
 			sourcebook:  new fields.StringField({ required: true, initial: "" }),

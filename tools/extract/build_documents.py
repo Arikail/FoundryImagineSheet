@@ -139,6 +139,14 @@ def build_skills():
     return docs
 
 
+# The two weapons whose bracketed damage applies in one attack mode, and which mode. His code
+# hard-codes these by name in handlePhysicalAttacks (sheet-worker.js:64937-64949).
+DAMAGE_ALT_MODES = {
+    "Spear": "missile",       # thrown spears do one more die of damage
+    "Axe Hammer": "thrust",   # an axe hammer does less damage when thrusting
+}
+
+
 def build_weapons():
     payload = load_named("weaponvalueslist")
     if not payload:
@@ -151,23 +159,35 @@ def build_weapons():
         tmpspeedraw = str(tmprow.get("speed", "")).strip()
         tmpspecialspeed = (tmpspeedraw == "S")
 
-        # Dual-headed weapons carry their second head in parentheses.
-        tmpspeed, tmpspeedalt = split_alternate(tmprow.get("speed", ""))
-        tmpmin, tmpminalt = split_alternate(tmprow.get("minSpeed", ""))
+        # Parentheses mean two different things depending on the column.
+        #   speed / minSpeed  -- reload time, for launched missile weapons: a Crossbow is
+        #                        "1(15)", firing in 1 second and reloading in 15. His code reads
+        #                        it this way whenever minSpeed carries parentheses.
+        #   damage            -- a different damage in one attack mode. Only two weapons do
+        #                        this, and his code names them: the Spear does its bracketed
+        #                        damage when thrown, the Axe Hammer when thrusting.
+        tmpspeed, tmpreload = split_alternate(tmprow.get("speed", ""))
+        tmpmin, tmpreloadmin = split_alternate(tmprow.get("minSpeed", ""))
         tmpdamage, tmpdamagealt = split_alternate(tmprow.get("damage", ""))
-        tmphasalt = any(x is not None for x in (tmpspeedalt, tmpminalt, tmpdamagealt))
+        if tmpreloadmin is None:
+            tmpreload = None  # reload only counts when minSpeed also carries one, as in his code
+
+        tmpaltmode = ""
+        if tmpdamagealt is not None:
+            tmpaltmode = DAMAGE_ALT_MODES.get(tmpname, "")
+            if not tmpaltmode:
+                note("damage-alt-unassigned", where,
+                     "bracketed damage %r but his code names no attack mode for it" % tmpdamagealt)
 
         docs.append(make_doc(tmpname, "weapon", {
             "damage": clean_text(tmpdamage),
             "speed": 0 if tmpspecialspeed else to_number(tmpspeed, where, "speed"),
             "minSpeed": 0 if tmpspecialspeed else to_number(tmpmin, where, "minSpeed"),
             "speedSpecial": tmpspecialspeed,
-            "alternateHead": {
-                "exists": tmphasalt,
-                "damage": clean_text(tmpdamagealt or ""),
-                "speed": to_number(tmpspeedalt, where, "speedAlt") if tmpspeedalt else 0,
-                "minSpeed": to_number(tmpminalt, where, "minSpeedAlt") if tmpminalt else 0,
-            },
+            "damageAlt": clean_text(tmpdamagealt or ""),
+            "damageAltMode": tmpaltmode,
+            "reloadSpeed": to_number(tmpreload, where, "reloadSpeed") if tmpreload else 0,
+            "reloadMinSpeed": to_number(tmpreloadmin, where, "reloadMinSpeed") if tmpreloadmin else 0,
             "length": clean_text(tmprow.get("length", "")),
             "missile": attack_mode(tmprow.get("missile"), where, "missile"),
             "thrust": attack_mode(tmprow.get("thrust"), where, "thrust"),
@@ -272,9 +292,22 @@ def build_races():
     payload = load_named("raceStatsAndMoveDetails")
     if not payload:
         return []
+
+    # Body types come from getRacialBodyType, extracted by extract_combat_tables.py. A race
+    # it does not name -- Changeling, whose body depends on the form it has taken -- falls
+    # back to Humanoid.
+    bodytypes = load_named("raceBodyTypes")
+    bodymap = bodytypes["entries"] if bodytypes else {}
+    conditional = bodytypes.get("_conditional", []) if bodytypes else []
+
     docs = []
     for tmpname, tmprow in payload["entries"].items():
         where = "raceStatsAndMoveDetails/%s" % tmpname
+        if tmpname not in bodymap:
+            note("race-body-type-defaulted", where, "no case in getRacialBodyType; using Humanoid")
+        if tmpname in conditional:
+            note("race-body-type-conditional", where,
+                 "body type depends on more than the race in his code; using %s" % bodymap.get(tmpname))
 
         tmpmods = {}
         tmplimits = {}
@@ -334,6 +367,7 @@ def build_races():
             },
             "formless": to_bool(tmprow.get("formless")),
             "canSwim": to_bool(tmprow.get("canSwim")),
+            "bodyType": bodymap.get(tmpname, "Humanoid"),
         }))
     return docs
 

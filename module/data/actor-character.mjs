@@ -15,6 +15,11 @@
 
 import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
+import {
+	ARMOR_COVERAGE_BY_AREA,
+	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
+	getInitiativeModifier
+} from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -130,23 +135,21 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 			// @MARKER BODY AND WOUNDS
 			// Imagine does not use a single hit point pool. Endurance is distributed across the
-			// body areas defined by the character's race, and damage is tracked per area.
-			// bodyType names the chart in use; transformation swaps the whole chart, which is
-			// why areas is a list rather than a fixed set of humanoid slots.
+			// body areas of the character's body chart, and damage is tracked per area.
+			//
+			// The areas themselves are NOT stored. They come from the body chart -- the race's,
+			// unless bodyType overrides it (a transformation, say) -- every time the character
+			// is prepared. Only what happens to them is stored, keyed by area name: the wounds
+			// each has taken and the damage its armour has taken. Keying by name rather than by
+			// position means a change of race or body cannot slide existing wounds onto the
+			// wrong limbs.
 			body: new fields.SchemaField({
-				bodyType: new fields.StringField({ required: true, initial: "Humanoid" }),
-				areas: new fields.ArrayField(new fields.SchemaField({
-					key:       new fields.StringField({ required: true }),
-					name:      new fields.StringField({ required: true }),
-					type:      new fields.StringField({ required: true, initial: "" }),
-					number:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
-					damage:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
-					effect:    new fields.StringField({ required: true, initial: "" })
-					// DERIVED: enduranceMax = character Endurance x this area's race chart multiplier.
-					// Armour, clothing and shield layers are resolved from equipped items rather
-					// than stored here, so an item moving between areas cannot desynchronise.
-				}))
-				// DERIVED: shock = Endurance x 3.
+				bodyType:    new fields.StringField({ required: true, initial: "" }),  // "" = the race's
+				wounds:      new fields.TypedObjectField(new fields.NumberField({ integer: true, min: 0 })),
+				armorDamage: new fields.TypedObjectField(new fields.NumberField({ integer: true, min: 0 })),
+				hide:        new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 })
+				// DERIVED: areas (each with its Endurance, wounds, armour and state), shock,
+				// totalWounds, inShock. See _prepareBody.
 			}),
 
 			// @MARKER MOVEMENT
@@ -272,17 +275,18 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareCharacteristics();
 		this._prepareResistances();
 		this._prepareEncumbrance();
+		this._prepareCombat();
+		this._prepareBody();
 		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
 		this._prepareAvailability();
 
 		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
-		//   body area maxima     -- needs the race item's body chart, and buildCharacterBody
-		//                           in the original sheet also folds in the evoke mutation
-		//                           system (extra torsos, limbs, wings, tails), so it is not
-		//                           a simple Endurance x multiplier lookup.
-		//   movement penalties   -- encumbrance is now calculated, but the penalty each band
+		//   evoke mutations      -- buildCharacterBody in the original sheet adds extra torsos,
+		//                           limbs, wings and tails on top of the body chart. Only the
+		//                           stock charts are used here.
+		//   movement penalties   -- encumbrance is calculated, but the penalty each band
 		//                           applies to movement has not been confirmed against his
 		//                           code yet, so it is not applied.
 	}
@@ -303,6 +307,128 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			tmpitem.system.available = tmpresult.available;
 			tmpitem.system.unavailableReason = tmpresult.reason;
 		}
+	}
+
+	// This is the function which returns the armour the character is actually wearing.
+	_getWornArmor() {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return []; }
+		var tmpworn = [];
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type == "armor" && tmpitem.system.location == "equipped") { tmpworn.push(tmpitem); }
+		}
+		return tmpworn;
+	}
+
+	// This is the function which works out the character's standing combat values.
+	//
+	// Attack skill comes from the class's progression and the character's title. Armour worn
+	// counts against initiative, defence and weapon speed, and all three work the same way
+	// round: a positive penalty is worse. A heavy scale suit is +1 to initiative (acting a second
+	// later), +3 to anyone attacking the wearer, and +2 seconds on every swing.
+	_prepareCombat() {
+		var tmpaglmods = this.attributes.agl.mods;
+		var tmpintmods = this.attributes.int.mods;
+		var tmpstrmods = this.attributes.str.mods;
+
+		var tmparmorinit = 0;
+		var tmparmordef = 0;
+		var tmparmorspeed = 0;
+		var tmparmorskills = 0;
+		for (const tmpitem of this._getWornArmor()) {
+			var tmppen = tmpitem.system.penalties ?? {};
+			tmparmorinit   = tmparmorinit   + (parseInt(tmppen.initiative) || 0);
+			tmparmordef    = tmparmordef    + (parseInt(tmppen.defense) || 0);
+			tmparmorspeed  = tmparmorspeed  + (parseInt(tmppen.speed) || 0);
+			tmparmorskills = tmparmorskills + (parseInt(tmppen.skills) || 0);
+		}
+
+		var tmplist = this.classItem ? this.classItem.system.attackSkillList : "";
+		this.combat.attackSkill = getAttackSkillForTitle(tmplist, this.identity.title);
+
+		this.combat.initiativeMod = getInitiativeModifier(
+			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,
+			tmparmorinit + (parseInt(this.combat.initiativeMisc) || 0));
+
+		// Added to anyone's attack roll against this character. Lower is better for them.
+		this.combat.defensiveAdjust = (parseInt(tmpaglmods.defensiveAdjust) || 0)
+		                            + tmparmordef + (parseInt(this.combat.defenseMisc) || 0);
+
+		// Added to every weapon's speed: Strength, Agility, then armour.
+		this.combat.weaponSpeedMod = (parseInt(tmpstrmods.weaponSpeed) || 0)
+		                           + (parseInt(tmpaglmods.weaponSpeed) || 0) + tmparmorspeed;
+
+		this.combat.meleeAttack   = parseInt(tmpstrmods.meleeAttack) || 0;
+		this.combat.meleeDamage   = parseInt(tmpstrmods.meleeDamage) || 0;
+		this.combat.missileAttack = parseInt(tmpaglmods.missileAttack) || 0;
+		this.combat.armorSkillPenalty = tmparmorskills;
+	}
+
+	// This is the function which lays out the character's body: every area of their body chart,
+	// with its Endurance, the wounds it has taken, the armour protecting it, and what state it
+	// is in.
+	//
+	// An area's Endurance is the character's Endurance times the area's multiplier, rounded up.
+	// Its armour is the sum of every worn layer covering it, less any damage that armour has
+	// taken. Beyond its Endurance a Vitality save is needed; beyond Endurance plus Vitality the
+	// area's effect is triggered. Total wounds over Shock put the character into shock.
+	_prepareBody() {
+		var tmpbodytype = this.body.bodyType || (this.raceItem ? this.raceItem.system.bodyType : "") || "Humanoid";
+		var tmpendurance = this.characteristics.endurance.value;
+		var tmpvitality = this.attributes.vit.value;
+		var tmpworn = this._getWornArmor();
+		var tmpwounds = this.body.wounds ?? {};
+		var tmparmordamage = this.body.armorDamage ?? {};
+
+		var tmpareas = [];
+		var tmptotal = 0;
+		for (const tmparea of getBodyChart(tmpbodytype)) {
+			var tmpend = getAreaEndurance(tmpendurance, tmparea.multiplier);
+			var tmphurt = parseInt(tmpwounds[tmparea.name]) || 0;
+			tmptotal = tmptotal + tmphurt;
+
+			// Armour here: every worn layer that covers this area, less its accumulated damage.
+			var tmpslot = ARMOR_COVERAGE_BY_AREA[tmparea.name];
+			var tmparmor = 0;
+			var tmpmaterials = [];
+			var tmplayers = [];
+			if (tmpslot) {
+				for (const tmpitem of tmpworn) {
+					var tmpvalue = parseInt(tmpitem.system.coverage?.[tmpslot]) || 0;
+					if (tmpvalue > 0) {
+						tmparmor = tmparmor + tmpvalue;
+						tmpmaterials.push(tmpitem.system.material);
+						tmplayers.push(tmpitem.name);
+					}
+				}
+			}
+			var tmpdamaged = parseInt(tmparmordamage[tmparea.name]) || 0;
+			tmparmor = Math.max(0, tmparmor - tmpdamaged);
+
+			var tmpstate = "sound";
+			if (tmphurt > tmpend + tmpvitality) { tmpstate = "effect"; }
+			else if (tmphurt > tmpend)          { tmpstate = "vitalitySave"; }
+			else if (tmphurt > 0)               { tmpstate = "wounded"; }
+
+			tmpareas.push({
+				name: tmparea.name,
+				type: tmparea.type,
+				multiplier: tmparea.multiplier,
+				endurance: tmpend,
+				wounds: tmphurt,
+				armor: tmparmor,
+				armorDamage: tmpdamaged,
+				material: getStrongestMaterial(tmpmaterials),
+				layers: tmplayers,
+				protectedByArmor: !!tmpslot,
+				state: tmpstate
+			});
+		}
+
+		this.body.type = tmpbodytype;
+		this.body.areas = tmpareas;
+		this.body.totalWounds = tmptotal;
+		this.body.inShock = (this.body.shock != 0) && (tmptotal > this.body.shock);
 	}
 
 	// This is the function which totals carried weight and works out how encumbered the

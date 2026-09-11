@@ -8,8 +8,9 @@
 // docs/DECISIONS.md.
 //
 // Status: character and item data models with derived values, a character sheet, a runtime
-// content importer and the content availability switches. Not yet built: combat, the creature
-// actor, body area maxima and the magic subsystems. See docs/PROGRESS.md.
+// content importer, the content availability switches, and combat phase 1 (attack charts, attack
+// and damage rolls, armour, body areas and wounds, the 10 second round). Not yet built: combat
+// phase 2, the creature actor and the magic subsystems. See docs/PROGRESS.md.
 //==================================================================================================================
 
 import ImagineCharacterData from "./data/actor-character.mjs";
@@ -22,6 +23,8 @@ import ImagineEquipmentData from "./data/item-equipment.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
+import ImagineCombat from "./combat/combat-document.mjs";
+import { rollWeaponAttack, registerAttackCardListeners } from "./combat/attack.mjs";
 import {
 	SOURCEBOOKS, MAGIC_SUBSYSTEMS,
 	registerAvailabilitySettings, registerAvailabilityEnforcement,
@@ -109,8 +112,17 @@ Hooks.once("init", function () {
 	// @MARKER SYSTEM API
 	// Exposed so the content import can be run from a macro or the console at any time,
 	// not only when first prompted:  game.imagine.importContent()
+	// @MARKER COMBAT
+	// Initiative is the second of the round a combatant starts acting in: a d10 plus the better
+	// of their Agility and Intelligence adjustments and their armour. Lower is earlier, so the
+	// tracker sorts lowest first -- see combat/combat-document.mjs.
+	CONFIG.Combat.documentClass = ImagineCombat;
+	CONFIG.Combat.initiative = { formula: "1d10 + @combat.initiativeMod", decimals: 0 };
+	registerAttackCardListeners();
+
 	game.imagine = {
 		importContent: importAllContent,
+		rollWeaponAttack: rollWeaponAttack,
 		getAvailabilityRules: getAvailabilityRules,
 		explainAvailability: explainAvailability
 	};

@@ -7,7 +7,8 @@
     "Tab": {
       "attributes": "Attributes",
       "skills": "Skills",
-      "equipment": "Equipment"
+      "equipment": "Equipment",
+      "combat": "Combat"
     },
     "Attribute": {
       "str": "Strength",

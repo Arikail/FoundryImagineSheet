@@ -44,15 +44,26 @@ export default class ImagineWeaponData extends foundry.abstract.TypeDataModel {
 			// source writes "S" for these, and the Game Master sets the timing in play.
 			speedSpecial: new fields.BooleanField({ required: true, initial: false }),
 
-			// A dual-headed weapon carries a second set of values for its other head, which
-			// the source records in parentheses: an Axe Hammer is "5d6(2d6)" damage at speed
-			// "8(6)" -- the axe head at 5d6 speed 8, the hammer head at 2d6 speed 6.
-			alternateHead: new fields.SchemaField({
-				exists:   new fields.BooleanField({ required: true, initial: false }),
-				damage:   new fields.StringField({ required: true, initial: "" }),
-				speed:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
-				minSpeed: new fields.NumberField({ required: true, integer: true, initial: 0 })
-			}),
+			// A few weapons do different damage in one particular attack mode, which the source
+			// writes in parentheses after the main damage. His code applies exactly two:
+			// a Spear is "4d6(5d6)" and does 5d6 when THROWN; an Axe Hammer is "5d6(2d6)" and
+			// does only 2d6 when THRUSTING. Stored as data tied to the mode rather than as
+			// weapon names in code, so a homebrew weapon can use the same rule.
+			damageAlt:     new fields.StringField({ required: true, initial: "" }),
+			damageAltMode: new fields.StringField({ required: true, initial: "",
+			                   choices: ["", "missile", "thrust", "cut", "smash"] }),
+
+			// Launched missile weapons reload between shots, and the source writes the reload
+			// time in parentheses after the speed: a Crossbow is "1(15)" -- it fires in 1 second
+			// and takes 15 to reload. His code reads it this way whenever the minimum speed
+			// carries parentheses (sheet-worker.js:82953).
+			reloadSpeed:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
+			reloadMinSpeed: new fields.NumberField({ required: true, integer: true, initial: 0 }),
+
+			// Magical bonus. Each +1 adds +1 to the attack roll and +1 to damage (Player's
+			// Guide, Magic Weapons). Kept apart from the attack mode modifiers because some
+			// creatures can only be struck by a magical bonus, not by any other kind.
+			magicBonus: new fields.NumberField({ required: true, integer: true, initial: 0 }),
 
 			// @MARKER ATTACK MODES
 			missile: attackModeField(),

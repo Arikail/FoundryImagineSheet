@@ -1,0 +1,47 @@
+{{!--
+	Weapon attack chat card. Shows the roll the way his sheet's verbose attack output did: the
+	natural roll, every modifier by name, the result read against the attack chart, and where
+	the blow landed -- then the damage, and the buttons to apply it and spend the time.
+--}}
+<div class="imagine-chat attack-card">
+	<header>
+		<strong>{{actorName}}</strong> — {{weapon}} ({{modeLabel}})
+		{{#if targetName}}<span class="target">vs {{targetName}}</span>{{/if}}
+	</header>
+
+	<div class="attack-line">
+		<span class="natural">d20: {{result.natural}}</span>
+		{{#each mods.list as |m|}}<span class="mod">{{m.label}} {{#if (gt m.value 0)}}+{{/if}}{{m.value}}</span>{{/each}}
+		<span class="final">= {{result.final}}</span>
+		<span class="skill">as {{result.skill}}</span>
+	</div>
+
+	{{#if aim}}<div class="aim">Aimed at: {{aim}}</div>{{/if}}
+
+	<div class="zone zone-{{#if result.isHit}}hit{{else}}miss{{/if}}">
+		{{#if result.isFumble}}FUMBLE{{else}}{{result.zone}}{{/if}}
+		{{#if result.calledShotDeclared}}
+			— Called shot: {{#if result.isCalledShot}}<strong>made</strong>{{else}}missed{{/if}}
+		{{/if}}
+	</div>
+
+	{{#if fumble}}<p class="fumble">{{fumble.text}}</p>{{/if}}
+
+	{{#if damage}}
+	<div class="damage">
+		<span class="total">{{damage.total}}</span> {{damage.type}} damage
+		<span class="breakdown">({{damage.dice}}{{#if damage.str}} {{#if (gt damage.str 0)}}+{{/if}}{{damage.str}} STR{{/if}}{{#if damage.magic}} +{{damage.magic}} magic{{/if}}{{#if damage.misc}} {{#if (gt damage.misc 0)}}+{{/if}}{{damage.misc}}{{/if}}
+		= {{damage.rolled}}{{#if (lt damage.multiplier 1)}}, halved for the called shot{{/if}})</span>
+	</div>
+	{{/if}}
+
+	<footer>
+		<span class="speed">{{speed}} seconds</span>
+		{{#if damage}}{{#unless applied}}
+			<button type="button" data-imagine-action="applyDamage"><i class="fa-solid fa-droplet"></i> Apply damage</button>
+		{{/unless}}{{/if}}
+		{{#if inCombat}}
+			<button type="button" data-imagine-action="spendTime"><i class="fa-solid fa-stopwatch"></i> Spend {{speed}}s</button>
+		{{/if}}
+	</footer>
+</div>

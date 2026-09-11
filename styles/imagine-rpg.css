@@ -385,3 +385,71 @@
 	text-align: left;
 	padding: 2px 6px;
 }
+
+/* @MARKER COMBAT TAB */
+
+.combat-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+.combat-stats .value.small { font-size: 14px; }
+.combat-stats .value.alarm,
+.imagine.sheet .alarm { color: #a2462e; }
+
+.imagine.sheet .section-head {
+	margin: 10px 0 4px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-accent);
+	border: none;
+}
+
+.weapon-table .mode-list { font-size: 11px; margin-left: 6px; }
+
+.body-table .wound-input {
+	width: 46px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+.body-table tr.area-wounded td       { background: #fbf4e6; }
+.body-table tr.area-vitalitySave td  { background: #f7e3cf; }
+.body-table tr.area-effect td        { background: #f0d2c8; }
+.body-table tr.area-effect .state    { color: #a2462e; font-weight: 700; }
+
+/* @MARKER CHAT CARDS */
+
+.imagine-chat header { font-size: 13px; margin-bottom: 4px; }
+.imagine-chat header .target { color: #6d675e; margin-left: 4px; }
+.imagine-chat .attack-line { font-size: 11px; color: #4a453d; }
+.imagine-chat .attack-line span { margin-right: 6px; white-space: nowrap; }
+.imagine-chat .attack-line .final { font-weight: 700; color: #1c1a17; }
+.imagine-chat .aim { font-size: 11px; color: #6d675e; }
+.imagine-chat .zone {
+	margin: 5px 0;
+	padding: 4px 6px;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 3px;
+}
+.imagine-chat .zone-hit  { background: #e3eed9; color: #2f5a1c; }
+.imagine-chat .zone-miss { background: #efe9e0; color: #6d675e; }
+.imagine-chat .fumble { color: #a2462e; font-weight: 600; }
+.imagine-chat .damage { font-size: 12px; }
+.imagine-chat .damage .total { font-size: 18px; font-weight: 700; }
+.imagine-chat .damage .breakdown { color: #6d675e; font-size: 11px; }
+.imagine-chat footer {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 6px;
+	flex-wrap: wrap;
+}
+.imagine-chat footer .speed { color: #6d675e; font-size: 11px; margin-right: auto; }
+.imagine-chat footer button { width: auto; flex: 0 0 auto; font-size: 11px; line-height: 1.4; }

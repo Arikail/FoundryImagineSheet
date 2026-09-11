@@ -1,0 +1,89 @@
+{{!--
+	Combat tab. One root element, as the framework requires of every PART.
+
+	Three things a player needs mid-fight: the standing numbers (attack skill, initiative,
+	defence, weapon speed), the weapons they can swing, and the state of their body -- every
+	area's Endurance, the wounds on it and the armour covering it.
+--}}
+<section class="tab imagine-combat" data-tab="combat" data-group="primary">
+
+	<div class="combat-stats">
+		<div class="char-box"><label>Attack Skill</label><span class="value small">{{system.combat.attackSkill}}</span></div>
+		<div class="char-box"><label>Initiative</label>
+			<span class="value">d10 {{#if (gte system.combat.initiativeMod 0)}}+{{/if}}{{system.combat.initiativeMod}}</span>
+			<span class="sub">lower acts first</span></div>
+		<div class="char-box"><label>Defence</label>
+			<span class="value">{{#if (gt system.combat.defensiveAdjust 0)}}+{{/if}}{{system.combat.defensiveAdjust}}</span>
+			<span class="sub">to attackers' rolls</span></div>
+		<div class="char-box"><label>Weapon Speed</label>
+			<span class="value">{{#if (gt system.combat.weaponSpeedMod 0)}}+{{/if}}{{system.combat.weaponSpeedMod}}</span>
+			<span class="sub">seconds per swing</span></div>
+		<div class="char-box"><label>Shock</label>
+			<span class="value {{#if system.body.inShock}}alarm{{/if}}">{{system.body.totalWounds}} / {{system.body.shock}}</span>
+			<span class="sub">{{#if system.body.inShock}}IN SHOCK{{else}}total wounds{{/if}}</span></div>
+	</div>
+
+	<h3 class="section-head">Weapons</h3>
+	{{#if weapons.length}}
+	<table class="weapon-table">
+		<thead>
+			<tr>
+				<th class="col-name">Weapon</th>
+				<th class="col-num">Damage</th>
+				<th class="col-num">Speed</th>
+				<th>Attack</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each weapons as |w|}}
+			<tr>
+				<td class="col-name">{{w.name}}{{#unless w.equipped}} <span class="muted">(carried)</span>{{/unless}}</td>
+				<td class="col-num">{{w.damage}}</td>
+				<td class="col-num">{{w.speed}}{{#if w.reload}} <span class="muted">/ reload {{w.reload}}</span>{{/if}}</td>
+				<td>
+					{{#if w.modes.length}}
+					<button type="button" data-action="rollWeaponAttack" data-item-id="{{w.id}}">
+						<i class="fa-solid fa-dice-d20"></i> Attack</button>
+					<span class="muted mode-list">{{#each w.modes as |m|}}{{m.mode}} {{#if (gte m.mod 0)}}+{{/if}}{{m.mod}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+					{{else}}<span class="muted">no attack modes</span>{{/if}}
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">No weapons ready. Equip or carry one from the Equipment tab.</p>
+	{{/if}}
+
+	<h3 class="section-head">Body <span class="muted">{{system.body.type}}</span></h3>
+	<table class="body-table">
+		<thead>
+			<tr>
+				<th class="col-name">Area</th>
+				<th class="col-num">Endurance</th>
+				<th class="col-num">Wounds</th>
+				<th class="col-num">Armour</th>
+				<th>State</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each system.body.areas as |a|}}
+			<tr class="area-{{a.state}}">
+				<td class="col-name">{{a.name}} <span class="muted">{{a.type}}</span></td>
+				<td class="col-num">{{a.endurance}}</td>
+				{{!-- Wounds are stored state, not derived, so they can be healed by hand. --}}
+				<td class="col-num"><input type="number" class="wound-input" min="0"
+					name="system.body.wounds.{{a.name}}" value="{{a.wounds}}"></td>
+				<td class="col-num" {{#if a.layers.length}}data-tooltip="{{#each a.layers as |l|}}{{l}}{{#unless @last}}, {{/unless}}{{/each}}"{{/if}}>
+					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.armorDamage}} <span class="muted">(−{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">—</span>{{/if}}</td>
+				<td class="state">
+					{{#if (eq a.state "effect")}}Effect triggered
+					{{else if (eq a.state "vitalitySave")}}Vitality save
+					{{else if (eq a.state "wounded")}}Wounded
+					{{else}}<span class="muted">Sound</span>{{/if}}
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</section>

@@ -1,0 +1,208 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG combat rules test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Tests for module/combat/combat-rules.mjs, checked against his tables and code, and against
+// the Player's Guide's own worked examples where it gives them.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/combat-test.html
+const R = await import("../module/combat/combat-rules.mjs");
+const T = await import("../module/combat-tables.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+const zone = (skill, natural, mods = 0, extra = {}) => R.resolveAttack({ skill, natural, mods, ...extra }).zone;
+
+// --- the Beginner chart, every natural roll with no modifiers --------------------
+// Beginner: 1-2 miss short, 3-5 miss low, 6-8 miss left, 9-11 miss high, 12-14 miss right,
+//           15 hit low, 16 left, 17 high, 18 right, 19+ centre. A natural 1 fumbles regardless.
+const beginner = [];
+for (let n = 1; n <= 20; n++) beginner.push(zone("Beginner", n));
+check("Beginner chart, naturals 1-20", beginner, [
+	"Fumble", "Miss(Short)", "Miss(Low)", "Miss(Low)", "Miss(Low)",
+	"Miss(Left)", "Miss(Left)", "Miss(Left)", "Miss(High)", "Miss(High)",
+	"Miss(High)", "Miss(Right)", "Miss(Right)", "Miss(Right)", "Hit(Low)",
+	"Hit(Left)", "Hit(High)", "Hit(Right)", "Hit(Center)", "Hit(Center)"]);
+
+// --- modifiers and the floor at 1 ----------------------------------------------
+check("modified result is what is read (Novice 10+7 = 17 = centre)", zone("Novice", 10, 7), "Hit(Center)");
+check("modifiers can turn a hit into a miss", zone("Beginner", 19, -8), "Miss(High)");
+check("result is floored at 1 (Beginner -> miss short)", R.resolveAttack({ skill: "Beginner", natural: 5, mods: -10 }).final, 1);
+check("floored Beginner result is Miss(Short)", zone("Beginner", 5, -10), "Miss(Short)");
+check("Miss(Short) exists only at Beginner (Novice floor -> Miss(Low))", zone("Novice", 5, -10), "Miss(Low)");
+check("Grandmaster centre starts at 6", zone("Grandmaster", 6), "Hit(Center)");
+check("Grandmaster 2 is a low hit", zone("Grandmaster", 2), "Hit(Low)");
+check("no attack skill at all never hits", R.resolveAttack({ skill: "None", natural: 20, mods: 10 }).isHit, false);
+
+// --- fumbles -------------------------------------------------------------------
+check("a natural 1 fumbles even with big bonuses", zone("Master", 1, 15), "Fumble");
+check("a fumble forces the result to 1", R.resolveAttack({ skill: "Master", natural: 1, mods: 15 }).final, 1);
+check("fumbleMod widens the fumble range", zone("Novice", 2, 0, { fumbleMod: 1 }), "Fumble");
+check("a 2 is not a fumble without it", zone("Novice", 2, 0), "Miss(Low)");
+
+// --- called shots: the Player's Guide's own example ----------------------------
+// "Brom ... has an Intermediate attack skill. He rolls a 17; normally this would be a 21 with
+//  his modifiers. A 17 does not meet the unmodified 18 he needs ... He attacks again, this
+//  time rolling a 19 naturally."
+const brom1 = R.resolveAttack({ skill: "Intermediate", natural: 17, mods: 4, calledShot: true });
+check("Brom's 17 (21 modified) does NOT make the called shot", brom1.isCalledShot, false);
+check("...but still hits, since the modified 21 lands", brom1.zone, "Hit(Center)");
+check("Brom's natural 19 makes the called shot",
+	R.resolveAttack({ skill: "Intermediate", natural: 19, mods: 4, calledShot: true }).isCalledShot, true);
+check("called shot needs 21 - level: Beginner 20, Master 15",
+	[R.getAttackChart("Beginner").calledShot, R.getAttackChart("Master").calledShot], [20, 15]);
+check("an undeclared called shot never counts, even on a 20",
+	R.resolveAttack({ skill: "Beginner", natural: 20, mods: 0 }).isCalledShot, false);
+check("calledShotMod makes it easier",
+	R.resolveAttack({ skill: "Beginner", natural: 19, mods: 0, calledShot: true, calledShotMod: 1 }).isCalledShot, true);
+
+// --- fumble consequences (dice passed in) -----------------------------------------
+check("fumble: Agility save made -> lose 1d4+1 seconds",
+	R.resolveFumble(70, false, { saveRoll: 40, recoveryRoll: 3, severityRoll: 50, effectRoll: 6 }).secondsLost, 4);
+check("fumble: missile jam lasts 1d6+1 seconds",
+	R.resolveFumble(70, true, { saveRoll: 90, recoveryRoll: 3, severityRoll: 50, effectRoll: 4 }).secondsLost, 5);
+check("fumble: over 80 on severity is critical",
+	R.resolveFumble(70, false, { saveRoll: 90, recoveryRoll: 3, severityRoll: 81, effectRoll: 4 }).critical, true);
+check("fumble: exactly 80 is still ordinary",
+	R.resolveFumble(70, false, { saveRoll: 90, recoveryRoll: 3, severityRoll: 80, effectRoll: 4 }).critical, false);
+
+// --- attack skill from class progression --------------------------------------
+const acrobat = "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7, Expert at 9, Master at 12";
+check("title 1 -> Beginner",      R.getAttackSkillForTitle(acrobat, 1), "Beginner");
+check("title 4 -> Novice",        R.getAttackSkillForTitle(acrobat, 4), "Novice");
+check("title 5 -> Intermediate",  R.getAttackSkillForTitle(acrobat, 5), "Intermediate");
+check("title 15 -> Master",       R.getAttackSkillForTitle(acrobat, 15), "Master");
+check("before the first listed title, the first level", R.getAttackSkillForTitle(acrobat, 0), "Beginner");
+// His code: "cannot set Grandmaster for standard Attack Chart so just use Master". Grandmaster is
+// only for mastered weapons -- the Weapon Lore chart, one step up.
+const warriorList = "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 7, Master at 9, Grandmaster(mastered weapons at 9)";
+check("the standard chart stops at Master, even where Grandmaster is listed",
+	R.getAttackSkillForTitle(warriorList, 12), "Master");
+check("...and Weapon Lore, one step up, is Grandmaster", R.getNextAttackSkill(R.getAttackSkillForTitle(warriorList, 12)), "Grandmaster");
+check("Warrior title 3 -> Intermediate", R.getAttackSkillForTitle(warriorList, 3), "Intermediate");
+check("no progression -> None", R.getAttackSkillForTitle("", 5), "None");
+check("Weapon Lore reads one step up", R.getNextAttackSkill("Novice"), "Intermediate");
+check("one step above Grandmaster is Grandmaster", R.getNextAttackSkill("Grandmaster"), "Grandmaster");
+
+// every class in the content should resolve to a real chart
+const classes = await (await fetch("../src/packs/documents/classes.json")).json();
+const unresolved = classes.filter(c => c.system.attackSkillList && R.getAttackSkillForTitle(c.system.attackSkillList, 20) === "None")
+                          .map(c => `${c.name}: ${c.system.attackSkillList}`);
+check("every class's attack progression parses to a real chart", unresolved, []);
+
+// --- to-hit modifiers ------------------------------------------------------------
+const sword = { cut: { available: true, mod: 2 }, thrust: { available: true, mod: -2 }, missile: { available: false, mod: 0 }, magicBonus: 1 };
+const attacker = { meleeAttack: 2, missileAttack: 1, meleeMisc: 0, missileMisc: 0 };
+const hit = R.getToHitModifiers({ mode: "cut", weapon: sword, attacker, target: { defensiveAdjust: -3 }, situational: 0 });
+check("melee to-hit: attack type + magic + STR + target defence", hit.total, 2 + 1 + 2 - 3);
+check("each modifier is labelled", hit.list.map(m => m.label), ["Attack Type", "Magic", "STR", "Target Defence"]);
+check("missile uses AGL, not STR",
+	R.getToHitModifiers({ mode: "missile", weapon: { missile: { available: true, mod: 1 } }, attacker, target: null, situational: 0 }).list.map(m => m.label),
+	["Attack Type", "AGL"]);
+
+// --- damage ----------------------------------------------------------------------
+check("a spear thrown uses its bracketed damage", R.getWeaponDamageDice({ damage: "4d6", damageAlt: "5d6", damageAltMode: "missile" }, "missile"), "5d6");
+check("a spear thrust uses its normal damage",   R.getWeaponDamageDice({ damage: "4d6", damageAlt: "5d6", damageAltMode: "missile" }, "thrust"), "4d6");
+check("an axe hammer thrusting does 2d6",        R.getWeaponDamageDice({ damage: "5d6", damageAlt: "2d6", damageAltMode: "thrust" }, "thrust"), "2d6");
+check("STR damage one-handed",                   R.getStrengthDamageMod(4, "cut", false), 4);
+check("STR damage two-handed doubles a bonus",   R.getStrengthDamageMod(4, "cut", true), 8);
+check("STR damage two-handed HALVES a penalty",  R.getStrengthDamageMod(-3, "cut", true), -1);
+check("no STR damage for projectiles",           R.getStrengthDamageMod(6, "missile", true), 0);
+check("multipliers combine",                     R.combineDamageMultipliers([2, 1.5]), 3);
+check("multipliers never exceed x3",             R.combineDamageMultipliers([2, 2, 2]), 3);
+check("called shot halves damage",               R.combineDamageMultipliers([0.5]), 0.5);
+
+// --- armour blocking, against his table ------------------------------------------
+// Cutting [0, 0, 0.25, -0.5]; armour 20 -> quarter 5, half 10.
+check("cutting under a quarter of the armour: stopped", R.blockDamage(5, "Cutting", 20), 0);
+check("cutting quarter-to-half: stopped",              R.blockDamage(8, "Cutting", 20), 0);
+check("cutting half-to-full: 25% through (15 -> 3)",   R.blockDamage(15, "Cutting", 20), 3);
+check("exactly equal to the armour is half-to-full",   R.blockDamage(20, "Cutting", 20), 5);
+check("cutting over the armour: loses half of it (30 -> 20)", R.blockDamage(30, "Cutting", 20), 20);
+check("crushing quarter-to-half: loses a quarter of the armour (8 -> 3)", R.blockDamage(8, "Crushing", 20), 3);
+check("flame loses the full armour value (30 -> 10)", R.blockDamage(30, "Flame", 20), 10);
+check("flame under the armour: stopped",               R.blockDamage(15, "Flame", 20), 0);
+check("no armour: cutting passes in full",             R.blockDamage(12, "Cutting", 0), 12);
+check("bypass: armour ignored",                        R.blockDamage(12, "Cutting", 40, true), 12);
+check("unknown damage type is treated as Other",       R.blockDamage(30, "Wibble", 20), 10);
+// His table gives Poison [0,0,0,0], which by his own code means no damage even with no armour.
+// Recorded as-is and raised with him (UPSTREAM-ISSUES) -- probably meant to be applied with bypass.
+check("poison without bypass does nothing (his table, flagged)", R.blockDamage(12, "Poison", 0), 0);
+check("poison with bypass lands in full",              R.blockDamage(12, "Poison", 0, true), 12);
+
+// --- armour degradation ---------------------------------------------------------
+const rags = T.ARMOR_DAMAGE_DIVIDERS["Rags"];   // [2, 5, 20, 20]
+check("Rags divider row", rags, [2, 5, 20, 20]);
+check("cutting 10 into Rags -> armour takes 5",   R.getArmorDamage(10, "Cutting", "Rags"), 5);
+check("thrusting 10 into Rags -> armour takes 2", R.getArmorDamage(10, "Thrusting", "Rags"), 2);
+check("crushing 10 into Rags -> armour takes 0",  R.getArmorDamage(10, "Crushing", "Rags"), 0);
+check("acid hits the armour at full value",       R.getArmorDamage(10, "Acid", "Rags"), 10);
+check("magic armour is never degraded",           R.getArmorDamage(40, "Cutting", "Rags", true), 0);
+check("strongest material wins", R.getStrongestMaterial(["Rags", "Plate", "Leather"]),
+	["Rags", "Plate", "Leather"].sort((a, b) => (T.ARMOR_MATERIAL_RANK[b] ?? 0) - (T.ARMOR_MATERIAL_RANK[a] ?? 0))[0]);
+
+// --- the full blow on an area -----------------------------------------------------
+const blow = R.resolveAreaDamage({ damage: 30, type: "Cutting", totalArmor: 20, bypass: false, hide: 3, material: "Rags" });
+check("30 cutting vs 20 armour and hide 3 -> 17 through", blow.net, 17);
+check("...armour degraded from the pre-block 30", blow.armorDamage, 15);
+check("armour damage is capped at the armour there",
+	R.resolveAreaDamage({ damage: 100, type: "Acid", totalArmor: 12, material: "Rags" }).armorDamage, 12);
+
+// --- body charts -------------------------------------------------------------------
+check("45 body charts extracted", Object.keys(T.BODY_CHARTS).length, 45);
+const human = R.getBodyChart("Humanoid");
+check("Humanoid has 19 areas (Player's Guide: '19 body areas are marked')", human.length, 19);
+check("Head is Vital x1",        [human[0].name, human[0].type, human[0].multiplier], ["Head", "Vital", 1]);
+check("Neck is Vital x1/2",      [human[1].name, human[1].type, human[1].multiplier], ["Neck", "Vital", 0.5]);
+check("Upper Torso is Vital x2", human.filter(a => a.name === "Upper Torso").map(a => a.multiplier), [2]);
+check("x1/2 is not mistaken for x1", R.getAreaMultiplier("Limb:x1/2"), 0.5);
+check("x10 is not mistaken for x1", R.getAreaMultiplier("Vital:x10"), 10);
+check("x1/20 is not mistaken for x2", R.getAreaMultiplier("Limb:x1/20"), 0.05);
+check("wings count as limbs, as in his code", R.parseBodyChart("Left Wing(Wing:x1)")[0].type, "Limb");
+check("unknown body type falls back to Humanoid", R.getBodyChart("Nonesuch").length, 19);
+
+// --- area Endurance (+.99 round-up) ----------------------------------------------
+check("19 x 1/2 = 9.5 rounds up to 10", R.getAreaEndurance(19, 0.5), 10);
+check("18 x 1/2 = 9 stays 9",            R.getAreaEndurance(18, 0.5), 9);
+check("19 x 2 = 38",                     R.getAreaEndurance(19, 2), 38);
+
+// --- wounds ------------------------------------------------------------------------
+const area = { areaEndurance: 10, vitality: 18, totalWounds: 0, shock: 57 };
+check("wound within the area's Endurance: nothing more",
+	R.applyAreaDamage({ ...area, damage: 5, areaWounds: 0 }).vitalitySaveNeeded, false);
+check("past the area's Endurance: Vitality save",
+	R.applyAreaDamage({ ...area, damage: 12, areaWounds: 0 }).vitalitySaveNeeded, true);
+check("past Endurance + Vitality: the area's effect triggers",
+	R.applyAreaDamage({ ...area, damage: 30, areaWounds: 0 }).effectTriggered, true);
+check("wounds are capped at Endurance + Vitality (28)",
+	R.applyAreaDamage({ ...area, damage: 30, areaWounds: 0 }).wounds, 28);
+check("total wounds over Shock: in shock",
+	R.applyAreaDamage({ ...area, damage: 10, areaWounds: 0, totalWounds: 50 }).inShock, true);
+check("Shock 0 means immune",
+	R.applyAreaDamage({ ...area, damage: 10, areaWounds: 0, totalWounds: 500, shock: 0 }).inShock, false);
+check("over 9 points pierces", R.applyAreaDamage({ ...area, damage: 10, areaWounds: 0 }).armorPierced, true);
+check("zero damage changes nothing", R.applyAreaDamage({ ...area, damage: 0, areaWounds: 4 }).wounds, 4);
+
+// --- time -------------------------------------------------------------------------
+check("initiative takes the better (lower) of AGL and INT", R.getInitiativeModifier(-3, -1, 0), -3);
+check("...and the INT one when it is better",              R.getInitiativeModifier(-1, -4, 0), -4);
+check("armour adds to it",                                  R.getInitiativeModifier(-3, -1, 2), -1);
+check("nobody starts before second 1", R.getActingSecond(-4), { second: 1, extraSeconds: 0 });
+check("each point below -10 is an extra second", R.getActingSecond(-14), { second: 1, extraSeconds: 4 });
+check("extra seconds cap at 10", R.getActingSecond(-30), { second: 1, extraSeconds: 10 });
+check("a positive total is the second you start", R.getActingSecond(6), { second: 6, extraSeconds: 0 });
+check("weapon speed adds modifiers", R.getWeaponSpeed(7, 3, -2), 5);
+check("weapon speed never goes under its minimum", R.getWeaponSpeed(3, 2, -5), 2);
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${results.length - passed} failed`;
+</script>

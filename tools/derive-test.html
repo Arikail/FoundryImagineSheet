@@ -57,6 +57,7 @@ function makeCharacter(ratings, title = 12, items = []) {
 		},
 		body: { bodyType: "Humanoid", areas: [] },
 		// The real schema always provides these; the fixture has to supply them too.
+		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
 		physical: { weight: 0 },
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -261,6 +262,92 @@ check("tagalong items are not double counted",
 check("quantity multiplies weight",
 	encumbered([{ type: "equipment", name: "arrows",
 	  system: { weight: 0.1, quantity: 20, location: "carried", isTagalong: false } }]).carried, 2);
+
+// --- combat values ----------------------------------------------------------------
+// A Warrior-ish class whose attack progression reaches Intermediate at title 5.
+const fighterClass = {
+	type: "class", name: "Fighter",
+	system: { classType: "Primary class", attackSkillList: "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7",
+	          advancement: { titles: [], goalAttr1: "", goalAttr2: "" } },
+	getTitleName() { return ""; }
+};
+// A worn heavy scale suit: skills -20, defence +3, initiative +1, speed +2 (armorpenaltydict).
+const scaleSuit = {
+	type: "armor", name: "Body Suit(Heavy Scale)",
+	system: { location: "equipped", material: "Heavy Scale", weight: 30, quantity: 1,
+	          penalties: { skills: -20, defense: 3, initiative: 1, speed: 2 },
+	          coverage: { head: 0, neck: 0, shoulderLeft: 12, shoulderRight: 12, torsoUpper: 12,
+	                      torsoMid: 12, torsoLower: 12, armLeft: 12, armRight: 12, forearmLeft: 0,
+	                      forearmRight: 0, handLeft: 0, handRight: 0, thighLeft: 12, thighRight: 12,
+	                      shinLeft: 0, shinRight: 0, footLeft: 0, footRight: 0 } }
+};
+const padding = {
+	type: "armor", name: "Padding", system: { location: "equipped", material: "Padding", weight: 5, quantity: 1,
+	penalties: { skills: 0, defense: 0, initiative: 0, speed: 0 },
+	coverage: { head: 0, neck: 0, shoulderLeft: 3, shoulderRight: 3, torsoUpper: 3, torsoMid: 3, torsoLower: 3,
+	            armLeft: 0, armRight: 0, forearmLeft: 0, forearmRight: 0, handLeft: 0, handRight: 0,
+	            thighLeft: 0, thighRight: 0, shinLeft: 0, shinRight: 0, footLeft: 0, footRight: 0 } }
+};
+const stashedHelm = {
+	type: "armor", name: "Great Helm", system: { location: "stash", material: "Plate", weight: 8, quantity: 1,
+	penalties: { skills: 0, defense: 0, initiative: 5, speed: 5 },
+	coverage: { head: 20, neck: 0, shoulderLeft: 0, shoulderRight: 0, torsoUpper: 0, torsoMid: 0, torsoLower: 0,
+	            armLeft: 0, armRight: 0, forearmLeft: 0, forearmRight: 0, handLeft: 0, handRight: 0,
+	            thighLeft: 0, thighRight: 0, shinLeft: 0, shinRight: 0, footLeft: 0, footRight: 0 } }
+};
+
+// AGL 18 -> initiative -7, defensive -3, weapon speed -2; INT 18 -> initiative -7; STR 19 -> speed -2.
+const fighter = makeCharacter({ str: 19, agl: 18, vit: 18, int: 18 }, 5,
+	[fighterClass, scaleSuit, padding, stashedHelm]);
+check("attack skill comes from the class progression at title 5", fighter.combat.attackSkill, "Intermediate");
+check("initiative = best of AGL/INT (-7) + worn armour (+1)", fighter.combat.initiativeMod,
+	Math.min(fighter.attributes.agl.mods.initiativeAdjust, fighter.attributes.int.mods.initiativeAdjust) + 1);
+check("armour left in a stash does not slow initiative", fighter.combat.initiativeMod < 0, true);
+check("defence = AGL defensive adjustment + worn armour (+3)", fighter.combat.defensiveAdjust,
+	fighter.attributes.agl.mods.defensiveAdjust + 3);
+check("weapon speed = STR + AGL + worn armour", fighter.combat.weaponSpeedMod,
+	fighter.attributes.str.mods.weaponSpeed + fighter.attributes.agl.mods.weaponSpeed + 2);
+check("armour skill penalty is totalled", fighter.combat.armorSkillPenalty, -20);
+check("no class means no attack skill", makeCharacter({}, 5).combat.attackSkill, "None");
+
+// --- the body -----------------------------------------------------------------------
+check("Humanoid body has 19 areas", fighter.body.areas.length, 19);
+const upper = fighter.body.areas.find(a => a.name === "Upper Torso");
+const neck = fighter.body.areas.find(a => a.name === "Neck");
+const endValue = fighter.characteristics.endurance.value;
+check("Upper Torso Endurance = Endurance x 2", upper.endurance, endValue * 2);
+check("Neck Endurance = Endurance x 1/2, rounded up", neck.endurance, Math.ceil(endValue / 2));
+check("armour sums every worn layer covering the area (12 + 3)", upper.armor, 15);
+check("both layers are listed for the area", upper.layers, ["Body Suit(Heavy Scale)", "Padding"]);
+check("the strongest material covering it is recorded", typeof upper.material, "string");
+check("a helm left in the stash protects nothing", fighter.body.areas.find(a => a.name === "Head").armor, 0);
+
+// Wounds and armour damage are stored by area name.
+const hurt = makeCharacter({ str: 19, agl: 18, vit: 18 }, 5, [scaleSuit]);
+hurt.body.wounds = { "Neck": 12, "Left Arm": 3 };
+hurt.body.armorDamage = { "Upper Torso": 5 };
+hurt.prepareDerivedData();
+const hNeck = hurt.body.areas.find(a => a.name === "Neck");
+check("wounds are read back by area name", hNeck.wounds, 12);
+// Endurance ceil((19+18+18)/3) = 19, so the Neck (x1/2) is 10; 12 wounds is past 10 but under 10 + VIT 18.
+check("neck Endurance for this character is 10", hNeck.endurance, 10);
+check("past the area's Endurance: needs a Vitality save", hNeck.state, "vitalitySave");
+check("a lightly hurt area is just wounded", hurt.body.areas.find(a => a.name === "Left Arm").state, "wounded");
+check("an untouched area is sound", hurt.body.areas.find(a => a.name === "Head").state, "sound");
+check("armour damage reduces the armour there (12 - 5)", hurt.body.areas.find(a => a.name === "Upper Torso").armor, 7);
+check("total wounds across the body", hurt.body.totalWounds, 15);
+check("not in shock below Shock", hurt.body.inShock, false);
+
+// The race's body chart is used, and an explicit body type overrides it.
+const winged = makeCharacter({}, 5, [{ ...makeRace(), system: { ...makeRace().system, bodyType: "Humanoid(Wings)" } }]);
+winged.body.bodyType = "";
+winged.prepareDerivedData();
+check("the race's body chart is used", winged.body.type, "Humanoid(Wings)");
+check("winged humanoids have their wings", winged.body.areas.some(a => a.name.includes("Wing")), true);
+check("wings take no protection from humanoid armour", winged.body.areas.find(a => a.name.includes("Wing")).protectedByArmor, false);
+winged.body.bodyType = "Quadruped";
+winged.prepareDerivedData();
+check("an explicit body type overrides the race (a transformation)", winged.body.type, "Quadruped");
 
 // --- skill slots ----------------------------------------------------------------
 const slots = makeCharacter({ knw: 20 });

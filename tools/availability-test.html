@@ -134,7 +134,7 @@ const actor = new ImagineCharacterData({
 	identity: { title: 5 }, attributes,
 	characteristics: { endurance: ch(), perception: ch(), affinity: ch(), fortune: ch() },
 	resistances: { magic: rs(), illusion: rs(), control: rs(), poison: rs(), disease: rs() },
-	body: { bodyType: "Humanoid", areas: [] }, physical: { weight: 0 },
+	body: { bodyType: "Humanoid", areas: [] }, physical: { weight: 0 }, combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "" }
 });
 actor.parent = { items };

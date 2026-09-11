@@ -12,6 +12,9 @@
 // handlers are static methods on the class.
 //==================================================================================================================
 
+import { rollWeaponAttack } from "../combat/attack.mjs";
+import { getWeaponSpeed } from "../combat/combat-rules.mjs";
+
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
@@ -24,7 +27,8 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		form: { submitOnChange: true },
 		actions: {
 			rollAttributeSave: ImagineCharacterSheet.#onRollAttributeSave,
-			rollSkill: ImagineCharacterSheet.#onRollSkill
+			rollSkill: ImagineCharacterSheet.#onRollSkill,
+			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack
 		}
 	};
 
@@ -35,6 +39,7 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tabs:       { template: "templates/generic/tab-navigation.hbs" },
 		attributes: { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs" },
 		skills:     { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs" },
+		combat:     { template: "systems/imagine-rpg/templates/actor/tab-combat.hbs" },
 		equipment:  { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs" }
 	};
 
@@ -43,6 +48,7 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			tabs: [
 				{ id: "attributes", icon: "fa-solid fa-dice-d20" },
 				{ id: "skills",     icon: "fa-solid fa-list-check" },
+				{ id: "combat",     icon: "fa-solid fa-khanda" },
 				{ id: "equipment",  icon: "fa-solid fa-sack" }
 			],
 			initial: "attributes",
@@ -60,6 +66,7 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.skills = ImagineCharacterSheet.#buildSkillRows(this.document);
 		tmpcontext.gear = this.document.items.filter(i =>
 			["weapon", "armor", "equipment"].includes(i.type));
+		tmpcontext.weapons = ImagineCharacterSheet.#buildWeaponRows(this.document);
 
 		return tmpcontext;
 	}
@@ -126,7 +133,43 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		return tmpout;
 	}
 
+	// This is the function which lists the character's ready weapons for the Combat tab, with
+	// the attack modes each allows and how long a swing takes once every speed modifier is in.
+	// Only weapons equipped or carried are offered; a sword left in a stash cannot be swung.
+	static #buildWeaponRows(tmpactor) {
+		var tmprows = [];
+		var tmpspeedmod = tmpactor.system.combat.weaponSpeedMod;
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type != "weapon") { continue; }
+			var tmpw = tmpitem.system;
+			if (tmpw.location != "equipped" && tmpw.location != "carried") { continue; }
+			var tmpmodes = [];
+			for (const tmpmode of ["thrust", "cut", "smash", "missile"]) {
+				if (tmpw[tmpmode]?.available) {
+					tmpmodes.push({ mode: tmpmode, mod: tmpw[tmpmode].mod });
+				}
+			}
+			tmprows.push({
+				id: tmpitem.id,
+				name: tmpitem.name,
+				damage: tmpw.damage,
+				speed: tmpw.speedSpecial ? "Special" : getWeaponSpeed(tmpw.speed, tmpw.minSpeed, tmpspeedmod),
+				reload: tmpw.reloadSpeed || "",
+				modes: tmpmodes,
+				equipped: tmpw.location == "equipped"
+			});
+		}
+		return tmprows;
+	}
+
 	// @MARKER ACTION HANDLERS
+
+	// This is the function which makes a weapon attack from the Combat tab.
+	static async #onRollWeaponAttack(event, target) {
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+		await rollWeaponAttack(this.document, tmpitem);
+	}
 
 	// This is the function which rolls an attribute save. A save succeeds on a percentile roll
 	// equal to or under the save chance, and succeeding by half the chance or better is a

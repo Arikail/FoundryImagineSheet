@@ -101,3 +101,28 @@ The "Magic subsystem toggles" entry above says the design "mirrors the Roll20 sh
 - *Enforcement sits on item creation* (`preCreateItem`), not on a drop handler, so it holds however an item arrives. Players are blocked. A Game Master is let through with a warning, because they decide what is in the campaign and may be making a deliberate exception. For the same reason, the sheet does not disable Roll on flagged items; it only marks them.
 
 **Subsystem grouping:** 16 switches, each recording which of his Roll20 repeating sections it covers (e.g. `herbalism` = herb, potion, elixir, potionrecipe), so the grouping can be checked against his sheet or split further. This grouping is a judgement call and is cheap to change, since it is one list.
+
+### 2026-09-11 — Combat, phase 1
+**Decision:** Combat is built as pure rule functions (`module/combat/combat-rules.mjs`, with no Foundry dependency, each ported from a named place in his code) plus a thin Foundry layer (`combat/attack.mjs`, `combat/combat-document.mjs`). The tables are generated from his code rather than transcribed, by `tools/extract/extract_combat_tables.py` into `module/combat-tables.mjs`: the seven attack charts, 45 body charts, armour blocking, degradation dividers and material rank. Several lived inside `switch` statements rather than dictionaries and are read by walking those functions.
+
+**How an attack resolves** (his `handlePhysicalAttacks`): d20 plus modifiers, floored at 1, read down a fixed ladder of zones (centre, right, high, left, low, then the misses), so one roll decides both hit and location. A called shot is judged on the *natural* roll; a natural 1 is a fumble. The attacker declares an aimed area. A centre hit lands there. An off-centre hit is placed by the Game Master when damage is applied, because the book describes superimposing the bullseye on the target and his code only ever reports the zone.
+
+**How damage lands** (his `handleBodyDamage`): banded blocking against the total armour at the struck area, armour degradation worked from the damage *before* blocking, then hide. Wounds are capped at area Endurance plus Vitality. Past Endurance a Vitality save is needed; past Endurance plus Vitality the area's effect triggers; total wounds over Shock means shock.
+
+**The 10-second round:** initiative is the second a combatant starts acting (d10, plus the better of the Agility and Intelligence adjustments, plus armour). The tracker sorts lowest first, and spending an action's seconds moves a combatant later and re-sorts. It is built on Foundry's own tracker rather than a separate clock.
+
+**Sub-decisions:**
+- *Body areas are derived; wounds are stored by name.* Areas come from the race's body chart, or from an explicit body-type override for transformations. Wounds and armour damage are `TypedObjectField`s keyed by area name, so a change of body cannot slide wounds onto the wrong limbs. This replaces the earlier stored `areas[]` array, which nothing used yet.
+- *The standard attack chart stops at Master.* A class listing "Grandmaster(mastered weapons at 9)" means Grandmaster only on the Weapon Lore chart, as his code states explicitly.
+- *The target's defensive adjustment is applied* when exactly one target is selected. It is not in his code, whose sheet only ever knew one character, but it is in the book and Foundry knows the target. It can be switched off per attack.
+- *Humanoid armour maps to areas by name.* Humanoid, its variants and Saurian share the 19 location names. Other body types take no protection from humanoid armour until his per-body-type mapping is ported.
+- *Where his code has a plain bug, the port implements the evident intent* and the bug is listed in `UPSTREAM-ISSUES.md` item 6. Where the book and his code simply disagree, his code is followed and the difference is listed in item 7.
+
+**Deferred to phase 2:** Weapon/Missile Lore charts, martial arts and stances, multi-missile, soldiering, runes, the magic armours (spirit, force, invulnerability, magic shield, weaves), shield coverage by handedness, pain threshold, damage absorption, special damage effects such as losing an eye, the critical fumble table, the per-body-type armour mapping, carry-over, and evoke mutations on the body.
+
+### 2026-09-11 — CORRECTION: parenthesised weapon values are not a "second head"
+An earlier entry, and `UPSTREAM-ISSUES.md` item 5, said values like `8(6)` and `5d6(2d6)` were a dual-headed weapon's second head. His code says otherwise, and the data agrees:
+- **Parenthesised damage** appears on exactly two weapons, and his code names both: a Spear does its bracketed damage when *thrown*, an Axe Hammer when *thrusting*. It is now stored as `damageAlt` together with the `damageAltMode` it applies to.
+- **Parenthesised speed** appears on 85 weapons, almost all bows and crossbows, and it is **reload time**: a Crossbow is `1(15)`, firing in 1 second and reloading in 15. It is now `reloadSpeed` / `reloadMinSpeed`.
+
+The `alternateHead` field is removed.

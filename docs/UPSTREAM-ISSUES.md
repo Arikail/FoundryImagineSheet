@@ -64,5 +64,30 @@ The conversion runs 99.75% clean. These seven entries do not convert to a plain 
 **Resolved without needing input** (recording them so the reasoning is visible):
 - `"S"` in an armour coverage slot means the value comes from the material rather than the piece (giant chitin/scales/leather gauntlets). Preserved as a `coverageFromMaterial` list rather than flattened to 0, since a 0 would falsely claim the piece offers no protection there. Resolving them properly needs the giant-material rules.
 - `"S"` as a weapon speed means no ordinary swing timing — lances, caltrops, garrotes. Now a `speedSpecial` flag.
-- Parenthesised values like `"8(6)"` and `"5d6(2d6)"` are a dual-headed weapon's second head — the Axe Hammer's axe at 5d6/speed 8 and hammer at 2d6/speed 6. Now an `alternateHead`.
+- ~~Parenthesised values are a dual-headed weapon's second head.~~ **Corrected 2026-09-11:** parenthesised *damage* is a different damage in one attack mode (a Spear thrown, an Axe Hammer thrusting), and parenthesised *speed* is reload time for launched weapons (a Crossbow is `1(15)`). See `DECISIONS.md`.
 - Composite flexibility (`Rigid/Flexible`, `Rigid/Semi-Flexible`, `Rigid/Rigid`, `Mixed`) is the data encoding of the built-in-padding rule, which lets a rigid piece with a flexible inner face sit against the body. `Rigid/Rigid` is legitimate too: "a few suits allow two sections of rigid armor because they do not touch."
+
+## 6. Bugs found in his combat code
+
+**Status:** open · **Severity:** real bugs; each defeats its own evident intent
+
+Found while porting combat. In each case the Foundry port implements what the code was clearly *meant* to do, and the difference is listed here so he can confirm or correct it.
+
+| # | Where | What happens | Effect in play | Port does |
+|---|---|---|---|---|
+| a | `getArmorDamage` (sheet-worker.js:118851) | Walks the *area's* armour list but reads names from the character's *full* equipped list by the same index (`tempEquippedArmorAndClothingArray[i]` instead of `tempAreaEquippedArmorArray[i]`). | The wrong armour piece's material can set how fast armour degrades. | Uses the armour actually covering the struck area. |
+| b | same | The magic check is `!tempAreaEquippedArmorArray.includes("+")`. On an array, `includes` compares whole elements, so it is only true if an element is exactly `"+"` -- never. | Magical armour is degraded like mundane armour, which the comment says must not happen. | Magical armour is not degraded. |
+| c | `getArmorValue` is declared twice (lines 104551 and 118903) | A later function declaration silently replaces an earlier one with the same name. | The first version -- which reads an armour *item's* value, including the rule that "S" means "take the number after the colon" for giant materials -- is dead code. Anything calling it gets the material-rank version instead. | Uses the second, as JavaScript does. The first's intent is noted for when giant materials are ported. |
+| d | `handleIntiativeUpdate` (line 69035) | `tmpCombatModInitINT=parseInt(values.combat_mod_init_agl)` reads Agility into the Intelligence variable. | When a martial stance changes, Intelligence is never considered for initiative. His main initiative path (line 82366) is correct. | The better of Agility and Intelligence, as the book and his main path say. |
+| e | `createBodyAreas` (line 180218) | Tests `"x1/2"` before `"x1/20"`, and `"x1/20"` contains `"x1/2"`. | An area marked x1/20 gets half Endurance instead of a twentieth. No stock body chart uses x1/20, so only custom areas are affected. | Tests the longer fractions first. |
+| f | `armorblockingdict`, rows `Poison` and `Disease` | Both are `[0, 0, 0, 0]`, and a zero means "no damage" -- even with no armour at all. | Poison or disease applied as body damage does nothing unless "bypass armour" is ticked. | Same as his, deliberately, and flagged. It is probably meant to be applied with bypass. |
+
+## 7. Where the rulebook and his code disagree
+
+**Status:** open · **Severity:** clarification. His code is followed in each case.
+
+| Rule | Player's Guide says | His code does |
+|---|---|---|
+| Natural 20 | "an unmodified roll of 20 is always a hit" | No such check: a natural 20 with a big enough penalty can miss. |
+| Grandmaster | The attack skill table stops at Master | Adds Grandmaster, but only on the Weapon Lore chart, for mastered weapons ("cannot set Grandmaster for standard Attack Chart so just use Master"). |
+| Axe Hammer speed | -- | Its speed is written `8(6)`, and his code reads any bracketed minimum speed as a *reload* time, so an Axe Hammer gets a 6-second reload. Probably meant as its thrusting speed. |

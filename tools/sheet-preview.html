@@ -15,6 +15,9 @@
 	.tabstrip button.active { background: #fdfbf6; font-weight: 600; }
 	.tab { display: none; }
 	.tab.active { display: block; }
+	.chat { max-width: 300px; margin: 18px auto; background: #f0ece2; border: 1px solid #b9b0a0;
+	        border-radius: 4px; padding: 8px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+	.chat-title { color: #d8d0c0; text-align: center; font-size: 12px; margin-top: 18px; }
 </style>
 
 <div class="frame imagine sheet actor character">
@@ -24,35 +27,38 @@
 		<div class="tabstrip">
 			<button data-t="attributes" class="active">Attributes</button>
 			<button data-t="skills">Skills</button>
+			<button data-t="combat">Combat</button>
 			<button data-t="equipment">Equipment</button>
 		</div>
 		<div id="tabs"></div>
 	</div>
 </div>
+<div class="chat-title">Chat card: the same character's attack</div>
+<div class="chat" id="chat"></div>
 
 <script type="module">
-// Standalone preview of the character sheet templates, rendered against a character that the
-// real data model has actually derived. Foundry is not present, so its globals are stubbed --
-// but the numbers on screen come from the same prepareDerivedData the system runs.
+// Standalone preview of the character sheet and attack card, rendered against a character the real
+// data model has derived, built from real extracted content: the race, class, weapons and armour are
+// the actual documents from src/packs/documents/. Foundry is not present, so its globals are
+// stubbed -- but every number on screen comes from the system's own code.
+//
+// Must be served over HTTP -- see tools/combat-test.html. Add ?tab=combat to open on a tab.
 globalThis.foundry = {
-	abstract: {
-		TypeDataModel: class {
-			constructor(data) { Object.assign(this, data); }
-			prepareBaseData() {}
-			prepareDerivedData() {}
-		}
-	},
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
 	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
 };
-// The character model reads the campaign's content rules. Null means everything is available.
 // For the preview, the Master's Manual is switched off, so its skills show as flagged.
 globalThis.game = { imagine: { getAvailabilityRules: () => ({
-	magicEnabled: true, magicSubsystems: {}, overrides: {},
-	sourcebooks: { "masters-manual": false } }) } };
+	magicEnabled: true, magicSubsystems: {}, overrides: {}, sourcebooks: { "masters-manual": false } }) } };
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+const R = await import("../module/combat/combat-rules.mjs");
 
 Handlebars.registerHelper("eq", (a, b) => a === b);
+Handlebars.registerHelper("gt", (a, b) => a > b);
+Handlebars.registerHelper("lt", (a, b) => a < b);
+Handlebars.registerHelper("gte", (a, b) => a >= b);
 Handlebars.registerHelper("localize", (k) => {
 	const names = { str: "Strength", agl: "Agility", vit: "Vitality", int: "Intelligence",
 		wis: "Wisdom", knw: "Knowledge", app: "Appearance", chm: "Charm", soc: "Social Class",
@@ -61,10 +67,29 @@ Handlebars.registerHelper("localize", (k) => {
 	return names[key] ?? key;
 });
 
-// --- a sample character: the one from his own preview.png, as far as we can reproduce it ---
-const ratings = { str: 19, agl: 18, vit: 18, int: 18, wis: 18, knw: 20,
-                  app: 14, chm: 15, soc: 15, aur: 18, pty: 13, wil: 20 };
+// --- real content -------------------------------------------------------------------
+const load = async (f) => (await (await fetch(`../src/packs/documents/${f}.json`)).json());
+const byName = (docs, n) => { const d = docs.find(x => x.name === n); if (!d) throw new Error("missing " + n); return structuredClone(d); };
+const [races, classes, weapons, armor] = await Promise.all(["races", "classes", "weapons", "armor"].map(load));
 
+const raceItem = byName(races, "Human(Civilized:Village)");
+const classItem = byName(classes, "Warrior");
+classItem.getTitleName = function (t) { const i = parseInt(t) - 1; const a = this.system.advancement.titles;
+                                        return (i < 0 || i >= a.length) ? "" : a[i]; };
+
+const sword = byName(weapons, "Bastard Sword");
+Object.assign(sword.system, { location: "equipped", quantity: 1, twoHanded: false });
+sword.id = "w1";
+const dagger = byName(weapons, "Dagger");
+Object.assign(dagger.system, { location: "carried", quantity: 1 });
+dagger.id = "w2";
+const padding = byName(armor, "Body Suit(Padding)");
+Object.assign(padding.system, { location: "equipped", quantity: 1 });
+const chain = byName(armor, "Body Suit(Chain)");
+Object.assign(chain.system, { location: "equipped", quantity: 1 });
+const tent = { id: "g5", name: "Tent", type: "equipment", system: { weight: 40, quantity: 1, location: "mount" } };
+
+// Skills: definitions stubbed, since starting bonuses are rolled per character.
 const skillSource = [
 	["Weapon Parry", "STR", "AGL", 12, 34, "class", "Player's Guide"],
 	["Body Parry", "AGL", "", 14, 28, "class", "Player's Guide"],
@@ -72,75 +97,41 @@ const skillSource = [
 	["Weapon Knowledge", "INT", "KNW", 11, 41, "class", "Player's Guide"],
 	["Weapon Lore", "INT", "KNW", 13, 19, "class", "Master's Manual"],
 	["Tracking", "WIS", "KNW", 14, 16, "racial", "Player's Guide"],
-	["Move Unseen", "AGL", "WIS", 15, 24, "racial", "Player's Guide"],
-	["Armoring", "STR", "KNW", 15, 30, "social", "Player's Guide"],
-	["Riding", "AGL", "CHM", 12, 26, "social", "Player's Guide"]
+	["Armoring", "STR", "KNW", 15, 30, "social", "Player's Guide"]
 ];
-
-const items = skillSource.map(([name, a1, a2, rating, bonus, category, book], i) => ({
+const skills = skillSource.map(([name, a1, a2, rating, bonus, category, book], i) => ({
 	id: "skill" + i, name, type: "skill",
-	system: { attr1: a1, attr2: a2, skillRating: rating, startingBonus: bonus,
+	system: { attr1: a1, attr2: a2, skillRating: rating, startingBonus: bonus, types: [],
 	          abilityBonus: 0, misc: 0, isCommon: false, category, sourcebook: book }
 }));
 
-const gear = [
-	{ id: "g1", name: "Bastard Sword", type: "weapon", system: { weight: 6, quantity: 1, location: "equipped" } },
-	{ id: "g2", name: "Chain Shirt", type: "armor", system: { weight: 25, quantity: 1, location: "equipped" } },
-	{ id: "g3", name: "Boots(Leather)", type: "equipment", system: { weight: 1, quantity: 1, location: "equipped" } },
-	{ id: "g4", name: "Rope(50')", type: "equipment", system: { weight: 8, quantity: 1, location: "carried" } },
-	{ id: "g5", name: "Tent", type: "equipment", system: { weight: 40, quantity: 1, location: "mount" } }
-];
-
-const raceItem = {
-	type: "race", name: "Human(Civilized)",
-	system: {
-		attributeMods: { str: 0, agl: 0, vit: 0, int: 0, wis: 0, knw: 0, app: 0, chm: 0, soc: 0, aur: 0, pty: 0, wil: 0 },
-		attributeLimits: { str: 20, agl: 20, vit: 20, int: 20, wis: 20, knw: 20, app: 20, chm: 20, soc: 20, aur: 20, pty: 20, wil: 20 },
-		endurance: { startFormula: "", startMod: 0, titleFormula: "", titleDice: "", titleMax: 0, titleMod: 0 },
-		characteristicMods: { perception: 0, affinity: 0, fortune: 0 },
-		resistanceMods: { magic: 0, illusion: 0, control: 0, poison: 0, disease: 0 },
-		movement: {
-			speedMultiplier: 1,
-			walk: { hourly: 6, tenSec: 60, oneSec: 6 },
-			jog: { hourly: 12, tenSec: 120, oneSec: 12 },
-			run: { hourly: 18, tenSec: 180, oneSec: 18 },
-			specialName: "", special: {}, jumpStand: 8, jumpUp: 3.5
-		},
-		formless: false, canSwim: true
-	}
-};
-
-const classItem = {
-	type: "class", name: "Warrior",
-	system: { classType: "Primary class",
-	          advancement: { titles: ["Recruit","Soldier","Veteran","Champion","Guardian","Knight",
-	                                  "Warlord","Battle Master","Battle Lord"], goalAttr1: "STR", goalAttr2: "AGL" } },
-	getTitleName(t) { const i = parseInt(t) - 1; const a = this.system.advancement.titles;
-	                  return (i < 0 || i >= a.length) ? "" : a[i]; }
-};
-
+// --- his preview.png character: Title 12 Warrior, attributes as on the screenshot -------------
+const ratings = { str: 19, agl: 18, vit: 18, int: 18, wis: 18, knw: 20,
+                  app: 14, chm: 15, soc: 15, aur: 18, pty: 13, wil: 20 };
 const attributes = {};
 for (const k of Object.keys(ratings)) attributes[k] = { rating: ratings[k], permMod: 0, tempMod: 0 };
 const characteristic = (titleBonus = 0) => ({ titleBonus, raceMod: 0, permMod: 0, tempMod: 0 });
 const resistance = () => ({ misc: 0, immune: false });
 
 const character = new ImagineCharacterData({
-	identity: { title: 9, goal: 35, exp: 386000, alignment: "Good (Active)", tendencies: "Moral", gender: "Male" },
+	identity: { title: 12, goal: 35, exp: 386000, alignment: "Good (Active)", tendencies: "Moral", gender: "Male" },
 	attributes,
 	characteristics: { endurance: characteristic(53), perception: characteristic(),
 	                   affinity: characteristic(), fortune: characteristic() },
 	resistances: { magic: resistance(), illusion: resistance(), control: resistance(),
 	               poison: resistance(), disease: resistance() },
-	body: { bodyType: "Humanoid", areas: [] },
+	body: { bodyType: "", wounds: { "Left Arm": 9, "Neck": 40 }, armorDamage: { "Upper Torso": 2 }, hide: 0 },
 	physical: { weight: 215 },
+	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
 	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
 });
-character.parent = { items: [...items, ...gear, raceItem, classItem], name: "Calanar Elfriend" };
+const allItems = [...skills, sword, dagger, padding, chain, tent, raceItem, classItem];
+character.parent = { items: allItems, name: "Calanar Elfriend" };
 character.prepareBaseData();
 character.prepareDerivedData();
 
-// --- build the same context the sheet class builds -------------------------------
+// --- the context the sheet class builds -------------------------------------------------
 const groups = [["Physical",["str","agl","vit"]],["Mental",["int","wis","knw"]],
                 ["Personal",["app","chm","soc"]],["Mystical",["aur","pty","wil"]]];
 const attrRows = [];
@@ -150,42 +141,71 @@ for (const [group, keys] of groups) for (const key of keys) {
 	                max: a.max, save: a.save,
 	                mods: Object.entries(a.mods ?? {}).map(([k, v]) => ({ key: k, value: v })) });
 }
-const skills = { class: [], racial: [], social: [] };
-for (const it of items) {
+const skillRows = { class: [], racial: [], social: [] };
+for (const it of skills) {
 	const s = it.system;
-	skills[s.category].push({ id: it.id, name: it.name, attr1: s.attr1, attr2: s.attr2,
+	skillRows[s.category].push({ id: it.id, name: it.name, attr1: s.attr1, attr2: s.attr2,
 		skillRating: s.skillRating, baseChance: s.baseChance, totalChance: s.totalChance,
-		sourcebook: s.sourcebook, available: s.available !== false,
-		unavailableReason: s.unavailableReason ?? "" });
+		sourcebook: s.sourcebook, available: s.available !== false, unavailableReason: s.unavailableReason ?? "" });
 }
-for (const k of Object.keys(skills)) skills[k].sort((a, b) => a.name.localeCompare(b.name));
+for (const k of Object.keys(skillRows)) skillRows[k].sort((a, b) => a.name.localeCompare(b.name));
+
+const weaponRows = [sword, dagger].map(w => ({
+	id: w.id, name: w.name, damage: w.system.damage,
+	speed: w.system.speedSpecial ? "Special" : R.getWeaponSpeed(w.system.speed, w.system.minSpeed, character.combat.weaponSpeedMod),
+	reload: w.system.reloadSpeed || "",
+	modes: ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available).map(m => ({ mode: m, mod: w.system[m].mod })),
+	equipped: w.system.location === "equipped"
+}));
 
 const ctx = {
 	actor: { name: "Calanar Elfriend", img: "" },
 	system: character,
 	attributes: attrRows,
-	skills,
-	gear
+	skills: skillRows,
+	gear: [sword, dagger, padding, chain, tent],
+	weapons: weaponRows
 };
 
-async function render(path, into) {
+async function render(path, context) {
 	const src = await (await fetch(path)).text();
-	into.innerHTML = Handlebars.compile(src)(ctx);
+	return Handlebars.compile(src)(context);
 }
-await render("../templates/actor/header.hbs", document.getElementById("header"));
+document.getElementById("header").innerHTML = await render("../templates/actor/header.hbs", ctx);
 const tabs = document.getElementById("tabs");
-for (const name of ["attributes", "skills", "equipment"]) {
+for (const name of ["attributes", "skills", "combat", "equipment"]) {
 	const div = document.createElement("div");
+	div.innerHTML = await render(`../templates/actor/tab-${name}.hbs`, ctx);
 	tabs.appendChild(div);
-	await render(`../templates/actor/tab-${name}.hbs`, div);
 }
-document.querySelectorAll("#tabs .tab")[0]?.classList.add("active");
+document.querySelector("#tabs .tab").classList.add("active");
 document.querySelectorAll(".tabstrip button").forEach(btn => {
 	btn.onclick = () => {
 		document.querySelectorAll(".tabstrip button").forEach(b => b.classList.remove("active"));
 		btn.classList.add("active");
-		document.querySelectorAll("#tabs .tab").forEach(t =>
-			t.classList.toggle("active", t.dataset.tab === btn.dataset.t));
+		document.querySelectorAll("#tabs .tab").forEach(t => t.classList.toggle("active", t.dataset.tab === btn.dataset.t));
 	};
 });
+const start = new URLSearchParams(location.search).get("tab");
+if (start) document.querySelector(`.tabstrip button[data-t="${start}"]`)?.click();
+
+// --- an attack card, resolved by the real rules --------------------------------------------
+// Natural 14 with the Bastard Sword's cut, against a target with a -3 defensive adjustment.
+const mods = R.getToHitModifiers({ mode: "cut", weapon: sword.system,
+	attacker: { meleeAttack: character.combat.meleeAttack, missileAttack: character.combat.missileAttack,
+	            meleeMisc: 0, missileMisc: 0 },
+	target: { defensiveAdjust: -3 }, situational: 0 });
+const result = R.resolveAttack({ natural: 14, mods: mods.total, skill: character.combat.attackSkill, calledShot: false });
+const strMod = R.getStrengthDamageMod(character.combat.meleeDamage, "cut", false);
+const rolled = 17 + strMod;   // sample dice total of 17 on 5d6+1
+const attack = {
+	weapon: sword.name, modeLabel: "Cut", actorName: "Calanar Elfriend", targetName: "Orc Raider",
+	aim: "Upper Torso", result, mods,
+	speed: R.getWeaponSpeed(sword.system.speed, sword.system.minSpeed, character.combat.weaponSpeedMod),
+	fumble: null,
+	damage: result.isHit ? { dice: sword.system.damage, str: strMod, magic: 0, misc: 0, rolled,
+	                         multiplier: 1, total: rolled, type: "Cutting" } : null,
+	applied: false, inCombat: true
+};
+document.getElementById("chat").innerHTML = await render("../templates/chat/attack-card.hbs", attack);
 </script>
