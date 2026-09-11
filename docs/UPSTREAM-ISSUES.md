@@ -91,3 +91,21 @@ Found while porting combat. In each case the Foundry port implements what the co
 | Natural 20 | "an unmodified roll of 20 is always a hit" | No such check: a natural 20 with a big enough penalty can miss. |
 | Grandmaster | The attack skill table stops at Master | Adds Grandmaster, but only on the Weapon Lore chart, for mastered weapons ("cannot set Grandmaster for standard Attack Chart so just use Master"). |
 | Axe Hammer speed | -- | Its speed is written `8(6)`, and his code reads any bracketed minimum speed as a *reload* time, so an Axe Hammer gets a 6-second reload. Probably meant as its thrusting speed. |
+
+## 8. Creature attribute cap uses different tiers than Character's, with no shared rationale found
+
+**Status:** open · **Severity:** question, may be intentional
+
+`handleCreatureFinish` (sheet-worker.js:174723-174729) caps a creature's attributes at 25/28/30 by `creature_level` (<10 / <15 / else). The already-ported Character cap (`getAttributeCap`, from Master's Manual) caps at 23/25/27/30 by `title` tier (0 / 1 / 11 / 16). A creature's "level" and a character's "title" may simply be different scales that were never meant to line up — but nothing in the code states that, and the numbers don't obviously correspond. Worth asking whether creature level 10/15 are meant to track any particular title threshold.
+
+## 9. `immunitylist["Cold"]` names itself "Frost"
+
+**Status:** open · **Severity:** minor, cosmetic
+
+`immunitylist["Cold"] = ["Frost", "", "", "Frost(Cold does not harm...)"]` (sheet-worker.js:177972) — the dictionary key is "Cold" but its own canonical name and description both say "Frost," and the disability list's related entries ("Frost Weakness", "Frost Sensitivity") consistently use "Frost." This looks like a leftover synonym rather than the deliberate case-only aliasing seen elsewhere (e.g. the three "360-degree vision" capitalization variants at lines 176214-176216, which are the same word). Not urgent; a one-line confirmation would settle whether "Cold" should just be renamed to "Frost" for consistency.
+
+## 10. Ability/Disability/Immunity dictionaries carry two numeric columns that are almost never consumed
+
+**Status:** open · **Severity:** design question for the Foundry port, not a bug in his sheet
+
+`abilitylist`, `disabilitylist` and `immunitylist` (sheet-worker.js:176213, 177698, 177965 — the creature-scale versions; smaller Character-only twins exist at 45725, 45903, 45984) each carry two numeric/dice-string value columns (`[1]`, `[2]`) alongside the description text (`[3]`). Their meaning is entry-specific rather than columnar (for `"Frost Sensitivity"`, `[1]` is a magic-resist penalty and `[2]` is "+1 damage per die"; for `"Acid Resistant"`, `[1]` is a damage multiplier and `[2]` is a magic-resist bonus). In practice, almost nothing in the sheet-worker actually reads `[1]`/`[2]` at calculation time — the handful of abilities that do have a mechanical effect (`"Enhanced Perception"`, `"Sense"/"Sensing"`, etc.) are instead detected by substring-matching the creature's flattened ability-name string in `calcAllCreatureCaracs` and similar functions, not by looking up these columns. So today the columns are effectively unused flavor text for all but a few hand-coded exceptions. Worth asking whether `[1]`/`[2]` were meant to eventually drive automatic effects generically (in which case the Foundry port should honor that intent) or whether they've always been just descriptive bookkeeping alongside the prose in `[3]`.
