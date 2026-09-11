@@ -32,8 +32,10 @@
 			</thead>
 			<tbody>
 				{{#each list as |skill|}}
-				<tr>
-					<td class="col-name">{{skill.name}}</td>
+				<tr class="{{#unless skill.available}}unavailable{{/unless}}"
+				    {{#unless skill.available}}data-tooltip="{{skill.unavailableReason}}"{{/unless}}>
+					<td class="col-name">{{skill.name}}{{#unless skill.available}}
+						<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{skill.unavailableReason}}"></i>{{/unless}}</td>
 					<td class="col-num muted">{{skill.attr1}}{{#if skill.attr2}}/{{skill.attr2}}{{/if}}</td>
 					<td class="col-num muted">{{skill.skillRating}}</td>
 					<td class="col-num derived">{{skill.baseChance}}%</td>

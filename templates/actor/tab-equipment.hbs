@@ -23,8 +23,10 @@
 		</thead>
 		<tbody>
 			{{#each gear as |item|}}
-			<tr>
-				<td class="col-name">{{item.name}}</td>
+			<tr class="{{#if (eq item.system.available false)}}unavailable{{/if}}"
+			    {{#if (eq item.system.available false)}}data-tooltip="{{item.system.unavailableReason}}"{{/if}}>
+				<td class="col-name">{{item.name}}{{#if (eq item.system.available false)}}
+					<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{item.system.unavailableReason}}"></i>{{/if}}</td>
 				<td class="col-num muted">{{item.type}}</td>
 				<td class="col-num">{{item.system.quantity}}</td>
 				<td class="col-num muted">{{item.system.weight}}</td>

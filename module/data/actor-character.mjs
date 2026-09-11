@@ -14,6 +14,7 @@
 //==================================================================================================================
 
 import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
+import { explainAvailability } from "../availability.mjs";
 
 const fields = foundry.data.fields;
 
@@ -274,6 +275,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
+		this._prepareAvailability();
 
 		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
 		//   body area maxima     -- needs the race item's body chart, and buildCharacterBody
@@ -283,6 +285,24 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		//   movement penalties   -- encumbrance is now calculated, but the penalty each band
 		//                           applies to movement has not been confirmed against his
 		//                           code yet, so it is not applied.
+	}
+
+	// This is the function which flags every item on the character that the campaign's
+	// content switches currently disallow.
+	//
+	// Items are flagged, never removed. If a Game Master switches a sourcebook or a kind of
+	// magic off mid-campaign, a player's existing skills and gear stay on their sheet, marked
+	// unavailable with the reason, rather than disappearing behind their back.
+	_prepareAvailability() {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return; }
+
+		var tmprules = game.imagine.getAvailabilityRules();
+		for (const tmpitem of tmpactor.items) {
+			var tmpresult = explainAvailability(tmpitem, tmprules);
+			tmpitem.system.available = tmpresult.available;
+			tmpitem.system.unavailableReason = tmpresult.reason;
+		}
 	}
 
 	// This is the function which totals carried weight and works out how encumbered the

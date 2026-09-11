@@ -1,0 +1,154 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG availability test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Tests for the content availability resolver.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/availability-test.html
+//
+// The resolver is pure -- the campaign's rules arrive as an argument -- so it runs here
+// without Foundry. The actor integration at the end stubs just enough of Foundry to prove
+// items on a character get flagged rather than removed.
+const A = await import("../module/availability.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+
+const skill = (name, types, sourcebook = "Player's Guide") =>
+	({ type: "skill", name, system: { types, sourcebook } });
+const cls = (name, sourcebook = "") => ({ type: "class", name, system: { sourcebook } });
+
+const allOn = { magicEnabled: true, magicSubsystems: {}, overrides: {}, sourcebooks: {} };
+const rules = (patch) => ({ ...allOn, ...patch });
+
+// --- sourcebook ids ----------------------------------------------------------------
+check("backtick apostrophe and real apostrophe share an id",
+	[A.getSourcebookId("Player`s Guide"), A.getSourcebookId("Player's Guide")],
+	["players-guide", "players-guide"]);
+check("multi-word book slug", A.getSourcebookId("Mysteries of the Planes"), "mysteries-of-the-planes");
+check("untagged content has no id", A.getSourcebookId(""), "");
+check("unknown-book marker has no id", A.getSourcebookId("?"), "");
+check("every declared sourcebook key is its own slug",
+	Object.entries(A.SOURCEBOOKS).filter(([id, label]) => id !== "custom" && A.getSourcebookId(label) !== id),
+	[]);
+
+// --- defaults ----------------------------------------------------------------------
+check("everything is available when nothing is switched off",
+	A.isItemAvailable(skill("Abasement", ["Magical"], "Mysteries of the Planes"), allOn), true);
+check("no rules at all means available",
+	A.isItemAvailable(skill("Acrobatics", ["Disciplined"]), null), true);
+check("a book never mentioned in settings defaults on",
+	A.isItemAvailable(skill("X", [], "Some Future Book"), rules({ sourcebooks: { "players-guide": false } })), true);
+
+// --- magic subsystems from skill types ---------------------------------------------
+check("Magical skill belongs to arcane", A.getItemMagicSubsystems(skill("a", ["Magical"])), ["arcane"]);
+check("Divine skill belongs to divine",  A.getItemMagicSubsystems(skill("a", ["Divine"])), ["divine"]);
+check("Magical,Divine skill belongs to both",
+	A.getItemMagicSubsystems(skill("Arch Ritual", ["Magical", "Divine"])), ["arcane", "divine"]);
+check("Disciplined skill belongs to none", A.getItemMagicSubsystems(skill("a", ["Disciplined"])), []);
+check("an item's own subsystem field wins",
+	A.getItemMagicSubsystems({ type: "rune", name: "r", system: { subsystem: "runes" } }), ["runes"]);
+
+// --- the master magic switch -------------------------------------------------------
+const noMagic = rules({ magicEnabled: false });
+check("master off hides Magical skills",  A.isItemAvailable(skill("Abasement", ["Magical"]), noMagic), false);
+check("master off hides Divine skills",   A.isItemAvailable(skill("Animal Shape", ["Divine"]), noMagic), false);
+check("master off hides Disciplined,Magical", A.isItemAvailable(skill("Anticipation", ["Disciplined", "Magical"]), noMagic), false);
+check("master off leaves mundane skills", A.isItemAvailable(skill("Acrobatics", ["Disciplined"]), noMagic), true);
+check("master off leaves classes alone",  A.isItemAvailable(cls("Warrior"), noMagic), true);
+check("master off explains itself",
+	A.explainAvailability(skill("Abasement", ["Magical"]), noMagic).reason,
+	"All magic is switched off in this campaign.");
+
+// --- individual subsystems ---------------------------------------------------------
+const noDivine = rules({ magicSubsystems: { divine: false } });
+check("divine off hides Divine skills",        A.isItemAvailable(skill("Animal Shape", ["Divine"]), noDivine), false);
+check("divine off leaves arcane skills",       A.isItemAvailable(skill("Abasement", ["Magical"]), noDivine), true);
+check("divine off hides a Magical,Divine skill (needs both)",
+	A.isItemAvailable(skill("Arch Ritual", ["Magical", "Divine"]), noDivine), false);
+check("runes off hides rune content",
+	A.isItemAvailable({ type: "rune", name: "Rune of Warding", system: { subsystem: "runes" } },
+	                  rules({ magicSubsystems: { runes: false } })), false);
+
+// --- sourcebooks -------------------------------------------------------------------
+const noMysteries = rules({ sourcebooks: { "mysteries-of-the-planes": false } });
+check("disabled book hides its content",
+	A.isItemAvailable(skill("Abasement", ["Magical"], "Mysteries of the Planes"), noMysteries), false);
+check("disabled book leaves other books",
+	A.isItemAvailable(skill("Acrobatics", ["Disciplined"], "Player's Guide"), noMysteries), true);
+check("disabled book matches his backtick spelling",
+	A.isItemAvailable(skill("X", [], "Player`s Guide"), rules({ sourcebooks: { "players-guide": false } })), false);
+check("untagged content survives every book being off",
+	A.isItemAvailable(cls("Warrior", ""), rules({ sourcebooks: Object.fromEntries(
+		Object.keys(A.SOURCEBOOKS).map(k => [k, false])) })), true);
+
+// --- overrides ---------------------------------------------------------------------
+check("forbidding one class",
+	A.isItemAvailable(cls("Monk"), rules({ overrides: { "class:Monk": false } })), false);
+check("forbidding one class leaves the rest",
+	A.isItemAvailable(cls("Warrior"), rules({ overrides: { "class:Monk": false } })), true);
+check("override key is type-specific (a skill called Monk is untouched)",
+	A.isItemAvailable(skill("Monk", []), rules({ overrides: { "class:Monk": false } })), true);
+check("allow override lets one entry back in from a disabled book",
+	A.isItemAvailable(skill("Abasement", [], "Mysteries of the Planes"),
+	                  rules({ sourcebooks: { "mysteries-of-the-planes": false },
+	                          overrides: { "skill:Abasement": true } })), true);
+check("allow override cannot beat the master magic switch",
+	A.isItemAvailable(skill("Abasement", ["Magical"]),
+	                  rules({ magicEnabled: false, overrides: { "skill:Abasement": true } })), false);
+check("allow override cannot beat a subsystem switch",
+	A.isItemAvailable(skill("Animal Shape", ["Divine"]),
+	                  rules({ magicSubsystems: { divine: false }, overrides: { "skill:Animal Shape": true } })), false);
+check("forbid override explains itself",
+	A.explainAvailability(cls("Monk"), rules({ overrides: { "class:Monk": false } })).reason,
+	"Monk is disallowed in this campaign.");
+
+// --- actor integration: flagged, never removed --------------------------------------
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(d) { Object.assign(this, d); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => noMagic } };
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+const attributes = {};
+for (const k of ["str","agl","vit","int","wis","knw","app","chm","soc","aur","pty","wil"])
+	attributes[k] = { rating: 12, permMod: 0, tempMod: 0 };
+const ch = () => ({ titleBonus: 0, raceMod: 0, permMod: 0, tempMod: 0 });
+const rs = () => ({ misc: 0, immune: false });
+const items = [
+	{ type: "skill", name: "Abasement", system: { attr1: "AUR", attr2: "WIL", skillRating: 18, types: ["Magical"],
+	  startingBonus: 5, abilityBonus: 0, misc: 0, isCommon: false, category: "class", sourcebook: "Mysteries of the Planes" } },
+	{ type: "skill", name: "Acrobatics", system: { attr1: "AGL", attr2: "", skillRating: 16, types: ["Disciplined"],
+	  startingBonus: 5, abilityBonus: 0, misc: 0, isCommon: false, category: "class", sourcebook: "Player's Guide" } }
+];
+const actor = new ImagineCharacterData({
+	identity: { title: 5 }, attributes,
+	characteristics: { endurance: ch(), perception: ch(), affinity: ch(), fortune: ch() },
+	resistances: { magic: rs(), illusion: rs(), control: rs(), poison: rs(), disease: rs() },
+	body: { bodyType: "Humanoid", areas: [] }, physical: { weight: 0 },
+	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "" }
+});
+actor.parent = { items };
+actor.prepareBaseData();
+actor.prepareDerivedData();
+
+check("magical skill on a character is flagged unavailable", items[0].system.available, false);
+check("the flag carries its reason", items[0].system.unavailableReason, "All magic is switched off in this campaign.");
+check("mundane skill on the same character stays available", items[1].system.available, true);
+check("the flagged skill is still on the character, not removed", items.length, 2);
+check("the flagged skill still has its chance worked out", typeof items[0].system.totalChance, "number");
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${results.length - passed} failed`;
+</script>

@@ -111,7 +111,11 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 				skillRating: tmpsys.skillRating,
 				baseChance: tmpsys.baseChance,
 				totalChance: tmpsys.totalChance,
-				sourcebook: tmpsys.sourcebook
+				sourcebook: tmpsys.sourcebook,
+				// Flagged rather than hidden: a skill the campaign's switches disallow stays
+				// visible, with the reason, so nothing vanishes from a player's sheet.
+				available: tmpsys.available !== false,
+				unavailableReason: tmpsys.unavailableReason ?? ""
 			};
 			if (tmpout[tmpsys.category]) { tmpout[tmpsys.category].push(tmprow); }
 		}

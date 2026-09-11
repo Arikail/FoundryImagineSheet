@@ -44,9 +44,15 @@ globalThis.foundry = {
 	},
 	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
 };
+// The character model reads the campaign's content rules. Null means everything is available.
+// For the preview, the Master's Manual is switched off, so its skills show as flagged.
+globalThis.game = { imagine: { getAvailabilityRules: () => ({
+	magicEnabled: true, magicSubsystems: {}, overrides: {},
+	sourcebooks: { "masters-manual": false } }) } };
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 
+Handlebars.registerHelper("eq", (a, b) => a === b);
 Handlebars.registerHelper("localize", (k) => {
 	const names = { str: "Strength", agl: "Agility", vit: "Vitality", int: "Intelligence",
 		wis: "Wisdom", knw: "Knowledge", app: "Appearance", chm: "Charm", soc: "Social Class",
@@ -149,7 +155,8 @@ for (const it of items) {
 	const s = it.system;
 	skills[s.category].push({ id: it.id, name: it.name, attr1: s.attr1, attr2: s.attr2,
 		skillRating: s.skillRating, baseChance: s.baseChance, totalChance: s.totalChance,
-		sourcebook: s.sourcebook });
+		sourcebook: s.sourcebook, available: s.available !== false,
+		unavailableReason: s.unavailableReason ?? "" });
 }
 for (const k of Object.keys(skills)) skills[k].sort((a, b) => a.name.localeCompare(b.name));
 

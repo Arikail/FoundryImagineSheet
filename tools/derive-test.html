@@ -23,6 +23,8 @@ globalThis.foundry = {
 	},
 	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
 };
+// The character model reads the campaign's content rules. Null means everything is available.
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 

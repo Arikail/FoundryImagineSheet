@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG availability window preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; font-size: 13px; }
+	.frame { max-width: 580px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; }
+	.window-content { padding: 12px 14px; }
+	input[type=text], select { font: inherit; padding: 2px 4px; }
+	.footer { text-align: right; padding-top: 6px; }
+</style>
+<div class="frame imagine availability-config">
+	<div class="frame-title">Imagine RPG &mdash; Content Availability (preview)</div>
+	<div class="window-content"><div id="body"></div>
+		<div class="footer"><button type="button">Save</button></div></div>
+</div>
+<script type="module">
+// Renders the availability window's template with a sample draft, to check the layout.
+// Must be served over HTTP -- see tools/availability-test.html.
+const A = await import("../module/availability.mjs");
+Handlebars.registerHelper("checked", v => v ? "checked" : "");
+const draft = { magicEnabled: true, magicSubsystems: { runes: false, divine: false },
+                sourcebooks: { "masters-manual": false }, overrides: { "class:Monk": false, "skill:Abasement": true } };
+const ctx = {
+	magicEnabled: draft.magicEnabled,
+	subsystems: Object.entries(A.MAGIC_SUBSYSTEMS).map(([id, d]) =>
+		({ id, label: d.label, enabled: draft.magicSubsystems[id] !== false })),
+	sourcebooks: Object.entries(A.SOURCEBOOKS).map(([id, label]) =>
+		({ id, label, enabled: draft.sourcebooks[id] !== false })),
+	overrides: Object.entries(draft.overrides).map(([key, allow], index) =>
+		({ index, key, type: key.split(":")[0], name: key.slice(key.indexOf(":") + 1), allow })),
+	overrideTypes: ["skill", "race", "class", "weapon", "armor", "equipment"]
+};
+const src = await (await fetch("../templates/apps/availability-config.hbs")).text();
+document.getElementById("body").innerHTML = Handlebars.compile(src)(ctx);
+</script>

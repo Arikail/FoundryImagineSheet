@@ -1,0 +1,88 @@
+{{!--
+	Content Availability window. One root element, as the framework requires of every PART.
+
+	Three sections, in the order the rules are applied: magic switches first because they are
+	a ceiling nothing else lifts, then sourcebooks, then individual overrides.
+--}}
+<div class="imagine-availability">
+
+	<fieldset>
+		<legend>Magic</legend>
+		<p class="hint">The master switch overrides everything below it, including individual
+		overrides. With magic off, no magical or divine skill and no magic subsystem content can
+		be used, whatever else is set.</p>
+
+		<label class="master-switch">
+			<input type="checkbox" name="magicEnabled" {{checked magicEnabled}}>
+			<strong>Magic is available in this campaign</strong>
+		</label>
+
+		<div class="switch-grid {{#unless magicEnabled}}dimmed{{/unless}}">
+			{{#each subsystems as |sub|}}
+			<label>
+				<input type="checkbox" name="magicSubsystems.{{sub.id}}" {{checked sub.enabled}}>
+				{{sub.label}}
+			</label>
+			{{/each}}
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Sourcebooks</legend>
+		<p class="hint">Switching a book off removes its content from use. Content that names no
+		book is unaffected here, but can still be forbidden individually below.</p>
+
+		<div class="switch-grid">
+			{{#each sourcebooks as |book|}}
+			<label>
+				<input type="checkbox" name="sourcebooks.{{book.id}}" {{checked book.enabled}}>
+				{{book.label}}
+			</label>
+			{{/each}}
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Individual Overrides</legend>
+		<p class="hint">Allow or forbid one specific item, whatever its sourcebook says. This is how
+		a single class is disallowed in a campaign. Overrides cannot re-enable anything a magic
+		switch has turned off.</p>
+
+		{{#if overrides.length}}
+		<table class="override-table">
+			<thead><tr><th>Type</th><th>Name</th><th>Rule</th><th></th></tr></thead>
+			<tbody>
+				{{#each overrides as |row|}}
+				<tr>
+					<td>{{row.type}}</td>
+					<td>{{row.name}}</td>
+					<td>
+						<select name="overrides.{{row.index}}.allow">
+							<option value="allow" {{#if row.allow}}selected{{/if}}>Allowed</option>
+							<option value="forbid" {{#unless row.allow}}selected{{/unless}}>Forbidden</option>
+						</select>
+					</td>
+					<td><button type="button" data-action="removeOverride" data-index="{{row.index}}"
+					            aria-label="Remove override for {{row.name}}">
+						<i class="fa-solid fa-trash"></i></button></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{else}}
+		<p class="empty">No overrides.</p>
+		{{/if}}
+
+		<div class="override-add">
+			<select name="newOverrideType">
+				{{#each overrideTypes as |t|}}<option value="{{t}}">{{t}}</option>{{/each}}
+			</select>
+			<input type="text" name="newOverrideName" placeholder="Exact item name, e.g. Monk">
+			<select name="newOverrideAllow">
+				<option value="forbid">Forbid</option>
+				<option value="allow">Allow</option>
+			</select>
+			<button type="button" data-action="addOverride"><i class="fa-solid fa-plus"></i> Add</button>
+		</div>
+	</fieldset>
+</div>

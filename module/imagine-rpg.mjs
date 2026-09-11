@@ -7,9 +7,9 @@
 // and the printed rulebooks disagree, the Roll20 sheet is the source of truth -- see
 // docs/DECISIONS.md.
 //
-// Layer 0 status: data model schemas only. Derived values (attribute saves and modifiers,
-// Endurance, Shock, body area maxima, skill chances) are documented in the schemas and in
-// docs/DATA-MODEL.md section 9 but are NOT implemented yet.
+// Status: character and item data models with derived values, a character sheet, a runtime
+// content importer and the content availability switches. Not yet built: combat, the creature
+// actor, body area maxima and the magic subsystems. See docs/PROGRESS.md.
 //==================================================================================================================
 
 import ImagineCharacterData from "./data/actor-character.mjs";
@@ -21,6 +21,12 @@ import ImagineArmorData from "./data/item-armor.mjs";
 import ImagineEquipmentData from "./data/item-equipment.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
+import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
+import {
+	SOURCEBOOKS, MAGIC_SUBSYSTEMS,
+	registerAvailabilitySettings, registerAvailabilityEnforcement,
+	getAvailabilityRules, explainAvailability
+} from "./availability.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -28,18 +34,18 @@ export const IMAGINE = {
 	// The twelve attributes, in the order the Player's Guide presents them, grouped
 	// physical / mental / personal / mystical.
 	attributes: {
-		str: "IMAGINE.Attribute.Strength",
-		agl: "IMAGINE.Attribute.Agility",
-		vit: "IMAGINE.Attribute.Vitality",
-		int: "IMAGINE.Attribute.Intelligence",
-		wis: "IMAGINE.Attribute.Wisdom",
-		knw: "IMAGINE.Attribute.Knowledge",
-		app: "IMAGINE.Attribute.Appearance",
-		chm: "IMAGINE.Attribute.Charm",
-		soc: "IMAGINE.Attribute.SocialClass",
-		aur: "IMAGINE.Attribute.Aura",
-		pty: "IMAGINE.Attribute.Piety",
-		wil: "IMAGINE.Attribute.WillForce"
+		str: "IMAGINE.Attribute.str",
+		agl: "IMAGINE.Attribute.agl",
+		vit: "IMAGINE.Attribute.vit",
+		int: "IMAGINE.Attribute.int",
+		wis: "IMAGINE.Attribute.wis",
+		knw: "IMAGINE.Attribute.knw",
+		app: "IMAGINE.Attribute.app",
+		chm: "IMAGINE.Attribute.chm",
+		soc: "IMAGINE.Attribute.soc",
+		aur: "IMAGINE.Attribute.aur",
+		pty: "IMAGINE.Attribute.pty",
+		wil: "IMAGINE.Attribute.wil"
 	},
 
 	// Skill types as they appear in skilldict. Magical and Divine are the two the
@@ -71,6 +77,8 @@ Hooks.once("init", function () {
 	console.log("Imagine RPG | Initialising system");
 
 	CONFIG.IMAGINE = IMAGINE;
+	CONFIG.IMAGINE.sourcebooks = SOURCEBOOKS;
+	CONFIG.IMAGINE.magicSubsystems = MAGIC_SUBSYSTEMS;
 
 	// Register the data models against the document subtypes declared in system.json.
 	CONFIG.Actor.dataModels.character = ImagineCharacterData;
@@ -102,7 +110,9 @@ Hooks.once("init", function () {
 	// Exposed so the content import can be run from a macro or the console at any time,
 	// not only when first prompted:  game.imagine.importContent()
 	game.imagine = {
-		importContent: importAllContent
+		importContent: importAllContent,
+		getAvailabilityRules: getAvailabilityRules,
+		explainAvailability: explainAvailability
 	};
 
 	// Records whether the content has ever been imported into this world, so the first-launch
@@ -112,6 +122,21 @@ Hooks.once("init", function () {
 		config: false,
 		type: Boolean,
 		default: false
+	});
+
+	// @MARKER CONTENT AVAILABILITY
+	// Sourcebook and magic switches, individual overrides, and the check that stops disallowed
+	// content being added to a character. See module/availability.mjs.
+	registerAvailabilitySettings();
+	registerAvailabilityEnforcement();
+
+	game.settings.registerMenu("imagine-rpg", "availabilityMenu", {
+		name: "Content Availability",
+		label: "Configure",
+		hint: "Switch sourcebooks and magic on or off for this campaign, and allow or forbid individual items such as a class.",
+		icon: "fa-solid fa-book-open",
+		type: ImagineAvailabilityConfig,
+		restricted: true
 	});
 });
 
