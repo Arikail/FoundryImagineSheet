@@ -153,3 +153,13 @@ The `alternateHead` field is removed.
 2. Powers vs. Attacks: one item type or two, given Powers sometimes resolve through the attack-chart machinery.
 3. Whether a creature needs an owner/relationship field for the "tamed creature" case implied by `tame_bonus` in the Affinity formula.
 4. The attribute-cap tier reconciliation (`UPSTREAM-ISSUES.md` item 8) is the developer's call, not ours to guess at.
+
+### 2026-09-11 — Creature schema: the three open design calls, resolved
+
+**Decisions**, each the user's explicit call, closing the open questions from the audit entry above:
+
+1. **Abilities/Disabilities/Immunities are plain descriptive items.** They get a name and description field, looked up for display exactly like his sheet does today — a faithful port, not an upgrade. Any future mechanical effect is added later as an explicit, individually-authored Active Effect on that specific item, never generated automatically from the dictionary's `[1]`/`[2]` columns. This matches how Skills already work and keeps the port honest to what his sheet actually does (see the "Ability/Disability/Immunity dictionaries" finding above and `UPSTREAM-ISSUES.md` item 10).
+2. **Powers and Attacks are two separate item types.** Even though `usePower` sometimes resolves a Power through the same attack-chart threshold fields `handleCreatureAttack` uses, the two stay conceptually distinct items — an Attack is a weapon or natural-weapon strike; a Power is a limited-use special ability that may, internally, roll against the attack chart. Mirrors his sheet's own separately-authored data for each.
+3. **The tamed-creature/owner-relationship concept (the `tame_bonus` term in the Affinity formula) is deferred.** This pass builds the stat-block fields only; owner-relationship modeling (taming, loyalty, etc.) is left for a later pass, consistent with the project's core-first phasing.
+
+**Model choice:** the user picked **Fable** for the real schema/rules implementation (per the working protocol's model check-in). This research-and-decisions pass was done on Sonnet, which the protocol allows for research/planning; the actual `module/data/actor-creature.mjs` and its sheet are Fable's to write. **A conversation window running as Sonnet should not write that code** — hand off to a window running as Fable instead.
