@@ -4,7 +4,7 @@ Converting the **Imagine Role Playing System™** from its Roll20 custom charact
 
 ## Source material
 
-- `ImagineRoll20CharacterSheet-main/` — the original Roll20 sheet export (HTML/CSS/sheet.json). Logic-less: no JavaScript/sheet-workers, all computation was manual or never implemented. Two actor types (Character, Creature), 10 tabs, 20+ repeating item types for magic/crafting subsystems.
+- `ImagineRoll20CharacterSheet-main/` — the original Roll20 sheet export (HTML/CSS/sheet.json). Two actor types (Character, Creature), 10 tabs, 20+ repeating item types for magic/crafting subsystems. The HTML embeds a 180k-line `<script type="text/worker">` block — his actual computation code — extracted to `docs/reference/sheet-worker.js`. (An early audit wrongly called the sheet "logic-less"; see `DECISIONS.md`.)
 **The rulebook text is local-only and deliberately not committed** (see `.gitignore`). This repository is public, and permission to build a Foundry conversion is not permission to republish four commercial books. Regenerate from your own PDFs when needed:
 
 ```
