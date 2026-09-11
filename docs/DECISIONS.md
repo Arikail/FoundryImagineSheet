@@ -129,6 +129,8 @@ The `alternateHead` field is removed.
 
 ### 2026-09-11 — Creature/NPC audit findings (research pass, before schema design)
 
+> **Several statements in this entry are wrong.** They came from research summaries that were logged before being checked against the source. Read "CORRECTION: creature audit findings, checked against the source" below before relying on anything here.
+
 **What was done:** Two research passes, one over the Roll20 HTML's creature sheet (lines 57576-92926, ~35,352 lines across 10 sub-tabs), one over `sheet-worker.js`'s `// @MARKER CREATURE SPECIFIC FUNCTIONS BELOW` section (lines 174658-180370) plus the shared functions elsewhere that branch on creature vs. character. No schema written yet — this logs what was confirmed, so the eventual schema design starts from fact rather than re-deriving it.
 
 **Character vs. Creature is a hand-rolled toggle, not a Roll20-native distinction.** `sheet.json` declares nothing about it. The developer built his own: a `attr_which_sheet` dropdown ("Character Sheet" / "Creature Sheet") sets `attr_overall_sheet` to `main_character` or `main_creature`, which gates two entirely separate `<div>` bodies via CSS classes, each with its own independent tab system (`attr_sheetTab` vs `attr_sheetTab2`). This maps cleanly onto Foundry's real actor-type system — nothing about the split needs to be preserved as ambiguous.
@@ -163,3 +165,37 @@ The `alternateHead` field is removed.
 3. **The tamed-creature/owner-relationship concept (the `tame_bonus` term in the Affinity formula) is deferred.** This pass builds the stat-block fields only; owner-relationship modeling (taming, loyalty, etc.) is left for a later pass, consistent with the project's core-first phasing.
 
 **Model choice:** the user picked **Fable** for the real schema/rules implementation (per the working protocol's model check-in). This research-and-decisions pass was done on Sonnet, which the protocol allows for research/planning; the actual `module/data/actor-creature.mjs` and its sheet are Fable's to write. **A conversation window running as Sonnet should not write that code** — hand off to a window running as Fable instead.
+
+### 2026-09-11 — CORRECTION: creature audit findings, checked against the source
+
+The audit entry above was written from two research summaries without being checked line by line. A review pass (run on Opus) checked each of its mechanical claims against `sheet-worker.js` and the HTML. Incidental details, such as how many lines the magic tab runs to, were not rechecked. Most held up: the hand-rolled sheet toggle, the 12 shared attributes and `getAttribSave`, flat resistances with modifiers and the "Immune" check, the 25/28/30 level cap, the attack chart table matching `ATTACK_CHARTS` row for row, the zone ladder and fumble handling, the `|`/`@`/`^` attack encoding, the non-physical attack shapes sized from Endurance, the 45 static body charts matching `BODY_CHARTS` byte for byte, identical immunity lists, and the creature-type enum. The following did not hold up.
+
+**Where the creature code lives.** `rebuildRepeatingBodyRows` (line 178211) and `createBodyAreas` (180208) are *inside* the creature marker section, not outside it, although Character code calls them too. The marker marks where he put code, not what it is used for. `checkTotalWounds` (121709) branches on `creature_type` to pick the **body type** field, not the Endurance field. `rebuildRepeatingBodyRows` means to pick the Endurance field, but it never fetches `creature_type`, so its creature branch never runs (`UPSTREAM-ISSUES.md` item 12).
+
+**Endurance, Hide and Shock are copied into the shared fields.** `handleCreatureFinish` writes the creature's figures to `creature_end`/`creature_hide`/`creature_shock` *and* to Character's `endurance`/`hide`/`shock` (lines 174945-174950). That is how the shared combat header and body code serve both sheets.
+
+**Characteristics, precisely** (`calcAllCreatureCaracs`, 178346; the same arithmetic runs in `handleCreatureFinish`):
+- Endurance = the entered figure + the temporary Endurance modifier. Hide = the entered figure. Shock = the entered figure, or "Immune" if it contains "imm", or, if zero, the entered Endurance × 3 (before the temporary modifier).
+- Perception = average(INT, WIS, KNW) rounded up with `+.99`, + level, +10 for "Enhanced Perception", +5 each for the skills Smell, Listen and Life Sense, and +5 per ability whose name contains "Sense" or "Sensing" (Life Sense counted once).
+- Affinity = average(APP, CHM, SOC), or average(APP, CHM) when Social Class is 0, + **level × 2** (not level), +10 for "Enhanced Affinity", + the tame bonus.
+- Fortune = average(AUR, PTY, WIL) + level, +10 for "Enhanced Fortune".
+- Then each gets its temporary modifier.
+- All three averages use the creature's **as-built** attributes (`new_intelligence` and so on), not its current ones. A temporary change to a creature's Intelligence does not move its Perception. Character works the other way: an effect on an attribute cascades into everything derived from it.
+
+**Attacks.**
+- A Touch attack is *not* resolved without a roll. It rolls d20 plus the Agility missile modifier, and touches on 10 or more unless the die shows 1 (`handleTouchAttack`, 67731).
+- Only Direct, Gaze and Voice skip the attack chart. Cloud and Cone still roll on it.
+- Missile, Glob and Bolt use missile modifiers; everything else uses melee.
+- Each attack can carry up to three effect blocks after its main block.
+- His creature to-hit arithmetic has a precedence bug that normally wipes the Strength or Agility modifier (`UPSTREAM-ISSUES.md` item 11). The port should follow `handlePhysicalAttacks`, which sums each modifier separately.
+
+**Body charts.** The body type is not the whole story. A creature's body chart is a stored, editable list (`new_bodyarea_list`). The configurator seeds it from `getBodyList` and lets the Game Master add or remove areas, and "Custom" is a body type (lines 22291-22361). The creature schema therefore has to store its own chart, not only a body type to look up. Separately, five insect charts write `Vital:2` without the `x`, which currently gives those areas x1 (`UPSTREAM-ISSUES.md` item 9).
+
+**The ability dictionaries are not just flavour text.** That was true of the creature path only. The racial copies drive a hand-written switch (`setTempRacialAbilities`, 46293, and its disability and immunity twins) that sets a flag per ability and reads `[1]`/`[2]` for hide values, infravision distance and others. The creature path never runs it (`UPSTREAM-ISSUES.md` item 10). The two lists have also drifted apart in names and values. The creature ability list has **1,114** entries (1,119 lines, because 5 keys repeat with identical rows), not 1,119.
+
+**Powers are innate spells and invocations.** A Power is *not* authored independently of any dictionary. `usePower` (177399) looks its name up in the spell dictionary, then the invocation dictionary, and does nothing if it is neither. It casts with the creature's power level, which equals its level, passed in where a caster's Aura (for a spell) or total Piety Control (for an invocation) would go. The side chances his casting code checks are fixed at 100: aura absorption for spells, and bless, blasphemy and divine knowledge for invocations. It uses up a use unless the Power is "Infinite". The attack-chart fields are passed in because attack spells roll on the chart through `doMagicalAttack`, exactly as they do when a Character casts them. It is *not* because Powers overlap with Attacks. The same `usePower` also runs magic-item and divine-item powers.
+
+**Effect on the three design decisions above.** All three still stand:
+1. *Abilities as plain descriptive items* fits even better than the original reasoning said. His racial switch *is* per-ability, hand-written mechanics, which is exactly what "an individually authored Active Effect on that specific item" ports to. For creatures, the faithful port is display only, plus the few substring bonuses computed as derived data. One compendium will need a decision on which list's row wins where they disagree.
+2. *Powers and Attacks as separate item types* is now clear-cut, since a Power is a spell or invocation rather than a kind of attack. It has a scope consequence: a Power can be stored and shown now (name, uses, whether it targets self), but *using* one needs the spell and invocation engine, which is Layer 4 and deferred.
+3. *Tamed creatures deferred* is unchanged.

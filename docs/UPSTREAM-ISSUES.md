@@ -92,20 +92,67 @@ Found while porting combat. In each case the Foundry port implements what the co
 | Grandmaster | The attack skill table stops at Master | Adds Grandmaster, but only on the Weapon Lore chart, for mastered weapons ("cannot set Grandmaster for standard Attack Chart so just use Master"). |
 | Axe Hammer speed | -- | Its speed is written `8(6)`, and his code reads any bracketed minimum speed as a *reload* time, so an Axe Hammer gets a 6-second reload. Probably meant as its thrusting speed. |
 
-## 8. Creature attribute cap uses different tiers than Character's, with no shared rationale found
+## 8. Creature attribute maximums follow a different scale from Character's
 
 **Status:** open · **Severity:** question, may be intentional
 
-`handleCreatureFinish` (sheet-worker.js:174723-174729) caps a creature's attributes at 25/28/30 by `creature_level` (<10 / <15 / else). The already-ported Character cap (`getAttributeCap`, from Master's Manual) caps at 23/25/27/30 by `title` tier (0 / 1 / 11 / 16). A creature's "level" and a character's "title" may simply be different scales that were never meant to line up — but nothing in the code states that, and the numbers don't obviously correspond. Worth asking whether creature level 10/15 are meant to track any particular title threshold.
+`handleCreatureFinish` (sheet-worker.js:174723-174753) sets every attribute maximum, and every magical maximum, to 25, 28 or 30 by `creature_level` (under 10 / under 15 / otherwise). His Character path works differently: maximums start at the race's limits (`str_tmp_limit` etc., line 8099) and `setArchMortalAttributesMax` lifts them all to 27 at title 11 (line 27549). The two may simply be separate scales, since a creature's level is not a character's title, but nothing in the code says so and the numbers do not line up (28 has no Character equivalent). Worth asking whether creature levels 10 and 15 are meant to correspond to any title.
 
-## 9. `immunitylist["Cold"]` names itself "Frost"
+## 9. Five insect body charts write a torso multiplier without its "x"
 
-**Status:** open · **Severity:** minor, cosmetic
+**Status:** open · **Severity:** data typo, probably understates Endurance
 
-`immunitylist["Cold"] = ["Frost", "", "", "Frost(Cold does not harm...)"]` (sheet-worker.js:177972) — the dictionary key is "Cold" but its own canonical name and description both say "Frost," and the disability list's related entries ("Frost Weakness", "Frost Sensitivity") consistently use "Frost." This looks like a leftover synonym rather than the deliberate case-only aliasing seen elsewhere (e.g. the three "360-degree vision" capitalization variants at lines 176214-176216, which are the same word). Not urgent; a one-line confirmation would settle whether "Cold" should just be renamed to "Frost" for consistency.
+Every body area in every other chart writes its multiplier as `x1`, `x2`, `x1/2` and so on. Five charts in `getBodyList` (sheet-worker.js:175002 onward) instead write `Vital:2` for their thorax sections: `Prothorax`, `Mesathorax` and `Metathorax` in **Giant Insect** and **Giant Insect(Wings)**, and `Thorax` in **Insectoid**, **Insectoid(Wings)** and **Insectoid(Wings/Stinger)**.
 
-## 10. Ability/Disability/Immunity dictionaries carry two numeric columns that are almost never consumed
+`createBodyAreas` (line 180208) looks for `"x2"`, `"x3"` and so on, so `Vital:2` matches nothing and `tempMulti` is never assigned for that area. Because `tempMulti` is an implicit global, it keeps the multiplier of the *previous* area. In all nine cases that area is `x1`, so each thorax section currently gets x1 Endurance.
 
-**Status:** open · **Severity:** design question for the Foundry port, not a bug in his sheet
+The evident intent is x2: the thorax is the insect's torso, and torso sections are x2 in every other chart (`Upper Torso(Vital:x2)`, `Abdomen(Vital:x2)`). The Foundry port reads the same data and also produces x1, so the two agree today. Not patched, because correcting it changes his game data (same reasoning as item 1). If he confirms x2, it is a five-line fix in his data and the port's tables regenerate from it.
 
-`abilitylist`, `disabilitylist` and `immunitylist` (sheet-worker.js:176213, 177698, 177965 — the creature-scale versions; smaller Character-only twins exist at 45725, 45903, 45984) each carry two numeric/dice-string value columns (`[1]`, `[2]`) alongside the description text (`[3]`). Their meaning is entry-specific rather than columnar (for `"Frost Sensitivity"`, `[1]` is a magic-resist penalty and `[2]` is "+1 damage per die"; for `"Acid Resistant"`, `[1]` is a damage multiplier and `[2]` is a magic-resist bonus). In practice, almost nothing in the sheet-worker actually reads `[1]`/`[2]` at calculation time — the handful of abilities that do have a mechanical effect (`"Enhanced Perception"`, `"Sense"/"Sensing"`, etc.) are instead detected by substring-matching the creature's flattened ability-name string in `calcAllCreatureCaracs` and similar functions, not by looking up these columns. So today the columns are effectively unused flavor text for all but a few hand-coded exceptions. Worth asking whether `[1]`/`[2]` were meant to eventually drive automatic effects generically (in which case the Foundry port should honor that intent) or whether they've always been just descriptive bookkeeping alongside the prose in `[3]`.
+## 10. Creature abilities never get the mechanical treatment racial abilities do, and the two lists disagree
+
+**Status:** open · **Severity:** question; affects how creatures play, and which list the port builds from
+
+There are two copies of each dictionary: a Character-side one used for racial abilities (`getRacialAbilityDetails`, `getRacialDisabilityDetails`, `getRacialImmunityDetails`, sheet-worker.js:45721, 45899, 45984) and a larger creature-side one (`getCreatureAbilityDetails`, `getCreatureDisabilityDetails`, `getCreatureImmunityDetails`, lines 176209, 177693, 177961). Columns are canonical name `[0]`, two values `[1]`/`[2]` whose meaning varies by entry, and description `[3]`.
+
+**The Character path uses them mechanically.** `setTempRacialAbilities` (line 46293) walks a race's abilities, switches on each canonical name `[0]`, sets a `tmp_abilities_*` flag per ability, and reads `[1]`/`[2]` where they carry a number: hide armour value, hide Endurance-per and limit, infravision distance and others. Disabilities and immunities work the same way (lines 46823, 47038). The `immunities_*` flags that the resistance code checks are set from these.
+
+**The creature path does not.** `createFullCreatureAbilities`, `...Disabilities` and `...Immunities` (lines 175436-175495) only concatenate `[3]` into a display string. None of the `tmp_abilities_*` or `immunities_*` flags are ever set for a creature. So a creature with "Infravision 60`" gets no infravision distance, and a creature listing "Poison" immunity is not treated as immune unless "Immune" is also typed into its poison resistance. Its only automatic ability effects are a few substring checks in `calcAllCreatureCaracs` (line 178346): +10 Perception, Affinity or Fortune for the matching "Enhanced ..." ability, and +5 Perception per sense ability and for the skills Smell, Listen and Life Sense.
+
+**The two lists have drifted apart.** The immunity lists are identical. 40 racial abilities (such as Animal Shape, Gift of Magic and the "Natural Weapons(...)" entries) are missing from the creature list. Of the names both lists share, 39 abilities and 2 disabilities have different rows, mostly different descriptions. The differences that matter mechanically:
+
+| Ability | Racial list | Creature list |
+|---|---|---|
+| Infravision30 ... Infravision180 | canonical name `Infravision` | canonical name `Infravision 30\`` etc. |
+| Enhanced Taste | 30, 50 | blank, blank |
+| Swimming | blank | 50 |
+| Webbed Feet/Hands | blank | 30 |
+| Terrain Blending | blank | 20 |
+| Not Easily Surprised | blank | -15 |
+| Quiet Flier / Raking Claws / Raking Talons/Claws / Metal Mechanical Form | as written | renamed `Quiet Flyer`, `Claws(Raking)`, `Talons/Claws(Raking)`, `Metal-Mechanical Form` |
+
+The canonical-name differences matter because the racial switch keys on `[0]`. A name taken from the creature list would not match its `case`.
+
+**Questions:** Is it intended that creatures skip the racial switch? And where the lists disagree, which one is correct? The port wants one ability compendium, so it needs to know which row to keep.
+
+**Checked and not raised:** `immunitylist["Cold"]` has canonical name "Frost". That is a deliberate alias: `"Frost"` has its own identical row (lines 177972 and 178022, and again in the racial list), which is what the canonical-name column is for. The creature ability list also repeats five keys (Breath Attack(Fire), Electric(Plant), Enhanced Hide(Bone), Fins/Flippers/Fluke, Hide Scales) and the racial list repeats one (Hide(Feathers/Fur)). The repeated rows are identical, apart from one "Plant"/"plant", so the later copy winning changes nothing.
+
+## 11. Four attack paths lose or double-count to-hit modifiers
+
+**Status:** open · **Severity:** real bug; removes STR/AGL to-hit modifiers in normal play
+
+The brawling, natural-weapon, evoke and creature attack paths (sheet-worker.js:69707, 70030, 70343, 179758) add up their to-hit modifiers like this:
+```js
+toHitMod=toHitMod+parseInt(values.combat_mod_melee_str)||0;
+toHitMod=toHitMod+parseInt(values.combat_mod_melee_other)||0;
+```
+Because `||` binds more loosely than `+`, each line means `toHitMod = (toHitMod + parseInt(x)) || 0`. If any field fails to parse, the whole running total resets to 0, not just that one term. `setCombatModifierValues` (lines 82347 and 82358) sets `combat_mod_melee_other` and `combat_mod_missile_other` to `"-"` whenever there are no other modifiers, which is the normal case. So:
+- **Melee:** the Strength to-hit modifier added on the line before is wiped.
+- **Missile** (creature attacks of type Missile, Glob or Bolt, and Projectile natural attacks): these add `combat_mod_missile`, which is already Agility plus the other modifiers (line 82356), and then `combat_mod_missile_other` as well. With no other modifiers, the `"-"` wipes the Agility modifier. With other modifiers, they are counted twice.
+
+The main weapon attack, `handlePhysicalAttacks`, reads each value into its own variable (lines 64367-64370) and sums them. That is the evident intent, and what the Foundry port does. It is unaffected, and so is the combat already ported. The four affected paths are not ported yet; when they are, they will follow `handlePhysicalAttacks`.
+
+## 12. `rebuildRepeatingBodyRows` never fetches `creature_type`
+
+**Status:** open · **Severity:** minor
+
+`rebuildRepeatingBodyRows` (sheet-worker.js:178211) checks `values.creature_type` to choose between `creature_end` and `endurance`, but `creature_type` is not in its `getAttrs` list, so its creature branch can never run and it always uses `endurance`. This is mostly harmless: `handleCreatureFinish` also writes the creature's Endurance into `endurance` (line 174948). It only matters when a temporary Endurance modifier is on a creature. `calcAllCreatureCaracs` adds that to `creature_end` but not to `endurance`, so body rows rebuilt this way ignore it. (The function also wraps its real `getAttrs` in three nested `getAttrs(['title'])` calls that use nothing. That is harmless and not ported.)
