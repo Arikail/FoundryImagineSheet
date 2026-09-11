@@ -5,9 +5,17 @@ Converting the **Imagine Role Playing System™** from its Roll20 custom charact
 ## Source material
 
 - `ImagineRoll20CharacterSheet-main/` — the original Roll20 sheet export (HTML/CSS/sheet.json). Logic-less: no JavaScript/sheet-workers, all computation was manual or never implemented. Two actor types (Character, Creature), 10 tabs, 20+ repeating item types for magic/crafting subsystems.
-- `docs/reference/players-guide-fulltext.txt` — OCR text of the base rulebook (368 pages: Attributes, Races, Characters, Classes, Skills, Combat, Equipment, Magic, Divine Magic, Appendix).
-- `docs/reference/masters-manual-fulltext.txt` — OCR text of the GM-facing expansion book (319 pages: extended attribute ranges, class extensions, expanded combat, equipment costs, magic item design, new spells/invocations, world-building). Not a base-rules source — defers to the Player's Guide 82+ times.
-- More source books (Bestiary, per-subsystem magic books) will arrive later, only as needed for their corresponding phase. See `docs/PROGRESS.md` Epic 0 for what's still outstanding.
+**The rulebook text is local-only and deliberately not committed** (see `.gitignore`). This repository is public, and permission to build a Foundry conversion is not permission to republish four commercial books. Regenerate from your own PDFs when needed:
+
+```
+python tools/extract/extract_book_text.py "path/to/IRP_playersguide.pdf" players-guide
+```
+
+Books in use, once regenerated into `docs/reference/`:
+- `players-guide-fulltext.txt` — the base rulebook (368 pages: Attributes, Races, Characters, Classes, Skills, Combat, Equipment, Magic, Divine Magic, Appendix).
+- `masters-manual-fulltext.txt` — GM-facing expansion (319 pages: extended attribute ranges, class extensions, expanded combat, equipment costs, magic item design). Not a base-rules source — defers to the Player's Guide 82+ times.
+- `aspects-of-the-wild-fulltext.txt` — first Bestiary Expansion (176 pages), mostly playable races plus creature-creation guidance.
+- `mysteries-of-the-planes-fulltext.txt` — fourth Bestiary Expansion (657 pages), the inner planes; source of 115 of the extracted skills.
 
 **Source of truth rule:** when the Roll20 sheet and a rulebook disagree, the Roll20 sheet wins — it reflects what the table actually plays with.
 
