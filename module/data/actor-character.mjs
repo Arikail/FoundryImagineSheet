@@ -72,12 +72,11 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		return {
 
 			// @MARKER IDENTITY
-			// Race and class point at compendium items rather than storing loose strings, so a
-			// campaign can enable or disable sourcebooks without orphaning character data.
+			// Race and class are not referenced by UUID here. They are embedded Items on the
+			// actor, found during data preparation, because resolving a UUID synchronously
+			// while preparing data is unreliable for compendium content that has not been
+			// loaded yet. Dragging the race or class item onto the sheet is what sets them.
 			identity: new fields.SchemaField({
-				race:        new fields.DocumentUUIDField({ type: "Item", nullable: true, initial: null }),
-				class:       new fields.DocumentUUIDField({ type: "Item", nullable: true, initial: null }),
-				classType:   new fields.StringField({ required: true, initial: "" }),
 				title:       new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 				goal:        new fields.NumberField({ required: true, integer: true, initial: 0 }),
 				exp:         new fields.NumberField({ required: true, integer: true, initial: 0 }),
@@ -229,10 +228,33 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	prepareBaseData() {
 		super.prepareBaseData(); // required: skipping this silently breaks two-phase effects
 
+		// Race and class are embedded items. Cache them here so every later step can reach
+		// them without searching the collection again.
+		this.raceItem  = this._findItem("race");
+		this.classItem = this._findItem("class");
+
+		// Racial attribute modifiers are folded into the base, BEFORE effects, so that a
+		// temporary magical bonus stacks on top of the racial baseline rather than competing
+		// with it.
+		var tmpracemods = this.raceItem ? this.raceItem.system.attributeMods : null;
+
 		for (const tmpkey of Object.keys(this.attributes)) {
 			var tmpattrib = this.attributes[tmpkey];
-			tmpattrib.value = tmpattrib.rating + tmpattrib.permMod + tmpattrib.tempMod;
+			var tmpracemod = (tmpracemods && tmpracemods[tmpkey]) ? tmpracemods[tmpkey] : 0;
+			tmpattrib.raceMod = tmpracemod;
+			tmpattrib.value = tmpattrib.rating + tmpracemod + tmpattrib.permMod + tmpattrib.tempMod;
 		}
+	}
+
+	// This is the function which finds an embedded item of a given type. Returns the first
+	// match, or null. A character is expected to hold at most one race and one class.
+	_findItem(tmptype) {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return null; }
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type == tmptype) { return tmpitem; }
+		}
+		return null;
 	}
 
 	//==========================================================================================
@@ -244,9 +266,11 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	prepareDerivedData() {
 		super.prepareDerivedData();
 
+		this._prepareIdentity();
 		this._prepareAttributes();
 		this._prepareCharacteristics();
 		this._prepareResistances();
+		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
 
@@ -255,18 +279,36 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		//                        the original sheet also folds in the evoke mutation system
 		//                        (extra torsos, limbs, wings, tails), so it is not a simple
 		//                        Endurance x multiplier lookup.
-		//   encumbrance       -- needs equipment items to weigh.
-		//   movement rates    -- needs the race item's base rates and encumbrance penalties.
+		//   encumbrance       -- needs equipment items to weigh, which also gates the
+		//                        encumbrance penalties applied to movement.
+	}
+
+	// This is the function which fills in the identity values that come from the class item.
+	_prepareIdentity() {
+		this.identity.raceName  = this.raceItem ? this.raceItem.name : "";
+		this.identity.className = this.classItem ? this.classItem.name : "";
+		this.identity.classType = this.classItem ? this.classItem.system.classType : "";
+		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";
 	}
 
 	// This is the function which sets each attribute's cap, its save percentage and its
-	// table-driven modifiers. The cap is applied here rather than in prepareBaseData so that
-	// it also constrains anything an Active Effect added.
+	// table-driven modifiers.
+	//
+	// Two separate caps apply and the lower wins. Title sets a ceiling by how powerful a being
+	// the character has become; the race sets its own ceiling per attribute, which is often
+	// stricter. Both are applied here rather than in prepareBaseData so they also constrain
+	// anything an Active Effect added.
 	_prepareAttributes() {
-		var tmpcap = ImagineCharacterData.getAttributeCap(this.identity.title);
+		var tmptitlecap = ImagineCharacterData.getAttributeCap(this.identity.title);
+		var tmpracelimits = this.raceItem ? this.raceItem.system.attributeLimits : null;
 
 		for (const tmpkey of Object.keys(this.attributes)) {
 			var tmpattrib = this.attributes[tmpkey];
+
+			var tmpcap = tmptitlecap;
+			if (tmpracelimits && tmpracelimits[tmpkey] && tmpracelimits[tmpkey] < tmpcap) {
+				tmpcap = tmpracelimits[tmpkey];
+			}
 
 			tmpattrib.max = tmpcap;
 			if (tmpattrib.value > tmpcap) { tmpattrib.value = tmpcap; }
@@ -291,6 +333,17 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// Shock is Endurance x 3, per the Player's Guide character creation steps.
 	_prepareCharacteristics() {
 		var tmpattribs = this.attributes;
+
+		// Pull the racial modifiers across before the totals are worked out. Endurance takes
+		// its racial modifier from the race's starting-endurance figure, which is where the
+		// original sheet kept it (race_start_end_mod).
+		if (this.raceItem) {
+			var tmpracesys = this.raceItem.system;
+			this.characteristics.endurance.raceMod  = tmpracesys.endurance.startMod;
+			this.characteristics.perception.raceMod = tmpracesys.characteristicMods.perception;
+			this.characteristics.affinity.raceMod   = tmpracesys.characteristicMods.affinity;
+			this.characteristics.fortune.raceMod    = tmpracesys.characteristicMods.fortune;
+		}
 
 		this._setCharacteristic("endurance",  tmpattribs.str.value, tmpattribs.agl.value, tmpattribs.vit.value);
 		this._setCharacteristic("perception", tmpattribs.int.value, tmpattribs.wis.value, tmpattribs.knw.value);
@@ -340,8 +393,33 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// This is the function which finalises one resistance track.
 	_setResistance(tmpname, tmpbase) {
 		var tmpresist = this.resistances[tmpname];
+		var tmpracemod = 0;
+		if (this.raceItem) { tmpracemod = this.raceItem.system.resistanceMods[tmpname] || 0; }
+
 		tmpresist.base = parseInt(tmpbase) || 0;
-		tmpresist.value = tmpresist.immune ? null : tmpresist.base + tmpresist.misc;
+		tmpresist.raceMod = tmpracemod;
+		tmpresist.value = tmpresist.immune ? null : tmpresist.base + tmpracemod + tmpresist.misc;
+	}
+
+	// This is the function which sets the character's movement rates from their race.
+	// Every mode is tracked at three scales at once -- per hour, per 10 second combat round,
+	// and per second.
+	//
+	// Encumbrance penalties are NOT applied yet: they need equipment items to weigh against
+	// the Strength load limit, and those item types do not exist yet.
+	_prepareMovement() {
+		if (!this.raceItem) { return; }
+		var tmpracemove = this.raceItem.system.movement;
+
+		for (const tmpmode of ["walk", "jog", "run"]) {
+			this.movement[tmpmode].hourly = tmpracemove[tmpmode].hourly;
+			this.movement[tmpmode].tenSec = tmpracemove[tmpmode].tenSec;
+			this.movement[tmpmode].oneSec = tmpracemove[tmpmode].oneSec;
+		}
+
+		this.movement.specialName = tmpracemove.specialName;
+		this.movement.jumpStand   = tmpracemove.jumpStand;
+		this.movement.jumpUp      = tmpracemove.jumpUp;
 	}
 
 	// This is the function which reads the skill slot allowances off the Knowledge table.

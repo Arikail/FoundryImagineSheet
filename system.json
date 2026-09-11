@@ -33,7 +33,9 @@
       "creature": {}
     },
     "Item": {
-      "skill": {}
+      "skill": {},
+      "race": {},
+      "class": {}
     }
   },
   "url": "https://github.com/MichaelTenery/FoundryImagineSheet",

@@ -53,7 +53,15 @@ function makeCharacter(ratings, title = 12, items = []) {
 			magic: resistance(), illusion: resistance(), control: resistance(),
 			poison: resistance(), disease: resistance()
 		},
-		body: { bodyType: "Humanoid", areas: [] }
+		body: { bodyType: "Humanoid", areas: [] },
+		// The real schema always provides these; the fixture has to supply them too.
+		movement: {
+			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
+			jog:  { hourly: 0, tenSec: 0, oneSec: 0 },
+			run:  { hourly: 0, tenSec: 0, oneSec: 0 },
+			special: { hourly: 0, tenSec: 0, oneSec: 0 },
+			specialName: "", travelHours: 0, restHours: 0, jumpStand: 0, jumpUp: 0
+		}
 	});
 	// stand in for the owning Actor document
 	c.parent = { items };
@@ -135,6 +143,80 @@ const immune = makeCharacter({ aur: 18 });
 immune.resistances.magic.immune = true;
 immune.prepareDerivedData();
 check("immunity overrides the percentage", immune.resistances.magic.value, null);
+
+// --- race integration -----------------------------------------------------------
+// A stand-in race item: +2 STR / -1 AGL, a strict Strength cap of 18, and movement rates.
+function makeRace(overrides = {}) {
+	return {
+		type: "race",
+		name: "Testfolk",
+		system: {
+			attributeMods: { str: 2, agl: -1, vit: 0, int: 0, wis: 0, knw: 0,
+			                 app: 0, chm: 0, soc: 0, aur: 0, pty: 0, wil: 0 },
+			attributeLimits: { str: 18, agl: 20, vit: 20, int: 20, wis: 20, knw: 20,
+			                   app: 20, chm: 20, soc: 20, aur: 20, pty: 20, wil: 20 },
+			endurance: { startFormula: "", startMod: 4, titleFormula: "", titleDice: "", titleMax: 0, titleMod: 0 },
+			characteristicMods: { perception: 3, affinity: -2, fortune: 1 },
+			resistanceMods: { magic: 10, illusion: 0, control: 0, poison: 5, disease: 0 },
+			movement: {
+				speedMultiplier: 1,
+				walk: { hourly: 6, tenSec: 60, oneSec: 6 },
+				jog:  { hourly: 12, tenSec: 120, oneSec: 12 },
+				run:  { hourly: 18, tenSec: 180, oneSec: 18 },
+				specialName: "Fly:",
+				special: { hourly: "", hourlyMultiplier: 0, hourlyMod: 0, tenSec: "", tenSecMultiplier: 0,
+				           tenSecMod: 0, oneSec: "", oneSecMultiplier: 0, oneSecMod: 0 },
+				jumpStand: 8, jumpUp: 3.5
+			},
+			formless: false, canSwim: true,
+			...overrides
+		}
+	};
+}
+
+const raced = makeCharacter({ str: 14, agl: 14, vit: 14, int: 12, wis: 12, knw: 12,
+                              app: 12, chm: 12, soc: 12, aur: 12, pty: 12, wil: 12 },
+                            12, [makeRace()]);
+check("racial attribute modifier is applied", raced.attributes.str.value, 16);   // 14 + 2
+check("negative racial modifier is applied",  raced.attributes.agl.value, 13);   // 14 - 1
+check("racial cap is recorded",               raced.attributes.str.max, 18);
+check("unrestricted attribute keeps title cap", raced.attributes.int.max, 20);   // race limit 20 < title 27
+
+// racial cap must beat the title cap when it is stricter
+const capRace = makeCharacter({ str: 20 }, 16, [makeRace()]); // title 16 would allow 30
+check("stricter racial cap overrides title cap", capRace.attributes.str.value, 18);
+
+// Endurance: physical average of the POST-racial values, plus the racial endurance modifier.
+// str 14+2=16, agl 14-1=13, vit 14 -> ceil(43/3) = 15, +4 racial = 19
+check("Endurance uses post-racial attributes", raced.characteristics.endurance.base, 15);
+check("racial endurance modifier is applied",  raced.characteristics.endurance.value, 19);
+check("racial characteristic modifier",        raced.characteristics.perception.raceMod, 3);
+check("racial resistance modifier is added",
+	raced.resistances.magic.value, raced.resistances.magic.base + 10);
+check("movement comes from the race",          raced.movement.walk.tenSec, 60);
+check("special movement name from the race",   raced.movement.specialName, "Fly:");
+check("race name surfaces on identity",        raced.identity.raceName, "Testfolk");
+
+// --- class integration ----------------------------------------------------------
+const classItem = {
+	type: "class",
+	name: "Warrior",
+	system: {
+		classType: "Primary class",
+		advancement: { titles: ["Recruit", "Soldier", "Veteran"], goalAttr1: "STR", goalAttr2: "AGL" }
+	},
+	getTitleName(t) {
+		const i = parseInt(t) - 1;
+		if (i < 0 || i >= this.system.advancement.titles.length) { return ""; }
+		return this.system.advancement.titles[i];
+	}
+};
+const classed = makeCharacter({ str: 14 }, 2, [classItem]);
+check("class name surfaces on identity", classed.identity.className, "Warrior");
+check("class type surfaces on identity", classed.identity.classType, "Primary class");
+check("title name resolves for the title held", classed.identity.titleName, "Soldier");
+const overTitle = makeCharacter({ str: 14 }, 9, [classItem]);
+check("title beyond the class list returns empty", overTitle.identity.titleName, "");
 
 // --- skill slots ----------------------------------------------------------------
 const slots = makeCharacter({ knw: 20 });
