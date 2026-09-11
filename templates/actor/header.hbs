@@ -1,0 +1,45 @@
+{{!-- Character sheet header: identity, and the four characteristics that summarise a being. --}}
+<header class="imagine-header">
+
+	<img class="portrait" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}">
+
+	<div class="identity">
+		<input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
+
+		<div class="identity-line">
+			<span class="field"><label>Race</label><span class="readout">{{#if system.identity.raceName}}{{system.identity.raceName}}{{else}}&mdash;{{/if}}</span></span>
+			<span class="field"><label>Class</label><span class="readout">{{#if system.identity.className}}{{system.identity.className}}{{else}}&mdash;{{/if}}</span></span>
+			<span class="field"><label>Title</label><span class="readout">{{system.identity.title}} {{system.identity.titleName}}</span></span>
+		</div>
+
+		<div class="identity-line">
+			<span class="field"><label>Alignment</label>
+				<input type="text" name="system.identity.alignment" value="{{system.identity.alignment}}"></span>
+			<span class="field"><label>Exp</label>
+				<input type="number" name="system.identity.exp" value="{{system.identity.exp}}"></span>
+			<span class="field"><label>Goal</label>
+				<input type="number" name="system.identity.goal" value="{{system.identity.goal}}"></span>
+		</div>
+	</div>
+
+	{{!-- Endurance, Perception, Affinity and Fortune: one per attribute category. --}}
+	<div class="characteristics">
+		<div class="char-box">
+			<label>Endurance</label>
+			<span class="value">{{system.characteristics.endurance.value}}</span>
+			<span class="sub">Shock {{system.body.shock}}</span>
+		</div>
+		<div class="char-box">
+			<label>Perception</label>
+			<span class="value">{{system.characteristics.perception.value}}%</span>
+		</div>
+		<div class="char-box">
+			<label>Affinity</label>
+			<span class="value">{{system.characteristics.affinity.value}}%</span>
+		</div>
+		<div class="char-box">
+			<label>Fortune</label>
+			<span class="value">{{system.characteristics.fortune.value}}%</span>
+		</div>
+	</div>
+</header>

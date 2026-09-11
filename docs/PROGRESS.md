@@ -81,3 +81,12 @@ Status values: `Backlog` / `In Progress` / `Blocked` / `Done`.
 4. Update this file's status column.
 5. Log any new architectural call in `docs/DECISIONS.md`.
 6. Commit with a message describing what changed and why.
+
+## Epic 7 — Character Sheet UI
+
+| Story | Status | Definition of Done |
+|---|---|---|
+| ApplicationV2 character sheet | In Progress | `module/sheets/actor-character-sheet.mjs` with header + attributes/skills/equipment tabs, each its own PART with a single root element as the framework requires. Renders correctly against real derived data (`tools/sheet-preview.html`). **Sheet registration API path not yet verified against a running Foundry V14** — no V14 install available on this machine. |
+| Attribute save and skill roll handlers | In Progress | Implemented as `data-action` handlers producing chat messages with outcome tiers. Roll resolution follows his code for saves ("succeeded by half") and the Player's Guide for skills (±20% margin = critical). **Not yet exercised in Foundry.** |
+| Remaining tabs (combat, magic, journal) | Backlog | Combat needs the event-time round implemented; magic is the deferred phase. |
+| Item sheets | Backlog | Skill, race, class, weapon, armour, equipment all still use the default sheet. |

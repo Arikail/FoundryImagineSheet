@@ -19,6 +19,7 @@ import ImagineClassData from "./data/item-class.mjs";
 import ImagineWeaponData from "./data/item-weapon.mjs";
 import ImagineArmorData from "./data/item-armor.mjs";
 import ImagineEquipmentData from "./data/item-equipment.mjs";
+import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -78,6 +79,15 @@ Hooks.once("init", function () {
 	CONFIG.Item.dataModels.weapon = ImagineWeaponData;
 	CONFIG.Item.dataModels.armor = ImagineArmorData;
 	CONFIG.Item.dataModels.equipment = ImagineEquipmentData;
+
+	// @MARKER SHEET REGISTRATION
+	// The default core sheet is unregistered so it does not offer itself alongside ours.
+	foundry.documents.collections.Actors.unregisterSheet("core", foundry.applications.sheets.ActorSheetV2);
+	foundry.documents.collections.Actors.registerSheet("imagine-rpg", ImagineCharacterSheet, {
+		types: ["character"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Character"
+	});
 
 	// The creature actor is still a placeholder. Its schema is deliberately empty until the
 	// Bestiary source material is in hand -- the creature sheet normalises to roughly 1,455

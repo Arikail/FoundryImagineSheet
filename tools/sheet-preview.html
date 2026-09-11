@@ -1,0 +1,184 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG sheet preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; }
+	.frame { max-width: 860px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; font-size: 13px; }
+	.window-content { padding: 12px 14px; }
+	.tabstrip { display: flex; gap: 4px; border-bottom: 2px solid #cfc7b8; margin: 10px 0 12px; }
+	.tabstrip button { padding: 5px 14px; border: 1px solid #cfc7b8; border-bottom: none;
+	                   border-radius: 3px 3px 0 0; background: #efeae0; cursor: pointer; font-size: 12px; }
+	.tabstrip button.active { background: #fdfbf6; font-weight: 600; }
+	.tab { display: none; }
+	.tab.active { display: block; }
+</style>
+
+<div class="frame imagine sheet actor character">
+	<div class="frame-title">Imagine RPG &mdash; Character Sheet (preview)</div>
+	<div class="window-content">
+		<div id="header"></div>
+		<div class="tabstrip">
+			<button data-t="attributes" class="active">Attributes</button>
+			<button data-t="skills">Skills</button>
+			<button data-t="equipment">Equipment</button>
+		</div>
+		<div id="tabs"></div>
+	</div>
+</div>
+
+<script type="module">
+// Standalone preview of the character sheet templates, rendered against a character that the
+// real data model has actually derived. Foundry is not present, so its globals are stubbed --
+// but the numbers on screen come from the same prepareDerivedData the system runs.
+globalThis.foundry = {
+	abstract: {
+		TypeDataModel: class {
+			constructor(data) { Object.assign(this, data); }
+			prepareBaseData() {}
+			prepareDerivedData() {}
+		}
+	},
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+Handlebars.registerHelper("localize", (k) => {
+	const names = { str: "Strength", agl: "Agility", vit: "Vitality", int: "Intelligence",
+		wis: "Wisdom", knw: "Knowledge", app: "Appearance", chm: "Charm", soc: "Social Class",
+		aur: "Aura", pty: "Piety", wil: "Will Force" };
+	const key = String(k).split(".").pop();
+	return names[key] ?? key;
+});
+
+// --- a sample character: the one from his own preview.png, as far as we can reproduce it ---
+const ratings = { str: 19, agl: 18, vit: 18, int: 18, wis: 18, knw: 20,
+                  app: 14, chm: 15, soc: 15, aur: 18, pty: 13, wil: 20 };
+
+const skillSource = [
+	["Weapon Parry", "STR", "AGL", 12, 34, "class", "Player's Guide"],
+	["Body Parry", "AGL", "", 14, 28, "class", "Player's Guide"],
+	["Sweep", "STR", "AGL", 15, 22, "class", "Player's Guide"],
+	["Weapon Knowledge", "INT", "KNW", 11, 41, "class", "Player's Guide"],
+	["Weapon Lore", "INT", "KNW", 13, 19, "class", "Master's Manual"],
+	["Tracking", "WIS", "KNW", 14, 16, "racial", "Player's Guide"],
+	["Move Unseen", "AGL", "WIS", 15, 24, "racial", "Player's Guide"],
+	["Armoring", "STR", "KNW", 15, 30, "social", "Player's Guide"],
+	["Riding", "AGL", "CHM", 12, 26, "social", "Player's Guide"]
+];
+
+const items = skillSource.map(([name, a1, a2, rating, bonus, category, book], i) => ({
+	id: "skill" + i, name, type: "skill",
+	system: { attr1: a1, attr2: a2, skillRating: rating, startingBonus: bonus,
+	          abilityBonus: 0, misc: 0, isCommon: false, category, sourcebook: book }
+}));
+
+const gear = [
+	{ id: "g1", name: "Bastard Sword", type: "weapon", system: { weight: 6, quantity: 1, location: "equipped" } },
+	{ id: "g2", name: "Chain Shirt", type: "armor", system: { weight: 25, quantity: 1, location: "equipped" } },
+	{ id: "g3", name: "Boots(Leather)", type: "equipment", system: { weight: 1, quantity: 1, location: "equipped" } },
+	{ id: "g4", name: "Rope(50')", type: "equipment", system: { weight: 8, quantity: 1, location: "carried" } },
+	{ id: "g5", name: "Tent", type: "equipment", system: { weight: 40, quantity: 1, location: "mount" } }
+];
+
+const raceItem = {
+	type: "race", name: "Human(Civilized)",
+	system: {
+		attributeMods: { str: 0, agl: 0, vit: 0, int: 0, wis: 0, knw: 0, app: 0, chm: 0, soc: 0, aur: 0, pty: 0, wil: 0 },
+		attributeLimits: { str: 20, agl: 20, vit: 20, int: 20, wis: 20, knw: 20, app: 20, chm: 20, soc: 20, aur: 20, pty: 20, wil: 20 },
+		endurance: { startFormula: "", startMod: 0, titleFormula: "", titleDice: "", titleMax: 0, titleMod: 0 },
+		characteristicMods: { perception: 0, affinity: 0, fortune: 0 },
+		resistanceMods: { magic: 0, illusion: 0, control: 0, poison: 0, disease: 0 },
+		movement: {
+			speedMultiplier: 1,
+			walk: { hourly: 6, tenSec: 60, oneSec: 6 },
+			jog: { hourly: 12, tenSec: 120, oneSec: 12 },
+			run: { hourly: 18, tenSec: 180, oneSec: 18 },
+			specialName: "", special: {}, jumpStand: 8, jumpUp: 3.5
+		},
+		formless: false, canSwim: true
+	}
+};
+
+const classItem = {
+	type: "class", name: "Warrior",
+	system: { classType: "Primary class",
+	          advancement: { titles: ["Recruit","Soldier","Veteran","Champion","Guardian","Knight",
+	                                  "Warlord","Battle Master","Battle Lord"], goalAttr1: "STR", goalAttr2: "AGL" } },
+	getTitleName(t) { const i = parseInt(t) - 1; const a = this.system.advancement.titles;
+	                  return (i < 0 || i >= a.length) ? "" : a[i]; }
+};
+
+const attributes = {};
+for (const k of Object.keys(ratings)) attributes[k] = { rating: ratings[k], permMod: 0, tempMod: 0 };
+const characteristic = (titleBonus = 0) => ({ titleBonus, raceMod: 0, permMod: 0, tempMod: 0 });
+const resistance = () => ({ misc: 0, immune: false });
+
+const character = new ImagineCharacterData({
+	identity: { title: 9, goal: 35, exp: 386000, alignment: "Good (Active)", tendencies: "Moral", gender: "Male" },
+	attributes,
+	characteristics: { endurance: characteristic(53), perception: characteristic(),
+	                   affinity: characteristic(), fortune: characteristic() },
+	resistances: { magic: resistance(), illusion: resistance(), control: resistance(),
+	               poison: resistance(), disease: resistance() },
+	body: { bodyType: "Humanoid", areas: [] },
+	physical: { weight: 215 },
+	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
+	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
+});
+character.parent = { items: [...items, ...gear, raceItem, classItem], name: "Calanar Elfriend" };
+character.prepareBaseData();
+character.prepareDerivedData();
+
+// --- build the same context the sheet class builds -------------------------------
+const groups = [["Physical",["str","agl","vit"]],["Mental",["int","wis","knw"]],
+                ["Personal",["app","chm","soc"]],["Mystical",["aur","pty","wil"]]];
+const attrRows = [];
+for (const [group, keys] of groups) for (const key of keys) {
+	const a = character.attributes[key];
+	attrRows.push({ key, group, label: `IMAGINE.Attribute.${key}`, rating: a.rating, value: a.value,
+	                max: a.max, save: a.save,
+	                mods: Object.entries(a.mods ?? {}).map(([k, v]) => ({ key: k, value: v })) });
+}
+const skills = { class: [], racial: [], social: [] };
+for (const it of items) {
+	const s = it.system;
+	skills[s.category].push({ id: it.id, name: it.name, attr1: s.attr1, attr2: s.attr2,
+		skillRating: s.skillRating, baseChance: s.baseChance, totalChance: s.totalChance,
+		sourcebook: s.sourcebook });
+}
+for (const k of Object.keys(skills)) skills[k].sort((a, b) => a.name.localeCompare(b.name));
+
+const ctx = {
+	actor: { name: "Calanar Elfriend", img: "" },
+	system: character,
+	attributes: attrRows,
+	skills,
+	gear
+};
+
+async function render(path, into) {
+	const src = await (await fetch(path)).text();
+	into.innerHTML = Handlebars.compile(src)(ctx);
+}
+await render("../templates/actor/header.hbs", document.getElementById("header"));
+const tabs = document.getElementById("tabs");
+for (const name of ["attributes", "skills", "equipment"]) {
+	const div = document.createElement("div");
+	tabs.appendChild(div);
+	await render(`../templates/actor/tab-${name}.hbs`, div);
+}
+document.querySelectorAll("#tabs .tab")[0]?.classList.add("active");
+document.querySelectorAll(".tabstrip button").forEach(btn => {
+	btn.onclick = () => {
+		document.querySelectorAll(".tabstrip button").forEach(b => b.classList.remove("active"));
+		btn.classList.add("active");
+		document.querySelectorAll("#tabs .tab").forEach(t =>
+			t.classList.toggle("active", t.dataset.tab === btn.dataset.t));
+	};
+});
+</script>

@@ -1,4 +1,315 @@
 /* Imagine RPG system styles.
- * Placeholder — real sheet styling is Layer 2+ work, once the
- * ApplicationV2 sheet architecture and data model are in place.
+ *
+ * Redesigned for Foundry's conventions rather than reproducing the Roll20 sheet's boxy table
+ * layout. The organising idea is that entered values and derived values should never be
+ * confusable: anything a player types sits in a field, anything the system worked out is flat
+ * text. On a sheet with this many numbers, that distinction carries a lot of weight.
  */
+
+.imagine.sheet {
+	--imagine-ink: #1c1a17;
+	--imagine-muted: #6d675e;
+	--imagine-rule: #cfc7b8;
+	--imagine-panel: #f7f4ee;
+	--imagine-accent: #6b4e2e;
+	--imagine-derived: #2f2a22;
+}
+
+.imagine.sheet .window-content {
+	background: #fdfbf6;
+	color: var(--imagine-ink);
+	font-size: 13px;
+}
+
+/* @MARKER HEADER */
+
+.imagine-header {
+	display: grid;
+	grid-template-columns: 84px 1fr auto;
+	gap: 12px;
+	align-items: start;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--imagine-rule);
+}
+
+.imagine-header .portrait {
+	width: 84px;
+	height: 84px;
+	object-fit: cover;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+	background: var(--imagine-panel);
+}
+
+.imagine-header .charname {
+	font-size: 20px;
+	font-weight: 600;
+	border: none;
+	border-bottom: 1px solid transparent;
+	background: transparent;
+	padding: 0 0 2px 0;
+	width: 100%;
+}
+.imagine-header .charname:hover,
+.imagine-header .charname:focus {
+	border-bottom-color: var(--imagine-rule);
+}
+
+.identity-line {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 4px;
+}
+
+.identity-line .field {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 5px;
+}
+
+.identity-line label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-muted);
+}
+
+.identity-line input {
+	width: 84px;
+	height: 20px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--imagine-rule);
+	padding: 0 2px;
+}
+
+.identity-line .readout {
+	font-weight: 600;
+}
+
+/* The four characteristics, one per attribute category. */
+.characteristics {
+	display: flex;
+	gap: 8px;
+}
+
+.char-box {
+	min-width: 76px;
+	padding: 6px 8px;
+	text-align: center;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.char-box label {
+	display: block;
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+}
+
+.char-box .value {
+	display: block;
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.15;
+}
+
+.char-box .sub {
+	display: block;
+	font-size: 10px;
+	color: var(--imagine-muted);
+}
+
+/* @MARKER TABLES */
+
+.imagine.sheet table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+.imagine.sheet thead th {
+	font-size: 9px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+	text-align: left;
+	padding: 4px 6px;
+	border-bottom: 1px solid var(--imagine-rule);
+}
+
+.imagine.sheet tbody td {
+	padding: 3px 6px;
+	border-bottom: 1px solid #ece7dc;
+}
+
+.imagine.sheet tbody tr:hover td {
+	background: #f3efe6;
+}
+
+.col-num, .col-roll { text-align: center; width: 1%; white-space: nowrap; }
+.col-src { width: 1%; white-space: nowrap; font-size: 11px; }
+.col-mods { font-size: 11px; }
+
+/* Entered values get a field; derived values are flat text. */
+.imagine.sheet input[type="number"],
+.imagine.sheet input[type="text"] {
+	font: inherit;
+	color: inherit;
+}
+
+.attribute-table input[type="number"] {
+	width: 46px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+
+.derived { color: var(--imagine-derived); }
+.strong  { font-weight: 700; }
+.muted   { color: var(--imagine-muted); }
+
+.col-mods .mod {
+	display: inline-block;
+	margin-right: 9px;
+	white-space: nowrap;
+}
+.col-mods .mod em {
+	font-style: normal;
+	color: var(--imagine-muted);
+}
+
+.imagine.sheet button {
+	font-size: 11px;
+	line-height: 1;
+	padding: 3px 8px;
+	width: auto;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	cursor: pointer;
+}
+.imagine.sheet button:hover {
+	background: var(--imagine-accent);
+	border-color: var(--imagine-accent);
+	color: #fff;
+}
+
+/* @MARKER PANELS */
+
+.panel-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.panel {
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+	padding: 8px 10px;
+}
+
+.panel h3 {
+	margin: 0 0 6px 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+	border: none;
+	font-weight: 600;
+}
+
+.resist-list, .band-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.resist-list li, .band-list li {
+	display: flex;
+	justify-content: space-between;
+	padding: 1px 0;
+}
+
+.resist-list label, .band-list label {
+	text-transform: capitalize;
+	color: var(--imagine-muted);
+}
+
+.resist-list .value { font-weight: 600; }
+
+.move-table td { padding: 1px 4px; border: none; font-size: 12px; }
+.move-table thead th { padding: 1px 4px; }
+
+.encumbrance-status {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* @MARKER SKILLS */
+
+.slot-summary {
+	display: flex;
+	gap: 16px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.slot-summary label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-muted);
+	margin-right: 4px;
+}
+
+.skill-group summary {
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-accent);
+	padding: 5px 0;
+}
+
+.skill-group .count {
+	color: var(--imagine-muted);
+	font-weight: 400;
+}
+
+.empty {
+	color: var(--imagine-muted);
+	font-style: italic;
+	padding: 6px 2px;
+}
+
+/* @MARKER EQUIPMENT */
+
+.encumbrance-bar {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.encumbrance-bar .status {
+	font-weight: 600;
+	font-size: 14px;
+}

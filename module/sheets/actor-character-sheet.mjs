@@ -1,0 +1,173 @@
+// @START (CODE)
+// @MARKER CHARACTER SHEET
+//==================================================================================================================
+// The character sheet, built on ApplicationV2 with the Handlebars mixin.
+//
+// Every tab is its own PART with a single root element. That is not a style preference -- the
+// framework's two-pass rendering relies on it to preserve focus and scroll position, and a
+// shared container with swapped-in placeholders breaks both. On a sheet this field-dense,
+// losing focus mid-edit every time a value recalculates would make it unusable.
+//
+// Interactions are declared with data-action attributes rather than bound by hand, and the
+// handlers are static methods on the class.
+//==================================================================================================================
+
+const { HandlebarsApplicationMixin } = foundry.applications.api;
+const { ActorSheetV2 } = foundry.applications.sheets;
+
+export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "actor", "character"],
+		position: { width: 820, height: 720 },
+		window: { resizable: true },
+		form: { submitOnChange: true },
+		actions: {
+			rollAttributeSave: ImagineCharacterSheet.#onRollAttributeSave,
+			rollSkill: ImagineCharacterSheet.#onRollSkill
+		}
+	};
+
+	// @MARKER SHEET PARTS
+	// Header first, then the tab strip, then one part per tab.
+	static PARTS = {
+		header:     { template: "systems/imagine-rpg/templates/actor/header.hbs" },
+		tabs:       { template: "templates/generic/tab-navigation.hbs" },
+		attributes: { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs" },
+		skills:     { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs" },
+		equipment:  { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs" }
+	};
+
+	static TABS = {
+		primary: {
+			tabs: [
+				{ id: "attributes", icon: "fa-solid fa-dice-d20" },
+				{ id: "skills",     icon: "fa-solid fa-list-check" },
+				{ id: "equipment",  icon: "fa-solid fa-sack" }
+			],
+			initial: "attributes",
+			labelPrefix: "IMAGINE.Tab"
+		}
+	};
+
+	// This is the function which assembles the data every template renders against.
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+
+		tmpcontext.actor = this.document;
+		tmpcontext.system = this.document.system;
+		tmpcontext.attributes = ImagineCharacterSheet.#buildAttributeRows(this.document.system);
+		tmpcontext.skills = ImagineCharacterSheet.#buildSkillRows(this.document);
+		tmpcontext.gear = this.document.items.filter(i =>
+			["weapon", "armor", "equipment"].includes(i.type));
+
+		return tmpcontext;
+	}
+
+	// This is the function which flattens the twelve attributes into rows a template can walk,
+	// keeping the Player's Guide's order and category grouping.
+	static #buildAttributeRows(tmpsystem) {
+		const tmpgroups = [
+			{ label: "Physical", keys: ["str", "agl", "vit"] },
+			{ label: "Mental",   keys: ["int", "wis", "knw"] },
+			{ label: "Personal", keys: ["app", "chm", "soc"] },
+			{ label: "Mystical", keys: ["aur", "pty", "wil"] }
+		];
+
+		var tmprows = [];
+		for (const tmpgroup of tmpgroups) {
+			for (const tmpkey of tmpgroup.keys) {
+				var tmpattrib = tmpsystem.attributes[tmpkey];
+				tmprows.push({
+					key: tmpkey,
+					group: tmpgroup.label,
+					label: `IMAGINE.Attribute.${tmpkey}`,
+					rating: tmpattrib.rating,
+					value: tmpattrib.value,
+					max: tmpattrib.max,
+					save: tmpattrib.save,
+					// The modifiers each attribute contributes differ from one to the next, so
+					// they are rendered as name/value pairs rather than fixed columns.
+					mods: Object.entries(tmpattrib.mods ?? {}).map(([k, v]) => ({ key: k, value: v }))
+				});
+			}
+		}
+		return tmprows;
+	}
+
+	// This is the function which gathers the character's skills, grouped by category and
+	// sorted by name, with the totals the actor already derived.
+	static #buildSkillRows(tmpactor) {
+		var tmpout = { class: [], racial: [], social: [] };
+
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type != "skill") { continue; }
+			var tmpsys = tmpitem.system;
+			var tmprow = {
+				id: tmpitem.id,
+				name: tmpitem.name,
+				attr1: tmpsys.attr1,
+				attr2: tmpsys.attr2,
+				skillRating: tmpsys.skillRating,
+				baseChance: tmpsys.baseChance,
+				totalChance: tmpsys.totalChance,
+				sourcebook: tmpsys.sourcebook
+			};
+			if (tmpout[tmpsys.category]) { tmpout[tmpsys.category].push(tmprow); }
+		}
+
+		for (const tmpkey of Object.keys(tmpout)) {
+			tmpout[tmpkey].sort((a, b) => a.name.localeCompare(b.name));
+		}
+		return tmpout;
+	}
+
+	// @MARKER ACTION HANDLERS
+
+	// This is the function which rolls an attribute save. A save succeeds on a percentile roll
+	// equal to or under the save chance, and succeeding by half the chance or better is a
+	// distinct and better result -- which is how his sheet reports it.
+	static async #onRollAttributeSave(event, target) {
+		var tmpkey = target.dataset.attribute;
+		var tmpattrib = this.document.system.attributes[tmpkey];
+		if (!tmpattrib) { return; }
+
+		var tmproll = await new Roll("1d100").evaluate();
+		var tmpchance = tmpattrib.save;
+		var tmphalf = Math.floor(tmpchance / 2);
+
+		var tmpoutcome = "Failed";
+		if (tmproll.total <= tmphalf)        { tmpoutcome = "Succeeded by half"; }
+		else if (tmproll.total <= tmpchance) { tmpoutcome = "Succeeded"; }
+
+		await tmproll.toMessage({
+			speaker: ChatMessage.getSpeaker({ actor: this.document }),
+			flavor: `${game.i18n.localize(`IMAGINE.Attribute.${tmpkey}`)} Save &mdash; ${tmpchance}% &mdash; <strong>${tmpoutcome}</strong>`
+		});
+	}
+
+	// This is the function which rolls a skill. Player's Guide p.93: the roll succeeds on
+	// equal to or under the total chance, and a margin of more than 20% either way is a
+	// critical success or failure.
+	static async #onRollSkill(event, target) {
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+
+		var tmpchance = tmpitem.system.totalChance;
+		var tmproll = await new Roll("1d100").evaluate();
+		var tmpmargin = tmpchance - tmproll.total;
+
+		var tmpoutcome = "Failed";
+		if (tmproll.total <= tmpchance) {
+			tmpoutcome = (tmpmargin > 20) ? "Critical success" : "Succeeded";
+		} else {
+			tmpoutcome = (tmpmargin < -20) ? "Critical failure" : "Failed";
+		}
+
+		await tmproll.toMessage({
+			speaker: ChatMessage.getSpeaker({ actor: this.document }),
+			flavor: `${tmpitem.name} &mdash; ${tmpchance}% &mdash; <strong>${tmpoutcome}</strong>`
+		});
+	}
+}
+// @END (CODE)

@@ -1,0 +1,54 @@
+{{!--
+	Skills tab. Grouped by category, because slot allowances are counted per category and a
+	character may not exceed them.
+
+	Base is (combined attributes - skill rating) x 5%. Total adds the starting bonus rolled on
+	acquisition, any ability bonus earned since, and modifiers.
+--}}
+<section class="tab imagine-skills" data-tab="skills" data-group="primary">
+
+	<div class="slot-summary">
+		<span class="slot"><label>Class</label> {{system.skillSlots.classUsed}} / {{system.skillSlots.class}}</span>
+		<span class="slot"><label>Racial</label> {{system.skillSlots.racialUsed}} / {{system.skillSlots.racial}}</span>
+		<span class="slot"><label>Social</label> {{system.skillSlots.socialUsed}} / {{system.skillSlots.social}}</span>
+		<span class="slot"><label>Memorization</label> {{system.skillSlots.memorization}}</span>
+	</div>
+
+	{{#each skills as |list category|}}
+	<details class="skill-group" data-sync open>
+		<summary>{{category}} skills <span class="count">{{list.length}}</span></summary>
+		{{#if list.length}}
+		<table class="skill-table">
+			<thead>
+				<tr>
+					<th class="col-name">Skill</th>
+					<th class="col-num">Attrs</th>
+					<th class="col-num">Rating</th>
+					<th class="col-num">Base</th>
+					<th class="col-num">Total</th>
+					<th class="col-roll"></th>
+					<th class="col-src">Source</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each list as |skill|}}
+				<tr>
+					<td class="col-name">{{skill.name}}</td>
+					<td class="col-num muted">{{skill.attr1}}{{#if skill.attr2}}/{{skill.attr2}}{{/if}}</td>
+					<td class="col-num muted">{{skill.skillRating}}</td>
+					<td class="col-num derived">{{skill.baseChance}}%</td>
+					<td class="col-num derived strong">{{skill.totalChance}}%</td>
+					<td class="col-roll">
+						<button type="button" data-action="rollSkill" data-item-id="{{skill.id}}">Roll</button>
+					</td>
+					<td class="col-src muted">{{skill.sourcebook}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{else}}
+		<p class="empty">No {{category}} skills.</p>
+		{{/if}}
+	</details>
+	{{/each}}
+</section>

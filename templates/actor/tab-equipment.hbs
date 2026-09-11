@@ -1,0 +1,39 @@
+{{!--
+	Equipment tab. Weapons, armour and general gear together, since encumbrance counts them
+	together and what matters most is where a thing is: worn and carried weight counts against
+	the character, stowed on a mount or left in a stash does not.
+--}}
+<section class="tab imagine-equipment" data-tab="equipment" data-group="primary">
+
+	<div class="encumbrance-bar">
+		<span class="status">{{system.encumbrance.status}}</span>
+		<span class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb carried</span>
+	</div>
+
+	{{#if gear.length}}
+	<table class="gear-table">
+		<thead>
+			<tr>
+				<th class="col-name">Item</th>
+				<th class="col-num">Type</th>
+				<th class="col-num">Qty</th>
+				<th class="col-num">Weight</th>
+				<th class="col-num">Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each gear as |item|}}
+			<tr>
+				<td class="col-name">{{item.name}}</td>
+				<td class="col-num muted">{{item.type}}</td>
+				<td class="col-num">{{item.system.quantity}}</td>
+				<td class="col-num muted">{{item.system.weight}}</td>
+				<td class="col-num muted">{{item.system.location}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">Nothing carried. Drag items here from a compendium.</p>
+	{{/if}}
+</section>
