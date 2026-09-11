@@ -20,6 +20,7 @@ import ImagineWeaponData from "./data/item-weapon.mjs";
 import ImagineArmorData from "./data/item-armor.mjs";
 import ImagineEquipmentData from "./data/item-equipment.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
+import { importAllContent } from "./content-importer.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -96,6 +97,46 @@ Hooks.once("init", function () {
 	CONFIG.Actor.dataModels.creature = class extends foundry.abstract.TypeDataModel {
 		static defineSchema() { return {}; }
 	};
+
+	// @MARKER SYSTEM API
+	// Exposed so the content import can be run from a macro or the console at any time,
+	// not only when first prompted:  game.imagine.importContent()
+	game.imagine = {
+		importContent: importAllContent
+	};
+
+	// Records whether the content has ever been imported into this world, so the first-launch
+	// prompt does not keep reappearing once it has been dealt with.
+	game.settings.register("imagine-rpg", "contentImported", {
+		scope: "world",
+		config: false,
+		type: Boolean,
+		default: false
+	});
+});
+
+// @MARKER FIRST LAUNCH
+// The content packs are built from JSON at runtime rather than compiled ahead of time, so a
+// fresh world starts with none. Offer to build them once, and let the Game Master decline
+// without being asked again.
+Hooks.once("ready", async function () {
+	if (!game.user.isGM) { return; }
+	if (game.settings.get("imagine-rpg", "contentImported")) { return; }
+
+	var tmpconfirmed = await foundry.applications.api.DialogV2.confirm({
+		window: { title: "Imagine RPG" },
+		content: `<p>This world has no Imagine content yet.</p>
+		          <p>Build the compendium packs now? This creates roughly 2,800 skills, races,
+		          classes, weapons, armour and equipment entries, and takes a moment.</p>
+		          <p>You can run it later from a macro with
+		          <code>game.imagine.importContent()</code>.</p>`,
+		rejectClose: false,
+		modal: true
+	});
+
+	// Recorded either way. Declining is an answer, and repeating the question is rude.
+	await game.settings.set("imagine-rpg", "contentImported", true);
+	if (tmpconfirmed) { await importAllContent(); }
 });
 
 // @MARKER ADD NEW sheet specific functions HERE

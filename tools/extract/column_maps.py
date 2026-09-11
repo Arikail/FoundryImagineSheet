@@ -148,8 +148,14 @@ RATING_VALUE_MAPS = {
     "wilRatingValues": ["controlResist", "endure", "specialLabel", "specialNum"],
 }
 
+    # armorpenaltydict -- source: header comment at sheet-worker.js:107061 ("skills def
+    # init speed"). Keyed by the same armour names as armorvalueslist, covering only the
+    # pieces that actually encumber the wearer.
+ARMORPENALTYDICT = ["skills", "defense", "initiative", "speed"]
+
 MAPS = {
     "skilldict": SKILLDICT,
+    "armorpenaltydict": ARMORPENALTYDICT,
     "socialskilldict": SOCIALSKILLDICT,
     "weaponvalueslist": WEAPONVALUESLIST,
     "armorvalueslist": ARMORVALUESLIST,

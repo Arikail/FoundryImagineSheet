@@ -1,0 +1,612 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "armorpenaltydict",
+    "lines": [
+      107061,
+      107162
+    ]
+  },
+  "_fields": [
+    "skills",
+    "defense",
+    "initiative",
+    "speed"
+  ],
+  "entries": {
+    "Armlets(Heavy Plate)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armlets(Laminar)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armlets(Stainless Steel)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armlets(Wood)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armlets(Heavy Bone)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armlets(Giant Chitin)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armored Skirt(Heavy Plate)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armored Skirt(Laminar)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armored Skirt(Stainless Steel)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Body Suit(Banded Chain)": {
+      "skills": -10,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Body Suit(Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Body Suit(Giant Scales)": {
+      "skills": -10,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Body Suit(Heavy Chain)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Body Suit(Heavy Scale)": {
+      "skills": -20,
+      "defense": 3,
+      "initiative": 1,
+      "speed": 2
+    },
+    "Body Suit(Scale)": {
+      "skills": -15,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 2
+    },
+    "Breastplate(Bolted Leather)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Breastplate(Bone)": {
+      "skills": -15,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Breastplate(Giant Chitin)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Breastplate(Heavy Bone)": {
+      "skills": -20,
+      "defense": 2,
+      "initiative": 2,
+      "speed": 1
+    },
+    "Breastplate(Heavy Plate)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Breastplate(Plate)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Breastplate(Laminar)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Breastplate(Stainless Steel)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Breastplate(Wood)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Footgear(Heavy Bone)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Footgear(Heavy Plate)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Footgear(Stainless Steel)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Full Headgear(Heavy Scale)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Full Shirt(Banded Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Full Shirt(Giant Scales)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Full Shirt(Heavy Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Full Shirt(Heavy Scale)": {
+      "skills": -10,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Full Shirt(Scale)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Gauntlets(Bone)": {
+      "skills": -10,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Gauntlets(Bronze)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Gauntlets(Giant Chitin)": {
+      "skills": -10,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Gauntlets(Heavy Bone)": {
+      "skills": -15,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Gauntlets(Heavy Plate)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Gauntlets(Plate)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Gauntlets(Laminar)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Gauntlets(Stainless Steel)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Gauntlets(Wood)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Great Helm(Bloodracite)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Bolted Leather)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Bone)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Heavy Bone)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Bronze)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Giant Chitin)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Heavy Plate)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Pearlacite)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Plate)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Stainless Steel)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Tempered Plate)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Titanium)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Great Helm(Wood)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leggings(Banded Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Leggings(Scale)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leggings(Heavy Scale)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Bone)": {
+      "skills": 0,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Bronze)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Leglets(Giant Chitin)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Heavy Bone)": {
+      "skills": 0,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Heavy Plate)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Plate)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Stainless Steel)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Leglets(Wood)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Long Shirt(Banded Chain)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Long Shirt(Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Long Shirt(Giant Scales)": {
+      "skills": -15,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Long Shirt(Heavy Chain)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Long Shirt(Heavy Scale)": {
+      "skills": -15,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Long Shirt(Scale)": {
+      "skills": -10,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Long Skirt(Heavy Plate)": {
+      "skills": -10,
+      "defense": 0,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Long Skirt(Plate)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Long Skirt(Laminar)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Long Skirt(Stainless Steel)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Armor Suit(Banded)": {
+      "skills": -10,
+      "defense": 4,
+      "initiative": 2,
+      "speed": 1
+    },
+    "Armor Suit(Beastslayer Armor)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armor Suit(Bolted Leather Armor)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armor Suit(Bone Armor)": {
+      "skills": -15,
+      "defense": 1,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Armor Suit(Brigandine)": {
+      "skills": -25,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 2
+    },
+    "Armor Suit(Chain)": {
+      "skills": 0,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armor Suit(Field Plate)": {
+      "skills": -20,
+      "defense": 5,
+      "initiative": 4,
+      "speed": 2
+    },
+    "Armor Suit(Giant Ant Armor)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armor Suit(Giant Beetle Armor)": {
+      "skills": -10,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    },
+    "Armor Suit(Giant Mantis Armor)": {
+      "skills": -30,
+      "defense": 5,
+      "initiative": 2,
+      "speed": 0
+    },
+    "Armor Suit(Giant Snake Scale Armor)": {
+      "skills": -10,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 0
+    },
+    "Armor Suit(Half Plate)": {
+      "skills": -15,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 2
+    },
+    "Armor Suit(Heavy Bone Armor)": {
+      "skills": -45,
+      "defense": 7,
+      "initiative": 5,
+      "speed": 1
+    },
+    "Armor Suit(Heavy Chain)": {
+      "skills": -5,
+      "defense": 2,
+      "initiative": 1,
+      "speed": 1
+    },
+    "Armor Suit(Legate/General Armor)": {
+      "skills": -25,
+      "defense": 2,
+      "initiative": 2,
+      "speed": 2
+    },
+    "Armor Suit(Legion/Centurion Armor)": {
+      "skills": -5,
+      "defense": 1,
+      "initiative": 2,
+      "speed": 1
+    },
+    "Armor Suit(Mercenary)": {
+      "skills": -25,
+      "defense": 3,
+      "initiative": 2,
+      "speed": 2
+    },
+    "Armor Suit(Plate)": {
+      "skills": -20,
+      "defense": 5,
+      "initiative": 4,
+      "speed": 2
+    },
+    "Armor Suit(Scale)": {
+      "skills": -15,
+      "defense": 5,
+      "initiative": 3,
+      "speed": 1
+    },
+    "Armor Suit(Shining Plate/Stainless Steel)": {
+      "skills": -10,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Armor Suit(Tempered Plate)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Armor Suit(Titanium Plate)": {
+      "skills": -5,
+      "defense": 0,
+      "initiative": 0,
+      "speed": 1
+    },
+    "Armor Suit(Wooden Armor)": {
+      "skills": -20,
+      "defense": 1,
+      "initiative": 0,
+      "speed": 0
+    }
+  }
+}

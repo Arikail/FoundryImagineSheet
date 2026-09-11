@@ -204,6 +204,12 @@ def build_armor():
         return []
     VALID_FLEX = ("Clothing", "Flexible", "Semi-Flexible", "Rigid",
                   "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid", "Mixed")
+
+    # Penalties live in their own dictionary, keyed by the same armour name, and cover only
+    # the pieces that actually encumber the wearer. Anything absent has no penalty.
+    penalties = load_named("armorpenaltydict")
+    penaltymap = penalties["entries"] if penalties else {}
+
     docs = []
     for tmpname, tmprow in payload["entries"].items():
         where = "armorvalueslist/%s" % tmpname
@@ -224,12 +230,19 @@ def build_armor():
             else:
                 tmpcoverage[tmploc] = to_number(tmpraw, where, tmploc)
 
+        tmppenalty = penaltymap.get(tmpname, {})
         docs.append(make_doc(tmpname, "armor", {
             "material": clean_text(tmprow.get("material", "")),
             "flexibility": tmpflex if tmpflex in VALID_FLEX else "Flexible",
             "isShield": "shield" in str(tmpname).lower(),
             "coverage": tmpcoverage,
             "coverageFromMaterial": tmpfrommaterial,
+            "penalties": {
+                "skills": to_number(tmppenalty.get("skills"), where, "penalty.skills"),
+                "defense": to_number(tmppenalty.get("defense"), where, "penalty.defense"),
+                "initiative": to_number(tmppenalty.get("initiative"), where, "penalty.initiative"),
+                "speed": to_number(tmppenalty.get("speed"), where, "penalty.speed"),
+            },
             "weight": to_number(tmprow.get("weight"), where, "weight"),
         }))
     return docs
