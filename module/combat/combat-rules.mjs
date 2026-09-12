@@ -522,21 +522,53 @@ export const MODE_DAMAGE_TYPES = {
 	}
 
 
+	// This is the function which applies a target's pain threshold to a blow, before anything
+	// else touches it. (handleBodyDamage, sheet-worker.js:71186-71193.)
+	//
+	// His field is a SIGNED modifier on incoming damage, not a level a blow has to get over.
+	// The note beside it on his own sheet reads "reduces or adds to all incoming damage (-/+)",
+	// so a negative pain threshold is a tougher character and a positive one a more tender one,
+	// and the number is simply added. The Famorian "High Pain Threshold" evoke takes a further
+	// point off; nothing sets that yet, because the evoke system is its own piece of work, but
+	// the argument is here so the arithmetic is complete and wiring it up later is one line.
+	//
+	// The result is deliberately NOT floored at zero. His is not either: the floor comes further
+	// down the pipeline, after the magical pre-reductions, and resolveAreaDamage applies it.
+	export function applyPainThreshold(tmpdamage, tmppainthreshold, tmphighpainthreshold) {
+		var tmpvalue = parseInt(tmpdamage) || 0;
+		tmpvalue = tmpvalue + (parseInt(tmppainthreshold) || 0);
+		if (tmphighpainthreshold) { tmpvalue = tmpvalue - 1; }
+		return tmpvalue;
+	}
+
 	// This is the function which runs a blow against the armour at one area, in his order
 	// (handleBodyDamage, sheet-worker.js:71274-71358):
 	//   1. armour blocks some or all of it, by band
 	//   2. the armour takes its own damage, worked from the damage BEFORE blocking
 	//   3. natural hide (a creature's tough skin, etc.) then takes its share off what is left
 	//
-	//   tmpinput = { damage, type, totalArmor, bypass, hide, material, isMagicArmor }
+	// The target's pain threshold has already been applied by then -- it is the first thing his
+	// handler does, above all of this -- so pass the damage through applyPainThreshold first.
+	//
+	// noDamageEntered reproduces one oddity of his. He decides whether any damage was entered
+	// from the RAW figure, before the pain threshold is added, and then skips the armour
+	// blocking entirely when there was none (his noDamageInput, line 71188 and its use at
+	// 71284). So a blow of nothing against a positive pain threshold gets through unblocked.
+	// Reachable only when a hit lands for zero, which is why it is reproduced rather than filed.
+	//
+	//   tmpinput = { damage, type, totalArmor, bypass, hide, material, isMagicArmor,
+	//                noDamageEntered }
 	export function resolveAreaDamage(tmpinput) {
 		var tmporiginal = parseInt(tmpinput.damage) || 0;
 		if (tmporiginal < 0) { tmporiginal = 0; }
 
-		var tmpnet = blockDamage(tmporiginal, tmpinput.type, tmpinput.totalArmor, tmpinput.bypass);
+		var tmpnet = tmporiginal;
+		if (!tmpinput.noDamageEntered) {
+			tmpnet = blockDamage(tmporiginal, tmpinput.type, tmpinput.totalArmor, tmpinput.bypass);
+		}
 
 		var tmparmordamage = 0;
-		if (!tmpinput.bypass && (parseInt(tmpinput.totalArmor) || 0) > 0) {
+		if (!tmpinput.bypass && !tmpinput.noDamageEntered && (parseInt(tmpinput.totalArmor) || 0) > 0) {
 			tmparmordamage = getArmorDamage(tmporiginal, tmpinput.type, tmpinput.material, tmpinput.isMagicArmor);
 			if (tmparmordamage > tmpinput.totalArmor) { tmparmordamage = parseInt(tmpinput.totalArmor); }
 		}

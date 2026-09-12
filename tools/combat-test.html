@@ -256,6 +256,43 @@ check("ordinary armour does not, even where the slot matches",
 check("and the ungated areas are unaffected by the gate",
 	R.getAreaArmor("Centaur", "Upper Torso", [mail]).armor, 6);
 
+// --- pain threshold ---------------------------------------------------------------
+// From handleBodyDamage. A SIGNED modifier on incoming damage, applied before armour and before
+// anything magical takes its share. The note beside it on his own sheet reads "reduces or adds
+// to all incoming damage (-/+)", so a negative number is a tougher target.
+check("no threshold leaves a blow alone",     R.applyPainThreshold(10, 0, false), 10);
+check("a negative threshold softens it",      R.applyPainThreshold(10, -3, false), 7);
+check("a positive threshold sharpens it",     R.applyPainThreshold(10, 4, false), 14);
+check("the Famorian evoke takes one more",    R.applyPainThreshold(10, -3, true), 6);
+check("...and works on its own",              R.applyPainThreshold(10, 0, true), 9);
+check("a missing threshold reads as none",    R.applyPainThreshold(10, undefined, false), 10);
+
+// Not floored here: his floors further down the pipeline, after the magical pre-reductions,
+// and resolveAreaDamage is where that happens.
+check("the result can go negative",           R.applyPainThreshold(2, -5, false), -3);
+check("...and resolveAreaDamage floors it",
+	R.resolveAreaDamage({ damage: -3, type: "Cutting", totalArmor: 0, bypass: false, hide: 0 }).net, 0);
+
+// The one oddity worth reproducing: he decides "was any damage entered" from the RAW figure,
+// before the threshold, and skips the armour blocking entirely when there was none. So a blow
+// of nothing against a positive threshold gets through unblocked.
+const noneEntered = R.resolveAreaDamage({
+	damage: R.applyPainThreshold(0, 3, false), type: "Cutting", totalArmor: 20,
+	bypass: false, hide: 0, material: "Plate", noDamageEntered: true });
+check("nothing entered: armour does not block what the threshold adds", noneEntered.net, 3);
+check("...and the armour takes no damage either",                       noneEntered.armorDamage, 0);
+
+// With damage actually entered, armour blocks normally and the threshold only changes the
+// figure it is blocking. 20 armour against 10 cutting is the under-quarter band.
+const entered = R.resolveAreaDamage({
+	damage: R.applyPainThreshold(10, 0, false), type: "Cutting", totalArmor: 20,
+	bypass: false, hide: 0, material: "Plate", noDamageEntered: false });
+const softened = R.resolveAreaDamage({
+	damage: R.applyPainThreshold(10, -4, false), type: "Cutting", totalArmor: 20,
+	bypass: false, hide: 0, material: "Plate", noDamageEntered: false });
+check("a softened blow gets no further through than the full one", softened.net <= entered.net, true);
+check("blocking still runs when damage was entered", entered.net, R.blockDamage(10, "Cutting", 20, false));
+
 // --- shields: the fifth layer, by size and by handedness -------------------------
 // From equipShield. A shield is held in the off hand, so a right-hander is covered down the
 // LEFT side. His code tests only for "Left", so anything else -- including "Ambidextrous",

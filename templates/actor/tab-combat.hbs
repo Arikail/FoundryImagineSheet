@@ -24,6 +24,13 @@
 		<div class="char-box"><label>Shock</label>
 			<span class="value {{#if system.body.inShock}}alarm{{/if}}">{{system.body.totalWounds}} / {{system.body.shock}}</span>
 			<span class="sub">{{#if system.body.inShock}}IN SHOCK{{else}}total wounds{{/if}}</span></div>
+		{{!-- A SIGNED modifier on incoming damage, applied before armour sees the blow. His own
+		      note reads "reduces or adds to all incoming damage (-/+)", so a negative number is
+		      a tougher target. --}}
+		<div class="char-box"><label>Pain Threshold</label>
+			<span class="value"><input type="number" class="pain-input"
+				name="system.combat.painThreshold" value="{{system.combat.painThreshold}}"></span>
+			<span class="sub">to incoming damage (&minus;/+)</span></div>
 	</div>
 
 	<h3 class="section-head">Weapons</h3>

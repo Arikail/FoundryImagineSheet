@@ -210,7 +210,19 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				damageMisc:     new fields.NumberField({ required: true, integer: true, initial: 0 }),
 				defenseMisc:    new fields.NumberField({ required: true, integer: true, initial: 0 }),
 				initiativeMisc: new fields.NumberField({ required: true, integer: true, initial: 0 }),
-				skillMisc:      new fields.NumberField({ required: true, integer: true, initial: 0 })
+				skillMisc:      new fields.NumberField({ required: true, integer: true, initial: 0 }),
+
+				// @MARKER PAIN THRESHOLD
+				// A SIGNED modifier on every point of damage coming in, applied before armour
+				// and before anything magical takes its share. His own note beside the field
+				// reads "reduces or adds to all incoming damage (-/+)", so a negative number is
+				// a tougher target. (sheet-worker.js:71186-71193, and his sheet at line 56643.)
+				painThreshold: new fields.NumberField({ required: true, integer: true, initial: 0 }),
+
+				// The Famorian "High Pain Threshold" evoke, worth one further point off. Nothing
+				// sets this yet -- the evoke system is a separate piece of work -- but the field
+				// exists so a Game Master can tick it and so the evoke has somewhere to land.
+				highPainThreshold: new fields.BooleanField({ required: true, initial: false })
 			}),
 
 			// @MARKER NOTES

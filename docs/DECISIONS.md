@@ -450,3 +450,45 @@ worn plus 20 of shield, and the right side stays at 18.
 **Not verified:** anything needing a running Foundry V14 — no such install exists on this machine.
 That covers the new fields reaching the database, the handedness dropdown actually writing back,
 and the sheet re-rendering when a shield is equipped or unequipped.
+
+### 2026-09-12 — Pain threshold is a signed damage modifier, not a threshold
+
+**Decision:** `applyPainThreshold` ports the first thing his `handleBodyDamage` does to a blow
+(sheet-worker.js:71186-71193), and `applyAttackDamage` runs every blow through it before armour
+sees it. Both actor types carry `combat.painThreshold` and `combat.highPainThreshold`.
+
+**The name is misleading and his own sheet settles it.** "Pain threshold" sounds like a level a
+blow has to clear before it hurts. It is not: the value is simply *added* to incoming damage, and
+the note he wrote beside the field reads "reduces or adds to all incoming damage (-/+)". So a
+**negative** pain threshold is the tougher character and a positive one the more tender. Porting
+it as a floor would have inverted it, which is why the sheet markup was checked and not just the
+code.
+
+**Where it lands in the pipeline.** First, above everything: before invulnerability, before
+spirit, force and outer kinetic armour, before the magic shield and weaves, and before armour
+blocking. Those magical pre-reductions are their own backlog items and are not ported here; the
+order they go in is now recorded at the call site so they slot in without re-deriving it.
+
+**Sub-decisions:**
+- *The result is not floored.* His is not either — the floor sits further down, after the magical
+  pre-reductions — so `applyPainThreshold` can return a negative and `resolveAreaDamage` floors
+  it, exactly as his does.
+- *The Famorian evoke's extra point is a parameter, not a guess.* `highPainThreshold` takes one
+  more point off. Nothing sets it yet, because the evoke system is its own backlog item, but the
+  field and the argument exist so the arithmetic is complete and wiring it later is one line.
+- *One oddity is reproduced rather than filed.* He decides whether any damage was entered from
+  the RAW figure, before the threshold, and then skips armour blocking altogether when there was
+  none (`noDamageInput`, line 71188, used at 71284). So a blow of nothing against a positive
+  threshold gets through unblocked and the armour takes nothing. It is only reachable when a hit
+  lands for zero, so it is carried across as `noDamageEntered` and documented at both ends rather
+  than raised as a defect.
+- *It is an editable stat on the combat tab*, next to the derived ones, because it is the Game
+  Master's dial rather than something derived from attributes.
+
+**Verified:** 195 combat tests pass, 12 of them new, covering both signs, the evoke's extra
+point, a missing value, the un-floored negative and the floor that catches it, and both sides of
+the no-damage-entered branch. Derivation 116, creature 129, availability 39 unchanged; 26 modules
+parse. Both sheets were checked in the preview harnesses with a real value set.
+
+**Not verified:** the field writing back from the sheet, and the note reaching the chat card —
+both need a running Foundry V14, which this machine does not have.

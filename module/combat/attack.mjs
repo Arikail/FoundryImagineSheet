@@ -19,7 +19,7 @@ import {
 	MELEE_MODES, MODE_DAMAGE_TYPES,
 	resolveAttack, resolveFumble, getToHitModifiers,
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
-	resolveAreaDamage, applyAreaDamage, getWeaponSpeed
+	resolveAreaDamage, applyAreaDamage, applyPainThreshold, getWeaponSpeed
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
 
@@ -297,14 +297,23 @@ export async function applyAttackDamage(tmpmessage) {
 	var tmparea = tmpsys.body.areas.find(a => a.name == tmpoptions.area);
 	if (!tmparea) { return; }
 
+	// The target's pain threshold comes off -- or goes on -- before armour sees the blow, which
+	// is the first thing his handler does with it. A negative threshold is a tougher target.
+	var tmpraw = parseInt(tmpattack.damage.total) || 0;
+	var tmpthreshold = parseInt(tmpsys.combat.painThreshold) || 0;
+	var tmpfelt = applyPainThreshold(tmpraw, tmpthreshold, tmpsys.combat.highPainThreshold);
+
 	var tmpblow = resolveAreaDamage({
-		damage: tmpattack.damage.total,
+		damage: tmpfelt,
 		type: tmpoptions.type,
 		totalArmor: tmparea.armor,
 		bypass: tmpoptions.bypass,
 		hide: tmpsys.body.hide,
 		material: tmparea.material,
-		isMagicArmor: false
+		isMagicArmor: false,
+		// He reads "was any damage entered" off the RAW figure, before the threshold, and skips
+		// the armour blocking when there was none. See resolveAreaDamage.
+		noDamageEntered: tmpraw < 1
 	});
 	var tmpafter = applyAreaDamage({
 		damage: tmpblow.net,
@@ -327,6 +336,11 @@ export async function applyAttackDamage(tmpmessage) {
 	else if (tmpafter.vitalitySaveNeeded) { tmpnotes.push(`${esc(tmparea.name)} is past its Endurance: a Vitality save is needed.`); }
 	if (tmpafter.inShock) { tmpnotes.push(`<strong>${esc(tmptargetactor.name)} is in shock.</strong>`); }
 	if (tmpblow.armorDamage > 0) { tmpnotes.push(`The armour there takes ${tmpblow.armorDamage} damage.`); }
+	if (tmpfelt != tmpraw) {
+		tmpnotes.push(`Pain threshold ${tmpthreshold > 0 ? "+" : ""}${tmpthreshold}`
+			+ `${tmpsys.combat.highPainThreshold ? " and a high pain threshold" : ""}`
+			+ `: felt as ${tmpfelt} before armour.`);
+	}
 
 	await ChatMessage.create({
 		speaker: ChatMessage.getSpeaker({ actor: tmptargetactor }),

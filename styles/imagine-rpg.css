@@ -426,6 +426,18 @@
 	width: auto;
 }
 
+/* Pain Threshold is an editable stat rather than a derived one: it is the Game Master's dial
+   for how hard a target feels a blow, and it is signed. */
+.combat-stats .pain-input {
+	width: 52px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0;
+	background: none;
+	border: 1px solid var(--imagine-rule, #c9bfa8);
+}
+
 .body-table .wound-input {
 	width: 46px;
 	text-align: center;
