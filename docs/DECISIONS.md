@@ -792,3 +792,57 @@ pass, 9 of them new, covering the new class's attack progression at every step a
 title-8 Weapon Lore boundary. Derivation 123, creature 129, availability 39 unchanged; 26 modules
 parse. Monk remains unbuilt for a different reason — item 1's column defect — and is not addressed
 here.
+
+### 2026-09-12 — Off-hand fighting: audit before schema design (no code written)
+
+A research pass over the two-weapon subsystem, so the eventual build starts from fact. Nothing is
+implemented. Following the rule adopted after item 21, the **attack path was read first**.
+
+**The consumption model is small and clear.** `handlePhysicalAttacks` picks one of three tiers per
+weapon, from three per-weapon flags (`weaponN_offhand`, `weaponN_2weapknow`, `weaponN_2weaplore`):
+
+```js
+if (weaponN_offhand=="on") {
+    if (weaponN_2weaplore=="on")       { offHandPenalty=0; offHandDamMod=0; }          // Lore: no penalty at all
+    else if (weaponN_2weapknow=="on")  { offHandPenalty=offhand_2nd_weapon_tohit; ... } // Knowledge: reduced
+    else                               { offHandPenalty=combat_mod_tohit_offhand; ... } // neither: full
+}
+```
+
+So Second Weapon **Lore** in a weapon removes the off-hand penalty entirely, **Knowledge** buys it
+down, and without either the wielder takes the full base penalty. The tiers are per weapon, not
+per character.
+
+**The base penalty is three Agility-banded tables** — `getOffhandMeleeAdj`, `getOffhandDamageAdj`
+and `getOffhandSkillAdj` (sheet-worker.js:83305-83370). All three return 0 for an **Ambidextrous**
+character, which is the whole mechanical payoff of that racial ability. **The three do not share
+band edges** — the melee penalty reaches 0 at Agility 19, the damage and skill penalties at 20, and
+the damage table singles out 16 and 17 individually where the others do not. That is precisely the
+shape that a hand transcription smooths over, so they are to be generated.
+
+**Buying the penalty down.** Second Weapon Knowledge gives `skillChance / 20` levels, each worth
+one point of to-hit and damage back and 5% of skills, never past zero (line 83188). Second Weapon
+Lore gives `skillChance / 20` levels capped at 5, each worth one **extra off-hand second** — and
+zero if Ambidextrous, who need no extra time (line 83242). So both read the character's own skill
+percentage, which means this subsystem depends on skills resolving to a number on the actor.
+
+**Neither is blocked.** Both gates in those two functions are the broken `=>` form, but both have a
+correctly written twin in `setGeneralCombatModifierDisplay` (82620 and 82657), so the intended rule
+is `title >= when` as with the other lores. See the corrected table in `UPSTREAM-ISSUES.md` item 19.
+
+**What the port already has:** handedness on both actor types (added for shields), Agility and its
+modifiers, the ten-second round tracker, and skills as items with computed chances.
+
+**What it does not have, and what needs deciding before code:**
+1. **What an "extra off-hand second" means in Foundry.** His sheet stores a number and leaves the
+   rest to the table. It could be a discount on the off-hand attack's cost, or extra seconds of
+   action in the round. The tracker spends seconds per action, so either is expressible; they play
+   very differently and this is the one real design question.
+2. **Three new booleans on the weapon item** — off-hand, second-weapon-knowledge,
+   second-weapon-lore — mirroring his per-weapon flags.
+3. **Whether declaring an off-hand attack is a weapon property or an attack option.** His model is
+   a stored per-weapon flag; an attack-time choice would suit Foundry better but departs from him.
+
+**Estimate:** comparable to the shield and per-weapon-lore passes combined. Two natural halves:
+the base penalty (tables, handedness, the weapon flags, the full-penalty tier) and then the two
+skills that buy it down. Splitting them keeps each commit testable.
