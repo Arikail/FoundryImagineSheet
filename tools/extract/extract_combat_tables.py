@@ -131,6 +131,87 @@ def material_rank():
     return rank, start
 
 
+# The armour row's columns, in the order his header comment at armorvalueslist gives them:
+# [0] material, [1] type, [2..20] the nineteen locations, [21] weight. Index 2 onward lines up
+# with ARMOR_LOCATIONS in build_documents.py, which is what the port keys coverage by.
+ARMOR_SLOT_KEYS = [
+    "head", "neck", "shoulderLeft", "shoulderRight",
+    "torsoUpper", "torsoMid", "torsoLower",
+    "armLeft", "armRight", "forearmLeft", "forearmRight",
+    "handLeft", "handRight", "thighLeft", "thighRight",
+    "shinLeft", "shinRight", "footLeft", "footRight",
+]
+
+
+def body_armor_maps(charts):
+    """
+    Which armour slot covers each body area, per body-type family.
+
+    From getArmorValuesByBodyTypeAndArmor. His version switches on the area's POSITION in the
+    body chart and returns an index into the armour row. That is fragile: he matches the family
+    with includes(), so one branch serves every chart whose name contains the family word, and
+    those charts do not all list their areas in the same order. Two of them have drifted out of
+    step with the branch that serves them -- Snake(Arms) and Centaur -- so a position-keyed port
+    would faithfully reproduce armour landing on the wrong limb.
+
+    The port therefore keys by area NAME, taken from the comment he wrote on each case, which is
+    the statement of what he meant that position to be. Any case whose comment disagrees with the
+    chart at that position is returned as a mismatch for reporting; his comment wins.
+
+    A few areas only take armour from a named item -- a Centaur's quarters and legs need
+    "Centaur Barding" -- and those are returned separately rather than flattened away.
+
+    Returns (maps, required_items, mismatches, first line).
+    """
+    start, body = function_body("getArmorValuesByBodyTypeAndArmor")
+
+    maps, required, mismatches = {}, {}, []
+    family, pending = None, None
+    for line in body:
+        m = re.search(r'tmpBodyType\.includes\("([^"]+)"\)', line)
+        if m:
+            family = m.group(1)
+            maps.setdefault(family, {})
+            pending = None
+            continue
+        if family is None:
+            continue
+
+        found = re.findall(r'case\s+(\d+)\s*:', line)
+        if found:
+            comment = re.search(r'//\s*(.+?)\s*$', line)
+            pending = (int(found[0]), comment.group(1).strip() if comment else "")
+            continue
+
+        # An area gated on a particular item: "if (armorItemName.includes("Centaur Barding"))".
+        gate = re.search(r'armorItemName\.includes\("([^"]+)"\)', line)
+        if gate and pending:
+            required.setdefault(family, {})[pending[1]] = gate.group(1)
+            continue
+
+        slot = re.search(r'tempReturnArmorValue\s*=\s*tempArmorValues\[(\d+)\]', line)
+        if slot and pending:
+            index = int(slot.group(1))
+            case, name = pending
+            pending = None
+            if not name:
+                continue                       # no comment: nothing to key by, so skip it
+            if index < 2 or index - 2 >= len(ARMOR_SLOT_KEYS):
+                continue                       # material, type or weight: not a location
+            maps[family][name] = ARMOR_SLOT_KEYS[index - 2]
+
+            # Cross-check his comment against every chart this family's branch serves.
+            for chart_name, chart in charts.items():
+                if family not in chart_name:
+                    continue
+                areas = [a.split("(")[0] for a in chart.split(",")]
+                position = case - 2            # callers pass the area's index plus two
+                if 0 <= position < len(areas) and areas[position] != name:
+                    mismatches.append((family, chart_name, position, name, areas[position]))
+
+    return maps, required, mismatches, start
+
+
 def load_raw(name):
     """The blocking and degradation tables are used positionally, so the raw extraction is
     exactly what is wanted -- they never needed a column map."""
@@ -224,6 +305,35 @@ def main():
     for name, value in ranks.items():
         out.append("\t%-26s %d,\n" % (js(name) + ":", value))
     out.append("};\n\n")
+    # ARMOUR COVERAGE BY BODY TYPE
+    armor_maps, armor_required, armor_mismatches, armor_line = body_armor_maps(bodies)
+    out.append("// @MARKER ARMOUR COVERAGE BY BODY TYPE\n")
+    out.append("// From getArmorValuesByBodyTypeAndArmor (sheet-worker.js:%d). Which armour slot covers each\n" % armor_line)
+    out.append("// area, for the eight body-type families his code handles. A family matches by substring, so\n")
+    out.append("// \"Humanoid\" serves every Humanoid variant. Any family absent here -- Bird, Quadruped, Fish\n")
+    out.append("// and the rest -- takes no protection from worn armour, which is what his sheet does too.\n")
+    out.append("//\n")
+    out.append("// Keyed by area NAME rather than by position. His version switches on the area's position in\n")
+    out.append("// the body chart, and two of his branches have drifted out of step with the charts they serve,\n")
+    out.append("// so a position-keyed port would put armour on the wrong limb. See docs/UPSTREAM-ISSUES.md.\n")
+    out.append("export const ARMOR_COVERAGE_BY_BODY_TYPE = {\n")
+    for family, mapping in armor_maps.items():
+        out.append("\t%s: {\n" % js(family))
+        for area, slot in mapping.items():
+            out.append("\t\t%-26s %s,\n" % (js(area) + ":", js(slot)))
+        out.append("\t},\n")
+    out.append("};\n\n")
+
+    out.append("// Areas that take armour only from a particular item -- a Centaur's quarters and legs are\n")
+    out.append("// covered by barding and by nothing else.\n")
+    out.append("export const ARMOR_REQUIRES_ITEM = {\n")
+    for family, mapping in armor_required.items():
+        out.append("\t%s: {\n" % js(family))
+        for area, item in mapping.items():
+            out.append("\t\t%-26s %s,\n" % (js(area) + ":", js(item)))
+        out.append("\t},\n")
+    out.append("};\n\n")
+
     out.append("// @END (CODE)\n")
 
     with open(OUT, "w", encoding="utf-8") as fh:
@@ -243,7 +353,27 @@ def main():
     print("armour dividers    %d materials" % len(dividers))
     print("material rank      %d materials" % len(ranks))
     print("race body types    %d races (%d conditional: %s)" % (len(races), len(conditional), ", ".join(conditional)))
-    print("wrote %s" % os.path.relpath(OUT, ROOT))
+    print("armour coverage    %d families (%s)" % (len(armor_maps), ", ".join(armor_maps)))
+    print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
+          % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))
+
+    # His branches key on the area's POSITION, and two have drifted out of step with the charts
+    # they serve. The port keys by name instead, so these are reported rather than reproduced.
+    if armor_mismatches:
+        bycharts = {}
+        for family, chart, position, meant, actual in armor_mismatches:
+            bycharts.setdefault((family, chart), []).append((position, meant, actual))
+        print("\n%d position mismatch(es) between his armour branches and his body charts:"
+              % len(armor_mismatches))
+        for (family, chart), rows in sorted(bycharts.items()):
+            print("  %s branch vs %s chart -- %d area(s)" % (family, chart, len(rows)))
+            for position, meant, actual in rows[:3]:
+                print("      position %d: his comment says %r, the chart says %r" % (position, meant, actual))
+            if len(rows) > 3:
+                print("      ... and %d more" % (len(rows) - 3))
+        print("  (reported, not reproduced -- see docs/UPSTREAM-ISSUES.md items 17 and 18)")
+
+    print("\nwrote %s" % os.path.relpath(OUT, ROOT))
 
 
 if __name__ == "__main__":

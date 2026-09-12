@@ -15,7 +15,8 @@
 
 import {
 	ATTACK_CHARTS, ATTACK_SKILL_ORDER, BODY_CHARTS,
-	ARMOR_BLOCKING, ARMOR_DAMAGE_DIVIDERS, ARMOR_MATERIAL_RANK
+	ARMOR_BLOCKING, ARMOR_DAMAGE_DIVIDERS, ARMOR_MATERIAL_RANK,
+	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -25,12 +26,14 @@ export const MISS_ZONES = ["Miss(Right)", "Miss(High)", "Miss(Left)", "Miss(Low)
 // Which attack modes are melee. Missile is the only other.
 export const MELEE_MODES = ["thrust", "cut", "smash"];
 
-// Which armour coverage slot protects each body chart area. Armour data gives a value for each
-// of nineteen humanoid locations (armorvalueslist); these are the chart names they line up with.
-// Humanoid, its tailed, winged and hooved variants and Saurian all use these names, so this
-// covers nearly every race. Areas with no entry here -- a tail, a wing, a quadruped's legs --
-// take no protection from humanoid armour; his sheet maps those per body type
-// (getArmorValuesByBodyTypeAndArmor), which is not ported yet.
+// Which armour coverage slot protects each body chart area, for a humanoid shape. Armour data
+// gives a value for each of nineteen locations (armorvalueslist); these are the chart names they
+// line up with.
+//
+// This is the Humanoid case only. The per-body-type mapping now lives in
+// ARMOR_COVERAGE_BY_BODY_TYPE (module/combat-tables.mjs, generated from his own branches) and is
+// reached through getAreaArmorSlot below, which is what the actor models use. This table is kept
+// because it is the shape most content is authored against and it reads clearly.
 export const ARMOR_COVERAGE_BY_AREA = {
 	"Head":           "head",
 	"Neck":           "neck",
@@ -494,6 +497,67 @@ export const MODE_DAMAGE_TYPES = {
 	// This is the function which returns the body chart for a body type, as areas.
 	export function getBodyChart(tmpbodytype) {
 		return parseBodyChart(BODY_CHARTS[tmpbodytype] ?? BODY_CHARTS["Humanoid"]);
+	}
+
+	// This is the function which finds which armour-family covers a body type.
+	//
+	// His code matches with includes(), so one branch serves every chart whose name contains the
+	// family word -- "Humanoid" covers all eleven Humanoid variants. No chart matches two
+	// families, so the first hit is the only hit.
+	// Returns "" for the twenty-three body types he wrote no branch for; those take no protection
+	// from worn armour, in his sheet as in this port.
+	export function getArmorFamily(tmpbodytype) {
+		var tmptype = String(tmpbodytype ?? "");
+		for (const tmpfamily of Object.keys(ARMOR_COVERAGE_BY_BODY_TYPE)) {
+			if (tmptype.includes(tmpfamily)) { return tmpfamily; }
+		}
+		return "";
+	}
+
+	// This is the function which says which armour slot covers one area of one body type, and
+	// whether that area needs a particular kind of armour to be covered at all.
+	//
+	// Ported from getArmorValuesByBodyTypeAndArmor, with one deliberate difference. His version
+	// switches on the area's POSITION in the body chart; two of his branches have drifted out of
+	// step with the charts they serve, so a position-keyed port would put armour on the wrong
+	// limb (docs/UPSTREAM-ISSUES.md items 17 and 18). This keys by area name, which is what the
+	// comments on his own cases say each position was meant to be.
+	//
+	// Returns { slot, requiresItem }. slot is "" when nothing covers the area. requiresItem is
+	// the text an armour's name must contain for it to count there -- a centaur's quarters and
+	// legs are covered by barding and by nothing else -- and "" when any armour counts.
+	export function getAreaArmorSlot(tmpbodytype, tmpareaname) {
+		var tmpfamily = getArmorFamily(tmpbodytype);
+		if (!tmpfamily) { return { slot: "", requiresItem: "" }; }
+		return {
+			slot: ARMOR_COVERAGE_BY_BODY_TYPE[tmpfamily][tmpareaname] ?? "",
+			requiresItem: ARMOR_REQUIRES_ITEM[tmpfamily]?.[tmpareaname] ?? ""
+		};
+	}
+
+	// This is the function which totals the armour covering one area, from the layers worn.
+	// Kept here rather than in each actor model, because a character and a creature work out
+	// their body the same way and only differ in where the Endurance comes from.
+	//
+	// Returns { armor, materials, layers } before any accumulated damage is taken off.
+	export function getAreaArmor(tmpbodytype, tmpareaname, tmpworn) {
+		var tmpcover = getAreaArmorSlot(tmpbodytype, tmpareaname);
+		var tmpout = { armor: 0, materials: [], layers: [], slot: tmpcover.slot };
+		if (!tmpcover.slot) { return tmpout; }
+
+		for (const tmpitem of tmpworn ?? []) {
+			// A gated area only counts armour of the right kind, whatever else is worn over it.
+			if (tmpcover.requiresItem && !String(tmpitem.name ?? "").includes(tmpcover.requiresItem)) {
+				continue;
+			}
+			var tmpvalue = parseInt(tmpitem.system?.coverage?.[tmpcover.slot]) || 0;
+			if (tmpvalue > 0) {
+				tmpout.armor = tmpout.armor + tmpvalue;
+				tmpout.materials.push(tmpitem.system.material);
+				tmpout.layers.push(tmpitem.name);
+			}
+		}
+		return tmpout;
 	}
 
 	// This is the function which gives one area's Endurance: the character's Endurance times the

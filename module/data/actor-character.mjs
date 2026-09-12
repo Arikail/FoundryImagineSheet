@@ -16,9 +16,8 @@
 import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
 import {
-	ARMOR_COVERAGE_BY_AREA,
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier
+	getInitiativeModifier, getAreaArmor
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -388,20 +387,13 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			tmptotal = tmptotal + tmphurt;
 
 			// Armour here: every worn layer that covers this area, less its accumulated damage.
-			var tmpslot = ARMOR_COVERAGE_BY_AREA[tmparea.name];
-			var tmparmor = 0;
-			var tmpmaterials = [];
-			var tmplayers = [];
-			if (tmpslot) {
-				for (const tmpitem of tmpworn) {
-					var tmpvalue = parseInt(tmpitem.system.coverage?.[tmpslot]) || 0;
-					if (tmpvalue > 0) {
-						tmparmor = tmparmor + tmpvalue;
-						tmpmaterials.push(tmpitem.system.material);
-						tmplayers.push(tmpitem.name);
-					}
-				}
-			}
+			// Which slot covers an area depends on the body: a centaur's forequarters take
+			// barding, a snake's length takes a torso piece. See getAreaArmorSlot.
+			var tmpcover = getAreaArmor(tmpbodytype, tmparea.name, tmpworn);
+			var tmparmor = tmpcover.armor;
+			var tmpmaterials = tmpcover.materials;
+			var tmplayers = tmpcover.layers;
+			var tmpslot = tmpcover.slot;
 			var tmpdamaged = parseInt(tmparmordamage[tmparea.name]) || 0;
 			tmparmor = Math.max(0, tmparmor - tmpdamaged);
 

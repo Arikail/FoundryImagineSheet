@@ -214,3 +214,39 @@ At the title-up commit, `setArchMortalAttributesMax(newTitle)` is called with th
 but the function itself (line 27549) sets all twelve maximums to **27**, not 25. One of the two is wrong and only he can say which. The port follows the code and uses 27.
 
 **Worth confirming at the same time:** his sheet has no other title-driven maximum at all. Nothing caps an attribute by title below 11, and nothing raises the maximum at title 16 — there is no deity equivalent of `setArchMortalAttributesMax`. Every assignment to a `*_max` attribute was checked. The Master's Manual describes mundane, mortal, arch-mortal and deity ranges of 23 / 25 / 27 / 30, and the Foundry port originally implemented those tiers from the book; it has since been corrected to follow the sheet instead (see `DECISIONS.md`). If the book's tiers are meant to apply in play, his sheet is not applying them.
+
+## 17. The Snake armour map is one position out of step with the Snake(Arms) chart
+
+**Status:** open · **Severity:** real bug; armour lands on the wrong part of the snake
+
+`getArmorValuesByBodyTypeAndArmor` (sheet-worker.js:105929) picks an armour slot from the area's **position** in the body chart, and its Snake branch is written for a chart running Head, Upper Length, Lower Length, then shoulders, arms and hands. Neither Snake chart is shaped that way:
+
+| Position | His Snake branch expects | `Snake` chart | `Snake(Arms)` chart |
+|---|---|---|---|
+| 0 | Head | Head | Head |
+| 1 | Upper Length | Upper Length | Upper Length |
+| 2 | Lower Length | Lower Length | **Left Shoulder** |
+| 3 | Left Shoulder | Tail | **Right Shoulder** |
+| 4 | Right Shoulder | — | **Left Arm** |
+
+For the plain `Snake` the branch is harmless: only the first three positions exist, and they line up. For `Snake(Arms)` everything from position 2 on is displaced by one, so a Left Shoulder takes the Lower Torso armour value, a Right Shoulder takes the Left Shoulder's, and so on down the arms. `Snake(Arms)` also puts Lower Length at position 10, where his branch has a hand.
+
+The port keys this mapping by area name instead of by position, so it does what the comments in his branch say rather than reproducing the shift, and every disagreement is reported when the tables are regenerated.
+
+## 18. The Centaur armour map has a Mid Torso the Centaur chart does not
+
+**Status:** open · **Severity:** real bug; armour lands on the wrong part of the centaur
+
+Same function, same cause. His Centaur branch maps position 9 to "Mid Torso", but the Centaur chart has no Mid Torso — it runs Upper Torso, then the arms and hands, then Underbelly. So from position 9 the mapping is displaced:
+
+| Position | His Centaur branch expects | `Centaur` chart | Effect |
+|---|---|---|---|
+| 9 | Mid Torso | Left Hand | a hand takes the Mid Torso value |
+| 10 | Left Hand | Right Hand | the other hand takes the Left Hand value |
+| 11 | Right Hand | Underbelly | the underbelly takes a hand's value |
+| 12 | Underbelly | Forequarters | the forequarters get nothing |
+| 13 | Forequarters | Left Foreleg | the barding lands one position early |
+
+The barding rule itself is fine and worth keeping: the quarters, forelegs and hindlegs take armour only from an item whose name contains "Centaur Barding", and nothing otherwise. It is only the positions that have slipped.
+
+**Also worth a look while you are in there:** `Humanoid(Fish Tail)` has 14 areas ending in a Finned Tail at position 13, which is where the Humanoid branch maps a Left Thigh — so a merfolk tail is armoured as though it were a thigh. And the Insectoid charts name positions "Left Mid Claw/Hand" and "Left Lower Leg" where the branch's comments say "Left Mid Claw" and "Left Shin"; those two are only wording, and the mapping is right.

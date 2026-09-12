@@ -259,3 +259,21 @@ Nothing else caps an attribute by title. There is no deity handler at title 16, 
 - *Descriptions are a plain textarea.* V14 ships ProseMirror as the only built-in editor, but wiring it needs an API this port cannot exercise, and a textarea round-trips the text correctly in the meantime.
 
 **Not verified:** `foundry.applications.sheets.ItemSheetV2` and `foundry.documents.collections.Items.registerSheet` follow the documented symmetry with the actor equivalents, which the repo's V14 notes cover only for actors. Both are unexercised until someone opens this in a real V14 install. Everything else was checked in `tools/item-preview.html`, which renders all three sheets against the same context the classes build, including a real extracted trait.
+
+### 2026-09-11 — Armour by body type: keyed by area name, not by position
+
+**Decision:** which armour slot covers which body area is now generated from his own `getArmorValuesByBodyTypeAndArmor` into `ARMOR_COVERAGE_BY_BODY_TYPE` and `ARMOR_REQUIRES_ITEM` (`module/combat-tables.mjs`), and read through `getAreaArmorSlot` / `getAreaArmor` in `combat/combat-rules.mjs`. Both actor models use it, replacing the flat humanoid-only table they shared. This closes the gap that left every non-humanoid unprotected by worn armour — which mattered little for characters and a great deal for creatures.
+
+**The one deliberate difference from his code.** His function switches on the area's **position** in the body chart and returns an index into the armour row. He matches the family with `includes()`, so one branch serves every chart containing that word, and the charts do not all order their areas the same way. Two branches have drifted out of step with the charts they serve:
+- **Snake** is written for [Head, Upper Length, Lower Length, shoulders, arms…], but `Snake(Arms)` runs [Head, Upper Length, Left Shoulder, …, Lower Length, Tail]. From position 2 everything is displaced: a shoulder takes the Lower Torso value.
+- **Centaur** has a Mid Torso case, but the Centaur chart has no Mid Torso, so from position 9 a hand takes the Mid Torso value and the barding-gated quarters land a position early.
+
+Porting that positionally would have faithfully reproduced armour landing on the wrong limb. So the port keys by **area name**, taken from the comment he wrote on each case — his statement of what that position was meant to be. The generator cross-checks every case against every chart the branch serves and reports each disagreement on each run; both are logged as `UPSTREAM-ISSUES.md` items 17 and 18.
+
+**Sub-decisions:**
+- *Generated, not transcribed.* Eight families of nineteen-odd areas each is exactly the kind of table where a hand-copied off-by-one hides for months. Same rule that caught four bad column maps earlier.
+- *Unlisted families get nothing.* Twenty-three of the forty-five body types — Bird, Quadruped, Fish, Giant Spider and the rest — have no branch in his code and take no protection from worn armour. That is his behaviour, not a gap in the port, and the earlier comment claiming otherwise has been corrected.
+- *The barding gate is data.* A centaur's quarters and legs, and an arachen's abdomen and legs, take armour only from an item whose name contains "Centaur Barding" or "Insectaur Barding". Extracted as `ARMOR_REQUIRES_ITEM` rather than special-cased in code.
+- *`ARMOR_COVERAGE_BY_AREA` stays* as the plain humanoid view, since it reads clearly and is the shape most content is authored against; nothing depends on it now.
+
+**Verified:** regenerating the tables changed nothing that already existed — 217 insertions, no deletions — and all four suites still pass unchanged (derivation 91, creature 121, combat 101, availability 39), confirming the humanoid mapping is equivalent to the flat table it replaced.

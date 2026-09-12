@@ -29,9 +29,8 @@ import { explainAvailability } from "../availability.mjs";
 import ImagineCharacterData from "./actor-character.mjs";
 import { CREATURE_TYPES, CREATURE_BODY_TYPES, CREATURE_ATTACK_CHARTS } from "../creature-tables.mjs";
 import {
-	ARMOR_COVERAGE_BY_AREA,
 	getBodyChart, parseBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getNextAttackSkill
+	getInitiativeModifier, getNextAttackSkill, getAreaArmor
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -490,8 +489,11 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 
 		// A stored chart wins. Only fall back to the body type's stock chart when there is none,
 		// which is also what happens for a body type of "Custom" that has not been built yet.
+		// The body type still decides which armour slots cover which area, even when the chart
+		// itself was built by hand.
+		var tmpbodytype = this.body.bodyType || "Humanoid";
 		var tmpchart = String(this.body.bodyChart ?? "").trim();
-		var tmpareadefs = tmpchart ? parseBodyChart(tmpchart) : getBodyChart(this.body.bodyType);
+		var tmpareadefs = tmpchart ? parseBodyChart(tmpchart) : getBodyChart(tmpbodytype);
 
 		var tmpareas = [];
 		var tmptotal = 0;
@@ -500,20 +502,15 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 			var tmphurt = parseInt(tmpwounds[tmparea.name]) || 0;
 			tmptotal = tmptotal + tmphurt;
 
-			var tmpslot = ARMOR_COVERAGE_BY_AREA[tmparea.name];
-			var tmparmor = 0;
-			var tmpmaterials = [];
-			var tmplayers = [];
-			if (tmpslot) {
-				for (const tmpitem of tmpworn) {
-					var tmpvalue = parseInt(tmpitem.system.coverage?.[tmpslot]) || 0;
-					if (tmpvalue > 0) {
-						tmparmor = tmparmor + tmpvalue;
-						tmpmaterials.push(tmpitem.system.material);
-						tmplayers.push(tmpitem.name);
-					}
-				}
-			}
+			// Which slot covers an area depends on the body type, and a few areas take armour
+			// only from a named kind -- barding on a centaur or an arachen. See getAreaArmorSlot.
+			// A creature's body type is far more likely than a character's to be one his code
+			// wrote no branch for, in which case nothing worn protects it, as in his sheet.
+			var tmpcover = getAreaArmor(tmpbodytype, tmparea.name, tmpworn);
+			var tmparmor = tmpcover.armor;
+			var tmpmaterials = tmpcover.materials;
+			var tmplayers = tmpcover.layers;
+			var tmpslot = tmpcover.slot;
 			var tmpdamaged = parseInt(tmparmordamage[tmparea.name]) || 0;
 			tmparmor = Math.max(0, tmparmor - tmpdamaged);
 

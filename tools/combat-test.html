@@ -137,6 +137,61 @@ check("unknown damage type is treated as Other",       R.blockDamage(30, "Wibble
 check("poison without bypass does nothing (his table, flagged)", R.blockDamage(12, "Poison", 0), 0);
 check("poison with bypass lands in full",              R.blockDamage(12, "Poison", 0, true), 12);
 
+// --- which armour slot covers which area, per body type --------------------------
+// From getArmorValuesByBodyTypeAndArmor. His version switches on the area's POSITION in the
+// body chart; the port keys by area NAME, because two of his branches have drifted out of step
+// with the charts they serve (docs/UPSTREAM-ISSUES.md items 17 and 18).
+check("a Humanoid's head takes the head slot",   R.getAreaArmorSlot("Humanoid", "Head").slot, "head");
+check("a Humanoid's mid torso is not the upper", R.getAreaArmorSlot("Humanoid", "Mid Torso").slot, "torsoMid");
+check("an arm takes the arm slot, not a torso",  R.getAreaArmorSlot("Humanoid", "Left Arm").slot, "armLeft");
+
+// A family matches by substring, as his includes() does, so every variant is served.
+check("Humanoid variants share the family",      R.getArmorFamily("Humanoid(Wings/Tail)"), "Humanoid");
+check("Saurian is its own family",               R.getArmorFamily("Saurian"), "Saurian");
+check("Snake(Arms) resolves to Snake",           R.getArmorFamily("Snake(Arms)"), "Snake");
+
+// The twenty-three body types he wrote no branch for take nothing from worn armour -- in his
+// sheet as in this port. A bird in a breastplate is still an unarmoured bird.
+check("a Bird has no armour family",             R.getArmorFamily("Bird"), "");
+check("...so no slot covers its torso",          R.getAreaArmorSlot("Bird", "Upper Torso").slot, "");
+check("a Quadruped likewise",                    R.getArmorFamily("Quadruped(Tail)"), "");
+
+// Where his positional map has slipped, the name-keyed port puts the armour where his own
+// comments say it belongs. Positionally, Snake(Arms) would give a shoulder the LOWER TORSO
+// value and a Centaur's Left Hand the MID TORSO value.
+check("Snake(Arms) shoulder takes a shoulder slot", R.getAreaArmorSlot("Snake(Arms)", "Left Shoulder").slot, "shoulderLeft");
+check("Snake's length takes a torso slot",          R.getAreaArmorSlot("Snake", "Lower Length").slot, "torsoLower");
+check("a Centaur's hand takes a hand slot",         R.getAreaArmorSlot("Centaur", "Left Hand").slot, "handLeft");
+check("a Centaur's upper torso is unshifted",       R.getAreaArmorSlot("Centaur", "Upper Torso").slot, "torsoUpper");
+
+// Barding: a centaur's quarters and legs take armour only from an item named for it.
+check("forequarters need barding",  R.getAreaArmorSlot("Centaur", "Forequarters").requiresItem, "Centaur Barding");
+check("a centaur's head does not",  R.getAreaArmorSlot("Centaur", "Head").requiresItem, "");
+check("an arachen's abdomen needs its own barding",
+	R.getAreaArmorSlot("Arachen", "Abdomen").requiresItem, "Insectaur Barding");
+
+// --- totalling the armour worn over one area -------------------------------------
+const mail = { name: "Body Suit(Chain)", system: { material: "Chain", coverage: { torsoUpper: 6, head: 0, thighLeft: 4 } } };
+const cap  = { name: "Cap(Leather)",     system: { material: "Leather", coverage: { head: 2 } } };
+const barding = { name: "Centaur Barding(Plate)", system: { material: "Plate", coverage: { torsoLower: 8 } } };
+
+check("layers over one area add up",
+	R.getAreaArmor("Humanoid", "Upper Torso", [mail, cap]).armor, 6);
+check("a layer that does not cover the area adds nothing",
+	R.getAreaArmor("Humanoid", "Head", [mail, cap]).armor, 2);
+check("the covering layers are named",
+	R.getAreaArmor("Humanoid", "Head", [mail, cap]).layers, ["Cap(Leather)"]);
+check("an unarmoured body type gets nothing however much is worn",
+	R.getAreaArmor("Bird", "Upper Torso", [mail, cap]).armor, 0);
+
+// A gated area ignores everything but the named kind, whatever else is worn over it.
+check("barding covers the forequarters",
+	R.getAreaArmor("Centaur", "Forequarters", [barding]).armor, 8);
+check("ordinary armour does not, even where the slot matches",
+	R.getAreaArmor("Centaur", "Forequarters", [{ name: "Body Suit(Chain)", system: { material: "Chain", coverage: { torsoLower: 9 } } }]).armor, 0);
+check("and the ungated areas are unaffected by the gate",
+	R.getAreaArmor("Centaur", "Upper Torso", [mail]).armor, 6);
+
 // --- armour degradation ---------------------------------------------------------
 const rags = T.ARMOR_DAMAGE_DIVIDERS["Rags"];   // [2, 5, 20, 20]
 check("Rags divider row", rags, [2, 5, 20, 20]);
