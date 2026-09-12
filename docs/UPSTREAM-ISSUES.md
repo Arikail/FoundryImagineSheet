@@ -290,6 +290,24 @@ The port does not reproduce any of this: the Lore *attack chart* is keyed off `g
 
 **Also worth a look while you are in there:** `Humanoid(Fish Tail)` has 14 areas ending in a Finned Tail at position 13, which is where the Humanoid branch maps a Left Thigh — so a merfolk tail is armoured as though it were a thigh. And the Insectoid charts name positions "Left Mid Claw/Hand" and "Left Lower Leg" where the branch's comments say "Left Mid Claw" and "Left Shin"; those two are only wording, and the mapping is right.
 
+**Not all six are equally stuck.** Counting call sites against the broken-gate list above:
+
+| Lore | Call sites | Broken gates | A correctly written gate exists? |
+|---|---|---|---|
+| Weapon Lore | 3 | 49870, 83017, 90504 | **Yes** — line 82558, `(currentTitle+1)>whenWeaponLoreAcquired` |
+| Missile Lore | 4 | 49915, 49925, 83025, 90524 | **Yes** — line 82589, same shape |
+| Second Weapon Knowledge | 3 | 49970, 49980, 83188 | No |
+| Second Weapon Lore | 4 | 50025, 50035, 83242 | Possibly one |
+| Projectile Lore | 3 | 50117, 50127 | Possibly one |
+| Multiple Missile Lore | 2 | 50199, 50209 | No |
+
+Weapon Lore and Missile Lore are therefore **not** blocked: his own code states the intended rule
+in one place, even though three or four other places contradict it. Those two have been ported on
+the strength of the correctly written gate, and `getWeaponLoreWhen` / `getMissileLoreWhen`
+themselves are clean — the defect is entirely in the callers. The other four still need your word,
+and Second Weapon Knowledge and Multiple Missile Lore especially, since every gate they have is
+one of the broken ones.
+
 ## 20. "Enduring All" endures nine damage types out of ten
 
 **Status:** open · **Severity:** question, may well be intentional

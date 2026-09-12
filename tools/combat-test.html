@@ -12,6 +12,8 @@
 //     open http://127.0.0.1:8777/tools/combat-test.html
 const R = await import("../module/combat/combat-rules.mjs");
 const T = await import("../module/combat-tables.mjs");
+const T_LORE_GENERAL = R.LORE_GENERAL;
+const T_LORE_SPECIFIC = R.LORE_SPECIFIC;
 
 const results = [];
 function check(label, actual, expected) {
@@ -292,6 +294,73 @@ const softened = R.resolveAreaDamage({
 	bypass: false, hide: 0, material: "Plate" });
 check("a softened blow gets no further through than the full one", softened.net <= entered.net, true);
 check("blocking runs on the felt figure", entered.net, R.blockDamage(10, "Cutting", 20, false));
+
+// --- weapon and missile lore, per weapon ------------------------------------------
+// From setCombatModifierValues (sheet-worker.js:82558) and the weapon-speed path. A character
+// who has the lore gets a flat set of figures for every weapon of that kind, and a LARGER set
+// INSTEAD for a weapon named in the matching list -- his own comment on the speed says so:
+// "only give a -1 more, -1 is already accounted for in the general mod", making a lored weapon
+// -2 in total rather than -3.
+check("the general figures",  T_LORE_GENERAL, { attack: 2, damage: 4, speed: -1, skills: 10 });
+check("the specific figures", T_LORE_SPECIFIC, { attack: 3, damage: 6, speed: -2, skills: 20 });
+
+// Whether the lore is held at all: a class carries the title, zero meaning it never gets it.
+// The test follows the ONE gate he wrote correctly, which for whole titles is `title >= when`.
+check("below the title, no lore",       R.hasLore(5, 7), false);
+check("at the title, lore",             R.hasLore(7, 7), true);
+check("above it, lore",                 R.hasLore(12, 7), true);
+check("zero means this class never does", R.hasLore(20, 0), false);
+check("...even at a very high title",   R.hasLore(99, 0), false);
+
+// His lists hold SIMPLIFIED names: a customised item is written "...{Base Name}...".
+check("a plain name is already simple", R.getSimplifiedName("Bastard Sword"), "Bastard Sword");
+check("a customised one is stripped",   R.getSimplifiedName("Fine {Bastard Sword} of Ice"), "Bastard Sword");
+check("empty stays empty",              R.getSimplifiedName(""), "");
+check("undefined reads as empty",       R.getSimplifiedName(undefined), "");
+
+check("a list is split and trimmed",    R.parseLoreList("Bastard Sword, Dagger"), ["Bastard Sword", "Dagger"]);
+check("blanks and trailing commas drop", R.parseLoreList("Bastard Sword, , Dagger,"), ["Bastard Sword", "Dagger"]);
+check("an empty list is empty",         R.parseLoreList(""), []);
+check("an array passes through",        R.parseLoreList(["Dagger"]), ["Dagger"]);
+
+check("a weapon in the list is lored",  R.isWeaponLored("Bastard Sword", ["Bastard Sword"]), true);
+check("a customised one still matches", R.isWeaponLored("Fine {Bastard Sword} of Ice", ["Bastard Sword"]), true);
+check("one not in the list is not",     R.isWeaponLored("Dagger", ["Bastard Sword"]), false);
+
+// What an attack actually gets. Melee reads Weapon Lore, missile reads Missile Lore, and
+// neither touches the other.
+const lore = (o) => R.getLoreModifiers({ weaponName: "Bastard Sword", ...o });
+check("no lore, nothing",
+	lore({ mode: "cut" }), { attack: 0, damage: 0, speed: 0, skills: 0, specific: false });
+check("weapon lore, a weapon not singled out",
+	lore({ mode: "cut", hasWeaponLore: true, weaponLoreList: "Dagger" }),
+	{ attack: 2, damage: 4, speed: -1, skills: 10, specific: false });
+check("weapon lore, a weapon singled out",
+	lore({ mode: "cut", hasWeaponLore: true, weaponLoreList: "Bastard Sword" }),
+	{ attack: 3, damage: 6, speed: -2, skills: 20, specific: true });
+check("all three melee modes read weapon lore",
+	["thrust", "cut", "smash"].map(m => lore({ mode: m, hasWeaponLore: true }).attack), [2, 2, 2]);
+check("missile does not read weapon lore",
+	lore({ mode: "missile", hasWeaponLore: true, weaponLoreList: "Bastard Sword" }).attack, 0);
+check("missile lore covers missile",
+	lore({ mode: "missile", hasMissileLore: true }).attack, 2);
+check("...and a lored missile gets the larger set",
+	lore({ mode: "missile", hasMissileLore: true, missileLoreList: "Bastard Sword" }).attack, 3);
+check("melee does not read missile lore",
+	lore({ mode: "cut", hasMissileLore: true }).attack, 0);
+
+// The specific figures replace the general ones rather than adding to them.
+check("a lored weapon is +3 to hit, not +5",
+	lore({ mode: "cut", hasWeaponLore: true, weaponLoreList: "Bastard Sword" }).attack, 3);
+check("...and -2 speed, not -3",
+	lore({ mode: "cut", hasWeaponLore: true, weaponLoreList: "Bastard Sword" }).speed, -2);
+
+// It reaches the to-hit sum as its own labelled line.
+const withLore = R.getToHitModifiers({ mode: "cut", weapon: { cut: { mod: 1 }, magicBonus: 0 },
+	attacker: { meleeAttack: 2, meleeMisc: 0 }, lore: 3 });
+check("lore is a line of its own in the to-hit list",
+	withLore.list.find(m => m.label == "Lore")?.value, 3);
+check("...and is in the total", withLore.total, 6);
 
 // --- magical protection, above the armour ------------------------------------------
 // From handleBodyDamage's pre-reduction block. These all come off a blow BEFORE any worn armour

@@ -43,6 +43,25 @@
 	      the best of what worn magic items grant and the Game Master's modifier, not a sum, and
 	      the items that grant them belong to the deferred magic subsystems -- so for now they are
 	      entered here by hand. --}}
+
+	{{!-- Weapon and Missile Lore. Holding the lore at all comes from the class and the title, so
+	      it is derived; these lists only name the weapons singled out for the larger bonus. His
+	      sheet keeps each as one comma-separated string of simplified names. --}}
+	{{#if lore.show}}
+	<h3 class="section-head">Lore <span class="muted">{{lore.label}}</span></h3>
+	<div class="lore-lists">
+		{{#if lore.hasWeapon}}
+		<label>Weapons specifically lored
+			<input type="text" name="system.combat.weaponLoreList" value="{{lore.weaponText}}"
+				placeholder="Bastard Sword, Dagger"></label>
+		{{/if}}
+		{{#if lore.hasMissile}}
+		<label>Missiles specifically lored
+			<input type="text" name="system.combat.missileLoreList" value="{{lore.missileText}}"
+				placeholder="Long Bow"></label>
+		{{/if}}
+	</div>
+	{{/if}}
 	<h3 class="section-head">Magical Protection <span class="muted">taken off before armour</span></h3>
 	<div class="combat-stats magic-armour">
 		<div class="char-box"><label>Spiritual</label>
@@ -78,7 +97,8 @@
 		<tbody>
 			{{#each weapons as |w|}}
 			<tr>
-				<td class="col-name">{{w.name}}{{#unless w.equipped}} <span class="muted">(carried)</span>{{/unless}}</td>
+				<td class="col-name">{{w.name}}{{#unless w.equipped}} <span class="muted">(carried)</span>{{/unless}}
+					{{#if w.lore}} <span class="lore-tag" data-tooltip="Attack +{{w.lore.attack}}, damage +{{w.lore.damage}}, speed {{w.lore.speed}}, skills +{{w.lore.skills}}%">{{#if w.lore.specific}}Lore{{else}}lore{{/if}}</span>{{/if}}</td>
 				<td class="col-num">{{w.damage}}</td>
 				<td class="col-num">{{w.speed}}{{#if w.reload}} <span class="muted">/ reload {{w.reload}}</span>{{/if}}</td>
 				<td>

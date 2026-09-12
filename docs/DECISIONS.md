@@ -593,3 +593,64 @@ availability 39 unchanged; 26 modules parse. Both sheets checked in the preview 
 
 **Not verified:** the fields writing back and the chat notes — a running Foundry V14, which this
 machine does not have.
+
+### 2026-09-12 — Per-weapon lore, and why it was not blocked after all
+
+**Decision:** Weapon Lore and Missile Lore are ported — the class titles at which they are
+acquired, the two per-weapon lists, and what they are worth to an attack. A class carries
+`weaponLoreTitle` and `missileLoreTitle`, generated from `getWeaponLoreWhen` and
+`getMissileLoreWhen`; the character derives `combat.hasWeaponLore` / `hasMissileLore`, and stores
+one comma-separated list of specifically lored weapons for each.
+
+**These were on the blocked list and should not have been.** `PROGRESS.md` had the six lore
+acquisition tables blocked behind `UPSTREAM-ISSUES.md` item 19, on the grounds that porting them
+means deciding what the broken `=>` gates should have been. Reading the usage properly shows that
+is true of only some of them. For Weapon Lore and Missile Lore his code states the rule correctly
+in one place — `if ((currentTitle+1)>whenWeaponLoreAcquired)` at line 82558, which for whole
+titles is exactly `title >= when` — even though three or four other gates on the same two lores
+are written `currentTitle=>whenAcquired` and never gate anything. Where his own code contradicts
+itself, the half written correctly states the intent, so no guess was needed. The two lookup
+functions themselves are clean; the defect is entirely in the callers. Item 19 now carries a
+table of which of the six have a correct gate and which do not — Second Weapon Knowledge and
+Multiple Missile Lore have none, and remain genuinely his call.
+
+**What lore is worth**, from the modifier list his sheet builds (lines 82559-82605):
+
+| | attack | damage | speed | skills |
+|---|---|---|---|---|
+| the general kind | +2 | +4 | -1 | +10% |
+| a specifically lored weapon | +3 | +6 | -2 | +20% |
+
+**The specific figures replace the general ones; they do not add to them.** A lored weapon is +3
+to hit, not +2 and +3 again. His own comment in `getWeaponSpeedListingAdjustmentForModifier`
+settles it — "only give a -1 more, -1 is already accounted for in the general mod" — which makes
+a lored weapon -2 in total, and the same reading applies to the rest of the row.
+
+**Sub-decisions:**
+- *The lists are stored as he stores them*, one comma-separated string each, and parsed once into
+  `weaponLoreNames` / `missileLoreNames`. An array field was tried first and reverted: a text
+  field on the sheet cannot write one back, and a string is his shape anyway.
+- *Names are matched simplified.* His lists hold the base name, and `getSimplifiedName` strips a
+  customised item's `{Base Name}` wrapper, so "Fine {Bastard Sword} of Ice" is lored if "Bastard
+  Sword" is listed. Ported as its own function rather than inlined, since other lore types will
+  want it.
+- *Melee reads Weapon Lore and missile reads Missile Lore, and neither touches the other.* A
+  weapon with both kinds of mode gets whichever applies to the mode actually swung.
+- *The weapons table marks a lored weapon*, capitalised for a specific lore and lower case for
+  the general kind, with the four figures on the tooltip. The panel that edits the lists appears
+  only when the character actually has the lore, since the lists mean nothing otherwise.
+- *The Lore panel's context is built in the sheet class, not the template*, because joining a list
+  and testing two flags at once both need Handlebars helpers whose presence in Foundry's
+  environment this port cannot check. Same reasoning as the item sheets' effect numbering.
+
+**Verified:** 270 combat tests pass, 30 of them new, covering the two figure sets, the acquisition
+rule at and either side of the title, a class that never acquires it, simplified-name matching,
+list parsing, all three melee modes, the missile/melee separation, that specific replaces general,
+and that lore reaches the to-hit sum as its own line. 123 derivation tests, 7 new, cover the class
+and title deriving the flags and the stored list being parsed. Creature 129 and availability 39
+unchanged; 26 modules parse. The sheet was checked in the preview: a Warrior at title 12 holds
+both lores, the Bastard Sword is marked specifically and the Dagger generally, and their speeds
+differ by the one point that distinguishes them.
+
+**Not verified:** the lists writing back from the sheet and the lore line reaching the chat card —
+a running Foundry V14, which this machine does not have.

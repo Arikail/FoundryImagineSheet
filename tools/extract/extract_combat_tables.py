@@ -148,6 +148,35 @@ def class_lore_titles():
     return titles, start
 
 
+def class_lore_when(tmpfunction):
+    """
+    The title at which each class acquires one of his lore skills.
+
+    From getWeaponLoreWhen / getMissileLoreWhen (sheet-worker.js:94997 onward), plain switches of
+    the shape
+
+        case "Archer":   whenWeaponLore=12; break;
+        case "Bard":     whenWeaponLore=0;  break;
+
+    Zero means the class never gets that lore at all, and is recorded rather than omitted so the
+    fact is stated instead of inferred from a missing key.
+
+    These two functions are clean: unlike the gates that CALL them, neither contains one of the
+    "=>" comparisons of UPSTREAM-ISSUES item 19. The rule for reading them is taken from the one
+    call site he wrote correctly, `if ((currentTitle+1)>whenWeaponLoreAcquired)` at line 82558,
+    which for whole titles is exactly `title >= when`.
+    """
+    start, body = function_body(tmpfunction)
+    titles = {}
+    for line in body:
+        m = re.search(r'case\s+"([^"]+)"\s*:(.*)$', line)
+        if not m:
+            continue
+        value = re.search(r'=\s*(\d+)\s*;', m.group(2))
+        titles[m.group(1)] = int(value.group(1)) if value else 0
+    return titles, start
+
+
 def material_rank():
     start, body = function_body("getArmorValue")
     rank = {}
@@ -680,11 +709,17 @@ def main():
         fh.write("".join(out))
 
     lore_titles, lore_line = class_lore_titles()
+    weapon_when, weapon_line = class_lore_when("getWeaponLoreWhen")
+    missile_when, missile_line = class_lore_when("getMissileLoreWhen")
     with open(os.path.join(NAMED, "classLoreTitles.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
                         "function": "getLoreAttackChart", "line": lore_line},
-            "entries": lore_titles
+            "_weaponLoreSource": {"function": "getWeaponLoreWhen", "line": weapon_line},
+            "_missileLoreSource": {"function": "getMissileLoreWhen", "line": missile_line},
+            "entries": lore_titles,
+            "weaponLoreWhen": weapon_when,
+            "missileLoreWhen": missile_when
         }, fh, indent=2, ensure_ascii=False)
 
     with open(os.path.join(NAMED, "raceBodyTypes.json"), "w", encoding="utf-8") as fh:
@@ -703,6 +738,10 @@ def main():
     print("race body types    %d races (%d conditional: %s)" % (len(races), len(conditional), ", ".join(conditional)))
     print("class lore titles  %d classes (%d reach a Lore chart)"
           % (len(lore_titles), len([t for t in lore_titles.values() if t])))
+    print("weapon lore when   %d classes (%d ever acquire it)"
+          % (len(weapon_when), len([t for t in weapon_when.values() if t])))
+    print("missile lore when  %d classes (%d ever acquire it)"
+          % (len(missile_when), len([t for t in missile_when.values() if t])))
     print("armour coverage    %d families (%s)" % (len(armor_maps), ", ".join(armor_maps)))
     print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
           % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))

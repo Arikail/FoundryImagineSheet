@@ -128,6 +128,7 @@ const character = new ImagineCharacterData({
 	body: { bodyType: "", wounds: { "Left Arm": 9, "Neck": 40 }, armorDamage: { "Upper Torso": 2 }, hide: 0 },
 	physical: { weight: 215 },
 	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
+	          weaponLoreList: "Bastard Sword", missileLoreList: "",
 	          painThreshold: -2, highPainThreshold: false, damageAbsorb: 12,
 	          spiritArmor: 0, forceArmor: 4, outerKinetic: 0, magicShield: 0,
 	          invulnerable: false },
@@ -158,11 +159,27 @@ for (const it of skills) {
 }
 for (const k of Object.keys(skillRows)) skillRows[k].sort((a, b) => a.name.localeCompare(b.name));
 
+// Lore, as the sheet class works it out: the general figures for every weapon of the kind, the
+// larger ones instead for a weapon named in the matching list.
+const loreFor = (w) => {
+	const modes = ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available);
+	const l = R.getLoreModifiers({
+		mode: modes.length ? modes[0] : "thrust",
+		weaponName: w.name,
+		hasWeaponLore: character.combat.hasWeaponLore,
+		hasMissileLore: character.combat.hasMissileLore,
+		weaponLoreList: character.combat.weaponLoreNames,
+		missileLoreList: character.combat.missileLoreNames
+	});
+	return l.attack ? l : null;
+};
+
 const weaponRows = [sword, dagger].map(w => ({
 	id: w.id, name: w.name, damage: w.system.damage,
 	speed: w.system.speedSpecial ? "Special" : R.getWeaponSpeed(w.system.speed, w.system.minSpeed, character.combat.weaponSpeedMod),
 	reload: w.system.reloadSpeed || "",
 	modes: ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available).map(m => ({ mode: m, mod: w.system[m].mod })),
+	lore: loreFor(w),
 	equipped: w.system.location === "equipped"
 }));
 
@@ -173,6 +190,15 @@ const ctx = {
 	skills: skillRows,
 	gear: [sword, dagger, padding, chain, shield, tent],
 	weapons: weaponRows,
+	lore: {
+		show: character.combat.hasWeaponLore || character.combat.hasMissileLore,
+		hasWeapon: character.combat.hasWeaponLore,
+		hasMissile: character.combat.hasMissileLore,
+		label: [character.combat.hasWeaponLore ? "Weapon" : null,
+		        character.combat.hasMissileLore ? "Missile" : null].filter(Boolean).join(" and "),
+		weaponText: character.combat.weaponLoreList,
+		missileText: character.combat.missileLoreList
+	},
 	handednessChoices: [
 		{ value: "",             label: "Right (default)", selected: true },
 		{ value: "Right",        label: "Right" },

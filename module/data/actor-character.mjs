@@ -17,7 +17,7 @@ import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill
+	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -248,7 +248,20 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 				// Invulnerability scales rather than subtracts: a weapon with no magical plus
 				// does nothing at all, +1/+2 a quarter, +3/+4 a half, +5 and better full damage.
-				invulnerable: new fields.BooleanField({ required: true, initial: false })
+				invulnerable: new fields.BooleanField({ required: true, initial: false }),
+
+				// @MARKER LORE
+				// The weapons this character has SPECIFIC Weapon or Missile Lore in, by name.
+				// His sheet keeps each as one comma-separated string of simplified names
+				// (weapon_lore_list / missile_lore_list); an array is the same thing without the
+				// parsing. Having the lore at all comes from the class and the title, so it is
+				// derived rather than stored -- these lists only say which weapons are singled
+				// out for the larger bonus.
+				// Kept as one comma-separated string each, which is his shape exactly
+				// (weapon_lore_list / missile_lore_list). A plain string is also the only thing a
+				// text field on the sheet can write back, and the parsed arrays are derived.
+				weaponLoreList:  new fields.StringField({ required: true, initial: "" }),
+				missileLoreList: new fields.StringField({ required: true, initial: "" })
 			}),
 
 			// @MARKER NOTES
@@ -401,6 +414,21 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.combat.loreAttackSkill = (tmploretitle > 0 && this.identity.title >= tmploretitle)
 			? getNextAttackSkill(this.combat.attackSkill)
 			: "";
+
+		// Weapon and Missile Lore themselves, which are a different thing from the chart above:
+		// a class can hold the lore without ever reading the Lore attack chart, and the two
+		// titles rarely match. Zero means the class never acquires it at all.
+		this.combat.weaponLoreTitle = this.classItem
+			? (parseInt(this.classItem.system.weaponLoreTitle) || 0) : 0;
+		this.combat.missileLoreTitle = this.classItem
+			? (parseInt(this.classItem.system.missileLoreTitle) || 0) : 0;
+		this.combat.hasWeaponLore = hasLore(this.identity.title, this.combat.weaponLoreTitle);
+		this.combat.hasMissileLore = hasLore(this.identity.title, this.combat.missileLoreTitle);
+
+		// The lists themselves are stored as he stores them, one comma-separated string each.
+		// Parsed here once so nothing downstream has to split a string.
+		this.combat.weaponLoreNames = parseLoreList(this.combat.weaponLoreList);
+		this.combat.missileLoreNames = parseLoreList(this.combat.missileLoreList);
 
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,

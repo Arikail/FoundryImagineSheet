@@ -81,6 +81,14 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// mastered. From getLoreAttackChart (sheet-worker.js:94897).
 			loreAttackTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
+			// The titles at which the class acquires Weapon Lore and Missile Lore themselves,
+			// from getWeaponLoreWhen / getMissileLoreWhen. Zero means it never does -- true of
+			// 59 of the 92 for Weapon Lore and 70 for Missile Lore. These are NOT the same as
+			// loreAttackTitle above, which is when the Lore attack CHART is read; a class can
+			// have the lore without the chart and the two numbers rarely match.
+			weaponLoreTitle:  new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+			missileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER CLASSIFICATION
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".
 			classType: new fields.StringField({ required: true, initial: "" }),

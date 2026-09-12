@@ -393,6 +393,11 @@ export const MODE_DAMAGE_TYPES = {
 			if (tmpdef) { tmplist.push({ label: "Target Defence", value: tmpdef }); }
 		}
 
+		// Weapon or Missile Lore, worked out by getLoreModifiers and passed in, so this function
+		// stays a plain sum. Melee reads Weapon Lore and missile reads Missile Lore.
+		var tmplore = parseInt(tmpinput.lore) || 0;
+		if (tmplore) { tmplist.push({ label: "Lore", value: tmplore }); }
+
 		var tmpsit = parseInt(tmpinput.situational) || 0;
 		if (tmpsit) { tmplist.push({ label: "Situational", value: tmpsit }); }
 
@@ -985,6 +990,91 @@ export const MODE_DAMAGE_TYPES = {
 		};
 	}
 
+
+//==================================================================================================================
+// @MARKER WEAPON AND MISSILE LORE
+//==================================================================================================================
+
+	// This is the function which strips a customised item name back to the name his lore lists
+	// are keyed by. Ported from getSimplifiedName (sheet-worker.js).
+	//
+	// He writes a customised item as "...{Base Name}...", and everything outside the braces is
+	// decoration. A name with no braces is already simple and comes back unchanged.
+	export function getSimplifiedName(tmpcomplexname) {
+		var tmpname = "" + (tmpcomplexname ?? "");
+		if (tmpname == "undefined") { tmpname = ""; }
+		var tmpopen = tmpname.lastIndexOf("{");
+		var tmpclose = tmpname.lastIndexOf("}");
+		if (tmpclose > tmpopen + 1) { return tmpname.slice(tmpopen + 1, tmpclose); }
+		return tmpname;
+	}
+
+	// This is the function which reads one of his lore lists into names.
+	// He keeps each as a single comma-separated string; blanks and stray spaces are dropped so a
+	// trailing comma or a typed space cannot become an entry that matches nothing.
+	export function parseLoreList(tmplist) {
+		if (Array.isArray(tmplist)) { return tmplist.map(n => ("" + n).trim()).filter(n => n); }
+		return ("" + (tmplist ?? "")).split(",").map(n => n.trim()).filter(n => n);
+	}
+
+	// This is the function which says whether a character has a lore skill yet.
+	//
+	// A class carries the title at which it acquires each, and zero means it never does -- true
+	// of 59 of his 92 classes for Weapon Lore and 70 for Missile Lore.
+	//
+	// The test follows the ONE call site he wrote correctly, `(currentTitle+1)>whenAcquired`
+	// (sheet-worker.js:82558), which for whole titles is exactly `title >= when`. Seven other
+	// gates on the same two lores are written `currentTitle=>whenAcquired`, which builds an arrow
+	// function instead of comparing and is therefore always true -- docs/UPSTREAM-ISSUES.md item
+	// 19. Those are not reproduced: where his own code contradicts itself, the half that is
+	// written correctly is the half that states the intent.
+	export function hasLore(tmptitle, tmpwhenacquired) {
+		var tmpwhen = parseInt(tmpwhenacquired) || 0;
+		if (tmpwhen == 0) { return false; }          // this class never acquires it
+		return (parseInt(tmptitle) || 0) >= tmpwhen;
+	}
+
+	// This is the function which says whether one weapon is specifically lored.
+	// His lists hold SIMPLIFIED names, so the weapon's name is simplified before matching
+	// (checkEquippedWeaponsAgainstWeaponLoreList, sheet-worker.js:90780).
+	export function isWeaponLored(tmpweaponname, tmplorelist) {
+		var tmpsimple = getSimplifiedName(tmpweaponname);
+		if (!tmpsimple) { return false; }
+		for (const tmpentry of tmplorelist ?? []) {
+			if (getSimplifiedName(tmpentry) == tmpsimple) { return true; }
+		}
+		return false;
+	}
+
+	// What lore is worth. From the modifier list his sheet builds (sheet-worker.js:82559-82572
+	// for Weapon Lore, 82592-82605 for Missile), and confirmed against the weapon-speed path.
+	//
+	// These are TOTALS, not additions on top of one another. A specifically lored weapon gets +3
+	// to hit, NOT +2 general and +3 again -- his own comment in
+	// getWeaponSpeedListingAdjustmentForModifier says so of the speed: "only give a -1 more, -1
+	// is already accounted for in the general mod", making the lored weapon's total -2.
+	//
+	//            attack  damage  speed  skills
+	export const LORE_GENERAL  = { attack: 2, damage: 4, speed: -1, skills: 10 };
+	export const LORE_SPECIFIC = { attack: 3, damage: 6, speed: -2, skills: 20 };
+
+	// This is the function which gives what lore is worth for one weapon in one attack.
+	//
+	// Weapon Lore covers melee, Missile Lore covers missile, and neither touches the other. A
+	// character with the lore gets the general figures for every weapon of that kind, and the
+	// larger specific figures instead for a weapon named in the matching list.
+	//
+	// Returns { attack, damage, speed, skills, specific } -- all zero when the lore is not held.
+	export function getLoreModifiers(tmpinput) {
+		var tmpismissile = !MELEE_MODES.includes(tmpinput.mode);
+		var tmphas = tmpismissile ? tmpinput.hasMissileLore : tmpinput.hasWeaponLore;
+		if (!tmphas) { return { attack: 0, damage: 0, speed: 0, skills: 0, specific: false }; }
+
+		var tmplist = parseLoreList(tmpismissile ? tmpinput.missileLoreList : tmpinput.weaponLoreList);
+		var tmpspecific = isWeaponLored(tmpinput.weaponName, tmplist);
+		var tmpvalues = tmpspecific ? LORE_SPECIFIC : LORE_GENERAL;
+		return { ...tmpvalues, specific: tmpspecific };
+	}
 
 //==================================================================================================================
 // @MARKER TIME

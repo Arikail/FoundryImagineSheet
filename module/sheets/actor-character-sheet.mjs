@@ -13,7 +13,7 @@
 //==================================================================================================================
 
 import { rollWeaponAttack } from "../combat/attack.mjs";
-import { getWeaponSpeed } from "../combat/combat-rules.mjs";
+import { getWeaponSpeed, getLoreModifiers } from "../combat/combat-rules.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -69,8 +69,30 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.weapons = ImagineCharacterSheet.#buildWeaponRows(this.document);
 		tmpcontext.handednessChoices =
 			ImagineCharacterSheet.#buildHandednessChoices(this.document.system.physical.handedness);
+		tmpcontext.lore = ImagineCharacterSheet.#buildLorePanel(this.document.system);
 
 		return tmpcontext;
+	}
+
+	// This is the function which assembles the Lore panel. Holding Weapon or Missile Lore at all
+	// comes from the class and the title, so it is derived; the two lists only name the weapons
+	// singled out for the larger bonus. Built here rather than in the template because joining a
+	// list and testing two flags at once both need Handlebars helpers whose presence in Foundry's
+	// environment this port cannot check.
+	static #buildLorePanel(tmpsystem) {
+		var tmpweapon = !!tmpsystem.combat.hasWeaponLore;
+		var tmpmissile = !!tmpsystem.combat.hasMissileLore;
+		var tmpkinds = [];
+		if (tmpweapon) { tmpkinds.push("Weapon"); }
+		if (tmpmissile) { tmpkinds.push("Missile"); }
+		return {
+			show: tmpweapon || tmpmissile,
+			hasWeapon: tmpweapon,
+			hasMissile: tmpmissile,
+			label: tmpkinds.join(" and "),
+			weaponText: tmpsystem.combat.weaponLoreList ?? "",
+			missileText: tmpsystem.combat.missileLoreList ?? ""
+		};
 	}
 
 	// This is the function which builds the handedness dropdown. A shield is held in the off hand,
@@ -168,13 +190,27 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 					tmpmodes.push({ mode: tmpmode, mod: tmpw[tmpmode].mod });
 				}
 			}
+			// Lore, for whichever kind this weapon is used as. A weapon with both melee and
+			// missile modes is shown by its first mode, which is how it will most often swing;
+			// the attack itself works the mode out properly when it is rolled.
+			var tmplore = getLoreModifiers({
+				mode: tmpmodes.length ? tmpmodes[0].mode : "thrust",
+				weaponName: tmpitem.name,
+				hasWeaponLore: tmpactor.system.combat.hasWeaponLore,
+				hasMissileLore: tmpactor.system.combat.hasMissileLore,
+				weaponLoreList: tmpactor.system.combat.weaponLoreNames,
+				missileLoreList: tmpactor.system.combat.missileLoreNames
+			});
+
 			tmprows.push({
 				id: tmpitem.id,
 				name: tmpitem.name,
 				damage: tmpw.damage,
-				speed: tmpw.speedSpecial ? "Special" : getWeaponSpeed(tmpw.speed, tmpw.minSpeed, tmpspeedmod),
+				speed: tmpw.speedSpecial ? "Special"
+					: getWeaponSpeed(tmpw.speed, tmpw.minSpeed, tmpspeedmod + tmplore.speed),
 				reload: tmpw.reloadSpeed || "",
 				modes: tmpmodes,
+				lore: tmplore.attack ? tmplore : null,
 				equipped: tmpw.location == "equipped"
 			});
 		}

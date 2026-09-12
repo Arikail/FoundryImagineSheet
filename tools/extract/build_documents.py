@@ -387,6 +387,10 @@ def build_classes():
     # extract_combat_tables.py. Zero means it never does, which is true of about half of them.
     loretitles = load_named("classLoreTitles")
     loremap = loretitles["entries"] if loretitles else {}
+    # And the titles at which a class acquires Weapon and Missile Lore themselves, from
+    # getWeaponLoreWhen / getMissileLoreWhen. Zero means the class never gets that lore.
+    weaponloremap = loretitles.get("weaponLoreWhen", {}) if loretitles else {}
+    missileloremap = loretitles.get("missileLoreWhen", {}) if loretitles else {}
 
     docs = []
 
@@ -443,6 +447,8 @@ def build_classes():
             "attackSkill": clean_text(str(tmprow.get("attackSkill", ""))),
             "attackSkillList": clean_text(str(tmprow.get("attackSkillList", ""))),
             "loreAttackTitle": to_number(loremap.get(tmpname, 0), where, "loreAttackTitle"),
+            "weaponLoreTitle": to_number(weaponloremap.get(tmpname, 0), where, "weaponLoreTitle"),
+            "missileLoreTitle": to_number(missileloremap.get(tmpname, 0), where, "missileLoreTitle"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
         }))

@@ -21,7 +21,7 @@ import {
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
 	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
 	applyMagicalReductions, getWeaveValue, isEndured, isRebounded, getAreaArmorSlot,
-	getWeaponSpeed
+	getLoreModifiers, getWeaponSpeed
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
 
@@ -126,6 +126,18 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 	var tmpw = tmpweapon.system;
 	var tmpmode = tmpoptions.mode;
 
+	// Weapon or Missile Lore, if this character has it. It is worth a flat set of figures for
+	// every weapon of the right kind, and a larger set INSTEAD for a weapon specifically lored.
+	// Melee reads Weapon Lore, missile reads Missile Lore, and neither touches the other.
+	var tmplore = getLoreModifiers({
+		mode: tmpmode,
+		weaponName: tmpweapon.name,
+		hasWeaponLore: tmpsys.combat.hasWeaponLore,
+		hasMissileLore: tmpsys.combat.hasMissileLore,
+		weaponLoreList: tmpsys.combat.weaponLoreNames,
+		missileLoreList: tmpsys.combat.missileLoreNames
+	});
+
 	// To hit
 	var tmpmods = getToHitModifiers({
 		mode: tmpmode,
@@ -137,7 +149,8 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 			missileMisc: tmpsys.combat.missileMisc
 		},
 		target: (tmptarget && tmpoptions.useDefense) ? { defensiveAdjust: tmptarget.actor?.system?.combat?.defensiveAdjust } : null,
-		situational: tmpoptions.situational
+		situational: tmpoptions.situational,
+		lore: tmplore.attack
 	});
 
 	var tmpd20 = await new Roll("1d20").evaluate();
@@ -149,7 +162,10 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 	});
 
 	// Time. A called shot takes one more second (Player's Guide, Called Shots).
-	var tmpspeed = getWeaponSpeed(tmpw.speed, tmpw.minSpeed, tmpsys.combat.weaponSpeedMod);
+	// Lore makes a swing quicker, and its speed figure is a total rather than an extra: a lored
+	// weapon is -2, not -1 general and -2 again. See LORE_GENERAL / LORE_SPECIFIC.
+	var tmpspeed = getWeaponSpeed(tmpw.speed, tmpw.minSpeed,
+		tmpsys.combat.weaponSpeedMod + tmplore.speed);
 	if (tmpoptions.calledShot) { tmpspeed = tmpspeed + 1; }
 
 	// A fumble
@@ -179,15 +195,15 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 		var tmpmagic = parseInt(tmpw.magicBonus) || 0;
 		var tmpmisc = MELEE_MODES.includes(tmpmode) ? (parseInt(tmpsys.combat.damageMisc) || 0) : 0;
 
-		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc`,
-			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc }).evaluate();
+		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore`,
+			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage }).evaluate();
 		tmprolls.push(tmpdmgroll);
 
 		var tmpmulti = combineDamageMultipliers(tmpoptions.calledShot ? [0.5] : []);
 		var tmptotal = Math.max(0, parseInt(tmpdmgroll.total * tmpmulti) || 0);
 
 		tmpdamage = {
-			dice: tmpdice, str: tmpstrmod, magic: tmpmagic, misc: tmpmisc,
+			dice: tmpdice, str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
 			rolled: tmpdmgroll.total, multiplier: tmpmulti, total: tmptotal,
 			type: MODE_DAMAGE_TYPES[tmpmode]
 		};

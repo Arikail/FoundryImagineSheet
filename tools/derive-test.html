@@ -57,7 +57,8 @@ function makeCharacter(ratings, title = 12, items = [], extra = {}) {
 		},
 		body: { bodyType: "Humanoid", areas: [], armorDamage: extra.armorDamage ?? {} },
 		// The real schema always provides these; the fixture has to supply them too.
-		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
+		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
+		          weaponLoreList: extra.weaponLoreList ?? "", missileLoreList: extra.missileLoreList ?? "" },
 		physical: { weight: 0, handedness: extra.handedness ?? "" },
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -384,6 +385,32 @@ check("a +2 shield adds then doubles",                 areaOf(magic, "Left Hand"
 const packed = makeCharacter({ str: 14, vit: 14 }, 5, [{ ...mediumShield,
 	system: { ...mediumShield.system, location: "stash" } }]);
 check("an unequipped shield covers nothing",           areaOf(packed, "Left Hand").armor, 0);
+
+// --- lore from the class and the title --------------------------------------------
+// Holding Weapon or Missile Lore comes from the class's own title for it, which is generated
+// from getWeaponLoreWhen / getMissileLoreWhen. Zero means the class never acquires it.
+const loreClassFull = (w, m) => ({
+	type: "class", name: "Ranger",
+	system: { attackSkillList: "Beginner(1), Novice(4)", loreAttackTitle: 0,
+	          weaponLoreTitle: w, missileLoreTitle: m,
+	          advancement: { titles: [] }, classMods: [] },
+	getTitleName() { return ""; }
+});
+
+const noLoreYet = makeCharacter({}, 5, [loreClassFull(7, 0)]);
+check("below the class's title, no weapon lore", noLoreYet.combat.hasWeaponLore, false);
+const gotLore = makeCharacter({}, 7, [loreClassFull(7, 0)]);
+check("at the class's title, weapon lore",       gotLore.combat.hasWeaponLore, true);
+check("and no missile lore, since that is zero", gotLore.combat.hasMissileLore, false);
+const bothLore = makeCharacter({}, 12, [loreClassFull(7, 3)]);
+check("a class can have both",                   [bothLore.combat.hasWeaponLore, bothLore.combat.hasMissileLore], [true, true]);
+check("no class means no lore at all",           makeCharacter({}, 20).combat.hasWeaponLore, false);
+
+// The lists are stored as he stores them, one comma-separated string, and parsed once.
+const listed = makeCharacter({}, 7, [loreClassFull(7, 0)],
+	{ weaponLoreList: "Bastard Sword, Dagger" });
+check("the stored list is parsed into names", listed.combat.weaponLoreNames, ["Bastard Sword", "Dagger"]);
+check("an unset list is empty",               listed.combat.missileLoreNames, []);
 
 // --- the Lore attack chart --------------------------------------------------------
 // A class reaches the Lore chart at its own title -- Archer at 3, Warrior at 6, Acrobat at 12,

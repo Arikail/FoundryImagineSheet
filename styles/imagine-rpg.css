@@ -426,6 +426,22 @@
 	width: auto;
 }
 
+/* A weapon the character has Lore in is marked in the weapons table. Capitalised when the lore
+   is specific to that weapon, lower case when it is the general kind. */
+.weapon-table .lore-tag {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 1px 4px;
+	border: 1px solid var(--imagine-accent, #7a6a4f);
+	border-radius: 3px;
+	color: var(--imagine-accent, #7a6a4f);
+}
+
+.lore-lists { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.lore-lists label { flex: 1 1 220px; font-size: 11px; }
+.lore-lists input { width: 100%; }
+
 /* Pain Threshold is an editable stat rather than a derived one: it is the Game Master's dial
    for how hard a target feels a blow, and it is signed. */
 .combat-stats .pain-input {
