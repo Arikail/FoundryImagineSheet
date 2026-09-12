@@ -550,25 +550,19 @@ export const MODE_DAMAGE_TYPES = {
 	// The target's pain threshold has already been applied by then -- it is the first thing his
 	// handler does, above all of this -- so pass the damage through applyPainThreshold first.
 	//
-	// noDamageEntered reproduces one oddity of his. He decides whether any damage was entered
-	// from the RAW figure, before the pain threshold is added, and then skips the armour
-	// blocking entirely when there was none (his noDamageInput, line 71188 and its use at
-	// 71284). So a blow of nothing against a positive pain threshold gets through unblocked.
-	// Reachable only when a hit lands for zero, which is why it is reproduced rather than filed.
+	// Whether a blow lands at all is decided BEFORE any of this, by blowLands below. His whole
+	// apply block, armour damage and hide and absorption and the store alike, sits inside
+	// `if (!isLost && !noDamageInput)` (line 71322), so a blow of under 1 does nothing whatever.
 	//
-	//   tmpinput = { damage, type, totalArmor, bypass, hide, material, isMagicArmor,
-	//                noDamageEntered }
+	//   tmpinput = { damage, type, totalArmor, bypass, hide, material, isMagicArmor }
 	export function resolveAreaDamage(tmpinput) {
 		var tmporiginal = parseInt(tmpinput.damage) || 0;
 		if (tmporiginal < 0) { tmporiginal = 0; }
 
-		var tmpnet = tmporiginal;
-		if (!tmpinput.noDamageEntered) {
-			tmpnet = blockDamage(tmporiginal, tmpinput.type, tmpinput.totalArmor, tmpinput.bypass);
-		}
+		var tmpnet = blockDamage(tmporiginal, tmpinput.type, tmpinput.totalArmor, tmpinput.bypass);
 
 		var tmparmordamage = 0;
-		if (!tmpinput.bypass && !tmpinput.noDamageEntered && (parseInt(tmpinput.totalArmor) || 0) > 0) {
+		if (!tmpinput.bypass && (parseInt(tmpinput.totalArmor) || 0) > 0) {
 			tmparmordamage = getArmorDamage(tmporiginal, tmpinput.type, tmpinput.material, tmpinput.isMagicArmor);
 			if (tmparmordamage > tmpinput.totalArmor) { tmparmordamage = parseInt(tmpinput.totalArmor); }
 		}
@@ -578,6 +572,45 @@ export const MODE_DAMAGE_TYPES = {
 		if (tmpnet < 0) { tmpnet = 0; }
 
 		return { net: tmpnet, blocked: tmporiginal - tmpnet, armorDamage: tmparmordamage };
+	}
+
+	// This is the function which says whether a blow does anything at all.
+	//
+	// His whole apply block is wrapped in `if (!isLost && !noDamageInput)` (sheet-worker.js:71322),
+	// and noDamageInput is read from the RAW damage figure, before the pain threshold is added
+	// (line 71188). So a hit that rolled under 1 damage does nothing whatever -- no wounds, no
+	// armour damage, no absorption spent -- however large a positive pain threshold the target
+	// carries. An area already marked LOST cannot be hurt either; lost limbs are not modelled
+	// yet, so that argument is here for when they are.
+	export function blowLands(tmprawdamage, tmpisareaLost) {
+		if (tmpisareaLost) { return false; }
+		return (parseInt(tmprawdamage) || 0) >= 1;
+	}
+
+	// This is the function which spends a target's damage absorption on a blow.
+	// Ported from handleBodyDamage (sheet-worker.js:71359-71366), where it is the very last thing
+	// to touch the damage -- after armour has blocked its share and after natural hide.
+	//
+	// Absorption is a POOL, not a per-blow reduction: it takes what it can off the damage and is
+	// itself spent by the same amount, so it wears out. Both figures are worked from the values
+	// before either changed, then floored at zero, which is his arithmetic exactly.
+	//
+	// Where the pool comes from is a separate piece of work. His checkSpiritForceArmorModifiers
+	// (line 106966) refills it to the best of a "Rune Absorption: +N" on worn armour and the
+	// Game Master's own modifier, every time equipment changes -- and the runes that feed it are
+	// a deferred subsystem. Until then the pool is simply entered and spent.
+	//
+	// Returns { damage, pool } -- what gets through, and what is left in the pool.
+	export function absorbDamage(tmpdamage, tmppool) {
+		var tmpvalue = parseInt(tmpdamage) || 0;
+		var tmpabsorb = parseInt(tmppool) || 0;
+		if (tmpabsorb <= 0) { return { damage: tmpvalue, pool: tmpabsorb > 0 ? tmpabsorb : 0 }; }
+
+		var tmpleft = tmpabsorb - tmpvalue;
+		var tmpthrough = tmpvalue - tmpabsorb;
+		if (tmpthrough < 0) { tmpthrough = 0; }
+		if (tmpleft < 0) { tmpleft = 0; }
+		return { damage: tmpthrough, pool: tmpleft };
 	}
 
 

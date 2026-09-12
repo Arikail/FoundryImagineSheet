@@ -36,6 +36,12 @@
 			<span class="value"><input type="number" class="pain-input"
 				name="system.combat.painThreshold" value="{{system.combat.painThreshold}}"></span>
 			<span class="sub">to incoming damage (&minus;/+)</span></div>
+		{{!-- A pool, not a per-blow reduction: it takes what it can off a blow after armour and
+		      hide, and is spent by the same amount, so it wears out. --}}
+		<div class="char-box"><label>Absorption</label>
+			<span class="value"><input type="number" class="pain-input" min="0"
+				name="system.combat.damageAbsorb" value="{{system.combat.damageAbsorb}}"></span>
+			<span class="sub">pool, spent as used</span></div>
 	</div>
 
 	<h3 class="section-head">Attacks</h3>

@@ -19,7 +19,8 @@ import {
 	MELEE_MODES, MODE_DAMAGE_TYPES,
 	resolveAttack, resolveFumble, getToHitModifiers,
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
-	resolveAreaDamage, applyAreaDamage, applyPainThreshold, getWeaponSpeed
+	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
+	getWeaponSpeed
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
 
@@ -297,9 +298,22 @@ export async function applyAttackDamage(tmpmessage) {
 	var tmparea = tmpsys.body.areas.find(a => a.name == tmpoptions.area);
 	if (!tmparea) { return; }
 
+	// Whether the blow lands at all is read off the RAW figure, before any modifier touches it.
+	// His whole apply block sits inside that test, so a hit that rolled under 1 does nothing --
+	// no wounds, no armour damage, no absorption spent.
+	var tmpraw = parseInt(tmpattack.damage.total) || 0;
+	if (!blowLands(tmpraw, false)) {
+		await ChatMessage.create({
+			speaker: ChatMessage.getSpeaker({ actor: tmptargetactor }),
+			content: `<div class="imagine-chat damage-result"><p>The blow lands on
+				<strong>${esc(tmptargetactor.name)}</strong> for no damage. Nothing is hurt.</p></div>`
+		});
+		if (tmpmessage.isOwner) { await tmpmessage.setFlag("imagine-rpg", "attack.applied", true); }
+		return;
+	}
+
 	// The target's pain threshold comes off -- or goes on -- before armour sees the blow, which
 	// is the first thing his handler does with it. A negative threshold is a tougher target.
-	var tmpraw = parseInt(tmpattack.damage.total) || 0;
 	var tmpthreshold = parseInt(tmpsys.combat.painThreshold) || 0;
 	var tmpfelt = applyPainThreshold(tmpraw, tmpthreshold, tmpsys.combat.highPainThreshold);
 
@@ -310,13 +324,14 @@ export async function applyAttackDamage(tmpmessage) {
 		bypass: tmpoptions.bypass,
 		hide: tmpsys.body.hide,
 		material: tmparea.material,
-		isMagicArmor: false,
-		// He reads "was any damage entered" off the RAW figure, before the threshold, and skips
-		// the armour blocking when there was none. See resolveAreaDamage.
-		noDamageEntered: tmpraw < 1
+		isMagicArmor: false
 	});
+
+	// Absorption is the last thing to touch the damage, after armour and hide, and it is spent
+	// by what it takes. See absorbDamage.
+	var tmpabsorbed = absorbDamage(tmpblow.net, tmpsys.combat.damageAbsorb);
 	var tmpafter = applyAreaDamage({
-		damage: tmpblow.net,
+		damage: tmpabsorbed.damage,
 		areaWounds: tmparea.wounds,
 		areaEndurance: tmparea.endurance,
 		vitality: tmpsys.attributes.vit.value,
@@ -329,6 +344,9 @@ export async function applyAttackDamage(tmpmessage) {
 	if (tmpblow.armorDamage > 0) {
 		tmpupdate[`system.body.armorDamage.${tmparea.name}`] = tmparea.armorDamage + tmpblow.armorDamage;
 	}
+	if (tmpabsorbed.pool != tmpsys.combat.damageAbsorb) {
+		tmpupdate["system.combat.damageAbsorb"] = tmpabsorbed.pool;
+	}
 	await tmptargetactor.update(tmpupdate);
 
 	var tmpnotes = [];
@@ -336,6 +354,10 @@ export async function applyAttackDamage(tmpmessage) {
 	else if (tmpafter.vitalitySaveNeeded) { tmpnotes.push(`${esc(tmparea.name)} is past its Endurance: a Vitality save is needed.`); }
 	if (tmpafter.inShock) { tmpnotes.push(`<strong>${esc(tmptargetactor.name)} is in shock.</strong>`); }
 	if (tmpblow.armorDamage > 0) { tmpnotes.push(`The armour there takes ${tmpblow.armorDamage} damage.`); }
+	if (tmpabsorbed.damage != tmpblow.net) {
+		tmpnotes.push(`Absorption takes ${tmpblow.net - tmpabsorbed.damage}; `
+			+ `${tmpabsorbed.pool} left in the pool.`);
+	}
 	if (tmpfelt != tmpraw) {
 		tmpnotes.push(`Pain threshold ${tmpthreshold > 0 ? "+" : ""}${tmpthreshold}`
 			+ `${tmpsys.combat.highPainThreshold ? " and a high pain threshold" : ""}`
@@ -347,7 +369,7 @@ export async function applyAttackDamage(tmpmessage) {
 		content: `<div class="imagine-chat damage-result">
 			<p><strong>${esc(tmptargetactor.name)}</strong> takes ${tmpattack.damage.total} ${esc(tmpoptions.type)}
 			damage to the ${esc(tmparea.name)}${tmpoptions.bypass ? " (bypassing armour)" : ` (armour ${tmparea.armor})`}.</p>
-			<p>${tmpblow.blocked} stopped, <strong>${tmpblow.net}</strong> through.
+			<p>${tmpblow.blocked} stopped, <strong>${tmpabsorbed.damage}</strong> through.
 			Wounds there: ${tmpafter.wounds} / ${tmparea.endurance}.</p>
 			${tmpnotes.map(n => `<p>${n}</p>`).join("")}
 		</div>`

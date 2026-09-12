@@ -492,3 +492,54 @@ parse. Both sheets were checked in the preview harnesses with a real value set.
 
 **Not verified:** the field writing back from the sheet, and the note reaching the chat card —
 both need a running Foundry V14, which this machine does not have.
+
+### 2026-09-12 — Damage absorption is a pool, and a correction to how a blow of nothing behaves
+
+**Decision:** `absorbDamage` ports the last thing his `handleBodyDamage` does to a blow
+(sheet-worker.js:71359-71366), and `blowLands` ports the test that decides whether the blow does
+anything at all (line 71322). Both actor types carry `combat.damageAbsorb`.
+
+**Absorption is a pool, not a per-blow reduction.** It takes what it can off the damage *after*
+armour has blocked its share and after natural hide, and it is spent by the same amount, so it
+wears out across a fight. Both figures are worked from the values before either changed and then
+floored at zero, which is his arithmetic exactly. A pool of 10 against four blows of 3 stops the
+first three and lets 2 through on the fourth.
+
+**Where the pool comes from is deliberately not ported yet.** His `checkSpiritForceArmorModifiers`
+(line 106966) refills it, every time equipment changes, to the better of a `Rune Absorption: +N`
+on worn armour and the Game Master's own modifier — and it does the same for force armour, outer
+kinetic armour and spiritual armour, each taking the *maximum* rather than stacking. Runes are a
+deferred subsystem and the magic armours are their own backlog item, so for now the pool is
+entered and spent by hand. Worth noting a real tension in his design for when that lands: the
+same attribute is both a derived maximum and a depleting pool, so equipping anything refills it.
+
+**CORRECTION to the pain threshold entry above.** That entry said his `noDamageInput` flag
+"skips the armour blocking" so that "a blow of nothing against a positive pain threshold gets
+through unblocked". That was wrong, and the port built on it was wrong with it. The guard at line
+71322 is `if (!isLost && !noDamageInput)`, and it wraps not just the blocking but the armour
+damage, the hide reduction, the absorption **and the store of the final damage**. So a hit that
+rolled under 1 does nothing whatever — no wounds, no armour damage, no absorption spent —
+however large a positive pain threshold the target carries. The mistake was reading the guard's
+extent from the line that opens it rather than from the indentation of what it contains.
+
+`resolveAreaDamage` therefore loses the `noDamageEntered` input it was given an hour ago, and the
+rule moves to `blowLands`, called before anything else in `applyAttackDamage`. Two tests that
+asserted the wrong behaviour are replaced by four that assert the right one.
+
+**Sub-decisions:**
+- *`blowLands` also takes an `isLost` argument*, because the same guard covers it: an area marked
+  LOST cannot be hurt. Lost limbs are not modelled yet, so nothing passes `true` — the argument
+  is there so the rule is stated where it belongs rather than rediscovered later.
+- *The pool is written back on the actor*, and only when it actually changed, so applying damage
+  spends it. This is the first thing in the port where applying damage changes something other
+  than wounds and armour damage.
+- *The chat card reports what absorption took and what is left*, because a pool the players
+  cannot see is a pool they will forget.
+
+**Verified:** 208 combat tests pass, 13 of them new, covering an empty pool, a pool larger and
+smaller than the blow, an exact match, a missing value, four blows wearing one pool down, and the
+ordering against hide. Derivation 116, creature 129, availability 39 unchanged; 26 modules parse.
+Both sheets were checked in the preview harnesses with a pool set.
+
+**Not verified:** the pool writing back to the database and the chat note — a running Foundry V14,
+which this machine does not have.

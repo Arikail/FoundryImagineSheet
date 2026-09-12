@@ -273,25 +273,54 @@ check("the result can go negative",           R.applyPainThreshold(2, -5, false)
 check("...and resolveAreaDamage floors it",
 	R.resolveAreaDamage({ damage: -3, type: "Cutting", totalArmor: 0, bypass: false, hide: 0 }).net, 0);
 
-// The one oddity worth reproducing: he decides "was any damage entered" from the RAW figure,
-// before the threshold, and skips the armour blocking entirely when there was none. So a blow
-// of nothing against a positive threshold gets through unblocked.
-const noneEntered = R.resolveAreaDamage({
-	damage: R.applyPainThreshold(0, 3, false), type: "Cutting", totalArmor: 20,
-	bypass: false, hide: 0, material: "Plate", noDamageEntered: true });
-check("nothing entered: armour does not block what the threshold adds", noneEntered.net, 3);
-check("...and the armour takes no damage either",                       noneEntered.armorDamage, 0);
+// Whether a blow does anything at all is read off the RAW figure, before the threshold. His
+// whole apply block -- armour damage, hide, absorption and the store alike -- sits inside
+// `if (!isLost && !noDamageInput)`, so a hit that rolled under 1 does nothing whatever, however
+// large a positive pain threshold the target carries.
+check("a blow of 1 lands",              R.blowLands(1, false), true);
+check("a blow of 0 does not",           R.blowLands(0, false), false);
+check("nor does a negative one",        R.blowLands(-4, false), false);
+check("a lost area cannot be hurt",     R.blowLands(10, true), false);
 
 // With damage actually entered, armour blocks normally and the threshold only changes the
 // figure it is blocking. 20 armour against 10 cutting is the under-quarter band.
 const entered = R.resolveAreaDamage({
 	damage: R.applyPainThreshold(10, 0, false), type: "Cutting", totalArmor: 20,
-	bypass: false, hide: 0, material: "Plate", noDamageEntered: false });
+	bypass: false, hide: 0, material: "Plate" });
 const softened = R.resolveAreaDamage({
 	damage: R.applyPainThreshold(10, -4, false), type: "Cutting", totalArmor: 20,
-	bypass: false, hide: 0, material: "Plate", noDamageEntered: false });
+	bypass: false, hide: 0, material: "Plate" });
 check("a softened blow gets no further through than the full one", softened.net <= entered.net, true);
-check("blocking still runs when damage was entered", entered.net, R.blockDamage(10, "Cutting", 20, false));
+check("blocking runs on the felt figure", entered.net, R.blockDamage(10, "Cutting", 20, false));
+
+// --- damage absorption ------------------------------------------------------------
+// From handleBodyDamage, the very last thing to touch the damage -- after armour has blocked
+// its share and after natural hide. A POOL, not a per-blow reduction: it takes what it can and
+// is spent by the same amount, so it wears out.
+check("no pool changes nothing",        R.absorbDamage(10, 0), { damage: 10, pool: 0 });
+check("a pool bigger than the blow eats it whole",  R.absorbDamage(4, 10), { damage: 0, pool: 6 });
+check("a pool smaller than the blow is used up",    R.absorbDamage(10, 4), { damage: 6, pool: 0 });
+check("an exact match empties both",                R.absorbDamage(7, 7),  { damage: 0, pool: 0 });
+check("neither figure goes negative",               R.absorbDamage(1, 1),  { damage: 0, pool: 0 });
+check("a missing pool reads as none",               R.absorbDamage(10, undefined), { damage: 10, pool: 0 });
+check("a pool against no damage is untouched",      R.absorbDamage(0, 5),  { damage: 0, pool: 5 });
+
+// It wears out across blows, which is the whole point of it being a pool.
+var tmppool = 10;
+var tmpthrough = [];
+for (const tmpblow of [3, 3, 3, 3]) {
+	const tmpstep = R.absorbDamage(tmpblow, tmppool);
+	tmppool = tmpstep.pool;
+	tmpthrough.push(tmpstep.damage);
+}
+check("a pool of 10 against four blows of 3", tmpthrough, [0, 0, 0, 2]);
+check("...and is empty afterwards",           tmppool, 0);
+
+// Order: armour and hide first, absorption last, on what is left.
+const hidden = R.resolveAreaDamage({
+	damage: 20, type: "Cutting", totalArmor: 0, bypass: true, hide: 5, material: "" });
+check("hide comes off before absorption",     hidden.net, 15);
+check("absorption then takes its share",      R.absorbDamage(hidden.net, 10), { damage: 5, pool: 0 });
 
 // --- shields: the fifth layer, by size and by handedness -------------------------
 // From equipShield. A shield is held in the off hand, so a right-hander is covered down the

@@ -222,7 +222,16 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				// The Famorian "High Pain Threshold" evoke, worth one further point off. Nothing
 				// sets this yet -- the evoke system is a separate piece of work -- but the field
 				// exists so a Game Master can tick it and so the evoke has somewhere to land.
-				highPainThreshold: new fields.BooleanField({ required: true, initial: false })
+				highPainThreshold: new fields.BooleanField({ required: true, initial: false }),
+
+				// @MARKER DAMAGE ABSORPTION
+				// A POOL, not a per-blow reduction. It takes what it can off a blow after armour
+				// and hide have had theirs, and is spent by the same amount, so it wears out.
+				// (sheet-worker.js:71359-71366.) His checkSpiritForceArmorModifiers refills it to
+				// the best of a "Rune Absorption: +N" on worn armour and the Game Master's own
+				// modifier whenever equipment changes; runes are a deferred subsystem, so for now
+				// the pool is entered and spent by hand.
+				damageAbsorb: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 })
 			}),
 
 			// @MARKER NOTES
