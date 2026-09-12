@@ -741,3 +741,54 @@ parse.
 **Not verified:** anything needing a running Foundry V14. The sheet panel gained a Projectile row
 but was not checked in the preview this pass — the preview character is a Warrior, which never
 acquires Projectile Lore, so exercising it needs a fixture change. Left for Sonnet.
+
+### 2026-09-12 — Hand-authored classes from his Word templates, and the Elemental Dancer
+
+**Decision:** classes his sheet-worker cannot describe are authored in `src/packs/manual/classes.json`
+from his own Word class templates, and merged by `build_documents.py` after the generated ones.
+The Elemental Dancer is the first, built from "2c, Elemental Dancer.doc" supplied by the user.
+
+**Why a manual layer is needed at all.** `classtitledict` and `goalupdict` hold 92 classes;
+`classRequirementsAndDetails` holds 88. Five classes — Elemental Dancer, Elementalist, GME,
+Inquisitor, Summoner — exist in the first two and in no row of the third, so the document builder,
+which keys off the requirements dictionary, silently produced nothing for them. That is why the
+class count has been 86 all along while his switches carry 92 cases. Logged as
+`UPSTREAM-ISSUES.md` item 22.
+
+**Sub-decisions:**
+- *His sheet-worker still wins where it has a value.* The titles come from `classtitledict`, the
+  goal attributes from `goalupdict`, and the four lore titles from his switches. The Word template
+  fills only what his code does not carry. Every disagreement is recorded in the entry's own
+  `_notes` as well as in item 22.
+- *A manual entry never overwrites a generated one.* If he adds the missing rows, the generated
+  class wins and the manual entry is reported as `manual-class-redundant` on the next build. That
+  keeps this from becoming a fork of his data.
+- *Provenance travels with the entry.* Each carries `_document` naming the file it came from and
+  `_fromSheetWorker` listing which fields came from his code instead. Keys beginning with `_` are
+  stripped when the document is built, so none of it reaches Foundry.
+- *`advancement.classSkills` is a new field*, parallel to `titles`, holding the skills gained at
+  each title. His `classtitledict` carries only the title NAMES, so this is empty for all 86
+  generated classes and filled only from the Word templates. Without it the most substantial part
+  of the template — a fifteen-row skill progression — would have been dropped on the floor.
+- *Angle-bracketed skills are kept verbatim.* "<1st Kinesis>", "<Lore Type>", "<Call of Element>"
+  and "<2nd Kinesis>" are placeholders his template resolves from a per-element table, and that
+  table is preserved in the description. Resolving them into six element-specific variants would
+  have invented six classes he did not write.
+- *The Dancer Extension table is preserved as prose only.* Core-skill thresholds and
+  racial-maximum attribute requirements have no home in the class schema, and inventing an
+  extension model for one class would be the wrong order to do that work in.
+
+**The two disagreements**, both resolved his code's way: `goalupdict` says the goal attributes are
+Strength and Agility while the template's Goal Advancement line says Strength and **Will Force**;
+and `classtitledict`'s fifteenth title is "One with the Element" where the template writes "One
+with `<Element>`". The first is a real rules difference and is the one put back to him.
+
+**A cross-check worth recording because it held:** the template lists Weapon Lore as a title 8
+class skill, and `getWeaponLoreWhen` independently returns 8. Two sources written years apart
+agreeing is good evidence the generated lore tables are being read correctly.
+
+**Verified:** 87 class documents now build, up from 86, and the total is 4,367. 300 combat tests
+pass, 9 of them new, covering the new class's attack progression at every step and the
+title-8 Weapon Lore boundary. Derivation 123, creature 129, availability 39 unchanged; 26 modules
+parse. Monk remains unbuilt for a different reason — item 1's column defect — and is not addressed
+here.

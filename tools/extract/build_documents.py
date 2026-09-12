@@ -454,7 +454,39 @@ def build_classes():
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
         }))
+    docs.extend(load_manual_classes({d["name"] for d in docs}))
     return docs
+
+
+def load_manual_classes(tmpbuilt):
+    """
+    Class documents hand-authored from his own Word class templates.
+
+    Five classes appear in his classtitledict and goalupdict but have no row at all in
+    classRequirementsAndDetails, so nothing can be built for them from the sheet-worker alone
+    (docs/UPSTREAM-ISSUES.md item 22). Those are authored in src/packs/manual/classes.json from
+    the .doc templates and merged here.
+
+    A manual entry NEVER overwrites a class his own data can build: if he later adds the missing
+    rows, the generated one wins and the manual entry is reported as redundant instead.
+    """
+    path = os.path.join(HERE, "..", "..", "src", "packs", "manual", "classes.json")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as fh:
+        payload = json.load(fh)
+
+    out = []
+    for tmpname, tmprow in payload.get("entries", {}).items():
+        if tmpname in tmpbuilt:
+            note("manual-class-redundant", "manual/%s" % tmpname,
+                 "his own data now builds this class; the manual entry is ignored")
+            continue
+        system = {k: v for k, v in tmprow.items() if not k.startswith("_")}
+        out.append(make_doc(tmpname, "class", system))
+        note("manual-class-used", "manual/%s" % tmpname,
+             "built from %s" % tmprow.get("_document", "a Word class template"))
+    return out
 
 
 # Abilities, disabilities and immunities: which pair of dictionaries feeds each category, and

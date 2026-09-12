@@ -405,3 +405,54 @@ works lore out per weapon and per attack mode rather than as one figure for the 
 weapons only, which is what your removal comment implies you wanted and could not express with a
 single character-wide modifier.
 
+
+## 22. Five classes have no `classRequirementsAndDetails` row at all
+
+**Status:** open · **Severity:** real gap; those classes cannot be built from the sheet alone
+
+`classtitledict` and `goalupdict` each hold **92** classes. `classRequirementsAndDetails` holds
+**88**. Five names appear in the first two and in no row of the third:
+
+| Class | In `classtitledict` | In `goalupdict` | In `classRequirementsAndDetails` |
+|---|---|---|---|
+| Elemental Dancer | yes | yes | **no** |
+| Elementalist | yes | yes | **no** |
+| GME | yes | yes | **no** |
+| Inquisitor | yes | yes | **no** |
+| Summoner | yes | yes | **no** |
+
+So your sheet knows those classes' title names and goal attributes, and knows nothing about their
+requirements, class modifiers, armour or weapon usage, attack progression or description. Four of
+the five are also in `getLoreAttackChart`, so the sheet will happily work out a Lore attack chart
+for a class it cannot otherwise describe.
+
+("GME" may not be a playable class at all — worth confirming rather than assuming.)
+
+**Separately, Monk is a sixth case with a different cause.** It *is* in
+`classRequirementsAndDetails`, but with 21 columns instead of 22, so this port rejects the row
+rather than guessing where the missing column belongs — that is item 1, still open.
+
+**What the port does:** `Elemental Dancer` is authored by hand in `src/packs/manual/classes.json`
+from your own Word template ("2c, Elemental Dancer.doc"), and merged in by `build_documents.py`
+after the generated classes. A manual entry never overwrites a class your data can build, so if
+you add the missing rows the generated one wins automatically and the manual entry is reported as
+redundant. The other four have no template to hand and remain unbuilt.
+
+**Two disagreements between that template and your sheet-worker**, both resolved in the
+sheet-worker's favour per the standing rule, both worth your confirmation:
+
+| | `sheet-worker.js` | the Word template |
+|---|---|---|
+| Goal attributes | `goalupdict`: **STR, AGL** | "+1 Strength 5%, +1 **Will Force** 5%" |
+| Title 15 name | `classtitledict`: "One with the Element" | "One with `<Element>`" (a placeholder) |
+
+The goal-attribute one is the one that matters: Agility and Will Force are not interchangeable,
+and a Dancer's own requirements list Strength, Agility **and** Will Force at 15, so either reading
+is plausible.
+
+**A cross-check that held:** the template lists Weapon Lore as a title 8 class skill, and
+`getWeaponLoreWhen` independently returns 8 for this class. The two sources agree there.
+
+**Also noticed:** `Beguiler`'s `classType` contains a paragraph of description rather than a class
+type ("This class has the focus of illusions and uses these skills to dazzle and confuse their
+foes..."). That has the look of the same kind of column slip as item 1, in a different row.

@@ -49,6 +49,12 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// one lists 16.
 			advancement: new fields.SchemaField({
 				titles:     new fields.ArrayField(new fields.StringField(), { initial: [] }),
+				// The class skills gained at each title, parallel to titles above. His sheet-worker
+				// does not carry these -- classtitledict holds only the title NAMES -- so they are
+				// empty for every class built from it, and filled only for classes authored from
+				// his Word class templates (src/packs/manual/). Angle-bracketed entries such as
+				// "<1st Kinesis>" are placeholders his templates resolve from a per-class table.
+				classSkills: new fields.ArrayField(new fields.StringField(), { initial: [] }),
 				goalAttr1:  new fields.StringField({ required: true, initial: "" }),
 				goalAttr2:  new fields.StringField({ required: true, initial: "" })
 			}),

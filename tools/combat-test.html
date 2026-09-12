@@ -362,6 +362,23 @@ check("lore is a line of its own in the to-hit list",
 	withLore.list.find(m => m.label == "Lore")?.value, 3);
 check("...and is in the total", withLore.total, 6);
 
+// --- the Elemental Dancer, authored from his Word class template ------------------
+// Five classes are in his classtitledict but have no classRequirementsAndDetails row, so they
+// cannot be built from the sheet-worker alone. This one is authored in src/packs/manual/ from
+// his own .doc; these checks are that it reads like any other class rather than a special case.
+const dancerList = "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11";
+check("its progression parses at title 1",  R.getAttackSkillForTitle(dancerList, 1), "Novice");
+check("...at title 3",                      R.getAttackSkillForTitle(dancerList, 3), "Intermediate");
+check("...at title 7, still Advanced",      R.getAttackSkillForTitle(dancerList, 7), "Advanced");
+check("...at title 8",                      R.getAttackSkillForTitle(dancerList, 8), "Expert");
+check("...at title 11",                     R.getAttackSkillForTitle(dancerList, 11), "Master");
+check("...and stays Master above it",       R.getAttackSkillForTitle(dancerList, 20), "Master");
+check("it never lists Grandmaster",         dancerList.includes("Grandmaster"), false);
+// His getWeaponLoreWhen says 8 and his Word document lists Weapon Lore as a title 8 class
+// skill -- two independent sources agreeing, which is why this one is worth pinning.
+check("Weapon Lore is not held at title 7", R.hasLore(7, 8), false);
+check("...and is at title 8",               R.hasLore(8, 8), true);
+
 // --- projectile lore, per die ------------------------------------------------------
 // From handlePhysicalAttacks (sheet-worker.js:64518-64545, 64990). The odd one of the lore
 // family: worth damage PER DIE rather than a flat figure, and attached to the AMMUNITION rather

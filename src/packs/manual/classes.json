@@ -1,0 +1,80 @@
+{
+  "_source": {
+    "what": "Class documents hand-authored from W. Michael Tenery III's own Word class templates.",
+    "why": "Five classes appear in his classtitledict and goalupdict (92 entries each) but have no row at all in classRequirementsAndDetails (88), so build_documents.py cannot build them from the sheet-worker alone: Elemental Dancer, Elementalist, GME, Inquisitor, Summoner. See docs/UPSTREAM-ISSUES.md item 22. Entries here are merged in by build_documents.py after the generated ones and never overwrite a class his data can build.",
+    "rule": "Where his sheet-worker HAS a value it wins, per the standing source-of-truth rule, and the Word document fills only what the sheet-worker lacks. Every disagreement between the two is recorded in the entry's _notes."
+  },
+  "entries": {
+    "Elemental Dancer": {
+      "_document": "2c, Elemental Dancer.doc -- 'Imagine Role Playing Class Creation Template', last saved by Michael Tenery 2025-09-16.",
+      "_fromSheetWorker": [
+        "advancement.titles -- classtitledict['Elemental Dancer']",
+        "advancement.goalAttr1 / goalAttr2 -- goalupdict['Elemental Dancer']",
+        "loreAttackTitle -- getLoreAttackChart",
+        "weaponLoreTitle / missileLoreTitle / projectileLoreTitle -- getWeaponLoreWhen and siblings"
+      ],
+      "_notes": [
+        "His sheet-worker and his Word document disagree twice, and the sheet-worker wins both times.",
+        "GOAL ATTRIBUTES: goalupdict says STR and AGL; the document's Goal Advancement line says '+1 Strength 5%, +1 Will Force 5%' -- Strength and WILL FORCE. Kept as STR/AGL, flagged for him.",
+        "TITLE 15: classtitledict says 'One with the Element'; the document writes 'One with <Element>', a placeholder for the element chosen. Kept as his literal.",
+        "CROSS-CHECK THAT HELD: the document lists Weapon Lore as a title 8 class skill and getWeaponLoreWhen independently returns 8 for this class.",
+        "The document's Dancer Extension table (core-skill thresholds and a racial-maximum attribute requirement) has no home in the class schema and is preserved in the description prose only.",
+        "Skill entries in angle brackets are element-dependent; the element table is in the description."
+      ],
+      "casting": {
+        "isCaster": false,
+        "isInvoker": false,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 0,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "STR, AGL",
+        "attribQualify": [15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15]
+      },
+      "advancement": {
+        "titles": [
+          "Meditator", "Floating Dancer", "Skilled Dancer", "Focused Dancer", "Dancer",
+          "Adept Dancer", "Elemental Dancer", "Heroic Dancer", "Heroic Dancer", "Thought Dancer",
+          "Planes Dancer", "Planes Dancer", "Spirit Dancer", "Spirit Dancer", "One with the Element"
+        ],
+        "classSkills": [
+          "Body Parry, Leap, Martial Knowledge, Meditate, Weapon Knowledge",
+          "Brace, Balance, Detect Magic, Levitation, Weapon Parry",
+          "Acrobatics, Detect Aura, Kinetics Knowledge, Shield Parry, Telekinesis",
+          "Climb, Dodge, Feint, Trip, <1st Kinesis>",
+          "Body Control, Disarm, Force, Martial Lore, Stun",
+          "Absorb Aura, Fearless, Sweep, Valiant Physique, <Lore Type>",
+          "Balanced Mind, <Call of Element>, Elemental Knowledge, Mind Dance, Kinetics Lore",
+          "Critical, Heroic Endurance, Surprise Attack, Weapon Lore, <2nd Kinesis>",
+          "Disable, Identify, Indominable Speed, Sense Projection, Sever",
+          "Kinetics Mastery, Plane Walk, Slay, Spirit Travel, Thought Projection",
+          "Tranquil Mind, Sense Supernatural: 20%",
+          "Will Strike, Sense Supernatural: 40%",
+          "Nerve Strike, Sense Supernatural: 60%",
+          "Spirit Strike, Sense Supernatural: 80%",
+          "Serious Punch, Sense Supernatural: 99%"
+        ],
+        "goalAttr1": "STR",
+        "goalAttr2": "AGL"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to disciplined skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any",
+      "weaponUsage": "Any",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 5, Expert at 8, Master at 11",
+      "loreAttackTitle": 11,
+      "weaponLoreTitle": 8,
+      "missileLoreTitle": 0,
+      "projectileLoreTitle": 0,
+      "classType": "Warrior subclass",
+      "description": "The Dancer class is an elemental warrior, focused on combat, body and mind, combined with their magical element of choice. They slowly learn to control their body, their mind, and then their element in that order. They are well trained and focused. Sometimes the element they choose affects their emotions and outlook and they must guard against this.\n\nCore Skills: Levitation, Martial Knowledge, Martial Lore, Telekinesis, <1st Kinesis>.\n\nSocial Skills: Required: Dancing, Drilling. Up to three from the following: Baking/Cooking, Calligraphy, Chirugeon, Diplomacy, Drawing/Sketching, Heraldry, History, Instruction, Philosophy, Physiology, Psychology, Running, Scribing, Survival, or Swimming.\n\nGoal Advancement: 18 skill points, +1 Strength 5%, +1 Will Force 5%.\n\nTitle Advancement: None. Racial Restrictions: None.\n\nElement table -- the angle-bracketed class skills are element-dependent:\nWater: Cryokinesis / Water Lore / Call of Water / Sonokinesis.\nAir: Electrokinesis / Wood Lore / Call of Air / Apparokinesis.\nEarth: Caustokinesis / Stone Lore / Call of Earth / Magnetokinesis.\nFire: Pyrokinesis / Metal Lore / Call of Fire / Aurakinesis.\nLight: Lumokinesis / Crystal Lore / Call of Life / Gravikinesis.\nDark: Umbrakinesis / Bone Lore / Call of Death / Gravikinesis.\n\nDancer Extension -- core skill requirements: Martial Knowledge 90%, Levitation 85%, Telekinesis 80%, <1st Kinesis> 75%, Martial Lore 70%. Attribute requirements: Strength, Agility and Will Force at racial maximum, Intelligence at racial maximum less 2, Knowledge 15."
+    }
+  }
+}
