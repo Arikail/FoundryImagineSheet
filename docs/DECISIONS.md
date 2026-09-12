@@ -277,3 +277,18 @@ Porting that positionally would have faithfully reproduced armour landing on the
 - *`ARMOR_COVERAGE_BY_AREA` stays* as the plain humanoid view, since it reads clearly and is the shape most content is authored against; nothing depends on it now.
 
 **Verified:** regenerating the tables changed nothing that already existed — 217 insertions, no deletions — and all four suites still pass unchanged (derivation 91, creature 121, combat 101, availability 39), confirming the humanoid mapping is equivalent to the flat table it replaced.
+
+### 2026-09-11 — The critical fumble table, ported as data rather than prose
+
+**Decision:** `getCriticalFumble` (sheet-worker.js:26460) is ported as `resolveCriticalFumble`, and `resolveFumble`'s critical branch now reads it instead of returning "the Game Master determines the result".
+
+**What his table is:** a melee critical rolls d100 down nine ten-point bands — hitting a solid object, hitting another target in range, or hitting yourself, each at half, full and double damage — then 91-94 trips, 95-98 trips and takes full damage, and 99 and 100 additionally lose the weapon, thrown 1d20 feet in one of eight compass directions. Those last two bands roll a second d100: under 20 the damage lands normally, otherwise it bypasses armour, and the 100 band stuns for 1d3 seconds before the 1d6+1 needed to stand. A missile critical is always the weapon breaking.
+
+**Sub-decisions:**
+- *The consequence is returned as data, not only as text.* `target` ("object", "other", "self" or none), `damageMultiplier` (his half, full and double), `bypassesArmor`, `weaponLost` and `weaponBroken` come back alongside the prose. His sheet could only ever print a sentence, because Roll20 had nowhere to put the rest; here the damage a fumble causes can actually be applied. The text is kept and reads as his does, so a Game Master sees the same thing.
+- *Dice are passed in*, as everywhere else in the rules module, so the table is testable without randomness. The two attack paths roll them up front.
+- *A caller that omits the new dice still gets a sound result* — the table reads as its first band rather than throwing, which matters because the same function serves both attack paths.
+
+**No upstream defects found:** unlike most of what has been ported lately, this function does exactly what it appears to. The only oddity is that his 99 band tests `critRoll<100` after `critRoll<99` has already been taken, so the 99 band is a single value; that is correct, just written oddly.
+
+**Verified:** 147 combat tests pass, 23 of them new, covering every band, both edges at 10/11, the variant split, the direction lookup and the missile case; the other three suites are unchanged.

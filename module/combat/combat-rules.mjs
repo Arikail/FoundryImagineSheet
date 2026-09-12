@@ -201,8 +201,110 @@ export const MODE_DAMAGE_TYPES = {
 		};
 	}
 
+	// The eight compass points a dropped weapon flies off in. From getRandomDirection
+	// (sheet-worker.js:26444), a d8.
+	export const FUMBLE_DIRECTIONS = ["North", "Northeast", "East", "Southeast",
+	                                  "South", "Southwest", "West", "Northwest"];
+
+	// This is the function which reads his critical fumble table. Ported from getCriticalFumble
+	// (sheet-worker.js:26460).
+	//
+	// A melee critical is a d100 down nine ten-point bands -- hitting a solid object, hitting
+	// another target in range, or hitting yourself, each at half, full and double damage -- then
+	// tripping, tripping with damage, and at 99 and 100 losing the weapon as well. Those last two
+	// bands roll again: under 20 the damage lands normally, otherwise it bypasses armour. A
+	// missile critical is always the same, the weapon breaking.
+	//
+	// The dice arrive as arguments, as everywhere else in this file:
+	//   tmpdice = {
+	//       criticalRoll:  d100, which band of the table
+	//       variantRoll:   d100, the armour-bypassing split on the 99 and 100 bands
+	//       standRoll:     d6, seconds to get up (1d6+1)
+	//       throwRoll:     d20, feet the weapon is thrown
+	//       directionRoll: d8, which way it goes
+	//       stunRoll:      d3, seconds stunned on the 100 band
+	//   }
+	//
+	// Returns the consequence as data as well as prose, so the damage a fumble causes can be
+	// applied rather than only read: target is what gets hit ("object", "other", "self" or ""),
+	// damageMultiplier is his half/full/double, and bypassesArmor marks the worst two results.
+	export function resolveCriticalFumble(tmpismissile, tmpdice) {
+		if (tmpismissile) {
+			return { target: "", damageMultiplier: 0, bypassesArmor: false, secondsLost: 0,
+			         weaponLost: false, weaponBroken: true,
+			         text: "the weapon breaks and is unusable until repaired" };
+		}
+
+		var tmproll = parseInt(tmpdice.criticalRoll) || 0;
+		var tmpstand = (parseInt(tmpdice.standRoll) || 0) + 1;
+		var tmpthrown = parseInt(tmpdice.throwRoll) || 0;
+		var tmpdirection = FUMBLE_DIRECTIONS[((parseInt(tmpdice.directionRoll) || 1) - 1) % 8];
+
+		// The nine damage bands, in his order: three targets at half, full and double.
+		const tmpbands = [
+			{ upTo: 10, target: "object", multiplier: 0.5, what: "Hits a solid object" },
+			{ upTo: 20, target: "object", multiplier: 1.0, what: "Hits a solid object" },
+			{ upTo: 30, target: "object", multiplier: 2.0, what: "Hits a solid object" },
+			{ upTo: 40, target: "other",  multiplier: 0.5, what: "Hits another target in range" },
+			{ upTo: 50, target: "other",  multiplier: 1.0, what: "Hits another target in range" },
+			{ upTo: 60, target: "other",  multiplier: 2.0, what: "Hits another target in range" },
+			{ upTo: 70, target: "self",   multiplier: 0.5, what: "Hits self" },
+			{ upTo: 80, target: "self",   multiplier: 1.0, what: "Hits self" },
+			{ upTo: 90, target: "self",   multiplier: 2.0, what: "Hits self" }
+		];
+		for (const tmpband of tmpbands) {
+			if (tmproll <= tmpband.upTo) {
+				var tmpwhere = (tmpband.target == "object") ? "the weapon and the object"
+				             : (tmpband.target == "other") ? "a random area on that target"
+				             : "a random area";
+				return { target: tmpband.target, damageMultiplier: tmpband.multiplier,
+				         bypassesArmor: false, secondsLost: 0, weaponLost: false, weaponBroken: false,
+				         text: `${tmpband.what}: ${describeMultiplier(tmpband.multiplier)} damage to ${tmpwhere}` };
+			}
+		}
+
+		if (tmproll <= 94) {
+			return { target: "", damageMultiplier: 0, bypassesArmor: false, secondsLost: tmpstand,
+			         weaponLost: false, weaponBroken: false,
+			         text: `Trips on the weapon: falls, losing ${tmpstand} seconds to stand` };
+		}
+		if (tmproll <= 98) {
+			return { target: "self", damageMultiplier: 1.0, bypassesArmor: false, secondsLost: tmpstand,
+			         weaponLost: false, weaponBroken: false,
+			         text: `Trips on the weapon, damaging self: full damage to a random area, and falls, `
+			             + `losing ${tmpstand} seconds to stand` };
+		}
+
+		// The last two bands roll again: under 20 the damage lands normally, otherwise it goes
+		// straight through armour.
+		var tmpbypass = !((parseInt(tmpdice.variantRoll) || 0) < 20);
+		var tmpthrough = tmpbypass ? " bypassing armour" : "";
+		if (tmproll <= 99) {
+			return { target: "self", damageMultiplier: 1.0, bypassesArmor: tmpbypass,
+			         secondsLost: tmpstand, weaponLost: true, weaponBroken: false,
+			         text: `Trips on the weapon, damaging self and losing it: full damage${tmpthrough} to a `
+			             + `random area, falls losing ${tmpstand} seconds to stand, and the weapon is thrown `
+			             + `${tmpthrown} feet ${tmpdirection}` };
+		}
+
+		var tmpstun = parseInt(tmpdice.stunRoll) || 0;
+		return { target: "self", damageMultiplier: 2.0, bypassesArmor: tmpbypass,
+		         secondsLost: tmpstun + tmpstand, weaponLost: true, weaponBroken: false,
+		         text: `Trips on the weapon, damaging self and losing it: double damage${tmpthrough} to a `
+		             + `random area, falls stunned for ${tmpstun} seconds then loses ${tmpstand} more to `
+		             + `stand, and the weapon is thrown ${tmpthrown} feet ${tmpdirection}` };
+	}
+
+	// This is the function which names a damage multiplier the way his table reads.
+	function describeMultiplier(tmpmultiplier) {
+		if (tmpmultiplier == 0.5) { return "half"; }
+		if (tmpmultiplier == 2.0) { return "double"; }
+		return "full";
+	}
+
 	// This is the function which works out what a fumble costs. Ported from
-	// handlePhysicalAttacks (sheet-worker.js:64894-64912).
+	// handlePhysicalAttacks (sheet-worker.js:64894-64912), with the critical branch reading his
+	// table through resolveCriticalFumble.
 	//
 	// The dice arrive as arguments rather than being rolled here:
 	//   tmpdice = {
@@ -211,9 +313,8 @@ export const MODE_DAMAGE_TYPES = {
 	//       severityRoll: d100; 80 or under is an ordinary fumble, above is critical
 	//       effectRoll:   d6 for a missile jam (1d6+1 seconds), d20 for melee (feet thrown)
 	//   }
-	// A critical fumble's actual consequence comes from a table in his code (getCriticalFumble)
-	// that is not ported yet; the Player's Guide leaves it to the Game Master, which is what
-	// this returns.
+	// plus, for a critical, the dice resolveCriticalFumble documents. A caller that does not
+	// supply them still gets a sound result -- the table simply reads as its first band.
 	export function resolveFumble(tmpaglsave, tmpismissile, tmpdice) {
 		if (tmpdice.saveRoll <= tmpaglsave) {
 			return { saved: true, critical: false,
@@ -228,12 +329,18 @@ export const MODE_DAMAGE_TYPES = {
 			return { saved: false, critical: false, secondsLost: 0,
 			         text: `Agility save failed: the weapon is thrown ${tmpdice.effectRoll} feet in a random direction.` };
 		}
-		if (tmpismissile) {
-			return { saved: false, critical: true, secondsLost: 0,
-			         text: "Agility save failed: CRITICAL fumble -- the weapon breaks and needs repair." };
-		}
-		return { saved: false, critical: true, secondsLost: 0,
-		         text: "Agility save failed: CRITICAL fumble -- the Game Master determines the result." };
+
+		var tmpcritical = resolveCriticalFumble(tmpismissile, tmpdice);
+		return {
+			saved: false, critical: true,
+			secondsLost: tmpcritical.secondsLost,
+			target: tmpcritical.target,
+			damageMultiplier: tmpcritical.damageMultiplier,
+			bypassesArmor: tmpcritical.bypassesArmor,
+			weaponLost: tmpcritical.weaponLost,
+			weaponBroken: tmpcritical.weaponBroken,
+			text: `Agility save failed: CRITICAL fumble -- ${tmpcritical.text}.`
+		};
 	}
 
 

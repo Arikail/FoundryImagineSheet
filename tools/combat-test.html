@@ -137,6 +137,53 @@ check("unknown damage type is treated as Other",       R.blockDamage(30, "Wibble
 check("poison without bypass does nothing (his table, flagged)", R.blockDamage(12, "Poison", 0), 0);
 check("poison with bypass lands in full",              R.blockDamage(12, "Poison", 0, true), 12);
 
+// --- his critical fumble table ---------------------------------------------------
+// getCriticalFumble (sheet-worker.js:26460): nine ten-point bands, then tripping, tripping with
+// damage, and at 99 and 100 losing the weapon too. The dice are passed in, as everywhere here.
+const critDice = (roll, extra = {}) => ({
+	criticalRoll: roll, variantRoll: 50, standRoll: 3, throwRoll: 12, directionRoll: 3,
+	stunRoll: 2, ...extra
+});
+const crit = (roll, extra) => R.resolveCriticalFumble(false, critDice(roll, extra));
+
+check("1-10: solid object, half damage",   [crit(5).target, crit(5).damageMultiplier], ["object", 0.5]);
+check("11-20: solid object, full",         [crit(15).target, crit(15).damageMultiplier], ["object", 1.0]);
+check("21-30: solid object, double",       [crit(25).target, crit(25).damageMultiplier], ["object", 2.0]);
+check("31-40: another target, half",       [crit(35).target, crit(35).damageMultiplier], ["other", 0.5]);
+check("51-60: another target, double",     [crit(55).target, crit(55).damageMultiplier], ["other", 2.0]);
+check("61-70: hits self, half",            [crit(65).target, crit(65).damageMultiplier], ["self", 0.5]);
+check("81-90: hits self, double",          [crit(85).target, crit(85).damageMultiplier], ["self", 2.0]);
+check("the band edges land in the lower band", [crit(10).damageMultiplier, crit(11).damageMultiplier], [0.5, 1.0]);
+
+// 91-94 is a trip with no damage; 1d6+1 seconds to stand.
+check("91-94: trips, no damage",           crit(92).damageMultiplier, 0);
+check("...and loses 1d6+1 seconds",        crit(92).secondsLost, 4);
+check("95-98: trips and takes full damage", [crit(96).target, crit(96).damageMultiplier], ["self", 1.0]);
+check("...still only 1d6+1 seconds",       crit(96).secondsLost, 4);
+
+// The last two bands roll again: under 20 the damage lands normally, otherwise through armour.
+check("99: the weapon is lost",            crit(99).weaponLost, true);
+check("99 with a low variant roll: armour still counts",
+	crit(99, { variantRoll: 10 }).bypassesArmor, false);
+check("99 with a high variant roll: bypasses armour",
+	crit(99, { variantRoll: 50 }).bypassesArmor, true);
+check("100: double damage and stunned",    [crit(100).damageMultiplier, crit(100).weaponLost], [2.0, true]);
+check("100 adds the stun to the time to stand", crit(100).secondsLost, 6);   // 1d3=2 plus 1d6+1=4
+check("the thrown weapon takes a direction", crit(99).text.includes("East"), true);
+
+// A missile critical is always the same.
+const critMissile = R.resolveCriticalFumble(true, critDice(5));
+check("a missile critical breaks the weapon", critMissile.weaponBroken, true);
+check("...and does no damage",                critMissile.damageMultiplier, 0);
+
+// And it reaches through resolveFumble, which is what the attack code calls.
+const fullFumble = R.resolveFumble(30, false, {
+	saveRoll: 90, recoveryRoll: 3, severityRoll: 95, ...critDice(65)
+});
+check("a failed save above 80 is critical",   fullFumble.critical, true);
+check("...and carries the table's consequence", fullFumble.damageMultiplier, 0.5);
+check("...with the table's text",             fullFumble.text.includes("Hits self"), true);
+
 // --- which armour slot covers which area, per body type --------------------------
 // From getArmorValuesByBodyTypeAndArmor. His version switches on the area's POSITION in the
 // body chart; the port keys by area NAME, because two of his branches have drifted out of step

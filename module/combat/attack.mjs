@@ -157,7 +157,14 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 			saveRoll: await rollDie("1d100"),
 			recoveryRoll: await rollDie("1d4"),
 			severityRoll: await rollDie("1d100"),
-			effectRoll: await rollDie(tmpmode == "missile" ? "1d6" : "1d20")
+			effectRoll: await rollDie(tmpmode == "missile" ? "1d6" : "1d20"),
+			// His critical fumble table, rolled up front so the rules stay free of dice.
+			criticalRoll: await rollDie("1d100"),
+			variantRoll: await rollDie("1d100"),
+			standRoll: await rollDie("1d6"),
+			throwRoll: await rollDie("1d20"),
+			directionRoll: await rollDie("1d8"),
+			stunRoll: await rollDie("1d3")
 		});
 	}
 
