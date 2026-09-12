@@ -847,6 +847,87 @@ modifiers, the ten-second round tracker, and skills as items with computed chanc
 the base penalty (tables, handedness, the weapon flags, the full-penalty tier) and then the two
 skills that buy it down. Splitting them keeps each commit testable.
 
+#### RESOLVED 2026-09-12 — the three questions above, answered by the user
+
+**1. What an "extra off-hand second" means: a discount on the off-hand attack's cost.**
+The user's framing is sharper than the question was: *ambidexterity functionally overrides two-weapon
+fighting, because an ambidextrous character does not lose time fighting with the off hand.* So the
+direction is settled — **fighting off-handed COSTS seconds**, and that cost is what the subsystem is
+about. Second Weapon Lore's up-to-five levels each buy one of those seconds back; an Ambidextrous
+character never pays the cost, which is why his code grants them zero levels. That is a non-need, not
+a penalty. It is **not** extra general action time in the round: the seconds attach to the off-hand
+attack specifically, so they cannot be spent on anything else.
+
+**2. Off-hand is DERIVED, not stored — and this is simpler than his model.**
+The user's answer replaces the question rather than picking from it: *a weapon is tagged on the combat
+page as **left, right or both***. That is a three-state hand assignment, not the boolean
+`weaponN_offhand` his sheet carries. Combined with `handedness`, which **both actor types already
+have** (added in the shield pass, where a right-hander is covered down the left side), off-handedness
+falls out of the data:
+
+> a weapon is off-hand when its hand is not the wielder's dominant hand; an Ambidextrous wielder has
+> no off hand, so the penalty tier never applies.
+
+This removes a stored flag rather than adding one, keeps a longsword from needing re-editing when it
+changes hands, and **reuses a field already built and tested** rather than introducing a parallel one.
+"Both" is the two-handed case, which already means something to the damage rule (a Strength bonus is
+doubled two-handed), so the tag has to feed that path too rather than being read only by the off-hand
+code.
+
+Second Weapon **Knowledge** and **Lore** stay per-weapon properties, as his sheet has them and as the
+five already-ported lore types are — only the hand assignment moved.
+
+**3. Model: Opus**, per the project's model-choice protocol.
+
+**What this changes about the estimate.** Item 3 of the Sonnet note ("three booleans on the weapon
+item") is now wrong and must not be built as written — it is **one three-state hand field plus two
+lore booleans**, and the off-hand boolean is deleted from the plan entirely. The note is corrected
+where it sits.
+
+### 2026-09-12 — Three of the six remaining item sheets, not six
+
+The board carried "Item sheets — three of nine done", which reads as six outstanding and a job
+two-thirds finished. Reviewed properly, **three of the six should be built and three should stay on
+Foundry's default sheet** until something actually authors against them.
+
+**Field count is the wrong ranking.** Race has the most fields of the six (36) and the least demand
+for a sheet; equipment has the fewest (9) and needs one least of all. What decides it is whether the
+type carries **nested or variable-length structure**, because that is what the default sheet renders
+as an unusable dump — the same reason the creature attack got a sheet and the power and trait got
+simpler ones.
+
+**Build these three:**
+
+1. **Class — the strongest case, and it is not about fields.** There is a live authoring workflow:
+   the Elemental Dancer was hand-authored from his Word class template into
+   `src/packs/manual/classes.json` (80 lines for one class), and **four more classes are known to
+   need the same treatment** — Elementalist, GME, Inquisitor and Summoner, which appear in his
+   `classtitledict` and `goalupdict` but have no `classRequirementsAndDetails` row at all
+   (`UPSTREAM-ISSUES.md` item 22). That work is currently done by hand-editing raw JSON. It is the
+   only one of the six with a known, recurring, already-happening authoring need. It also carries
+   three `ArrayField`s — `advancement.titles`, `advancement.classSkills`, `classMods` — and
+   variable-length arrays are exactly what the default sheet handles worst.
+2. **Armour — the structural case.** `coverage` is a `SchemaField` of **19 body locations**, each a
+   plain number, which the default sheet renders as nineteen stacked inputs named
+   `system.coverage.shoulderLeft` and so on. It wants a body-shaped grid, laid out in the charts'
+   own order rather than alphabetically. Homebrew magic armour is common in play, and `magicBonus`
+   became a real field in the shield pass.
+3. **Race — two 12-wide grids.** `attributeMods` and `attributeLimits` are twelve numbers each and
+   must be laid out in his canonical attribute order (str agl vit int wis knw app chm soc aur pty
+   wil), not alphabetically, or the sheet stops matching every other attribute display in the
+   system.
+
+**Leave these three on the default sheet:** weapon, skill and equipment. They are broad but flat —
+equipment is nine plain fields — and Foundry's default sheet renders flat fields acceptably. Building
+sheets for them now would be three sheets of busywork against content that is read far more often
+than it is written. **The trigger to revisit is authoring, not field count:** if hand-authored
+weapons start landing in `src/packs/manual/` the way classes have, the weapon sheet earns its place
+that day.
+
+**Why this is recorded rather than just done:** "nine item types, three done" invites a future pass to
+finish the set for symmetry. The set should not be finished for symmetry. Six sheets was never the
+goal; sheets for the things people author was.
+
 ### 2026-09-12 — Where a design document and the shipped code disagree, the code wins
 
 **The standing conflict rule had a gap.** `CLAUDE.md` settles Roll20-sheet-versus-rulebook: the sheet

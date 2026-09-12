@@ -2,8 +2,12 @@
 
 This pass was research only; no code was written. What follows is the mechanical part of the
 build, which does not need the expensive window once the two design questions in `DECISIONS.md`
-("Off-hand fighting: audit before schema design") are answered. **Do not start items 2 and 3 until
-the user has answered the off-hand-seconds question** — item 1 is safe to do either way.
+("Off-hand fighting: audit before schema design") are answered.
+
+> **UNBLOCKED 2026-09-12.** The user has answered both questions, so items 2 and 3 are now safe to
+> start. **Item 3 changed shape as a result and has been rewritten — read its correction notice
+> before building it.** The answers are recorded in `DECISIONS.md` → "RESOLVED 2026-09-12 — the
+> three questions above, answered by the user".
 
 Three earlier notes are still open: `2026-09-12-lore-corrections.md`,
 `2026-09-12-projectile-lore.md`, `2026-09-12-elemental-dancer.md`.
@@ -55,20 +59,38 @@ band edges that differ between them (Agility 19 melee vs damage, and Agility 16 
 
 ---
 
-## 3. Three booleans on the weapon item
+## 3. ~~Three booleans~~ One hand field and two booleans on the weapon item
 
-**Why it was left:** trivial once the model is agreed.
+> **CORRECTED 2026-09-12 — do not build this as it was first written.** The user answered the
+> design question and the answer was not either branch this item anticipated. There is **no
+> `offHand` boolean.** See `DECISIONS.md` → "RESOLVED 2026-09-12 — the three questions above".
 
-`module/data/item-weapon.mjs` needs `offHand`, `secondWeaponKnowledge` and `secondWeaponLore`
-booleans, mirroring his `weaponN_offhand` / `weaponN_2weapknow` / `weaponN_2weaplore`. Comment
-them against those field names so the mapping is obvious on handoff.
+**Why it was left:** trivial once the model is agreed. It is still trivial; it is just a different
+shape than it was.
 
-**Hold off if** the user answers question 3 in the `DECISIONS.md` entry by saying the off-hand
-choice should be made at attack time rather than stored on the weapon — in that case they belong
-in the attack dialog instead, and only `secondWeaponKnowledge` / `secondWeaponLore` stay on the
-item.
+`module/data/item-weapon.mjs` needs:
 
-**Done when:** the fields exist with comments naming his originals, and 26 modules still parse.
+- **`hand`** — a three-state string field, `"left" | "right" | "both"`, tagged on the combat page.
+  This **replaces** his boolean `weaponN_offhand` rather than mirroring it.
+- **`secondWeaponKnowledge`** and **`secondWeaponLore`** — booleans, mirroring
+  `weaponN_2weapknow` / `weaponN_2weaplore`. These are unchanged; comment them against his field
+  names so the mapping is obvious on handoff.
+
+**Off-handedness is derived, never stored.** A weapon is off-hand when `hand` is not the wielder's
+dominant hand; `handedness` already exists on both actor types from the shield pass, so read it
+rather than adding anything. An **Ambidextrous** wielder has no off hand at all, so the penalty
+tier never applies — that is the same `"Ambidextrous"` short-circuit his three penalty tables
+already have.
+
+**`"both"` is not only an off-hand concern.** It is the two-handed case, which the damage rule
+already cares about (a Strength bonus is doubled two-handed). Check what the existing damage path
+currently keys two-handedness off, and make `hand` feed it rather than leaving two sources of the
+same fact. **If that turns out to be a real conflict rather than a rename, stop and raise it** —
+that is a judgement call, not mechanical work.
+
+**Done when:** the three fields exist with comments naming his originals, off-handedness resolves
+from `hand` + `handedness` with Ambidextrous short-circuiting, two-handedness has exactly one
+source of truth, and 26 modules still parse.
 
 ---
 
