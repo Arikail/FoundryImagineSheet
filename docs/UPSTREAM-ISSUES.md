@@ -233,6 +233,12 @@ For the plain `Snake` the branch is harmless: only the first three positions exi
 
 The port keys this mapping by area name instead of by position, so it does what the comments in his branch say rather than reproducing the shift, and every disagreement is reported when the tables are regenerated.
 
+**Found again in a second function.** `equipShield` (line 103777) writes a shield into
+`bodyAreaShieldLayer5[N]` by the same positions, and its Snake branch is written for the same
+chart that does not exist: its own comments put the right forearm at 8 and the right hand at 10,
+which is where they sit on the chart above, not on `Snake(Arms)`. So the shift is reproduced
+there too. The port keys the shield table by area name for the same reason.
+
 ## 18. The Centaur armour map has a Mid Torso the Centaur chart does not
 
 **Status:** open · **Severity:** real bug; armour lands on the wrong part of the centaur
@@ -248,6 +254,12 @@ Same function, same cause. His Centaur branch maps position 9 to "Mid Torso", bu
 | 13 | Forequarters | Left Foreleg | the barding lands one position early |
 
 The barding rule itself is fine and worth keeping: the quarters, forelegs and hindlegs take armour only from an item whose name contains "Centaur Barding", and nothing otherwise. It is only the positions that have slipped.
+
+**Found again in a second function.** `equipShield` (line 103777) has the same Centaur gap: its
+Buckler branch puts the right hand at position 11, which is a Humanoid's Right Hand but a
+Centaur's Underbelly, and its Body branch reaches positions 15 and 17 for the foreleg and fore
+shin, which on the real chart are the fore shin and the hindquarters. The port keys the shield
+table by area name for the same reason.
 
 ## 19. Seventeen lore title gates are written `=>` instead of `>=`, so they never gate anything
 

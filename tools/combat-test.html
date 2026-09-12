@@ -217,6 +217,23 @@ check("a centaur's head does not",  R.getAreaArmorSlot("Centaur", "Head").requir
 check("an arachen's abdomen needs its own barding",
 	R.getAreaArmorSlot("Arachen", "Abdomen").requiresItem, "Insectaur Barding");
 
+// Where a chart spells an area differently from the comment on the case that serves it, the
+// chart's own spelling is matched to the same slot. Without this, keying by name loses the
+// area's armour altogether -- these eight body charts had areas that no worn armour reached.
+check("a hooved Humanoid's hoof IS its foot",       R.getAreaArmorSlot("Humanoid(Hooves)", "Left Hoof").slot, "footLeft");
+check("...and a plain Humanoid's foot still is",    R.getAreaArmorSlot("Humanoid", "Left Foot").slot, "footLeft");
+check("an Insectoid's lower leg is his shin",       R.getAreaArmorSlot("Insectoid", "Left Lower Leg").slot, "shinLeft");
+check("an Insectoid's mid claw/hand is his claw",   R.getAreaArmorSlot("Insectoid(Wings)", "Right Mid Claw/Hand").slot, "handRight");
+check("a merfolk's finned tail takes the thigh",    R.getAreaArmorSlot("Humanoid(Fish Tail)", "Finned Tail").slot, "thighLeft");
+
+// Matching a spelling must not invent coverage his branch does not give. A Centaur's fore shin
+// is spelled "Foreshin" in his comment and "Fore Shin" in his chart, and neither has a slot.
+check("a Centaur's fore shin is still unarmoured",  R.getAreaArmorSlot("Centaur", "Left Fore Shin").slot, "");
+check("...and its foreleg still needs barding",     R.getAreaArmorSlot("Centaur", "Left Foreleg").requiresItem, "Centaur Barding");
+
+// The dead key his Centaur branch had -- a Mid Torso no Centaur chart contains -- is gone.
+check("no Centaur area claims a mid torso",         R.getAreaArmorSlot("Centaur", "Mid Torso").slot, "");
+
 // --- totalling the armour worn over one area -------------------------------------
 const mail = { name: "Body Suit(Chain)", system: { material: "Chain", coverage: { torsoUpper: 6, head: 0, thighLeft: 4 } } };
 const cap  = { name: "Cap(Leather)",     system: { material: "Leather", coverage: { head: 2 } } };

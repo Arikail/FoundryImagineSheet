@@ -306,3 +306,96 @@ Porting that positionally would have faithfully reproduced armour landing on the
 - *Derived on the character, not stored.* His sheet keeps a second stored chart (`special_attack_skill`) updated at titling; everything it depends on is already derived here, so storing it would only create something to fall out of step.
 
 **Not ported, and now understood well enough to say why:** the six lore *acquisition* tables (`getWeaponLoreWhen` and its missile, projectile, multi-missile, spell and armour siblings, lines 94997-95884) are a different seam — they decide when the skill itself is acquired and grant combat modifiers, not which chart is read. They are also where seventeen of his title gates are written `=>` instead of `>=` and so never gate anything (`UPSTREAM-ISSUES.md` item 19). Porting them means deciding what the correct gate is, which is his call.
+
+### 2026-09-12 — One name resolver for both armour and shield coverage, and a gap it closed
+
+**What went wrong first.** Keying armour coverage by area name rather than by his positions (the
+entry above, "Armour by body type") fixed two families whose positions had drifted. It also
+introduced a quieter fault of its own: a body chart does not always spell an area the way the
+comment on the case serving it does. His Insectoid charts say `Left Lower Leg` where his case
+comment says `Left Shin`, and `Left Mid Claw/Hand` where it says `Left Mid Claw`; his hooved
+Humanoid charts say `Left Hoof` where the case says `Left Foot`; `Humanoid(Fish Tail)` says
+`Finned Tail` where the case says `Left Thigh`. An exact name lookup finds none of those, so the
+area silently took **no worn armour at all** — 22 area instances across eight body charts,
+including both an insectoid's mid hands and shins and every hooved character's feet. Here his
+position-keyed original was right and the port was wrong, which is the opposite way round from
+items 17 and 18.
+
+**Decision:** both tables are now built through one resolver, `chart_area_lookup`, which answers
+"what does this chart call the area his case comment names?" in three passes, most trustworthy
+first:
+1. **exact** — the name appears in the chart, wherever it sits.
+2. **normalised** — it appears under different spacing (`Left Foreshin` against `Left Fore Shin`
+   on the Centaur chart). Letters and digits only, case folded. Checked across every family and
+   chart for collisions before adopting: there are none.
+3. **positional** — same position, different words. This is the pass that could hide a
+   displacement, so it runs only while chart and branch are still in step and stops for good at
+   the first sign they are not. Two conditions end it: his name is already matched elsewhere in
+   this chart (so it belongs to that other position — this is what stops `Snake(Arms)`), or the
+   chart's own name here is one of his other case labels (so he has a case for it elsewhere —
+   this is what stops a plain `Snake`'s Tail being armoured as a shoulder, and Centaur at the Mid
+   Torso it does not have).
+
+Every pass-three match is printed on each run, because it is a judgement call rather than a
+mechanical one. There are 23, across seven distinct name pairs.
+
+**Sub-decisions:**
+- *A merfolk's finned tail does take the thigh slot.* Pass three matches it, which reproduces his
+  sheet exactly. It is not the same kind of error as items 17 and 18: a tail is genuinely where
+  the legs would be, and nothing lands on an unrelated limb. Already noted for him under item 19.
+- *Matching a spelling never invents coverage.* The name is resolved first and the slot looked up
+  second, so an area his branch gives no slot still gets none — a Centaur's fore shins resolve by
+  spacing and remain unarmoured, as his branch leaves them.
+- *The dead keys are gone.* `Mid Torso` under Centaur, and the four Insectoid spellings no chart
+  uses, are no longer emitted; the map now contains only names a real chart carries.
+- *One resolver, two tables.* The shield table is keyed off the very same position labels —
+  his own case comments in `getArmorValuesByBodyTypeAndArmor` — rather than re-deriving his
+  assumed chart a second time. One statement of it, used twice.
+
+**Effect:** 106 chart-area instances had no armour slot before; 83 do now, and those 83 are
+areas his branches genuinely leave unprotected (tails, wings, pincers, underbellies, and the
+shins and feet of the many-legged bodies). 155 combat tests pass, 8 of them new; derivation 99,
+creature 121 and availability 39 are unchanged, and all 26 modules parse.
+
+### 2026-09-12 — Shield coverage: his positions are sound except for the same two families
+
+**Decision:** `SHIELD_COVERAGE` is generated from `equipShield` (sheet-worker.js:103777) into
+`module/combat-tables.mjs` — family, then shield size, then handedness, giving the list of areas
+that shield covers. `unequipShield` needs no table of its own: it simply clears the whole layer.
+
+**The index convention was verified before any of it was written**, because assuming it is what
+produced items 17 and 18. His `bodyAreaShieldLayer5[N]` really is the area's 0-based position in
+the body chart, the same convention the armour coverage assumes — and it lines up exactly for
+Humanoid, Saurian, Insectoid, Arachen, Scethen and Brachara. It does **not** for Snake or
+Centaur, where it is displaced by one in precisely the same way, and the same direction, as his
+armour branches are. So items 17 and 18 are not confined to `getArmorValuesByBodyTypeAndArmor`:
+the same two wrong mental charts were used a second time, in a second function, independently.
+His Snake branch is written for a chart running Head, Upper Length, **Lower Length**, then
+shoulders; his Centaur branch for one with a **Mid Torso at position 9**. Both are recorded
+against the existing items rather than as new ones, since it is the same defect.
+
+**What the table says.** A shield is held in the off hand, so a right-hander is covered down the
+left side, and the sizes grow outward from the hand: Buckler the forearm *or* the hand, Small
+both, Medium adding the arm, Large the shoulder too, and Body the whole flank down to the foot.
+His own Buckler comments name those areas in words ("equip on the right forearm") and agree with
+the position labels for every family, which is the cross-check that the decode is right.
+
+**Sub-decisions:**
+- *Ambidextrous is right-handed.* His code tests `tempHandedness=="Left"` and takes everything
+  else as the other hand, so "Ambidextrous" — a value his racial code really does set
+  (sheet-worker.js:49206) — falls into the else branch and wears the shield as a right-hander
+  does. Recorded as such rather than invented away.
+- *A Buckler is two entries, not a flag.* `Buckler` is held in the hand and `Buckler(Wrist)` is
+  strapped to the forearm, which is the choice his `equip_buckler_on_wrist` makes. Two keys read
+  better than a flag threaded through the lookup.
+- *An Insectoid's Large shield covers no more than its Medium*, because his own comment says so:
+  "Insects have no shoulder joints. No changes between medium/large shields."
+- *A Snake's Body shield covers its Lower Length and Tail* instead of legs it does not have, and
+  a Centaur's reaches the foreleg and fore shin but not the hind. Both are his.
+- *An area a chart does not have simply drops out.* A plain `Snake` has four areas and no arms,
+  so a shield lands nowhere on it; `Humanoid(Fish Tail)` has no legs, so a Body shield stops at
+  the hand and the tail. His code writes past the end of those charts and the writes are
+  discarded by his own bounds loop, so this matches.
+- *Generated, not transcribed.* Five sizes across five family branches, each mirrored by
+  handedness, is 96 lists. Same rule that caught the column maps, the armour maps and the Lore
+  chart before it.

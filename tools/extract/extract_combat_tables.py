@@ -174,35 +174,106 @@ ARMOR_SLOT_KEYS = [
 ]
 
 
+def norm_area(tmpname):
+    """An area name reduced to letters and digits, for matching two spellings of one area."""
+    return re.sub(r"[^a-z0-9]", "", tmpname.lower())
+
+
+def chart_area_lookup(chart_areas, family_labels):
+    """
+    Work out what each of his case comments is called on one particular body chart.
+
+    His branches in getArmorValuesByBodyTypeAndArmor and equipShield both switch on an area's
+    POSITION in the body chart, and each branch serves every chart whose name contains the family
+    word. The port keys by area NAME instead, because two of his branches are out of step with
+    the charts they serve (docs/UPSTREAM-ISSUES.md items 17 and 18) and a position-keyed port
+    would put armour on the wrong limb. The names come from the comment he wrote on each case,
+    which is his own statement of what he meant that position to be.
+
+    Keying by name creates a gap of its own, though: a chart does not always spell an area the way
+    the comment does. So each label is matched against the chart in three passes, most trustworthy
+    first:
+
+        1. exact      -- the name appears in the chart, wherever it sits.
+        2. normalised -- it appears under different spacing. A Centaur chart says "Left Fore Shin"
+                         where his comment says "Left Foreshin". Same area, two spellings.
+        3. positional -- the same position, different words. An Insectoid chart says "Left Lower
+                         Leg" where his comment says "Left Shin"; a hooved Humanoid says "Left
+                         Hoof" where his says "Left Foot". Without this the area silently loses
+                         all of its armour.
+
+    The third pass is the one that could hide a displacement, so it only runs while the chart and
+    the branch are still walking in step, and stops for good at the first sign they are not:
+        - his name is already matched somewhere else in this chart -- it belongs to that other
+          position, so this is drift (this is what stops Snake(Arms));
+        - the chart's own name at this position is one of his other case labels -- he has a case
+          for it elsewhere, so again drift (this is what stops a plain Snake's Tail being
+          armoured as a shoulder, and Centaur at its missing Mid Torso).
+
+    Returns (lookup, aliases): lookup maps his name to this chart's name, and aliases lists the
+    third-pass matches, which are a judgement call and are reported rather than made silently.
+    """
+    lookup, aliases = {}, []
+    bynorm = {}
+    for tmparea in chart_areas:
+        bynorm.setdefault(norm_area(tmparea), tmparea)
+    branchnames = set(family_labels.values())
+
+    # Passes 1 and 2: by name, wherever in the chart the area sits.
+    for position in sorted(family_labels):
+        name = family_labels[position]
+        if name in chart_areas:
+            lookup[name] = name
+        elif norm_area(name) in bynorm:
+            lookup[name] = bynorm[norm_area(name)]
+
+    # Pass 3: by position, only while the two are still in step.
+    instep = True
+    for position, area in enumerate(chart_areas):
+        name = family_labels.get(position)
+        if name is None:
+            break                              # his branch labels nothing at this position
+        if name == area:
+            continue
+        if name in lookup or area in branchnames:
+            instep = False                     # drift, not spelling -- and nothing after it counts
+            continue
+        if not instep:
+            continue
+        lookup[name] = area
+        aliases.append((position, name, area))
+
+    return lookup, aliases
+
+
 def body_armor_maps(charts):
     """
     Which armour slot covers each body area, per body-type family.
 
-    From getArmorValuesByBodyTypeAndArmor. His version switches on the area's POSITION in the
-    body chart and returns an index into the armour row. That is fragile: he matches the family
-    with includes(), so one branch serves every chart whose name contains the family word, and
-    those charts do not all list their areas in the same order. Two of them have drifted out of
-    step with the branch that serves them -- Snake(Arms) and Centaur -- so a position-keyed port
-    would faithfully reproduce armour landing on the wrong limb.
-
-    The port therefore keys by area NAME, taken from the comment he wrote on each case, which is
-    the statement of what he meant that position to be. Any case whose comment disagrees with the
-    chart at that position is returned as a mismatch for reporting; his comment wins.
+    From getArmorValuesByBodyTypeAndArmor, read as position -> comment name and position -> armour
+    slot, then keyed by the names each chart actually uses (see chart_area_lookup above for why,
+    and for how a chart's own spelling is matched to his).
 
     A few areas only take armour from a named item -- a Centaur's quarters and legs need
     "Centaur Barding" -- and those are returned separately rather than flattened away.
 
-    Returns (maps, required_items, mismatches, first line).
+    Returns (maps, required_items, mismatches, aliases, position labels, first line). The position
+    labels -- family -> position -> the area name his comment gives it -- are his own statement of
+    each family's assumed chart, and the shield table is keyed off that same statement rather than
+    re-deriving it.
     """
     start, body = function_body("getArmorValuesByBodyTypeAndArmor")
 
-    maps, required, mismatches = {}, {}, []
+    # First pass: read his branches into position -> comment name, position -> slot, and the
+    # areas gated on a particular item.
+    labels, slots, gates = {}, {}, {}
     family, pending = None, None
     for line in body:
         m = re.search(r'tmpBodyType\.includes\("([^"]+)"\)', line)
         if m:
             family = m.group(1)
-            maps.setdefault(family, {})
+            labels.setdefault(family, {})
+            slots.setdefault(family, {})
             pending = None
             continue
         if family is None:
@@ -211,36 +282,185 @@ def body_armor_maps(charts):
         found = re.findall(r'case\s+(\d+)\s*:', line)
         if found:
             comment = re.search(r'//\s*(.+?)\s*$', line)
-            pending = (int(found[0]), comment.group(1).strip() if comment else "")
+            # callers pass the area's index plus two, so a case label is its position plus two
+            pending = (int(found[0]) - 2, comment.group(1).strip() if comment else "")
+            if pending[1]:
+                labels[family][pending[0]] = pending[1]
             continue
 
         # An area gated on a particular item: "if (armorItemName.includes("Centaur Barding"))".
         gate = re.search(r'armorItemName\.includes\("([^"]+)"\)', line)
         if gate and pending:
-            required.setdefault(family, {})[pending[1]] = gate.group(1)
+            gates.setdefault(family, {})[pending[0]] = gate.group(1)
             continue
 
         slot = re.search(r'tempReturnArmorValue\s*=\s*tempArmorValues\[(\d+)\]', line)
         if slot and pending:
             index = int(slot.group(1))
-            case, name = pending
+            position, name = pending
             pending = None
             if not name:
                 continue                       # no comment: nothing to key by, so skip it
             if index < 2 or index - 2 >= len(ARMOR_SLOT_KEYS):
                 continue                       # material, type or weight: not a location
-            maps[family][name] = ARMOR_SLOT_KEYS[index - 2]
+            slots[family][position] = ARMOR_SLOT_KEYS[index - 2]
 
-            # Cross-check his comment against every chart this family's branch serves.
-            for chart_name, chart in charts.items():
-                if family not in chart_name:
-                    continue
-                areas = [a.split("(")[0] for a in chart.split(",")]
-                position = case - 2            # callers pass the area's index plus two
-                if 0 <= position < len(areas) and areas[position] != name:
-                    mismatches.append((family, chart_name, position, name, areas[position]))
+    # Second pass: name the slots the way each chart the branch serves names them.
+    maps, required, mismatches, aliases = {}, {}, [], []
+    for family in labels:
+        maps[family] = {}
+        for chart_name in sorted(charts):
+            if family not in chart_name:
+                continue
+            areas = [a.split("(")[0] for a in charts[chart_name].split(",")]
+            lookup, chart_aliases = chart_area_lookup(areas, labels[family])
 
-    return maps, required, mismatches, start
+            for position in sorted(labels[family]):
+                name = lookup.get(labels[family][position])
+                if not name:
+                    continue                   # this chart has no such area at all
+                if position in slots[family]:
+                    maps[family][name] = slots[family][position]
+                if position in gates.get(family, {}):
+                    required.setdefault(family, {})[name] = gates[family][position]
+
+            for position, meant, actual in chart_aliases:
+                if position in slots[family] or position in gates.get(family, {}):
+                    aliases.append((family, chart_name, position, meant, actual,
+                                    slots[family].get(position, "requires "
+                                                      + gates.get(family, {}).get(position, ""))))
+
+            for position, area in enumerate(areas):
+                meant = labels[family].get(position)
+                if meant is not None and meant != area:
+                    mismatches.append((family, chart_name, position, meant, area))
+
+    return maps, required, mismatches, aliases, labels, start
+
+
+# The five shield sizes, in the order his equipShield tests them. A shield's name carries its
+# size -- "Shield(Large/Steel)" -- and he matches with includes(), so the order is the tie-break.
+SHIELD_SIZES = ["Buckler", "Small", "Medium", "Large", "Body"]
+
+
+def shield_coverage_maps(charts, labels):
+    """
+    Which body areas a shield covers, per body-type family, shield size and handedness.
+
+    From equipShield. A shield lands in a fifth armour layer on top of the four worn ones, and
+    every area it covers gains the shield's own armour value. Its mirror, unequipShield, needs no
+    table of its own -- it simply clears the whole layer.
+
+    His version writes into bodyAreaShieldLayer5[N], N being the area's POSITION in the body
+    chart. Those positions were checked by hand against every chart before this was written. They
+    line up exactly for Humanoid, Saurian, Insectoid, Arachen, Scethen and Brachara -- and NOT for
+    Snake or Centaur, where they are displaced by one in precisely the same way, and the same
+    direction, as his armour branches are. That is UPSTREAM-ISSUES items 17 and 18 appearing a
+    second time, in a second function.
+
+    So this is keyed by area name, resolved through the same chart_area_lookup the armour coverage
+    uses, off the same position labels -- one statement of his assumed chart, used twice. His own
+    Buckler comments are the cross-check: they name the areas in words ("equip on the right
+    forearm") and agree with those labels for every family.
+
+    Handedness in his code is binary -- tempHandedness=="Left" against everything else -- so
+    "Ambidextrous", which his racial code does set, falls into the else branch and wears the
+    shield as a right-hander would. Recorded here as "Right" rather than invented away.
+
+    Returns (maps, unresolved, first line), where maps is
+        family -> size -> handedness -> [area name, ...]
+    and a Buckler appears under two sizes, "Buckler" (held in the hand) and "Buckler(Wrist)"
+    (strapped to the forearm), which is the choice his equip_buckler_on_wrist flag makes.
+    """
+    start, body = function_body("equipShield")
+
+    # First pass: read his branches into family -> size -> handedness -> [position, ...].
+    writes, unresolved = {}, []
+    depth = 0
+    context = {0: {}}
+    lastcond = {}
+
+    for line in body:
+        # Where would a block opened on this line sit? Any closing braces before the first open
+        # brace have already taken us back out, so those come off the depth first.
+        upto = line.index("{") if "{" in line else len(line)
+        base = depth - line[:upto].count("}")
+
+        if "{" in line:
+            newctx = dict(context.get(base, {}))
+            cond = None
+
+            size = re.search(r'tmpItemName\.includes\("([^"]+)"\)', line)
+            fams = re.findall(r'tempBodyType\.includes\("([^"]+)"\)', line)
+            hand = re.search(r'tempHandedness\s*==\s*"([^"]+)"', line)
+            buck = re.search(r'tempEquipBuckler\s*==\s*"([^"]+)"', line)
+
+            if size and size.group(1) in SHIELD_SIZES:
+                cond = ("size", size.group(1))
+            elif fams:
+                cond = ("families", tuple(fams))
+            elif hand:
+                cond = ("hand", hand.group(1))
+            elif buck:
+                cond = ("wrist", True)
+            elif re.search(r'\}\s*else\s*\{', line):
+                # The else of whatever opened last at this depth. Only handedness and the buckler
+                # flag have a meaningful else; the size and family chains are else-if.
+                prev = lastcond.get(base)
+                if prev and prev[0] == "hand":
+                    cond = ("hand", "Right" if prev[1] == "Left" else "Left")
+                elif prev and prev[0] == "wrist":
+                    cond = ("wrist", False)
+
+            if cond:
+                newctx[cond[0]] = cond[1]
+                lastcond[base] = cond
+            context[base + 1] = newctx
+
+        write = re.search(r'bodyAreaShieldLayer5\[(\d+)\]\s*=', line)
+        if write:
+            here = context.get(depth, {})
+            size, hand = here.get("size"), here.get("hand")
+            if size and hand:
+                key = size
+                if size == "Buckler":
+                    key = "Buckler(Wrist)" if here.get("wrist") else "Buckler"
+                for family in here.get("families", ()):
+                    slot = (writes.setdefault(family, {}).setdefault(key, {})
+                                  .setdefault(hand, []))
+                    position = int(write.group(1))
+                    if position not in slot:
+                        slot.append(position)
+
+        depth = depth + line.count("{") - line.count("}")
+
+    # Second pass: name those positions the way each chart the branch serves names them. An area
+    # a chart simply does not have drops out -- a plain Snake has no arms to strap a shield to.
+    maps = {}
+    for family in writes:
+        maps[family] = {}
+        for key in writes[family]:
+            maps[family][key] = {}
+            for hand, positions in writes[family][key].items():
+                # Position-major, so the list reads down the body the way his branch writes it,
+                # with any chart's own spelling of an area sitting beside the common one.
+                names = []
+                for position in positions:
+                    meant = labels.get(family, {}).get(position)
+                    if meant is None:
+                        unresolved.append((family, key, hand, position))
+                        continue
+                    for chart_name in sorted(charts):
+                        if family not in chart_name:
+                            continue
+                        areas = [a.split("(")[0] for a in charts[chart_name].split(",")]
+                        lookup, _ = chart_area_lookup(areas, labels.get(family, {}))
+                        name = lookup.get(meant)
+                        if name and name not in names:
+                            names.append(name)
+                maps[family][key][hand] = names
+
+    return maps, unresolved, start
 
 
 def load_raw(name):
@@ -337,7 +557,8 @@ def main():
         out.append("\t%-26s %d,\n" % (js(name) + ":", value))
     out.append("};\n\n")
     # ARMOUR COVERAGE BY BODY TYPE
-    armor_maps, armor_required, armor_mismatches, armor_line = body_armor_maps(bodies)
+    (armor_maps, armor_required, armor_mismatches, armor_aliases,
+     armor_labels, armor_line) = body_armor_maps(bodies)
     out.append("// @MARKER ARMOUR COVERAGE BY BODY TYPE\n")
     out.append("// From getArmorValuesByBodyTypeAndArmor (sheet-worker.js:%d). Which armour slot covers each\n" % armor_line)
     out.append("// area, for the eight body-type families his code handles. A family matches by substring, so\n")
@@ -364,6 +585,39 @@ def main():
             out.append("\t\t%-26s %s,\n" % (js(area) + ":", js(item)))
         out.append("\t},\n")
     out.append("};\n\n")
+
+    # SHIELD COVERAGE BY BODY TYPE
+    shield_maps, shield_unresolved, shield_line = shield_coverage_maps(bodies, armor_labels)
+    out.append("// @MARKER SHIELD COVERAGE BY HANDEDNESS\n")
+    out.append("// From equipShield (sheet-worker.js:%d). Which areas a shield covers, by body-type\n" % shield_line)
+    out.append("// family, shield size and the wielder's handedness. A shield is a FIFTH layer, added on\n")
+    out.append("// top of the four worn ones, and every area it covers gains the shield's own armour value.\n")
+    out.append("//\n")
+    out.append("// A shield is held in the off hand, so a right-hander is covered down the LEFT side. His\n")
+    out.append("// code tests only for \"Left\" and takes everything else as right-handed, which is how an\n")
+    out.append("// Ambidextrous character -- a real value his racial code sets -- ends up on the right.\n")
+    out.append("//\n")
+    out.append("// A Buckler appears twice: on the hand, or strapped to the forearm, which is the choice\n")
+    out.append("// his equip_buckler_on_wrist flag makes. The larger sizes add an area each as they grow --\n")
+    out.append("// forearm and hand, then the arm, then the shoulder, and a Body shield the whole flank.\n")
+    out.append("//\n")
+    out.append("// Keyed by area NAME, not by his positions. His Snake and Centaur branches are displaced\n")
+    out.append("// by one in exactly the way his armour branches are -- docs/UPSTREAM-ISSUES.md items 17\n")
+    out.append("// and 18, showing up a second time here. Families absent below take no shield cover.\n")
+    out.append("export const SHIELD_COVERAGE = {\n")
+    for family in shield_maps:
+        out.append("\t%s: {\n" % js(family))
+        for size in shield_maps[family]:
+            out.append("\t\t%-18s { " % (js(size) + ":"))
+            out.append(", ".join("%s: %s" % (js(hand), js(areas))
+                                 for hand, areas in shield_maps[family][size].items()))
+            out.append(" },\n")
+        out.append("\t},\n")
+    out.append("};\n\n")
+
+    out.append("// The five sizes, smallest first, as his equipShield tests them. A shield's name carries\n")
+    out.append("// its size, so \"Shield(Large/Steel)\" is a Large.\n")
+    out.append("export const SHIELD_SIZES = %s;\n\n" % js(SHIELD_SIZES))
 
     out.append("// @END (CODE)\n")
 
@@ -398,6 +652,14 @@ def main():
     print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
           % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))
 
+    print("shield coverage    %d families, %d size/handedness combinations"
+          % (len(shield_maps), sum(len(h) for f in shield_maps.values() for h in f.values())))
+    if shield_unresolved:
+        print("  WARNING: %d shield write(s) landed on a position his armour branch does not label"
+              % len(shield_unresolved))
+        for row in shield_unresolved[:10]:
+            print("      %s %s (%s-handed) position %d" % row)
+
     # His branches key on the area's POSITION, and two have drifted out of step with the charts
     # they serve. The port keys by name instead, so these are reported rather than reproduced.
     if armor_mismatches:
@@ -413,6 +675,22 @@ def main():
             if len(rows) > 3:
                 print("      ... and %d more" % (len(rows) - 3))
         print("  (reported, not reproduced -- see docs/UPSTREAM-ISSUES.md items 17 and 18)")
+
+
+    # Where a chart spells an area differently from the comment on the case that serves it, the
+    # chart's own spelling is aliased onto the same slot -- otherwise keying by name would lose
+    # that area's armour entirely. Printed because it is a judgement call, not a mechanical one.
+    if armor_aliases:
+        print("\n%d alias(es) added so a chart's own spelling still finds its armour slot:"
+              % len(armor_aliases))
+        seen = set()
+        for family, chart, position, meant, actual, slot in armor_aliases:
+            key = (family, meant, actual, slot)
+            if key in seen:
+                continue
+            seen.add(key)
+            print("  %-10s %-22s -> %-22s %s"
+                  % (family, repr(meant), repr(actual), slot))
 
     print("\nwrote %s" % os.path.relpath(OUT, ROOT))
 

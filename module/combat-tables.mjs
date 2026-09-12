@@ -235,6 +235,9 @@ export const ARMOR_COVERAGE_BY_BODY_TYPE = {
 		"Right Shin":              "shinRight",
 		"Left Foot":               "footLeft",
 		"Right Foot":              "footRight",
+		"Finned Tail":             "thighLeft",
+		"Left Hoof":               "footLeft",
+		"Right Hoof":              "footRight",
 	},
 	"Saurian": {
 		"Head":                    "head",
@@ -270,12 +273,12 @@ export const ARMOR_COVERAGE_BY_BODY_TYPE = {
 		"Right Mid Arm":           "armRight",
 		"Left Mid Forearm":        "forearmLeft",
 		"Right Mid Forearm":       "forearmRight",
-		"Left Mid Claw":           "handLeft",
-		"Right Mid Claw":          "handRight",
+		"Left Mid Claw/Hand":      "handLeft",
+		"Right Mid Claw/Hand":     "handRight",
 		"Left Leg":                "thighLeft",
 		"Right Leg":               "thighRight",
-		"Left Shin":               "shinLeft",
-		"Right Shin":              "shinRight",
+		"Left Lower Leg":          "shinLeft",
+		"Right Lower Leg":         "shinRight",
 		"Left Foot":               "footLeft",
 		"Right Foot":              "footRight",
 		"Abdomen":                 "torsoLower",
@@ -303,7 +306,6 @@ export const ARMOR_COVERAGE_BY_BODY_TYPE = {
 		"Right Arm":               "armRight",
 		"Left Forearm":            "forearmLeft",
 		"Right Forearm":           "forearmRight",
-		"Mid Torso":               "torsoMid",
 		"Left Hand":               "handLeft",
 		"Right Hand":              "handRight",
 		"Forequarters":            "torsoLower",
@@ -421,5 +423,92 @@ export const ARMOR_REQUIRES_ITEM = {
 		"Right Hind Leg":          "Insectaur Barding",
 	},
 };
+
+// @MARKER SHIELD COVERAGE BY HANDEDNESS
+// From equipShield (sheet-worker.js:103777). Which areas a shield covers, by body-type
+// family, shield size and the wielder's handedness. A shield is a FIFTH layer, added on
+// top of the four worn ones, and every area it covers gains the shield's own armour value.
+//
+// A shield is held in the off hand, so a right-hander is covered down the LEFT side. His
+// code tests only for "Left" and takes everything else as right-handed, which is how an
+// Ambidextrous character -- a real value his racial code sets -- ends up on the right.
+//
+// A Buckler appears twice: on the hand, or strapped to the forearm, which is the choice
+// his equip_buckler_on_wrist flag makes. The larger sizes add an area each as they grow --
+// forearm and hand, then the arm, then the shoulder, and a Body shield the whole flank.
+//
+// Keyed by area NAME, not by his positions. His Snake and Centaur branches are displaced
+// by one in exactly the way his armour branches are -- docs/UPSTREAM-ISSUES.md items 17
+// and 18, showing up a second time here. Families absent below take no shield cover.
+export const SHIELD_COVERAGE = {
+	"Humanoid": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Thigh", "Right Shin", "Right Foot", "Right Hoof"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Thigh", "Finned Tail", "Left Shin", "Left Foot", "Left Hoof"] },
+	},
+	"Saurian": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Thigh", "Right Shin", "Right Foot"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Thigh", "Left Shin", "Left Foot"] },
+	},
+	"Insectoid": {
+		"Buckler(Wrist)":  { "Left": ["Right Upper Forearm"], "Right": ["Left Upper Forearm"] },
+		"Buckler":         { "Left": ["Right Upper Hand"], "Right": ["Left Upper Hand"] },
+		"Small":           { "Left": ["Right Upper Forearm", "Right Upper Hand"], "Right": ["Left Upper Forearm", "Left Upper Hand"] },
+		"Medium":          { "Left": ["Right Upper Arm", "Right Upper Forearm", "Right Upper Hand"], "Right": ["Left Upper Arm", "Left Upper Forearm", "Left Upper Hand"] },
+		"Large":           { "Left": ["Right Upper Arm", "Right Upper Forearm", "Right Upper Hand"], "Right": ["Left Upper Arm", "Left Upper Forearm", "Left Upper Hand"] },
+		"Body":            { "Left": ["Right Upper Arm", "Right Upper Forearm", "Right Upper Hand", "Right Leg", "Right Lower Leg", "Right Foot"], "Right": ["Left Upper Arm", "Left Upper Forearm", "Left Upper Hand", "Left Leg", "Left Lower Leg", "Left Foot"] },
+	},
+	"Snake": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Lower Length", "Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Tail"], "Right": ["Lower Length", "Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Tail"] },
+	},
+	"Centaur": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Foreleg", "Right Fore Shin"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Foreleg", "Left Fore Shin"] },
+	},
+	"Arachen": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Foreleg", "Right Fore Shin", "Right Fore Foot"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Foreleg", "Left Fore Shin", "Left Fore Foot"] },
+	},
+	"Scethen": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Foreleg", "Right Fore Shin", "Right Fore Foot"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Foreleg", "Left Fore Shin", "Left Fore Foot"] },
+	},
+	"Brachara": {
+		"Buckler(Wrist)":  { "Left": ["Right Forearm"], "Right": ["Left Forearm"] },
+		"Buckler":         { "Left": ["Right Hand"], "Right": ["Left Hand"] },
+		"Small":           { "Left": ["Right Forearm", "Right Hand"], "Right": ["Left Forearm", "Left Hand"] },
+		"Medium":          { "Left": ["Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Arm", "Left Forearm", "Left Hand"] },
+		"Large":           { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"] },
+		"Body":            { "Left": ["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Foreleg", "Right Fore Shin", "Right Fore Foot"], "Right": ["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Foreleg", "Left Fore Shin", "Left Fore Foot"] },
+	},
+};
+
+// The five sizes, smallest first, as his equipShield tests them. A shield's name carries
+// its size, so "Shield(Large/Steel)" is a Large.
+export const SHIELD_SIZES = ["Buckler", "Small", "Medium", "Large", "Body"];
 
 // @END (CODE)
