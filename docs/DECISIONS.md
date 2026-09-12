@@ -928,6 +928,59 @@ that day.
 finish the set for symmetry. The set should not be finished for symmetry. Six sheets was never the
 goal; sheets for the things people author was.
 
+### 2026-09-12 — The character sheet cannot show 19 fields the model carries, and languages are unwired end to end
+
+The board's remaining-tabs row read "combat, magic, journal — combat needs the event-time round
+implemented". Checked against the code, **two of those three are wrong**: the combat tab is built
+(`templates/actor/tab-combat.hbs`, a PART on the sheet since phase 1) and the event-time round is
+implemented (the ascending-initiative tracker in `module/combat/combat-document.mjs`). Magic is
+correctly deferred to Layer 4. "Journal" was never the right name for what is actually missing.
+
+**What is actually missing is coverage.** The character sheet has four tabs — attributes, skills,
+combat, equipment — and the model carries whole groups none of them render:
+
+| Group | Fields | Reachable on the sheet? |
+|---|---|---|
+| `physical` | 12 | **1 of 12** — only `handedness`, and only because the shield pass needed it |
+| `wealth` | 7 | none |
+| `languages` | array of `{name, speak, write}` | none |
+| `identity.tendencies` | 1 | none |
+
+So **19 scalar fields and one variable-length array** are in the schema, validated, saved to the
+database, and impossible for a player to see or edit. A character cannot record their height, eye
+colour, age, money or languages. This is a defect rather than a backlog item, and it is the last gap
+in character-sheet coverage.
+
+**Languages are worse than unreachable — they are unwired end to end.** `module/config-tables.mjs`
+already carries `spokenLanguages` and `writtenLanguages` as the first two columns of the Intelligence
+table, extracted from his data. **Nothing reads either column.** The table is sitting there unused.
+
+**What the fractional values mean, settled from his code rather than guessed.** The progression is
+0 through rating 3, then 0.25, 0.33, 0.33, 0.66, then 1 from rating 9, rising to a plateau of 10.
+A quarter of a language invites a guess; his code makes it unnecessary. `lang_sheet` is switched
+between hardcoded named blocks (49257-49560): `lang_quarter_spoken`, `lang_third_spoken`,
+`lang_two_third_spoken`, `lang_one_spoken`, then `lang_one_spoken_third_written`,
+`lang_one_spoken_two_third_written`, `lang_one_spoken_one_written`, `lang_two_spoken_one_written`,
+and on up.
+
+Read off that ladder the rule is unambiguous:
+
+> Below 1, the figure is **partial fluency in the character's native tongue**, not a fraction of a
+> second language — a very low-Intelligence character does not speak even their own language fully.
+> At 1 and above it becomes a **count** of languages. Writing always lags speaking: a character has
+> one spoken and a third written before they have one of each.
+
+**This is the skills inflation pattern again**, exactly as `DATA-MODEL.md` §1 describes it — Roll20
+cannot render a variable count, so he hardcoded one block per combination and reveals the matching
+one. It does not port. In Foundry it is the `languages` array plus a derived
+`(spokenAllowance, writtenAllowance)` pair off the Intelligence table, with a sub-1 allowance
+displayed as partial fluency.
+
+**Scope call:** the tab is mechanical and goes to Sonnet. **Wiring the cap is not part of it** — it
+belongs to the Attributes module (Epic 2, Backlog), which is where every other Intelligence-derived
+value will land, and putting it on the tab instead would scatter the derivation. The tab renders the
+allowance if it exists and simply omits it until then.
+
 ### 2026-09-12 — Where a design document and the shipped code disagree, the code wins
 
 **The standing conflict rule had a gap.** `CLAUDE.md` settles Roll20-sheet-versus-rulebook: the sheet
