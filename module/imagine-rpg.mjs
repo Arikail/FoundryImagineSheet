@@ -66,21 +66,17 @@ export const IMAGINE = {
 	// flexible, each layer may only sit over something at least as flexible as itself, and
 	// rigid may never stack on rigid. Clothing is its own class and does not consume a
 	// layer when its armour value is 3 or less.
-	armorFlexibility: ["Clothing", "Flexible", "Semi-Flexible", "Rigid"],
-
-	// Maximum attribute rating by being type, from the Master's Manual. A character's
-	// title decides which cap applies.
-	attributeCaps: {
-		mundane:   23,   // title 0
-		mortal:    25,   // titles 1-10
-		archMortal: 27,  // titles 11-15
-		deity:     30    // title 16+
-	}
+	armorFlexibility: ["Clothing", "Flexible", "Semi-Flexible", "Rigid"]
 };
 
-// getAttribSave and getAttributeCap live on ImagineCharacterData as static functions, so the
+// getAttribSave and getAttributeMax live on ImagineCharacterData as static functions, so the
 // rule and the data it applies to stay in one place. Reach them via
 // ImagineCharacterData.getAttribSave(rating).
+//
+// There is deliberately no table of attribute caps by being type here. The Master's Manual
+// describes mundane, mortal, arch-mortal and deity ranges, but his sheet implements none of
+// them: a maximum is the race's limit until title 11, and a flat 27 from then on. The sheet
+// wins on conflict -- see docs/DECISIONS.md.
 
 // @MARKER SYSTEM INITIALISATION
 Hooks.once("init", function () {

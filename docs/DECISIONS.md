@@ -217,3 +217,19 @@ The audit entry above was written from two research summaries without being chec
 - *The attack card reuses the weapon card's flag shape*, so Apply Damage and Spend Seconds work on a creature attack with no new wiring.
 
 **Not ported, deliberately:** the EXP/CR budgeting functions (a creature-design aid, not a play-time mechanic), the evoke and Famorian body builders (a gap shared with the character model), the Agility-driven jump table, and the +20 resistance flags that only the character side ever sets.
+
+### 2026-09-11 — CORRECTION: a character's attribute maximum follows his sheet, not the Master's Manual
+
+**What was wrong:** the character model capped each attribute at the *lower* of a Master's Manual tier by title — 23 mundane, 25 mortal, 27 arch-mortal, 30 deity — and the race's own limit. Those tiers came from the book. His sheet does not implement them, and the standing rule is that the sheet wins.
+
+**What his sheet actually does**, in two places:
+- The race's limits become the twelve maximums when a race is chosen (`str_tmp_limit` and its siblings, sheet-worker.js:8099). Before a race is picked they stand at 20 (`clearAttributeModifiersFinals`, line 32502).
+- `setArchMortalAttributesMax` (line 27549), called once on titling to 11 (line 66140), replaces all twelve with a flat **27**, discarding the racial limits — upwards as well as downwards.
+
+Nothing else caps an attribute by title. There is no deity handler at title 16, and no 23 or 25 tier anywhere. Every assignment to a `*_max` attribute was checked.
+
+**Decision:** `getAttributeCap(title)` is replaced by `getAttributeMax(title, raceLimit)`: the race's limit, or 20 with no race, and a flat 27 from title 11. His code fires the replacement once at exactly title 11 and the value persists; a derived model recomputes continuously, so the port tests "title 11 or more", which reproduces the same resulting state. The book's tiers are gone from the code, and `IMAGINE.attributeCaps` with them.
+
+**This changes play, in both directions.** An arch-mortal of a limited race gains real headroom — a race capped at 18 in Strength could never pass 18 before and now reaches 27. A low-title character of a permissive race is no longer held to 25 by a tier that does not exist in his sheet.
+
+**Found by:** the review pass over the creature audit, not by the character work itself, which is why it survived Layer 0 and combat phase 1 unnoticed. His own comment at the call site says the new maximum is 25 while the function sets 27; that contradiction is his to resolve and is logged as `UPSTREAM-ISSUES.md` item 16.

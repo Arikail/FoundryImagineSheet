@@ -485,24 +485,20 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";
 	}
 
-	// This is the function which sets each attribute's cap, its save percentage and its
+	// This is the function which sets each attribute's maximum, its save percentage and its
 	// table-driven modifiers.
 	//
-	// Two separate caps apply and the lower wins. Title sets a ceiling by how powerful a being
-	// the character has become; the race sets its own ceiling per attribute, which is often
-	// stricter. Both are applied here rather than in prepareBaseData so they also constrain
-	// anything an Active Effect added.
+	// The maximum is the race's own limit for that attribute -- until title 11, when the racial
+	// limits are discarded and every attribute is capped at a flat 27 instead. It is applied
+	// here rather than in prepareBaseData so it also constrains anything an Active Effect added.
 	_prepareAttributes() {
-		var tmptitlecap = ImagineCharacterData.getAttributeCap(this.identity.title);
 		var tmpracelimits = this.raceItem ? this.raceItem.system.attributeLimits : null;
 
 		for (const tmpkey of Object.keys(this.attributes)) {
 			var tmpattrib = this.attributes[tmpkey];
 
-			var tmpcap = tmptitlecap;
-			if (tmpracelimits && tmpracelimits[tmpkey] && tmpracelimits[tmpkey] < tmpcap) {
-				tmpcap = tmpracelimits[tmpkey];
-			}
+			var tmpracelimit = (tmpracelimits && tmpracelimits[tmpkey]) ? tmpracelimits[tmpkey] : 0;
+			var tmpcap = ImagineCharacterData.getAttributeMax(this.identity.title, tmpracelimit);
 
 			tmpattrib.max = tmpcap;
 			if (tmpattrib.value > tmpcap) { tmpattrib.value = tmpcap; }
@@ -705,13 +701,27 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		return tmpSaveValue;
 	}
 
-	// This is the function which returns the highest attribute rating a character may reach,
-	// which depends on how powerful a being they have become. From the Master's Manual.
-	static getAttributeCap(tmpTitle) {
-		if (tmpTitle >= 16) { return 30; } // deity
-		if (tmpTitle >= 11) { return 27; } // arch-mortal
-		if (tmpTitle >= 1)  { return 25; } // mortal
-		return 23;                         // mundane
+	// This is the function which returns the highest rating an attribute may reach.
+	//
+	// Ported from his sheet, which does this in two places: the race's limits become the
+	// maximums when a race is chosen (sheet-worker.js:8099), and setArchMortalAttributesMax
+	// (line 27549) replaces all twelve with a flat 27 on titling to 11 -- discarding the racial
+	// limits, upwards or downwards. Twenty is the standing default before a race is picked
+	// (clearAttributeModifiersFinals, line 32502).
+	//
+	// His code fires the arch-mortal replacement once, at exactly title 11, and the value then
+	// persists; a derived model recomputes every time, so the test is "title 11 or more", which
+	// reproduces the same resulting state.
+	//
+	// The Master's Manual's mundane / mortal / arch-mortal / deity tiers of 23 / 25 / 27 / 30
+	// are NOT implemented here, because they are not implemented in his sheet: nothing in it
+	// caps by title below 11, and nothing grants 30 at title 16. The sheet wins on conflict.
+	static getAttributeMax(tmpTitle, tmpRaceLimit) {
+		var tmpTitleValue = parseInt(tmpTitle) || 0;
+		if (tmpTitleValue >= 11) { return 27; }   // arch-mortal: racial limits are discarded
+		var tmpLimit = parseInt(tmpRaceLimit) || 0;
+		if (tmpLimit <= 0) { tmpLimit = 20; }     // no race chosen yet
+		return tmpLimit;
 	}
 
 	// @MARKER ADD NEW character data model functions HERE

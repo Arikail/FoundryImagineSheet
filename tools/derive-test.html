@@ -90,14 +90,20 @@ check("STR 19 melee damage", c19.attributes.str.mods.meleeDamage, 5);
 check("STR 19 load limit",   c19.attributes.str.mods.loadLimit, 1.8);
 check("STR 19 weapon speed", c19.attributes.str.mods.weaponSpeed, -2);
 
-// --- attribute cap by title -----------------------------------------------------
-check("cap at title 0 (mundane)",     ImagineCharacterData.getAttributeCap(0), 23);
-check("cap at title 5 (mortal)",      ImagineCharacterData.getAttributeCap(5), 25);
-check("cap at title 12 (arch-mortal)",ImagineCharacterData.getAttributeCap(12), 27);
-check("cap at title 16 (deity)",      ImagineCharacterData.getAttributeCap(16), 30);
+// --- attribute maximum: the race's limit, replaced by 27 at title 11 -------------
+// His sheet, not the Master's Manual. Maximums come from the race (20 before one is chosen),
+// and setArchMortalAttributesMax discards them for a flat 27 on titling to 11. Nothing in his
+// code caps by title below 11, and nothing grants 30 at title 16, so the book's mundane /
+// mortal / deity tiers are not implemented -- see docs/DECISIONS.md.
+check("no race yet means the 20 default",   ImagineCharacterData.getAttributeMax(0, 0), 20);
+check("a race's limit is the maximum",      ImagineCharacterData.getAttributeMax(5, 18), 18);
+check("a race may allow more than 20",      ImagineCharacterData.getAttributeMax(5, 28), 28);
+check("title 11 discards the racial limit", ImagineCharacterData.getAttributeMax(11, 18), 27);
+check("and it stays 27 at title 16",        ImagineCharacterData.getAttributeMax(16, 18), 27);
+check("title 10 is still the racial limit", ImagineCharacterData.getAttributeMax(10, 18), 18);
 
-const capped = makeCharacter({ str: 30 }, 1); // mortal cap is 25
-check("rating above cap is clamped", capped.attributes.str.value, 25);
+const capped = makeCharacter({ str: 30 }, 1); // no race, so the maximum is the 20 default
+check("rating above the maximum is clamped", capped.attributes.str.value, 20);
 
 // --- characteristics: ceiling of each category's average ------------------------
 const ch = makeCharacter({
@@ -183,12 +189,18 @@ const raced = makeCharacter({ str: 14, agl: 14, vit: 14, int: 12, wis: 12, knw: 
                             12, [makeRace()]);
 check("racial attribute modifier is applied", raced.attributes.str.value, 16);   // 14 + 2
 check("negative racial modifier is applied",  raced.attributes.agl.value, 13);   // 14 - 1
-check("racial cap is recorded",               raced.attributes.str.max, 18);
-check("unrestricted attribute keeps title cap", raced.attributes.int.max, 20);   // race limit 20 < title 27
+// Below title 11 the race's limits are the maximums.
+const racedLow = makeCharacter({ str: 14, agl: 14, vit: 14, int: 12 }, 5, [makeRace()]);
+check("racial limit is the maximum below title 11", racedLow.attributes.str.max, 18);
+check("an unrestricted attribute takes the race's own 20", racedLow.attributes.int.max, 20);
 
-// racial cap must beat the title cap when it is stricter
-const capRace = makeCharacter({ str: 20 }, 16, [makeRace()]); // title 16 would allow 30
-check("stricter racial cap overrides title cap", capRace.attributes.str.value, 18);
+// From title 11 they are discarded for a flat 27, upwards as well as downwards.
+check("title 11 and up discards the racial limit", raced.attributes.str.max, 27);
+// Strength 20 plus the race's +2 is 22. The race's limit of 18 would have clamped that before
+// title 11; at 16 the limit is gone and 22 stands, well under the flat 27.
+const capRace = makeCharacter({ str: 20 }, 16, [makeRace()]); // race limit 18, but arch-mortal
+check("a rating the race would have barred now stands", capRace.attributes.str.value, 22);
+check("and the maximum is 27, not the book's deity 30", capRace.attributes.str.max, 27);
 
 // Endurance: physical average of the POST-racial values, plus the racial endurance modifier.
 // str 14+2=16, agl 14-1=13, vit 14 -> ceil(43/3) = 15, +4 racial = 19

@@ -200,3 +200,15 @@ His character path halves a called shot's damage, and the Player's Guide says a 
 The port halves it for both actor types, so the same rule does not change meaning depending on who is swinging. Flagged because it is a deliberate departure from his creature code, unlike the rest of the creature port.
 
 **Also noticed, not worth its own entry:** the hand-to-hand test at sheet-worker.js:180022 reads `if (creatureAttackType.includes("Melee") || creatureAttackType.includes("Touch") && tmpLargeAttackDetails=="")`. Because `&&` binds tighter than `||`, the "no area shape" condition only applies to Touch, not to Melee. It gates the extra magical damage and special magic text, neither of which is ported yet.
+
+## 16. The arch-mortal attribute maximum: the comment says 25, the code sets 27
+
+**Status:** open · **Severity:** question, one of the two numbers is wrong
+
+At the title-up commit, `setArchMortalAttributesMax(newTitle)` is called with this comment:
+
+> `// at 11th and higher racial maximums are discarded and 25 is the new max.` (sheet-worker.js:66140)
+
+but the function itself (line 27549) sets all twelve maximums to **27**, not 25. One of the two is wrong and only he can say which. The port follows the code and uses 27.
+
+**Worth confirming at the same time:** his sheet has no other title-driven maximum at all. Nothing caps an attribute by title below 11, and nothing raises the maximum at title 16 — there is no deity equivalent of `setArchMortalAttributesMax`. Every assignment to a `*_max` attribute was checked. The Master's Manual describes mundane, mortal, arch-mortal and deity ranges of 23 / 25 / 27 / 30, and the Foundry port originally implemented those tiers from the book; it has since been corrected to follow the sheet instead (see `DECISIONS.md`). If the book's tiers are meant to apply in play, his sheet is not applying them.
