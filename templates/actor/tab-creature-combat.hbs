@@ -69,7 +69,17 @@
 	<p class="empty">No attacks. Add a Creature Attack item for each bite, claw, breath or gaze.</p>
 	{{/if}}
 
-	<h3 class="section-head">Body <span class="muted">{{system.body.type}}{{#if system.body.bodyChart}} (own chart){{/if}}</span></h3>
+	{{!-- As on the character sheet: handedness decides which side a shield covers. A creature's
+	      is blank by default, and blank reads as right-handed. --}}
+	<h3 class="section-head">Body <span class="muted">{{system.body.type}}{{#if system.body.bodyChart}} (own chart){{/if}}</span>
+		<label class="handedness">Handedness
+			<select name="system.identity.handedness">
+				{{#each handednessChoices as |h|}}
+				<option value="{{h.value}}" {{#if h.selected}}selected{{/if}}>{{h.label}}</option>
+				{{/each}}
+			</select>
+		</label>
+	</h3>
 	<table class="body-table">
 		<thead>
 			<tr>
@@ -89,7 +99,7 @@
 				<td class="col-num"><input type="number" class="wound-input" min="0"
 					name="system.body.wounds.{{a.name}}" value="{{a.wounds}}"></td>
 				<td class="col-num" {{#if a.layers.length}}data-tooltip="{{#each a.layers as |l|}}{{l}}{{#unless @last}}, {{/unless}}{{/each}}"{{/if}}>
-					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.armorDamage}} <span class="muted">(&minus;{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">&mdash;</span>{{/if}}</td>
+					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.shield}} <span class="muted">({{a.shield}} shield)</span>{{/if}}{{#if a.armorDamage}} <span class="muted">(&minus;{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">&mdash;</span>{{/if}}</td>
 				<td class="state">
 					{{#if (eq a.state "effect")}}Effect triggered
 					{{else if (eq a.state "vitalitySave")}}Vitality save

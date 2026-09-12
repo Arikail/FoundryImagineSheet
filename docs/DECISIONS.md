@@ -399,3 +399,54 @@ the position labels for every family, which is the cross-check that the decode i
 - *Generated, not transcribed.* Five sizes across five family branches, each mirrored by
   handedness, is 96 lists. Same rule that caught the column maps, the armour maps and the Lore
   chart before it.
+
+### 2026-09-12 — The shield layer on the body, and a double count it removed
+
+**Decision:** `getAreaShield` in `combat/combat-rules.mjs` reads `SHIELD_COVERAGE`, and both actor
+models add its result on top of the worn armour at each area. A shield is its own layer, kept
+apart from the four armour ones exactly as his sheet keeps `bodyarea*_shield_layer5` apart.
+
+**What it corrected.** A shield's own armour value sits in the **left hand** column of
+`armorvalueslist` whichever hand really holds it — his comment at `equipShield` says so outright,
+"All shields have at least armor value in area 13 (use this as the basis)". Until now the port
+treated an equipped shield as ordinary armour, so that column was read as coverage: every shield
+protected the wearer's left hand and nothing else, whatever its size and whichever hand held it.
+A left-hander was shielded on the wrong hand, and a Large shield gave nothing to the arm or
+shoulder it covers. The models therefore filter shields out of the worn-armour total before
+adding the shield layer, or the off hand would be protected twice.
+
+**Sub-decisions:**
+- *The shield layer takes no armour damage.* Accumulated damage comes off the worn armour only,
+  which is his behaviour: he degrades the four worn layers area by area and clears the shield
+  layer wholesale when the shield comes off.
+- *Handedness is a field on both actors.* The character already had one, unused and unshown; the
+  creature gains one, because his `handedness` attribute is shared by both of his sheets. Blank
+  reads as right-handed, which is what his else branch does, and the dropdown says so.
+- *The buckler's wrist option sits on the item, not the actor.* His sheet asks once, as
+  `equip_buckler_on_wrist`, because only one shield can ever be worn there. A Foundry actor can
+  own several bucklers, so the choice belongs to the buckler. Same behaviour, better home.
+- *`magicBonus` is a field on armour, not parsed out of a name.* His `getItemPlusInt` reads "+2"
+  back out of the item's name; storing it means nothing downstream has to parse a name. On a
+  shield his rule is to add the plus and then double the whole value, so a +2 shield of 20 is
+  worth 44 — that is his arithmetic as written, and it is reproduced rather than "corrected".
+- *Rune modifiers are left unimplemented but not designed out.* His `equipShield` adds
+  `Rune Strenghthen` and `Rune Armor` before the doubling. Runes are a deferred subsystem, so
+  nothing supplies them; the place they go is where his is.
+- *The covered-area list is the family's, not the chart's.* It can name an area a particular
+  chart has not got, and can name one area under two spellings, because everything downstream
+  asks about areas the chart really has, one at a time. Checked across all 45 charts: no chart
+  carries both a spelling and its alias, so nothing is ever counted twice.
+
+**Verified:** 183 combat tests pass, 28 of them new, covering every size, both handednesses,
+Ambidextrous and blank, the two drifted families, an area no chart has, the insectoid's equal
+medium and large, the magic doubling and the value column. 116 derivation tests (17 new) and 129
+creature tests (8 new) cover the assembled body on both actor types, including that the off hand
+is shielded once and not twice, that armour damage does not eat the shield, and that a stashed
+shield protects nothing. Availability 39 unchanged, 26 modules parse. Both sheets were checked in
+`tools/sheet-preview.html` and `tools/creature-preview.html` against a real `Shield(Large/Plate)`
+from the armour pack: a right-hander's left shoulder, arm, forearm and hand read 38, being 18
+worn plus 20 of shield, and the right side stays at 18.
+
+**Not verified:** anything needing a running Foundry V14 — no such install exists on this machine.
+That covers the new fields reaching the database, the handedness dropdown actually writing back,
+and the sheet re-rendering when a shield is equipped or unequipped.

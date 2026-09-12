@@ -36,7 +36,7 @@ function check(label, actual, expected) {
 }
 
 // Build a character with known attribute ratings.
-function makeCharacter(ratings, title = 12, items = []) {
+function makeCharacter(ratings, title = 12, items = [], extra = {}) {
 	const attributes = {};
 	for (const k of ["str","agl","vit","int","wis","knw","app","chm","soc","aur","pty","wil"]) {
 		attributes[k] = { rating: ratings[k] ?? 10, permMod: 0, tempMod: 0 };
@@ -55,10 +55,10 @@ function makeCharacter(ratings, title = 12, items = []) {
 			magic: resistance(), illusion: resistance(), control: resistance(),
 			poison: resistance(), disease: resistance()
 		},
-		body: { bodyType: "Humanoid", areas: [] },
+		body: { bodyType: "Humanoid", areas: [], armorDamage: extra.armorDamage ?? {} },
 		// The real schema always provides these; the fixture has to supply them too.
 		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
-		physical: { weight: 0 },
+		physical: { weight: 0, handedness: extra.handedness ?? "" },
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
 			jog:  { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -321,6 +321,69 @@ check("weapon speed = STR + AGL + worn armour", fighter.combat.weaponSpeedMod,
 	fighter.attributes.str.mods.weaponSpeed + fighter.attributes.agl.mods.weaponSpeed + 2);
 check("armour skill penalty is totalled", fighter.combat.armorSkillPenalty, -20);
 check("no class means no attack skill", makeCharacter({}, 5).combat.attackSkill, "None");
+
+// --- a shield on the body, as the fifth layer -------------------------------------
+// From equipShield. A shield is held in the off hand, so a right-hander is covered down the
+// LEFT side, and its value stacks on top of whatever armour is already worn there. Its own
+// armour value sits in the left-hand column whatever hand holds it, so the model has to keep
+// it out of the ordinary armour total as well -- otherwise a left-hander would be shielded on
+// the wrong hand, and the right hand would be protected twice.
+const mediumShield = {
+	type: "armor", name: "Shield(Medium/Steel)",
+	system: { location: "equipped", material: "Steel", weight: 8, quantity: 1, isShield: true,
+	          bucklerOnWrist: false, magicBonus: 0,
+	          penalties: { skills: 0, defense: 0, initiative: 0, speed: 0 },
+	          coverage: { head: 0, neck: 0, shoulderLeft: 0, shoulderRight: 0, torsoUpper: 0,
+	                      torsoMid: 0, torsoLower: 0, armLeft: 0, armRight: 0, forearmLeft: 0,
+	                      forearmRight: 0, handLeft: 20, handRight: 0, thighLeft: 0, thighRight: 0,
+	                      shinLeft: 0, shinRight: 0, footLeft: 0, footRight: 0 } }
+};
+const areaOf = (c, name) => c.body.areas.find(a => a.name == name);
+
+const shielded = makeCharacter({ str: 14, vit: 14 }, 5, [mediumShield]);
+check("a right-hander's shield covers the left arm",   areaOf(shielded, "Left Arm").armor, 20);
+check("...the left forearm",                           areaOf(shielded, "Left Forearm").armor, 20);
+check("...and the left hand",                          areaOf(shielded, "Left Hand").armor, 20);
+check("the right arm is untouched",                    areaOf(shielded, "Right Arm").armor, 0);
+check("and so is the right hand",                      areaOf(shielded, "Right Hand").armor, 0);
+check("the shield's own share is reported separately", areaOf(shielded, "Left Hand").shield, 20);
+check("the covering shield is named",                  areaOf(shielded, "Left Hand").shieldLayers,
+	["Shield(Medium/Steel)"]);
+check("a shielded area counts as protected",           areaOf(shielded, "Left Hand").protectedByArmor, true);
+
+// The left hand is exactly where a shield's handLeft coverage column would have landed it if it
+// were treated as ordinary armour, so this is the test that it is not counted twice.
+check("the left hand is shielded once, not twice",     areaOf(shielded, "Left Hand").armor, 20);
+
+const southpaw = makeCharacter({ str: 14, vit: 14 }, 5, [mediumShield], { handedness: "Left" });
+check("a left-hander is shielded on the right",        areaOf(southpaw, "Right Arm").armor, 20);
+check("...and not on the left",                        areaOf(southpaw, "Left Arm").armor, 0);
+
+const ambi = makeCharacter({ str: 14, vit: 14 }, 5, [mediumShield], { handedness: "Ambidextrous" });
+check("Ambidextrous shields on the left, as his else branch does",
+	areaOf(ambi, "Left Arm").armor, 20);
+
+// Stacking, and the one thing the shield layer does not share: armour damage. His sheet keeps
+// the shield in its own layer and clears it wholesale, rather than degrading it area by area.
+const both = makeCharacter({ str: 14, vit: 14 }, 5, [scaleSuit, mediumShield]);
+check("a shield stacks on the armour already worn",    areaOf(both, "Left Arm").armor, 32);
+check("where the armour does not reach, only the shield counts",
+	areaOf(both, "Left Forearm").armor, 20);
+
+const dented = makeCharacter({ str: 14, vit: 14 }, 5, [scaleSuit, mediumShield],
+	{ armorDamage: { "Left Arm": 5 } });
+check("armour damage comes off the worn armour, not the shield",
+	areaOf(dented, "Left Arm").armor, 27);
+
+// A magical shield adds its plus and then doubles the whole value: (20+2)*2 = 44.
+const magic = makeCharacter({ str: 14, vit: 14 }, 5, [{ ...mediumShield,
+	system: { ...mediumShield.system, magicBonus: 2 } }]);
+check("a +2 shield adds then doubles",                 areaOf(magic, "Left Hand").armor, 44);
+
+// A shield left in a pack protects nothing.
+const packed = makeCharacter({ str: 14, vit: 14 }, 5, [{ ...mediumShield,
+	system: { ...mediumShield.system, location: "stash" } }]);
+check("an unequipped shield covers nothing",           areaOf(packed, "Left Hand").armor, 0);
 
 // --- the Lore attack chart --------------------------------------------------------
 // A class reaches the Lore chart at its own title -- Archer at 3, Warrior at 6, Acrobat at 12,

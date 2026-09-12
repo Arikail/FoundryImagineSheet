@@ -58,7 +58,18 @@
 	<p class="empty">No weapons ready. Equip or carry one from the Equipment tab.</p>
 	{{/if}}
 
-	<h3 class="section-head">Body <span class="muted">{{system.body.type}}</span></h3>
+	{{!-- Handedness decides which side of the body a shield covers: a shield is held in the off
+	      hand, so a right-hander is shielded down the left. Anything but "Left" reads as
+	      right-handed, which is what his equipShield does. --}}
+	<h3 class="section-head">Body <span class="muted">{{system.body.type}}</span>
+		<label class="handedness">Handedness
+			<select name="system.physical.handedness">
+				{{#each handednessChoices as |h|}}
+				<option value="{{h.value}}" {{#if h.selected}}selected{{/if}}>{{h.label}}</option>
+				{{/each}}
+			</select>
+		</label>
+	</h3>
 	<table class="body-table">
 		<thead>
 			<tr>
@@ -78,7 +89,7 @@
 				<td class="col-num"><input type="number" class="wound-input" min="0"
 					name="system.body.wounds.{{a.name}}" value="{{a.wounds}}"></td>
 				<td class="col-num" {{#if a.layers.length}}data-tooltip="{{#each a.layers as |l|}}{{l}}{{#unless @last}}, {{/unless}}{{/each}}"{{/if}}>
-					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.armorDamage}} <span class="muted">(−{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">—</span>{{/if}}</td>
+					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.shield}} <span class="muted">({{a.shield}} shield)</span>{{/if}}{{#if a.armorDamage}} <span class="muted">(−{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">—</span>{{/if}}</td>
 				<td class="state">
 					{{#if (eq a.state "effect")}}Effect triggered
 					{{else if (eq a.state "vitalitySave")}}Vitality save

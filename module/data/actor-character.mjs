@@ -17,7 +17,7 @@ import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getAreaArmor, getNextAttackSkill
+	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -319,6 +319,15 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		return tmpworn;
 	}
 
+	// This is the function which separates what is worn into the four armour layers and the
+	// shields over them. A shield covers a run of areas down one side rather than a single slot,
+	// and his sheet keeps it in a fifth layer of its own, so the two are totalled separately and
+	// a shield must not also be counted as ordinary armour -- its armour value sits in the
+	// left-hand column whichever hand holds it, so counting it twice would armour the wrong hand.
+	_getWornShields() {
+		return this._getWornArmor().filter(tmpitem => tmpitem.system.isShield);
+	}
+
 	// This is the function which works out the character's standing combat values.
 	//
 	// Attack skill comes from the class's progression and the character's title. Armour worn
@@ -385,7 +394,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		var tmpbodytype = this.body.bodyType || (this.raceItem ? this.raceItem.system.bodyType : "") || "Humanoid";
 		var tmpendurance = this.characteristics.endurance.value;
 		var tmpvitality = this.attributes.vit.value;
-		var tmpworn = this._getWornArmor();
+		var tmpworn = this._getWornArmor().filter(tmpitem => !tmpitem.system.isShield);
+		var tmpshields = this._getWornShields();
+		var tmphandedness = this.physical.handedness;
 		var tmpwounds = this.body.wounds ?? {};
 		var tmparmordamage = this.body.armorDamage ?? {};
 
@@ -407,6 +418,12 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			var tmpdamaged = parseInt(tmparmordamage[tmparea.name]) || 0;
 			tmparmor = Math.max(0, tmparmor - tmpdamaged);
 
+			// A shield is the fifth layer, added on top of the worn armour and untouched by the
+			// damage that armour has taken -- his sheet tracks it in its own layer and clears it
+			// wholesale when the shield comes off, rather than degrading it area by area.
+			var tmpshielded = getAreaShield(tmpbodytype, tmparea.name, tmpshields, tmphandedness);
+			tmparmor = tmparmor + tmpshielded.armor;
+
 			var tmpstate = "sound";
 			if (tmphurt > tmpend + tmpvitality) { tmpstate = "effect"; }
 			else if (tmphurt > tmpend)          { tmpstate = "vitalitySave"; }
@@ -421,8 +438,10 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				armor: tmparmor,
 				armorDamage: tmpdamaged,
 				material: getStrongestMaterial(tmpmaterials),
-				layers: tmplayers,
-				protectedByArmor: !!tmpslot,
+				layers: tmplayers.concat(tmpshielded.layers),
+				shield: tmpshielded.armor,
+				shieldLayers: tmpshielded.layers,
+				protectedByArmor: !!tmpslot || tmpshielded.armor > 0,
 				state: tmpstate
 			});
 		}

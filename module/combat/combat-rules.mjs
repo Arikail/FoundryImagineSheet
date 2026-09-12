@@ -16,7 +16,8 @@
 import {
 	ATTACK_CHARTS, ATTACK_SKILL_ORDER, BODY_CHARTS,
 	ARMOR_BLOCKING, ARMOR_DAMAGE_DIVIDERS, ARMOR_MATERIAL_RANK,
-	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM
+	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM,
+	SHIELD_COVERAGE, SHIELD_SIZES
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -662,6 +663,105 @@ export const MODE_DAMAGE_TYPES = {
 				tmpout.armor = tmpout.armor + tmpvalue;
 				tmpout.materials.push(tmpitem.system.material);
 				tmpout.layers.push(tmpitem.name);
+			}
+		}
+		return tmpout;
+	}
+
+	// @MARKER SHIELD COVER
+	// A shield is a FIFTH layer, worn over the four armour ones, and it covers a run of areas
+	// down one side of the body rather than a single slot. Ported from equipShield
+	// (sheet-worker.js:103777); unequipShield needs nothing here, since it only clears the layer.
+
+	// This is the function which reads a shield's size out of its name. His equipShield tests the
+	// name with includes() in this order, so "Shield(Body/Steel)" is a Body shield. Anything with
+	// no size in its name is not one of his shields and covers nothing.
+	export function getShieldSize(tmpitemname) {
+		var tmpname = "" + (tmpitemname ?? "");
+		for (const tmpsize of SHIELD_SIZES) {
+			if (tmpname.includes(tmpsize)) { return tmpsize; }
+		}
+		return "";
+	}
+
+	// This is the function which finds which shield-family covers a body type. Same substring
+	// match his includes() does, and the same eight families the armour coverage has. Returns ""
+	// for the twenty-three body types he wrote no branch for, which carry no shield.
+	export function getShieldFamily(tmpbodytype) {
+		var tmptype = "" + (tmpbodytype ?? "");
+		for (const tmpfamily of Object.keys(SHIELD_COVERAGE)) {
+			if (tmptype.includes(tmpfamily)) { return tmpfamily; }
+		}
+		return "";
+	}
+
+	// This is the function which gives a shield its own armour value.
+	//
+	// Every shield carries its value in the LEFT HAND column whichever hand it is really held in
+	// -- his comment at equipShield says so outright, "All shields have at least armor value in
+	// area 13 (use this as the basis)" -- so the column is read rather than the covered area's.
+	//
+	// A magical shield adds its plus and then doubles the whole lot. That is his arithmetic as
+	// written, not a misreading: a +2 shield of 10 becomes 24, not 12.
+	//
+	// His rune modifiers (Rune Strenghthen, Rune Armor) are added before the doubling in his
+	// version. Runes are a deferred subsystem here, so nothing supplies them yet; the slot for
+	// them is where his is, so adding them later is a one-line change.
+	export function getShieldValue(tmpshield) {
+		var tmpvalue = parseInt(tmpshield?.system?.coverage?.handLeft) || 0;
+		var tmpplus = parseInt(tmpshield?.system?.magicBonus) || 0;
+		if (tmpplus > 0) {
+			tmpvalue = tmpvalue + tmpplus;
+			tmpvalue = tmpvalue * 2;
+		}
+		return tmpvalue;
+	}
+
+	// This is the function which lists the areas one shield covers on one body.
+	//
+	// A shield is held in the off hand, so a right-hander is covered down the LEFT side. His code
+	// tests only for "Left" and treats everything else as right-handed, which is how
+	// "Ambidextrous" -- a value his racial code really does set -- ends up shielded on the right.
+	// That is followed here rather than invented away.
+	//
+	// A Buckler is the one size worn two ways: strapped to the forearm, or held in the hand,
+	// which is his equip_buckler_on_wrist flag.
+	//
+	// The list returned is the FAMILY's, so it can name an area a particular chart in that family
+	// does not have -- a plain Snake has four areas and no arms at all -- and it can name the same
+	// area under two spellings, since a hooved Humanoid calls its foot a hoof. Neither matters,
+	// because everything downstream asks about areas the chart really has, one at a time. No chart
+	// carries both a spelling and its alias, so nothing is ever counted twice.
+	export function getShieldAreas(tmpbodytype, tmpshield, tmphandedness) {
+		var tmpfamily = getShieldFamily(tmpbodytype);
+		if (!tmpfamily) { return []; }
+
+		var tmpsize = getShieldSize(tmpshield?.name);
+		if (!tmpsize) { return []; }
+		if (tmpsize == "Buckler" && tmpshield?.system?.bucklerOnWrist) { tmpsize = "Buckler(Wrist)"; }
+
+		var tmphand = (("" + (tmphandedness ?? "")) == "Left") ? "Left" : "Right";
+		return SHIELD_COVERAGE[tmpfamily][tmpsize]?.[tmphand] ?? [];
+	}
+
+	// This is the function which totals the shields covering one area.
+	//
+	// Kept separate from getAreaArmor rather than folded into it, because a shield is his own
+	// fifth layer: he stores it in bodyarea*_shield_layer5 apart from the four armour layers, and
+	// clears that layer wholesale when the shield comes off. Armour damage is tracked per area
+	// against the worn layers and does not touch it.
+	//
+	// Returns { armor, layers } -- the value added at this area, and which shields added it.
+	export function getAreaShield(tmpbodytype, tmpareaname, tmpshields, tmphandedness) {
+		var tmpout = { armor: 0, layers: [] };
+		for (const tmpshield of tmpshields ?? []) {
+			if (!getShieldAreas(tmpbodytype, tmpshield, tmphandedness).includes(tmpareaname)) {
+				continue;
+			}
+			var tmpvalue = getShieldValue(tmpshield);
+			if (tmpvalue > 0) {
+				tmpout.armor = tmpout.armor + tmpvalue;
+				tmpout.layers.push(tmpshield.name);
 			}
 		}
 		return tmpout;

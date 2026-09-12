@@ -256,6 +256,103 @@ check("ordinary armour does not, even where the slot matches",
 check("and the ungated areas are unaffected by the gate",
 	R.getAreaArmor("Centaur", "Upper Torso", [mail]).armor, 6);
 
+// --- shields: the fifth layer, by size and by handedness -------------------------
+// From equipShield. A shield is held in the off hand, so a right-hander is covered down the
+// LEFT side. His code tests only for "Left", so anything else -- including "Ambidextrous",
+// which his racial code really does set -- is shielded on the right.
+const shield = (name, value, wrist) =>
+	({ name, system: { isShield: true, bucklerOnWrist: !!wrist, coverage: { handLeft: value } } });
+
+const buckler = shield("Shield(Buckler/Steel)", 15);
+const small   = shield("Shield(Small/Steel)", 18);
+const medium  = shield("Shield(Medium/Steel)", 20);
+const large   = shield("Shield(Large/Steel)", 22);
+const body    = shield("Shield(Body/Steel)", 25);
+
+check("a shield's size comes out of its name", T.SHIELD_SIZES.map(s => R.getShieldSize(`Shield(${s}/Steel)`)),
+	["Buckler", "Small", "Medium", "Large", "Body"]);
+check("something with no size is not a shield", R.getShieldSize("Cap(Leather)"), "");
+
+// A right-hander carries it on the left; the sizes grow outward from the hand.
+check("a right-hander's buckler is on the left hand",
+	R.getShieldAreas("Humanoid", buckler, "Right"), ["Left Hand"]);
+check("...on the forearm when strapped to the wrist",
+	R.getShieldAreas("Humanoid", shield("Shield(Buckler/Steel)", 15, true), "Right"), ["Left Forearm"]);
+check("a small shield covers forearm and hand",
+	R.getShieldAreas("Humanoid", small, "Right"), ["Left Forearm", "Left Hand"]);
+check("a medium adds the arm",
+	R.getShieldAreas("Humanoid", medium, "Right"), ["Left Arm", "Left Forearm", "Left Hand"]);
+check("a large adds the shoulder",
+	R.getShieldAreas("Humanoid", large, "Right"),
+	["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand"]);
+check("a body shield covers the whole flank",
+	R.getShieldAreas("Humanoid", body, "Right").filter(a => !a.includes("Hoof") && a != "Finned Tail"),
+	["Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Left Thigh", "Left Shin", "Left Foot"]);
+
+// Handedness mirrors it, and anything that is not exactly "Left" is right-handed.
+check("a left-hander's shield is on the right",
+	R.getShieldAreas("Humanoid", large, "Left"),
+	["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"]);
+check("Ambidextrous falls into his else branch, so right-handed",
+	R.getShieldAreas("Humanoid", buckler, "Ambidextrous"), ["Left Hand"]);
+check("so does a blank handedness",  R.getShieldAreas("Humanoid", buckler, ""), ["Left Hand"]);
+
+// The two families whose positions have drifted land where his own comments say they should.
+// Positionally, a Centaur's buckler would sit on its UNDERBELLY and a Snake(Arms)'s on its
+// LOWER LENGTH. See docs/UPSTREAM-ISSUES.md items 17 and 18.
+check("a centaur's buckler is on its hand",
+	R.getShieldAreas("Centaur", buckler, "Left"), ["Right Hand"]);
+check("a snake's buckler is on its hand",
+	R.getShieldAreas("Snake(Arms)", buckler, "Left"), ["Right Hand"]);
+check("a centaur's body shield reaches the foreleg, not the hind",
+	R.getShieldAreas("Centaur", body, "Left"),
+	["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand", "Right Foreleg", "Right Fore Shin"]);
+
+// The list is the family's, so it can name an area a particular chart does not have -- a plain
+// Snake has four areas and no arms at all. Those drop out where it matters, in getAreaShield and
+// in the body the actor builds, both of which only ever ask about areas the chart really has.
+check("the family list names arms a plain snake has not got",
+	R.getShieldAreas("Snake", large, "Right"),
+	["Right Shoulder", "Right Arm", "Right Forearm", "Right Hand"].map(a => a.replace("Right", "Left")));
+check("...and none of them reaches a plain snake's own areas",
+	["Head", "Upper Length", "Lower Length", "Tail"]
+		.filter(a => R.getShieldAreas("Snake", large, "Right").includes(a)), []);
+check("a snake's body shield covers its length and tail instead of legs",
+	R.getShieldAreas("Snake(Arms)", body, "Right"),
+	["Lower Length", "Left Shoulder", "Left Arm", "Left Forearm", "Left Hand", "Tail"]);
+
+// An insectoid's large shield covers no more than its medium -- his own comment says why:
+// "Insects have no shoulder joints. No changes between medium/large shields."
+check("an insectoid gains nothing from a large over a medium",
+	R.getShieldAreas("Insectoid", large, "Right"), R.getShieldAreas("Insectoid", medium, "Right"));
+check("...and its body shield uses the chart's own leg names",
+	R.getShieldAreas("Insectoid", body, "Right"),
+	["Left Upper Arm", "Left Upper Forearm", "Left Upper Hand",
+	 "Left Leg", "Left Lower Leg", "Left Foot"]);
+
+// A body type he wrote no branch for carries no shield, as with worn armour.
+check("a bird cannot carry a shield", R.getShieldAreas("Bird", large, "Right"), []);
+
+// The value is the shield's own left-hand column whichever hand holds it, and a magical one
+// adds its plus and then doubles the lot -- his arithmetic, not a misreading.
+check("a plain shield is worth its own value",        R.getShieldValue(large), 22);
+check("a +2 shield adds then doubles: (22+2)*2 = 48",
+	R.getShieldValue({ ...large, system: { ...large.system, magicBonus: 2 } }), 48);
+check("a zero bonus changes nothing",
+	R.getShieldValue({ ...large, system: { ...large.system, magicBonus: 0 } }), 22);
+
+// Totalled over one area, and stacking on the armour already there.
+check("the shield's value lands on a covered area",
+	R.getAreaShield("Humanoid", "Left Forearm", [small], "Right").armor, 18);
+check("and nowhere else",
+	R.getAreaShield("Humanoid", "Right Forearm", [small], "Right").armor, 0);
+check("the covering shield is named",
+	R.getAreaShield("Humanoid", "Left Hand", [small], "Right").layers, ["Shield(Small/Steel)"]);
+check("two shields would both count",
+	R.getAreaShield("Humanoid", "Left Hand", [buckler, small], "Right").armor, 33);
+check("a hooved character's body shield still reaches the hoof",
+	R.getAreaShield("Humanoid(Hooves)", "Left Hoof", [body], "Right").armor, 25);
+
 // --- armour degradation ---------------------------------------------------------
 const rags = T.ARMOR_DAMAGE_DIVIDERS["Rags"];   // [2, 5, 20, 20]
 check("Rags divider row", rags, [2, 5, 20, 20]);

@@ -87,6 +87,11 @@ const padding = byName(armor, "Body Suit(Padding)");
 Object.assign(padding.system, { location: "equipped", quantity: 1 });
 const chain = byName(armor, "Body Suit(Chain)");
 Object.assign(chain.system, { location: "equipped", quantity: 1 });
+// A real shield out of the armour pack, so the fifth layer renders against real content. This
+// character has no handedness set, which his equipShield reads as right-handed, so the shield
+// covers the LEFT shoulder, arm, forearm and hand.
+const shield = byName(armor, "Shield(Large/Plate)");
+Object.assign(shield.system, { location: "equipped", quantity: 1 });
 const tent = { id: "g5", name: "Tent", type: "equipment", system: { weight: 40, quantity: 1, location: "mount" } };
 
 // Skills: definitions stubbed, since starting bonuses are rolled per character.
@@ -126,7 +131,7 @@ const character = new ImagineCharacterData({
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
 	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
 });
-const allItems = [...skills, sword, dagger, padding, chain, tent, raceItem, classItem];
+const allItems = [...skills, sword, dagger, padding, chain, shield, tent, raceItem, classItem];
 character.parent = { items: allItems, name: "Calanar Elfriend" };
 character.prepareBaseData();
 character.prepareDerivedData();
@@ -163,8 +168,14 @@ const ctx = {
 	system: character,
 	attributes: attrRows,
 	skills: skillRows,
-	gear: [sword, dagger, padding, chain, tent],
-	weapons: weaponRows
+	gear: [sword, dagger, padding, chain, shield, tent],
+	weapons: weaponRows,
+	handednessChoices: [
+		{ value: "",             label: "Right (default)", selected: true },
+		{ value: "Right",        label: "Right" },
+		{ value: "Left",         label: "Left" },
+		{ value: "Ambidextrous", label: "Ambidextrous (shields right)" }
+	]
 };
 
 async function render(path, context) {

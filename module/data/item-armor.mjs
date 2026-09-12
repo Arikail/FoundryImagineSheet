@@ -55,9 +55,24 @@ export default class ImagineArmorData extends foundry.abstract.TypeDataModel {
 			                           "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid",
 			                           "Mixed"] }),
 
-			// Shields are worn over armour as a fourth layer and are used actively with the
-			// Shield Parry skill, so they are flagged rather than being their own item type.
+			// Shields are worn over armour and are used actively with the Shield Parry skill, so
+			// they are flagged rather than being their own item type. Which areas a shield covers
+			// depends on its size, the body it is strapped to and which hand holds it -- see
+			// SHIELD_COVERAGE and getAreaShield in the combat rules.
 			isShield: new fields.BooleanField({ required: true, initial: false }),
+
+			// A Buckler is the one shield worn two ways: strapped to the forearm, or held in the
+			// hand. His sheet asks once, as equip_buckler_on_wrist; here it sits on the buckler
+			// itself, because a Foundry actor can own more than one and the choice belongs to the
+			// shield rather than to the character. Ignored on every other size.
+			bucklerOnWrist: new fields.BooleanField({ required: true, initial: false }),
+
+			// @MARKER MAGIC
+			// A magical piece is written "+N" in its name in his data, and getItemPlusInt reads
+			// the number back out. It is stored as a field here instead, so nothing has to parse
+			// a name to find it. On a shield his rule is to add the plus and then double the
+			// whole value -- a +2 shield of 10 is worth 24.
+			magicBonus: new fields.NumberField({ required: true, integer: true, initial: 0 }),
 
 			// @MARKER COVERAGE
 			// Armour value at each body location. Zero means this piece does not cover it.
@@ -134,7 +149,7 @@ export default class ImagineArmorData extends foundry.abstract.TypeDataModel {
 	// layers. Light clothing does not: anything of 3 armour value or less is worn without
 	// interfering, and allows one free layer above or below the armour proper.
 	consumesLayer() {
-		if (this.isShield) { return true; }        // shields occupy the fourth layer
+		if (this.isShield) { return true; }        // a shield is a layer of its own
 		if (this.flexibility != "Clothing") { return true; }
 		return this.getHighestCoverage() > 3;
 	}

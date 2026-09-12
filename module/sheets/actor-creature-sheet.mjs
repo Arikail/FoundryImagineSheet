@@ -79,7 +79,27 @@ export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(Act
 			attackCharts: CREATURE_ATTACK_CHARTS
 		};
 
+		tmpcontext.handednessChoices =
+			ImagineCreatureSheet.#buildHandednessChoices(this.document.system.identity.handedness);
+
 		return tmpcontext;
+	}
+
+	// This is the function which builds the handedness dropdown. A shield is held in the off hand,
+	// so which one a character favours decides which side of the body it covers. His sheet takes
+	// the same three values, set from a race's abilities (sheet-worker.js:49203); anything that is
+	// not exactly "Left" is treated as right-handed by his equipShield, blank included.
+	static #buildHandednessChoices(tmpcurrent) {
+		const tmpchoices = [
+			{ value: "",             label: "Right (default)" },
+			{ value: "Right",        label: "Right" },
+			{ value: "Left",         label: "Left" },
+			{ value: "Ambidextrous", label: "Ambidextrous (shields right)" }
+		];
+		for (const tmpchoice of tmpchoices) {
+			tmpchoice.selected = (tmpchoice.value == ("" + (tmpcurrent ?? "")));
+		}
+		return tmpchoices;
 	}
 
 	// This is the function which flattens the twelve attributes into rows, in the Player's Guide's

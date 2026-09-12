@@ -199,7 +199,13 @@ const ctx = {
 	powers: powerRows,
 	gear: [],
 	config: { creatureTypes: T.CREATURE_TYPES, bodyTypes: T.CREATURE_BODY_TYPES,
-	          attackCharts: T.CREATURE_ATTACK_CHARTS }
+	          attackCharts: T.CREATURE_ATTACK_CHARTS },
+	handednessChoices: [
+		{ value: "",             label: "Right (default)", selected: true },
+		{ value: "Right",        label: "Right" },
+		{ value: "Left",         label: "Left" },
+		{ value: "Ambidextrous", label: "Ambidextrous (shields right)" }
+	]
 };
 
 async function render(path, context) {

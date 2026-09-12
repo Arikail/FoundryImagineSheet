@@ -55,7 +55,8 @@ function makeCreature(options = {}) {
 		identity: {
 			creatureType: options.creatureType ?? "Animal",
 			subtype: "", level: options.level ?? 1,
-			lifecycle: "", habitat: "", alignment: "", tendencies: "", expValue: 0, expNote: ""
+			lifecycle: "", habitat: "", alignment: "", tendencies: "", expValue: 0, expNote: "",
+			handedness: options.handedness ?? ""
 		},
 		attributes,
 		characteristics: {
@@ -91,6 +92,45 @@ function makeCreature(options = {}) {
 	c.prepareDerivedData();
 	return c;
 }
+
+// --- a shield on a creature -------------------------------------------------------
+// The same fifth layer a character gets. A creature's handedness is its own field, blank by
+// default -- and blank reads as right-handed, which is what his equipShield does with anything
+// that is not exactly "Left". A humanoid creature can therefore carry a shield the way a
+// character does, and a body type he wrote no branch for cannot carry one at all.
+const creatureShield = (value = 20) => ({
+	type: "armor", name: "Shield(Large/Steel)",
+	system: { location: "equipped", material: "Steel", weight: 10, quantity: 1, isShield: true,
+	          bucklerOnWrist: false, magicBonus: 0,
+	          penalties: { skills: 0, defense: 0, initiative: 0, speed: 0 },
+	          coverage: { head: 0, neck: 0, shoulderLeft: 0, shoulderRight: 0, torsoUpper: 0,
+	                      torsoMid: 0, torsoLower: 0, armLeft: 0, armRight: 0, forearmLeft: 0,
+	                      forearmRight: 0, handLeft: value, handRight: 0, thighLeft: 0,
+	                      thighRight: 0, shinLeft: 0, shinRight: 0, footLeft: 0, footRight: 0 } }
+});
+const creatureArea = (c, name) => c.body.areas.find(a => a.name == name);
+
+const shieldBearer = makeCreature({ endurance: 30, bodyType: "Humanoid", items: [creatureShield()] });
+check("a creature with no handedness is shielded on the left",
+	creatureArea(shieldBearer, "Left Shoulder").armor, 20);
+check("...down to the hand",        creatureArea(shieldBearer, "Left Hand").armor, 20);
+check("...and not on the right",    creatureArea(shieldBearer, "Right Hand").armor, 0);
+check("the shield's share is reported",
+	creatureArea(shieldBearer, "Left Hand").shield, 20);
+
+const leftBearer = makeCreature({ endurance: 30, bodyType: "Humanoid",
+	handedness: "Left", items: [creatureShield()] });
+check("a left-handed creature is shielded on the right",
+	creatureArea(leftBearer, "Right Hand").armor, 20);
+
+// A centaur's shield lands on its hand, not on the underbelly his positions would have given it.
+const centaurBearer = makeCreature({ endurance: 30, bodyType: "Centaur", items: [creatureShield()] });
+check("a centaur's shield is on its hand",       creatureArea(centaurBearer, "Left Hand").armor, 20);
+check("...and not on its underbelly",            creatureArea(centaurBearer, "Underbelly").armor, 0);
+
+// A body type he wrote no branch for carries nothing, as with worn armour.
+const birdBearer = makeCreature({ endurance: 30, bodyType: "Bird", items: [creatureShield()] });
+check("a bird carries no shield",                creatureArea(birdBearer, "Left Wing").armor, 0);
 
 // A trait item, as the creature model looks for them.
 const trait = (name, category = "ability") => ({ type: "trait", name, system: { category } });

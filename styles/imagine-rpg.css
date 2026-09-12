@@ -410,6 +410,22 @@
 
 .weapon-table .mode-list { font-size: 11px; margin-left: 6px; }
 
+/* Handedness sits in the Body heading, because it is what decides which side of the body a
+   shield covers. Kept small and right-aligned so it reads as a setting, not a stat. */
+.imagine.sheet .section-head .handedness {
+	float: right;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: 0;
+	color: var(--color-text-dark-secondary, #666);
+}
+.imagine.sheet .section-head .handedness select {
+	height: 20px;
+	font-size: 11px;
+	margin-left: 4px;
+	width: auto;
+}
+
 .body-table .wound-input {
 	width: 46px;
 	text-align: center;

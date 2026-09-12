@@ -30,7 +30,7 @@ import ImagineCharacterData from "./actor-character.mjs";
 import { CREATURE_TYPES, CREATURE_BODY_TYPES, CREATURE_ATTACK_CHARTS } from "../creature-tables.mjs";
 import {
 	getBodyChart, parseBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getNextAttackSkill, getAreaArmor
+	getInitiativeModifier, getNextAttackSkill, getAreaArmor, getAreaShield
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -102,7 +102,13 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 				alignment:  new fields.StringField({ required: true, initial: "", label: "Alignment" }),
 				tendencies: new fields.StringField({ required: true, initial: "", label: "Tendencies" }),
 				expValue:   new fields.NumberField({ required: true, integer: true, initial: 0, label: "Experience Value" }),
-				expNote:    new fields.StringField({ required: true, initial: "", label: "Experience Note" })
+				expNote:    new fields.StringField({ required: true, initial: "", label: "Experience Note" }),
+				// Which hand a shield goes in. His sheet has one handedness field shared by both
+				// sheets, set from a race's abilities for a character and left blank for a
+				// creature; blank reads as right-handed, which is what his equipShield does with
+				// anything that is not exactly "Left".
+				handedness: new fields.StringField({ required: true, initial: "",
+				                choices: ["", "Right", "Left", "Ambidextrous"], label: "Handedness" })
 				// DERIVED: title and powerLevel, both of which are simply the level
 				// (updateCreatureTitle and updatePowerLevel, sheet-worker.js:178477-178487).
 			}),
@@ -426,6 +432,15 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 		}
 	}
 
+	// This is the function which separates what is worn into the four armour layers and the
+	// shields over them. A shield covers a run of areas down one side rather than a single slot,
+	// and his sheet keeps it in a fifth layer of its own, so the two are totalled separately and
+	// a shield must not also be counted as ordinary armour -- its armour value sits in the
+	// left-hand column whichever hand holds it, so counting it twice would armour the wrong hand.
+	_getWornShields() {
+		return this._getWornArmor().filter(tmpitem => tmpitem.system.isShield);
+	}
+
 	// This is the function which works out the creature's standing combat numbers.
 	//
 	// The attack chart is taken as chosen. Where a character's comes from a class progression and
@@ -483,7 +498,9 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 	_prepareBody() {
 		var tmpendurance = this.characteristics.endurance.value;
 		var tmpvitality = this.attributes.vit.value;
-		var tmpworn = this._getWornArmor();
+		var tmpworn = this._getWornArmor().filter(tmpitem => !tmpitem.system.isShield);
+		var tmpshields = this._getWornShields();
+		var tmphandedness = this.identity.handedness;
 		var tmpwounds = this.body.wounds ?? {};
 		var tmparmordamage = this.body.armorDamage ?? {};
 
@@ -514,6 +531,12 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 			var tmpdamaged = parseInt(tmparmordamage[tmparea.name]) || 0;
 			tmparmor = Math.max(0, tmparmor - tmpdamaged);
 
+			// A shield is the fifth layer, added on top of the worn armour and untouched by the
+			// damage that armour has taken -- his sheet tracks it in its own layer and clears it
+			// wholesale when the shield comes off, rather than degrading it area by area.
+			var tmpshielded = getAreaShield(tmpbodytype, tmparea.name, tmpshields, tmphandedness);
+			tmparmor = tmparmor + tmpshielded.armor;
+
 			var tmpstate = "sound";
 			if (tmphurt > tmpend + tmpvitality) { tmpstate = "effect"; }
 			else if (tmphurt > tmpend)          { tmpstate = "vitalitySave"; }
@@ -528,8 +551,10 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 				armor: tmparmor,
 				armorDamage: tmpdamaged,
 				material: getStrongestMaterial(tmpmaterials),
-				layers: tmplayers,
-				protectedByArmor: !!tmpslot,
+				layers: tmplayers.concat(tmpshielded.layers),
+				shield: tmpshielded.armor,
+				shieldLayers: tmpshielded.layers,
+				protectedByArmor: !!tmpslot || tmpshielded.armor > 0,
 				state: tmpstate
 			});
 		}
