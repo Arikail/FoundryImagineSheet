@@ -1054,6 +1054,68 @@ left-handed and marked off-hand, and the active-hand styling resolves.
 writes back to the embedded item and re-renders, and that the modifier reaches the chat card. No V14
 install exists on this machine.
 
+### 2026-09-12 — Special movement is a formula, not a number, and the port copies it through as text
+
+The user noticed the preview sheet showing Walk and Jog at 0/0/0 and asked that it be fixed in the
+long run. The test sheet was the symptom; there are two causes underneath it, and only one of them
+is ours.
+
+**It is not the harness.** `setMovementFromRace` (actor-character.mjs:691) does run, and the preview
+does call `prepareDerivedData()`. The zeros are real, and they are correct — the preview character is
+a **Human(Civilized:Village)**, one of fourteen races that genuinely have no usable movement in his
+data. That half is `UPSTREAM-ISSUES.md` item 23, verified against his raw 62-column rows so it is not
+a column-map slip on our side.
+
+**The half that is ours: every special rate in his sheet is written relative to another rate.**
+`special.hourly` does not hold a number. It holds the NAME of a base rate — `"Walk"` or `"Run"` —
+with `hourlyMultiplier` and `hourlyMod` sitting beside it, and the same three fields again for
+`tenSec` and `oneSec`. The rule is:
+
+```
+special rate = <the named base rate> x multiplier + mod
+```
+
+| Race | Special | Reads as |
+|---|---|---|
+| Apocritara, Avian, Gryphara | Fly | Walk × 4 |
+| Djinn, Gremlin | Fly | **Run** × 3 |
+| Centaur | Gallop | Walk × 4 |
+| Brachara, Elf(Sea) | Swim | Walk × 3 |
+| Arachen | Scurry | Walk × 4 **+ 4** hourly, **+ 40** per ten seconds |
+
+**26 of the 105 races use it**, and the base rate is not always Walk — Djinn and Gremlin fly from
+Run, and Arachen carries a non-zero additive on top of the multiplier, so neither the base nor the
+`+ mod` can be assumed away.
+
+**The race side already models this correctly and the data is intact.** `item-race.mjs` declares
+`special.hourly` as a **StringField** holding the base-rate name, with `hourlyMultiplier` and
+`hourlyMod` as numbers beside it, and the same trio again for each scale. Its own comment says the
+multiplier and modifier fields exist "because some races derive their special rate from another rate
+rather than stating it outright" — so the mechanic was understood when the schema was written.
+
+**Where it stops is the character.** `_prepareMovement` (actor-character.mjs:697) loops over
+`["walk", "jog", "run"]` only, then copies `specialName`, `jumpStand` and `jumpUp`. **It never
+assigns `movement.special` at all**, so the character's special rate sits at its schema default of
+zero forever. The character's own `special` is a plain `movementRateField()` of three NumberFields,
+which is the right shape for a *resolved* rate — the resolver is simply absent.
+
+The visible symptom is therefore a **Gallop row of 0 / 0 / 0** on a Centaur, not the word "Walk":
+`specialName` is copied, so the row appears and is labelled, and then reads as motionless. The data
+was extracted correctly and modelled correctly; only the derivation step is missing. This is a port
+gap, and it is why the two findings looked like one problem from the outside.
+
+**Decision:** resolve the formula in `setMovementFromRace` rather than at display time, so the
+derived model holds real numbers and every consumer — sheet, chat card, future travel rules — sees a
+distance rather than a word. Walk, jog and run stay straight copies; only `special` is resolved.
+Handed to Sonnet with the mechanic written out, since the judgement was the diagnosis and what
+remains is arithmetic: `docs/sonnet/2026-09-12-special-movement.md`.
+
+**A near-miss worth recording.** Seven race names came back from the console looking corrupted —
+`Se'eth` as `Se?eth`. Checked before reporting: the character is `0x2019`, a typographic apostrophe,
+correctly stored. It was the console's rendering, not the data. That is the second misread caught by
+checking this session, after the syntax-check harness's module count, and both would have gone into
+the record as defects that do not exist.
+
 ### 2026-09-12 — Where a design document and the shipped code disagree, the code wins
 
 **The standing conflict rule had a gap.** `CLAUDE.md` settles Roll20-sheet-versus-rulebook: the sheet

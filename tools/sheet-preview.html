@@ -134,6 +134,14 @@ const character = new ImagineCharacterData({
 	          painThreshold: -2, highPainThreshold: false, damageAbsorb: 12,
 	          spiritArmor: 0, forceArmor: 4, outerKinetic: 0, magicShield: 0,
 	          invulnerable: false },
+	// These are left empty on purpose: _prepareMovement fills walk/jog/run from the race, so
+	// whatever is put here is overwritten. THIS CHARACTER WILL SHOW 0/0/0 AND THAT IS CORRECT --
+	// she is a Human(Civilized:Village), one of fourteen races with no movement figures anywhere
+	// in his data (docs/UPSTREAM-ISSUES.md item 23). It is his gap, not a fault in this harness
+	// and not a fault in the model. Do not "fix" it by hand-feeding numbers here.
+	//
+	// The special rate is a separate, genuinely OURS gap: it is a formula relative to another
+	// rate and nothing resolves it yet. See docs/sonnet/2026-09-12-special-movement.md.
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
 	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
 });

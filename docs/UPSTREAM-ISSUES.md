@@ -438,6 +438,56 @@ after the generated classes. A manual entry never overwrites a class your data c
 you add the missing rows the generated one wins automatically and the manual entry is reported as
 redundant. The other four have no template to hand and remain unbuilt.
 
+## 23. Fourteen races cannot move: eleven have no movement figures, three reference a rate that is zero
+
+**Status:** open · **Severity:** real gap; it includes all four Civilized Human races
+
+**Eleven races have nothing in the walk, jog and run columns of `raceStatsAndMoveDetails`** —
+indices 39 to 47 are all zero:
+
+| | | |
+|---|---|---|
+| Beastman | Human(Civilized:City) | Mechanos |
+| Crystori | Human(Civilized:Port) | Planar |
+| Ifrit | Human(Civilized:Town) | Troll(Ice) |
+| Xar'Xeth | Human(Civilized:Village) | |
+
+This is your data rather than a misread on our side, and the check is easy to repeat. Both rows are
+the full 62 columns, so nothing is shifted:
+
+```
+Human(Barbaric)        ... 1, 10, 1,  2, 20, 2,  2, 30, 3, 'None:' ...   <- walk, jog, run
+Human(Civilized:City)  ... 0,  0, 0,  0,  0, 0,  0,  0, 0, 'None:' ...
+```
+
+Barbaric humans walk, jog and run. Civilized ones do not, and neither do the other ten. **The four
+Civilized Human rows are the ones most worth your attention** — they are likely the most-played
+races in the game, and a character of one currently has no movement rate at any scale.
+
+Note this is not the same as their having no attribute modifiers, which is plausible on purpose:
+indices 0-11 are also zero for Civilized Humans, and a baseline race with no adjustments makes
+sense. A baseline race that cannot walk does not.
+
+**Three more races are motionless for a second reason.** Marid, Merfolk and Se'eth *do* have a
+special movement rate — Swim, Swim and Slither — but every special rate in your sheet is written
+relative to another rate rather than as a number, and theirs refer to **Walk**, which for these
+three is zero. So even reading the special rate correctly leaves them stationary:
+
+| Race | Special | Written as | Walk |
+|---|---|---|---|
+| Marid | Swim | `Walk` × multiplier | **0** |
+| Merfolk | Swim | `Walk` × multiplier | **0** |
+| Se'eth | Slither | `Walk` × multiplier | **0** |
+
+A merfolk that cannot swim is the clearest sign these are gaps rather than intent.
+
+**What the port does:** nothing is invented. A race with no figures derives none, and the sheet
+shows zeros, which is what your sheet does too. Fill the rows in and the values flow through with no
+code change — the extraction already reads those columns correctly for the other 91 races.
+
+(The relative-rate mechanic itself is sound and is being implemented; that part is our gap, not
+yours. See `DECISIONS.md` → "Special movement is a formula".)
+
 **Two disagreements between that template and your sheet-worker**, both resolved in the
 sheet-worker's favour per the standing rule, both worth your confirmation:
 
