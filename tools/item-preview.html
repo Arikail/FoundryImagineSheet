@@ -1,0 +1,126 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG item sheet preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; }
+	.frame { max-width: 640px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; font-size: 13px; }
+	.window-content { padding: 12px 14px; }
+	.err { background: #fee; color: #900; padding: 8px; font-family: monospace; white-space: pre-wrap; }
+</style>
+
+<div class="frame imagine sheet item creature-attack">
+	<div class="frame-title">Creature Attack &mdash; item sheet (preview)</div>
+	<div class="window-content" id="attack"></div>
+</div>
+
+<div class="frame imagine sheet item power">
+	<div class="frame-title">Power &mdash; item sheet (preview)</div>
+	<div class="window-content" id="power"></div>
+</div>
+
+<div class="frame imagine sheet item trait">
+	<div class="frame-title">Trait &mdash; item sheet (preview)</div>
+	<div class="window-content" id="trait"></div>
+</div>
+
+<script type="module">
+// Standalone preview of the three item sheets. Foundry is not present, so its globals are
+// stubbed; the context each sheet builds in _prepareContext is reproduced here by hand, and the
+// option lists come from the real creature-tables module rather than being retyped.
+//
+// The trait is a real extracted document, so this also checks that built content renders in the
+// sheet that edits it.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/item-preview.html
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
+
+const T = await import("../module/creature-tables.mjs");
+
+Handlebars.registerHelper("eq", (a, b) => a === b);
+Handlebars.registerHelper("gt", (a, b) => a > b);
+Handlebars.registerHelper("lt", (a, b) => a < b);
+Handlebars.registerHelper("gte", (a, b) => a >= b);
+
+async function render(path, context) {
+	const src = await (await fetch(path)).text();
+	try {
+		return Handlebars.compile(src)(context);
+	} catch (err) {
+		return `<div class="err">${path}\n${err.message}</div>`;
+	}
+}
+
+// --- a creature attack, with two of its three rider effects used --------------------
+const attackItem = {
+	name: "Frost Breath", img: "",
+	system: {
+		attackType: "Strong Cone", damage: "6d6", damageType: "Frost",
+		speed: 5, minSpeed: 5, speedSpecial: false,
+		effects: [
+			{ name: "Numbing", trigger: "Auto", description: "limbs stiffen with cold",
+			  damage: "", damageType: "", duration: "2d4", durationType: "Seconds" },
+			{ name: "Frostbite", trigger: "If VIT save fails", description: "the flesh blackens and dies",
+			  damage: "1d4", damageType: "Frost", duration: "3", durationType: "Periodic(Minutes)" }
+		],
+		sourcebook: "", page: "", description: "A cone of killing cold, drawn from the wyrm's gut."
+	}
+};
+const attackEffects = attackItem.system.effects.map((e, i) => ({ ...e, index: i, number: i + 1 }));
+const attackCtx = {
+	item: attackItem, system: attackItem.system,
+	effects: attackEffects,
+	canAddEffect: attackEffects.length < T.MAX_ATTACK_EFFECTS,
+	maxEffects: T.MAX_ATTACK_EFFECTS,
+	config: {
+		attackTypes: Object.keys(T.CREATURE_ATTACK_TYPES),
+		damageTypes: T.CREATURE_DAMAGE_TYPES,
+		effectTriggers: T.EFFECT_TRIGGERS,
+		effectDamageTypes: T.EFFECT_DAMAGE_TYPES,
+		effectDurationTypes: T.EFFECT_DURATION_TYPES
+	}
+};
+
+// --- a power ------------------------------------------------------------------------
+const powerItem = {
+	name: "Frost Shield", img: "",
+	system: {
+		unlimited: false, uses: 3, usesMax: 3, selfOnly: true, powerKind: "spell",
+		sourcebook: "", page: "", description: "A rime of ice forms over the wyrm's scales."
+	}
+};
+const powerCtx = {
+	item: powerItem, system: powerItem.system,
+	config: { powerKinds: ["unknown", "spell", "invocation", "magicItem", "divineItem"] }
+};
+
+// --- a trait, taken straight from the extracted content ------------------------------
+const abilityDocs = await (await fetch("../src/packs/documents/abilities.json")).json();
+const source = abilityDocs.find(d => d.name === "Enhanced Hide(Bone)");
+if (!source) { throw new Error("missing trait in the extracted content: Enhanced Hide(Bone)"); }
+const traitItem = { name: source.name, img: "", system: structuredClone(source.system) };
+const traitCtx = {
+	item: traitItem, system: traitItem.system,
+	config: { categories: ["ability", "disability", "immunity"] }
+};
+
+for (const [id, ctx, body] of [
+	["attack", attackCtx, "item-creature-attack"],
+	["power",  powerCtx,  "item-power"],
+	["trait",  traitCtx,  "item-trait"]
+]) {
+	const header = await render("../templates/item/item-header.hbs", ctx);
+	const rest = await render(`../templates/item/${body}.hbs`, ctx);
+	document.getElementById(id).innerHTML = header + rest;
+}
+</script>

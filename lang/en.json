@@ -3,7 +3,10 @@
     "SystemTitle": "Imagine Role Playing System",
     "Sheet": {
       "Character": "Imagine Character Sheet",
-      "Creature": "Imagine Creature Sheet"
+      "Creature": "Imagine Creature Sheet",
+      "CreatureAttack": "Imagine Creature Attack Sheet",
+      "Power": "Imagine Power Sheet",
+      "Trait": "Imagine Trait Sheet"
     },
     "Tab": {
       "attributes": "Attributes",

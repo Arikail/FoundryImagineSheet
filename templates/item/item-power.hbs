@@ -1,0 +1,46 @@
+{{!--
+	Power body. One root element, as the framework requires of every PART.
+
+	A Power is an innate spell or invocation with a use count. Its effect cannot be resolved
+	until the magic phase exists, which is why the kind defaults to "unresolved" and the sheet
+	says so rather than implying the system will work it out.
+--}}
+<section class="imagine-item-body power">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Uses</h3>
+			<ul class="band-list">
+				<li><label>Unlimited</label>
+					<span><input type="checkbox" name="system.unlimited" {{#if system.unlimited}}checked{{/if}}></span></li>
+				<li><label>Remaining</label>
+					<span><input type="number" name="system.uses" value="{{system.uses}}" min="0"
+						{{#if system.unlimited}}disabled{{/if}}></span></li>
+				<li><label>Per day</label>
+					<span><input type="number" name="system.usesMax" value="{{system.usesMax}}" min="0"
+						{{#if system.unlimited}}disabled{{/if}}></span></li>
+			</ul>
+			<p class="muted">His data writes "at will" or "constant" for a Power with no limit.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Effect</h3>
+			<ul class="band-list">
+				<li><label>Kind</label>
+					<span><select name="system.powerKind">
+						{{#each config.powerKinds as |k|}}
+						<option value="{{k}}" {{#if (eq k ../system.powerKind)}}selected{{/if}}>{{k}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Only affects itself</label>
+					<span><input type="checkbox" name="system.selfOnly" {{#if system.selfOnly}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">A Power resolves by looking its name up as a spell, then as an invocation.
+			That engine belongs to the magic phase, so using one spends a use and leaves the effect
+			to the Game Master.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="5">{{system.description}}</textarea>
+</section>

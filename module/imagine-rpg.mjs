@@ -27,6 +27,9 @@ import ImaginePowerData from "./data/item-power.mjs";
 import ImagineTraitData from "./data/item-trait.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import ImagineCreatureSheet from "./sheets/actor-creature-sheet.mjs";
+import {
+	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet
+} from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
 import ImagineCombat from "./combat/combat-document.mjs";
@@ -115,6 +118,27 @@ Hooks.once("init", function () {
 		types: ["creature"],
 		makeDefault: true,
 		label: "IMAGINE.Sheet.Creature"
+	});
+
+	// The creature's own item types get sheets of their own. An attack most needs one: it
+	// carries up to three rider effects of seven fields each, which the default sheet renders
+	// as a list nobody can author against. The remaining item types -- skill, race, class,
+	// weapon, armour, equipment -- are read-mostly compendium content and keep the default
+	// sheet, so the core sheet is NOT unregistered here.
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineCreatureAttackSheet, {
+		types: ["creatureAttack"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.CreatureAttack"
+	});
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImaginePowerSheet, {
+		types: ["power"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Power"
+	});
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineTraitSheet, {
+		types: ["trait"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Trait"
 	});
 
 	// @MARKER SYSTEM API

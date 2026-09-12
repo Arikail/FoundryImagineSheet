@@ -246,3 +246,16 @@ Nothing else caps an attribute by title. There is no deity handler at title 16, 
 - *No sourcebook tag.* These dictionaries carry no book or page, and untagged content is always available at the sourcebook level, which is the right default. Guessing a book would make content vanish when a Game Master switched that book off.
 
 **Known limitation:** an availability override is keyed `type:name`, so `trait:Poison` cannot distinguish the Poison ability from the Poison immunity, and forbidding one forbids both. Nineteen names are affected. Splitting the key by category would need a change to the override format, which is not worth it until someone actually wants to forbid one of those nineteen.
+
+### 2026-09-11 — Item sheets for the creature's own item types
+
+**Decision:** creature attack, power and trait get sheets of their own (`module/sheets/item-sheet.mjs`); the other six item types keep Foundry's default. The attack is the one that forced it — three rider effects of seven fields each is not something anyone can author against a default sheet.
+
+**Sub-decisions:**
+- *One base class and three small subclasses, each naming its own body template.* ApplicationV2's `PARTS` is static, so varying the body by document type means either overriding the render-parts machinery or having three subclasses. Three subclasses are duller and obvious to read, which is the right trade for a handoff.
+- *The core item sheet is NOT unregistered.* Registration is scoped with `types`, so the six types without a sheet of their own keep working normally. Unregistering the core sheet outright — as the actor side does, where every type is covered — would leave them with nothing.
+- *Rider effects are edited as collapsible blocks with Add and Remove*, capped at three because three is what his encoded attack string carries. Adding and removing go through explicit actions that rewrite the array, since a form field cannot grow an array on its own.
+- *The effect's display number is computed in `_prepareContext`, not in the template.* Numbering a list in Handlebars needs an arithmetic helper, and whether Foundry's environment provides one is not verifiable here. Computing it where the data is assembled removes the question.
+- *Descriptions are a plain textarea.* V14 ships ProseMirror as the only built-in editor, but wiring it needs an API this port cannot exercise, and a textarea round-trips the text correctly in the meantime.
+
+**Not verified:** `foundry.applications.sheets.ItemSheetV2` and `foundry.documents.collections.Items.registerSheet` follow the documented symmetry with the actor equivalents, which the repo's V14 notes cover only for actors. Both are unexercised until someone opens this in a real V14 install. Everything else was checked in `tools/item-preview.html`, which renders all three sheets against the same context the classes build, including a real extracted trait.

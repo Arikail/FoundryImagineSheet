@@ -1,0 +1,22 @@
+{{!--
+	Shared item header: the picture, the name, and where the entry came from.
+
+	Sourcebook and page are editable because homebrew content needs to say where it came from
+	too, and because his own trait dictionaries carry neither, so a Game Master may want to
+	fill them in.
+--}}
+<header class="imagine-header item">
+
+	<img class="portrait small" src="{{item.img}}" data-edit="img" alt="{{item.name}}">
+
+	<div class="identity">
+		<input class="charname" type="text" name="name" value="{{item.name}}" placeholder="Name">
+
+		<div class="identity-line">
+			<span class="field"><label>Sourcebook</label>
+				<input type="text" name="system.sourcebook" value="{{system.sourcebook}}" placeholder="&mdash;"></span>
+			<span class="field"><label>Page</label>
+				<input type="text" name="system.page" value="{{system.page}}" placeholder="&mdash;"></span>
+		</div>
+	</div>
+</header>
