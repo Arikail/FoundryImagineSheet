@@ -48,6 +48,14 @@ Full rationale for every one of these calls is in `docs/DECISIONS.md`. Full task
 
 **Match the original developer's code style.** This project will be handed back to W. Michael Tenery III, who needs to pick it up without decoding an unfamiliar style. Study `docs/reference/sheet-worker.js` (~180k lines of his actual code) before writing anything, and follow his conventions: naming patterns (`tmp*`/`temp*` prefixes), `// @MARKER` comment markers, heavily-commented code, data dictionaries laid out with aligned column-header comments. This overrides default modern-JS idiom and the usual minimal-comments habit.
 
+**Hand the mechanical follow-through to Sonnet, in writing.** Every work pass ends with a short
+note in `docs/sonnet/`, named `YYYY-MM-DD-<slug>.md`, listing what the pass deliberately left
+undone because it is mechanical extension of an already-established pattern. Each entry says what
+to do, which files, what "done" looks like, and what has already been decided so it is not
+re-litigated. The expensive window is for judgement — reading his contradictory code and deciding
+what he meant; regenerating a table, mirroring a test, propagating a field through a sheet is not
+that. Leaving it written down also keeps a deferral from turning into a silent omission.
+
 **The Roll20 sheet is the rules source of truth, always.** `sheet-worker.js` and the sheet markup outrank the PDFs. The rulebooks are supplementary — consulted for prose, rationale, and gaps, never to override the sheet.
 
 **Continuity across sessions.** This file, plus `docs/DECISIONS.md` and `docs/PROGRESS.md`, are the durable record. A new conversation window should read all three before doing anything else — don't re-derive architecture from scratch or re-extract PDFs that are already in `docs/reference/`.

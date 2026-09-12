@@ -654,3 +654,41 @@ differ by the one point that distinguishes them.
 
 **Not verified:** the lists writing back from the sheet and the lore line reaching the chat card —
 a running Foundry V14, which this machine does not have.
+
+### 2026-09-12 — CORRECTION: what per-weapon lore actually does in his sheet, and two claims that were wrong
+
+A planning pass over the remaining lore types checked the previous entry's claims against the
+source. Two were wrong and one was right for the wrong reason.
+
+**Wrong: "Second Weapon Knowledge and Multiple Missile Lore have no correctly written gate."**
+All six lore types have one, and all six sit in `setGeneralCombatModifierDisplay` (line 82451) in
+the form `(currentTitle+1)>whenAcquired`. Not one of item 19's seventeen broken gates is inside
+that function. So **none of the six is blocked** on deciding what the gate should have been — his
+own code states the rule for every one of them. The table in item 19 has been replaced.
+
+**Wrong: the per-weapon lore bonus is applied.** It is not. The numeric path,
+`setCombatModifierValues` (82167), only ever assigns the **general** figures — 2 melee, 4 damage,
+10% skills — and never reads the lore list at all. The larger per-weapon tier (3 / 6 / 20%) exists
+only in the display string. In his live sheet, naming a weapon in a lore list changes nothing but
+what the modifier panel prints. Logged as `UPSTREAM-ISSUES.md` item 21.
+
+**Right, but for the wrong reason: the -1 / -2 weapon speed.** The previous entry justified those
+from his comment "only give a -1 more, -1 is already accounted for in the general mod". That
+comment is stale. The general -1 was deliberately removed, and his reason is at line 82273 — a
+character-wide speed modifier cannot tell a melee weapon from a missile one — so his sheet gives 0
+general and -1 specific where the panel promises -1 and -2.
+
+**Decision: the port keeps both tiers, and keeps -1 / -2.** It implements what his panel promises
+rather than what his numeric path delivers, on the standing policy that where his code defeats its
+own evident intent the intent is implemented and the defect recorded. Three things make that the
+right call here rather than an invention: the panel is what a player reads and plays by; a
+per-weapon lore list is inert under his numeric behaviour, which cannot be the design; and the
+melee-versus-missile problem that forced him to drop the general speed modifier does not arise in
+this port, which works lore out per weapon and per attack mode. It is a real departure from his
+running behaviour and is flagged as such in item 21, with the question put back to him.
+
+**Process note:** this was found by a planning pass for the *next* task, not by the work itself.
+The previous entry was written from the display function and the speed function without checking
+whether the numbers reached a numeric field — the same class of mistake as reading a guard's
+extent from the line that opens it. Worth remembering that "his code says X" needs to name which
+of his code paths, given how often the display and the arithmetic disagree in this sheet.

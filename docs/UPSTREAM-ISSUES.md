@@ -290,23 +290,23 @@ The port does not reproduce any of this: the Lore *attack chart* is keyed off `g
 
 **Also worth a look while you are in there:** `Humanoid(Fish Tail)` has 14 areas ending in a Finned Tail at position 13, which is where the Humanoid branch maps a Left Thigh — so a merfolk tail is armoured as though it were a thigh. And the Insectoid charts name positions "Left Mid Claw/Hand" and "Left Lower Leg" where the branch's comments say "Left Mid Claw" and "Left Shin"; those two are only wording, and the mapping is right.
 
-**Not all six are equally stuck.** Counting call sites against the broken-gate list above:
+**All six do have a correctly written gate — they are not blocked.** Every one of the six is
+gated correctly inside `setGeneralCombatModifierDisplay` (line 82451), in the form
+`if ((currentTitle+1)>whenAcquired)`, which for whole titles is exactly `title >= when`:
 
-| Lore | Call sites | Broken gates | A correctly written gate exists? |
-|---|---|---|---|
-| Weapon Lore | 3 | 49870, 83017, 90504 | **Yes** — line 82558, `(currentTitle+1)>whenWeaponLoreAcquired` |
-| Missile Lore | 4 | 49915, 49925, 83025, 90524 | **Yes** — line 82589, same shape |
-| Second Weapon Knowledge | 3 | 49970, 49980, 83188 | No |
-| Second Weapon Lore | 4 | 50025, 50035, 83242 | Possibly one |
-| Projectile Lore | 3 | 50117, 50127 | Possibly one |
-| Multiple Missile Lore | 2 | 50199, 50209 | No |
+| Lore | Correct gate | Broken gates elsewhere |
+|---|---|---|
+| Weapon Lore | 82558 | 49870, 83017, 90504 |
+| Missile Lore | 82589 | 49915, 49925, 83025, 90524 |
+| Second Weapon Knowledge | 82620 | 49970, 49980, 83188 |
+| Second Weapon Lore | 82657 | 50025, 50035, 83242 |
+| Projectile Lore | 82715 | 50117, 50127 |
+| Multiple Missile Lore | 82763 | 50199, 50209 |
 
-Weapon Lore and Missile Lore are therefore **not** blocked: his own code states the intended rule
-in one place, even though three or four other places contradict it. Those two have been ported on
-the strength of the correctly written gate, and `getWeaponLoreWhen` / `getMissileLoreWhen`
-themselves are clean — the defect is entirely in the callers. The other four still need your word,
-and Second Weapon Knowledge and Multiple Missile Lore especially, since every gate they have is
-one of the broken ones.
+Not one of the seventeen broken gates is inside that function; they are all in other paths. So the
+intended rule is stated unambiguously in your own code for all six, and none of them needs a
+decision from you before it can be ported — only the broken gates need fixing. `setCombatModifierValues`
+(82167) gates Weapon and Missile Lore correctly too, so the numeric path for those two is sound.
 
 ## 20. "Enduring All" endures nine damage types out of ten
 
@@ -351,3 +351,51 @@ generated from it, so if the line is added upstream the table picks it up on the
 (line 71439) carries the comment `// Area is already lost (nothing more can be done to it)`. The
 lost-area case is handled separately and earlier, at line 71322, so that comment is stale rather
 than wrong-in-effect — the branch is reached by rebound and endure. Only the comment misleads.
+
+## 21. The per-weapon lore bonus is displayed but never applied
+
+**Status:** open · **Severity:** real bug, currently visible in play; naming a weapon in a lore list does almost nothing
+
+Weapon Lore and Missile Lore each grant two tiers: a general one for every weapon of the kind, and
+a larger one for a weapon named in `weapon_lore_list` / `missile_lore_list`.
+`setGeneralCombatModifierDisplay` shows both (lines 82559-82605):
+
+```
+Weapon Lore[All Melee Weapons](Melee):+2 (Damage):+4 (Weapon Speed):-1 (Skills):+10%
+Weapon Lore[Bastard Sword](Melee):+3 (Damage):+6 (Weapon Speed):-2 (Skills):+20%
+```
+
+The numeric path is `setCombatModifierValues` (82167), and there the per-weapon tier does not
+exist. `tempmeleemodweaponlore`, `tempdamagemodweaponlore` and `tempmodskillweaponlore` are
+assigned in exactly three places each (82279-82290), and the only non-zero values are **2, 4 and
+10** — the general figures. Nothing reads the lore list when building `combat_mod_melee`,
+`combat_mod_damage` or the skill modifier.
+
+So a character who specifically lores a Bastard Sword gets **no** extra to hit, damage or skill
+from it. The list changes only what the modifier panel prints.
+
+**The weapon speed is a separate tangle.** There the per-weapon tier *is* applied, by
+`getWeaponSpeedListingAdjustmentForModifier` (90484), which gives a lored weapon a further -1 with
+the comment "only give a -1 more, -1 is already accounted for in the general mod". That comment is
+stale: the general -1 is **not** in the general mod. It was deliberately taken out, and the reason
+is written at line 82273 — "Removed because you can`t add a general mod for speed for weapon lore
+if the weapon might only be a missile weapon" — and `combat_mod_weaponspeed` (82394) confirms it,
+summing only Strength, Agility, armour, divine mobility and the temporary modifier.
+
+The net effect in play, against what the panel promises:
+
+| | panel says | sheet actually gives |
+|---|---|---|
+| any melee weapon, with Weapon Lore | +2 / +4 / -1 / +10% | +2 / +4 / **0** / +10% |
+| a specifically lored weapon | +3 / +6 / -2 / +20% | +2 / +4 / **-1** / +10% |
+
+**What the port does:** implements what the panel promises, both tiers, including the -1 general
+and -2 specific on speed. The melee-versus-missile problem that forced you to remove the general
+speed modifier does not arise here, because the port works lore out per weapon and per attack mode
+rather than as one figure for the whole character. This is a deliberate departure and the only
+reading under which a per-weapon lore list means anything — but if the general figures really are
+meant to be all a lored weapon gets, say so and it is a small change.
+
+**Worth deciding at the same time:** whether the -1 general weapon speed should apply to melee
+weapons only, which is what your removal comment implies you wanted and could not express with a
+single character-wide modifier.
