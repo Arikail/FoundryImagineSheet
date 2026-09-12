@@ -156,3 +156,47 @@ The main weapon attack, `handlePhysicalAttacks`, reads each value into its own v
 **Status:** open · **Severity:** minor
 
 `rebuildRepeatingBodyRows` (sheet-worker.js:178211) checks `values.creature_type` to choose between `creature_end` and `endurance`, but `creature_type` is not in its `getAttrs` list, so its creature branch can never run and it always uses `endurance`. This is mostly harmless: `handleCreatureFinish` also writes the creature's Endurance into `endurance` (line 174948). It only matters when a temporary Endurance modifier is on a creature. `calcAllCreatureCaracs` adds that to `creature_end` but not to `endurance`, so body rows rebuilt this way ignore it. (The function also wraps its real `getAttrs` in three nested `getAttrs(['title'])` calls that use nothing. That is harmless and not ported.)
+
+## 13. `divideWithMinAndMax` never applies its maximum
+
+**Status:** open · **Severity:** real bug; area attacks have no upper limit
+
+```js
+function divideWithMinAndMax(tmpDividend, tmpDivisor, tmpMaxValue) {
+    tempValue=parseInt(tmpDividend/tmpDivisor);
+    if (tempValue<1) { tempValue=1; }
+    if (tempValue>tmpMaxValue) { tempValue=>tmpMaxValue; }   // <- "=>" not "="
+    return tempValue;
+}
+```
+(sheet-worker.js:25601.) `tempValue=>tmpMaxValue` is an arrow function, not an assignment: it builds a function, throws it away, and leaves `tempValue` untouched. So the ceiling is silently ignored and only the floor of 1 works.
+
+Seven call sites depend on it. Six are the creature area attacks (sheet-worker.js:179808-179827), where it sets how far a Bolt travels and how far a Cone reaches: a Weak Bolt is meant to stop at 100 feet, a Bolt at 150 and a Strong Bolt at 200, and a creature with high Endurance currently exceeds all of them without limit. The seventh is an invocation value (line 156907) capped at 10.
+
+The port applies the ceiling, which is plainly what the argument is for, and the difference is recorded here. The Cloud and Glob shapes are unaffected: they cap through `setIntHighBounds`, which is written correctly.
+
+## 14. A martial-arts damage multiplier is assigned to the wrong variable
+
+**Status:** open · **Severity:** real bug; the multiplier is dropped
+
+In the creature attack's multiplier handling (sheet-worker.js:180004-180010):
+```js
+if (MAModMulti>1.0) {
+    if (damMulti>1.0) {
+        damMulti=damMulti+MAModMulti;
+    } else {
+        damMult=MAModMulti;          // <- damMult, not damMulti
+    }
+}
+```
+`damMult` is a different name, so in the common case -- a martial-arts multiplier with no other multiplier already in play -- the multiplier is written to a variable nothing reads and the damage is never multiplied. The situational branch just above it is spelled correctly. Martial arts is phase 2 and not ported yet; noted so it is not reproduced.
+
+## 15. A creature's called shot does not halve its damage
+
+**Status:** open · **Severity:** rules inconsistency between the two sheets
+
+His character path halves a called shot's damage, and the Player's Guide says a called shot does half damage whether or not it lands. His creature path (sheet-worker.js:179907-179993) never applies that: `damMulti` is only ever set from critical-fumble text or a situational multiplier, so a creature's called shot does full damage.
+
+The port halves it for both actor types, so the same rule does not change meaning depending on who is swinging. Flagged because it is a deliberate departure from his creature code, unlike the rest of the creature port.
+
+**Also noticed, not worth its own entry:** the hand-to-hand test at sheet-worker.js:180022 reads `if (creatureAttackType.includes("Melee") || creatureAttackType.includes("Touch") && tmpLargeAttackDetails=="")`. Because `&&` binds tighter than `||`, the "no area shape" condition only applies to Touch, not to Melee. It gates the extra magical damage and special magic text, neither of which is ported yet.

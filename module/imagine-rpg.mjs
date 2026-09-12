@@ -7,24 +7,31 @@
 // and the printed rulebooks disagree, the Roll20 sheet is the source of truth -- see
 // docs/DECISIONS.md.
 //
-// Status: character and item data models with derived values, a character sheet, a runtime
+// Status: character and creature data models with derived values, sheets for both, a runtime
 // content importer, the content availability switches, and combat phase 1 (attack charts, attack
 // and damage rolls, armour, body areas and wounds, the 10 second round). Not yet built: combat
-// phase 2, the creature actor and the magic subsystems. See docs/PROGRESS.md.
+// phase 2 and the magic subsystems, which is also what a creature's Powers wait on. See
+// docs/PROGRESS.md.
 //==================================================================================================================
 
 import ImagineCharacterData from "./data/actor-character.mjs";
+import ImagineCreatureData from "./data/actor-creature.mjs";
 import ImagineSkillData from "./data/item-skill.mjs";
 import ImagineRaceData from "./data/item-race.mjs";
 import ImagineClassData from "./data/item-class.mjs";
 import ImagineWeaponData from "./data/item-weapon.mjs";
 import ImagineArmorData from "./data/item-armor.mjs";
 import ImagineEquipmentData from "./data/item-equipment.mjs";
+import ImagineCreatureAttackData from "./data/item-creature-attack.mjs";
+import ImaginePowerData from "./data/item-power.mjs";
+import ImagineTraitData from "./data/item-trait.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
+import ImagineCreatureSheet from "./sheets/actor-creature-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
 import ImagineCombat from "./combat/combat-document.mjs";
 import { rollWeaponAttack, registerAttackCardListeners } from "./combat/attack.mjs";
+import { rollCreatureAttack } from "./combat/creature-attack.mjs";
 import {
 	SOURCEBOOKS, MAGIC_SUBSYSTEMS,
 	registerAvailabilitySettings, registerAvailabilityEnforcement,
@@ -85,12 +92,19 @@ Hooks.once("init", function () {
 
 	// Register the data models against the document subtypes declared in system.json.
 	CONFIG.Actor.dataModels.character = ImagineCharacterData;
+	CONFIG.Actor.dataModels.creature = ImagineCreatureData;
 	CONFIG.Item.dataModels.skill = ImagineSkillData;
 	CONFIG.Item.dataModels.race  = ImagineRaceData;
 	CONFIG.Item.dataModels.class = ImagineClassData;
 	CONFIG.Item.dataModels.weapon = ImagineWeaponData;
 	CONFIG.Item.dataModels.armor = ImagineArmorData;
 	CONFIG.Item.dataModels.equipment = ImagineEquipmentData;
+
+	// A creature's own item types. An attack is one of its natural strikes, a power an innate
+	// spell or invocation, and a trait an ability, disability or immunity.
+	CONFIG.Item.dataModels.creatureAttack = ImagineCreatureAttackData;
+	CONFIG.Item.dataModels.power = ImaginePowerData;
+	CONFIG.Item.dataModels.trait = ImagineTraitData;
 
 	// @MARKER SHEET REGISTRATION
 	// The default core sheet is unregistered so it does not offer itself alongside ours.
@@ -101,13 +115,11 @@ Hooks.once("init", function () {
 		label: "IMAGINE.Sheet.Character"
 	});
 
-	// The creature actor is still a placeholder. Its schema is deliberately empty until the
-	// Bestiary source material is in hand -- the creature sheet normalises to roughly 1,455
-	// distinct fields, so guessing at its shape now would mean redoing it. Declared here so
-	// creature actors remain creatable in the meantime.
-	CONFIG.Actor.dataModels.creature = class extends foundry.abstract.TypeDataModel {
-		static defineSchema() { return {}; }
-	};
+	foundry.documents.collections.Actors.registerSheet("imagine-rpg", ImagineCreatureSheet, {
+		types: ["creature"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Creature"
+	});
 
 	// @MARKER SYSTEM API
 	// Exposed so the content import can be run from a macro or the console at any time,
@@ -123,6 +135,7 @@ Hooks.once("init", function () {
 	game.imagine = {
 		importContent: importAllContent,
 		rollWeaponAttack: rollWeaponAttack,
+		rollCreatureAttack: rollCreatureAttack,
 		getAvailabilityRules: getAvailabilityRules,
 		explainAvailability: explainAvailability
 	};

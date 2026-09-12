@@ -46,7 +46,10 @@
       "class": {},
       "weapon": {},
       "armor": {},
-      "equipment": {}
+      "equipment": {},
+      "creatureAttack": {},
+      "power": {},
+      "trait": {}
     }
   },
   "url": "https://github.com/MichaelTenery/FoundryImagineSheet",

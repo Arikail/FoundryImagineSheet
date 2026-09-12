@@ -1,0 +1,67 @@
+{{!--
+	Traits tab. One root element, as the framework requires of every PART.
+
+	Abilities, disabilities and immunities are one item type separated by a category, because
+	they are one shape in his data. They carry their description and do not apply their own
+	mechanical effect -- which is what his creature code does, and is a faithful port rather
+	than an omission. The few abilities that do something (Enhanced Perception and the senses)
+	are handled where the characteristics are worked out.
+
+	Powers sit here too. A Power is an innate spell or invocation with a use count; resolving one
+	needs the deferred magic phase, so the button spends a use and reports it.
+--}}
+<section class="tab imagine-creature-traits" data-tab="traits" data-group="primary">
+
+	<h3 class="section-head">Powers <span class="count">{{powers.length}}</span></h3>
+	{{#if powers.length}}
+	<table class="power-table">
+		<thead>
+			<tr>
+				<th class="col-name">Power</th>
+				<th class="col-num">Uses</th>
+				<th>Kind</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each powers as |p|}}
+			<tr class="{{#unless p.available}}unavailable{{/unless}}">
+				<td class="col-name">{{p.name}}{{#if p.selfOnly}} <span class="muted">(self)</span>{{/if}}
+					{{#unless p.available}}<span class="unavailable-mark" data-tooltip="{{p.unavailableReason}}">!</span>{{/unless}}</td>
+				<td class="col-num">{{#if p.unlimited}}<span class="muted">unlimited</span>{{else}}{{p.uses}} / {{p.usesMax}}{{/if}}</td>
+				<td>{{#if (eq p.powerKind "unknown")}}<span class="muted">unresolved</span>{{else}}{{p.powerKind}}{{/if}}</td>
+				<td>
+					<button type="button" data-action="usePower" data-item-id="{{p.id}}"
+						{{#unless p.hasUseLeft}}disabled{{/unless}}>Use</button>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">No Powers.</p>
+	{{/if}}
+
+	{{#each traits as |list category|}}
+	<details class="skill-group" open>
+		<summary>{{category}} <span class="count">{{list.length}}</span></summary>
+		{{#if list.length}}
+		<table class="trait-table">
+			<tbody>
+				{{#each list as |t|}}
+				<tr class="{{#unless t.available}}unavailable{{/unless}}">
+					<td class="col-name">{{t.name}}
+						{{#unless t.available}}<span class="unavailable-mark" data-tooltip="{{t.unavailableReason}}">!</span>{{/unless}}
+						{{#if t.value1}}<span class="muted">({{t.value1}}{{#if t.value2}} / {{t.value2}}{{/if}})</span>{{/if}}
+					</td>
+					<td class="trait-text">{{{t.description}}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{else}}
+		<p class="empty">None.</p>
+		{{/if}}
+	</details>
+	{{/each}}
+</section>

@@ -1,0 +1,68 @@
+{{!--
+	Creature sheet header: what a Bestiary entry leads with -- what the thing is, and the six
+	figures that say how much punishment it takes and how well it perceives, charms and endures.
+
+	Endurance, Hide and Shock are entered rather than calculated: a creature's stat block states
+	them. Perception, Affinity and Fortune are worked out from its attributes and level.
+--}}
+<header class="imagine-header creature">
+
+	<img class="portrait" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}">
+
+	<div class="identity">
+		<input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
+
+		<div class="identity-line">
+			<span class="field"><label>Type</label>
+				<select name="system.identity.creatureType">
+					<option value="" {{#unless system.identity.creatureType}}selected{{/unless}}>&mdash;</option>
+					{{#each config.creatureTypes as |t|}}
+					<option value="{{t}}" {{#if (eq t ../system.identity.creatureType)}}selected{{/if}}>{{t}}</option>
+					{{/each}}
+				</select></span>
+			<span class="field"><label>Subtype</label>
+				<input type="text" name="system.identity.subtype" value="{{system.identity.subtype}}"></span>
+			<span class="field"><label>Level</label>
+				<input type="number" name="system.identity.level" value="{{system.identity.level}}"></span>
+		</div>
+
+		<div class="identity-line">
+			<span class="field"><label>Life Cycle</label>
+				<input type="text" name="system.identity.lifecycle" value="{{system.identity.lifecycle}}"></span>
+			<span class="field"><label>Habitat</label>
+				<input type="text" name="system.identity.habitat" value="{{system.identity.habitat}}"></span>
+		</div>
+
+		<div class="identity-line">
+			<span class="field"><label>Alignment</label>
+				<input type="text" name="system.identity.alignment" value="{{system.identity.alignment}}"></span>
+			<span class="field"><label>Exp Value</label>
+				<input type="number" name="system.identity.expValue" value="{{system.identity.expValue}}"></span>
+		</div>
+	</div>
+
+	<div class="characteristics">
+		<div class="char-box">
+			<label>Endurance</label>
+			<span class="value">{{system.characteristics.endurance.value}}</span>
+			<span class="sub">Shock {{#if system.characteristics.shock.immune}}Immune{{else}}{{system.body.shock}}{{/if}}</span>
+		</div>
+		<div class="char-box">
+			<label>Hide</label>
+			<span class="value">{{system.body.hide}}</span>
+			<span class="sub">all mitigation but armour</span>
+		</div>
+		<div class="char-box">
+			<label>Perception</label>
+			<span class="value">{{system.characteristics.perception.value}}%</span>
+		</div>
+		<div class="char-box">
+			<label>Affinity</label>
+			<span class="value">{{system.characteristics.affinity.value}}%</span>
+		</div>
+		<div class="char-box">
+			<label>Fortune</label>
+			<span class="value">{{system.characteristics.fortune.value}}%</span>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,46 @@
+{{!--
+	Skills tab. One root element, as the framework requires of every PART.
+
+	A creature's skills are a name and a flat percentage each, which is how the Bestiary prints
+	them and how his sheet stores them. They are NOT recomputed from attributes -- that would
+	produce different numbers from the printed stat block.
+
+	Every skill is used at the creature's practitioner title, which is simply its level.
+--}}
+<section class="tab imagine-creature-skills" data-tab="skills" data-group="primary">
+
+	<div class="slot-summary">
+		<span><label>Practitioner title</label> {{system.identity.title}}</span>
+		<span><label>Memorization points</label> {{system.identity.memorizationPoints}}</span>
+	</div>
+
+	{{#if skills.length}}
+	<table class="skill-table">
+		<thead>
+			<tr>
+				<th class="col-name">Skill</th>
+				<th class="col-num">Chance</th>
+				<th class="col-roll"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each skills as |s|}}
+			<tr>
+				<td class="col-name">
+					<input type="text" name="system.skills.{{s.index}}.name" value="{{s.name}}">
+				</td>
+				<td class="col-num">
+					<input type="number" name="system.skills.{{s.index}}.chance" value="{{s.chance}}">
+				</td>
+				<td class="col-roll">
+					<button type="button" data-action="rollCreatureSkill" data-skill-index="{{s.index}}">Roll</button>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">No skills recorded. A creature's stat block lists them as a name and a percentage,
+	for example &ldquo;Ambush 45%&rdquo;.</p>
+	{{/if}}
+</section>

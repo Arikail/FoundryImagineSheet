@@ -2,13 +2,16 @@
   "IMAGINE": {
     "SystemTitle": "Imagine Role Playing System",
     "Sheet": {
-      "Character": "Imagine Character Sheet"
+      "Character": "Imagine Character Sheet",
+      "Creature": "Imagine Creature Sheet"
     },
     "Tab": {
       "attributes": "Attributes",
       "skills": "Skills",
       "equipment": "Equipment",
-      "combat": "Combat"
+      "combat": "Combat",
+      "stats": "Stats",
+      "traits": "Traits"
     },
     "Attribute": {
       "str": "Strength",
@@ -36,7 +39,10 @@
       "class": "Class",
       "weapon": "Weapon",
       "armor": "Armour",
-      "equipment": "Equipment"
+      "equipment": "Equipment",
+      "creatureAttack": "Creature Attack",
+      "power": "Power",
+      "trait": "Trait"
     }
   }
 }

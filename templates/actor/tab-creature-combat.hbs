@@ -1,0 +1,107 @@
+{{!--
+	Combat tab. One root element, as the framework requires of every PART.
+
+	Three things matter in a fight: the standing numbers, the creature's own attacks, and the
+	state of its body. The attack chart is chosen for a creature rather than worked out from a
+	class progression, so it is a control here rather than a readout.
+--}}
+<section class="tab imagine-creature-combat" data-tab="combat" data-group="primary">
+
+	<div class="combat-stats">
+		<div class="char-box"><label>Attack Chart</label>
+			<span class="value small">
+				<select name="system.combat.attackChart">
+					{{#each config.attackCharts as |c|}}
+					<option value="{{c}}" {{#if (eq c ../system.combat.attackChart)}}selected{{/if}}>{{c}}</option>
+					{{/each}}
+				</select>
+			</span>
+			{{#if system.combat.loreAttackSkill}}
+			<span class="sub">Lore: {{system.combat.loreAttackSkill}}</span>
+			{{/if}}
+		</div>
+		<div class="char-box"><label>Initiative</label>
+			<span class="value">d10 {{#if (gte system.combat.initiativeMod 0)}}+{{/if}}{{system.combat.initiativeMod}}</span>
+			<span class="sub">lower acts first</span></div>
+		<div class="char-box"><label>Defence</label>
+			<span class="value">{{#if (gt system.combat.defensiveAdjust 0)}}+{{/if}}{{system.combat.defensiveAdjust}}</span>
+			<span class="sub">to attackers' rolls</span></div>
+		<div class="char-box"><label>Shock</label>
+			<span class="value {{#if system.body.inShock}}alarm{{/if}}">{{system.body.totalWounds}} / {{#if system.characteristics.shock.immune}}Imm{{else}}{{system.body.shock}}{{/if}}</span>
+			<span class="sub">{{#if system.body.inShock}}IN SHOCK{{else}}total wounds{{/if}}</span></div>
+	</div>
+
+	<h3 class="section-head">Attacks</h3>
+	{{#if attacks.length}}
+	<table class="weapon-table">
+		<thead>
+			<tr>
+				<th class="col-name">Attack</th>
+				<th>Type</th>
+				<th class="col-num">Damage</th>
+				<th class="col-num">Seconds</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each attacks as |a|}}
+			<tr class="{{#unless a.available}}unavailable{{/unless}}">
+				<td class="col-name">{{a.name}}
+					{{#unless a.available}}<span class="unavailable-mark" data-tooltip="{{a.unavailableReason}}">!</span>{{/unless}}
+					{{#if a.effects.length}}
+					<div class="muted mode-list">
+						{{#each a.effects as |e|}}{{e.trigger}}: {{e.name}}{{#if e.damage}} {{e.damage}} {{e.damageType}}{{/if}}{{#unless @last}} &middot; {{/unless}}{{/each}}
+					</div>
+					{{/if}}
+				</td>
+				<td>{{a.attackType}}</td>
+				<td class="col-num">{{a.damage}} {{#if a.damageType}}<span class="muted">{{a.damageType}}</span>{{/if}}</td>
+				<td class="col-num">{{a.speed}}{{#if a.minSpeed}} <span class="muted">min {{a.minSpeed}}</span>{{/if}}</td>
+				<td>
+					<button type="button" data-action="rollCreatureAttack" data-item-id="{{a.id}}">
+						<i class="fa-solid fa-dice-d20"></i> Attack</button>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">No attacks. Add a Creature Attack item for each bite, claw, breath or gaze.</p>
+	{{/if}}
+
+	<h3 class="section-head">Body <span class="muted">{{system.body.type}}{{#if system.body.bodyChart}} (own chart){{/if}}</span></h3>
+	<table class="body-table">
+		<thead>
+			<tr>
+				<th class="col-name">Area</th>
+				<th class="col-num">Endurance</th>
+				<th class="col-num">Wounds</th>
+				<th class="col-num">Armour</th>
+				<th>State</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each system.body.areas as |a|}}
+			<tr class="area-{{a.state}}">
+				<td class="col-name">{{a.name}} <span class="muted">{{a.type}}</span></td>
+				<td class="col-num">{{a.endurance}}</td>
+				{{!-- Wounds are stored state, not derived, so they can be healed by hand. --}}
+				<td class="col-num"><input type="number" class="wound-input" min="0"
+					name="system.body.wounds.{{a.name}}" value="{{a.wounds}}"></td>
+				<td class="col-num" {{#if a.layers.length}}data-tooltip="{{#each a.layers as |l|}}{{l}}{{#unless @last}}, {{/unless}}{{/each}}"{{/if}}>
+					{{#if a.protectedByArmor}}{{a.armor}}{{#if a.armorDamage}} <span class="muted">(&minus;{{a.armorDamage}})</span>{{/if}}{{else}}<span class="muted">&mdash;</span>{{/if}}</td>
+				<td class="state">
+					{{#if (eq a.state "effect")}}Effect triggered
+					{{else if (eq a.state "vitalitySave")}}Vitality save
+					{{else if (eq a.state "wounded")}}Wounded
+					{{else}}<span class="muted">Sound</span>{{/if}}
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	{{#if system.combat.attackNotes}}
+	<p class="muted">{{system.combat.attackNotes}}</p>
+	{{/if}}
+</section>

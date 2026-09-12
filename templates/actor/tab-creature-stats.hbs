@@ -1,0 +1,114 @@
+{{!--
+	Stats tab. One root element, as the framework requires of every PART.
+
+	The attributes work exactly as a character's -- rating in, save and table modifiers out. What
+	differs is everything in the panels below: a creature's Endurance, Hide, Shock and all five
+	resistances are figures its stat block states, so they are inputs here rather than readouts.
+--}}
+<section class="tab imagine-creature-stats" data-tab="stats" data-group="primary">
+
+	<table class="attribute-table">
+		<thead>
+			<tr>
+				<th class="col-name">Attribute</th>
+				<th class="col-num">Rating</th>
+				<th class="col-num">Value</th>
+				<th class="col-num">Max</th>
+				<th class="col-num">Save</th>
+				<th class="col-roll"></th>
+				<th class="col-mods">Modifiers</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each attributes as |attr|}}
+			<tr class="attribute-row" data-group-name="{{attr.group}}">
+				<td class="col-name">{{localize attr.label}}</td>
+				<td class="col-num">
+					<input type="number" name="system.attributes.{{attr.key}}.rating" value="{{attr.rating}}">
+				</td>
+				<td class="col-num derived">{{attr.value}}</td>
+				<td class="col-num derived muted">{{attr.max}}</td>
+				<td class="col-num derived strong">{{attr.save}}%</td>
+				<td class="col-roll">
+					<button type="button" data-action="rollAttributeSave" data-attribute="{{attr.key}}">Roll</button>
+				</td>
+				<td class="col-mods">
+					{{#each attr.mods as |mod|}}<span class="mod"><em>{{mod.key}}</em> {{mod.value}}</span>{{/each}}
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<div class="panel-row">
+
+		<div class="panel">
+			<h3>Characteristics</h3>
+			{{!-- Entered, not calculated: see the data model's comments. --}}
+			<ul class="band-list">
+				<li><label>Endurance</label>
+					<span><input type="number" name="system.characteristics.endurance.entered"
+						value="{{system.characteristics.endurance.entered}}"></span></li>
+				<li><label>Hide</label>
+					<span><input type="number" name="system.body.hide" value="{{system.body.hide}}"></span></li>
+				<li><label>Shock</label>
+					<span><input type="number" name="system.characteristics.shock.entered"
+						value="{{system.characteristics.shock.entered}}"></span></li>
+				<li><label class="muted">Shock immune</label>
+					<span><input type="checkbox" name="system.characteristics.shock.immune"
+						{{#if system.characteristics.shock.immune}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">Shock left at 0 becomes Endurance &times; 3.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Resistances</h3>
+			<ul class="resist-list">
+				{{#each system.resistances as |res key|}}
+				<li><label>{{key}}</label>
+					<span><input type="number" name="system.resistances.{{key}}.entered" value="{{res.entered}}"></span>
+					<span class="value">{{#if res.immune}}Immune{{else}}{{res.value}}%{{/if}}</span>
+					<span class="muted"><input type="checkbox" name="system.resistances.{{key}}.immune"
+						{{#if res.immune}}checked{{/if}}> imm</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Movement</h3>
+			{{#if system.movement.modes.length}}
+			<table class="move-table">
+				<thead><tr><th></th><th>Hour</th><th>10 sec</th><th>1 sec</th></tr></thead>
+				<tbody>
+					{{#each system.movement.modes as |m|}}
+					<tr><td>{{m.name}}</td><td>{{m.hourly}}</td><td>{{m.tenSec}}</td><td>{{m.oneSec}}</td></tr>
+					{{/each}}
+				</tbody>
+			</table>
+			{{else}}
+			<p class="empty">No movement recorded.</p>
+			{{/if}}
+			<ul class="band-list">
+				<li><label>Standing jump</label> <span>{{system.movement.jumpStand}}</span></li>
+				<li><label>Jump up</label> <span>{{system.movement.jumpUp}}</span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Size and Load</h3>
+			<ul class="band-list">
+				<li><label>Height</label>
+					<span><input type="number" name="system.physical.heightFeet" value="{{system.physical.heightFeet}}">ft
+					      <input type="number" name="system.physical.heightInches" value="{{system.physical.heightInches}}">in</span></li>
+				<li><label>Weight</label>
+					<span><input type="number" name="system.physical.weight" value="{{system.physical.weight}}"> lb</span></li>
+			</ul>
+			<p class="encumbrance-status">{{system.encumbrance.status}}</p>
+			<p class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Notes</h3>
+	<textarea name="system.notes" rows="3">{{system.notes}}</textarea>
+</section>

@@ -1,0 +1,251 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG creature sheet preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; }
+	.frame { max-width: 860px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; font-size: 13px; }
+	.window-content { padding: 12px 14px; }
+	.tabstrip { display: flex; gap: 4px; border-bottom: 2px solid #cfc7b8; margin: 10px 0 12px; }
+	.tabstrip button { padding: 5px 14px; border: 1px solid #cfc7b8; border-bottom: none;
+	                   border-radius: 3px 3px 0 0; background: #efeae0; cursor: pointer; font-size: 12px; }
+	.tabstrip button.active { background: #fdfbf6; font-weight: 600; }
+	.tab { display: none; }
+	.tab.active { display: block; }
+	.chat { max-width: 320px; margin: 18px auto; background: #f0ece2; border: 1px solid #b9b0a0;
+	        border-radius: 4px; padding: 8px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+	.chat-title { color: #d8d0c0; text-align: center; font-size: 12px; margin-top: 18px; }
+	.err { background: #fee; color: #900; padding: 8px; font-family: monospace; white-space: pre-wrap; }
+</style>
+
+<div class="frame imagine sheet actor creature">
+	<div class="frame-title">Imagine RPG &mdash; Creature Sheet (preview)</div>
+	<div class="window-content">
+		<div id="header"></div>
+		<div class="tabstrip">
+			<button data-t="stats" class="active">Stats</button>
+			<button data-t="skills">Skills</button>
+			<button data-t="combat">Combat</button>
+			<button data-t="traits">Traits</button>
+		</div>
+		<div id="tabs"></div>
+	</div>
+</div>
+<div class="chat-title">Chat card: this creature's breath attack</div>
+<div class="chat" id="chat"></div>
+
+<script type="module">
+// Standalone preview of the creature sheet and its attack card, rendered against a creature the
+// real data model has derived. Foundry is not present, so its globals are stubbed -- but every
+// number on screen comes from the system's own code.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/creature-preview.html
+// Add ?tab=combat to open on a tab.
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
+
+const { default: ImagineCreatureData } = await import("../module/data/actor-creature.mjs");
+const R = await import("../module/combat/combat-rules.mjs");
+const C = await import("../module/combat/creature-rules.mjs");
+const T = await import("../module/creature-tables.mjs");
+
+Handlebars.registerHelper("eq", (a, b) => a === b);
+Handlebars.registerHelper("gt", (a, b) => a > b);
+Handlebars.registerHelper("lt", (a, b) => a < b);
+Handlebars.registerHelper("gte", (a, b) => a >= b);
+Handlebars.registerHelper("localize", (k) => {
+	const names = { str: "Strength", agl: "Agility", vit: "Vitality", int: "Intelligence",
+		wis: "Wisdom", knw: "Knowledge", app: "Appearance", chm: "Charm", soc: "Social Class",
+		aur: "Aura", pty: "Piety", wil: "Will Force" };
+	const key = String(k).split(".").pop();
+	return names[key] ?? key;
+});
+
+// --- a creature: a wyrm, the kind of thing the Bestiary prints ----------------------
+// Items are plain objects here. Where the sheet reads a getter the real data model provides
+// (an attack's effective minimum speed, whether a power has a use left), the fixture supplies
+// the same property so the templates see what they would in Foundry.
+const attack = (name, type, damage, damageType, speed, minSpeed, effects = []) => ({
+	id: "atk-" + name.toLowerCase().replace(/\W/g, ""), name, type: "creatureAttack",
+	system: { attackType: type, damage, damageType, speed, minSpeed, speedSpecial: false,
+	          effects, effectiveMinSpeed: minSpeed || speed, sourcebook: "", page: "", description: "" }
+});
+const trait = (name, category, value1 = "", value2 = "", description = "") => ({
+	id: "tr-" + name.toLowerCase().replace(/\W/g, ""), name, type: "trait",
+	system: { category, canonicalName: name, value1, value2, description }
+});
+const power = (name, uses, usesMax, unlimited, selfOnly, kind) => ({
+	id: "pw-" + name.toLowerCase().replace(/\W/g, ""), name, type: "power",
+	system: { uses, usesMax, unlimited, selfOnly, powerKind: kind,
+	          hasUseLeft: unlimited || uses > 0, description: "" }
+});
+
+const items = [
+	attack("Bite", "Melee", "3d6", "Cutting", 3, 2, [
+		{ name: "Venom", trigger: "If VIT save fails", description: "the victim's flesh swells and blackens",
+		  damage: "1d6", damageType: "Poison", duration: "3", durationType: "Periodic(Minutes)" }
+	]),
+	attack("Claw", "Melee", "2d6", "Cutting", 2, 0),
+	attack("Tail Slap", "Melee", "2d8", "Smashing", 4, 3),
+	attack("Frost Breath", "Strong Cone", "6d6", "Frost", 5, 5, [
+		{ name: "Numbing", trigger: "Auto", description: "limbs stiffen with cold",
+		  damage: "", damageType: "", duration: "2d4", durationType: "Seconds" }
+	]),
+	attack("Withering Gaze", "Gaze", "2d4", "Draining", 1, 1),
+	trait("Enhanced Perception", "ability", "", "", "Perception is unusually keen."),
+	trait("Sense(Heat)", "ability", "", "", "Senses warmth through rock and water."),
+	trait("Enhanced Hide(Scales)", "ability", "3", "20", "Hide(Scales:1 per 3 END/20 Max.)."),
+	trait("Frost Sensitivity", "disability", "-10", "1",
+		"Frost Sensitivity(-10% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."),
+	trait("Frost", "immunity", "", "", "Frost(Cold does not harm this being whether magical or mundane)."),
+	trait("Poison", "immunity", "", "", "Poison(Lesser):The being or creature is immune to lesser poisons."),
+	power("Frost Shield", 3, 3, false, true, "spell"),
+	power("Terrify", 0, 2, false, false, "invocation"),
+	power("Regenerate", 0, 0, true, true, "unknown")
+];
+
+const ratings = { str: 22, agl: 14, vit: 20, int: 12, wis: 13, knw: 10,
+                  app: 8, chm: 7, soc: 0, aur: 16, pty: 9, wil: 15 };
+const attributes = {};
+for (const k of Object.keys(ratings)) attributes[k] = { rating: ratings[k], permMod: 0, tempMod: 0 };
+const resistance = (entered, immune = false) => ({ entered, tempMod: 0, permMod: 0, immune });
+
+const creature = new ImagineCreatureData({
+	identity: { creatureType: "Magical Animal", subtype: "Wyrm", level: 12,
+	            lifecycle: "Solitary, hibernates in winter", habitat: "Cold mountains",
+	            alignment: "Neutral", tendencies: "Territorial", expValue: 4200, expNote: "" },
+	attributes,
+	characteristics: {
+		endurance: { entered: 60, tempMod: 0 },
+		perception: { tempMod: 0 }, affinity: { tempMod: 0 }, fortune: { tempMod: 0 },
+		shock: { entered: 0, immune: false }
+	},
+	tameBonus: 0,
+	resistances: {
+		magic: resistance(45), control: resistance(30), illusion: resistance(25),
+		poison: resistance(0, true), disease: resistance(40)
+	},
+	body: {
+		bodyType: "Quadruped(Tail/Wings)", bodyChart: "", hide: 14,
+		wounds: { "Left Wing": 6, "Head": 22 }, armorDamage: {}
+	},
+	movement: { modes: [
+		{ name: "Walk", hourly: 12, tenSec: 30, oneSec: 3 },
+		{ name: "Run", hourly: 30, tenSec: 90, oneSec: 9 },
+		{ name: "Fly", hourly: 90, tenSec: 300, oneSec: 30 }
+	], jumpStand: 8, jumpUp: 4 },
+	physical: { heightFeet: 14, heightInches: 0, weight: 3800 },
+	skills: ImagineCreatureData.parseSkillList(
+		"Ambush 55%, Blend 40%, Listen 60%, Smell 65%, Weapon Lore 35%, Intimidate 50%"),
+	combat: { attackChart: "Expert", attackNotes: "Breathes frost once every three rounds.",
+	          meleeMisc: 0, missileMisc: 0, damageMisc: 0,
+	          defenseMisc: 0, initiativeMisc: 0, skillMisc: 0 },
+	notes: "Hoards worked metal. Will parley if offered silver.", biography: ""
+});
+creature.parent = { items, name: "Cave Wyrm" };
+creature.prepareBaseData();
+creature.prepareDerivedData();
+
+// --- the context the sheet class builds ---------------------------------------------
+const groups = [["Physical",["str","agl","vit"]],["Mental",["int","wis","knw"]],
+                ["Personal",["app","chm","soc"]],["Mystical",["aur","pty","wil"]]];
+const attrRows = [];
+for (const [group, keys] of groups) for (const key of keys) {
+	const a = creature.attributes[key];
+	attrRows.push({ key, group, label: `IMAGINE.Attribute.${key}`, rating: a.rating, value: a.value,
+	                max: a.max, save: a.save,
+	                mods: Object.entries(a.mods ?? {}).map(([k, v]) => ({ key: k, value: v })) });
+}
+const skillRows = creature.skills.map((s, i) => ({ index: i, name: s.name, chance: s.chance }));
+const attackRows = items.filter(i => i.type === "creatureAttack").map(i => ({
+	id: i.id, name: i.name, attackType: i.system.attackType, damage: i.system.damage,
+	damageType: i.system.damageType, speed: i.system.speed, minSpeed: i.system.effectiveMinSpeed,
+	effects: i.system.effects, available: true, unavailableReason: ""
+})).sort((a, b) => a.name.localeCompare(b.name));
+const traitRows = { ability: [], disability: [], immunity: [] };
+for (const i of items.filter(i => i.type === "trait")) {
+	traitRows[i.system.category].push({ id: i.id, name: i.name, canonicalName: i.system.canonicalName,
+		value1: i.system.value1, value2: i.system.value2, description: i.system.description,
+		available: true, unavailableReason: "" });
+}
+const powerRows = items.filter(i => i.type === "power").map(i => ({
+	id: i.id, name: i.name, unlimited: i.system.unlimited, uses: i.system.uses,
+	usesMax: i.system.usesMax, selfOnly: i.system.selfOnly, powerKind: i.system.powerKind,
+	hasUseLeft: i.system.hasUseLeft, available: true, unavailableReason: "" }));
+
+const ctx = {
+	actor: { name: "Cave Wyrm", img: "" },
+	system: creature,
+	attributes: attrRows,
+	skills: skillRows,
+	attacks: attackRows,
+	traits: traitRows,
+	powers: powerRows,
+	gear: [],
+	config: { creatureTypes: T.CREATURE_TYPES, bodyTypes: T.CREATURE_BODY_TYPES,
+	          attackCharts: T.CREATURE_ATTACK_CHARTS }
+};
+
+async function render(path, context) {
+	const src = await (await fetch(path)).text();
+	try {
+		return Handlebars.compile(src)(context);
+	} catch (err) {
+		return `<div class="err">${path}\n${err.message}</div>`;
+	}
+}
+document.getElementById("header").innerHTML = await render("../templates/actor/creature-header.hbs", ctx);
+const tabs = document.getElementById("tabs");
+for (const name of ["stats", "skills", "combat", "traits"]) {
+	const div = document.createElement("div");
+	div.innerHTML = await render(`../templates/actor/tab-creature-${name}.hbs`, ctx);
+	tabs.appendChild(div);
+}
+document.querySelector("#tabs .tab")?.classList.add("active");
+document.querySelectorAll(".tabstrip button").forEach(btn => {
+	btn.onclick = () => {
+		document.querySelectorAll(".tabstrip button").forEach(b => b.classList.remove("active"));
+		btn.classList.add("active");
+		document.querySelectorAll("#tabs .tab").forEach(t => t.classList.toggle("active", t.dataset.tab === btn.dataset.t));
+	};
+});
+const start = new URLSearchParams(location.search).get("tab");
+if (start) document.querySelector(`.tabstrip button[data-t="${start}"]`)?.click();
+
+// --- the breath attack, resolved by the real rules ----------------------------------
+// A Strong Cone: rolls down the attack chart with melee modifiers, and its reach comes from the
+// creature's own Endurance.
+const breath = items.find(i => i.name === "Frost Breath");
+const behaviour = C.getCreatureAttackBehaviour(breath.system.attackType);
+const mods = C.getCreatureToHitModifiers({
+	mods: behaviour.mods,
+	attacker: { meleeAttack: creature.combat.meleeAttack, missileAttack: creature.combat.missileAttack,
+	            meleeMisc: 0, missileMisc: 0 },
+	target: { defensiveAdjust: -2 }, situational: 0
+});
+const result = R.resolveAttack({ natural: 13, mods: mods.total, skill: creature.combat.attackSkill,
+                                 calledShot: false });
+const shape = C.getAreaAttackSize(behaviour.shape, behaviour.tier,
+	creature.characteristics.endurance.value, 3);
+const effects = C.getTriggeredEffects(breath.system.effects,
+	{ isHit: result.isHit, isCalledShot: result.isCalledShot, damageTotal: 24 });
+
+document.getElementById("chat").innerHTML = await render("../templates/chat/creature-attack-card.hbs", {
+	actorName: "Cave Wyrm", weapon: breath.name, attackType: breath.system.attackType,
+	targetName: "Orc Raider", aim: "Upper Torso",
+	result, mods, speed: breath.system.speed, speedSpecial: false,
+	shape, effects, resolveKind: behaviour.resolve,
+	damage: result.isHit ? { dice: breath.system.damage, misc: 0, rolled: 24, multiplier: 1,
+	                         total: 24, type: breath.system.damageType } : null,
+	fumble: null, applied: false, inCombat: true
+});
+</script>

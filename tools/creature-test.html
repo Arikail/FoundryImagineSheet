@@ -1,0 +1,447 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG creature derivation test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Derivation tests for the creature data model.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/creature-test.html
+//
+// Foundry is not present, so the globals the data models touch at import time are stubbed, the
+// same way tools/derive-test.html does it. defineSchema() is never called: these tests drive the
+// prepare* methods against a plain data object, which is the arithmetic worth verifying.
+//
+// Every expected value here is worked out by hand from his creature functions
+// (sheet-worker.js:174658 onward) -- calcAllCreatureCaracs for the characteristics,
+// calcAllCreatureResists for the resistances, handleCreatureFinish for the attribute cap.
+globalThis.foundry = {
+	abstract: {
+		TypeDataModel: class {
+			constructor(data) { Object.assign(this, data); }
+			prepareBaseData() {}
+			prepareDerivedData() {}
+		}
+	},
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
+
+const { default: ImagineCreatureData } = await import("../module/data/actor-creature.mjs");
+const R = await import("../module/combat/combat-rules.mjs");
+const C = await import("../module/combat/creature-rules.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+	return ok;
+}
+
+// Build a creature. Only what a test cares about needs passing; everything else takes the same
+// defaults the real schema would give it.
+function makeCreature(options = {}) {
+	const ratings = options.ratings ?? {};
+	const attributes = {};
+	for (const k of ["str","agl","vit","int","wis","knw","app","chm","soc","aur","pty","wil"]) {
+		attributes[k] = { rating: ratings[k] ?? 10, permMod: 0, tempMod: 0 };
+	}
+	const resistance = (r = {}) => ({ entered: r.entered ?? 0, tempMod: r.tempMod ?? 0,
+	                                  permMod: r.permMod ?? 0, immune: r.immune ?? false });
+
+	const c = new ImagineCreatureData({
+		identity: {
+			creatureType: options.creatureType ?? "Animal",
+			subtype: "", level: options.level ?? 1,
+			lifecycle: "", habitat: "", alignment: "", tendencies: "", expValue: 0, expNote: ""
+		},
+		attributes,
+		characteristics: {
+			endurance: { entered: options.endurance ?? 0, tempMod: options.enduranceMod ?? 0 },
+			perception: { tempMod: options.perceptionMod ?? 0 },
+			affinity: { tempMod: 0 },
+			fortune: { tempMod: 0 },
+			shock: { entered: options.shock ?? 0, immune: options.shockImmune ?? false }
+		},
+		tameBonus: options.tameBonus ?? 0,
+		resistances: {
+			magic: resistance(options.magic), control: resistance(options.control),
+			illusion: resistance(), poison: resistance(), disease: resistance()
+		},
+		body: {
+			bodyType: options.bodyType ?? "Humanoid",
+			bodyChart: options.bodyChart ?? "",
+			hide: options.hide ?? 0,
+			wounds: options.wounds ?? {}, armorDamage: {}
+		},
+		movement: { modes: options.movement ?? [], jumpStand: 0, jumpUp: 0 },
+		physical: { heightFeet: 0, heightInches: 0, weight: options.weight ?? 0 },
+		skills: options.skills ?? [],
+		combat: {
+			attackChart: options.attackChart ?? "None", attackNotes: "",
+			meleeMisc: 0, missileMisc: 0, damageMisc: 0,
+			defenseMisc: 0, initiativeMisc: options.initiativeMisc ?? 0, skillMisc: 0
+		},
+		notes: "", biography: ""
+	});
+	c.parent = { items: options.items ?? [] };
+	c.prepareBaseData();
+	c.prepareDerivedData();
+	return c;
+}
+
+// A trait item, as the creature model looks for them.
+const trait = (name, category = "ability") => ({ type: "trait", name, system: { category } });
+
+// --- attribute maximum, by level not by title -----------------------------------
+// handleCreatureFinish: under 10 -> 25, under 15 -> 28, otherwise 30.
+check("cap at level 1",  ImagineCreatureData.getCreatureAttributeCap(1), 25);
+check("cap at level 9",  ImagineCreatureData.getCreatureAttributeCap(9), 25);
+check("cap at level 10", ImagineCreatureData.getCreatureAttributeCap(10), 28);
+check("cap at level 14", ImagineCreatureData.getCreatureAttributeCap(14), 28);
+check("cap at level 15", ImagineCreatureData.getCreatureAttributeCap(15), 30);
+check("cap at level 30", ImagineCreatureData.getCreatureAttributeCap(30), 30);
+
+// It is NOT the character's scale: a character at title 11 caps at 27, which a creature never does.
+check("28 is a creature-only cap", ImagineCreatureData.getCreatureAttributeCap(12), 28);
+
+const capped = makeCreature({ level: 5, ratings: { str: 30 } });
+check("rating above the level cap is clamped", capped.attributes.str.value, 25);
+
+// --- saves come from the same function a character uses -------------------------
+const saves = makeCreature({ ratings: { str: 10, agl: 17, vit: 18, knw: 23 }, level: 20 });
+check("STR 10 save", saves.attributes.str.save, 50);
+check("AGL 17 save", saves.attributes.agl.save, 85);
+check("VIT 18 save", saves.attributes.vit.save, 90);
+check("KNW 23 save", saves.attributes.knw.save, 93);
+
+// --- attribute table lookups still apply ---------------------------------------
+const tabled = makeCreature({ ratings: { str: 19 }, level: 20 });
+check("STR 19 melee attack", tabled.attributes.str.mods.meleeAttack, 2);
+check("STR 19 melee damage", tabled.attributes.str.mods.meleeDamage, 5);
+
+// --- Endurance and Hide are entered, not averaged ------------------------------
+// A character's Endurance is the average of STR, AGL and VIT. A creature's is whatever its stat
+// block says, and its physical attributes do not enter into it at all.
+const end = makeCreature({ endurance: 40, enduranceMod: 5, ratings: { str: 20, agl: 20, vit: 20 } });
+check("Endurance is the entered figure plus its modifier", end.characteristics.endurance.value, 45);
+check("Endurance base ignores the attributes", end.characteristics.endurance.base, 40);
+
+const hide = makeCreature({ hide: 12 });
+check("Hide is carried as entered", hide.body.hide, 12);
+
+// --- Shock: entered, or Endurance x 3, or Immune -------------------------------
+const shockDefault = makeCreature({ endurance: 40 });
+check("Shock left at 0 becomes Endurance x 3", shockDefault.body.shock, 120);
+
+const shockEntered = makeCreature({ endurance: 40, shock: 75 });
+check("an entered Shock is used as-is", shockEntered.body.shock, 75);
+
+// The fallback uses the entered Endurance, BEFORE its modifier, exactly as his code does.
+const shockBeforeMod = makeCreature({ endurance: 40, enduranceMod: 5 });
+check("Shock x3 uses Endurance before its modifier", shockBeforeMod.body.shock, 120);
+
+const shockImmune = makeCreature({ endurance: 40, shockImmune: true });
+check("Shock immune reports no number", shockImmune.characteristics.shock.value, null);
+check("Shock immune cannot be in shock", shockImmune.body.shock, 0);
+
+// --- Perception ----------------------------------------------------------------
+// average(INT WIS KNW) rounded up his way, plus the level.
+const per = makeCreature({ ratings: { int: 12, wis: 10, knw: 8 }, level: 3 });
+check("Perception = average(INT WIS KNW) + level", per.characteristics.perception.value, 13);
+
+const perEnhanced = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	items: [trait("Enhanced Perception")]
+});
+check("Enhanced Perception is worth +10", perEnhanced.characteristics.perception.value, 23);
+
+// +5 for each of the three senses his code names among the skills.
+const perSmell = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	skills: [{ name: "Smell", chance: 30 }]
+});
+check("the Smell skill is worth +5", perSmell.characteristics.perception.value, 18);
+
+const perSenses = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	skills: [{ name: "Smell", chance: 30 }, { name: "Listen", chance: 30 }]
+});
+check("Smell and Listen together are worth +10", perSenses.characteristics.perception.value, 23);
+
+// Every special sense ability is another +5.
+const perSenseAbility = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	items: [trait("Sense(Heat)"), trait("Vibration Sensing")]
+});
+check("two sense abilities are worth +10", perSenseAbility.characteristics.perception.value, 23);
+
+// Life sense counts once however it is spelled -- the skill and the ability do not both pay.
+const perLifeSense = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	skills: [{ name: "Life Sense", chance: 30 }],
+	items: [trait("Life Sense")]
+});
+check("life sense is only counted once", perLifeSense.characteristics.perception.value, 18);
+
+// A disability named like a sense must not pay: only abilities are looked at.
+const perDisability = makeCreature({
+	ratings: { int: 12, wis: 10, knw: 8 }, level: 3,
+	items: [trait("No Sense of Smell", "disability")]
+});
+check("a disability does not grant a sense bonus", perDisability.characteristics.perception.value, 13);
+
+// --- Affinity ------------------------------------------------------------------
+// Level counts DOUBLE here, which it does nowhere else.
+const aff = makeCreature({ ratings: { app: 10, chm: 12, soc: 9 }, level: 3 });
+check("Affinity = average(APP CHM SOC) + level x 2", aff.characteristics.affinity.value, 17);
+
+// With no social class at all it averages only Appearance and Charm.
+const affNoSoc = makeCreature({ ratings: { app: 10, chm: 12, soc: 0 }, level: 3 });
+check("Affinity averages APP and CHM when SOC is 0", affNoSoc.characteristics.affinity.value, 17);
+
+const affTame = makeCreature({ ratings: { app: 10, chm: 12, soc: 0 }, level: 3, tameBonus: 4 });
+check("the tame bonus is added to Affinity", affTame.characteristics.affinity.value, 21);
+
+const affEnhanced = makeCreature({
+	ratings: { app: 10, chm: 12, soc: 9 }, level: 3, items: [trait("Enhanced Affinity")]
+});
+check("Enhanced Affinity is worth +10", affEnhanced.characteristics.affinity.value, 27);
+
+// --- Fortune -------------------------------------------------------------------
+const fortune = makeCreature({ ratings: { aur: 14, pty: 13, wil: 12 }, level: 3 });
+check("Fortune = average(AUR PTY WIL) + level", fortune.characteristics.fortune.value, 16);
+
+const fortuneEnhanced = makeCreature({
+	ratings: { aur: 14, pty: 13, wil: 12 }, level: 3, items: [trait("Enhanced Fortune")]
+});
+check("Enhanced Fortune is worth +10", fortuneEnhanced.characteristics.fortune.value, 26);
+
+// --- the characteristics use the RATINGS, not the modified values ---------------
+// His formulas read the creature's as-built attributes, so a temporary change does not move
+// them. A character works the other way round. This is faithful, and deliberately so.
+const tempMod = makeCreature({ ratings: { int: 12, wis: 10, knw: 8 }, level: 3 });
+tempMod.attributes.int.tempMod = 6;
+tempMod.prepareBaseData();
+tempMod.prepareDerivedData();
+check("a temporary attribute change moves the value", tempMod.attributes.int.value, 18);
+check("but does not move Perception", tempMod.characteristics.perception.value, 13);
+
+// --- resistances: entered, plus modifiers, or Immune ---------------------------
+const resist = makeCreature({ magic: { entered: 30, tempMod: 5, permMod: 10 } });
+check("resistance = entered + temporary + permanent", resist.resistances.magic.value, 45);
+
+const resistImmune = makeCreature({ magic: { entered: 30, immune: true } });
+check("an immune resistance reports no number", resistImmune.resistances.magic.value, null);
+
+// There is no attribute table behind a creature's resistances. A high Aura does nothing here,
+// where for a character it would set Magic Resistance outright.
+const resistAura = makeCreature({ ratings: { aur: 20 }, level: 20 });
+check("a high Aura does not raise Magic Resistance", resistAura.resistances.magic.value, 0);
+
+// --- body: the chart, its areas and their Endurance ----------------------------
+const bird = makeCreature({ bodyType: "Bird", endurance: 20 });
+check("the body type's chart is used", bird.body.areas.length, R.getBodyChart("Bird").length);
+check("Head takes full Endurance", bird.body.areas.find(a => a.name == "Head").endurance, 20);
+check("Neck at x1/2 rounds up", bird.body.areas.find(a => a.name == "Neck").endurance, 10);
+check("Upper Torso at x2 doubles", bird.body.areas.find(a => a.name == "Upper Torso").endurance, 40);
+check("a Wing is not Vital", bird.body.areas.find(a => a.name == "Left Wing").type, "Limb");
+
+// A stored chart wins over the body type, which is what makes "Custom" possible.
+const custom = makeCreature({
+	bodyType: "Custom", endurance: 20,
+	bodyChart: "Ooze Core(Vital:x2),Pseudopod(Limb:x1/2)"
+});
+check("a stored chart overrides the body type", custom.body.areas.map(a => a.name),
+	["Ooze Core", "Pseudopod"]);
+check("stored chart multipliers still apply", custom.body.areas[0].endurance, 40);
+
+// Wounds, and what they mean.
+const wounded = makeCreature({
+	bodyType: "Bird", endurance: 20, ratings: { vit: 12 },
+	wounds: { "Head": 25, "Neck": 3 }
+});
+check("wounds are counted per area", wounded.body.areas.find(a => a.name == "Head").wounds, 25);
+check("past its Endurance an area needs a Vitality save",
+	wounded.body.areas.find(a => a.name == "Head").state, "vitalitySave");
+check("a lightly hurt area is only wounded",
+	wounded.body.areas.find(a => a.name == "Neck").state, "wounded");
+check("total wounds are summed across the body", wounded.body.totalWounds, 28);
+check("28 wounds is under a Shock of 60", wounded.body.inShock, false);
+
+const inShock = makeCreature({
+	bodyType: "Bird", endurance: 10, wounds: { "Upper Torso": 31 }
+});
+check("total wounds over Shock puts a creature in shock", inShock.body.inShock, true);
+
+// --- combat: the chart is chosen, not worked out -------------------------------
+const combat = makeCreature({ attackChart: "Novice", level: 5 });
+check("the attack skill is the chosen chart", combat.combat.attackSkill, "Novice");
+check("no Lore skill means no Lore chart", combat.combat.loreAttackSkill, "");
+
+const lore = makeCreature({
+	attackChart: "Novice", level: 5, skills: [{ name: "Weapon Lore", chance: 40 }]
+});
+check("Weapon Lore reads the chart one step up", lore.combat.loreAttackSkill, "Intermediate");
+check("Weapon Lore is noticed", lore.combat.hasWeaponLore, true);
+
+const noAttack = makeCreature({ attackChart: "None" });
+check("a creature that does not attack has no chart", noAttack.combat.attackSkill, "None");
+check("and asking for its Lore chart does not invent one", noAttack.combat.loreAttackSkill, "");
+
+// Initiative is the better of the Agility and Intelligence adjustments, plus anything else --
+// the same rule a character uses, and lower is earlier.
+const init = makeCreature({ ratings: { agl: 18, int: 14 }, level: 20, initiativeMisc: 2 });
+check("initiative takes the better adjustment plus the modifier",
+	init.combat.initiativeMod,
+	Math.min(init.attributes.agl.mods.initiativeAdjust, init.attributes.int.mods.initiativeAdjust) + 2);
+
+// --- encumbrance: the same rule as a character's -------------------------------
+const load = makeCreature({ ratings: { str: 16 }, level: 20, weight: 200 });
+check("maximum load is the Strength limit times body weight", load.encumbrance.maxLoad, 300);
+check("unencumbered up to a quarter of it", load.encumbrance.none, 75);
+check("nothing carried is unencumbered", load.encumbrance.status, "Unencumbered");
+
+// --- level-derived values ------------------------------------------------------
+const levelled = makeCreature({ level: 7, ratings: { knw: 14 } });
+check("the practitioner title is the level", levelled.identity.title, 7);
+check("powers are used at the level", levelled.identity.powerLevel, 7);
+check("memorization points are level x 3 x the Knowledge figure",
+	levelled.identity.memorizationPoints,
+	(7 * 3) * levelled.attributes.knw.mods.memorizationPoints);
+
+// --- reading a stat block's skill list -----------------------------------------
+check("a skill list parses into names and chances",
+	ImagineCreatureData.parseSkillList("Ambush 45%, Blend 30%"),
+	[{ name: "Ambush", chance: 45 }, { name: "Blend", chance: 30 }]);
+check("'None' is not a skill", ImagineCreatureData.parseSkillList("None"), []);
+check("an empty list gives nothing", ImagineCreatureData.parseSkillList(""), []);
+check("a skill with no percentage still parses",
+	ImagineCreatureData.parseSkillList("Ambush"), [{ name: "Ambush", chance: 0 }]);
+
+//==================================================================================================================
+// creature-rules.mjs -- the attack rules a creature has that a weapon attack does not
+//==================================================================================================================
+
+// --- which kind of roll each attack type needs ---------------------------------
+const behaviour = (t) => { const b = C.getCreatureAttackBehaviour(t); return [b.resolve, b.mods, b.shape, b.tier]; };
+check("Melee rolls the chart with melee modifiers",   behaviour("Melee"), ["chart", "melee", "", ""]);
+check("Missile rolls the chart with missile modifiers", behaviour("Missile"), ["chart", "missile", "", ""]);
+check("Touch is its own roll",                         behaviour("Touch"), ["touch", "missile", "", ""]);
+check("Direct hits without a roll",                    behaviour("Direct"), ["auto", "melee", "", ""]);
+check("Gaze hits without a roll",                      behaviour("Gaze")[0], "auto");
+check("Voice hits without a roll",                     behaviour("Voice")[0], "auto");
+check("Weak Bolt is a missile-modded bolt shape",      behaviour("Weak Bolt"), ["chart", "missile", "bolt", "weak"]);
+check("Strong Cone is a melee-modded cone shape",      behaviour("Strong Cone"), ["chart", "melee", "cone", "strong"]);
+// Beam and Grappling have no branch of their own in his code and fall through to a melee chart
+// roll. Recorded rather than corrected -- see the comment in creature-tables.mjs.
+check("Beam falls through to a melee chart roll",      behaviour("Beam"), ["chart", "melee", "", ""]);
+check("an unknown type falls back to Melee",           behaviour("Nonsense"), ["chart", "melee", "", ""]);
+
+// --- the touch rule, from handleTouchAttack ------------------------------------
+check("a natural 1 never touches",        C.resolveTouchAttack(1, 20).touched, false);
+check("9 is not enough to touch",         C.resolveTouchAttack(9, 0).touched, false);
+check("10 touches",                       C.resolveTouchAttack(10, 0).touched, true);
+check("the Agility modifier can carry it",C.resolveTouchAttack(5, 5).touched, true);
+check("and can fall short",               C.resolveTouchAttack(5, 4).touched, false);
+check("the total is reported",            C.resolveTouchAttack(7, 3).total, 10);
+
+// --- area shapes, sized from the creature's own Endurance -----------------------
+// A cloud is Endurance/10 wide, at least 1, capped by tier, and twice that long, capped at 100.
+const cloudWeak = C.getAreaAttackSize("cloud", "weak", 200, 0);
+check("cloud width is Endurance / 10", cloudWeak.width, 20);
+check("cloud length is twice its width", cloudWeak.length, 40);
+check("cloud weak caps the width at 25", C.getAreaAttackSize("cloud", "weak", 400, 0).width, 25);
+check("cloud strong caps the width at 50", C.getAreaAttackSize("cloud", "strong", 1000, 0).width, 50);
+check("cloud length never exceeds 100", C.getAreaAttackSize("cloud", "strong", 1000, 0).length, 100);
+check("a cloud is at least 1 wide", C.getAreaAttackSize("cloud", "weak", 0, 0).width, 1);
+
+// A bolt travels Endurance/10 feet, capped by tier. The cap is the part his own helper drops --
+// divideWithMinAndMax writes `tempValue=>tmpMaxValue`, an arrow function rather than an
+// assignment -- so his sheet lets a bolt travel unbounded. The port applies the cap, which is
+// plainly the intent. See docs/UPSTREAM-ISSUES.md.
+check("bolt range is Endurance / 10", C.getAreaAttackSize("bolt", "weak", 500, 0).range, 50);
+check("bolt weak caps at 100", C.getAreaAttackSize("bolt", "weak", 2000, 0).range, 100);
+check("bolt normal caps at 150", C.getAreaAttackSize("bolt", "normal", 2000, 0).range, 150);
+check("bolt strong caps at 200", C.getAreaAttackSize("bolt", "strong", 2000, 0).range, 200);
+
+// A cone reaches Endurance/10, with a diameter a quarter of that, and catches 1d4 body areas.
+const coneNormal = C.getAreaAttackSize("cone", "normal", 1000, 3);
+check("cone reach is capped by tier", coneNormal.range, 100);
+check("cone diameter is a quarter of its reach", coneNormal.diameter, 25);
+check("the cone's body areas come from the die passed in", coneNormal.areas, 3);
+check("a cone's diameter is at least 1", C.getAreaAttackSize("cone", "weak", 20, 1).diameter, 1);
+
+// A glob is thrown three times Endurance/20, capped by tier.
+check("glob range is three times Endurance / 20", C.getAreaAttackSize("glob", "weak", 100, 0).range, 15);
+check("glob weak caps at 150", C.getAreaAttackSize("glob", "weak", 2000, 0).range, 150);
+check("glob strong caps at 300", C.getAreaAttackSize("glob", "strong", 2000, 0).range, 300);
+check("a glob is thrown at least 3 feet", C.getAreaAttackSize("glob", "weak", 10, 0).range, 3);
+
+// Gaze and Voice have no measurement, only who they reach.
+check("a gaze reaches whoever looks",
+	C.getAreaAttackSize("gaze", "", 100, 0).text, "effects all who are gazed on by the creature");
+check("a voice reaches whoever hears",
+	C.getAreaAttackSize("voice", "", 100, 0).text, "effects all who hear the creature's voice");
+check("an attack with no shape has no size", C.getAreaAttackSize("", "", 100, 0), null);
+
+// --- to-hit modifiers ----------------------------------------------------------
+// Each modifier is counted once and separately, following handlePhysicalAttacks rather than his
+// creature path, whose `||0` precedence wipes the running total and which double-counts the
+// missile "other" modifier. See docs/UPSTREAM-ISSUES.md item 11.
+const attacker = { meleeAttack: 3, meleeMisc: 1, missileAttack: 5, missileMisc: 2 };
+const meleeMods = C.getCreatureToHitModifiers({ mods: "melee", attacker: attacker });
+check("melee takes the Strength modifier and its own adjustment", meleeMods.total, 4);
+check("melee does not take the missile modifiers", meleeMods.list.length, 2);
+
+const missileMods = C.getCreatureToHitModifiers({ mods: "missile", attacker: attacker });
+check("missile takes the Agility modifier and its own adjustment", missileMods.total, 7);
+
+const withTarget = C.getCreatureToHitModifiers({
+	mods: "melee", attacker: attacker,
+	target: { defensiveAdjust: -3 }, situational: 2
+});
+check("the target's defence and a situational modifier are included", withTarget.total, 3);
+check("every modifier is listed by name", withTarget.list.map(m => m.label),
+	["STR", "Melee Other", "Target's Defence", "Situational"]);
+
+const noMods = C.getCreatureToHitModifiers({ mods: "melee", attacker: {} });
+check("a creature with no modifiers has an empty list", noMods.list, []);
+check("and a total of zero", noMods.total, 0);
+
+// --- damage modifiers ----------------------------------------------------------
+// A creature gets no Strength damage bonus: the dice on its stat block are the whole of it.
+check("damage modifiers total the standing and situational figures",
+	C.getCreatureDamageMods({ damageMisc: 2, situational: 3 }).total, 5);
+check("no damage modifiers means none listed",
+	C.getCreatureDamageMods({}).list, []);
+
+// --- which rider effects fire --------------------------------------------------
+const riders = [
+	{ trigger: "Auto", name: "Stench" },
+	{ trigger: "If hit", name: "Venom" },
+	{ trigger: "If 10 damage", name: "Crush" },
+	{ trigger: "If VIT save fails", name: "Disease" },
+	{ trigger: "If natural critical", name: "Blind" }
+];
+const onHit = C.getTriggeredEffects(riders, { isHit: true, isCalledShot: false, damageTotal: 12 });
+check("Auto fires, If hit fires, 12 damage trips the 10 threshold, a save waits, a critical does not",
+	onHit.map(e => e.state), ["fires", "fires", "fires", "pending", "no"]);
+
+const onMiss = C.getTriggeredEffects(riders, { isHit: false, isCalledShot: false, damageTotal: 0 });
+check("on a miss only Auto fires", onMiss.map(e => e.state), ["fires", "no", "no", "no", "no"]);
+
+const underTen = C.getTriggeredEffects(riders, { isHit: true, isCalledShot: false, damageTotal: 9 });
+check("9 damage does not trip the 10 threshold", underTen[2].state, "no");
+
+const called = C.getTriggeredEffects(riders, { isHit: true, isCalledShot: true, damageTotal: 0 });
+check("a made called shot fires its rider", called[4].state, "fires");
+check("no riders at all is not an error", C.getTriggeredEffects(undefined, { isHit: true }), []);
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${results.length - passed} failed`;
+</script>
