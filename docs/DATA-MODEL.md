@@ -1,6 +1,8 @@
 # Layer 0 — Data Model Design
 
-Design pass, 2026-09-10. **Revised** the same day after discovering the sheet's embedded JavaScript (see `DECISIONS.md` → "CORRECTION: the Roll20 sheet does contain JavaScript"). **Proposal for review — not yet implemented.**
+Design pass, 2026-09-10. **Revised** the same day after discovering the sheet's embedded JavaScript (see `DECISIONS.md` → "CORRECTION: the Roll20 sheet does contain JavaScript").
+
+**Status, 2026-09-12: implemented, and superseded in places.** The character schema is built as `module/data/actor-character.mjs` and the creature schema as `module/data/actor-creature.mjs` — the latter answering §10 question 3, which this doc had parked on the Bestiary book. Where this document and the shipped code disagree, **the code wins**: it was written against his sheet-worker line by line, and this was a design pass written before that reading was finished. Two places where they had drifted are corrected below (§9 step 2, §10). Read this for the *reasoning*; read the code for the rule.
 
 ## 0. Sources, in priority order
 
@@ -46,13 +48,13 @@ Every skill row carries its book and page. Distribution across 674 skills:
 | Book | Skills | PDF in hand? |
 |---|---|---|
 | Player's Guide | 343 | yes |
-| Mysteries of the Planes | 115 | no |
+| Mysteries of the Planes | 115 | yes *(extracted since this pass)* |
 | Conquest of the Eternal | 80 | no |
 | Master's Manual | 77 | yes |
 | Legends of the Unknown | 31 | no |
 | Epitaph of the Fallen | 24 | no |
 
-~36% of skills come from books we don't have — but **their mechanical data is already in the JS**, so those PDFs are needed only for prose and edge-case rules, not to implement the skills.
+~20% of skills come from books we don't have — but **their mechanical data is already in the JS**, so those PDFs are needed only for prose and edge-case rules, not to implement the skills.
 
 The proposed `sourcebook` field is therefore not an invention imposed on the data; it is the data's native structure.
 
@@ -213,7 +215,8 @@ V14 specifics: effect changes live at `effect.system.changes` with `type` taking
 Acyclic; order matters:
 
 1. Attribute ratings (base + effects)
-2. Attribute `max` ← Title/being-type table (Title 0→23, 1-10→25, 11-15→27, 16+→30)
+2. Attribute `max` ← **the race's limit for that attribute**, 20 before a race is chosen, and a flat 27 from title 11 (`getAttributeMax(title, raceLimit)`)
+   > **Corrected 2026-09-12.** This step originally read "Title/being-type table (Title 0→23, 1-10→25, 11-15→27, 16+→30)", taken from the Master's Manual. Nothing in his sheet implements those tiers: every `*_max` assignment was checked, there is no deity handler at title 16, and the only caps that exist are the per-race limits (sheet-worker.js:8099) and the flat arch-mortal 27 (`setArchMortalAttributesMax`, line 27549). The sheet wins on conflict, so the tiers are gone and `IMAGINE.attributeCaps` with them. See `DECISIONS.md` → "CORRECTION: a character's attribute maximum follows his sheet", and `UPSTREAM-ISSUES.md` item 16 for his comment/code disagreement at the call site.
 3. Attribute saves ← `getAttribSave`: `<18 → rating x5`; `18-20 → 90`; `>20 → 90 + (rating-20)`
 4. Attribute-derived modifiers ← lookup tables
 5. **Endurance** ← `((STR+AGL+VIT)/3)` rounded up, + class modifier + title bonus + race mod + temp/perm mods
@@ -231,9 +234,11 @@ Steps 3 and 5 are transcribed from the dev's `getAttribSave` and `changeCharacte
 
 ## 10. Open questions
 
-1. **Sourcebook gating policy** — content-only, or core math too? (§6; recommendation: content only)
-2. **Is `sheet-worker.js` current?** The dev described `getArmorCombatValues` from memory rather than sending it. Worth confirming this file reflects his intended present ruleset and not a superseded version, before ~7,000 rows are extracted from it.
-3. **Creature schema** — normalizes to ~1,455 concepts, nearly character-complexity. Shares the character schema with fields hidden, or a separate leaner one? Still wants the Bestiary book.
-4. **"Made by half" vs the ±20% critical rule.** His `roll_str_save` handler computes `halfChance = chance/2` and reports a distinct "succeeded by half" tier. The Player's Guide (p.93) instead describes critical success/failure as beating or missing by more than 20%. These are different mechanics. Possibly attribute *saves* use half-chance while *skills* use ±20% — needs checking against his skill roll handlers. His code wins either way; the question is only which rule applies where.
-5. **Attribute tables are already flattened in his code.** `strRatingValues` in `changeAttribs()` is a single table covering ratings 0-30 — Player's Guide and Master's Manual ranges merged, not kept sourcebook-split. This is simpler than §5's proposal of composable sourcebook fragments. Recommend following his flattening and dropping the split, which also moots the §6 policy question about sourcebooks gating core math.
-6. **Which remaining PDFs are actually worth ingesting** — the four books we lack contribute ~36% of skills, but their mechanical data is already in the JS. Likely needed only where prose changes behaviour.
+*Status reviewed 2026-09-12. One of the six is still genuinely open.*
+
+1. ~~**Sourcebook gating policy** — content-only, or core math too?~~ **RESOLVED: content only**, as recommended, and question 5 moots the hard case anyway — his attribute tables are already flattened, so no sourcebook contributes a detachable row of core math. Built as `module/availability.mjs`; see Epic 1 on the board.
+2. **Is `sheet-worker.js` current?** — **STILL OPEN, and the only one.** The dev described `getArmorCombatValues` from memory rather than sending it. Worth confirming this file reflects his intended present ruleset and not a superseded version. *This has since become load-bearing:* ~7,000 rows, 4,367 built documents and every combat rule now derive from it, so a superseded file would invalidate far more than it would have in September. Tracked on the board as blocking Epic 6.
+3. ~~**Creature schema** — shared with the character, or separate and leaner?~~ **RESOLVED: separate and leaner.** Built as `module/data/actor-creature.mjs` with three creature-only item types; the Bestiary material this question waited on is in `docs/reference/`. See Epic 4 and `DECISIONS.md` → "Creature/NPC implementation".
+4. ~~**"Made by half" vs the ±20% critical rule** — which applies where?~~ **RESOLVED, and the guess in this question was right:** the two rules govern different rolls. Attribute **saves** use his half-chance tier (`roll_str_save`), skills use the Player's Guide's ±20% margin (p.93). Both are implemented as such — "Succeeded by half" is at `module/sheets/actor-character-sheet.mjs:246`, the skill margin in the skill-check resolver. Nothing had to be chosen between them.
+5. ~~**Attribute tables are already flattened in his code** — follow his flattening?~~ **RESOLVED: yes, followed.** `strRatingValues` is one table over ratings 0-30 with the two books' ranges merged, and the port keeps it merged rather than splitting it back into sourcebook fragments. This is also what makes question 1 easy.
+6. **Which remaining PDFs are actually worth ingesting** — **partly answered.** *Mysteries of the Planes* (115 skills) and *Aspects of the Wild* have since been extracted, so the "PDF in hand?" column in §1 is out of date for Mysteries. Still absent: **Conquest of the Eternal** (80 skills), **Legends of the Unknown** (31) and **Epitaph of the Fallen** (24) — 135 skills, ~20% of the 674. Their mechanical data is already in the JS, so these are wanted for prose and edge-case rules, not to implement the skills.

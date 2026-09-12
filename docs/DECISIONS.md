@@ -846,3 +846,42 @@ modifiers, the ten-second round tracker, and skills as items with computed chanc
 **Estimate:** comparable to the shield and per-weapon-lore passes combined. Two natural halves:
 the base penalty (tables, handedness, the weapon flags, the full-penalty tier) and then the two
 skills that buy it down. Splitting them keeps each commit testable.
+
+### 2026-09-12 — Where a design document and the shipped code disagree, the code wins
+
+**The standing conflict rule had a gap.** `CLAUDE.md` settles Roll20-sheet-versus-rulebook: the sheet
+wins. It says nothing about *our own* design documents versus *our own* shipped code, and that
+case has now occurred.
+
+`docs/DATA-MODEL.md` was written on 2026-09-10 as a design pass, before the sheet-worker had been
+read end to end. It still described itself as "Proposal for review — not yet implemented" while
+both schemas it proposed had in fact been built, and two of its statements had gone stale in a way
+that would mislead rather than merely lag:
+
+- **§9 step 2** documented the Master's Manual attribute-max tiers, 23 / 25 / 27 / 30 by title.
+  Those were removed from the code on 2026-09-11 (see "CORRECTION: a character's attribute maximum
+  follows his sheet") because nothing in his sheet implements them. The doc was still teaching the
+  rule the code had deliberately rejected.
+- **§1's source table** listed *Mysteries of the Planes* as a book not in hand, and drew a "~36% of
+  skills come from books we don't have" conclusion from it. The book has since been extracted; the
+  real figure is ~20%, across three books.
+
+**Decision:** `DATA-MODEL.md` now carries an explicit precedence note in its header — read it for the
+*reasoning*, read the code for the *rule* — and both drifts are corrected **in the doc, not the
+code**. Nothing shipped changed in this pass. The document's job from here is to explain why the
+model looks the way it does; it is no longer a specification anything is built from.
+
+**Why this matters more than tidiness.** This project is handed back to the dev, who will read the
+docs before the source. A design document that confidently states a rule the code rejected is worse
+than no document, because it reads as current. The four `CORRECTION:` entries above exist because
+the same failure mode keeps recurring in the code; this is the first time it has been caught in the
+prose.
+
+**Also reconciled:** of the doc's six open questions, four were answered by work done between
+2026-09-11 and 2026-09-12 without anyone going back to close them out — sourcebook gating is content
+only, the creature schema is separate and leaner, his flattened attribute tables are followed, and
+saves-versus-skills turned out to use two different rules exactly as question 4 had guessed. A fifth
+is partly answered. **The one that is still genuinely open — "is `sheet-worker.js` current?" — has
+grown teeth:** when it was written it guarded ~7,000 unextracted rows, and it now sits underneath
+4,367 built documents and every combat rule in the system. It stays on the board as blocking Epic 6,
+and it is the one question here worth putting to the dev directly.
