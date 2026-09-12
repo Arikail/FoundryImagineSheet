@@ -88,6 +88,8 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// have the lore without the chart and the two numbers rarely match.
 			weaponLoreTitle:  new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 			missileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+			// Projectile Lore, from getProjectileLoreWhen. Only six of the 92 classes ever get it.
+			projectileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
 			// @MARKER CLASSIFICATION
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".

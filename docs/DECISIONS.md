@@ -692,3 +692,52 @@ The previous entry was written from the display function and the speed function 
 whether the numbers reached a numeric field — the same class of mistake as reading a guard's
 extent from the line that opens it. Worth remembering that "his code says X" needs to name which
 of his code paths, given how often the display and the arithmetic disagree in this sheet.
+
+### 2026-09-12 — Projectile Lore, per die, and a second correction to item 21
+
+**Decision:** Projectile Lore is ported. A class carries `projectileLoreTitle` (six of the 92 ever
+acquire it, all archer classes); the character derives `hasProjectileLore` and keeps a list of
+specifically lored projectiles; `getProjectileLoreDamage` gives the damage.
+
+**It is the odd one of the lore family, in two ways.** It is worth damage **per die** rather than
+a flat figure — `getNumberOfDice(damage) × 1`, or `× 2` for a listed projectile
+(sheet-worker.js:64990) — so a weapon with flat damage gets nothing from it at all. And it attaches
+to the **ammunition**, not the weapon in hand: a bow is lored through the arrow it normally fires,
+so `getProjectileForLauncher` resolves the launcher first and the lore list is checked against the
+arrow's name. Loring the bow's own name does nothing, which the tests pin down.
+
+**The three name chains are generated, and order is load-bearing.** `isWeaponProjectile`,
+`isWeaponLauncher` and `getNormalProjectileFromLauncher` are ordered `includes()` chains — 16, 49
+and 49 tests. "Bolted" is tested before "Bolt" so a bolted-leather shield does not read as a
+crossbow bolt, and several pairs work that way. They are emitted as ordered arrays and read by
+taking the first substring the name contains; turning them into objects or sets would have lost
+the ordering and hidden the bug.
+
+**CORRECTION to item 21, the second in two passes.** The previous entry said the per-weapon lore
+tier "is never applied numerically" and that it "exists only in the display string". That was read
+from `setCombatModifierValues` alone and is wrong. `handlePhysicalAttacks` does apply the specific
+tier, and does it by exactly the arithmetic this port uses: it subtracts the general modifier and
+applies the specific one (`modMeleeOther-2` then `modWL=3`; `modDamOther-4` then `WLDamMod=6`).
+So the design decision that the specific figure *replaces* the general one, previously justified
+only from a comment, is now confirmed by his code.
+
+The real defect is narrower: **`MLDamMod` is missing from the damage sum.** Missile Lore's
+specific damage is computed, tested and printed in the listing, and left out of the line that
+rolls the damage, where `WLDamMod` sits beside it. So a lored bow is told it does +6 and does not.
+Item 21 is rewritten around that.
+
+**The lesson, twice now:** "his code does X" needs to name which of his paths. This sheet keeps a
+stored-modifier path, an attack path and a display path, and all three disagree about lore. The
+previous entry's process note said as much and the entry still got it wrong by checking two paths
+out of three. Checking the attack path first is the rule going forward, since that is where play
+actually happens.
+
+**Verified:** 291 combat tests pass, 21 of them new, covering the dice count, the ordered name
+chains including the Bolted/Bolt pair, general and specific per-die damage, a melee weapon getting
+nothing, flat-damage ammunition getting nothing, and a launcher being lored through its arrow
+rather than its own name. Derivation 123, creature 129, availability 39 unchanged; 26 modules
+parse.
+
+**Not verified:** anything needing a running Foundry V14. The sheet panel gained a Projectile row
+but was not checked in the preview this pass — the preview character is a Warrior, which never
+acquires Projectile Lore, so exercising it needs a fixture change. Left for Sonnet.

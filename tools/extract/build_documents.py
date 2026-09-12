@@ -391,6 +391,7 @@ def build_classes():
     # getWeaponLoreWhen / getMissileLoreWhen. Zero means the class never gets that lore.
     weaponloremap = loretitles.get("weaponLoreWhen", {}) if loretitles else {}
     missileloremap = loretitles.get("missileLoreWhen", {}) if loretitles else {}
+    projectileloremap = loretitles.get("projectileLoreWhen", {}) if loretitles else {}
 
     docs = []
 
@@ -449,6 +450,7 @@ def build_classes():
             "loreAttackTitle": to_number(loremap.get(tmpname, 0), where, "loreAttackTitle"),
             "weaponLoreTitle": to_number(weaponloremap.get(tmpname, 0), where, "weaponLoreTitle"),
             "missileLoreTitle": to_number(missileloremap.get(tmpname, 0), where, "missileLoreTitle"),
+            "projectileLoreTitle": to_number(projectileloremap.get(tmpname, 0), where, "projectileLoreTitle"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
         }))

@@ -177,6 +177,41 @@ def class_lore_when(tmpfunction):
     return titles, start
 
 
+def name_match_chain(tmpfunction, tmpassign):
+    """
+    Read an ordered if/else-if chain that tests a weapon's name with includes().
+
+    His projectile helpers are all written this way:
+
+        if (tmpCombatWeaponName.includes("Bolted"))     { isProjectile=false; }
+        else if (tmpCombatWeaponName.includes("Arrow")) { isProjectile=true;  }
+
+    ORDER IS THE WHOLE POINT and is preserved. "Bolted" has to be tested before "Bolt" or a
+    bolted-leather shield reads as a crossbow bolt, and several pairs work that way. A port that
+    turned these into a set or an object would lose that and the bug would be invisible.
+
+    Returns (list of (substring, value), first line). Values come back as written: the string
+    "true"/"false" for the boolean helpers, or the projectile's name for the launcher map.
+    """
+    start, body = function_body(tmpfunction)
+    pairs = []
+    pending = None
+    for line in body:
+        m = re.search(r'\.includes\("([^"]+)"\)', line)
+        if m:
+            pending = m.group(1)
+        v = re.search(r'%s\s*=\s*("([^"]*)"|true|false)\s*;' % re.escape(tmpassign), line)
+        if v and pending is not None:
+            raw = v.group(2) if v.group(2) is not None else v.group(1)
+            if raw == "true":
+                raw = True
+            elif raw == "false":
+                raw = False
+            pairs.append((pending, raw))
+            pending = None
+    return pairs, start
+
+
 def material_rank():
     start, body = function_body("getArmorValue")
     rank = {}
@@ -703,6 +738,23 @@ def main():
     out.append("// (sheet-worker.js:71222). Only the five physical kinds rebound.\n")
     out.append("export const REBOUNDED_TYPES = %s;\n\n" % js(REBOUNDED_TYPES))
 
+    # PROJECTILES AND LAUNCHERS
+    projectiles, proj_line = name_match_chain("isWeaponProjectile", "isProjectile")
+    launchers, launch_line = name_match_chain("isWeaponLauncher", "isLauncher")
+    launcher_ammo, ammo_line = name_match_chain("getNormalProjectileFromLauncher", "tempProjName")
+    out.append("// @MARKER PROJECTILES AND LAUNCHERS\n")
+    out.append("// From isWeaponProjectile (sheet-worker.js:%d), isWeaponLauncher (%d) and\n"
+               % (proj_line, launch_line))
+    out.append("// getNormalProjectileFromLauncher (%d). Each is an ordered chain of name tests.\n" % ammo_line)
+    out.append("//\n")
+    out.append("// THE ORDER MATTERS and is preserved exactly. \"Bolted\" is tested before \"Bolt\" so a\n")
+    out.append("// bolted-leather piece does not read as a crossbow bolt, and several pairs work that way.\n")
+    out.append("// Read them by walking the list and taking the FIRST substring the name contains.\n")
+    out.append("export const PROJECTILE_MATCHES = %s;\n\n" % js(projectiles))
+    out.append("export const LAUNCHER_MATCHES = %s;\n\n" % js(launchers))
+    out.append("// Which projectile a launcher normally fires, so a Long Bow's lore is read off its Arrow.\n")
+    out.append("export const LAUNCHER_PROJECTILE = %s;\n\n" % js(launcher_ammo))
+
     out.append("// @END (CODE)\n")
 
     with open(OUT, "w", encoding="utf-8") as fh:
@@ -711,6 +763,7 @@ def main():
     lore_titles, lore_line = class_lore_titles()
     weapon_when, weapon_line = class_lore_when("getWeaponLoreWhen")
     missile_when, missile_line = class_lore_when("getMissileLoreWhen")
+    proj_when, proj_when_line = class_lore_when("getProjectileLoreWhen")
     with open(os.path.join(NAMED, "classLoreTitles.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
@@ -719,7 +772,9 @@ def main():
             "_missileLoreSource": {"function": "getMissileLoreWhen", "line": missile_line},
             "entries": lore_titles,
             "weaponLoreWhen": weapon_when,
-            "missileLoreWhen": missile_when
+            "missileLoreWhen": missile_when,
+            "_projectileLoreSource": {"function": "getProjectileLoreWhen", "line": proj_when_line},
+            "projectileLoreWhen": proj_when
         }, fh, indent=2, ensure_ascii=False)
 
     with open(os.path.join(NAMED, "raceBodyTypes.json"), "w", encoding="utf-8") as fh:
@@ -738,6 +793,10 @@ def main():
     print("race body types    %d races (%d conditional: %s)" % (len(races), len(conditional), ", ".join(conditional)))
     print("class lore titles  %d classes (%d reach a Lore chart)"
           % (len(lore_titles), len([t for t in lore_titles.values() if t])))
+    print("projectiles        %d name tests, %d launcher tests, %d launcher->ammo"
+          % (len(projectiles), len(launchers), len(launcher_ammo)))
+    print("projectile lore    %d classes (%d ever acquire it)"
+          % (len(proj_when), len([t for t in proj_when.values() if t])))
     print("weapon lore when   %d classes (%d ever acquire it)"
           % (len(weapon_when), len([t for t in weapon_when.values() if t])))
     print("missile lore when  %d classes (%d ever acquire it)"

@@ -261,7 +261,11 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				// (weapon_lore_list / missile_lore_list). A plain string is also the only thing a
 				// text field on the sheet can write back, and the parsed arrays are derived.
 				weaponLoreList:  new fields.StringField({ required: true, initial: "" }),
-				missileLoreList: new fields.StringField({ required: true, initial: "" })
+				missileLoreList: new fields.StringField({ required: true, initial: "" }),
+
+				// Projectile Lore names AMMUNITION, not the weapon in hand -- an Arrow rather
+				// than the Long Bow that fires it. Only six of his 92 classes ever acquire it.
+				projectileLoreList: new fields.StringField({ required: true, initial: "" })
 			}),
 
 			// @MARKER NOTES
@@ -429,6 +433,12 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// Parsed here once so nothing downstream has to split a string.
 		this.combat.weaponLoreNames = parseLoreList(this.combat.weaponLoreList);
 		this.combat.missileLoreNames = parseLoreList(this.combat.missileLoreList);
+
+		// Projectile Lore, worth damage per die rather than a flat figure.
+		this.combat.projectileLoreTitle = this.classItem
+			? (parseInt(this.classItem.system.projectileLoreTitle) || 0) : 0;
+		this.combat.hasProjectileLore = hasLore(this.identity.title, this.combat.projectileLoreTitle);
+		this.combat.projectileLoreNames = parseLoreList(this.combat.projectileLoreList);
 
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,

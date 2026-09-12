@@ -362,6 +362,48 @@ check("lore is a line of its own in the to-hit list",
 	withLore.list.find(m => m.label == "Lore")?.value, 3);
 check("...and is in the total", withLore.total, 6);
 
+// --- projectile lore, per die ------------------------------------------------------
+// From handlePhysicalAttacks (sheet-worker.js:64518-64545, 64990). The odd one of the lore
+// family: worth damage PER DIE rather than a flat figure, and attached to the AMMUNITION rather
+// than the weapon in hand -- a bow's lore is read off the arrow it normally fires.
+check("dice count off a damage string", ["2d6", "1d10", "3d4"].map(R.getNumberOfDice), [2, 1, 3]);
+check("flat damage has no dice",        R.getNumberOfDice("8"), 0);
+check("an empty string has none",       R.getNumberOfDice(""), 0);
+
+// The name chains are ORDERED, which is the whole point: "Bolted" is tested before "Bolt".
+check("an arrow is ammunition",         R.isProjectileWeapon("Arrow(Long Bow/Normal)"), true);
+check("a bolt is ammunition",           R.isProjectileWeapon("Bolt(Heavy Crossbow)"), true);
+check("bolted leather is NOT a bolt",   R.isProjectileWeapon("Shield(Large/Bolted Leather)"), false);
+check("a sword is not ammunition",      R.isProjectileWeapon("Bastard Sword"), false);
+check("a long bow is a launcher",       R.isLauncherWeapon("Bow(Long)"), true);
+check("a sword is not a launcher",      R.isLauncherWeapon("Bastard Sword"), false);
+check("a launcher names its ammunition",
+	R.getProjectileForLauncher("Fairy Long Bow"), "Arrow(Fairy Long Bow/Normal)");
+check("a non-launcher names none",      R.getProjectileForLauncher("Bastard Sword"), "");
+
+// What an attack gets. +1 per die generally, +2 per die for a projectile in the list, and as with
+// the other lores the specific figure REPLACES the general one.
+const plore = (o) => R.getProjectileLoreDamage({ hasProjectileLore: true, damageDice: "2d6", ...o });
+check("without the lore, nothing",
+	R.getProjectileLoreDamage({ weaponName: "Arrow(Long Bow/Normal)", damageDice: "2d6",
+		hasProjectileLore: false }).damage, 0);
+check("general lore on ammunition: +1 per die",
+	plore({ weaponName: "Arrow(Long Bow/Normal)" }).damage, 2);
+check("a listed projectile: +2 per die",
+	plore({ weaponName: "Arrow(Long Bow/Normal)", projectileLoreList: ["Arrow(Long Bow/Normal)"] }).damage, 4);
+check("a melee weapon gets nothing",    plore({ weaponName: "Bastard Sword" }).damage, 0);
+check("more dice, more damage",         plore({ weaponName: "Arrow(Long Bow/Normal)", damageDice: "3d6" }).damage, 3);
+check("flat-damage ammunition gets nothing", plore({ weaponName: "Rock", damageDice: "4" }).damage, 0);
+
+// A launcher is lored through the projectile it fires, not by its own name.
+const bow = plore({ weaponName: "Fairy Long Bow",
+	projectileLoreList: ["Arrow(Fairy Long Bow/Normal)"] });
+check("a launcher resolves to its ammunition", bow.projectile, "Arrow(Fairy Long Bow/Normal)");
+check("...and is lored through it",            bow.specific, true);
+check("...for +2 per die",                     bow.damage, 4);
+check("loring the bow's own name does nothing",
+	plore({ weaponName: "Fairy Long Bow", projectileLoreList: ["Fairy Long Bow"] }).specific, false);
+
 // --- magical protection, above the armour ------------------------------------------
 // From handleBodyDamage's pre-reduction block. These all come off a blow BEFORE any worn armour
 // blocks it, they subtract rather than scale (invulnerability excepted), and the floor at zero

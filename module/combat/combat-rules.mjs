@@ -18,7 +18,8 @@ import {
 	ARMOR_BLOCKING, ARMOR_DAMAGE_DIVIDERS, ARMOR_MATERIAL_RANK,
 	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM,
 	SHIELD_COVERAGE, SHIELD_SIZES,
-	ENDURED_BY, REBOUNDED_TYPES
+	ENDURED_BY, REBOUNDED_TYPES,
+	PROJECTILE_MATCHES, LAUNCHER_MATCHES, LAUNCHER_PROJECTILE
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -1074,6 +1075,76 @@ export const MODE_DAMAGE_TYPES = {
 		var tmpspecific = isWeaponLored(tmpinput.weaponName, tmplist);
 		var tmpvalues = tmpspecific ? LORE_SPECIFIC : LORE_GENERAL;
 		return { ...tmpvalues, specific: tmpspecific };
+	}
+
+	// @MARKER PROJECTILE LORE
+	// Projectile Lore is the odd one of the lore family: it is worth damage PER DIE rather than a
+	// flat figure, and it attaches to the ammunition rather than to the weapon in hand. A bow's
+	// lore is read off the arrow it normally fires.
+
+	// This is the function which reads the number of dice off a damage string.
+	// Ported from getNumberOfDice: everything before the first "d". "2d6" is two dice, "8" is
+	// none at all, which is what makes a flat-damage weapon get nothing from Projectile Lore.
+	export function getNumberOfDice(tmpdicestring) {
+		var tmpstring = "" + (tmpdicestring ?? "");
+		var tmpat = tmpstring.indexOf("d");
+		if (tmpat < 1) { return 0; }
+		return parseInt(tmpstring.slice(0, tmpat)) || 0;
+	}
+
+	// This is the function which walks one of his ordered name chains and returns the first match.
+	// The order is the whole point: "Bolted" is tested before "Bolt", so a bolted-leather piece
+	// does not read as a crossbow bolt. See the tables' comment in module/combat-tables.mjs.
+	function matchWeaponName(tmpname, tmpchain) {
+		var tmpweapon = getSimplifiedName(tmpname);
+		for (const [tmpsubstring, tmpvalue] of tmpchain) {
+			if (tmpweapon.includes(tmpsubstring)) { return tmpvalue; }
+		}
+		return null;
+	}
+
+	// This is the function which says whether a weapon is ammunition -- an arrow, a bolt, a rock.
+	export function isProjectileWeapon(tmpname) {
+		return matchWeaponName(tmpname, PROJECTILE_MATCHES) === true;
+	}
+
+	// This is the function which says whether a weapon launches ammunition -- a bow, a crossbow.
+	export function isLauncherWeapon(tmpname) {
+		return matchWeaponName(tmpname, LAUNCHER_MATCHES) === true;
+	}
+
+	// This is the function which gives the projectile a launcher normally fires, so a Long Bow's
+	// Projectile Lore is looked up against its Arrow. Returns "" for anything not a launcher.
+	export function getProjectileForLauncher(tmpname) {
+		return matchWeaponName(tmpname, LAUNCHER_PROJECTILE) ?? "";
+	}
+
+	// This is the function which gives Projectile Lore's damage for one attack.
+	// Ported from handlePhysicalAttacks (sheet-worker.js:64518-64545 and 64990).
+	//
+	// It applies only to a launcher or to ammunition, and only to a character who has the lore.
+	// The projectile checked is the ammunition itself, or the one the launcher normally fires.
+	// Worth +1 per damage die generally, +2 per die for a projectile named in the list -- and as
+	// with the other lores the specific figure REPLACES the general one rather than adding to it.
+	//
+	// Returns { damage, perDie, dice, projectile, specific }.
+	export function getProjectileLoreDamage(tmpinput) {
+		var tmpout = { damage: 0, perDie: 0, dice: 0, projectile: "", specific: false };
+		if (!tmpinput.hasProjectileLore) { return tmpout; }
+
+		var tmplauncher = isLauncherWeapon(tmpinput.weaponName);
+		var tmpammo = isProjectileWeapon(tmpinput.weaponName);
+		if (!tmplauncher && !tmpammo) { return tmpout; }
+
+		tmpout.projectile = tmplauncher
+			? getProjectileForLauncher(tmpinput.weaponName)
+			: getSimplifiedName(tmpinput.weaponName);
+
+		tmpout.specific = isWeaponLored(tmpout.projectile, tmpinput.projectileLoreList);
+		tmpout.perDie = tmpout.specific ? 2 : 1;
+		tmpout.dice = getNumberOfDice(tmpinput.damageDice);
+		tmpout.damage = tmpout.dice * tmpout.perDie;
+		return tmpout;
 	}
 
 //==================================================================================================================

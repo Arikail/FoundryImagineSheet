@@ -352,50 +352,56 @@ generated from it, so if the line is added upstream the table picks it up on the
 lost-area case is handled separately and earlier, at line 71322, so that comment is stale rather
 than wrong-in-effect — the branch is reached by rebound and endure. Only the comment misleads.
 
-## 21. The per-weapon lore bonus is displayed but never applied
+## 21. The per-weapon lore bonus reaches the attack, but Missile Lore's damage is dropped
 
-**Status:** open · **Severity:** real bug, currently visible in play; naming a weapon in a lore list does almost nothing
+**Status:** open · **Severity:** real bug; a specifically lored missile weapon does no extra damage
 
-Weapon Lore and Missile Lore each grant two tiers: a general one for every weapon of the kind, and
-a larger one for a weapon named in `weapon_lore_list` / `missile_lore_list`.
-`setGeneralCombatModifierDisplay` shows both (lines 82559-82605):
+*(Rewritten 2026-09-12. An earlier version of this item said the per-weapon tier was never applied
+at all. That was read from the stored-modifier path alone and was wrong — the attack path does
+apply it. The real defect is narrower and is below.)*
 
+Weapon Lore and Missile Lore each grant two tiers: a general one for every weapon of the kind and
+a larger one for a weapon named in the lore list. `handlePhysicalAttacks` applies the specific
+tier properly, by taking the general modifier back off and putting the specific one on
+(sheet-worker.js:64764-64781):
+
+```js
+modMeleeOther=modMeleeOther-2;   // remove the general +2
+modWL=3;                          // apply the specific +3
+modDamOther=modDamOther-4;        // remove the general +4
+WLDamMod=6;                       // apply the specific +6
 ```
-Weapon Lore[All Melee Weapons](Melee):+2 (Damage):+4 (Weapon Speed):-1 (Skills):+10%
-Weapon Lore[Bastard Sword](Melee):+3 (Damage):+6 (Weapon Speed):-2 (Skills):+20%
+
+`modWL` reaches the melee to-hit total (64806) and `modML` the missile one (64804). `WLDamMod`
+reaches the rolled damage (65092). **`MLDamMod` does not.** It is set to 6 at 64777, it is tested
+at 65017, it is added to `totalDamMod` for the printed listing at 65063 — and it is missing from
+the sum that actually rolls:
+
+```js
+damageRolled=damageRolled+modDamStrength+modDamWeight+modDamOther+DamMod2Hand+offHandDamMod
+            +modSoldieringDamage+WLDamMod+sitModDamage+modProjLoreDamMod
+            +multiMissileKnowMissileDamMod+MAModDamage+tempMartialStanceModDamage;
 ```
 
-The numeric path is `setCombatModifierValues` (82167), and there the per-weapon tier does not
-exist. `tempmeleemodweaponlore`, `tempdamagemodweaponlore` and `tempmodskillweaponlore` are
-assigned in exactly three places each (82279-82290), and the only non-zero values are **2, 4 and
-10** — the general figures. Nothing reads the lore list when building `combat_mod_melee`,
-`combat_mod_damage` or the skill modifier.
+`WLDamMod` is there; `MLDamMod` is not. So a character with Missile Lore in a specific bow is
+told in the damage listing that they get +6, and does not get it. Melee is unaffected.
 
-So a character who specifically lores a Bastard Sword gets **no** extra to hit, damage or skill
-from it. The list changes only what the modifier panel prints.
+**Separately, the weapon speed is still a tangle.** `getWeaponSpeedListingAdjustmentForModifier`
+(90484) gives a lored weapon a further -1 with the comment "only give a -1 more, -1 is already
+accounted for in the general mod". That comment is stale: the general -1 is not in the general
+modifier. It was deliberately removed, and the reason is at line 82273 — "Removed because you
+can`t add a general mod for speed for weapon lore if the weapon might only be a missile weapon" —
+which `combat_mod_weaponspeed` (82394) confirms, summing only Strength, Agility, armour, divine
+mobility and the temporary modifier. So the panel promises -1 general and -2 specific, and the
+sheet delivers 0 and -1.
 
-**The weapon speed is a separate tangle.** There the per-weapon tier *is* applied, by
-`getWeaponSpeedListingAdjustmentForModifier` (90484), which gives a lored weapon a further -1 with
-the comment "only give a -1 more, -1 is already accounted for in the general mod". That comment is
-stale: the general -1 is **not** in the general mod. It was deliberately taken out, and the reason
-is written at line 82273 — "Removed because you can`t add a general mod for speed for weapon lore
-if the weapon might only be a missile weapon" — and `combat_mod_weaponspeed` (82394) confirms it,
-summing only Strength, Agility, armour, divine mobility and the temporary modifier.
-
-The net effect in play, against what the panel promises:
-
-| | panel says | sheet actually gives |
-|---|---|---|
-| any melee weapon, with Weapon Lore | +2 / +4 / -1 / +10% | +2 / +4 / **0** / +10% |
-| a specifically lored weapon | +3 / +6 / -2 / +20% | +2 / +4 / **-1** / +10% |
-
-**What the port does:** implements what the panel promises, both tiers, including the -1 general
-and -2 specific on speed. The melee-versus-missile problem that forced you to remove the general
-speed modifier does not arise here, because the port works lore out per weapon and per attack mode
-rather than as one figure for the whole character. This is a deliberate departure and the only
-reading under which a per-weapon lore list means anything — but if the general figures really are
-meant to be all a lored weapon gets, say so and it is a small change.
+**What the port does:** applies both tiers to to-hit, damage and speed, for melee and missile
+alike, with the specific figure replacing the general one exactly as your attack code does. That
+means it gives the missile damage your listing promises, and gives -1/-2 on speed. The
+melee-versus-missile problem that forced the speed removal does not arise here, because the port
+works lore out per weapon and per attack mode rather than as one figure for the whole character.
 
 **Worth deciding at the same time:** whether the -1 general weapon speed should apply to melee
 weapons only, which is what your removal comment implies you wanted and could not express with a
 single character-wide modifier.
+

@@ -82,16 +82,20 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	static #buildLorePanel(tmpsystem) {
 		var tmpweapon = !!tmpsystem.combat.hasWeaponLore;
 		var tmpmissile = !!tmpsystem.combat.hasMissileLore;
+		var tmpprojectile = !!tmpsystem.combat.hasProjectileLore;
 		var tmpkinds = [];
 		if (tmpweapon) { tmpkinds.push("Weapon"); }
 		if (tmpmissile) { tmpkinds.push("Missile"); }
+		if (tmpprojectile) { tmpkinds.push("Projectile"); }
 		return {
-			show: tmpweapon || tmpmissile,
+			show: tmpweapon || tmpmissile || tmpprojectile,
 			hasWeapon: tmpweapon,
 			hasMissile: tmpmissile,
-			label: tmpkinds.join(" and "),
+			hasProjectile: tmpprojectile,
+			label: tmpkinds.join(", "),
 			weaponText: tmpsystem.combat.weaponLoreList ?? "",
-			missileText: tmpsystem.combat.missileLoreList ?? ""
+			missileText: tmpsystem.combat.missileLoreList ?? "",
+			projectileText: tmpsystem.combat.projectileLoreList ?? ""
 		};
 	}
 

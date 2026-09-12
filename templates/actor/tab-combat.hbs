@@ -60,6 +60,12 @@
 			<input type="text" name="system.combat.missileLoreList" value="{{lore.missileText}}"
 				placeholder="Long Bow"></label>
 		{{/if}}
+		{{!-- Projectile Lore names the AMMUNITION, not the launcher: an Arrow, not the bow. --}}
+		{{#if lore.hasProjectile}}
+		<label>Projectiles specifically lored
+			<input type="text" name="system.combat.projectileLoreList" value="{{lore.projectileText}}"
+				placeholder="Arrow(Long Bow/Normal)"></label>
+		{{/if}}
 	</div>
 	{{/if}}
 	<h3 class="section-head">Magical Protection <span class="muted">taken off before armour</span></h3>

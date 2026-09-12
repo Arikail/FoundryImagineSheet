@@ -21,7 +21,7 @@ import {
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
 	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
 	applyMagicalReductions, getWeaveValue, isEndured, isRebounded, getAreaArmorSlot,
-	getLoreModifiers, getWeaponSpeed
+	getLoreModifiers, getProjectileLoreDamage, getWeaponSpeed
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
 
@@ -195,8 +195,18 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 		var tmpmagic = parseInt(tmpw.magicBonus) || 0;
 		var tmpmisc = MELEE_MODES.includes(tmpmode) ? (parseInt(tmpsys.combat.damageMisc) || 0) : 0;
 
-		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore`,
-			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage }).evaluate();
+		// Projectile Lore is worth damage PER DIE, so it needs the dice this attack actually
+		// rolls and cannot be worked out with the flat modifiers above.
+		var tmpprojlore = getProjectileLoreDamage({
+			weaponName: tmpweapon.name,
+			damageDice: tmpdice,
+			hasProjectileLore: tmpsys.combat.hasProjectileLore,
+			projectileLoreList: tmpsys.combat.projectileLoreNames
+		});
+
+		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore + @projlore`,
+			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
+			  projlore: tmpprojlore.damage }).evaluate();
 		tmprolls.push(tmpdmgroll);
 
 		var tmpmulti = combineDamageMultipliers(tmpoptions.calledShot ? [0.5] : []);
@@ -204,6 +214,7 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 
 		tmpdamage = {
 			dice: tmpdice, str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
+			projectileLore: tmpprojlore.damage, projectileLorePerDie: tmpprojlore.perDie,
 			rolled: tmpdmgroll.total, multiplier: tmpmulti, total: tmptotal,
 			type: MODE_DAMAGE_TYPES[tmpmode]
 		};
