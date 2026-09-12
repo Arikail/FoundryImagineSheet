@@ -382,6 +382,12 @@ def build_classes():
 
     titlemap = titles["entries"] if titles else {}
     goalmap = goals["entries"] if goals else {}
+
+    # When a class starts reading the Lore attack chart, from getLoreAttackChart via
+    # extract_combat_tables.py. Zero means it never does, which is true of about half of them.
+    loretitles = load_named("classLoreTitles")
+    loremap = loretitles["entries"] if loretitles else {}
+
     docs = []
 
     for tmpname, tmprow in details["entries"].items():
@@ -436,6 +442,7 @@ def build_classes():
             "weaponUsage": clean_text(str(tmprow.get("weaponUsage", "Any"))),
             "attackSkill": clean_text(str(tmprow.get("attackSkill", ""))),
             "attackSkillList": clean_text(str(tmprow.get("attackSkillList", ""))),
+            "loreAttackTitle": to_number(loremap.get(tmpname, 0), where, "loreAttackTitle"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
         }))

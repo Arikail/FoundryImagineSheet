@@ -17,7 +17,7 @@ import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getAreaArmor
+	getInitiativeModifier, getAreaArmor, getNextAttackSkill
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -344,6 +344,16 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 		var tmplist = this.classItem ? this.classItem.system.attackSkillList : "";
 		this.combat.attackSkill = getAttackSkillForTitle(tmplist, this.identity.title);
+
+		// The Lore chart: the standard chart one level up, for a weapon the character has Weapon
+		// or Missile Lore in. A class reaches it at its own title and about half never do.
+		// His code keeps this as a second stored chart (special_attack_skill); it is derived here
+		// because everything it depends on already is.
+		var tmploretitle = this.classItem ? (parseInt(this.classItem.system.loreAttackTitle) || 0) : 0;
+		this.combat.loreAttackTitle = tmploretitle;
+		this.combat.loreAttackSkill = (tmploretitle > 0 && this.identity.title >= tmploretitle)
+			? getNextAttackSkill(this.combat.attackSkill)
+			: "";
 
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,

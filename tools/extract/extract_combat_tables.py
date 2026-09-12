@@ -117,6 +117,37 @@ def race_body_types():
     return races, conditional, start
 
 
+def class_lore_titles():
+    """
+    The title at which each class begins reading the Weapon/Missile Lore attack chart.
+
+    From getLoreAttackChart, an eighty-eight case switch of the shape
+
+        case "Archer":  if(tempTitle>=3) { tempLoreChart=getLoreChart(tempNewAttackChart); } break;
+        case "Bard":    tempLoreChart=""; break;
+
+    A class with no title test never reads the Lore chart at all, and is recorded as 0 rather
+    than omitted, so "this class has no Lore chart" is stated rather than inferred from absence.
+
+    Note this is NOT the parenthesised title in a class's own attackSkillList -- "Grandmaster
+    (mastered weapons at 9)". Those two disagree for all thirty-eight classes that carry both,
+    never once agreeing, so they are plainly different things: this switch decides the Lore
+    attack chart, and the parenthetical is about which weapons are mastered.
+
+    getLoreChart itself is simply one step up the same table (Beginner to Novice, and so on to
+    Grandmaster), which is what getNextAttackSkill already does.
+    """
+    start, body = function_body("getLoreAttackChart")
+    titles = {}
+    for line in body:
+        m = re.search(r'case\s+"([^"]+)"\s*:(.*)$', line)
+        if not m:
+            continue
+        threshold = re.search(r'tempTitle\s*>=\s*(\d+)', m.group(2))
+        titles[m.group(1)] = int(threshold.group(1)) if threshold else 0
+    return titles, start
+
+
 def material_rank():
     start, body = function_body("getArmorValue")
     rank = {}
@@ -339,6 +370,14 @@ def main():
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write("".join(out))
 
+    lore_titles, lore_line = class_lore_titles()
+    with open(os.path.join(NAMED, "classLoreTitles.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js",
+                        "function": "getLoreAttackChart", "line": lore_line},
+            "entries": lore_titles
+        }, fh, indent=2, ensure_ascii=False)
+
     with open(os.path.join(NAMED, "raceBodyTypes.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
@@ -353,6 +392,8 @@ def main():
     print("armour dividers    %d materials" % len(dividers))
     print("material rank      %d materials" % len(ranks))
     print("race body types    %d races (%d conditional: %s)" % (len(races), len(conditional), ", ".join(conditional)))
+    print("class lore titles  %d classes (%d reach a Lore chart)"
+          % (len(lore_titles), len([t for t in lore_titles.values() if t])))
     print("armour coverage    %d families (%s)" % (len(armor_maps), ", ".join(armor_maps)))
     print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
           % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))

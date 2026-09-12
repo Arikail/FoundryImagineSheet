@@ -292,3 +292,17 @@ Porting that positionally would have faithfully reproduced armour landing on the
 **No upstream defects found:** unlike most of what has been ported lately, this function does exactly what it appears to. The only oddity is that his 99 band tests `critRoll<100` after `critRoll<99` has already been taken, so the 99 band is a single value; that is correct, just written oddly.
 
 **Verified:** 147 combat tests pass, 23 of them new, covering every band, both edges at 10/11, the variant split, the direction lookup and the missile case; the other three suites are unchanged.
+
+### 2026-09-11 — The Lore attack chart is class data, generated from his switch
+
+**Decision:** a class now carries `loreAttackTitle`, the title at which it begins reading the Weapon and Missile Lore attack chart, generated from `getLoreAttackChart` (sheet-worker.js:94897) into `src/packs/named/classLoreTitles.json` and thence into the class documents. The character model derives `combat.loreAttackSkill` from it — the standard chart one level up, once the title is reached — and the combat tab shows it under the attack skill.
+
+**Two tables in his data say when a class gets Lore, and they never agree.** A class row's `attackSkillList` ends "Grandmaster(mastered weapons at 9)", and the switch says Warrior reaches the Lore chart at 6. Comparing all 86 classes: 38 carry both numbers, and they disagree in **every single case** — Archer 3 against 12, Cacophonist 9 against 19. So they are not duplicates of one fact. The call site settles which is which: `setAttackChartsChanges` parses `attackSkillList`, maps Grandmaster down to Master for the standard chart because "cannot set Grandmaster for standard Attack Chart", and then calls `getLoreAttackChart` separately for the Lore chart. The switch governs the Lore chart; the parenthetical is about which weapons are mastered. Only the switch is ported here.
+
+**Sub-decisions:**
+- *Generated, not transcribed.* Ninety-two cases with per-class thresholds is precisely where a hand-copied off-by-one hides. Same rule as the armour maps and the column maps before them.
+- *A class that never reaches the chart records 0*, rather than being left out, so "this class has no Lore chart" is stated rather than inferred from a missing key. That is true of 51 of the 92 cases.
+- *39 of the 86 class documents get a non-zero threshold*, not 41. The switch has two more — Monk and Elemental Dancer — that have no class document at all; Monk is the row with the column defect recorded as item 1, which is why it never built.
+- *Derived on the character, not stored.* His sheet keeps a second stored chart (`special_attack_skill`) updated at titling; everything it depends on is already derived here, so storing it would only create something to fall out of step.
+
+**Not ported, and now understood well enough to say why:** the six lore *acquisition* tables (`getWeaponLoreWhen` and its missile, projectile, multi-missile, spell and armour siblings, lines 94997-95884) are a different seam — they decide when the skill itself is acquired and grant combat modifiers, not which chart is read. They are also where seventeen of his title gates are written `=>` instead of `>=` and so never gate anything (`UPSTREAM-ISSUES.md` item 19). Porting them means deciding what the correct gate is, which is his call.

@@ -8,7 +8,10 @@
 <section class="tab imagine-combat" data-tab="combat" data-group="primary">
 
 	<div class="combat-stats">
-		<div class="char-box"><label>Attack Skill</label><span class="value small">{{system.combat.attackSkill}}</span></div>
+		<div class="char-box"><label>Attack Skill</label><span class="value small">{{system.combat.attackSkill}}</span>
+			{{#if system.combat.loreAttackSkill}}
+			<span class="sub">Lore: {{system.combat.loreAttackSkill}}</span>
+			{{/if}}</div>
 		<div class="char-box"><label>Initiative</label>
 			<span class="value">d10 {{#if (gte system.combat.initiativeMod 0)}}+{{/if}}{{system.combat.initiativeMod}}</span>
 			<span class="sub">lower acts first</span></div>

@@ -322,6 +322,38 @@ check("weapon speed = STR + AGL + worn armour", fighter.combat.weaponSpeedMod,
 check("armour skill penalty is totalled", fighter.combat.armorSkillPenalty, -20);
 check("no class means no attack skill", makeCharacter({}, 5).combat.attackSkill, "None");
 
+// --- the Lore attack chart --------------------------------------------------------
+// A class reaches the Lore chart at its own title -- Archer at 3, Warrior at 6, Acrobat at 12,
+// and about half of them never. The chart itself is the standard one read a level up.
+// From getLoreAttackChart (sheet-worker.js:94897), generated per class into loreAttackTitle.
+const loreClass = (loreAttackTitle) => ({
+	type: "class", name: "Fighter",
+	system: { classType: "Primary class", loreAttackTitle,
+	          attackSkillList: "Beginner at 1, Novice at 3, Intermediate at 5, Advanced at 7",
+	          advancement: { titles: [], goalAttr1: "", goalAttr2: "" } },
+	getTitleName() { return ""; }
+});
+
+const belowLore = makeCharacter({}, 5, [loreClass(6)]);
+check("below the class's lore title there is no Lore chart", belowLore.combat.loreAttackSkill, "");
+check("...and the standard chart is unaffected", belowLore.combat.attackSkill, "Intermediate");
+
+const atLore = makeCharacter({}, 6, [loreClass(6)]);
+check("at the lore title the Lore chart is one step up", atLore.combat.loreAttackSkill, "Advanced");
+check("...over a standard chart still at Intermediate", atLore.combat.attackSkill, "Intermediate");
+
+const aboveLore = makeCharacter({}, 7, [loreClass(6)]);
+check("above it, it tracks the standard chart", [aboveLore.combat.attackSkill, aboveLore.combat.loreAttackSkill],
+	["Advanced", "Expert"]);
+
+// Half his classes never read it, and they are recorded as 0 rather than left out.
+check("a class with no lore title never reaches the chart",
+	makeCharacter({}, 12, [loreClass(0)]).combat.loreAttackSkill, "");
+check("the threshold is surfaced for the sheet",
+	makeCharacter({}, 3, [loreClass(6)]).combat.loreAttackTitle, 6);
+check("no class at all means no Lore chart",
+	makeCharacter({}, 12).combat.loreAttackSkill, "");
+
 // --- the body -----------------------------------------------------------------------
 check("Humanoid body has 19 areas", fighter.body.areas.length, 19);
 const upper = fighter.body.areas.find(a => a.name === "Upper Torso");

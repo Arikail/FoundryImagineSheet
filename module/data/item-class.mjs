@@ -71,6 +71,16 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			attackSkill:     new fields.StringField({ required: true, initial: "" }),
 			attackSkillList: new fields.StringField({ required: true, initial: "" }),
 
+			// The title at which this class begins reading the Weapon and Missile Lore attack
+			// chart, which is the standard chart one level up. Zero means it never does -- true
+			// of about half of them, and of every class that does not fight.
+			//
+			// This is NOT the parenthesised title in attackSkillList ("Grandmaster(mastered
+			// weapons at 9)"). Those two disagree for all thirty-eight classes carrying both, so
+			// they are different things: this is the Lore chart, that is which weapons are
+			// mastered. From getLoreAttackChart (sheet-worker.js:94897).
+			loreAttackTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER CLASSIFICATION
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".
 			classType: new fields.StringField({ required: true, initial: "" }),

@@ -249,4 +249,31 @@ Same function, same cause. His Centaur branch maps position 9 to "Mid Torso", bu
 
 The barding rule itself is fine and worth keeping: the quarters, forelegs and hindlegs take armour only from an item whose name contains "Centaur Barding", and nothing otherwise. It is only the positions that have slipped.
 
+## 19. Seventeen lore title gates are written `=>` instead of `>=`, so they never gate anything
+
+**Status:** open · **Severity:** real bug, currently visible in play; every affected lore counts as acquired from title 1
+
+Item 13 records one place where an assignment was typed as an arrow function. It is not the only one. Searching the whole sheet for `=>` used where a comparison was meant finds **eighteen** occurrences: line 25604 (already filed as item 13) and seventeen title gates of this shape:
+
+```js
+if (currentTitle=>whenWeaponLoreAcquired) { // acquired.
+```
+
+`currentTitle=>whenWeaponLoreAcquired` is not a comparison. It builds an arrow function and discards it, and a function object is always truthy, so the branch is taken **whatever the character's title**. Every one of these gates is therefore inert, and the lore in question reads as acquired at title 1.
+
+| Lines | Gate |
+|---|---|
+| 49870, 83017, 90504 | Weapon Lore acquired |
+| 49915, 49925, 83025, 90524 | Missile Lore acquired |
+| 49970, 49980, 83188 | Second Weapon Knowledge acquired |
+| 50025, 50035, 83242 | Second Weapon Lore acquired |
+| 50117, 50127 | Projectile Lore acquired |
+| 50199, 50209 | Multiple Missile Lore acquired |
+
+**What it changes in play.** These are not display-only. The gate at 82275 that *is* written correctly (`(currentTitle+1)>whenWeaponLoreAcquired`) grants +2 melee, +4 damage and +10% to skills once Weapon Lore is acquired; the broken gates control the same acquisition elsewhere, including the weapon speed adjustment in `getWeaponSpeedListingAdjustmentForModifier` (line 90484). So a title 1 character reads as having lore they should not have, in whichever of the two code paths runs.
+
+**Worth checking together with this:** the two spellings of the correct test are not equivalent either. Line 82275 uses `(currentTitle+1)>whenAcquired` while line 83017 means `currentTitle>=whenAcquired`; those agree, but only by accident of the `+1`. Whichever he intends should probably be written the same way in both.
+
+The port does not reproduce any of this: the Lore *attack chart* is keyed off `getLoreAttackChart`, whose own `tempTitle>=N` comparisons are written correctly. The six lore-acquisition tables (`getWeaponLoreWhen`, `getMissileLoreWhen`, `getProjectileLoreWhen`, `getMultiMissileLoreWhen`, `getSpellLoreWhen`, `getArmorLoreWhen`, lines 94997-95884) are a separate piece of work and are not ported yet.
+
 **Also worth a look while you are in there:** `Humanoid(Fish Tail)` has 14 areas ending in a Finned Tail at position 13, which is where the Humanoid branch maps a Left Thigh — so a merfolk tail is armoured as though it were a thigh. And the Insectoid charts name positions "Left Mid Claw/Hand" and "Left Lower Leg" where the branch's comments say "Left Mid Claw" and "Left Shin"; those two are only wording, and the mapping is right.
