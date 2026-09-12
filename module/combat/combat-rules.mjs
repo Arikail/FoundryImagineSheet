@@ -17,7 +17,8 @@ import {
 	ATTACK_CHARTS, ATTACK_SKILL_ORDER, BODY_CHARTS,
 	ARMOR_BLOCKING, ARMOR_DAMAGE_DIVIDERS, ARMOR_MATERIAL_RANK,
 	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM,
-	SHIELD_COVERAGE, SHIELD_SIZES
+	SHIELD_COVERAGE, SHIELD_SIZES,
+	ENDURED_BY, REBOUNDED_TYPES
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -572,6 +573,103 @@ export const MODE_DAMAGE_TYPES = {
 		if (tmpnet < 0) { tmpnet = 0; }
 
 		return { net: tmpnet, blocked: tmporiginal - tmpnet, armorDamage: tmparmordamage };
+	}
+
+	// @MARKER MAGICAL PROTECTION
+	// Everything here sits ABOVE the armour in his pipeline: it happens to the damage before any
+	// worn armour is asked to block it. The order is his (handleBodyDamage, sheet-worker.js:
+	// 71249-71272) and it is worth keeping, because these subtract rather than scale and the
+	// floor at zero only lands once, at the end.
+
+	// This is the function which says whether a damage type is endured -- shrugged off entirely.
+	// A tag on anything worn does it: "Enduring Frost", or the blanket "Enduring All", which
+	// covers nine of his ten types but not Obliteration. See ENDURED_BY, generated from his own
+	// switch, and docs/UPSTREAM-ISSUES.md item 20 for the asymmetry.
+	export function isEndured(tmpdamagetype, tmpwornnames) {
+		var tmptags = ENDURED_BY[String(tmpdamagetype ?? "")];
+		if (!tmptags) { return false; }
+		var tmpworn = (tmpwornnames ?? []).join(",");
+		for (const tmptag of tmptags) {
+			if (tmpworn.includes(tmptag)) { return true; }
+		}
+		return false;
+	}
+
+	// This is the function which says whether a blow rebounds off a "Rebound" item. Only the five
+	// physical damage types do (sheet-worker.js:71222); magic and the elements pass straight by.
+	export function isRebounded(tmpdamagetype, tmpwornnames) {
+		if (!REBOUNDED_TYPES.includes(String(tmpdamagetype ?? ""))) { return false; }
+		return (tmpwornnames ?? []).join(",").includes("Rebound");
+	}
+
+	// This is the function which totals the magical weave protecting one area.
+	// Ported from getWeaveValue (sheet-worker.js:119188).
+	//
+	// A weave is magical CLOTHING tagged "[Magical Weave]" -- all three conditions, since his
+	// test is clothing AND weave AND magical. What it is worth at an area is that garment's own
+	// armour value there plus its magical plus, DOUBLED, and several weaves add up.
+	//
+	// It comes off the damage like hide rather than like armour, and his blocking then works
+	// from the armour total with the weave taken back out, so it is never counted twice.
+	export function getWeaveValue(tmpworn, tmpslot) {
+		var tmptotal = 0;
+		if (!tmpslot) { return 0; }
+		for (const tmpitem of tmpworn ?? []) {
+			if (tmpitem.system?.flexibility != "Clothing") { continue; }
+			if (!String(tmpitem.name ?? "").includes("[Magical Weave]")) { continue; }
+			var tmpplus = parseInt(tmpitem.system?.magicBonus) || 0;
+			if (tmpplus <= 0) { continue; }              // his test is "the name carries a +"
+			var tmpvalue = parseInt(tmpitem.system?.coverage?.[tmpslot]) || 0;
+			tmptotal = tmptotal + ((tmpvalue + tmpplus) * 2);
+		}
+		return tmptotal;
+	}
+
+	// This is the function which runs a blow past everything magical protecting the target,
+	// before any worn armour sees it. Ported from handleBodyDamage (sheet-worker.js:71249-71272),
+	// in his order:
+	//   1. invulnerability scales the whole blow by how magical the weapon is
+	//   2. spiritual armour subtracts
+	//   3. force armour subtracts
+	//   4. outer kinetic armour subtracts
+	//   5. a magic shield subtracts, unless the blow bypasses armour
+	//   6. a magical weave subtracts, counted as hide
+	//   7. and only then is the result floored at zero
+	//
+	// Invulnerability is the one that scales rather than subtracts: a weapon with no magical plus
+	// does nothing at all to an invulnerable target, +1 or +2 does a quarter, +3 or +4 a half,
+	// and +5 or better lands in full.
+	//
+	// Where these values come from is a separate piece of work. His checkSpiritForceArmorModifiers
+	// (line 106966) sets each to the BEST of what worn magic items grant and the Game Master's own
+	// modifier -- they take the maximum rather than stacking -- and the items that grant them are
+	// named by the deferred magic subsystems. Until then they are entered by hand.
+	//
+	//   tmpinput = { invulnerable, magicPlus, spiritArmor, forceArmor, outerKinetic,
+	//                magicShield, weave, bypass }
+	//
+	// Returns { damage, weave } -- what is left, and the weave that was used, which the caller
+	// must take back out of the armour total so it is not counted a second time.
+	export function applyMagicalReductions(tmpdamage, tmpinput) {
+		var tmpvalue = parseInt(tmpdamage) || 0;
+		var tmpweave = parseInt(tmpinput.weave) || 0;
+
+		if (tmpinput.invulnerable && tmpvalue != 0) {
+			var tmpplus = parseInt(tmpinput.magicPlus) || 0;
+			if (tmpplus < 1)      { tmpvalue = 0; }                          // no plus, no damage
+			else if (tmpplus < 3) { tmpvalue = parseInt(tmpvalue * 0.25) || 0; }   // +1/+2 = a quarter
+			else if (tmpplus < 5) { tmpvalue = parseInt(tmpvalue * 0.5) || 0; }    // +3/+4 = a half
+			// +5 and better lands in full
+		}
+
+		tmpvalue = tmpvalue - (parseInt(tmpinput.spiritArmor) || 0);
+		tmpvalue = tmpvalue - (parseInt(tmpinput.forceArmor) || 0);
+		tmpvalue = tmpvalue - (parseInt(tmpinput.outerKinetic) || 0);
+		if (!tmpinput.bypass) { tmpvalue = tmpvalue - (parseInt(tmpinput.magicShield) || 0); }
+		tmpvalue = tmpvalue - tmpweave;
+		if (tmpvalue < 0) { tmpvalue = 0; }
+
+		return { damage: tmpvalue, weave: tmpweave };
 	}
 
 	// This is the function which says whether a blow does anything at all.

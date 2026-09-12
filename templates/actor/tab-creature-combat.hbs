@@ -44,6 +44,31 @@
 			<span class="sub">pool, spent as used</span></div>
 	</div>
 
+	{{!-- Everything here comes off a blow BEFORE any worn armour blocks it, in his order. Each is
+	      the best of what worn magic items grant and the Game Master's modifier, not a sum, and
+	      the items that grant them belong to the deferred magic subsystems -- so for now they are
+	      entered here by hand. --}}
+	<h3 class="section-head">Magical Protection <span class="muted">taken off before armour</span></h3>
+	<div class="combat-stats magic-armour">
+		<div class="char-box"><label>Spiritual</label>
+			<span class="value"><input type="number" class="pain-input" min="0"
+				name="system.combat.spiritArmor" value="{{system.combat.spiritArmor}}"></span></div>
+		<div class="char-box"><label>Force</label>
+			<span class="value"><input type="number" class="pain-input" min="0"
+				name="system.combat.forceArmor" value="{{system.combat.forceArmor}}"></span></div>
+		<div class="char-box"><label>Outer Kinetic</label>
+			<span class="value"><input type="number" class="pain-input" min="0"
+				name="system.combat.outerKinetic" value="{{system.combat.outerKinetic}}"></span></div>
+		<div class="char-box"><label>Magic Shield</label>
+			<span class="value"><input type="number" class="pain-input" min="0"
+				name="system.combat.magicShield" value="{{system.combat.magicShield}}"></span>
+			<span class="sub">not against bypass</span></div>
+		<div class="char-box"><label>Invulnerable</label>
+			<span class="value"><input type="checkbox" name="system.combat.invulnerable"
+				{{#if system.combat.invulnerable}}checked{{/if}}></span>
+			<span class="sub">scales by the weapon's plus</span></div>
+	</div>
+
 	<h3 class="section-head">Attacks</h3>
 	{{#if attacks.length}}
 	<table class="weapon-table">

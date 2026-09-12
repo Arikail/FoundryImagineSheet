@@ -293,6 +293,70 @@ const softened = R.resolveAreaDamage({
 check("a softened blow gets no further through than the full one", softened.net <= entered.net, true);
 check("blocking runs on the felt figure", entered.net, R.blockDamage(10, "Cutting", 20, false));
 
+// --- magical protection, above the armour ------------------------------------------
+// From handleBodyDamage's pre-reduction block. These all come off a blow BEFORE any worn armour
+// blocks it, they subtract rather than scale (invulnerability excepted), and the floor at zero
+// lands once, at the end.
+const mag = (d, o) => R.applyMagicalReductions(d, o).damage;
+check("nothing set changes nothing",      mag(20, {}), 20);
+check("spiritual armour subtracts",       mag(20, { spiritArmor: 5 }), 15);
+check("force armour subtracts",           mag(20, { forceArmor: 6 }), 14);
+check("outer kinetic subtracts",          mag(20, { outerKinetic: 3 }), 17);
+check("they stack with one another",      mag(20, { spiritArmor: 5, forceArmor: 6, outerKinetic: 3 }), 6);
+check("the floor lands once, at the end", mag(4, { spiritArmor: 5, forceArmor: 6 }), 0);
+
+// A magic shield is the one that a bypassing blow gets past.
+check("a magic shield subtracts normally",     mag(20, { magicShield: 8 }), 12);
+check("...but not against a bypassing blow",   mag(20, { magicShield: 8, bypass: true }), 20);
+
+// Invulnerability scales by how magical the weapon is, and is the only one that does.
+check("invulnerable: a mundane weapon does nothing", mag(20, { invulnerable: true, magicPlus: 0 }), 0);
+check("invulnerable: +1 does a quarter",             mag(20, { invulnerable: true, magicPlus: 1 }), 5);
+check("invulnerable: +2 does a quarter too",         mag(20, { invulnerable: true, magicPlus: 2 }), 5);
+check("invulnerable: +3 does a half",                mag(20, { invulnerable: true, magicPlus: 3 }), 10);
+check("invulnerable: +4 does a half too",            mag(20, { invulnerable: true, magicPlus: 4 }), 10);
+check("invulnerable: +5 lands in full",              mag(20, { invulnerable: true, magicPlus: 5 }), 20);
+check("invulnerability scales before the rest subtract",
+	mag(20, { invulnerable: true, magicPlus: 3, forceArmor: 4 }), 6);
+
+// Endured damage does nothing at all -- his handler branches past the whole apply block.
+check("a matching Enduring tag endures it",
+	R.isEndured("Frost", ["Cloak(Silk) [Enduring Frost]"]), true);
+check("a different one does not",
+	R.isEndured("Flame", ["Cloak(Silk) [Enduring Frost]"]), false);
+check("Enduring All covers the nine",
+	["Light", "Sonic", "Frost", "Kinetic", "Flame", "Electricity", "Acid", "Aura/Divine", "Life/Death"]
+		.every(t => R.isEndured(t, ["Robe [Enduring All]"])), true);
+check("...but NOT Obliteration, which his switch leaves out",
+	R.isEndured("Obliteration", ["Robe [Enduring All]"]), false);
+check("Obliteration needs its own tag",
+	R.isEndured("Obliteration", ["Robe [Enduring Obliteration]"]), true);
+check("a physical type is not in his endure list at all",
+	R.isEndured("Cutting", ["Robe [Enduring All]"]), false);
+
+// Rebound turns back the five physical kinds and nothing else.
+check("cutting rebounds",        R.isRebounded("Cutting", ["Buckler [Rebound]"]), true);
+check("constricting rebounds",   R.isRebounded("Constricting", ["Buckler [Rebound]"]), true);
+check("frost does not",          R.isRebounded("Frost", ["Buckler [Rebound]"]), false);
+check("nor does anything without the tag", R.isRebounded("Cutting", ["Buckler"]), false);
+
+// A magical weave is magical CLOTHING so tagged, worth (its own armour there + its plus) x 2.
+const weave = (plus, value) => ({ name: `Robe(Silk) [Magical Weave] +${plus}`,
+	system: { flexibility: "Clothing", magicBonus: plus, coverage: { torsoUpper: value } } });
+check("a weave is worth its armour plus its plus, doubled",
+	R.getWeaveValue([weave(2, 3)], "torsoUpper"), 10);
+check("several weaves add up",
+	R.getWeaveValue([weave(2, 3), weave(1, 0)], "torsoUpper"), 12);
+check("it is worth nothing where it does not cover",
+	R.getWeaveValue([weave(2, 3)], "footLeft"), 4);
+check("plain clothing is not a weave",
+	R.getWeaveValue([{ name: "Robe(Silk)", system: { flexibility: "Clothing", magicBonus: 0, coverage: { torsoUpper: 3 } } }], "torsoUpper"), 0);
+check("armour is not a weave however magical",
+	R.getWeaveValue([{ name: "Mail [Magical Weave] +2", system: { flexibility: "Flexible", magicBonus: 2, coverage: { torsoUpper: 8 } } }], "torsoUpper"), 0);
+check("no slot means no weave", R.getWeaveValue([weave(2, 3)], ""), 0);
+check("the weave comes back out so it is not counted twice",
+	R.applyMagicalReductions(20, { weave: 10 }), { damage: 10, weave: 10 });
+
 // --- damage absorption ------------------------------------------------------------
 // From handleBodyDamage, the very last thing to touch the damage -- after armour has blocked
 // its share and after natural hide. A POOL, not a per-blow reduction: it takes what it can and

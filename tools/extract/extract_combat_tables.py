@@ -463,6 +463,43 @@ def shield_coverage_maps(charts, labels):
     return maps, unresolved, start
 
 
+# The damage types a "Rebound" item turns back (sheet-worker.js:71222). Read off his condition
+# rather than assumed: only the five physical kinds are listed there.
+REBOUNDED_TYPES = ["Cutting", "Thrusting", "Smashing", "Crushing", "Constricting"]
+
+
+def endured_damage_types():
+    """
+    Which worn-item tags let a damage type be endured -- shrugged off entirely.
+
+    From getIsEndured (sheet-worker.js:120871), a switch on the damage type where each case looks
+    for "Enduring <Type>" on anything worn, and all but one also accept a blanket "Enduring All".
+    The exception is Obliteration, which accepts only its own tag. That asymmetry is the reason
+    this is read out of his switch rather than written out by hand: it is one missing line in ten
+    cases, and a hand copy would almost certainly smooth it over.
+
+    Returns (mapping, first line), where mapping is damage type -> the list of tags that endure it.
+    """
+    start, body = function_body("getIsEndured")
+
+    mapping = {}
+    current = None
+    for line in body:
+        found = re.findall(r'case\s+"([^"]*)"\s*:', line)
+        if found:
+            current = found[0]
+            mapping.setdefault(current, [])
+            continue
+        if current is None:
+            continue
+        tag = re.search(r'tempEquippedArmorAndClothing\.includes\("([^"]+)"\)', line)
+        if tag:
+            mapping[current].append(tag.group(1))
+        if re.search(r'\bbreak\s*;', line):
+            current = None
+    return mapping, start
+
+
 def load_raw(name):
     """The blocking and degradation tables are used positionally, so the raw extraction is
     exactly what is wanted -- they never needed a column map."""
@@ -619,6 +656,24 @@ def main():
     out.append("// its size, so \"Shield(Large/Steel)\" is a Large.\n")
     out.append("export const SHIELD_SIZES = %s;\n\n" % js(SHIELD_SIZES))
 
+    # ENDURED DAMAGE TYPES
+    endured, endured_line = endured_damage_types()
+    out.append("// @MARKER ENDURING DAMAGE\n")
+    out.append("// From getIsEndured (sheet-worker.js:%d). A blow of a damage type that is endured\n" % endured_line)
+    out.append("// does NOTHING -- his handler branches past the whole apply block, so there is no damage,\n")
+    out.append("// no armour wear and no effect. Each type is endured by a tag on anything worn.\n")
+    out.append("//\n")
+    out.append("// Note that \"Enduring All\" covers nine of the ten and NOT Obliteration, which accepts only\n")
+    out.append("// its own tag. That is his switch as written; see docs/UPSTREAM-ISSUES.md item 20.\n")
+    out.append("export const ENDURED_BY = {\n")
+    for name, tags in endured.items():
+        out.append("\t%-22s %s,\n" % (js(name) + ":", js(tags)))
+    out.append("};\n\n")
+
+    out.append("// The damage types a \"Rebound\" item turns back, from the same handler\n")
+    out.append("// (sheet-worker.js:71222). Only the five physical kinds rebound.\n")
+    out.append("export const REBOUNDED_TYPES = %s;\n\n" % js(REBOUNDED_TYPES))
+
     out.append("// @END (CODE)\n")
 
     with open(OUT, "w", encoding="utf-8") as fh:
@@ -652,6 +707,8 @@ def main():
     print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
           % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))
 
+    print("endured types      %d damage types (%d accept \"Enduring All\")"
+          % (len(endured), len([t for t in endured.values() if "Enduring All" in t])))
     print("shield coverage    %d families, %d size/handedness combinations"
           % (len(shield_maps), sum(len(h) for f in shield_maps.values() for h in f.values())))
     if shield_unresolved:

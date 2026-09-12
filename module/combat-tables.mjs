@@ -511,4 +511,28 @@ export const SHIELD_COVERAGE = {
 // its size, so "Shield(Large/Steel)" is a Large.
 export const SHIELD_SIZES = ["Buckler", "Small", "Medium", "Large", "Body"];
 
+// @MARKER ENDURING DAMAGE
+// From getIsEndured (sheet-worker.js:120871). A blow of a damage type that is endured
+// does NOTHING -- his handler branches past the whole apply block, so there is no damage,
+// no armour wear and no effect. Each type is endured by a tag on anything worn.
+//
+// Note that "Enduring All" covers nine of the ten and NOT Obliteration, which accepts only
+// its own tag. That is his switch as written; see docs/UPSTREAM-ISSUES.md item 20.
+export const ENDURED_BY = {
+	"Light":               ["Enduring Light", "Enduring All"],
+	"Sonic":               ["Enduring Sonic", "Enduring All"],
+	"Frost":               ["Enduring Frost", "Enduring All"],
+	"Kinetic":             ["Enduring Kinetic", "Enduring All"],
+	"Flame":               ["Enduring Flame", "Enduring All"],
+	"Electricity":         ["Enduring Electricity", "Enduring All"],
+	"Acid":                ["Enduring Acid", "Enduring All"],
+	"Aura/Divine":         ["Enduring Aura/Divine", "Enduring All"],
+	"Life/Death":          ["Enduring Life/Death", "Enduring All"],
+	"Obliteration":        ["Enduring Obliteration"],
+};
+
+// The damage types a "Rebound" item turns back, from the same handler
+// (sheet-worker.js:71222). Only the five physical kinds rebound.
+export const REBOUNDED_TYPES = ["Cutting", "Thrusting", "Smashing", "Crushing", "Constricting"];
+
 // @END (CODE)

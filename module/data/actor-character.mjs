@@ -231,7 +231,24 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				// the best of a "Rune Absorption: +N" on worn armour and the Game Master's own
 				// modifier whenever equipment changes; runes are a deferred subsystem, so for now
 				// the pool is entered and spent by hand.
-				damageAbsorb: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 })
+				damageAbsorb: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
+				// @MARKER MAGICAL PROTECTION
+				// These all come off a blow BEFORE any worn armour is asked to block it, in the
+				// order his handler applies them (sheet-worker.js:71249-71272). They subtract
+				// rather than scale, and each is the BEST of what worn magic items grant and the
+				// Game Master's own modifier rather than a sum of them -- which is what his
+				// checkSpiritForceArmorModifiers (line 106966) works out. The items that grant
+				// them are named by the deferred magic subsystems, so for now these are entered
+				// by hand.
+				spiritArmor:  new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				forceArmor:   new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				outerKinetic: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				magicShield:  new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
+				// Invulnerability scales rather than subtracts: a weapon with no magical plus
+				// does nothing at all, +1/+2 a quarter, +3/+4 a half, +5 and better full damage.
+				invulnerable: new fields.BooleanField({ required: true, initial: false })
 			}),
 
 			// @MARKER NOTES

@@ -156,7 +156,9 @@ const creature = new ImagineCreatureData({
 	combat: { attackChart: "Expert", attackNotes: "Breathes frost once every three rounds.",
 	          meleeMisc: 0, missileMisc: 0, damageMisc: 0,
 	          defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
-	          painThreshold: -3, highPainThreshold: false, damageAbsorb: 12 },
+	          painThreshold: -3, highPainThreshold: false, damageAbsorb: 12,
+	          spiritArmor: 0, forceArmor: 4, outerKinetic: 0, magicShield: 0,
+	          invulnerable: false },
 	notes: "Hoards worked metal. Will parley if offered silver.", biography: ""
 });
 creature.parent = { items, name: "Cave Wyrm" };

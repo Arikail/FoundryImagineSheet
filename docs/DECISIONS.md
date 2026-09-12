@@ -543,3 +543,53 @@ Both sheets were checked in the preview harnesses with a pool set.
 
 **Not verified:** the pool writing back to the database and the chat note — a running Foundry V14,
 which this machine does not have.
+
+### 2026-09-12 — Magical protection, and what an endured blow really does
+
+**Decision:** the pre-reduction block of his `handleBodyDamage` (sheet-worker.js:71249-71272) is
+ported as `applyMagicalReductions`, with `isEndured`, `isRebounded` and `getWeaveValue` beside
+it. Both actor types carry `spiritArmor`, `forceArmor`, `outerKinetic`, `magicShield` and
+`invulnerable`. This completes the damage pipeline: pain threshold, magical protection, armour
+blocking, armour wear, hide, absorption, wounds.
+
+**Endured and rebounded blows do nothing whatever.** This is the finding that matters most here,
+and it is easy to misread as a reduction. His whole normal pipeline sits in
+`else if (!reboundOn && !enduredOn)`, and the branch that catches the other case simply clears
+every outcome flag. So an endured blow deals no damage, wears no armour and triggers no effect —
+total immunity, not a matter of degree. A "Rebound" item does the same for the five physical
+damage types and nothing else.
+
+**Invulnerability is the only one that scales.** A weapon with no magical plus does nothing at
+all to an invulnerable target, +1 or +2 does a quarter, +3 or +4 a half, and +5 or better lands
+in full. Everything else in the block subtracts, and the floor at zero lands once, at the end,
+which is why the order is kept rather than tidied into a sum.
+
+**Sub-decisions:**
+- *The endured table is generated, not transcribed*, though it is only ten rows. Nine of his ten
+  cases accept a blanket `Enduring All` and the tenth, Obliteration, does not — one missing line
+  in ten near-identical cases, which is exactly what a hand copy smooths over. Logged for him as
+  `UPSTREAM-ISSUES.md` item 20, and the table picks the line up if he adds it.
+- *A weave is counted as hide and then taken back out of the armour total.* His code does both:
+  it subtracts the weave up here, then blocks against `tempAreaTotalArmor - weaveValue`. Getting
+  only half of that right would have counted magical clothing twice, so the port returns the
+  weave it used and the caller removes it from the armour it passes on.
+- *A weave is magical CLOTHING so tagged* — all three conditions, matching his test. Armour
+  tagged `[Magical Weave]` is worth nothing, and so is unenchanted clothing.
+- *The values are entered by hand for now.* His `checkSpiritForceArmorModifiers` sets each to the
+  BEST of what worn magic items grant and the Game Master's modifier — the maximum, not a sum —
+  reading `[Base Aura:xx]` off a Force Armor item, base Piety off a Spiritual Armor one, base
+  aura divided by five off a Kinetic Barrier(Outer), and `Rune Force Armor: +N`. Every one of
+  those names belongs to a deferred magic subsystem, so the automatic sources land with those
+  subsystems and the fields are the manual path until then. The rule that they take a maximum
+  rather than stacking is recorded at the schema so it is not re-derived.
+- *Invulnerability reads the weapon's plus from the attack card*, which both the weapon and the
+  creature card already record as `damage.magic`.
+
+**Verified:** 240 combat tests pass, 32 of them new, covering each protection alone and stacked,
+the floor landing once, the magic shield's bypass exception, all five invulnerability bands, the
+nine types `Enduring All` covers and the one it does not, rebound on the physical types only, and
+the weave's doubling and its removal from the armour total. Derivation 116, creature 129,
+availability 39 unchanged; 26 modules parse. Both sheets checked in the preview harnesses.
+
+**Not verified:** the fields writing back and the chat notes — a running Foundry V14, which this
+machine does not have.

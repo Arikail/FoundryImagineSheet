@@ -289,3 +289,47 @@ if (currentTitle=>whenWeaponLoreAcquired) { // acquired.
 The port does not reproduce any of this: the Lore *attack chart* is keyed off `getLoreAttackChart`, whose own `tempTitle>=N` comparisons are written correctly. The six lore-acquisition tables (`getWeaponLoreWhen`, `getMissileLoreWhen`, `getProjectileLoreWhen`, `getMultiMissileLoreWhen`, `getSpellLoreWhen`, `getArmorLoreWhen`, lines 94997-95884) are a separate piece of work and are not ported yet.
 
 **Also worth a look while you are in there:** `Humanoid(Fish Tail)` has 14 areas ending in a Finned Tail at position 13, which is where the Humanoid branch maps a Left Thigh — so a merfolk tail is armoured as though it were a thigh. And the Insectoid charts name positions "Left Mid Claw/Hand" and "Left Lower Leg" where the branch's comments say "Left Mid Claw" and "Left Shin"; those two are only wording, and the mapping is right.
+
+## 20. "Enduring All" endures nine damage types out of ten
+
+**Status:** open · **Severity:** question, may well be intentional
+
+`getIsEndured` (sheet-worker.js:120871) switches on the damage type, and each case looks for its
+own tag on anything worn and then for a blanket `Enduring All`:
+
+```js
+case "Frost":
+    if (tempEquippedArmorAndClothing.includes("Enduring Frost")) { wasEndured=true; }
+    if (tempEquippedArmorAndClothing.includes("Enduring All")) { wasEndured=true; }
+    break;
+```
+
+Nine of the ten cases are written exactly that way — Light, Sonic, Frost, Kinetic, Flame,
+Electricity, Acid, Aura/Divine and Life/Death. The tenth is not:
+
+```js
+case "Obliteration":
+    if (tempEquippedArmorAndClothing.includes("Enduring Obliteration")) { wasEndured=true; }
+    break;
+```
+
+So a character wearing `Enduring All` still takes Obliteration damage in full, and needs
+`Enduring Obliteration` specifically.
+
+That may be exactly right — Obliteration reads like the damage type nothing is meant to shrug
+off, and making the blanket tag stop short of it is a reasonable design. But it is also precisely
+what a dropped line looks like, and the name "Enduring All" says otherwise. Worth one word either
+way.
+
+**What matters about it in play:** an endured blow does not simply take less damage. His handler
+branches past the entire apply block for it (`else if (!reboundOn && !enduredOn)`, line 71249),
+so an endured blow does **nothing** — no damage, no armour wear, no effect triggered. So this is
+the difference between total immunity and none at all, not a matter of degree.
+
+**What the port does:** follows the switch exactly. `ENDURED_BY` in `module/combat-tables.mjs` is
+generated from it, so if the line is added upstream the table picks it up on the next run.
+
+**Also worth a glance while you are there:** the `else` that catches a rebounded or endured blow
+(line 71439) carries the comment `// Area is already lost (nothing more can be done to it)`. The
+lost-area case is handled separately and earlier, at line 71322, so that comment is stale rather
+than wrong-in-effect — the branch is reached by rebound and endure. Only the comment misleads.

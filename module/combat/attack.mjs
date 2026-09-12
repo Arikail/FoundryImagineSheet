@@ -20,6 +20,7 @@ import {
 	resolveAttack, resolveFumble, getToHitModifiers,
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
 	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
+	applyMagicalReductions, getWeaveValue, isEndured, isRebounded, getAreaArmorSlot,
 	getWeaponSpeed
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
@@ -312,15 +313,50 @@ export async function applyAttackDamage(tmpmessage) {
 		return;
 	}
 
+	// Endured and rebounded blows do nothing at all: his handler branches past the whole apply
+	// block for both, so there is no damage, no armour wear and no effect.
+	var tmpwornnames = (tmptargetactor.items ?? [])
+		.filter(i => i.type == "armor" && i.system.location == "equipped")
+		.map(i => i.name);
+	if (isEndured(tmpoptions.type, tmpwornnames) || isRebounded(tmpoptions.type, tmpwornnames)) {
+		var tmpwhy = isEndured(tmpoptions.type, tmpwornnames) ? "endures" : "rebounds";
+		await ChatMessage.create({
+			speaker: ChatMessage.getSpeaker({ actor: tmptargetactor }),
+			content: `<div class="imagine-chat damage-result"><p><strong>${esc(tmptargetactor.name)}</strong>
+				${tmpwhy} ${esc(tmpoptions.type)} damage. The blow does nothing.</p></div>`
+		});
+		if (tmpmessage.isOwner) { await tmpmessage.setFlag("imagine-rpg", "attack.applied", true); }
+		return;
+	}
+
 	// The target's pain threshold comes off -- or goes on -- before armour sees the blow, which
 	// is the first thing his handler does with it. A negative threshold is a tougher target.
 	var tmpthreshold = parseInt(tmpsys.combat.painThreshold) || 0;
 	var tmpfelt = applyPainThreshold(tmpraw, tmpthreshold, tmpsys.combat.highPainThreshold);
 
+	// Then everything magical protecting the target, still above the armour. A magical weave is
+	// counted as hide here, so it has to come back out of the armour total before blocking, or
+	// it would be counted a second time -- which is what his own code does.
+	var tmpworn = (tmptargetactor.items ?? [])
+		.filter(i => i.type == "armor" && i.system.location == "equipped" && !i.system.isShield);
+	var tmpslot = getAreaArmorSlot(tmpsys.body.type, tmparea.name).slot;
+	var tmpmagical = applyMagicalReductions(tmpfelt, {
+		invulnerable: tmpsys.combat.invulnerable,
+		// The weapon's magical plus, which is what invulnerability reads to decide whether the
+		// blow touches the target at all. Both attack cards record it as damage.magic.
+		magicPlus:    tmpattack.damage.magic ?? 0,
+		spiritArmor:  tmpsys.combat.spiritArmor,
+		forceArmor:   tmpsys.combat.forceArmor,
+		outerKinetic: tmpsys.combat.outerKinetic,
+		magicShield:  tmpsys.combat.magicShield,
+		weave:        getWeaveValue(tmpworn, tmpslot),
+		bypass:       tmpoptions.bypass
+	});
+
 	var tmpblow = resolveAreaDamage({
-		damage: tmpfelt,
+		damage: tmpmagical.damage,
 		type: tmpoptions.type,
-		totalArmor: tmparea.armor,
+		totalArmor: Math.max(0, tmparea.armor - tmpmagical.weave),
 		bypass: tmpoptions.bypass,
 		hide: tmpsys.body.hide,
 		material: tmparea.material,
@@ -357,6 +393,9 @@ export async function applyAttackDamage(tmpmessage) {
 	if (tmpabsorbed.damage != tmpblow.net) {
 		tmpnotes.push(`Absorption takes ${tmpblow.net - tmpabsorbed.damage}; `
 			+ `${tmpabsorbed.pool} left in the pool.`);
+	}
+	if (tmpmagical.damage != tmpfelt) {
+		tmpnotes.push(`Magical protection takes ${tmpfelt - tmpmagical.damage} before armour.`);
 	}
 	if (tmpfelt != tmpraw) {
 		tmpnotes.push(`Pain threshold ${tmpthreshold > 0 ? "+" : ""}${tmpthreshold}`
