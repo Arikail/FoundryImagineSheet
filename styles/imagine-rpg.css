@@ -438,6 +438,43 @@
 	color: var(--imagine-accent, #7a6a4f);
 }
 
+/* Which hand a weapon is in. Three small buttons rather than a dropdown, because the sheet's
+   data-action handlers are dispatched from a click. "2H" is both hands, which is what doubles a
+   Strength damage bonus. */
+.weapon-table .col-hand { white-space: nowrap; width: 1%; }
+
+.hand-pick { display: inline-flex; }
+.hand-pick button {
+	width: auto;
+	min-width: 22px;
+	padding: 0 4px;
+	font-size: 10px;
+	line-height: 18px;
+	border: 1px solid var(--imagine-rule, #c9bda4);
+	background: transparent;
+	border-radius: 0;
+	margin: 0 0 0 -1px;
+}
+.hand-pick button:first-child { border-radius: 3px 0 0 3px; margin-left: 0; }
+.hand-pick button:last-child  { border-radius: 0 3px 3px 0; }
+.hand-pick button.on {
+	background: var(--imagine-accent, #7a6a4f);
+	border-color: var(--imagine-accent, #7a6a4f);
+	color: #fff;
+}
+
+/* Derived, never tagged: a weapon is off-hand when its hand is not the wielder's dominant one.
+   An Ambidextrous character never shows this, however a weapon is tagged. */
+.weapon-table .offhand-tag {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 1px 4px;
+	border: 1px solid #a4542f;
+	border-radius: 3px;
+	color: #a4542f;
+}
+
 .lore-lists { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
 .lore-lists label { flex: 1 1 220px; font-size: 11px; }
 .lore-lists input { width: 100%; }

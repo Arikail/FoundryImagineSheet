@@ -675,6 +675,79 @@ check("a positive total is the second you start", R.getActingSecond(6), { second
 check("weapon speed adds modifiers", R.getWeaponSpeed(7, 3, -2), 5);
 check("weapon speed never goes under its minimum", R.getWeaponSpeed(3, 2, -5), 2);
 
+// --- off-hand fighting ------------------------------------------------------------
+// Which hand a weapon is in is stored; off-handedness is DERIVED against the wielder's
+// handedness. Ambidextrous has no off hand at all.
+check("a right-hander's left-hand weapon is off-hand",  R.isOffhandWeapon("left",  "Right"), true);
+check("a right-hander's right-hand weapon is not",      R.isOffhandWeapon("right", "Right"), false);
+check("a left-hander's right-hand weapon is off-hand",  R.isOffhandWeapon("right", "Left"),  true);
+check("a left-hander's left-hand weapon is not",        R.isOffhandWeapon("left",  "Left"),  false);
+check("a weapon in both hands is never off-hand",       R.isOffhandWeapon("both",  "Right"), false);
+check("Ambidextrous has no off hand, left",             R.isOffhandWeapon("left",  "Ambidextrous"), false);
+check("Ambidextrous has no off hand, right",            R.isOffhandWeapon("right", "Ambidextrous"), false);
+check("an unset hand reads as right-handed",            R.isOffhandWeapon(undefined, "Right"), false);
+
+// The three tables do NOT share band edges. Agility 19 is where that bites: melee has already
+// reached zero, damage and skills have not. If these three ever agree, a table was transcribed.
+check("Agility 19 melee penalty is spent",   R.getOffhandPenalty("melee",  19, "Right"),  0);
+check("...but damage is still -1",           R.getOffhandPenalty("damage", 19, "Right"), -1);
+check("...and skills still -5",              R.getOffhandPenalty("skill",  19, "Right"), -5);
+check("all three are spent at Agility 20",  [R.getOffhandPenalty("melee",  20, "Right"),
+                                             R.getOffhandPenalty("damage", 20, "Right"),
+                                             R.getOffhandPenalty("skill",  20, "Right")], [0, 0, 0]);
+
+// Only the damage table breaks out 16 and 17 as single values.
+check("damage singles out Agility 16",       R.getOffhandPenalty("damage", 16, "Right"), -3);
+check("damage singles out Agility 17",       R.getOffhandPenalty("damage", 17, "Right"), -2);
+check("melee treats 16 and 17 differently",  [R.getOffhandPenalty("melee", 16, "Right"),
+                                              R.getOffhandPenalty("melee", 17, "Right")], [-2, -1]);
+check("skills treat 16 and 17 alike",        [R.getOffhandPenalty("skill", 16, "Right"),
+                                              R.getOffhandPenalty("skill", 17, "Right")], [-10, -10]);
+
+check("the worst band is Agility 1-9",       [R.getOffhandPenalty("melee",  1, "Right"),
+                                              R.getOffhandPenalty("damage", 1, "Right"),
+                                              R.getOffhandPenalty("skill",  9, "Right")], [-4, -6, -20]);
+check("Ambidextrous pays nothing anywhere",  [R.getOffhandPenalty("melee",  5, "Ambidextrous"),
+                                              R.getOffhandPenalty("damage", 5, "Ambidextrous"),
+                                              R.getOffhandPenalty("skill",  5, "Ambidextrous")], [0, 0, 0]);
+// His "<=0" branch and the open top both return zero, so reading off either end does too.
+check("Agility 0 is off the table, so zero",  R.getOffhandPenalty("melee",  0, "Right"), 0);
+check("Agility 30 is off the table, so zero", R.getOffhandPenalty("damage", 30, "Right"), 0);
+
+// The three tiers, which do not stack -- Lore is tested first and stops there.
+const offhandSword = { hand: "left", secondWeaponKnowledge: false, secondWeaponLore: false };
+check("a main-hand weapon costs nothing",
+	R.resolveOffhandPenalties({ hand: "right" }, 12, "Right"),
+	{ offhand: false, tier: "none", melee: 0, damage: 0, skill: 0 });
+check("neither skill means the full penalty",
+	R.resolveOffhandPenalties(offhandSword, 12, "Right"),
+	{ offhand: true, tier: "full", melee: -3, damage: -5, skill: -15 });
+check("Second Weapon Lore removes it entirely",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponLore: true }, 12, "Right"),
+	{ offhand: true, tier: "lore", melee: 0, damage: 0, skill: 0 });
+check("Lore wins over Knowledge, they do not stack",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true, secondWeaponLore: true },
+		12, "Right").tier, "lore");
+// Until the buy-down lands, Knowledge alone still pays full -- his behaviour for a character
+// whose skill has not yet bought one level. The tier is reported so the seam is visible.
+check("Knowledge alone is tiered but not yet bought down",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right"),
+	{ offhand: true, tier: "knowledge", melee: -3, damage: -5, skill: -15 });
+check("an Ambidextrous wielder is never off-hand at all",
+	R.resolveOffhandPenalties(offhandSword, 5, "Ambidextrous").tier, "none");
+check("a real item's system block is unwrapped",
+	R.resolveOffhandPenalties({ system: offhandSword }, 12, "Right").tier, "full");
+
+// It reaches the to-hit sum for MISSILE as well as melee -- his offHandPenalty is in both
+// totalmods branches (sheet-worker.js:64804 missile, 64806 melee) despite the table's name.
+check("the off-hand penalty reaches a missile attack",
+	R.getToHitModifiers({ mode: "missile", weapon: {}, attacker: {}, offhand: -3 }).total, -3);
+check("...and a melee attack",
+	R.getToHitModifiers({ mode: "melee", weapon: {}, attacker: {}, offhand: -3 }).total, -3);
+check("it is labelled in the modifier list",
+	R.getToHitModifiers({ mode: "melee", weapon: {}, attacker: {}, offhand: -3 })
+		.list.some(m => m.label == "Off Hand"), true);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

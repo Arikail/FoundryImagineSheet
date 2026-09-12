@@ -981,6 +981,79 @@ belongs to the Attributes module (Epic 2, Backlog), which is where every other I
 value will land, and putting it on the tab instead would scatter the derivation. The tab renders the
 allowance if it exists and simply omits it until then.
 
+### 2026-09-12 — Off-hand fighting, first half: the hand field, the three tables, the full penalty
+
+The base penalty is built — the first of the two halves the audit pass proposed. The second, the two
+skills that buy the penalty down, is not started.
+
+**One three-state field replaced two contradictory booleans.** The weapon item carried `twoHanded`
+and `offhand`, both under "carried state", and **neither was ever populated from his data** — they
+appear nowhere in `build_documents.py` and nowhere in the 594 built weapon documents. They were
+wielding state all along, and two booleans can say something a hand cannot do: held in both hands
+*and* in the off hand. `hand: "right" | "left" | "both"` cannot express the contradiction. The
+Strength damage rule now reads `hand == "both"` where it read `twoHanded`, which is the same fact
+from one source instead of two. `offhand` turned out to be dead — declared, never read anywhere.
+
+**Off-handedness is derived, never stored:** a weapon is off-hand when its hand disagrees with the
+actor's `handedness`, which the shield pass had already added and tested. An **Ambidextrous** wielder
+has no off hand at all, because all three of his penalty functions short-circuit on handedness before
+they look at Agility (83307, 83331, 83351). That matches the user's framing exactly — ambidexterity
+is the absence of the cost, not a bonus on top of it.
+
+Note a deliberate asymmetry that is *his*, not ours: `getShieldAreas` lets "Ambidextrous" fall
+through its else branch and read as right-handed, while the penalty tables short-circuit it to zero.
+Both behaviours are preserved and the asymmetry is commented at both sites so neither looks like a
+slip.
+
+**The three tables are generated, and they do not agree.** `banded_chain()` in
+`extract_combat_tables.py` reads a banded `if/else if` chain into ordered `[min, max, value]` rows,
+and all three off-hand tables are emitted as `OFFHAND_PENALTIES`. The generator checks band
+contiguity over 1..30 and reports gaps rather than leaving holes; all three came back clean. **Melee
+reaches zero at Agility 19, damage and skills at 20, and only the damage table breaks out 16 and 17
+as single values** — exactly the divergence a hand transcription smooths away, which is why the audit
+insisted on generating them. Agility 19 is the test that proves it: melee 0, damage -1, skill -5.
+Rows outside every band return zero, which covers both his `<=0` branch and the open top of each
+chain without special-casing either.
+
+**The finding worth carrying forward: his function name lies.** `getOffhandMeleeAdj` reads as
+melee-only and is not. His `offHandPenalty` appears in **both** `totalmods` branches — the missile one
+at sheet-worker.js:64804 and the melee one at 64806 — so a bow drawn in the wrong hand is penalised
+exactly as a sword swung in it is. Gating this on melee, which the name invites, would have quietly
+made every off-handed archer better than he intended. This is a porting trap rather than a defect in
+his code, so it is recorded here and at the call site rather than in `UPSTREAM-ISSUES.md`.
+
+**Deliberately left stubbed.** The "knowledge" tier resolves and is reported, but does not yet buy
+anything down: Second Weapon Knowledge gives `skillChance / 20` levels (83188), which needs skills
+resolving to a number on the actor. Until that lands, a weapon with Knowledge and no Lore pays the
+full penalty — which is his own behaviour for a character whose skill has not yet reached one level,
+so the stub is correct rather than merely incomplete. The tier is still reported so the seam is
+visible in the returned object.
+
+**The tag is on the combat page, as three buttons rather than a dropdown.** The user asked for the
+selection to live there, so it does — a Hand column on the weapon table with L / R / 2H, and a
+derived "off" marker beside a weapon that is in the wrong hand for this character. Buttons because an
+ApplicationV2 `data-action` is dispatched from a **click**: a `<select>` would need its own change
+binding, which cannot be verified without a running V14, while buttons take the identical path
+`rollWeaponAttack` already uses.
+
+**A gap in the preview harness was found and closed on the way.** `tools/sheet-preview.html`
+duplicates the sheet's weapon-row builder rather than calling it, because
+`ImagineCharacterSheet.#buildWeaponRows` is private. So the new fields rendered blank there while
+being perfectly correct in the sheet — the harness had silently stopped exercising what it appears
+to. Both new fields were added to the duplicate and a comment now says it must be kept in step. The
+preview's dagger is tagged to the left hand so the off-hand path is actually exercised rather than
+merely available.
+
+**Tested:** 330 combat tests pass, **39 of them new** across the hand field, the derivation, the three
+tables' differing edges, the tier precedence and the missile path. Derivation 123, creature 129 and
+availability 39 are unchanged; 26 modules parse with no syntax errors. The combat tab was checked in
+the preview against a real derived character: the sword reads right-handed and clean, the dagger
+left-handed and marked off-hand, and the active-hand styling resolves.
+
+**Not verified:** everything needing a running Foundry V14 — that clicking a hand button actually
+writes back to the embedded item and re-renders, and that the modifier reaches the chat card. No V14
+install exists on this machine.
+
 ### 2026-09-12 — Where a design document and the shipped code disagree, the code wins
 
 **The standing conflict rule had a gap.** `CLAUDE.md` settles Roll20-sheet-versus-rulebook: the sheet

@@ -101,8 +101,36 @@ export default class ImagineWeaponData extends foundry.abstract.TypeDataModel {
 			location:  new fields.StringField({ required: true, initial: "carried",
 			               choices: ["equipped", "carried", "mount", "stash"] }),
 			quantity:  new fields.NumberField({ required: true, integer: true, initial: 1, min: 0 }),
-			twoHanded: new fields.BooleanField({ required: true, initial: false }),
-			offhand:   new fields.BooleanField({ required: true, initial: false }),
+
+			// @MARKER WHICH HAND
+			// Which hand or hands the weapon is being used in. This is WIELDING STATE, not a
+			// property of the weapon -- nothing in his weaponvalueslist says how a thing is held,
+			// and neither of the two booleans this replaces was ever populated from his data.
+			//
+			// It replaces `twoHanded` and `offhand`, which were separate booleans that could
+			// contradict each other: a weapon cannot be held in both hands AND in the off hand,
+			// but two booleans can say so. One three-state field cannot express the contradiction.
+			//
+			//     "both"   -> held in two hands. This is what doubles the Strength damage bonus
+			//                 (and halves a negative one) in getStrengthDamageMod.
+			//     "left"   -> held in the left hand
+			//     "right"  -> held in the right hand
+			//
+			// OFF-HANDEDNESS IS DERIVED FROM THIS, never stored: a weapon is off-hand when its
+			// hand is not the wielder's dominant hand, which is read from the actor's `handedness`.
+			// An Ambidextrous wielder has no off hand at all. See isOffhandWeapon in combat-rules.
+			hand: new fields.StringField({ required: true, initial: "right",
+			          choices: ["right", "left", "both"] }),
+
+			// @MARKER SECOND-WEAPON LORE
+			// His per-weapon flags weaponN_2weapknow and weaponN_2weaplore. Unlike the hand, these
+			// ARE properties of this weapon in this wielder's hands -- lore is held in a particular
+			// weapon, exactly as the five lore types already ported are.
+			//
+			// Lore removes the off-hand penalty entirely; Knowledge buys it down. The tiers do not
+			// stack -- his handlePhysicalAttacks tests Lore first and stops there.
+			secondWeaponKnowledge: new fields.BooleanField({ required: true, initial: false }),
+			secondWeaponLore:      new fields.BooleanField({ required: true, initial: false }),
 
 			// @MARKER PROVENANCE
 			cost:        new fields.StringField({ required: true, initial: "" }),

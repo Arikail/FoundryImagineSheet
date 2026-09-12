@@ -19,7 +19,8 @@ import {
 	ARMOR_COVERAGE_BY_BODY_TYPE, ARMOR_REQUIRES_ITEM,
 	SHIELD_COVERAGE, SHIELD_SIZES,
 	ENDURED_BY, REBOUNDED_TYPES,
-	PROJECTILE_MATCHES, LAUNCHER_MATCHES, LAUNCHER_PROJECTILE
+	PROJECTILE_MATCHES, LAUNCHER_MATCHES, LAUNCHER_PROJECTILE,
+	OFFHAND_PENALTIES
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -398,6 +399,16 @@ export const MODE_DAMAGE_TYPES = {
 		// stays a plain sum. Melee reads Weapon Lore and missile reads Missile Lore.
 		var tmplore = parseInt(tmpinput.lore) || 0;
 		if (tmplore) { tmplist.push({ label: "Lore", value: tmplore }); }
+
+		// The off-hand penalty, worked out by resolveOffhandPenalties and passed in for the same
+		// reason lore is, so this function stays a plain sum.
+		//
+		// IT IS NOT MELEE-ONLY, despite his function being named getOffhandMeleeAdj. His
+		// offHandPenalty appears in BOTH totalmods branches -- the missile one at
+		// sheet-worker.js:64804 and the melee one at 64806 -- so a bow drawn in the wrong hand is
+		// penalised exactly as a sword swung in it is. The name is the only thing that says melee.
+		var tmpoffhand = parseInt(tmpinput.offhand) || 0;
+		if (tmpoffhand) { tmplist.push({ label: "Off Hand", value: tmpoffhand }); }
 
 		var tmpsit = parseInt(tmpinput.situational) || 0;
 		if (tmpsit) { tmplist.push({ label: "Situational", value: tmpsit }); }
@@ -933,6 +944,91 @@ export const MODE_DAMAGE_TYPES = {
 				tmpout.layers.push(tmpshield.name);
 			}
 		}
+		return tmpout;
+	}
+
+	// @MARKER OFF-HAND FIGHTING
+
+	// This is the function which says whether a weapon is being used in the off hand.
+	//
+	// Off-handedness is DERIVED, never stored. The weapon carries which hand it is in
+	// ("right" / "left" / "both") and the actor carries handedness; a weapon is off-hand when
+	// those disagree. A weapon held in BOTH hands is not off-hand -- there is no spare hand for
+	// a second weapon, which is the situation the whole penalty exists to describe.
+	//
+	// AMBIDEXTROUS HAS NO OFF HAND AT ALL. All three of his penalty functions short-circuit on
+	// handedness before they ever look at Agility (sheet-worker.js:83307, 83331, 83351), so
+	// ambidexterity is the ABSENCE of the cost rather than a bonus laid on top of it.
+	//
+	// Note the deliberate asymmetry with getShieldAreas above, which lets "Ambidextrous" fall
+	// through its else branch and read as right-handed. Both behaviours are his, in different
+	// functions; neither is invented away here.
+	export function isOffhandWeapon(tmphand, tmphandedness) {
+		var tmpwielded = "" + (tmphand ?? "right");
+		if (tmpwielded == "both") { return false; }
+
+		var tmphanded = "" + (tmphandedness ?? "");
+		if (tmphanded == "Ambidextrous") { return false; }
+
+		var tmpdominant = (tmphanded == "Left") ? "left" : "right";
+		return tmpwielded != tmpdominant;
+	}
+
+	// This is the function which reads one Agility-banded off-hand penalty.
+	//
+	// tmpkind is "melee", "damage" or "skill". THE THREE TABLES DO NOT SHARE BAND EDGES -- melee
+	// reaches zero at Agility 19, damage and skills at 20 -- so each is read from its own rows and
+	// none is inferred from another.
+	//
+	// Any rating outside every band returns zero, which covers both his "<=0" branch and the open
+	// top of each chain without special-casing either.
+	export function getOffhandPenalty(tmpkind, tmpagility, tmphandedness) {
+		if (("" + (tmphandedness ?? "")) == "Ambidextrous") { return 0; }
+
+		var tmpbands = OFFHAND_PENALTIES[tmpkind];
+		if (!tmpbands) { return 0; }
+
+		var tmprating = parseInt(tmpagility) || 0;
+		for (const tmpband of tmpbands) {
+			if (tmprating >= tmpband[0] && tmprating <= tmpband[1]) { return tmpband[2]; }
+		}
+		return 0;
+	}
+
+	// This is the function which works out what fighting with this weapon in the off hand costs.
+	//
+	// His handlePhysicalAttacks picks ONE of three tiers per weapon, and they do not stack -- Lore
+	// is tested first and stops there:
+	//
+	//     Second Weapon Lore       -> no penalty at all
+	//     Second Weapon Knowledge  -> the penalty bought down by the skill's own levels
+	//     neither                  -> the full banded penalty
+	//
+	// Returns { offhand, tier, melee, damage, skill }. A weapon that is not in the off hand comes
+	// back with tier "none" and three zeroes, so the caller can add these unconditionally.
+	//
+	// NOT YET IMPLEMENTED: the "knowledge" tier's buy-down. Second Weapon Knowledge gives
+	// skillChance/20 levels, each worth one point of to-hit and damage back and 5% of skills, never
+	// past zero (sheet-worker.js:83188). That needs skills resolving to a number on the actor and is
+	// the second half of this subsystem; until it lands, a weapon with Knowledge but not Lore takes
+	// the full penalty, which is his behaviour for a character whose skill has not yet reached one
+	// level. See docs/sonnet/2026-09-12-offhand-planning.md.
+	export function resolveOffhandPenalties(tmpweapon, tmpagility, tmphandedness) {
+		var tmpout = { offhand: false, tier: "none", melee: 0, damage: 0, skill: 0 };
+
+		var tmpsystem = tmpweapon?.system ?? tmpweapon ?? {};
+		if (!isOffhandWeapon(tmpsystem.hand, tmphandedness)) { return tmpout; }
+		tmpout.offhand = true;
+
+		if (tmpsystem.secondWeaponLore) {
+			tmpout.tier = "lore";
+			return tmpout;
+		}
+
+		tmpout.tier   = tmpsystem.secondWeaponKnowledge ? "knowledge" : "full";
+		tmpout.melee  = getOffhandPenalty("melee",  tmpagility, tmphandedness);
+		tmpout.damage = getOffhandPenalty("damage", tmpagility, tmphandedness);
+		tmpout.skill  = getOffhandPenalty("skill",  tmpagility, tmphandedness);
 		return tmpout;
 	}
 

@@ -39,6 +39,11 @@ never acquires it. See `UPSTREAM-ISSUES.md` item 19.
 
 ## 2. Generate the three off-hand penalty tables
 
+> **DONE 2026-09-12 — do not redo.** `banded_chain()` was added to
+> `tools/extract/extract_combat_tables.py` and all three tables are emitted as `OFFHAND_PENALTIES`
+> in `module/combat-tables.mjs`. The contiguity check is in and all three came back clean. The band
+> edges do differ exactly as predicted below, and there are tests on all three divergences.
+
 **Why it was left:** mechanical, but it comes after the design question is settled so the table
 shape is not guessed at.
 
@@ -61,9 +66,14 @@ band edges that differ between them (Agility 19 melee vs damage, and Agility 16 
 
 ## 3. ~~Three booleans~~ One hand field and two booleans on the weapon item
 
-> **CORRECTED 2026-09-12 — do not build this as it was first written.** The user answered the
+> **DONE 2026-09-12 — do not redo, and do not build the original version.** The user answered the
 > design question and the answer was not either branch this item anticipated. There is **no
-> `offHand` boolean.** See `DECISIONS.md` → "RESOLVED 2026-09-12 — the three questions above".
+> `offHand` boolean.** `hand`, `secondWeaponKnowledge` and `secondWeaponLore` are on
+> `module/data/item-weapon.mjs`; `twoHanded` and the old `offhand` are gone, and the Strength damage
+> rule reads `hand == "both"`. The two-handedness question flagged below turned out to be a merge
+> rather than a conflict — see `DECISIONS.md` → "Off-hand fighting, first half".
+>
+> The description below is kept for the reasoning, not as work to do.
 
 **Why it was left:** trivial once the model is agreed. It is still trivial; it is just a different
 shape than it was.

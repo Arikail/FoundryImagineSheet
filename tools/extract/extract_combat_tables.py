@@ -177,6 +177,86 @@ def class_lore_when(tmpfunction):
     return titles, start
 
 
+def banded_chain(tmpfunction, tmpassign, tmpvar, tmpceiling=30):
+    """
+    Read an Agility-banded if/else-if chain into ordered [min, max, value] rows.
+
+    From getOffhandMeleeAdj / getOffhandDamageAdj / getOffhandSkillAdj
+    (sheet-worker.js:83305-83367), all three of the shape
+
+        if (tempHandednessvalue=="Ambidextrous") { X=0;
+        } else if (tempaglvalue<=0)              { X=0;    // his "they should be dead" branch
+        } else if (tempaglvalue>0  && tempaglvalue<10) { X=-6;
+        } else if (tempaglvalue==16)             { X=-3;   // damage singles out 16 and 17
+        } else if (tempaglvalue>19)              { X=0;
+
+    THE THREE DO NOT SHARE BAND EDGES, which is the whole reason these are generated rather than
+    transcribed: the melee penalty reaches zero at Agility 19, damage and skills at 20, and only
+    the damage table breaks out 16 and 17 as single values. A hand transcription smooths exactly
+    that kind of difference away.
+
+    Returns (rows, ambidextrous_is_zero, first line number). Rows are ordered and cover 1..ceiling.
+    His "<=0" and open-topped branches are NOT emitted as rows -- both return zero, and so does
+    reading off the end of the table, so the behaviour is identical with two fewer special cases.
+    """
+    start, body = function_body(tmpfunction)
+
+    # Each condition, paired with the value assigned inside its block.
+    tmpbands = []
+    tmpambi  = False
+    for line in body:
+        tmpcond = re.search(r'(?:^|\})\s*(?:else\s+)?if\s*\((.+?)\)\s*\{', line)
+        if not tmpcond:
+            continue
+        tmpvalue = None
+        for probe in body[body.index(line):]:
+            tmphit = re.search(r'%s\s*=\s*(-?\d+)\s*;' % re.escape(tmpassign), probe)
+            if tmphit:
+                tmpvalue = int(tmphit.group(1))
+                break
+        if tmpvalue is None:
+            continue
+        tmptext = tmpcond.group(1)
+        if "Ambidextrous" in tmptext:
+            tmpambi = (tmpvalue == 0)
+            continue
+        tmplo, tmphi = _range_of(tmptext, tmpvar)
+        if tmplo is None and tmphi is not None and tmphi <= 0:
+            continue                                    # his "<=0" branch; zero either way
+        if tmplo is not None and tmphi is None:
+            continue                                    # open top; zero either way
+        if tmplo is None or tmphi is None:
+            continue
+        tmpbands.append([tmplo, tmphi, tmpvalue])
+
+    # Contiguity. A hole here would silently return the wrong penalty for one Agility value, so
+    # it is reported rather than left to be found in play.
+    tmpbands.sort(key=lambda r: r[0])
+    tmpexpect = 1
+    for tmprow in tmpbands:
+        if tmprow[0] != tmpexpect:
+            print("  WARNING: %s has a gap or overlap at Agility %d (next band starts %d)"
+                  % (tmpfunction, tmpexpect, tmprow[0]))
+        tmpexpect = tmprow[1] + 1
+    if tmpexpect > tmpceiling + 1:
+        print("  WARNING: %s overruns Agility %d" % (tmpfunction, tmpceiling))
+
+    return tmpbands, tmpambi, start
+
+
+def _range_of(tmptext, tmpvar):
+    """Turn one condition over tmpvar into an inclusive (lo, hi); None is open on that side."""
+    tmplo, tmphi = None, None
+    for tmpop, tmpnum in re.findall(r'%s\s*(<=|>=|==|<|>)\s*(-?\d+)' % re.escape(tmpvar), tmptext):
+        tmpn = int(tmpnum)
+        if   tmpop == "<":  tmphi = tmpn - 1 if tmphi is None else min(tmphi, tmpn - 1)
+        elif tmpop == "<=": tmphi = tmpn     if tmphi is None else min(tmphi, tmpn)
+        elif tmpop == ">":  tmplo = tmpn + 1 if tmplo is None else max(tmplo, tmpn + 1)
+        elif tmpop == ">=": tmplo = tmpn     if tmplo is None else max(tmplo, tmpn)
+        elif tmpop == "==": tmplo, tmphi = tmpn, tmpn
+    return tmplo, tmphi
+
+
 def name_match_chain(tmpfunction, tmpassign):
     """
     Read an ordered if/else-if chain that tests a weapon's name with includes().
@@ -755,6 +835,36 @@ def main():
     out.append("// Which projectile a launcher normally fires, so a Long Bow's lore is read off its Arrow.\n")
     out.append("export const LAUNCHER_PROJECTILE = %s;\n\n" % js(launcher_ammo))
 
+    # OFF-HAND PENALTIES
+    melee_bands,  melee_ambi,  melee_off_line  = banded_chain("getOffhandMeleeAdj",
+                                                              "calcOffhandMeleeAdjust", "tempaglvalue")
+    damage_bands, damage_ambi, damage_off_line = banded_chain("getOffhandDamageAdj",
+                                                              "calcOffhandDamageAdjust", "tempaglvalue")
+    skill_bands,  skill_ambi,  skill_off_line  = banded_chain("getOffhandSkillAdj",
+                                                              "calcOffhandSkillsAdjust", "tempaglvalue")
+    out.append("// @MARKER OFF-HAND PENALTIES\n")
+    out.append("// From getOffhandMeleeAdj (sheet-worker.js:%d), getOffhandDamageAdj (%d) and\n"
+               % (melee_off_line, damage_off_line))
+    out.append("// getOffhandSkillAdj (%d). What it costs to fight with the wrong hand, banded by Agility.\n"
+               % skill_off_line)
+    out.append("//\n")
+    out.append("// Each row is [lowest Agility, highest Agility, penalty]. Read by walking the list and\n")
+    out.append("// taking the first band the rating falls in; ANY rating outside every band is zero, which\n")
+    out.append("// covers both his \"<=0\" branch and the open top of each chain without special-casing either.\n")
+    out.append("//\n")
+    out.append("// THE THREE DO NOT SHARE BAND EDGES. Melee reaches zero at Agility 19, damage and skills\n")
+    out.append("// at 20, and only the damage table breaks out 16 and 17 as single values. Do not assume\n")
+    out.append("// one shape from another -- that is why these are generated.\n")
+    out.append("//\n")
+    out.append("// An Ambidextrous character takes NO off-hand penalty at all: all three of his functions\n")
+    out.append("// short-circuit on handedness before they ever look at Agility. Ambidexterity is therefore\n")
+    out.append("// the absence of the cost rather than a bonus on top of it.\n")
+    out.append("export const OFFHAND_PENALTIES = {\n")
+    out.append("\tmelee:  %s,\n" % js(melee_bands))
+    out.append("\tdamage: %s,\n" % js(damage_bands))
+    out.append("\tskill:  %s\n"  % js(skill_bands))
+    out.append("};\n\n")
+
     out.append("// @END (CODE)\n")
 
     with open(OUT, "w", encoding="utf-8") as fh:
@@ -809,6 +919,12 @@ def main():
           % (len(endured), len([t for t in endured.values() if "Enduring All" in t])))
     print("shield coverage    %d families, %d size/handedness combinations"
           % (len(shield_maps), sum(len(h) for f in shield_maps.values() for h in f.values())))
+    print("off-hand penalty   melee %d bands (zero from %d), damage %d (from %d), skill %d (from %d)"
+          % (len(melee_bands),  melee_bands[-1][1] + 1,
+             len(damage_bands), damage_bands[-1][1] + 1,
+             len(skill_bands),  skill_bands[-1][1] + 1))
+    if not (melee_ambi and damage_ambi and skill_ambi):
+        print("  WARNING: a penalty table does not zero for Ambidextrous -- check his short-circuit")
     if shield_unresolved:
         print("  WARNING: %d shield write(s) landed on a position his armour branch does not label"
               % len(shield_unresolved))

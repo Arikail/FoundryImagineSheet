@@ -13,7 +13,7 @@
 //==================================================================================================================
 
 import { rollWeaponAttack } from "../combat/attack.mjs";
-import { getWeaponSpeed, getLoreModifiers } from "../combat/combat-rules.mjs";
+import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -28,7 +28,8 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		actions: {
 			rollAttributeSave: ImagineCharacterSheet.#onRollAttributeSave,
 			rollSkill: ImagineCharacterSheet.#onRollSkill,
-			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack
+			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack,
+			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand
 		}
 	};
 
@@ -215,7 +216,13 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 				reload: tmpw.reloadSpeed || "",
 				modes: tmpmodes,
 				lore: tmplore.attack ? tmplore : null,
-				equipped: tmpw.location == "equipped"
+				equipped: tmpw.location == "equipped",
+
+				// Which hand it is in, and whether that makes it the off hand for THIS character.
+				// The flag is derived rather than stored, so it follows a change of handedness
+				// without anything having to be re-tagged.
+				hand: tmpw.hand || "right",
+				offhand: isOffhandWeapon(tmpw.hand, tmpactor.system.physical?.handedness)
 			});
 		}
 		return tmprows;
@@ -228,6 +235,22 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		var tmpitem = this.document.items.get(target.dataset.itemId);
 		if (!tmpitem) { return; }
 		await rollWeaponAttack(this.document, tmpitem);
+	}
+
+	// This is the function which tags a weapon as being in the left hand, the right, or both.
+	//
+	// The tag lives on the weapon because that is what the user asked for -- a simple selection on
+	// the combat page -- and off-handedness is worked out from it against this character's
+	// handedness rather than being tagged separately. Changing the tag re-renders, so the off-hand
+	// marker beside the weapon follows immediately.
+	//
+	// Three buttons rather than a dropdown, because an ApplicationV2 data-action is dispatched
+	// from a CLICK: a <select> would need its own change binding, and that cannot be verified
+	// without a running Foundry V14. Buttons use the same path rollWeaponAttack already does.
+	static async #onSetWeaponHand(event, target) {
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+		await tmpitem.update({ "system.hand": target.dataset.hand });
 	}
 
 	// This is the function which rolls an attribute save. A save succeeds on a percentile roll

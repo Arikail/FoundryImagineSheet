@@ -17,7 +17,7 @@
 
 import {
 	MELEE_MODES, MODE_DAMAGE_TYPES,
-	resolveAttack, resolveFumble, getToHitModifiers,
+	resolveAttack, resolveFumble, getToHitModifiers, resolveOffhandPenalties,
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
 	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
 	applyMagicalReductions, getWeaveValue, isEndured, isRebounded, getAreaArmorSlot,
@@ -138,6 +138,13 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 		missileLoreList: tmpsys.combat.missileLoreNames
 	});
 
+	// What fighting with this weapon in the off hand costs. Off-handedness is derived from the
+	// weapon's hand against the character's handedness, so nothing is stored and an Ambidextrous
+	// character is simply never off-hand. Applies to missile attacks as well as melee -- see the
+	// note in getToHitModifiers.
+	var tmpoffhand = resolveOffhandPenalties(tmpw, tmpsys.attributes.agl.rating,
+		tmpsys.physical?.handedness);
+
 	// To hit
 	var tmpmods = getToHitModifiers({
 		mode: tmpmode,
@@ -150,7 +157,8 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 		},
 		target: (tmptarget && tmpoptions.useDefense) ? { defensiveAdjust: tmptarget.actor?.system?.combat?.defensiveAdjust } : null,
 		situational: tmpoptions.situational,
-		lore: tmplore.attack
+		lore: tmplore.attack,
+		offhand: tmpoffhand.melee
 	});
 
 	var tmpd20 = await new Roll("1d20").evaluate();
@@ -191,7 +199,9 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 	var tmprolls = [tmpd20];
 	if (tmpresult.isHit) {
 		var tmpdice = getWeaponDamageDice(tmpw, tmpmode);
-		var tmpstrmod = getStrengthDamageMod(tmpsys.combat.meleeDamage, tmpmode, tmpw.twoHanded);
+		// Held in both hands is what doubles a Strength bonus, and that is now read off the weapon's
+		// hand rather than a separate twoHanded boolean which could contradict it.
+		var tmpstrmod = getStrengthDamageMod(tmpsys.combat.meleeDamage, tmpmode, tmpw.hand == "both");
 		var tmpmagic = parseInt(tmpw.magicBonus) || 0;
 		var tmpmisc = MELEE_MODES.includes(tmpmode) ? (parseInt(tmpsys.combat.damageMisc) || 0) : 0;
 
@@ -204,9 +214,9 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 			projectileLoreList: tmpsys.combat.projectileLoreNames
 		});
 
-		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore + @projlore`,
+		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore + @projlore + @offhand`,
 			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
-			  projlore: tmpprojlore.damage }).evaluate();
+			  projlore: tmpprojlore.damage, offhand: tmpoffhand.damage }).evaluate();
 		tmprolls.push(tmpdmgroll);
 
 		var tmpmulti = combineDamageMultipliers(tmpoptions.calledShot ? [0.5] : []);

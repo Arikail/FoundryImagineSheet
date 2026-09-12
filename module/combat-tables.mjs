@@ -549,4 +549,25 @@ export const LAUNCHER_MATCHES = [["Bow(Long)", true], ["Fairy Composite Bow", tr
 // Which projectile a launcher normally fires, so a Long Bow's lore is read off its Arrow.
 export const LAUNCHER_PROJECTILE = [["Fairy Composite Bow", "Arrow(Fairy Composite Bow/Normal)"], ["Fairy Great Bow", "Arrow(Fairy Great Bow/Normal)"], ["Fairy Long Bow", "Arrow(Fairy Long Bow/Normal)"], ["Fairy Short Bow", "Arrow(Fairy Short Bow/Normal)"], ["Fairy Hand Crossbow", "Arrow(Fairy Hand Crossbow/Normal)"], ["Fairy Heavy Crossbow", "Arrow(Fairy Heavy Crossbow/Normal)"], ["Fairy Crossbow", "Arrow(Fairy Crossbow/Normal)"], ["Fairy Sling", "Pebble(Fairy Sling)"], ["Giant Short Bow", "Arrow(Giant Short Bow/Normal)"], ["Giant Long Bow", "Arrow(Giant Long Bow/Normal)"], ["Giant Great Bow", "Arrow(Giant Great Bow/Normal)"], ["Titan Bow", "Arrow(Titan Bow/Normal)"], ["Bow(Long)", "Arrow(Long Bow/Normal)"], ["Bow(Composite)", "Arrow(Composite Bow/Normal)"], ["Bow(Compound)", "Arrow(Compound Bow/Normal)"], ["Bow(Great)", "Arrow(Great Bow/Normal)"], ["Bow(Horn)", "Arrow(Horn Bow/Normal)"], ["Bow(Recurve)", "Arrow(Recurve Bow/Normal)"], ["Bow(Short)", "Arrow(Short Bow/Normal)"], ["Bow(Welsh)", "Arrow(Welsh Bow/Normal)"], ["Early Derringer", "Lead Ball(Early Gun)"], ["Single Shot Pistol", "Lead Ball(Early Gun)"], ["Blunder Buss", "Lead Ball(Early Gun)"], ["Long Rifle", "Lead Ball(Early Gun)"], ["Crossbow(Heavy)", "Bolt(Heavy Crossbow/Normal)"], ["Crossbow(Heavy/Double)", "Bolt(Heavy Crossbow/Normal)"], ["Crossbow(Heavy/Over-Under)", "Bolt(Heavy Crossbow/Normal)"], ["Crossbow(Heavy/Repeating)", "Bolt(Heavy Crossbow/Normal)"], ["Crossbow(Hand)", "Bolt(Hand Crossbow/Normal)"], ["Crossbow(Hand/Double)", "Bolt(Hand Crossbow/Normal)"], ["Crossbow(Hand/Over-Under)", "Bolt(Hand Crossbow/Normal)"], ["Crossbow(Hand/Repeating)", "Bolt(Hand Crossbow/Normal)"], ["Crossbow", "Bolt(Crossbow/Normal)"], ["Crossbow(Double)", "Bolt(Crossbow/Normal)"], ["Crossbow(Over-Under)", "Bolt(Crossbow/Normal)"], ["Crossbow(Repeating)", "Bolt(Crossbow/Normal)"], ["Wrist Sling", "Rock(Wrist Sling)"], ["Sling", "Rock(Sling)"], ["Bow(Primitive)", "Arrow(Primitive Bow)"], ["Blow Gun", "Dart(Blow Gun)"], ["At’alta(Javelin Thrower)", "Stick(Throwing)"], ["Ballista", "Bolt(Ballista/Normal)"], ["Ballista(Heavy)", "Bolt(Heavy Ballista/Normal)"], ["Ballista(Light)", "Bolt(Light Ballista/Normal)"], ["Catapult", "Boulder(Catapult)"], ["Trebuchet", "Boulder(Trebuchet)"], ["Cannon(Early)", "Ball(Cannon)"], ["Cannon", "Ball(Cannon)"], ["Cannon(Heavy)", "Ball(Cannon)"]];
 
+// @MARKER OFF-HAND PENALTIES
+// From getOffhandMeleeAdj (sheet-worker.js:83329), getOffhandDamageAdj (83305) and
+// getOffhandSkillAdj (83349). What it costs to fight with the wrong hand, banded by Agility.
+//
+// Each row is [lowest Agility, highest Agility, penalty]. Read by walking the list and
+// taking the first band the rating falls in; ANY rating outside every band is zero, which
+// covers both his "<=0" branch and the open top of each chain without special-casing either.
+//
+// THE THREE DO NOT SHARE BAND EDGES. Melee reaches zero at Agility 19, damage and skills
+// at 20, and only the damage table breaks out 16 and 17 as single values. Do not assume
+// one shape from another -- that is why these are generated.
+//
+// An Ambidextrous character takes NO off-hand penalty at all: all three of his functions
+// short-circuit on handedness before they ever look at Agility. Ambidexterity is therefore
+// the absence of the cost rather than a bonus on top of it.
+export const OFFHAND_PENALTIES = {
+	melee:  [[1, 9, -4], [10, 12, -3], [13, 16, -2], [17, 18, -1]],
+	damage: [[1, 9, -6], [10, 12, -5], [13, 15, -4], [16, 16, -3], [17, 17, -2], [18, 19, -1]],
+	skill:  [[1, 9, -20], [10, 15, -15], [16, 17, -10], [18, 19, -5]]
+};
+
 // @END (CODE)

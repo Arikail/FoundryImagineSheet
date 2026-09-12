@@ -97,6 +97,7 @@
 				<th class="col-name">Weapon</th>
 				<th class="col-num">Damage</th>
 				<th class="col-num">Speed</th>
+				<th class="col-hand">Hand</th>
 				<th>Attack</th>
 			</tr>
 		</thead>
@@ -107,6 +108,23 @@
 					{{#if w.lore}} <span class="lore-tag" data-tooltip="Attack +{{w.lore.attack}}, damage +{{w.lore.damage}}, speed {{w.lore.speed}}, skills +{{w.lore.skills}}%">{{#if w.lore.specific}}Lore{{else}}lore{{/if}}</span>{{/if}}</td>
 				<td class="col-num">{{w.damage}}</td>
 				<td class="col-num">{{w.speed}}{{#if w.reload}} <span class="muted">/ reload {{w.reload}}</span>{{/if}}</td>
+				{{!-- Which hand it is in. Off-handedness is derived from this against the
+				      character's handedness below, so an Ambidextrous character never shows the
+				      off-hand marker however a weapon is tagged. --}}
+				<td class="col-hand">
+					<span class="hand-pick">
+						<button type="button" class="{{#if (eq w.hand "left")}}on{{/if}}"
+							data-action="setWeaponHand" data-item-id="{{w.id}}" data-hand="left"
+							data-tooltip="Left hand">L</button>
+						<button type="button" class="{{#if (eq w.hand "right")}}on{{/if}}"
+							data-action="setWeaponHand" data-item-id="{{w.id}}" data-hand="right"
+							data-tooltip="Right hand">R</button>
+						<button type="button" class="{{#if (eq w.hand "both")}}on{{/if}}"
+							data-action="setWeaponHand" data-item-id="{{w.id}}" data-hand="both"
+							data-tooltip="Both hands - doubles a Strength damage bonus">2H</button>
+					</span>
+					{{#if w.offhand}} <span class="offhand-tag" data-tooltip="In the off hand: attack, damage and skill penalties by Agility unless Second Weapon Knowledge or Lore applies">off</span>{{/if}}
+				</td>
 				<td>
 					{{#if w.modes.length}}
 					<button type="button" data-action="rollWeaponAttack" data-item-id="{{w.id}}">

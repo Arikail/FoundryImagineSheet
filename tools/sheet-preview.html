@@ -78,10 +78,12 @@ classItem.getTitleName = function (t) { const i = parseInt(t) - 1; const a = thi
                                         return (i < 0 || i >= a.length) ? "" : a[i]; };
 
 const sword = byName(weapons, "Bastard Sword");
-Object.assign(sword.system, { location: "equipped", quantity: 1, twoHanded: false });
+Object.assign(sword.system, { location: "equipped", quantity: 1, hand: "right" });
 sword.id = "w1";
 const dagger = byName(weapons, "Dagger");
-Object.assign(dagger.system, { location: "carried", quantity: 1 });
+// Held in the off hand, so the derived off-hand marker and its penalty are actually exercised
+// here rather than only in the rule tests. The character is right-handed by default.
+Object.assign(dagger.system, { location: "carried", quantity: 1, hand: "left" });
 dagger.id = "w2";
 const padding = byName(armor, "Body Suit(Padding)");
 Object.assign(padding.system, { location: "equipped", quantity: 1 });
@@ -180,7 +182,11 @@ const weaponRows = [sword, dagger].map(w => ({
 	reload: w.system.reloadSpeed || "",
 	modes: ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available).map(m => ({ mode: m, mod: w.system[m].mod })),
 	lore: loreFor(w),
-	equipped: w.system.location === "equipped"
+	equipped: w.system.location === "equipped",
+	// Mirrors ImagineCharacterSheet.#buildWeaponRows, which is private and cannot be called from
+	// here. Anything added to the row there has to be added here too or it renders blank.
+	hand: w.system.hand || "right",
+	offhand: R.isOffhandWeapon(w.system.hand, character.physical?.handedness)
 }));
 
 const ctx = {
