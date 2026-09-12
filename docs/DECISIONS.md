@@ -233,3 +233,16 @@ Nothing else caps an attribute by title. There is no deity handler at title 16, 
 **This changes play, in both directions.** An arch-mortal of a limited race gains real headroom — a race capped at 18 in Strength could never pass 18 before and now reaches 27. A low-title character of a permissive race is no longer held to 25 by a tier that does not exist in his sheet.
 
 **Found by:** the review pass over the creature audit, not by the character work itself, which is why it survived Layer 0 and combat phase 1 unnoticed. His own comment at the call site says the new maximum is 25 while the function sets 27; that contradiction is his to resolve and is logged as `UPSTREAM-ISSUES.md` item 16.
+
+### 2026-09-11 — Trait content: three packs, and the creature row wins
+
+**Decision:** his ability, disability and immunity dictionaries are extracted into compendium content for the `trait` item type — 1,154 abilities, 249 disabilities and 149 immunities, 1,552 in all, taking the document total from 2,814 to 4,366. Without this the creature actor is unusable in practice: every ability would have to be typed by hand.
+
+**Sub-decisions:**
+- *One pack per category, not one pack of traits.* Nineteen names are in two categories at once — Poison, Acid, Aura, Heat, Regeneration, Insanity, Compulsion, Compound Eyes and others are each both an ability and either an immunity or a disability. The importer matches documents by name, so a single pack would silently overwrite one with the other. Three packs (`abilities`, `disabilities`, `immunities`) keep his names intact, which mangling them with a suffix would not.
+- *Both of his copies are read, and the creature row wins where they differ.* Each dictionary exists twice, a racial copy for characters and a larger creature copy. 41 shared names carry different rows and 40 entries exist only in the racial copy; the union is built, the creature row is preferred, and every conflict is reported on each run. The creature copy is the larger and more recently extended, and a trait is descriptive here, so what differs is text rather than mechanics. Which copy he considers correct is still his question (`UPSTREAM-ISSUES.md` item 10).
+- *The document name is his lookup key, not the canonical name.* "Acid Regeneration" stays the name and carries `canonicalName: "Regeneration(Acid)"`, because the key is what his data references and the canonical name is what his display code shows.
+- *Values stay strings.* `value1` and `value2` mean different things per entry — a damage multiplier in one row, a magic-resistance penalty in another — so typing them as numbers would assert a consistency the data lacks.
+- *No sourcebook tag.* These dictionaries carry no book or page, and untagged content is always available at the sourcebook level, which is the right default. Guessing a book would make content vanish when a Game Master switched that book off.
+
+**Known limitation:** an availability override is keyed `type:name`, so `trait:Poison` cannot distinguish the Poison ability from the Poison immunity, and forbidding one forbids both. Nineteen names are affected. Splitting the key by category would need a change to the override format, which is not worth it until someone actually wants to forbid one of those nineteen.

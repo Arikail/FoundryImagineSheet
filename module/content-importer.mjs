@@ -20,7 +20,15 @@ const CONTENT_PACKS = [
 	{ file: "classes",   pack: "classes",   label: "Imagine Classes",   type: "Item" },
 	{ file: "weapons",   pack: "weapons",   label: "Imagine Weapons",   type: "Item" },
 	{ file: "armor",     pack: "armor",     label: "Imagine Armour",    type: "Item" },
-	{ file: "equipment", pack: "equipment", label: "Imagine Equipment", type: "Item" }
+	{ file: "equipment", pack: "equipment", label: "Imagine Equipment", type: "Item" },
+
+	// Abilities, disabilities and immunities are one item type separated by a category, but
+	// three packs rather than one: 19 names appear in two categories at once -- Poison, Acid,
+	// Aura, Regeneration and Insanity among them -- and documents are matched by name, so a
+	// single pack would overwrite one with the other.
+	{ file: "abilities",    pack: "abilities",    label: "Imagine Abilities",    type: "Item" },
+	{ file: "disabilities", pack: "disabilities", label: "Imagine Disabilities", type: "Item" },
+	{ file: "immunities",   pack: "immunities",   label: "Imagine Immunities",   type: "Item" }
 ];
 
 const SOURCE_PATH = "systems/imagine-rpg/src/packs/documents";

@@ -1,0 +1,912 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "immunitylist",
+    "lines": [
+      45988,
+      46138
+    ]
+  },
+  "_fields": [
+    "canonicalName",
+    "value1",
+    "value2",
+    "description"
+  ],
+  "entries": {
+    "Aura": {
+      "canonicalName": "Aura",
+      "value1": "",
+      "value2": "",
+      "description": "Aura(Aura does not harm this being whether magical or mundane)."
+    },
+    "Aura/Chaos": {
+      "canonicalName": "Aura",
+      "value1": "",
+      "value2": "",
+      "description": "Aura(Aura does not harm this being whether magical or mundane)."
+    },
+    "Acid": {
+      "canonicalName": "Acid",
+      "value1": "",
+      "value2": "",
+      "description": "Acid(Acid does not harm this being whether magical or mundane)."
+    },
+    "Acid Hardened": {
+      "canonicalName": "Acid Hardened",
+      "value1": -1,
+      "value2": 10,
+      "description": "Acid Hardened(-1 per die of damage from acid. +10% to Magic Resistances to acid.)"
+    },
+    "Acid Resistant": {
+      "canonicalName": "Acid Resistant",
+      "value1": 0.5,
+      "value2": 20,
+      "description": "Acid Resistant(Half damage from acid. +20% Magic Resistance to acid.)"
+    },
+    "Aging": {
+      "canonicalName": "Aging",
+      "value1": "",
+      "value2": "",
+      "description": "Aging(Does not decay or age. The being is immortal. No spells or effects which cause aging will have an effect.)"
+    },
+    "Cold": {
+      "canonicalName": "Frost",
+      "value1": "",
+      "value2": "",
+      "description": "Frost(Cold does not harm this being whether magical or mundane)."
+    },
+    "Control": {
+      "canonicalName": "Control",
+      "value1": "",
+      "value2": "",
+      "description": "The being or creature is immune to control in any form, save those effects which use true names. This includes spells of aspect control."
+    },
+    "Control(Complete)": {
+      "canonicalName": "Control(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
+    },
+    "Control(Greater)": {
+      "canonicalName": "Control(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
+    },
+    "Control(Lesser)": {
+      "canonicalName": "Control(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The being or creature is immune to control that does not target their type."
+    },
+    "Lesser Control": {
+      "canonicalName": "Control(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The being or creature is immune to control that does not target their type."
+    },
+    "all spells of type control": {
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "description": "The being is immune to all magics of type control."
+    },
+    "Damage Immunity": {
+      "canonicalName": "Damage Immunity",
+      "value1": "",
+      "value2": "",
+      "description": "Specified types of damage are removed or reduced."
+    },
+    "Death(Lesser)": {
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    },
+    "Death": {
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    },
+    "Death Lesser": {
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    },
+    "Lesser Death": {
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    },
+    "Death(Greater)": {
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    },
+    "Death Greater": {
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    },
+    "Greater Death": {
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    },
+    "Disease": {
+      "canonicalName": "Disease",
+      "value1": "",
+      "value2": "",
+      "description": "Disease(Unaffected by harmful parasites or infections)."
+    },
+    "Divinity(Lesser)": {
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    },
+    "Divinity Lesser": {
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    },
+    "Lesser Divinity": {
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    },
+    "Divinity(Greater)": {
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    },
+    "Divinity Greater": {
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    },
+    "Greater Divinity": {
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    },
+    "Electricity": {
+      "canonicalName": "Electricity",
+      "value1": "",
+      "value2": "",
+      "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
+    },
+    "electricity damage": {
+      "canonicalName": "Electricity",
+      "value1": "",
+      "value2": "",
+      "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
+    },
+    "Electricity Hardened": {
+      "canonicalName": "Electricity Hardened",
+      "value1": -1,
+      "value2": 10,
+      "description": "Electricity Hardened(-1 per die of damage from electricity. +10% to Magic Resistances to electricity.)"
+    },
+    "Electricity Resistant": {
+      "canonicalName": "Electricity Resistant",
+      "value1": 0.5,
+      "value2": 20,
+      "description": "Electricity Resistant(Half damage from electricity. +20% Magic Resistance to electricity.)"
+    },
+    "(Energy Greater)": {
+      "canonicalName": "Energy(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Energy magical or otherwise has no effect."
+    },
+    "Energy(Complete)": {
+      "canonicalName": "Energy(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Energy magical or otherwise has no effect."
+    },
+    "Energy Lesser": {
+      "canonicalName": "Energy(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "All energy attacks do half damage."
+    },
+    "Energy(Lesser)": {
+      "canonicalName": "Energy(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "One specific type of energy has does half damage."
+    },
+    "Energy(Lesser Aura)": {
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "description": "Aura energy does half damage."
+    },
+    "Aura energy attacks": {
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "description": "Aura energy does half damage."
+    },
+    "Aura Energy Attacks": {
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "description": "Aura energy does half damage."
+    },
+    "Energy(Lesser Acid)": {
+      "canonicalName": "Energy(Lesser Acid)",
+      "value1": "",
+      "value2": "",
+      "description": "Chemical energy(Acid) does half damage."
+    },
+    "Energy(Lesser Cold)": {
+      "canonicalName": "Energy(Lesser Cold)",
+      "value1": "",
+      "value2": "",
+      "description": "Frost does half damage."
+    },
+    "Energy(Lesser Electricity)": {
+      "canonicalName": "Energy(Lesser Electricity)",
+      "value1": "",
+      "value2": "",
+      "description": "Electrical energy does half damage."
+    },
+    "Energy(Lesser Frost)": {
+      "canonicalName": "Energy(Lesser Frost)",
+      "value1": "",
+      "value2": "",
+      "description": "Frost does half damage."
+    },
+    "Energy(Lesser Fire)": {
+      "canonicalName": "Energy(Lesser Fire)",
+      "value1": "",
+      "value2": "",
+      "description": "Heat energy does half damage."
+    },
+    "Energy(Lesser Heat)": {
+      "canonicalName": "Energy(Lesser Heat)",
+      "value1": "",
+      "value2": "",
+      "description": "Heat energy does half damage."
+    },
+    "Energy(Lesser Life)": {
+      "canonicalName": "Energy(Lesser Light)",
+      "value1": "",
+      "value2": "",
+      "description": "Life energy does half damage."
+    },
+    "Energy(Lesser Light)": {
+      "canonicalName": "Energy(Lesser Light)",
+      "value1": "",
+      "value2": "",
+      "description": "Light energy does half damage."
+    },
+    "Energy(Lesser Repulsion)": {
+      "canonicalName": "Energy(Lesser Repulsion)",
+      "value1": "",
+      "value2": "",
+      "description": "Repulsive energy does half damage."
+    },
+    "Energy(Lesser Sonic)": {
+      "canonicalName": "Energy(Lesser Sonic)",
+      "value1": "",
+      "value2": "",
+      "description": "Sonic energy does half damage."
+    },
+    "Energy(Greater)": {
+      "canonicalName": "Energy(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Energy magical or otherwise has no effect."
+    },
+    "Energy(greater)": {
+      "canonicalName": "Energy(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Energy magical or otherwise has no effect."
+    },
+    "Fatigue": {
+      "canonicalName": "Fatigue",
+      "value1": "",
+      "value2": "",
+      "description": "Fatigue(May need to rest but is unaffected by Fatigue)."
+    },
+    "Fear": {
+      "canonicalName": "Fear",
+      "value1": "",
+      "value2": "",
+      "description": "Fear(Immune to fear)"
+    },
+    "Fire": {
+      "canonicalName": "Fire",
+      "value1": "",
+      "value2": "",
+      "description": "Fire(Heat does not harm this being whether magical or mundane)."
+    },
+    "Fire Hardened": {
+      "canonicalName": "Fire Hardened",
+      "value1": -1,
+      "value2": 10,
+      "description": "Fire Hardened(-1 per die of damage from fire/heat. +10% to Magic Resistances to fire/heat.)"
+    },
+    "Fire Resistant": {
+      "canonicalName": "Fire Resistant",
+      "value1": 0.5,
+      "value2": 20,
+      "description": "Fire Resistant(Half damage from fire/heat. +20% Magic Resistance to fire/heat.)"
+    },
+    "Frost": {
+      "canonicalName": "Frost",
+      "value1": "",
+      "value2": "",
+      "description": "Frost(Cold does not harm this being whether magical or mundane)."
+    },
+    "Frost Hardened": {
+      "canonicalName": "Frost Hardened",
+      "value1": -1,
+      "value2": 10,
+      "description": "Frost Hardened(-1 per die of damage from frost/cold. +10% to Magic Resistances to frost/cold.)"
+    },
+    "Frost Resistant": {
+      "canonicalName": "Frost Resistant",
+      "value1": 0.5,
+      "value2": 20,
+      "description": "Frost Resistant(Half damage from frost/cold, +20% Magic Resistance to frost/cold)."
+    },
+    "Heat": {
+      "canonicalName": "Fire",
+      "value1": "",
+      "value2": "",
+      "description": "Fire(Heat does not harm this being whether magical or mundane)."
+    },
+    "Hold": {
+      "canonicalName": "Hold",
+      "value1": "",
+      "value2": "",
+      "description": "Hold(Cannot be held with the Hold spell or invocation)."
+    },
+    "Immune to Hold": {
+      "canonicalName": "Hold",
+      "value1": "",
+      "value2": "",
+      "description": "Hold(Cannot be held with the Hold spell or invocation)."
+    },
+    "Illusion": {
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    },
+    "Illusions": {
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    },
+    "lllusions": {
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    },
+    "Illusion(Lesser)": {
+      "canonicalName": "Illusion(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
+    },
+    "Invulnerable": {
+      "canonicalName": "Invulnerable",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. +1 or better weapons to damage."
+    },
+    "Invulnerability": {
+      "canonicalName": "Invulnerability",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. +1 or better weapons to damage."
+    },
+    "Lesser Illusion": {
+      "canonicalName": "Illusion(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
+    },
+    "Indestructible": {
+      "canonicalName": "Indestructible",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be damaged by weapons, energy, nor can the being or creature be changed, transformed, disintegrated or affected by touch powers."
+    },
+    "Insanity": {
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be driven insane."
+    },
+    "lnsanity": {
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be driven insane."
+    },
+    "Lesser Life": {
+      "canonicalName": "Lesser Life",
+      "value1": "",
+      "value2": "",
+      "description": "Life-based magic effects heal."
+    },
+    "Life": {
+      "canonicalName": "Life",
+      "value1": "",
+      "value2": "",
+      "description": "Immune to the effects of Life-based magic (negative life force beings only)."
+    },
+    "Light": {
+      "canonicalName": "Light",
+      "value1": "",
+      "value2": "",
+      "description": "Immune to blinding from light and light energy damage."
+    },
+    "Magic": {
+      "canonicalName": "Magic",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all forms of Aura magic, whether skills or spells."
+    },
+    "Magic(Lesser)": {
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    },
+    "Magic Lesser": {
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    },
+    "Lesser Magic": {
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    },
+    "Magic(One Type)": {
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
+    },
+    "Magic One Type": {
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
+    },
+    "Mind(Lesser)": {
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    },
+    "Mind Lesser": {
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    },
+    "Lesser Mind": {
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    },
+    "Mind(Greater)": {
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    },
+    "mind(greater)": {
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    },
+    "Mind Greater": {
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    },
+    "Greater Mind": {
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    },
+    "Paralysis": {
+      "canonicalName": "Paralysis",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be paralyized, or held."
+    },
+    "Physical(Arch)": {
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    },
+    "Physical(Arch": {
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    },
+    "Physical Arch": {
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    },
+    "physical(arch)": {
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    },
+    "Arch Physical": {
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    },
+    "Physical(Complete)": {
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    },
+    "Physical(complete)": {
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    },
+    "physical(complete)": {
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    },
+    "Physical Complete": {
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    },
+    "Complete Physical": {
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    },
+    "Physical(Greater)": {
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    },
+    "Physical(Greater": {
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    },
+    "physical(greater)": {
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    },
+    "Physical Greater": {
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    },
+    "Greater Physical": {
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    },
+    "Physical(Lesser)": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "Physical(lesser)": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "Physical(Lesser": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "physical(lesser)": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "Physical Lesser": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "Lesser Physical": {
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    },
+    "Physical(Major)": {
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    },
+    "Physical(Major": {
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    },
+    "physical(major)": {
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    },
+    "Physical(Major Silver)": {
+      "canonicalName": "Physical(Major Silver)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical as well as silver do full."
+    },
+    "Physical Major": {
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    },
+    "Major Physical": {
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    },
+    "Physical(Minor)": {
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    },
+    "physical(minor)": {
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    },
+    "Physical Minor": {
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    },
+    "Minor Physical": {
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    },
+    "Physical(Special)": {
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "description": "A special immunity versus specified physical attacks."
+    },
+    "Physical(special)": {
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "description": "A special immunity versus specified physical attacks."
+    },
+    "physical(special)": {
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "description": "A special immunity versus specified physical attacks."
+    },
+    "Poison": {
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    },
+    "Poison(Lesser)": {
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    },
+    "Poison Lesser": {
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    },
+    "Lesser Poison": {
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    },
+    "Poison(Greater)": {
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    },
+    "Poison Greater": {
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    },
+    "Greater Poison": {
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    },
+    "Poision(Greater)": {
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    },
+    "Pressure": {
+      "canonicalName": "Pressure",
+      "value1": "",
+      "value2": "",
+      "description": "Pressure(Immunity from pressure or lack of pressure)."
+    },
+    "Shock": {
+      "canonicalName": "Shock",
+      "value1": "",
+      "value2": "",
+      "description": "Shock(Unaffected by shock)."
+    },
+    "Beam(Sleep)": {
+      "canonicalName": "Sleep",
+      "value1": "",
+      "value2": "",
+      "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
+    },
+    "Sleep": {
+      "canonicalName": "Sleep",
+      "value1": "",
+      "value2": "",
+      "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
+    },
+    "Sleepless": {
+      "canonicalName": "Sleepless",
+      "value1": "",
+      "value2": "",
+      "description": "Immune to effects which cause sleep and needs no dormant time."
+    },
+    "Sonic": {
+      "canonicalName": "Sonic",
+      "value1": "",
+      "value2": "",
+      "description": "Sonic energy has no effect on the being or creature, including deafness effects."
+    },
+    "Stubborn": {
+      "canonicalName": "Stubborn",
+      "value1": "",
+      "value2": "",
+      "description": "Stubborn(+20% to CR)."
+    },
+    "Time": {
+      "canonicalName": "Time",
+      "value1": "",
+      "value2": "",
+      "description": "The flow of time around the being cannot be altered or distorted, i.e. Stasis, Time Sight, etc."
+    },
+    "Touch": {
+      "canonicalName": "Touch",
+      "value1": "",
+      "value2": "",
+      "description": "No powers or effects that require touch work against this creature. This power also applies without additional cost to any creature which has no form, is completely insubstantial and cannot be physically contacted."
+    },
+    "Transformation of Form(partial)": {
+      "canonicalName": "Transformation of Form(Partial)",
+      "value1": "",
+      "value2": "",
+      "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
+    },
+    "Transformation of Form(Partial)": {
+      "canonicalName": "Transformation of Form(Partial)",
+      "value1": "",
+      "value2": "",
+      "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
+    },
+    "Transformation of Form(lesser)": {
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    },
+    "Transformation of Form(Lesser)": {
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    },
+    "Lesser Transformation of Form": {
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    },
+    "Transformation of Form": {
+      "canonicalName": "Transformation of Form",
+      "value1": "",
+      "value2": "",
+      "description": "Transformation of Form(The creature cannot be changed from its physical form)."
+    },
+    "Water Pressure": {
+      "canonicalName": "Water Pressure",
+      "value1": "",
+      "value2": "",
+      "description": "Complete protection from liquid pressure."
+    },
+    "Weapon Damage Immunity": {
+      "canonicalName": "Weapon Damage Immunity",
+      "value1": "",
+      "value2": "",
+      "description": "The being takes adjusted or no damage from one or more types of damage (cutting, smashing, piercing, etc.)."
+    },
+    "edged weapons": {
+      "canonicalName": "Weapon Damage Immunity(Non-Cutting)",
+      "value1": "",
+      "value2": "",
+      "description": "1/4 damage from edged weapons, all other weapon damage types do none."
+    }
+  }
+}

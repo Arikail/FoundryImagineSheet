@@ -79,10 +79,18 @@ const attack = (name, type, damage, damageType, speed, minSpeed, effects = []) =
 	system: { attackType: type, damage, damageType, speed, minSpeed, speedSpecial: false,
 	          effects, effectiveMinSpeed: minSpeed || speed, sourcebook: "", page: "", description: "" }
 });
-const trait = (name, category, value1 = "", value2 = "", description = "") => ({
-	id: "tr-" + name.toLowerCase().replace(/\W/g, ""), name, type: "trait",
-	system: { category, canonicalName: name, value1, value2, description }
-});
+// Traits are the real extracted content rather than fixtures, so this also checks that the
+// build pipeline's documents drop straight into the trait schema and render.
+const loadDocs = async (f) => await (await fetch(`../src/packs/documents/${f}.json`)).json();
+const [abilityDocs, disabilityDocs, immunityDocs] =
+	await Promise.all(["abilities", "disabilities", "immunities"].map(loadDocs));
+
+const pickTrait = (docs, name) => {
+	const d = docs.find(x => x.name === name);
+	if (!d) { throw new Error("missing trait in the extracted content: " + name); }
+	return { id: "tr-" + name.toLowerCase().replace(/\W/g, ""), name: d.name, type: "trait",
+	         system: structuredClone(d.system) };
+};
 const power = (name, uses, usesMax, unlimited, selfOnly, kind) => ({
 	id: "pw-" + name.toLowerCase().replace(/\W/g, ""), name, type: "power",
 	system: { uses, usesMax, unlimited, selfOnly, powerKind: kind,
@@ -101,13 +109,12 @@ const items = [
 		  damage: "", damageType: "", duration: "2d4", durationType: "Seconds" }
 	]),
 	attack("Withering Gaze", "Gaze", "2d4", "Draining", 1, 1),
-	trait("Enhanced Perception", "ability", "", "", "Perception is unusually keen."),
-	trait("Sense(Heat)", "ability", "", "", "Senses warmth through rock and water."),
-	trait("Enhanced Hide(Scales)", "ability", "3", "20", "Hide(Scales:1 per 3 END/20 Max.)."),
-	trait("Frost Sensitivity", "disability", "-10", "1",
-		"Frost Sensitivity(-10% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."),
-	trait("Frost", "immunity", "", "", "Frost(Cold does not harm this being whether magical or mundane)."),
-	trait("Poison", "immunity", "", "", "Poison(Lesser):The being or creature is immune to lesser poisons."),
+	pickTrait(abilityDocs, "Enhanced Perception"),
+	pickTrait(abilityDocs, "Acid Regeneration"),
+	pickTrait(abilityDocs, "Enhanced Hide(Bone)"),
+	pickTrait(disabilityDocs, "Frost Sensitivity"),
+	pickTrait(immunityDocs, "Frost"),
+	pickTrait(immunityDocs, "Poison"),
 	power("Frost Shield", 3, 3, false, true, "spell"),
 	power("Terrify", 0, 2, false, false, "invocation"),
 	power("Regenerate", 0, 0, true, true, "unknown")

@@ -134,6 +134,8 @@ The canonical-name differences matter because the racial switch keys on `[0]`. A
 
 **Questions:** Is it intended that creatures skip the racial switch? And where the lists disagree, which one is correct? The port wants one ability compendium, so it needs to know which row to keep.
 
+**What the port does meanwhile:** it builds the union of both copies and keeps the creature row wherever they differ, reporting all 41 conflicts and 40 racial-only entries on every content build. If the racial copy is the correct one for any of those names, say which and the build flips them — see `DECISIONS.md`, "Trait content: three packs, and the creature row wins".
+
 **Checked and not raised:** `immunitylist["Cold"]` has canonical name "Frost". That is a deliberate alias: `"Frost"` has its own identical row (lines 177972 and 178022, and again in the racial list), which is what the canonical-name column is for. The creature ability list also repeats five keys (Breath Attack(Fire), Electric(Plant), Enhanced Hide(Bone), Fins/Flippers/Fluke, Hide Scales) and the racial list repeats one (Hide(Feathers/Fur)). The repeated rows are identical, apart from one "Plant"/"plant", so the later copy winning changes nothing.
 
 ## 11. Four attack paths lose or double-count to-hit modifiers

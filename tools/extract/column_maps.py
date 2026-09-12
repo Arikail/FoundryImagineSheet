@@ -153,8 +153,28 @@ RATING_VALUE_MAPS = {
     # pieces that actually encumber the wearer.
 ARMORPENALTYDICT = ["skills", "defense", "initiative", "speed"]
 
+    # abilitylist / disabilitylist / immunitylist -- source: header comment above each
+    # dictionary, e.g. sheet-worker.js:176212 ("Name  Value1  Value2  Description").
+    #
+    # There are two copies of each: a smaller one used for racial abilities on the character
+    # side (getRacialAbilityDetails and its twins, lines 45721, 45899, 45984) and a larger
+    # creature-side one (getCreatureAbilityDetails and twins, lines 176209, 177693, 177961).
+    # Both are mapped, because they disagree -- see docs/UPSTREAM-ISSUES.md item 10.
+    #
+    # Column 0 is a canonical name that is NOT always the key it is looked up by: the key
+    # "Acid Regeneration" carries the canonical name "Regeneration(Acid)", and three spellings
+    # of "360-degree vision" all resolve to one entry. Columns 1 and 2 are values whose meaning
+    # is per entry rather than per column, which is why they stay strings downstream.
+TRAITDICT = ["canonicalName", "value1", "value2", "description"]
+
 MAPS = {
     "skilldict": SKILLDICT,
+    "abilitylist@176213": TRAITDICT,
+    "abilitylist@45725": TRAITDICT,
+    "disabilitylist@177698": TRAITDICT,
+    "disabilitylist@45903": TRAITDICT,
+    "immunitylist@177965": TRAITDICT,
+    "immunitylist@45988": TRAITDICT,
     "armorpenaltydict": ARMORPENALTYDICT,
     "socialskilldict": SOCIALSKILLDICT,
     "weaponvalueslist": WEAPONVALUESLIST,

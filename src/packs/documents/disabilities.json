@@ -1,0 +1,3239 @@
+[
+  {
+    "name": "Acid Sensitivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Acid Sensitivity",
+      "value1": "1",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Sensitivity(-10% Magic Resist vs acid. +1 per die damage from acid)."
+    }
+  },
+  {
+    "name": "Ancient Ghost",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ancient Ghost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a long dead being. The Ancient Ghost's Mind is so far gone that it suffers from a random form of Insanity, and has a 20% chance of having an additional form of Insanity. Should the Ancient Ghost be smitten with a second form of Insanity, there is a 5% chance that it will also have a third form of Insanity. The Ancient Ghost must make a Knowledge save to remember anything at all about its life before death."
+    }
+  },
+  {
+    "name": "Animal Aversion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Animal Aversion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Loses ability to use racial skills Speak to Animal, Tame Animal, and/or Animal Shape. Animals seem uneasy in the presence of the being and will either become aggressive toward the being or shy away from them."
+    }
+  },
+  {
+    "name": "Armor Fur Chafe",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Armor Fur Chafe",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Armor Fur Chafe(chain/scale as 1st layer of armor chafes losing 1 APP per week. -3 APP Max)."
+    }
+  },
+  {
+    "name": "Aversion(Fire)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Fire)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Avoids all sources of fire."
+    }
+  },
+  {
+    "name": "Aversion(Holy)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Holy)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Takes damage from holy water, blessed weapons, etc."
+    }
+  },
+  {
+    "name": "Aversion(Life)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Life)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Avoids living beings when at all possible."
+    }
+  },
+  {
+    "name": "Aversion(Light)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Light)",
+      "value1": "1d4+1",
+      "value2": "-1",
+      "sourcebook": "",
+      "page": "",
+      "description": "When exposed to bright light or sunlight, this creature is initially blinded for 1d4+1 seconds and is -1 to hit and +1 to initiative thereafter. Sunlight causes this entity to take 1 point of damage per 10 minutes to all exposed areas."
+    }
+  },
+  {
+    "name": "Aversion(Physical)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Physical)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Avoids being in physical form at all costs. Prefers to be on the Phase or Shadow Plane, and must make a Will Force save to unphase/unshift. Once unphased/unshifted, will lose 1 Will Force per hour until returning to the Phase or Shadow Plane."
+    }
+  },
+  {
+    "name": "Aversion(Social)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Aversion(Social)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Solitary by nature, and does not function well with others of their kind. When in a group of others of the same type, they are -1 to all Mental attributes and must make a Will Force save once per day or leave the group."
+    }
+  },
+  {
+    "name": "Bad Eyes",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Bad Eyes",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Bad Eyes(-2 to hit with missile weapons)."
+    }
+  },
+  {
+    "name": "Bad Swimmer",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Bad Swimmer",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Bad Swimmer(Cannot swim or is such a poor swimmer that the being cannot keep its head above water for more than a few moments)."
+    }
+  },
+  {
+    "name": "Blind",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Blind",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature cannot see being -8 to hit and no defensive adjustment."
+    }
+  },
+  {
+    "name": "Blind(Partial)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Blind(Partial)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature cannot physically see beyond a certain set distance."
+    }
+  },
+  {
+    "name": "Blind(partial)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Blind(Partial)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature cannot physically see beyond a certain set distance."
+    }
+  },
+  {
+    "name": "Brightly Patterned Fur",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Brightly Patterned Fur",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-20% to Blend/Move Unseen."
+    }
+  },
+  {
+    "name": "Cannot Cast Spells",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Cannot Cast Spells",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot Cast Spells(No ability to channel or use Aura)."
+    }
+  },
+  {
+    "name": "Cannot Speak",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Cannot Speak",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no verbal communication ability."
+    }
+  },
+  {
+    "name": "Cannot Swim",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Cannot Swim",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot Swim(Has no buoyancy or ability to keep oneself at the surface of water)."
+    }
+  },
+  {
+    "name": "Climbing Impaired",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Climbing Impaired",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Climbing Impaired(cannot use Climb skill)."
+    }
+  },
+  {
+    "name": "Clumsiness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Clumsiness",
+      "value1": "1",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "+1 to Initiative, -10% to all Agility saves."
+    }
+  },
+  {
+    "name": "Cold Blooded",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Cold Blooded",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Takes +1 per die of damage from fire and heat sources."
+    }
+  },
+  {
+    "name": "Compliant",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compliant",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Completely controllable. Has 0% Control Resistance and takes direction either from an identified master or masters. Otherwise, they respond to anyone they understand and try to comply."
+    }
+  },
+  {
+    "name": "Compound Eyes",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compound Eyes",
+      "value1": "-4",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Compound Eyes(Poor depth perception, Missile Weapons -4 to Hit)."
+    }
+  },
+  {
+    "name": "Compulsion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "A compulsion to a specific behavior requiring a Will Force save to avoid."
+    }
+  },
+  {
+    "name": "Compulsion(Blood)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Blood)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Burning desire to consume blood. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
+    }
+  },
+  {
+    "name": "Compulsion(Cruelty)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Cruelty)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Predisposed to cruel and malicious acts. It will do everything in its power to treat all living things in the cruelest manner possible."
+    }
+  },
+  {
+    "name": "Compulsion(Fear)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Fear)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Thrives on the fear of others. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
+    }
+  },
+  {
+    "name": "Compulsion(Flesh)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Flesh)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Unnatural compulsion to eat flesh. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
+    }
+  },
+  {
+    "name": "Compulsion(Living Nerve Tissue)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Living Nerve Tissue)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Unnatural compulsion to eat living nerve tissue (such as brains). Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
+    }
+  },
+  {
+    "name": "Compulsion(Task)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Task)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Bound by metaphysical forces to continuously perform the same task over and over or to comple a single overriding  goal."
+    }
+  },
+  {
+    "name": "Compulsion(Will Force)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Compulsion(Will Force)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Unnatural compulsion to drain the life force (Will Force) of others. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
+    }
+  },
+  {
+    "name": "Construct Spirit",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Construct Spirit",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Construct Spirit(Spirit that has difficulty inhabiting a non-fleshed form. The being must enter a state of quiescence; a sleep like period where cannot waken from until the period completes so that the spirit can recharge and allow the being's mind and body to function normally again. This state lasts half the normal sleep time based on VIT.)"
+    }
+  },
+  {
+    "name": "Darkness Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Darkness Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with shadow for a minimum of 10 minutes per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Deaf",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Deaf",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No sense of hearing: -1 to hit, -1 damage, +1 defense."
+    }
+  },
+  {
+    "name": "Death Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Death Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with death (corpse) or death magic once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Detached Psyche",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Detached Psyche",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This non-corporeal being's metaphysical breakdown has been reversed in that its Soul houses its Mind and Spirit. The being has no physical form of its own, and is dependant upon the possession of other physical forms to maintain its existence. It cannot possess a physical form that already has a psyche (Mind, Spirit and Soul). The Detached Psyche can survive for 1 hour per Will Force point outside of a physical form. Each hour thereafter, a Control Resistance save must be made to avoid a temporarily loss of 1 Will Force point. If a Will Force point is lost, a separate Will Force save is required or a random (or GM chosen) form of insanity is applied. While not in possession of a physical form, normal Will Force recovery (1 per hour) is suppressed. When a being reaches 0 Will Force, it dies."
+    }
+  },
+  {
+    "name": "Diseased",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Diseased",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Afflicted with a hereditary disease that only affects that being/creature type."
+    }
+  },
+  {
+    "name": "Divine Magnetic",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Divine Magnetic",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature causes all invocations or divine powers used within 1' per Will Force point to strike the creature instead of their intended focus."
+    }
+  },
+  {
+    "name": "Earthbound",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Earthbound",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature cannot fly even if magically or divine magically aided."
+    }
+  },
+  {
+    "name": "Earthen Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Earthen Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with earth or rock once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Easily Dehydrated",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Easily Dehydrated",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Easily Dehydrated(Outside of a damp environment (swamp or high humidity), requires 2x water. Without it, they lose any healing or regenerative ability and fatigue x2 normal rate.)"
+    }
+  },
+  {
+    "name": "Easily Tracked",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Easily Tracked",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Easily Tracked(This creature leaves clear markins when it moves over most surfaces/+50% to Track rolls to follow this being)."
+    }
+  },
+  {
+    "name": "Electrical Sensitive",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Electrical Sensitivity",
+      "value1": "1",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
+    }
+  },
+  {
+    "name": "Electrical Sensitivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Electrical Sensitivity",
+      "value1": "1",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
+    }
+  },
+  {
+    "name": "Electrically Sensitive",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Electrical Sensitivity",
+      "value1": "1",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
+    }
+  },
+  {
+    "name": "Emotion(Combat)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Emotion(Combat)",
+      "value1": "-10",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-10% to combat skills while not affected by one emotion."
+    }
+  },
+  {
+    "name": "Emotion(Divine)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Emotion(Divine)",
+      "value1": "-10",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-10% to divine magical skills while not affected by one emotion."
+    }
+  },
+  {
+    "name": "Emotion(Magic)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Emotion(Magic)",
+      "value1": "-10",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-10% to magical skills while not affected by one emotion."
+    }
+  },
+  {
+    "name": "Emotion(Stealth)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Emotion(Stealth)",
+      "value1": "-10",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-10% to stealth/intrusive skills while not affected by one emotion."
+    }
+  },
+  {
+    "name": "Energy Cannibalization",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Energy Cannibalization",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature uses itself to power a power or ability. Each time the power or ability is used, the creature loses one base Endurance temporarily."
+    }
+  },
+  {
+    "name": "Extreme Light Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Extreme Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight does 1 point of damage per 10 seconds to all creature areas, bright light does 1 point of damage per minute, and magical light does 1d4 damage per 2 aura or PC per 10 seconds, and finger of light does triple damage, brilliance requires the creature to make a Magic Resistance or be disintegrated."
+    }
+  },
+  {
+    "name": "Fair Skinned",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Fair Skinned",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature takes double damage any effects from sunlight exposure."
+    }
+  },
+  {
+    "name": "Ferrous",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ferrous",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Made of a rustable, magnetic material, and thus takes 1 additional point of damage from all liquid attacks. Also conducts electricity (if present)."
+    }
+  },
+  {
+    "name": "Fire Magic Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Fire Magic Weakness",
+      "value1": "-20",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire Magic Weakness(-20% Magic Resist vs fire/heat)."
+    }
+  },
+  {
+    "name": "Fire Sensitivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Fire Sensitivity",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire Sensitivity(-10% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
+    }
+  },
+  {
+    "name": "Fire Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Fire Weakness",
+      "value1": "-20",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire Weakness(-20% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
+    }
+  },
+  {
+    "name": "Flightless",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Flightless",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has feathers and wings but they are weak or useless, not even capable of gliding."
+    }
+  },
+  {
+    "name": "Forged Form",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Forged Form",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Forged Form(Inner iron metallic body with a viscous magical metal fluid flowing throughout to provide energy and increase motion. Outer casing can be of any metal. Requires the digestion of at least 1 oz. of magical metal per month. Any wound which reduces a body area to below 0 END causes a leak of magical metallic blood which cools and hardens outside the body. This reduces Base END by 1d6 per minute until either all blood is lost and the being hardens (dies) or a source of magical fire is applied to the wound for an entire minute (sealing it). Healing does not occur naturally but requires the ingestion of 1 oz. of magical metal for each point to be healed up to the maximum normal healing for that being per day. VIT Healing Rate. Somewhere on their form is a seal. This seal is used to add and remove their metallic blood. If it is found and opened the being can be drained as noted in damage above)."
+    }
+  },
+  {
+    "name": "Forged Offspring",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Forged Offspring",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Forged Offspring(reproduction occurs by gathering gems, iron and other metals, normal and magical. Then a metal body is cast and forged with many hollow areas for the flow of magical metal. Gems are used in the head in a secret arangement in fittings for the brain. They are also used as eyes. Magical metal is then superheated, mixed and the parent adds some of their own magical metal blood. The chance of the offspring coming to life varies by how much blood is used. WIL is lost from the parent whether the forged offspring comes alive or not. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
+    }
+  },
+  {
+    "name": "Frost Magic Weakness(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Frost Magic Weakness(Greater)",
+      "value1": "-30",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Magic Weakness(Greater):(-30% Magic Resist vs cold)."
+    }
+  },
+  {
+    "name": "Frost Sensitivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Frost Sensitivity",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Sensitivity(-10% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
+    }
+  },
+  {
+    "name": "Frost Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Frost Weakness",
+      "value1": "-20",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Weakness(-20% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
+    }
+  },
+  {
+    "name": "Gaseous Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Gaseous Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be immersed in gases once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Ghost",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ghost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a once-living being. Ghosts must remain within 100' of their remains per Will Force point, and are unable to attack in any way."
+    }
+  },
+  {
+    "name": "Ghost(Ancient)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ghost(Ancient)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a long dead being. The Ancient Ghost's Mind is so far gone that it suffers from a random form of Insanity, and has a 20% chance of having an additional form of Insanity. Should the Ancient Ghost be smitten with a second form of Insanity, there is a 5% chance that it will also have a third form of Insanity. The Ancient Ghost must make a Knowledge save to remember anything at all about its life before death."
+    }
+  },
+  {
+    "name": "Ghost(New)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ghost(New)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a once-living being. The New Ghost must remain within 10' of its remains per Will Force point. If a New Ghost sights a gateway to its plane of rest or torment, it must make a Will Force save at -5% for each day it has been dead, or it will be unable to resist entering the gate. Once 30 days minus 1 per Will Force point have passed, the New Ghost becomes a Ghost. The New Ghost is unable to attack any being."
+    }
+  },
+  {
+    "name": "Ghost(Old)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Ghost(Old)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a once-living being. The Mind of an Old Ghost is so precariously balanced that if it should come into mental contact with a living being, it must make a Will Force save or suffer a random form of Insanity. Likewise, if the Old Ghost is in an unphased state and its material body is destroyed, it must make a Will Force save or suffer a random form of Insanity. The Old Ghost must make a Knowledge save to remember anything from its former life not directly related to its perceived purpose. Old Ghosts must remain within 1 mile of their remains per Will Force point."
+    }
+  },
+  {
+    "name": "Greed",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Greedy",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Alignment shifts towards neutral in matters of money or treasure only. Will always attempt to keep some of any treasure."
+    }
+  },
+  {
+    "name": "Greedy",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Greedy",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Alignment shifts towards neutral in matters of money or treasure only. Will always attempt to keep some of any treasure."
+    }
+  },
+  {
+    "name": "Hatred",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Hatred",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must go berserk when in the presence of a set enemy type."
+    }
+  },
+  {
+    "name": "Heat Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Heat Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with a heat source capable of boiling water or an open flame once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Heavy Sleeper",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Heavy Sleeper",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature takes 6+3d6 seconds to awaken from sleep."
+    }
+  },
+  {
+    "name": "Hemophilia",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Hemophilia",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cut wounds cannot be bound. Wounds bleed at twice the normal rate. Once per hour a Vitality save can be made to indicate the wound has stopped bleeding on its own. Blood loss from wounds is also subtracted from base Endurance resulting in unconsciousness at 0 and death at 0 minus the being's Vitality."
+    }
+  },
+  {
+    "name": "Hot Tempered",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Hot Tempered",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "+10%(more) to Berserking racial skill, -20% to any saves or resistances involved with anger."
+    }
+  },
+  {
+    "name": "Immobile",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Immobile",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creatrure has no mobility."
+    }
+  },
+  {
+    "name": "Inability to Consume Normal Food",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Inability to Consume Normal Food",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires some other form of sustenance."
+    }
+  },
+  {
+    "name": "Inability to consume normal food",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Inability to Consume Normal Food",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires some other form of sustenance."
+    }
+  },
+  {
+    "name": "Infertile",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Infertile",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Inability to produce offspring."
+    }
+  },
+  {
+    "name": "Insane",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Suffers from a type of insanity."
+    }
+  },
+  {
+    "name": "Insanity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Suffers from a type of insanity."
+    }
+  },
+  {
+    "name": "Insect Leg Loss",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Insect Leg Loss",
+      "value1": "-25",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Insect Leg Loss(-25% to Agility saves for each pair of legs incapacitated)."
+    }
+  },
+  {
+    "name": "Iron Aversion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Iron Aversion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Iron Aversion(Iron/Blessed weapons are +1 per die against this being. Contact with iron causes 1-3 damage per 10 seconds.)"
+    }
+  },
+  {
+    "name": "Iron Fear",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Iron Fear",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Affected as the skill Fear whenever seeing iron."
+    }
+  },
+  {
+    "name": "Laziness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Laziness",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Will not pursue prey unless hungry."
+    }
+  },
+  {
+    "name": "Lesser Weakness(Acid)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Lesser Weakness(Acid)",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Lesser Weakness(Acid):(+1 damage per die from acid. -10% to Magic Resistances for acid.)"
+    }
+  },
+  {
+    "name": "Lesser Weakness(Electricity)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Lesser Weakness(Electricity)",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Lesser Weakness(Electricity):(+1 damage per die from electricity. -10% to Magic Resistances for electricity.)"
+    }
+  },
+  {
+    "name": "Lesser Weakness(Fire)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Lesser Weakness(Fire)",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Lesser Weakness(Fire):(+1 damage per die from fire/heat. -10% to Magic Resistances for fire/heat.)"
+    }
+  },
+  {
+    "name": "Lesser Weakness(Frost)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Lesser Weakness(Frost)",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Lesser Weakness(Frost):(+1 damage per die from frost/cold. -10% to Magic Resistances for frost/cold.)"
+    }
+  },
+  {
+    "name": "Life Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Living Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with living thing or in a verdant area once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Adversity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Adversity",
+      "value1": "1d4+1",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Blinded for 1d4+1 seconds when exposed to moderate light (the Light skill, the invocation Light, etc.). After this initial time period, the creature is -1 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 2-20 seconds, and is -3 to hit and +1 to initiative thereafter. Sunlight causes this entity to take 1 point of damage per 10 seconds to all exposed areas."
+    }
+  },
+  {
+    "name": "Light Blindness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Blindness",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Moderate Light: blinds for 1d6+1 seconds and gives -2 to hit, -1 initiate penalty). Bright Light/Sunlight: blinds for 3-30 seconds and gives -4 to hit, -2 initiate penalty). Sunlight also causes 1 point of damage per hour to all exposed areas."
+    }
+  },
+  {
+    "name": "Light Conversion(Crystal)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Conversion(Crystal)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight turns the victim into the Crystal after 10 seconds of exposure to any portion of the body."
+    }
+  },
+  {
+    "name": "Light Conversion(Metal)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Conversion(Metal)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight turns the victim into the Metal after 10 seconds of exposure to any portion of the body."
+    }
+  },
+  {
+    "name": "Light Conversion(Stone)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Conversion(Stone)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight turns the victim into the Stone after 10 seconds of exposure to any portion of the body."
+    }
+  },
+  {
+    "name": "Light Conversion(Wood)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Conversion(Wood)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight turns the victim into the Wood after 10 seconds of exposure to any portion of the body."
+    }
+  },
+  {
+    "name": "Light Damaged",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Damaged",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Light striking these creatures causes these creatures damage. Dim (candle): 1d6, Average (Lantern): 2d6, Strong(Magic): 3d6, Bright(Sunlight): 4d6."
+    }
+  },
+  {
+    "name": "Light Death Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Death Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with death (corpse) or death magic once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Earthen Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Earthen Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with earth or rock once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Gaseous Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Gaseous Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be immersed in gases once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Heat Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Heat Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with a heat source capable of boiling water or an open flame once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Intolerance",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Intolerance",
+      "value1": "-2",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "Blinded for ld6+1 seconds when exposed to moderate light (the Light skill, or the invocation Light. etc.). After this initial time period, the being/creature is -2 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 3-30 seconds, and is -4 to hit and +2 to initiative thereafter. Sunlight also does 1 point of damage per hour to all exposed areas."
+    }
+  },
+  {
+    "name": "Light Living Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Living Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with living thing or in a verdant area once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Magic Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Magic Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with a source of magic once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Light Sensitivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Sensitivity",
+      "value1": "-3",
+      "value2": "-2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Light Sensitivity(Blinded by bright light for 2d6+2 seconds and is -3 to hit and -2 initiative afterwards)."
+    }
+  },
+  {
+    "name": "Light Torpid",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Torpid",
+      "value1": "-6",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is lethargic in daylight, and has -6 to hit and damage, +2 defensive adjustment and +6 initiative while in daylight."
+    }
+  },
+  {
+    "name": "Light Torpid(Complete)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Torpid(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature slows down in dim light to half speed and becomes completely immobile in darkness."
+    }
+  },
+  {
+    "name": "Light Torpid(Magical)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Torpid(Magical)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature loses some or all of its magical powers and abilities in darkness."
+    }
+  },
+  {
+    "name": "Light Torpid(complete)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Torpid(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature slows down in dim light to half speed and becomes completely immobile in darkness."
+    }
+  },
+  {
+    "name": "Light Torpid(magical)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Torpid(Magical)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature loses some or all of its magical powers and abilities in darkness."
+    }
+  },
+  {
+    "name": "Light Toxicity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Toxicity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Blinded for 1d6+1 seconds when exposed to moderate light (the Light skill, the invocation Light, etc.). After this initial time period, the creature is -2 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 3-30 seconds, and is -4 to hit and +2 to initiative thereafter. Sunlight causes this entity to take 1d4 damage per 10 seconds to all areas affected."
+    }
+  },
+  {
+    "name": "Light Water Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Light Water Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be immersed in water once per week or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Living Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Living Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with living thing or in a verdant area once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Living Touch Aversion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Living Touch Aversion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Living Touch Aversion(strong desire to avoid touching other living things because touch causes harm. Requires a WIL save to touch another living thing.)"
+    }
+  },
+  {
+    "name": "Loner",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Loner",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot form close ties with its own type."
+    }
+  },
+  {
+    "name": "Long Gestation",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Long Gestation",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Being/Creature takes twice as long to be born."
+    }
+  },
+  {
+    "name": "Loud",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Loud",
+      "value1": "-50",
+      "value2": "-20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Loud(-50% to surprise. -20% to Surprise Attack)."
+    }
+  },
+  {
+    "name": "Loud Flier",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Loud Flier",
+      "value1": "-20",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Loud Flier(-20% to surprise when attacking from the air)."
+    }
+  },
+  {
+    "name": "Low Circulation",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Low Circulation",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fatigues at x3 normal rate."
+    }
+  },
+  {
+    "name": "Low Pain Threshold",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Low Pain Threshold",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature suffers +1 point of physical damage per blow or energy attack."
+    }
+  },
+  {
+    "name": "Magic Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Magic Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must be in contact with a source of magic once per day or lose 1 point of Endurance in all areas."
+    }
+  },
+  {
+    "name": "Magic Magnetic",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Magic Magnetic",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Causes all spells or magical powers used within 1' per Will Force point to instead strike the being/creature instead of their intended focus."
+    }
+  },
+  {
+    "name": "Magical Light Aversion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Magical Light Aversion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Light destroys the creature or turns it to stone, or some other permanently devastating effect."
+    }
+  },
+  {
+    "name": "Mechanical Engine",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Mechanical Engine",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Mechanical Engine(Has a Mechanical engine. Must be fed energy through a described mechanism. Power sources are as follows: Clockwork: 10 minutes of winding per day; Steam: 10 gallons of water per day; Combustion: 10 pounds of flammable material per day. If this energy runs out, then the being becomes immobile and unconscious. Outside influence is needed to be restarted. This engine fills the being's entire torso, and if destroyed, so is the being. Also has the disabilities Infertile, No Healing, No Regeneration, No Resurrection, No Sense of Smell, and No Sense of Taste.)"
+    }
+  },
+  {
+    "name": "Mental Remnant",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Mental Remnant",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature is left with only a shadow of their former Mind. Their memories are so vague and detached that they may as well not exist. For all intents and purposes, this creature has no Mind of his own."
+    }
+  },
+  {
+    "name": "Mute",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Mute",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature cannot speak"
+    }
+  },
+  {
+    "name": "Near Insanity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Near Insanity",
+      "value1": "-10",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Near Insanity(-10% to WIL saves to avoid Insanity)."
+    }
+  },
+  {
+    "name": "Nearly Immobile",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Nearly Immobile",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has almost no movement (less than 1 foot per 10 seconds)."
+    }
+  },
+  {
+    "name": "Negative Life Force",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Negative Life Force",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature is sustained by Negative Life Force rather than Positive Life Force."
+    }
+  },
+  {
+    "name": "New Ghost",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "New Ghost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a once-living being. The New Ghost must remain within 10' of its remains per Will Force point. If a New Ghost sights a gateway to its plane of rest or torment, it must make a Will Force save at -5% for each day it has been dead, or it will be unable to resist entering the gate. Once 30 days minus 1 per Will Force point have passed, the New Ghost becomes a Ghost. The New Ghost is unable to attack any being."
+    }
+  },
+  {
+    "name": "No Attacks",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Attacks",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no direct attacks."
+    }
+  },
+  {
+    "name": "No Feeling",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Feeling",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no tactile sense and cannot feel physical objects."
+    }
+  },
+  {
+    "name": "No Form",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Form",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature has no physical form (not even one that reforms) and must be ended in some other way than destroying a physical form."
+    }
+  },
+  {
+    "name": "No Free Will",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Free Will",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Ths being or creature has no ability to make their own decisions. It is completely under the command of another."
+    }
+  },
+  {
+    "name": "No Gift of Stone",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Gift of Stone",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot use racial skill Stone Lore."
+    }
+  },
+  {
+    "name": "No Healing",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Healing",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Healing(Unaffected by healing effects such as invocations, songs, potions, etc., may be repaired with tools and parts)."
+    }
+  },
+  {
+    "name": "No Intake",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Intake",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Intake(Cannot imbibe food or water. Cannot use potions/ingested herbs/elixirs/etc. Those that apply to the body may be used. If they make sense.)"
+    }
+  },
+  {
+    "name": "No Limbs",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Limbs",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This being possesses no limbs whatsoever, treat as No Locomotive Limbs. The being cannot learn skills using Strength or Agility unless possessing the skill Telekinesis. Beings with this disability gain +20% Telekinesis if it is an acquired skill."
+    }
+  },
+  {
+    "name": "No Locomotive Limbs",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Locomotive Limbs",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Locomotive Limbs(No normal movement, slither or crawl at 1/4 walk)."
+    }
+  },
+  {
+    "name": "No Regeneration",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Regeneration",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Regeneration(Cannot regenerate)."
+    }
+  },
+  {
+    "name": "No Ressurection",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Ressurection",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
+    }
+  },
+  {
+    "name": "No Resurrection",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Ressurection",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
+    }
+  },
+  {
+    "name": "No Rigid Armor(Shins)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Rigid Armor(Shins)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Rigid Armor(Shins):(Cannot wear rigid armor in the shins)."
+    }
+  },
+  {
+    "name": "No Rigid Armor(Tail)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Rigid Armor(Tail)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Rigid Armor(Tail):(Cannot wear rigid armor in the tail)."
+    }
+  },
+  {
+    "name": "No Sense of Smell",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Smell",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Sense of Smell(Cannot smell)."
+    }
+  },
+  {
+    "name": "No Sense of Smell or Taste",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Smell/Taste",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no olfactory senses and cannot smell or taste."
+    }
+  },
+  {
+    "name": "No Sense of Smell/Taste",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Smell/Taste",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no olfactory senses and cannot smell or taste."
+    }
+  },
+  {
+    "name": "No Sense of Taste",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Taste",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Sense of Taste(Cannot taste)."
+    }
+  },
+  {
+    "name": "No Sense of Touch",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Touch",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no tactile sense and cannot feel physical objects."
+    }
+  },
+  {
+    "name": "No Sense of mell/Taste",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Smell/Taste",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no olfactory senses and cannot smell or taste."
+    }
+  },
+  {
+    "name": "No Smell/Taste",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Sense of Smell/Taste",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has no olfactory senses and cannot smell or taste."
+    }
+  },
+  {
+    "name": "No Venom",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Venom",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Normally poisonous being has ineffective venom."
+    }
+  },
+  {
+    "name": "Non-Corporeal",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Non-Corporeal",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature has no physical form."
+    }
+  },
+  {
+    "name": "Obsession",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Obsession",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Race is obsessed with this person, place or thing, causing Will Force saves to avoid the pursuit of it when presented with such opportunities."
+    }
+  },
+  {
+    "name": "Obsessive",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Obsessive",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Obsessive(perfection, knowledge, understanding: -10% to INT saves when obsessing about these things)."
+    }
+  },
+  {
+    "name": "Odd Coloration",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Odd Coloration",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Strong coloration makes the being/creature more visible, -25% Blend, Move Unseen and Move Unheard."
+    }
+  },
+  {
+    "name": "Old Ghost",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Old Ghost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The non-corporeal form of a once-living being. The Mind of an Old Ghost is so precariously balanced that if it should come into mental contact with a living being, it must make a Will Force save or suffer a random form of Insanity. Likewise, if the Old Ghost is in an unphased state and its material body is destroyed, it must make a Will Force save or suffer a random form of Insanity. The Old Ghost must make a Knowledge save to remember anything from its former life not directly related to its perceived purpose. Old Ghosts must remain within 1 mile of their remains per Will Force point."
+    }
+  },
+  {
+    "name": "Oversleeper",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Oversleeper",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Oversleeper(+10-30 seconds to awaken time and +1 hour to required sleep)."
+    }
+  },
+  {
+    "name": "Passivity",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Passivity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Must choose passive as an Alignment Tendency. Must make a Will Force save to act in conflict situations."
+    }
+  },
+  {
+    "name": "Phylactery",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Phylactery",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The Soul of this undead is magically bound to an object. The object must have at least one shiny, smooth surface. When the undead’s body is destroyed, its Soul flees to the phylactery. Its body will reform from even the smallest mote of dust that remains in 30 days minus 1 day per Will Force. Should the phylactery be destroyed, the undead will continue to exist until its physical form has been defeated. The undead must be Level 10 or higher to receive this disability."
+    }
+  },
+  {
+    "name": "Physically Bound",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Physically Bound",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The body of this undead is metaphysically bound to a certain place. The undead is unable to leave the place to which its body is bound."
+    }
+  },
+  {
+    "name": "Physicaly Bound",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Physically Bound",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The body of this undead is metaphysically bound to a certain place. The undead is unable to leave the place to which its body is bound."
+    }
+  },
+  {
+    "name": "Plane Fixed",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Plane Fixed",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature cannot travel to other planes or dimensions (not even phase)."
+    }
+  },
+  {
+    "name": "Plate Ruins Terrain Fur",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Plate Ruins Terrain Fur",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Plate Ruins Terrain Fur(Plate causes loss of terrain bonuses unless covered/dulled)."
+    }
+  },
+  {
+    "name": "Poor Circulation",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Poor Circulation",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fatigue at x2 the nromal rate. Cannot be upside-down for more than 1 hour or their brains cease functioning due to lack of oxygen; treat as asphyxiation."
+    }
+  },
+  {
+    "name": "Poor Eyesight",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Poor Eyesight",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poor Eyesight(-2 to hit with missile weapons)."
+    }
+  },
+  {
+    "name": "Poor Flexibility",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Poor Flexibility",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poor Flexibility(+1 weapon speed and +1 defensive adjustment)."
+    }
+  },
+  {
+    "name": "Poor Healing",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Poor Healing",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Heals at half normal rate for its Vitality rating."
+    }
+  },
+  {
+    "name": "Poor Mimic",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Poor Mimic",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "-25% to any mimicking or disguise based skills."
+    }
+  },
+  {
+    "name": "Pressure Sensitive",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Pressure Sensitive",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot dive or be submersed because of soft tissues that will cause harm (1d6 per minute) at even minimaldepth."
+    }
+  },
+  {
+    "name": "Quick Temper",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Quick Temper",
+      "value1": "10",
+      "value2": "-10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Quick Temper(+10% to Berserking skill/-10% to Wisdom saves)."
+    }
+  },
+  {
+    "name": "Reduced Jumping",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Reduced Jumping",
+      "value1": "-1",
+      "value2": "-0.5",
+      "sourcebook": "",
+      "page": "",
+      "description": "Reduced Jumping(-2 feet running, -1 foot standing, -1/2 foot upward leap)."
+    }
+  },
+  {
+    "name": "Regeneration",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Regeneration",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Regeneration(Cannot regenerate)."
+    }
+  },
+  {
+    "name": "Requires Fairy Weapons",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Requires Fairy Weapons",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires Fairy Weapons(Uses undersized weapons fitting their size)."
+    }
+  },
+  {
+    "name": "Requires Giant Weapons",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Requires Giant Weapons",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires Giant Weapons(Uses oversized weapons fitting their size)."
+    }
+  },
+  {
+    "name": "Requires Titan Weapons",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Requires Titan Weapons",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires Titan Weapons(Uses oversized weapons fitting their size)."
+    }
+  },
+  {
+    "name": "Resurrection",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "No Ressurection",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
+    }
+  },
+  {
+    "name": "Rooted",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Rooted",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "These creatures have no locomotion."
+    }
+  },
+  {
+    "name": "Salt Water Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Salt Water Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Salt Water Dependence(Must be submerged in salt water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
+    }
+  },
+  {
+    "name": "Scale Armor Chafe",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Scale Armor Chafe",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Scale Armor Chafe(wearing chain or plate chafes scales, losing 1 point of hide per day, wearing plate/chain causes fatigue at twice normal rate from overheating)."
+    }
+  },
+  {
+    "name": "Sculpted Form",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sculpted Form",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sculpted Form(Magical granite inner body, molten rock blood flowing throughout to provide energy and increase motion. Outer skin of any stone. Requires the application of a magical fire to skin once per month for one hour. Any wound which reduces a body area to below 0 END, causes a leak of magical molten stone. Leak loses base END by 1d6 per min. A source of magical fire applied to the wound for 1 min seals it. Healing requires magical fire applied to the wound for 1 hour per each point to be healed up to normal healing. VIT healing rate. Somewhere on their form is a seal. This seal is used to add and remove molten blood. If it is found and opened the being can be drained as noted in damage above.)"
+    }
+  },
+  {
+    "name": "Sculpted Offspring",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sculpted Offspring",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sculpted Offspring(Reproduce by gathering normal/magical gems/stone. A granite body is cast and many hollow areas and cavities are drilled into it for flow of molten stone blood. Gems are set within the head cavity in a special arrangement for the brain and then on the surface of the face for the eyes. Magical stone is then melted and the sculpting parent has to mix their own molten blood in. This is poured into the offspring. Some of the parent essence is then transferred into the offspring; it then has a chance to come alive. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
+    }
+  },
+  {
+    "name": "Slow",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow",
+      "value1": "1d4+1",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Loses 1d4+1 seconds per combat round and moves at 1/2 normal speed for its body size."
+    }
+  },
+  {
+    "name": "Slow Adult Learner",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow Adult Learner",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Slow Adult Learner(As adult is -20% to learn a new skill, other than starting Social Skills, Racial Skills and Class Skills. Takes x2 as long to learn.)"
+    }
+  },
+  {
+    "name": "Slow Breeding",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow Breeding",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Slow Breeding(Is fertile half as often as similiar beings)."
+    }
+  },
+  {
+    "name": "Slow Footed",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow Footed",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Has a slow ground movement."
+    }
+  },
+  {
+    "name": "Slow Metabolism",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow Metabolism",
+      "value1": "-10",
+      "value2": "1",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature has -10% food intake requirement, +10% to weight, +1 initiative and -10% to Agility saves."
+    }
+  },
+  {
+    "name": "Slow Reproduction",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Slow Reproduction",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Is half as likely to conceive a child as other beings or creatures of its type."
+    }
+  },
+  {
+    "name": "Souless",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Soulless",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This being or creature has no Soul."
+    }
+  },
+  {
+    "name": "Soulless",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Soulless",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This being or creature has no Soul."
+    }
+  },
+  {
+    "name": "Sound Sensitive",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sound Sensitive",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Loud noise causes 1d4 damage per 10 seconds, and requires a Vitality save once per 10 seconds or 1d4+1 seconds are lost due to disorientation. Also sound based damage is doubled against this creature."
+    }
+  },
+  {
+    "name": "Spiritless",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Spiritless",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This being or creature has no Spirit."
+    }
+  },
+  {
+    "name": "Spiritually Bound",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Spiritually Bound",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The Spirit of this undead is metaphysically bound to an object. Should this object be destroyed, the undead is also destroyed. The object can function as a container for the Spirit should the Spirit's body be destroyed."
+    }
+  },
+  {
+    "name": "Spook",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Spook",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Being or creature startles easily and will flee if it feels threatened."
+    }
+  },
+  {
+    "name": "Sterile",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Infertile",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Inability to produce offspring."
+    }
+  },
+  {
+    "name": "Sticky Skin",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sticky Skin",
+      "value1": "4",
+      "value2": "20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Creature is easily grabbed or grappled. All rolls involving grappling and Martial Knowledge are at +4 or +20% to the attacker."
+    }
+  },
+  {
+    "name": "Sunlight Conversion",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sunlight Conversion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight Conversion(Bright light blinds for 3-30 sec. Sunlight converts body to stone permanently)."
+    }
+  },
+  {
+    "name": "Sunlight Intolerant",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Sunlight Intolerant",
+      "value1": "-4",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight Intolerant(Bright light: blinds 3-30 sec. -4 to hit/+2 initiative after. Sunlight causes 1 damage per hour to exposed skin.)"
+    }
+  },
+  {
+    "name": "Telepathically Blocked",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Telepathically Blocked",
+      "value1": "-2",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is unable to use Thought Projection or any form of telepathy even if magically aided. The creature can be attacked mentally, and is -2 to all mental combat rolls."
+    }
+  },
+  {
+    "name": "Thin Skin",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Thin Skin",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Thin Skin(The being has 1d4 less END than its body size would indicate)."
+    }
+  },
+  {
+    "name": "Thin Skinned",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Thin Skinned",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Thin Skinned(The being has 1d4 less END than its body size would indicate)."
+    }
+  },
+  {
+    "name": "Time Sense Reversal",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Time Sense Reversal",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "These beings see their possible future as their remembered past and cannot remember their actual past. While this obviously has some benefits, it makes it difficult to understand their lives."
+    }
+  },
+  {
+    "name": "Time Split Communication",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Time Split Communication",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature speaks in threeword sentences that are randomly jumbled and spoken each by one part of a time-split creature. For instance, “who are you?” might come out as “you”, “who”, “are.”"
+    }
+  },
+  {
+    "name": "Unholy",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Unholy",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This being or creature takes 1d4 additional damage from all things holy. Any being taking the Unholy disability must also take Aversion(Holy)."
+    }
+  },
+  {
+    "name": "Upper Armor Off-balance",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Upper Armor Off-balance",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Upper Armor Off-balance(20+ lb. armor above the waist causes -2 AGL)."
+    }
+  },
+  {
+    "name": "Very Low Fertility",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Very Low Fertility",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Very Low Fertility(Able to conceive less often than once per year)."
+    }
+  },
+  {
+    "name": "Water Avoidance",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Water Avoidance",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Water Avoidance(Will Force save required to enter or be upon water)."
+    }
+  },
+  {
+    "name": "Water Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Water Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Water Dependence(Must be submerged in water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
+    }
+  },
+  {
+    "name": "Water Soluble",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Water Soluble",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Water contact causes 10 Endurance damage every 10 seconds."
+    }
+  },
+  {
+    "name": "Waterbound",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Waterbound",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot fly at all. Cannot leave connection with body of water at least as big as they are for more than 1 minute or they begin to lose Endurance at a rate of 1d10 per minute."
+    }
+  },
+  {
+    "name": "Weak Changeling Form",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weak Changeling Form",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Can change form but only to become like beings of roughly the same height and frame as themselves."
+    }
+  },
+  {
+    "name": "Weak Cry",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weak Cry",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weak cry or calls actually cause predators to lose fear conditions."
+    }
+  },
+  {
+    "name": "Weak Sight",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weak Sight",
+      "value1": "-20",
+      "value2": "0.5",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is at -20% to surprise, and can see 1/2 normal distance."
+    }
+  },
+  {
+    "name": "Weak Vision",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weak Vision",
+      "value1": "-20",
+      "value2": "0.5",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is at -20% to surprise, and can see 1/2 normal distance."
+    }
+  },
+  {
+    "name": "Weakness(Acid)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Acid)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Acid):(-20% Magic Resist vs acid. x2 damage from acid.)"
+    }
+  },
+  {
+    "name": "Weakness(Cold)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Frost)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
+    }
+  },
+  {
+    "name": "Weakness(Crowds)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Crowds)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -3, all powers are at half effect, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Day)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Day)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature suffers adverse effects during the daytime. When the sun is up in the area that this entity inhabits, their Strength, Agility, and Vitality are all at half of their normal values. This being cannot use any powers during this time, nor can they use any Magical or Divine Magical skills. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
+    }
+  },
+  {
+    "name": "Weakness(Electricity)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Electricity)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Electricity):(-20% Magic Resist vs electricity. x2 damage from electricity.)"
+    }
+  },
+  {
+    "name": "Weakness(Extreme Light)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Extreme Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sunlight does 1 point of damage per 10 seconds to all creature areas, bright light does 1 point of damage per minute, and magical light does 1d4 damage per 2 aura or PC per 10 seconds, and finger of light does triple damage, brilliance requires the creature to make a Magic Resistance or be disintegrated."
+    }
+  },
+  {
+    "name": "Weakness(Fire)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Fire)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Fire):(-20% Magic Resist vs fire/heat. x2 damage from fire/heat.)"
+    }
+  },
+  {
+    "name": "Weakness(Frost)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Frost)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
+    }
+  },
+  {
+    "name": "Weakness(Greater Crowds)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Greater Crowds)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Greater Day)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Greater Day)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature suffers numerous adverse effects during the daytime. When the sun is up in the area that this entity inhabits, their Strength, Agility, and Vitality are all reduced to 5. This being cannot use any powers during this time, nor can they use any Magical or Divine Magical skills. They is also unable to move whatsoever during this time. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
+    }
+  },
+  {
+    "name": "Weakness(Greater Joy/Laughter)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Greater Joy/Laughter)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -3, all powers are at half effect, as do magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Greater Light)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Greater Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When bathed in a strong light: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Joy/Laughter)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Joy/Laughter)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Lesser Crowds)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Lesser Crowds)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Lesser Day)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Lesser Day)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "This creature suffers numerous adverse effects during the daytime. When the sun is up in the area that this entity inhabits, its Strength, Agility, and Vitality are all -5, any powers that are possessed are only half effective, and both Magical and Divine Magical skills are only successful when a half skill check is made. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
+    }
+  },
+  {
+    "name": "Weakness(Lesser Joy/Laughter)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Lesser Joy/Laughter)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness (lesser joy/laughter): Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as do magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Lesser Light)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Lesser Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When bathed in a strong light: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(Light)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "When bathed in a strong light: Physical attributes are -3, all powers are at half effect, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
+    }
+  },
+  {
+    "name": "Weakness(fire)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Fire)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Fire):(-20% Magic Resist vs fire/heat. x2 damage from fire/heat.)"
+    }
+  },
+  {
+    "name": "Weakness(frost)",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Weakness(Frost)",
+      "value1": "-20",
+      "value2": "2",
+      "sourcebook": "",
+      "page": "",
+      "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
+    }
+  },
+  {
+    "name": "Worsened Acid Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Acid Weakness",
+      "value1": "-30",
+      "value2": "3",
+      "sourcebook": "",
+      "page": "",
+      "description": "Worsened Acid Weakness(Takes x3 damage from acid and is -30% to Magic Resistances involving acid)."
+    }
+  },
+  {
+    "name": "Worsened Death Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Death Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence for death (corpse) or death magic contact is worsened, and must spend 1 extra hour per day in contact."
+    }
+  },
+  {
+    "name": "Worsened Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Living Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
+    }
+  },
+  {
+    "name": "Worsened Earthen Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Earthen Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence for earth and rock contact is worsened, and must spend 1 extra hour per day in contact."
+    }
+  },
+  {
+    "name": "Worsened Electrical Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Electricity Weakness",
+      "value1": "-30",
+      "value2": "3",
+      "sourcebook": "",
+      "page": "",
+      "description": "Worsened Electricity Weakness(Takes x3 damage from electricity and is -30% to Magic Resistances involving electricity)."
+    }
+  },
+  {
+    "name": "Worsened Electricity Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Electricity Weakness",
+      "value1": "-30",
+      "value2": "3",
+      "sourcebook": "",
+      "page": "",
+      "description": "Worsened Electricity Weakness(Takes x3 damage from electricity and is -30% to Magic Resistances involving electricity)."
+    }
+  },
+  {
+    "name": "Worsened Fire Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Fire Weakness",
+      "value1": "-30",
+      "value2": "3",
+      "sourcebook": "",
+      "page": "",
+      "description": "Worsened Fire Weakness(Takes x3 damage from fire/heat and is -30% to Magic Resistances involving fire/heat)."
+    }
+  },
+  {
+    "name": "Worsened Frost Weakness",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Frost Weakness",
+      "value1": "-30",
+      "value2": "3",
+      "sourcebook": "",
+      "page": "",
+      "description": "Worsened Frost Weakness(Takes x3 damage from cold/frost and is -30% to Magic Resistances involving cold/frost)."
+    }
+  },
+  {
+    "name": "Worsened Gaseous Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Gaseous Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on gases is worsened, and must spend 1 extra hour per day in gases."
+    }
+  },
+  {
+    "name": "Worsened Heat Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Heat Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on heat is worsened, and must spend 1 extra hour per day in contact with a heat source capable of boiling water or an open flame."
+    }
+  },
+  {
+    "name": "Worsened Life Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Life Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
+    }
+  },
+  {
+    "name": "Worsened Living Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Living Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
+    }
+  },
+  {
+    "name": "Worsened Magic Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Magic Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence on magic is worsened, and must spend 1 extra hour per day in contact with a magic source."
+    }
+  },
+  {
+    "name": "Worsened Water Dependence",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Worsened Water Dependence",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Natural dependence for water submersion is worsened, and must spend 1 extra hour per day in water."
+    }
+  },
+  {
+    "name": "inability to consume food",
+    "type": "trait",
+    "system": {
+      "category": "disability",
+      "canonicalName": "Inability to Consume Normal Food",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Requires some other form of sustenance."
+    }
+  }
+]

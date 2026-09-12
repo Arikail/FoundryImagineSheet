@@ -1,0 +1,972 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "dictionary": "abilitylist",
+    "lines": [
+      45725,
+      45886
+    ]
+  },
+  "_fields": [
+    "canonicalName",
+    "value1",
+    "value2",
+    "description"
+  ],
+  "entries": {
+    "Air Elemental Form": {
+      "canonicalName": "Air Elemental Form",
+      "value1": "",
+      "value2": "",
+      "description": "Air Elemental Form(Being can transform into an Air Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of Air. Should be readily around.)"
+    },
+    "Animal Friendship": {
+      "canonicalName": "Animal Friendship",
+      "value1": "",
+      "value2": "",
+      "description": "Animal Friendship(Animals will not willing attack this being. Controlled animals get a new CR to avoid attacking)."
+    },
+    "Animal Shape": {
+      "canonicalName": "Animal Shape",
+      "value1": "",
+      "value2": "",
+      "description": "Animal Shape(can transform, without fail into a bird or flying insect)."
+    },
+    "Antennae": {
+      "canonicalName": "Antennae",
+      "value1": "",
+      "value2": "",
+      "description": "Antennae(2 tendril/stalks x1/10th END that allow hearing and smell. Lost of antennae loses those senses)."
+    },
+    "Antlers": {
+      "canonicalName": "Antlers",
+      "value1": "",
+      "value2": "",
+      "description": "Antlers: Gains additional natural weapon attacks in combat."
+    },
+    "Balancing Tail": {
+      "canonicalName": "Balancing Tail",
+      "value1": "",
+      "value2": "",
+      "description": "Balancing Tail(+10% to movement Agility Saves)."
+    },
+    "Beak": {
+      "canonicalName": "Beak",
+      "value1": "",
+      "value2": "",
+      "description": "Beak: Gains additional natural weapon attacks in combat."
+    },
+    "Breathless": {
+      "canonicalName": "Breathless",
+      "value1": "",
+      "value2": "",
+      "description": "Breathless(No need to breathe to remain living)."
+    },
+    "Call Twilight": {
+      "canonicalName": "Call Twilight",
+      "value1": "",
+      "value2": "",
+      "description": "Call Twilight(Remove some sunlight in a 50` sq. foot area per 4 WIL, to a height of 40'. Creates a shadowy gray landscape. Activation requires a WIL Save. Lasts 30 minutes per WIL. Has no effect on other light sources.)"
+    },
+    "Changeling Form": {
+      "canonicalName": "Changeling Form",
+      "value1": 10,
+      "value2": "",
+      "description": "Changeling Form(Can change into another humanoid form within 1.5 feet of their height x2 day. Disguise skill success allows copying of another humanoid`s form. Mimic allows copying of their voice.)"
+    },
+    "Claws": {
+      "canonicalName": "Claws",
+      "value1": "",
+      "value2": "",
+      "description": "Claws: Gains additional natural weapon attacks in combat."
+    },
+    "Climbing": {
+      "canonicalName": "Climbing",
+      "value1": 10,
+      "value2": "",
+      "description": "Climbing(+10% Climb)."
+    },
+    "Constriction Grapple": {
+      "canonicalName": "Constriction Grapple",
+      "value1": "",
+      "value2": "",
+      "description": "Constriction Grapple(Grapple:+20% to all saves/contests, pinned opponents take 4d4 constriction per 5 sec)."
+    },
+    "Construct Mind": {
+      "canonicalName": "Construct Mind",
+      "value1": "",
+      "value2": "",
+      "description": "Construct Mind(Has a mind that is not of flesh but magical. If the mind is destroyed then the being dies. Gains immunity to Fear, Hold, and Sleep.)"
+    },
+    "Construct Form": {
+      "canonicalName": "Construct Form",
+      "value1": "",
+      "value2": "",
+      "description": "Construct Form(Body made of a normal material but affected magically so that it can flex, heal, and otherwise act as flesh when needed. Hide is gained depending on material and Endurance: Clay: 1 per 6 End., Wood: 1 per 5, Stone: 1 per 4, Metal 1 per 3. Attacks are gained based on type, see combat, Clay and Wood can wear flexible and semi-flexible armor. Stone and metal can only wear flexible. Beings with the ability Construct Form gain the following immunities: Disease, Fatigue, Frost Hardened, Greater Poison, Lesser Transformation of Form, and Shock. Beings with this ability must also take the following disabilities: Cannot Swim (Clay, Metal, Stone only), Infertile, No Intake, No Sense of Smell, and No Sense of Taste.)"
+    },
+    "Digging": {
+      "canonicalName": "Digging",
+      "value1": "",
+      "value2": "",
+      "description": "Digging(Additional digging speed)."
+    },
+    "Digging Claws": {
+      "canonicalName": "Digging Claws",
+      "value1": "",
+      "value2": "",
+      "description": "Digging Claws(Allows easier digging)."
+    },
+    "Diving(Water)": {
+      "canonicalName": "Diving(Water)",
+      "value1": "",
+      "value2": "",
+      "description": "Diving(Water):(Gain Diving Social Skill, can hold breath for up to 30 minutes)."
+    },
+    "Earth Elemental Form": {
+      "canonicalName": "Earth Elemental Form",
+      "value1": "",
+      "value2": "",
+      "description": "Earth Elemental Form(Being can transform into an Earth Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of earth.)"
+    },
+    "Enhanced Hearing": {
+      "canonicalName": "Enhanced Hearing",
+      "value1": 30,
+      "value2": "",
+      "description": "Enhanced Hearing(+30% to Listen)."
+    },
+    "Enhanced Smell": {
+      "canonicalName": "Enhanced Smell",
+      "value1": 30,
+      "value2": "",
+      "description": "Enhanced Smell(+30% to Smell)."
+    },
+    "Enhanced Taste": {
+      "canonicalName": "Enhanced Taste",
+      "value1": 30,
+      "value2": 50,
+      "description": "Enhanced Taste(Enhances the sense of taste. This gives the ability to detect poison at a 30% chance, within a single drop. Also grants a +50% to resisting Illusions of Taste.)."
+    },
+    "Entropy Touch": {
+      "canonicalName": "Entropy Touch",
+      "value1": "",
+      "value2": "",
+      "description": "Entropy Touch(Items crafted from non-living material take 1d4 damage per contact per 10 seconds)."
+    },
+    "Evoke Special(Tree)": {
+      "canonicalName": "Evoke Special(Tree)",
+      "value1": "",
+      "value2": "",
+      "description": "Evoke Special(Tree):(When using Evoke skill can take on tree adaptations: Barkhide+Endurance+Force of Wood+Instinct(water)+Light Regeneration+Rooted+Strength+Tree Merge+Tree Walk)."
+    },
+    "Exceptional Sight": {
+      "canonicalName": "Exceptional Sight",
+      "value1": 1,
+      "value2": "",
+      "description": "Exceptional Sight(Vision x2, Missile Weapons +1 to hit)."
+    },
+    "Exceptional Hearing": {
+      "canonicalName": "Exceptional Hearing",
+      "value1": -20,
+      "value2": 30,
+      "description": "Exceptional Hearing(-20% to Surprise, +30% to Listen)."
+    },
+    "Extra Insect Limbs(Arms)": {
+      "canonicalName": "Extra Insect Limbs(Arms)",
+      "value1": "",
+      "value2": "",
+      "description": "Extra Insect Limbs/Arms(Extra pair of arms/forearms and hands with no fingers. All at 1/2 endurance. Each counts as an off hand with +5 seconds of action. +20% to Climb.)"
+    },
+    "Extra Insect Limbs(Legs)": {
+      "canonicalName": "Extra Insect Limbs(Legs)",
+      "value1": 4,
+      "value2": 20,
+      "description": "Extra Insect Limbs/Legs(Extra pair of long thigh/shins/footpads with chitinous hide. Gains Scurry movement at x4 walk. +20% to Agility saves involving movement.)"
+    },
+    "Eyestalks": {
+      "canonicalName": "Eyestalks",
+      "value1": "",
+      "value2": "",
+      "description": "Eyestalks(Can extend 3 inches per foot of being`s height/look around corners/-50% to be surprised when fully extended)."
+    },
+    "Fangs/Sharp Teeth": {
+      "canonicalName": "Fangs/Sharp Teeth",
+      "value1": "",
+      "value2": "",
+      "description": "Fangs/Sharp Teeth(Gains additional attacks in combat)."
+    },
+    "Farsight": {
+      "canonicalName": "Farsight",
+      "value1": 2,
+      "value2": 25,
+      "description": "Farsight(Vison x3/Missile Weapons +2 to hit/+25% Surprise/-25% to be surprised)."
+    },
+    "Fickle Luck": {
+      "canonicalName": "Fickle Luck",
+      "value1": "",
+      "value2": "",
+      "description": "Fickle Luck(Every day: 50%/50% 1d4+1 luck points or 1d4+1 unlucky points applied by the GM to actions performed that day)."
+    },
+    "Fire Elemental Form": {
+      "canonicalName": "Fire Elemental Form",
+      "value1": "",
+      "value2": "",
+      "description": "Fire Elemental Form(Being can transform into an Fire Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of Fire.)"
+    },
+    "Flight(Wings)": {
+      "canonicalName": "Flight(Wings)",
+      "value1": "",
+      "value2": "",
+      "description": "Winged Flight(Gains flight at 3x walking speed)."
+    },
+    "Gift of Magic": {
+      "canonicalName": "Gift of Magic",
+      "value1": "",
+      "value2": "",
+      "description": "Gift of Magic(Attribute penalties reduced to -1 INT/WIS/KNW, -2 SOC. Access to Herb Lore and Detect Magic racial skills.)"
+    },
+    "Gills": {
+      "canonicalName": "Gills",
+      "value1": "",
+      "value2": "",
+      "description": "Gills(Underwater breathing)."
+    },
+    "Hard to Kill": {
+      "canonicalName": "Hard to Kill",
+      "value1": 10,
+      "value2": "",
+      "description": "Hard to Kill(+10% to Endure rolls)."
+    },
+    "Hard to Surprise": {
+      "canonicalName": "Hard to Surprise",
+      "value1": -10,
+      "value2": "",
+      "description": "Hard to Surprise(-10% to be Surprised)."
+    },
+    "Heat as Food": {
+      "canonicalName": "Heat as Food",
+      "value1": "",
+      "value2": "",
+      "description": "Heat as Food(Uses heat for food. 3 weeks of heat below the 100 degrees Fahrenheit will kill this being. 10 minutes in contact with heat above 100 degrees Fahrenheit is a meal. 3 meals are needed per day.)"
+    },
+    "Hide(4)": {
+      "canonicalName": "Hide(4)",
+      "value1": 4,
+      "value2": "",
+      "description": "Hide(4 points/all areas)."
+    },
+    "Hide(5)": {
+      "canonicalName": "Hide(5)",
+      "value1": 5,
+      "value2": "",
+      "description": "Hide(5 points/all areas)."
+    },
+    "Hide(6)": {
+      "canonicalName": "Hide(6)",
+      "value1": 6,
+      "value2": "",
+      "description": "Hide(6 points/all areas)."
+    },
+    "Hide(8)": {
+      "canonicalName": "Hide(8)",
+      "value1": 8,
+      "value2": "",
+      "description": "Hide(8 points/all areas)."
+    },
+    "Hide(10)": {
+      "canonicalName": "Hide(10)",
+      "value1": 10,
+      "value2": "",
+      "description": "Hide(10 points/all areas)."
+    },
+    "Hide(15)": {
+      "canonicalName": "Hide(15)",
+      "value1": 15,
+      "value2": "",
+      "description": "Hide(15 points/all areas)."
+    },
+    "Hide(20)": {
+      "canonicalName": "Hide(20)",
+      "value1": 20,
+      "value2": "",
+      "description": "Hide(20 points/all areas)."
+    },
+    "Hide(1/1)": {
+      "canonicalName": "Hide(1/1)",
+      "value1": 1,
+      "value2": 30,
+      "description": "Hide(1 per END/30 Max.)."
+    },
+    "Hide(1/2)": {
+      "canonicalName": "Hide(1/2)",
+      "value1": 2,
+      "value2": 30,
+      "description": "Hide(1 per 2 END/30 Max.)."
+    },
+    "Hide(1/3)": {
+      "canonicalName": "Hide(1/3)",
+      "value1": 3,
+      "value2": 25,
+      "description": "Hide(1 per 3 END/25 Max.)."
+    },
+    "Hide(1/4)": {
+      "canonicalName": "Hide(1/4)",
+      "value1": 4,
+      "value2": 20,
+      "description": "Hide(1 per 4 END/20 Max.)."
+    },
+    "Hide(1/5)": {
+      "canonicalName": "Hide(1/5)",
+      "value1": 5,
+      "value2": 15,
+      "description": "Hide(1 per 5 END/15 Max.)."
+    },
+    "Hide(1/6)": {
+      "canonicalName": "Hide(1/6)",
+      "value1": 6,
+      "value2": 10,
+      "description": "Hide(1 per 6 END/10 Max.)."
+    },
+    "Hide(Chitinous)": {
+      "canonicalName": "Hide(Chitinous)",
+      "value1": 2,
+      "value2": 30,
+      "description": "Hide(Chitinous:1 per 2 END/30 Max.)."
+    },
+    "Hide(Crystal)": {
+      "canonicalName": "Hide(Crystal)",
+      "value1": 2,
+      "value2": 30,
+      "description": "Hide(Crystal:1 per 2 END/30 Max.)."
+    },
+    "Hide(Feathers/Fur)": {
+      "canonicalName": "Hide(Feathers/Fur)",
+      "value1": 6,
+      "value2": 15,
+      "description": "Hide(Feathers/Fur:1 per 6 END/15 Max.)."
+    },
+    "Hide(Fur)": {
+      "canonicalName": "Hide(Fur)",
+      "value1": 5,
+      "value2": 20,
+      "description": "Hide(Fur:1 per 5 END/20 Max.)."
+    },
+    "Hide(Scales/Shell)": {
+      "canonicalName": "Hide(Scales/Shell)",
+      "value1": 10,
+      "value2": 20,
+      "description": "Hide(Scales/Shell): 10 points, limbs, head, and neck. 20 points, upper, middle and lower torsos)."
+    },
+    "Hide(Skin)": {
+      "canonicalName": "Hide(Skin)",
+      "value1": 6,
+      "value2": 20,
+      "description": "Hide(Skin:1 per 6 END/20 Max.)."
+    },
+    "Horns": {
+      "canonicalName": "Horns",
+      "value1": "",
+      "value2": "",
+      "description": "Horns: Gains additional natural weapon attacks in combat."
+    },
+    "Howl Communication": {
+      "canonicalName": "Howl Communication",
+      "value1": "",
+      "value2": "",
+      "description": "Howl Communication(communicate 5 miles +/-2.5 miles depending on condition)."
+    },
+    "Infrasonic Speech": {
+      "canonicalName": "Infrasonic Speech",
+      "value1": "",
+      "value2": "",
+      "description": "Infrasonic Speech(Can speak in sounds so low that those without either Vibration Sensing or this ability cannot hear it. Distance goes x2 as far. Those with Vibration Sensing can feel the sound but not understand it.)"
+    },
+    "Infravision30": {
+      "canonicalName": "Infravision",
+      "value1": 30,
+      "value2": "",
+      "description": "Infravision 30`(distinquish 5 degree temp differences)."
+    },
+    "Infravision60": {
+      "canonicalName": "Infravision",
+      "value1": 60,
+      "value2": "",
+      "description": "Infravision 60`(distinquish 5 degree temp differences)."
+    },
+    "Infravision90": {
+      "canonicalName": "Infravision",
+      "value1": 90,
+      "value2": "",
+      "description": "Infravision 90`(distinquish 5 degree temp differences)."
+    },
+    "Infravision120": {
+      "canonicalName": "Infravision",
+      "value1": 120,
+      "value2": "",
+      "description": "Infravision 120`(distinquish 5 degree temp differences)."
+    },
+    "Infravision180": {
+      "canonicalName": "Infravision",
+      "value1": 180,
+      "value2": "",
+      "description": "Infravision 180`(distinquish 5 degree temp differences)."
+    },
+    "Insect Wings": {
+      "canonicalName": "Insect Wings",
+      "value1": "",
+      "value2": "",
+      "description": "Insect Wings(Gains flight at 3x walking speed)."
+    },
+    "Jumping": {
+      "canonicalName": "Jumping",
+      "value1": 2,
+      "value2": 3,
+      "description": "Jumping(x2 upward/x3 forward)."
+    },
+    "Keen": {
+      "canonicalName": "Keen",
+      "value1": "",
+      "value2": "",
+      "description": "Keen(opponent`s make morale check or flee)."
+    },
+    "Lateral Vision": {
+      "canonicalName": "Lateral Vision",
+      "value1": 30,
+      "value2": "",
+      "description": "Lateral Vision(-30% to be surprised)."
+    },
+    "Light as Water": {
+      "canonicalName": "Light as Water",
+      "value1": "",
+      "value2": "",
+      "description": "Light as Water(Uses light as a normal being would water. 3 days of absolute darkness will kill this being. 1 minute of light is a drink. 3 drinks are needed per day.)"
+    },
+    "Light Sleeper": {
+      "canonicalName": "Light Sleeper",
+      "value1": "",
+      "value2": "",
+      "description": "Light Sleeper(Awakens in 1 second after any disturbing noise is heard or a Danger Knowledge skill roll is made)."
+    },
+    "Living Crystal": {
+      "canonicalName": "Living Crystal",
+      "value1": "",
+      "value2": "",
+      "description": "Living Crystal(Gains abilities Breathless, Heat as Food, and Light as Water and is in a moving crystal form)."
+    },
+    "Magical Flight": {
+      "canonicalName": "Magical Flight",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Flight(Gains the magical ability to fly without wings)."
+    },
+    "Magical Hearing": {
+      "canonicalName": "Magical Hearing",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Hearing(Hears through magical means)."
+    },
+    "Magical Sight": {
+      "canonicalName": "Magical Sight",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Sight(Sees through magical means)."
+    },
+    "Magical Smell": {
+      "canonicalName": "Magical Smell",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Smell(Smells through magical means)."
+    },
+    "Magical Touch": {
+      "canonicalName": "Magical Touch",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Touch(Feels through magical means)."
+    },
+    "Magical Voice": {
+      "canonicalName": "Magical Voice",
+      "value1": "",
+      "value2": "",
+      "description": "Magical Voice(Speaks through magical means)."
+    },
+    "Mecho-Magical Mind": {
+      "canonicalName": "Mecho-Magical Mind",
+      "value1": "",
+      "value2": "",
+      "description": "Mecho-Magical Mind(Mind made of small parts; motorized but magical in nature. If the mind is destroyed then the being dies. Beings with this ability also gain immunity to Fear, Hold, and Sleep.)"
+    },
+    "Metal Mechanical Form": {
+      "canonicalName": "Metal Mechanical Form",
+      "value1": "",
+      "value2": "",
+      "description": "Metal Mechanical Form(Metallic mechanical body that has built-in armor equaling 1 point per 3 Endurance with no maximum. Cannot wear rigid or even semi-flexible armor, as it would interfere with locomotion. Can wear any flexible armor available. Gains the following immunities: Aging, Disease, Fatigue, Frost Hardened, Fire Hardened, Greater Poison, Lesser Transformation of Form, and Shock. Also has the disabilities: Cannot Swim, Infertile, No Intake, No Healing, No Sense of Smell, and No Sense of Taste.)"
+    },
+    "Natural Weapons(Arachen)": {
+      "canonicalName": "Natural Weapons(Arachen)",
+      "value1": "",
+      "value2": "",
+      "description": "Arachen: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Ba’Cora)": {
+      "canonicalName": "Natural Weapons(Ba’Cora)",
+      "value1": "",
+      "value2": "",
+      "description": "Ba’Cora: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Beastman)": {
+      "canonicalName": "Natural Weapons(Beastman)",
+      "value1": "",
+      "value2": "",
+      "description": "Beastman: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Brok)": {
+      "canonicalName": "Natural Weapons(Brok)",
+      "value1": "",
+      "value2": "",
+      "description": "Brok: Gains additional effects in combat (touch causes CR or loss of 1 WIL to the living thing touched.)."
+    },
+    "Natural Weapons(Brownie)": {
+      "canonicalName": "Natural Weapons(Brownie)",
+      "value1": "",
+      "value2": "",
+      "description": "Brownie: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Centaur)": {
+      "canonicalName": "Natural Weapons(Centaur)",
+      "value1": "",
+      "value2": "",
+      "description": "Centaur: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Cervara)": {
+      "canonicalName": "Natural Weapons(Cervara)",
+      "value1": "",
+      "value2": "",
+      "description": "Cervara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Chetahl)": {
+      "canonicalName": "Natural Weapons(Chetahl)",
+      "value1": "",
+      "value2": "",
+      "description": "Chetahl: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Dark Avian)": {
+      "canonicalName": "Natural Weapons(Dark Avian)",
+      "value1": "",
+      "value2": "",
+      "description": "Dark Avian: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Equara)": {
+      "canonicalName": "Natural Weapons(Equara)",
+      "value1": "",
+      "value2": "",
+      "description": "Equara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Fire Mephyt)": {
+      "canonicalName": "Natural Weapons(Fire Mephyt)",
+      "value1": "",
+      "value2": "",
+      "description": "Fire Mephyt: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Grahl)": {
+      "canonicalName": "Natural Weapons(Grahl)",
+      "value1": "",
+      "value2": "",
+      "description": "Grahl: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Giant)": {
+      "canonicalName": "Natural Weapons(Giant)",
+      "value1": "",
+      "value2": "",
+      "description": "Giant: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Gremlin)": {
+      "canonicalName": "Natural Weapons(Gremlin)",
+      "value1": "",
+      "value2": "",
+      "description": "Gremlin: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Hippotara)": {
+      "canonicalName": "Natural Weapons(Hippotara)",
+      "value1": "",
+      "value2": "",
+      "description": "Hippotara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Ice Mephyt)": {
+      "canonicalName": "Natural Weapons(Ice Mephyt)",
+      "value1": "",
+      "value2": "",
+      "description": "Ice Mephyt: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Jumara)": {
+      "canonicalName": "Natural Weapons(Jumara)",
+      "value1": "",
+      "value2": "",
+      "description": "Jumara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Katara)": {
+      "canonicalName": "Natural Weapons(Katara)",
+      "value1": "",
+      "value2": "",
+      "description": "Katara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Kenku)": {
+      "canonicalName": "Natural Weapons(Kenku)",
+      "value1": "",
+      "value2": "",
+      "description": "Kenku: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Kerasara)": {
+      "canonicalName": "Natural Weapons(Kerasara)",
+      "value1": "",
+      "value2": "",
+      "description": "Kerasara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Mechanos)": {
+      "canonicalName": "Natural Weapons(Mechanos)",
+      "value1": "",
+      "value2": "",
+      "description": "Mechanos: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(S’rett)": {
+      "canonicalName": "Natural Weapons(S’rett)",
+      "value1": "",
+      "value2": "",
+      "description": "S’rett: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Saurian)": {
+      "canonicalName": "Natural Weapons(Saurian)",
+      "value1": "",
+      "value2": "",
+      "description": "Saurian: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Sasquatch/Yeti)": {
+      "canonicalName": "Natural Weapons(Sasquatch/Yeti)",
+      "value1": "",
+      "value2": "",
+      "description": "Sasquatch/Yeti: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Scethen)": {
+      "canonicalName": "Natural Weapons(Scethen)",
+      "value1": "",
+      "value2": "",
+      "description": "Scethen: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Se’eth)": {
+      "canonicalName": "Natural Weapons(Se’eth)",
+      "value1": "",
+      "value2": "",
+      "description": "Se’eth: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Sha’Cora)": {
+      "canonicalName": "Natural Weapons(Sha’Cora)",
+      "value1": "",
+      "value2": "",
+      "description": "Sha’Cora: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Susara)": {
+      "canonicalName": "Natural Weapons(Susara)",
+      "value1": "",
+      "value2": "",
+      "description": "Susara: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Taurian)": {
+      "canonicalName": "Natural Weapons(Taurian)",
+      "value1": "",
+      "value2": "",
+      "description": "Taurian: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Troll)": {
+      "canonicalName": "Natural Weapons(Troll)",
+      "value1": "",
+      "value2": "",
+      "description": "Troll: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(True Giant)": {
+      "canonicalName": "Natural Weapons(True Giant)",
+      "value1": "",
+      "value2": "",
+      "description": "True Giant: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Whalrog)": {
+      "canonicalName": "Natural Weapons(Whalrog)",
+      "value1": "",
+      "value2": "",
+      "description": "Whalrog: Gains additional natural weapon attacks in combat."
+    },
+    "Natural Weapons(Xar’Xeth)": {
+      "canonicalName": "Natural Weapons(Xar’Xeth)",
+      "value1": "",
+      "value2": "",
+      "description": "Xar’Xeth: Gains additional natural weapon attacks in combat."
+    },
+    "Night Vision": {
+      "canonicalName": "Night Vision",
+      "value1": "",
+      "value2": "",
+      "description": "Night Vision(Near darkness vision. Bright light: blinds 1d6+1 sec. -2 to hit/+1 initiative after)."
+    },
+    "Night Vision(Enhanced)": {
+      "canonicalName": "Night Vision(Enhanced)",
+      "value1": "",
+      "value2": "",
+      "description": "Night Vision(Enhanced):(Near darkness vision. No bright light penalties.)"
+    },
+    "Not Easily Surprised": {
+      "canonicalName": "Not Easily Surprised",
+      "value1": "",
+      "value2": "",
+      "description": "Not Easily Surprised(-15% to be Surprised)."
+    },
+    "Patterned Fur": {
+      "canonicalName": "Patterned Fur",
+      "value1": 10,
+      "value2": 5,
+      "description": "Patterned Fur(or Scales):(+10% to Blend/+5% to Move Unseen in matching terrain)."
+    },
+    "Pincers/Mandibles": {
+      "canonicalName": "Pincers/Mandibles",
+      "value1": "",
+      "value2": "",
+      "description": "Pincers(Gains additional attacks in combat. After hit being is considered grappled STR Contest to escape)."
+    },
+    "Prehensile Trunk": {
+      "canonicalName": "Prehensile Trunk",
+      "value1": "",
+      "value2": "",
+      "description": "Prehensile Trunk(Acts as a third hand but without being able to delicately manipulate objects. The trunk has x1 Endurance and adds +20% to Climb.)"
+    },
+    "Quadruped": {
+      "canonicalName": "Quadruped",
+      "value1": 20,
+      "value2": -10,
+      "description": "Quadruped(Gains Gallop/+20% to Agility saves/except trampling at -10%)."
+    },
+    "Quiet Flier": {
+      "canonicalName": "Quiet Flier",
+      "value1": 20,
+      "value2": "",
+      "description": "The creature is at +20% to surprise when attacking from the air."
+    },
+    "Raking Claws": {
+      "canonicalName": "Raking Claws",
+      "value1": "",
+      "value2": "",
+      "description": "Raking Claws:(Gains additional engaging/grappling attacks)."
+    },
+    "Raking Talons/Claws": {
+      "canonicalName": "Raking Talons/Claws",
+      "value1": "",
+      "value2": "",
+      "description": "Raking Talons/Claws:(Gains additional engaging/grappling attacks)."
+    },
+    "Reduced Consumption": {
+      "canonicalName": "Reduced Consumption",
+      "value1": "",
+      "value2": "",
+      "description": "Reduced Consumption(needs half the normal amount of food and water to survive)."
+    },
+    "Regeneration": {
+      "canonicalName": "Regeneration",
+      "value1": "",
+      "value2": "",
+      "description": "Regeneration:(Regeneration(1d4 points are healed to all areas per minute. Cannot regenerate from fire or acid damage, or if the head and heart are separated.))"
+    },
+    "Regeneration(Natural)": {
+      "canonicalName": "Regeneration(Natural)",
+      "value1": "",
+      "value2": "",
+      "description": "Regeneration-Natural:(Lost limbs regrow at VIT healing rate. They appear first as buds and then fill out as they heal. Being cannot regenerate from fire/acid. Death if the head and heart are seperated.)"
+    },
+    "Regeneration(Greater)": {
+      "canonicalName": "Regeneration(Greater)",
+      "value1": "",
+      "value2": "",
+      "description": "Regeneration-Greater:(Regenerates 1d4 points to all wounds per 10 sec. Limbs regenerate and are restored when fully healed. Vital area loss causes death.)"
+    },
+    "Regeneration(Slow)": {
+      "canonicalName": "Regeneration(Slow)",
+      "value1": "",
+      "value2": "",
+      "description": "Regeneration-Slow:(Limbs/non-head vitals heal at double normal healing rate. Beheading/fatal head damage causes death.)"
+    },
+    "Shell Armor": {
+      "canonicalName": "Shell Armor",
+      "value1": "",
+      "value2": "",
+      "description": "Shell Armor(Areas covered by the shell cannot have rigid armor on them unless it is bolted on at x3 cost)."
+    },
+    "Silent Flight": {
+      "canonicalName": "Silent Flight",
+      "value1": 20,
+      "value2": "",
+      "description": "Silent Flight(at jogging speeds or less. +20% to surprise attack)."
+    },
+    "Skin(Heat)": {
+      "canonicalName": "Skin(Heat)",
+      "value1": "",
+      "value2": "",
+      "description": "Skin(Heat):(1d6 heat damage upon touch, once per 5 seconds)."
+    },
+    "Skin(Cold)": {
+      "canonicalName": "Skin(Cold)",
+      "value1": "",
+      "value2": "",
+      "description": "Skin(Cold):(1d4 cold damage upon touch, once per 5 seconds)."
+    },
+    "Sleepless": {
+      "canonicalName": "Sleepless",
+      "value1": "",
+      "value2": "",
+      "description": "Sleepless(Does not sleep but needs periods of inactivity that match sleep periods where they are alert but sluggish taking x2 as long to act for 2-20 seconds)."
+    },
+    "Special Dark Shape": {
+      "canonicalName": "Special Dark Shape",
+      "value1": "",
+      "value2": "",
+      "description": "Special Dark Shape(Dark Fairies with Animal Shape skill can become D`Wisps with powers at x2 the Title of the Dark Fairy)."
+    },
+    "Special Fire Shape": {
+      "canonicalName": "Special Fire Shape",
+      "value1": "",
+      "value2": "",
+      "description": "Special Fire Shape(Fire Mephyts with Animal Shape skill can become Fire Wisps with powers at x2 the Title of the Mephyt)."
+    },
+    "Special Frost Shape": {
+      "canonicalName": "Special Frost Shape",
+      "value1": "",
+      "value2": "",
+      "description": "Special Frost Shape(Ice Mephyts with Animal Shape skill can become Ice Wisps with powers at x2 the Title of the Mephyt)."
+    },
+    "Special Shape": {
+      "canonicalName": "Special Shape",
+      "value1": "",
+      "value2": "",
+      "description": "Special Shape(Fairies with Animal Shape skill can become Will O` Wisps with powers at the x2 Title of the Fairy)."
+    },
+    "Stinger": {
+      "canonicalName": "Stinger",
+      "value1": "",
+      "value2": "",
+      "description": "Stinger(Gains additional attacks in combat)."
+    },
+    "Swimming": {
+      "canonicalName": "Swimming",
+      "value1": "",
+      "value2": "",
+      "description": "Swimming(+50% to Swimming skill, swim movement at x3 walking)."
+    },
+    "Swimming(Enhanced)": {
+      "canonicalName": "Swimming(Enhanced)",
+      "value1": "",
+      "value2": "",
+      "description": "Swimming(Enhanced):(Swim at 5x walking speed)."
+    },
+    "Tail Slap": {
+      "canonicalName": "Tail Slap",
+      "value1": "",
+      "value2": "",
+      "description": "Tail Slap: Gains additional natural weapon attacks in combat."
+    },
+    "Talons/Large Claws": {
+      "canonicalName": "Talons/Large Claws",
+      "value1": "",
+      "value2": "",
+      "description": "Talons/Large Claws: Gains additional natural weapon attacks in combat."
+    },
+    "Terrain Blending": {
+      "canonicalName": "Terrain Blending",
+      "value1": "",
+      "value2": "",
+      "description": "Terrain Blending(+20% to Surprise Attack/Blend in native terrain)."
+    },
+    "Terrain Fur": {
+      "canonicalName": "Terrain Fur",
+      "value1": 20,
+      "value2": "",
+      "description": "Terrain Fur(+20% to Blend/Move Unseen in native terrain)."
+    },
+    "Transform(Fish Tail)": {
+      "canonicalName": "Transform(Fish Tail)",
+      "value1": "",
+      "value2": "",
+      "description": "Transform(Fish Tail):(transform lower body, lower torso down into a fish tail: x3 Endurance tail and a x1 Endurance fin)."
+    },
+    "Treasure Sniffing": {
+      "canonicalName": "Treasure Sniffing",
+      "value1": "",
+      "value2": "",
+      "description": "Treasure Sniffing(The sense of Smell can be used to find valuables)."
+    },
+    "Tusks": {
+      "canonicalName": "Tusks",
+      "value1": "",
+      "value2": "",
+      "description": "Tusks(Gains additional attacks in combat)."
+    },
+    "Ultravision": {
+      "canonicalName": "Ultravision",
+      "value1": "",
+      "value2": "",
+      "description": "Ultravision(Vision in ultraviolet spectrum. Can see in darkness)."
+    },
+    "Underwater Vision": {
+      "canonicalName": "Underwater Vision",
+      "value1": "",
+      "value2": "",
+      "description": "Underwater Vision(No penalties or distance modifiers when seeing in clear water)."
+    },
+    "Venom(Paralysis)": {
+      "canonicalName": "Venom(Paralysis)",
+      "value1": "V",
+      "value2": "P",
+      "description": "Venom:Paralysis(Type V-Potency P)."
+    },
+    "Venom(Strong)": {
+      "canonicalName": "Venom(Strong)",
+      "value1": "x2",
+      "value2": "P",
+      "description": "Venom(Strong):(Poison Type = Title x2, Potency J)."
+    },
+    "Vibration Language": {
+      "canonicalName": "Vibration Language",
+      "value1": "",
+      "value2": "",
+      "description": "Vibration Sensing(sense subtle vibrations within 1000`)."
+    },
+    "Vibration Sensing": {
+      "canonicalName": "Vibration Sensing",
+      "value1": 1000,
+      "value2": "",
+      "description": "Vibration Language(Can speak in a language of Vibrations that can be learned by anyone who has Vibration Sensing)."
+    },
+    "Water Elemental Form": {
+      "canonicalName": "Water Elemental Form",
+      "value1": "",
+      "value2": "",
+      "description": "Water Elemental Form(Being can transform into an Water Elemental. With all powers and abilities at a level equal to Class Title x2. Requires a source of water.)"
+    },
+    "Webbed Feet/Hands": {
+      "canonicalName": "Webbed Feet/Hands",
+      "value1": "",
+      "value2": "",
+      "description": "Webbed Feet/Hands(+30% to Swimming skill)."
+    },
+    "Web Weaving": {
+      "canonicalName": "Web Weaving",
+      "value1": "",
+      "value2": "",
+      "description": "Web Weaving(Strong webs are web strength of being`s END and Hide equal to the being`s VIT. Sticky webs are 1/2 END but cause entanglement: STR Save at -50% to escape. Both types shoot to dagger range)."
+    },
+    "Wings": {
+      "canonicalName": "Wings",
+      "value1": "",
+      "value2": "",
+      "description": "Wings(Natural Flight at x3 walking speed. Wings give the being the ability to fly)."
+    },
+    "Wing Projection": {
+      "canonicalName": "Wing Projection",
+      "value1": "",
+      "value2": "",
+      "description": "Wing Projection(Magical Flight. Projects a mental image of wings during flight)."
+    }
+  }
+}

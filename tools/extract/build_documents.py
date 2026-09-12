@@ -442,6 +442,70 @@ def build_classes():
     return docs
 
 
+# Abilities, disabilities and immunities: which pair of dictionaries feeds each category, and
+# which of the two is the creature-side copy. Both are read because they disagree with one
+# another -- see docs/UPSTREAM-ISSUES.md item 10.
+TRAIT_SOURCES = {
+    "ability":    ("abilitylist@176213",    "abilitylist@45725"),
+    "disability": ("disabilitylist@177698", "disabilitylist@45903"),
+    "immunity":   ("immunitylist@177965",   "immunitylist@45988"),
+}
+
+
+def build_traits(tmpcategory):
+    """
+    One category of trait, drawn from both of his copies of that dictionary.
+
+    Each category is built into its own pack rather than all three into one, because 19 names
+    appear in two categories at once -- Poison, Acid, Aura, Regeneration and Insanity among
+    them -- and the importer matches documents by name, so a combined pack would silently
+    overwrite one with the other.
+
+    Where a name is in both copies and the rows differ, the creature row wins: it is the larger
+    and more recently extended list, and a trait is descriptive here, so the difference is text
+    rather than mechanics. Every such conflict is reported so the choice stays visible.
+
+    value1 and value2 stay strings deliberately. Their meaning is per entry, not per column --
+    a damage multiplier of .5 in one row, a magic-resistance penalty of -10 in another -- so
+    reading them as numbers would imply a consistency the data does not have.
+    """
+    tmpcreaturename, tmpracialname = TRAIT_SOURCES[tmpcategory]
+    tmpcreature = load_named(tmpcreaturename)
+    tmpracial = load_named(tmpracialname)
+    if not tmpcreature and not tmpracial:
+        return []
+
+    tmpcreaturerows = tmpcreature["entries"] if tmpcreature else {}
+    tmpracialrows = tmpracial["entries"] if tmpracial else {}
+
+    docs = []
+    for tmpkey in sorted(set(tmpcreaturerows) | set(tmpracialrows)):
+        where = "%s/%s" % (tmpcategory, tmpkey)
+        tmpinboth = tmpkey in tmpcreaturerows and tmpkey in tmpracialrows
+        if tmpinboth and tmpcreaturerows[tmpkey] != tmpracialrows[tmpkey]:
+            note("trait-copies-differ", where,
+                 "creature and racial rows differ; keeping the creature row")
+        tmprow = tmpcreaturerows.get(tmpkey) or tmpracialrows[tmpkey]
+
+        # An entry only his racial list carries: it will never be reached by the creature
+        # lookup in his sheet, but a character's race can still grant it.
+        if tmpkey not in tmpcreaturerows:
+            note("trait-racial-only", where, "in the racial list only")
+
+        docs.append(make_doc(tmpkey, "trait", {
+            "category": tmpcategory,
+            "canonicalName": clean_text(str(tmprow.get("canonicalName", ""))),
+            "value1": clean_text(str(tmprow.get("value1", ""))),
+            "value2": clean_text(str(tmprow.get("value2", ""))),
+            # These dictionaries carry no book or page of their own. Left blank rather than
+            # guessed at: untagged content is always available at the sourcebook level.
+            "sourcebook": "",
+            "page": "",
+            "description": clean_text(str(tmprow.get("description", ""))),
+        }))
+    return docs
+
+
 BUILDERS = {
     "skills": build_skills,
     "weapons": build_weapons,
@@ -449,6 +513,9 @@ BUILDERS = {
     "equipment": build_equipment,
     "races": build_races,
     "classes": build_classes,
+    "abilities": lambda: build_traits("ability"),
+    "disabilities": lambda: build_traits("disability"),
+    "immunities": lambda: build_traits("immunity"),
 }
 
 
