@@ -27,6 +27,7 @@ globalThis.foundry = {
 globalThis.game = { imagine: { getAvailabilityRules: () => null } };
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+const R = await import("../module/combat/combat-rules.mjs");
 
 const results = [];
 function check(label, actual, expected) {
@@ -169,15 +170,17 @@ function makeRace(overrides = {}) {
 			endurance: { startFormula: "", startMod: 4, titleFormula: "", titleDice: "", titleMax: 0, titleMod: 0 },
 			characteristicMods: { perception: 3, affinity: -2, fortune: 1 },
 			resistanceMods: { magic: 10, illusion: 0, control: 0, poison: 5, disease: 0 },
+			// These are MODIFIERS on the Agility base, not finished rates, so they are the size
+			// his data actually carries: this is the Human(Barbaric) row, +1/+10/+1 walking.
 			movement: {
 				speedMultiplier: 1,
-				walk: { hourly: 6, tenSec: 60, oneSec: 6 },
-				jog:  { hourly: 12, tenSec: 120, oneSec: 12 },
-				run:  { hourly: 18, tenSec: 180, oneSec: 18 },
+				walk: { hourly: 1, tenSec: 10, oneSec: 1 },
+				jog:  { hourly: 2, tenSec: 20, oneSec: 2 },
+				run:  { hourly: 2, tenSec: 30, oneSec: 3 },
 				specialName: "Fly:",
 				special: { hourly: "", hourlyMultiplier: 0, hourlyMod: 0, tenSec: "", tenSecMultiplier: 0,
 				           tenSecMod: 0, oneSec: "", oneSecMultiplier: 0, oneSecMod: 0 },
-				jumpStand: 8, jumpUp: 3.5
+				jumpStand: 2, jumpUp: 0.5
 			},
 			formless: false, canSwim: true,
 			...overrides
@@ -210,9 +213,54 @@ check("racial endurance modifier is applied",  raced.characteristics.endurance.v
 check("racial characteristic modifier",        raced.characteristics.perception.raceMod, 3);
 check("racial resistance modifier is added",
 	raced.resistances.magic.value, raced.resistances.magic.base + 10);
-check("movement comes from the race",          raced.movement.walk.tenSec, 60);
+// Movement: the Agility base plus the race's MODIFIER, not the race's figure on its own.
+// This character's Agility lands on 13 (14 - 1 racial), whose band bases are walk 4/40/4,
+// jog 8/80/8, run 12/120/12. The race adds the Human(Barbaric) row on top.
+check("walk is the Agility base plus the race's modifier", raced.movement.walk.tenSec, 50);
+check("...at the hourly scale too",                        raced.movement.walk.hourly, 5);
+check("...and per second",                                 raced.movement.walk.oneSec, 5);
+check("jog takes its own base and modifier",               raced.movement.jog.tenSec, 100);
+check("run takes its own base and modifier",               raced.movement.run.tenSec, 150);
+check("jumping is the same base-plus-modifier shape",      raced.movement.jumpStand, 8);
+check("...and so is the upward jump",                      raced.movement.jumpUp, 3);
 check("special movement name from the race",   raced.movement.specialName, "Fly:");
 check("race name surfaces on identity",        raced.identity.raceName, "Testfolk");
+
+// A race whose every movement figure is 0 has NO MODIFIER, and moves at the full base for its
+// Agility. This is the Human(Civilized) case, and the whole point of the table: before this was
+// understood the sheet showed such a character as unable to walk at all. If this test ever fails
+// by reading 0, the base table has stopped being applied -- do not "fix" it by editing the race.
+const zeroMods = {
+	attributeMods: { str: 0, agl: 0, vit: 0, int: 0, wis: 0, knw: 0,
+	                 app: 0, chm: 0, soc: 0, aur: 0, pty: 0, wil: 0 },
+	movement: {
+		speedMultiplier: 0,
+		walk: { hourly: 0, tenSec: 0, oneSec: 0 },
+		jog:  { hourly: 0, tenSec: 0, oneSec: 0 },
+		run:  { hourly: 0, tenSec: 0, oneSec: 0 },
+		specialName: "", special: {}, jumpStand: 0, jumpUp: 0 } };
+const plain = makeCharacter({ agl: 11 }, 12, [makeRace(zeroMods)]);
+check("a race with no modifiers still walks",      plain.movement.walk.tenSec, 40);
+check("...and jogs",                               plain.movement.jog.tenSec, 70);
+check("...and runs",                               plain.movement.run.tenSec, 110);
+check("a speed multiplier of 0 means one, not nil", plain.movement.walk.hourly, 4);
+
+// A negative rate is lifted to the book's floor (Player's Guide p.36): 1 mile, 10 feet, 1 foot.
+// Elf(Sea) and Elf(Ice) carry a -10 multiplier in his data, which his own sheet multiplies
+// straight through into large negative distances.
+const cursed = makeCharacter({ agl: 11 }, 12, [makeRace({ movement: {
+	...zeroMods.movement, speedMultiplier: -10 } })]);
+check("a negative rate falls to the hourly floor", cursed.movement.walk.hourly, 1);
+check("...the ten second floor",                   cursed.movement.walk.tenSec, 10);
+check("...and the one second floor",               cursed.movement.walk.oneSec, 1);
+
+// His switch stops at 30 with no default; the port holds the top band rather than leaving
+// whatever the last character happened to have. This is tested against the table directly
+// because an attribute cannot reach 30 on a character -- title 11 and up caps every rating at 27.
+check("Agility past his top band holds that band",
+	R.getMovementBase(40).run[1], R.getMovementBase(30).run[1]);
+check("a rating below his table takes the bottom band",
+	R.getMovementBase(-5).walk[1], R.getMovementBase(0).walk[1]);
 
 // --- class integration ----------------------------------------------------------
 const classItem = {

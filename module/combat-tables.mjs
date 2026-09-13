@@ -570,4 +570,47 @@ export const OFFHAND_PENALTIES = {
 	skill:  [[1, 9, -20], [10, 15, -15], [16, 17, -10], [18, 19, -5]]
 };
 
+// @MARKER MOVEMENT BASE BY AGILITY
+// From calcMovement (sheet-worker.js:30856), the base distances every character
+// walks, jogs and runs before its race is taken into account.
+//
+// A RACE'S MOVEMENT FIGURES ARE MODIFIERS, NOT FINISHED RATES. His switch reads
+//     move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod
+// so the race's number is ADDED to the base below. A race carrying 0/0/0 --
+// Human(Civilized) among them -- is a race with no modifier, and walks at the full
+// base for its Agility. It is NOT a race with no movement, and must never be
+// "fixed" by inventing figures for it.
+//
+// Each row is [lowest Agility, highest Agility, bases], and each of walk/jog/run is
+// [hourly (miles), 10 seconds (feet), 1 second (feet)]. His bands are irregular --
+// 0-1, 2-4, then singles, then 11-12 and 13-14 -- which is why this is generated.
+//
+// His switch stops at Agility 30 and has no default, so a higher rating would leave
+// the previous values in place. The port clamps to the top band instead.
+export const MOVEMENT_BASE = [
+	[ 0,  1, { walk: [0.0, 0.0, 0.0], jog: [0.0, 0.0, 0.0], run: [0.0, 0.0, 0.0], jumpStand: 0.0, jumpUp: 0.0 }],
+	[ 2,  4, { walk: [0.5, 5.0, 0.5], jog: [1.0, 10.0, 1.0], run: [2.0, 10.0, 1.0], jumpStand: 1.0, jumpUp: 0.5 }],
+	[ 5,  5, { walk: [1.0, 10.0, 1.0], jog: [2.0, 10.0, 1.0], run: [3.0, 20.0, 2.0], jumpStand: 2.0, jumpUp: 0.5 }],
+	[ 6,  6, { walk: [1.0, 10.0, 1.0], jog: [2.0, 20.0, 2.0], run: [3.0, 30.0, 3.0], jumpStand: 3.0, jumpUp: 1.0 }],
+	[ 7,  7, { walk: [2.0, 20.0, 2.0], jog: [4.0, 30.0, 3.0], run: [6.0, 50.0, 5.0], jumpStand: 3.0, jumpUp: 1.0 }],
+	[ 8,  8, { walk: [2.0, 20.0, 2.0], jog: [4.0, 40.0, 4.0], run: [6.0, 60.0, 6.0], jumpStand: 4.0, jumpUp: 1.5 }],
+	[ 9,  9, { walk: [3.0, 30.0, 3.0], jog: [6.0, 50.0, 5.0], run: [9.0, 80.0, 8.0], jumpStand: 4.0, jumpUp: 1.5 }],
+	[10, 10, { walk: [3.0, 30.0, 3.0], jog: [6.0, 60.0, 6.0], run: [9.0, 90.0, 9.0], jumpStand: 5.0, jumpUp: 2.0 }],
+	[11, 12, { walk: [4.0, 40.0, 4.0], jog: [8.0, 70.0, 7.0], run: [12.0, 110.0, 11.0], jumpStand: 5.0, jumpUp: 2.0 }],
+	[13, 14, { walk: [4.0, 40.0, 4.0], jog: [8.0, 80.0, 8.0], run: [12.0, 120.0, 12.0], jumpStand: 6.0, jumpUp: 2.5 }],
+	[15, 15, { walk: [5.0, 50.0, 5.0], jog: [10.0, 90.0, 9.0], run: [15.0, 140.0, 14.0], jumpStand: 6.0, jumpUp: 2.5 }],
+	[16, 16, { walk: [5.0, 50.0, 5.0], jog: [10.0, 100.0, 10.0], run: [15.0, 150.0, 15.0], jumpStand: 7.0, jumpUp: 3.0 }],
+	[17, 17, { walk: [6.0, 60.0, 6.0], jog: [12.0, 110.0, 11.0], run: [18.0, 170.0, 17.0], jumpStand: 7.0, jumpUp: 3.0 }],
+	[18, 18, { walk: [6.0, 60.0, 6.0], jog: [12.0, 120.0, 12.0], run: [18.0, 180.0, 18.0], jumpStand: 8.0, jumpUp: 3.5 }],
+	[19, 19, { walk: [7.0, 70.0, 7.0], jog: [14.0, 130.0, 13.0], run: [21.0, 200.0, 20.0], jumpStand: 8.0, jumpUp: 3.5 }],
+	[20, 20, { walk: [7.0, 70.0, 7.0], jog: [14.0, 140.0, 14.0], run: [21.0, 210.0, 21.0], jumpStand: 9.0, jumpUp: 4.0 }],
+	[21, 21, { walk: [8.0, 80.0, 8.0], jog: [16.0, 160.0, 16.0], run: [24.0, 240.0, 24.0], jumpStand: 10.0, jumpUp: 4.5 }],
+	[22, 22, { walk: [8.0, 80.0, 8.0], jog: [16.0, 160.0, 16.0], run: [24.0, 240.0, 24.0], jumpStand: 11.0, jumpUp: 5.0 }],
+	[23, 24, { walk: [9.0, 90.0, 9.0], jog: [18.0, 180.0, 18.0], run: [27.0, 270.0, 27.0], jumpStand: 11.0, jumpUp: 5.0 }],
+	[25, 26, { walk: [10.0, 100.0, 10.0], jog: [20.0, 200.0, 20.0], run: [30.0, 300.0, 30.0], jumpStand: 12.0, jumpUp: 5.5 }],
+	[27, 28, { walk: [11.0, 110.0, 11.0], jog: [22.0, 220.0, 22.0], run: [33.0, 330.0, 33.0], jumpStand: 13.0, jumpUp: 6.0 }],
+	[29, 29, { walk: [12.0, 120.0, 12.0], jog: [24.0, 240.0, 24.0], run: [36.0, 360.0, 36.0], jumpStand: 14.0, jumpUp: 6.5 }],
+	[30, 30, { walk: [12.0, 120.0, 12.0], jog: [24.0, 240.0, 24.0], run: [36.0, 360.0, 36.0], jumpStand: 15.0, jumpUp: 7.0 }],
+];
+
 // @END (CODE)

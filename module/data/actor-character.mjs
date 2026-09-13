@@ -17,7 +17,8 @@ import { ATTRIBUTE_TABLES } from "../config-tables.mjs";
 import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList
+	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList,
+	getMovementBase, resolveMovementRate
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -697,16 +698,29 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	_prepareMovement() {
 		if (!this.raceItem) { return; }
 		var tmpracemove = this.raceItem.system.movement;
+		var tmpbase     = getMovementBase(this.attributes.agl.value);
+		var tmpmulti    = tmpracemove.speedMultiplier;
 
+		// The race's figures are MODIFIERS on the Agility base, not finished rates -- see the
+		// movement block in combat-rules.mjs. A race carrying 0/0/0 has no modifier and moves at
+		// the full base; it is not a race that cannot move.
+		//
+		// Each scale carries its own floor for a negative result: 1 mile, 10 feet, 1 foot.
+		var tmpfloors = { hourly: 1, tenSec: 10, oneSec: 1 };
 		for (const tmpmode of ["walk", "jog", "run"]) {
-			this.movement[tmpmode].hourly = tmpracemove[tmpmode].hourly;
-			this.movement[tmpmode].tenSec = tmpracemove[tmpmode].tenSec;
-			this.movement[tmpmode].oneSec = tmpracemove[tmpmode].oneSec;
+			for (const [tmpscale, tmpcolumn] of [["hourly", 0], ["tenSec", 1], ["oneSec", 2]]) {
+				this.movement[tmpmode][tmpscale] = resolveMovementRate(
+					tmpbase[tmpmode][tmpcolumn], tmpracemove[tmpmode][tmpscale],
+					tmpmulti, tmpfloors[tmpscale]);
+			}
 		}
 
+		// Jumping is the same shape -- an Agility base plus the race's modifier -- but has no
+		// speed multiplier and no published floor, so a penalty is allowed to take it to zero.
+		this.movement.jumpStand = Math.max(0, tmpbase.jumpStand + (parseFloat(tmpracemove.jumpStand) || 0));
+		this.movement.jumpUp    = Math.max(0, tmpbase.jumpUp    + (parseFloat(tmpracemove.jumpUp)    || 0));
+
 		this.movement.specialName = tmpracemove.specialName;
-		this.movement.jumpStand   = tmpracemove.jumpStand;
-		this.movement.jumpUp      = tmpracemove.jumpUp;
 	}
 
 	// This is the function which reads the skill slot allowances off the Knowledge table.

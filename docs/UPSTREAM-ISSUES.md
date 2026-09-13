@@ -438,55 +438,80 @@ after the generated classes. A manual entry never overwrites a class your data c
 you add the missing rows the generated one wins automatically and the manual entry is reported as
 redundant. The other four have no template to hand and remain unbuilt.
 
-## 23. Fourteen races cannot move: eleven have no movement figures, three reference a rate that is zero
+## 23. ~~Fourteen races cannot move~~ — WITHDRAWN, this was our misreading
 
-**Status:** open · **Severity:** real gap; it includes all four Civilized Human races
+**Status:** withdrawn · **Severity:** none · **Nothing here needs your attention**
 
-**Eleven races have nothing in the walk, jog and run columns of `raceStatsAndMoveDetails`** —
-indices 39 to 47 are all zero:
+This item claimed that fourteen races — all four Civilized Humans among them — had no movement
+figures in `raceStatsAndMoveDetails`, and asked you to fill them in. **That was wrong, and the
+request is withdrawn.** Your data was right the whole way through.
 
-| | | |
+The columns at indices 39-47 are **modifiers on an Agility base, not finished rates**. Your own
+`calcMovement` (`sheet-worker.js:30856`) switches on Agility for a base and adds the race's figure
+to it:
+
+```js
+setAttrs({move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod});
+//                          ^ base for this Agility
+//                            ^ the race's modifier
+```
+
+So a race carrying `0, 0, 0` is a race with **no modifier**, which walks at the full base for its
+Agility. Civilized Humans being the baseline race with no adjustment anywhere — attributes included
+— is exactly as deliberate as it looked. The Player's Guide prints the same split on page 36: "Base
+Walking/Jogging/Running Distance" tables by Agility, then a separate "Racial Movement Modifiers"
+table beside them. Your Human(Barbaric) row is that book table's `+1/+10/+1`, `+2/+20/+2`,
+`+2/+30/+3` to the digit, and all 42 printed base values match your switch exactly.
+
+Marid, Merfolk and Se'eth are not stationary either. Their Walk is a zero *modifier*, so it resolves
+normally, and their Swim and Slither rates build on the resolved figure.
+
+**What went wrong on our side:** the port copied the race's modifier straight through as the
+finished rate and never applied the Agility base, so every race with a `0` modifier rendered as
+unable to move. Fixed — the base table is now generated out of your `calcMovement` rather than
+transcribed, and is cross-checked against the two copies of it in your own code, which agree.
+
+The lesson is recorded in `DECISIONS.md`; the apology for asking you to fix data that was never
+broken is recorded here.
+
+---
+
+## 24. Sea and Ice Elves have a speed multiplier of -10, which makes their movement negative
+
+**Status:** open · **Severity:** two races; needs a decision from you, not a guess from us
+
+`raceStatsAndMoveDetails` index 38 is the speed multiplier. Two races carry **-10** there:
+
+| Race | index 38 | Wood Elf, for comparison |
 |---|---|---|
-| Beastman | Human(Civilized:City) | Mechanos |
-| Crystori | Human(Civilized:Port) | Planar |
-| Ifrit | Human(Civilized:Town) | Troll(Ice) |
-| Xar'Xeth | Human(Civilized:Village) | |
+| Elf(Sea) | **-10** | 0 |
+| Elf(Ice) | **-10** | 0 |
 
-This is your data rather than a misread on our side, and the check is easy to repeat. Both rows are
-the full 62 columns, so nothing is shifted:
+Everywhere else in the file that column is `0`, which your own comment in `calcSpecialMovement`
+confirms is the sentinel for "no multiplier": *"most races are 0 (this makes the multiplier 1"*.
 
+`calcMovement` remaps only `0`, so `-10` reaches the multiplier branch intact and is multiplied
+through with no guard:
+
+```js
+} else {  // this race has speeded up movement (apply multiplier)
+    setAttrs({move_walk_hourly: (((2+racetmpwalkhourly+...)*racetmpspeedmulti).toFixed(1)) });
 ```
-Human(Barbaric)        ... 1, 10, 1,  2, 20, 2,  2, 30, 3, 'None:' ...   <- walk, jog, run
-Human(Civilized:City)  ... 0,  0, 0,  0,  0, 0,  0,  0, 0, 'None:' ...
-```
 
-Barbaric humans walk, jog and run. Civilized ones do not, and neither do the other ten. **The four
-Civilized Human rows are the ones most worth your attention** — they are likely the most-played
-races in the game, and a character of one currently has no movement rate at any scale.
+A Sea Elf of Agility 15 therefore ends up at roughly **-50 miles an hour** on your sheet rather than
+the 5 a Wood Elf gets. The neighbouring columns look deliberate (index 36 is -10 for several Elves
+as a poison-resistance modifier), so the most likely reading is that a value slid one column, but
+that is a guess and we are not acting on it.
 
-Note this is not the same as their having no attribute modifiers, which is plausible on purpose:
-indices 0-11 are also zero for Civilized Humans, and a baseline race with no adjustments makes
-sense. A baseline race that cannot walk does not.
+**What the port does:** it applies the rule your Player's Guide already publishes for this exact
+situation (p.36) — *"some races have penalties that may cause a negative movement rate. In such
+cases, the appropriate movement rate is reduced to 1 mile (hourly), 10 feet (10 seconds) or 1 foot
+(1 second)"* — which your sheet never implements. Sea and Ice Elves come out at that floor instead
+of at a negative number. Only a rate below zero is lifted; a rate that lands on zero honestly stays
+zero.
 
-**Three more races are motionless for a second reason.** Marid, Merfolk and Se'eth *do* have a
-special movement rate — Swim, Swim and Slither — but every special rate in your sheet is written
-relative to another rate rather than as a number, and theirs refer to **Walk**, which for these
-three is zero. So even reading the special rate correctly leaves them stationary:
-
-| Race | Special | Written as | Walk |
-|---|---|---|---|
-| Marid | Swim | `Walk` × multiplier | **0** |
-| Merfolk | Swim | `Walk` × multiplier | **0** |
-| Se'eth | Slither | `Walk` × multiplier | **0** |
-
-A merfolk that cannot swim is the clearest sign these are gaps rather than intent.
-
-**What the port does:** nothing is invented. A race with no figures derives none, and the sheet
-shows zeros, which is what your sheet does too. Fill the rows in and the values flow through with no
-code change — the extraction already reads those columns correctly for the other 91 races.
-
-(The relative-rate mechanic itself is sound and is being implemented; that part is our gap, not
-yours. See `DECISIONS.md` → "Special movement is a formula".)
+Two things worth your confirmation: whether `-10` in index 38 is intended at all, and whether you
+want the book's floor implemented in the Roll20 sheet too.
 
 **Two disagreements between that template and your sheet-worker**, both resolved in the
 sheet-worker's favour per the standing rule, both worth your confirmation:

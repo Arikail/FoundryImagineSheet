@@ -20,7 +20,7 @@ import {
 	SHIELD_COVERAGE, SHIELD_SIZES,
 	ENDURED_BY, REBOUNDED_TYPES,
 	PROJECTILE_MATCHES, LAUNCHER_MATCHES, LAUNCHER_PROJECTILE,
-	OFFHAND_PENALTIES
+	OFFHAND_PENALTIES, MOVEMENT_BASE
 } from "../combat-tables.mjs";
 
 // The zones an attack can land in, in the order his code tests them.
@@ -1275,6 +1275,61 @@ export const MODE_DAMAGE_TYPES = {
 		var tmpmin = parseInt(tmpminspeed) || 0;
 		if (tmpvalue < tmpmin) { tmpvalue = tmpmin; }
 		return tmpvalue;
+	}
+
+// @MARKER MOVEMENT
+//==================================================================================================================
+// How far a character travels, at three scales at once: per hour (miles), per 10 second combat
+// round (feet), and per second (feet).
+//
+// A RACE'S MOVEMENT FIGURES ARE MODIFIERS, NOT FINISHED RATES. His calcMovement
+// (sheet-worker.js:30856) switches on Agility for a base and ADDS the race's figure to it:
+//
+//     setAttrs({move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod});
+//
+// so a race carrying 0/0/0 -- Human(Civilized) among them -- is a race with NO MODIFIER, and
+// walks at the full base for its Agility. It is not a race that cannot walk. The Player's Guide
+// prints the same split on page 36: base tables by Agility, then a separate "Racial Movement
+// Modifiers" table, and his Human(Barbaric) row is that table's +1/+10/+1, +2/+20/+2, +2/+30/+3
+// to the digit.
+//==================================================================================================================
+
+	// This is the function which reads the base distances for an Agility rating.
+	//
+	// His switch runs 0 to 30 with no default, so a rating above it would leave whatever the
+	// previous character's values happened to be. Here the top band is held instead, which is the
+	// same answer his sheet gives for 30 and a defined one for anything past it.
+	export function getMovementBase(tmpagility) {
+		var tmprating = parseInt(tmpagility) || 0;
+		if (tmprating < 0) { tmprating = 0; }
+
+		for (const tmpband of MOVEMENT_BASE) {
+			if (tmprating >= tmpband[0] && tmprating <= tmpband[1]) { return tmpband[2]; }
+		}
+		return MOVEMENT_BASE[MOVEMENT_BASE.length - 1][2];
+	}
+
+	// This is the function which finishes one movement rate: base for the Agility, plus the race's
+	// modifier, times the race's speed multiplier.
+	//
+	// A speed multiplier of 0 means NO multiplier. That is his sentinel, not a stationary race --
+	// calcSpecialMovement says so in as many words: "most races are 0 (this makes the multiplier 1".
+	//
+	// tmpfloor is what a NEGATIVE rate becomes at this scale. The Player's Guide (p.36): a race
+	// whose penalties "cause a negative movement rate" has it "reduced to 1 mile (hourly), 10 feet
+	// (10 seconds) or 1 foot (1 second)". Only a rate below zero is lifted -- a rate that lands on
+	// zero honestly, as Agility 0-1 does, stays zero, which is what his sheet shows.
+	//
+	// HIS SHEET DOES NOT IMPLEMENT THAT RULE. Elf(Sea) and Elf(Ice) carry a -10 speed multiplier,
+	// and his sheet multiplies straight through it and hands them large negative distances. The
+	// book's floor is applied here rather than reproducing that. See docs/UPSTREAM-ISSUES.md.
+	export function resolveMovementRate(tmpbase, tmpracemod, tmpmultiplier, tmpfloor) {
+		var tmpmulti = parseFloat(tmpmultiplier) || 0;
+		if (tmpmulti == 0) { tmpmulti = 1; }
+
+		var tmprate = ((parseFloat(tmpbase) || 0) + (parseFloat(tmpracemod) || 0)) * tmpmulti;
+		if (tmprate < 0) { tmprate = tmpfloor; }
+		return Math.round(tmprate * 10) / 10;
 	}
 
 // @MARKER ADD NEW combat rule functions HERE

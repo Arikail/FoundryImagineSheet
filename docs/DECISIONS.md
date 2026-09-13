@@ -1054,7 +1054,67 @@ left-handed and marked off-hand, and the active-hand styling resolves.
 writes back to the embedded item and re-renders, and that the modifier reaches the chat card. No V14
 install exists on this machine.
 
+### 2026-09-12 — A race's movement figures are modifiers on an Agility base (CORRECTS the entry below)
+
+**The entry that follows this one is wrong on its central claim, and is kept only so the mistake is
+legible.** It says fourteen races "genuinely have no usable movement in his data" and blames the
+preview sheet's zeros on him. Both halves of that are false. This entry replaces it.
+
+**What is actually true.** His race movement columns are **modifiers on a base drawn from Agility**,
+not finished rates. `calcMovement` (`sheet-worker.js:30856`) switches on Agility and adds:
+
+```js
+setAttrs({move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod});
+//                          ^ base for this Agility
+//                            ^ the race's modifier
+```
+
+A race carrying `0/0/0` — Human(Civilized) among them — therefore has **no modifier** and moves at
+the full base for its Agility. The port was copying the modifier straight through as the finished
+rate, so every such race rendered as unable to move. **The bug was ours from the start.**
+
+**How it was caught.** The user asked whether the rulebooks could supply the missing figures. Reading
+the Player's Guide p.36 turned up not a list of per-race rates but *two* tables — "Base Walking /
+Jogging / Running Distance" by Agility, and a separate "Racial Movement Modifiers" — and his
+Human(Barbaric) row is that second table's `+1/+10/+1`, `+2/+20/+2`, `+2/+30/+3` exactly. Nine out
+of nine. That reframed the zeros before a line of code was written.
+
+**The standing conflict rule did not have to be invoked**, which is worth noting: the book and the
+sheet agree completely here. All 42 base values the Player's Guide prints match his switch to the
+digit, including the irregular jog at Agility 5 — 2 miles but only 10 feet and 1 foot.
+
+**Decision: generate the base table, do not transcribe it.** 23 bands × 11 values is exactly the
+volume where hand-copying smooths away the irregularities that matter, which is the same reasoning
+that produced the off-hand penalty tables. `movement_bases()` in `extract_combat_tables.py` parses
+it out of `calcMovement`. His code contains **two** copies of the table — one for races with a speed
+multiplier and one without — and the extractor parses both and compares them; they agree exactly,
+which is a stronger check on the parse than any assertion written by hand.
+
+**Decision: a speed multiplier of 0 means ×1.** His own comment in `calcSpecialMovement` says so:
+*"most races are 0 (this makes the multiplier 1"*. 103 of 105 races carry 0. Treating it as a literal
+zero would have stopped every one of them dead — the same class of error as the one being corrected.
+
+**Decision: apply the book's floor for negative rates, which his sheet does not implement.** The
+Player's Guide (p.36) reduces a negative rate to 1 mile / 10 feet / 1 foot. Elf(Sea) and Elf(Ice)
+carry a `-10` speed multiplier that his code multiplies through unguarded, giving them roughly -50
+miles an hour. The floor is applied here and the `-10` is logged for him as `UPSTREAM-ISSUES.md`
+item 24. Only a *negative* rate is lifted; a rate that lands on zero honestly stays zero, which is
+what his sheet shows at Agility 0-1.
+
+**What this cost.** An upstream issue was filed against his data, with a table of fourteen races and
+a note that the Civilized Humans were "likely the most-played races in the game". It was wrong, and
+it asked him to fix something that was never broken. It has been withdrawn in place rather than
+deleted. The failure was reading a zero as an absence without first checking what his code does with
+it — the data was examined closely and the code that consumes it was not.
+
+---
+
 ### 2026-09-12 — Special movement is a formula, not a number, and the port copies it through as text
+
+> **Superseded in part.** The claim below that the preview zeros were his gap is wrong — see the
+> entry above. The relative-rate mechanic it describes is real, but the formula it gives
+> (`base × multiplier + mod`) is **not uniform across movement kinds**; the corrections are recorded
+> at the end of this entry.
 
 The user noticed the preview sheet showing Walk and Jog at 0/0/0 and asked that it be fixed in the
 long run. The test sheet was the symptom; there are two causes underneath it, and only one of them
@@ -1109,6 +1169,20 @@ derived model holds real numbers and every consumer — sheet, chat card, future
 distance rather than a word. Walk, jog and run stay straight copies; only `special` is resolved.
 Handed to Sonnet with the mechanic written out, since the judgement was the diagnosis and what
 remains is arithmetic: `docs/sonnet/2026-09-12-special-movement.md`.
+
+**CORRECTIONS to the above, from reading `calcSpecialMovement` (sheet-worker.js:32110) in full:**
+
+1. **"Walk, jog and run stay straight copies" is wrong** — they are the Agility base plus the race's
+   modifier. See the entry above. This is now implemented and is what fixed the preview sheet.
+2. **The `+ mod` term is not universal.** It applies to **Scurry only**. Gallop and Swim multiply
+   with no additive; Slither multiplies with neither an additive nor the race speed multiplier, and
+   additionally **zeroes walk, jog, run and both jumps** — *"Slither is the only movement sssssnake
+   people have."* Writing one formula for all five kinds would have been wrong for four of them.
+3. **There is a third base-rate name: `INT`.** Magical flight reads Intelligence directly and, per
+   his comment, *"never has a multiplier, even for speed"*; the hourly and ten-second rates are
+   `× 30` and the one-second `× 3`. Two races use it. The handoff note had said to stop and report
+   if a third name appeared rather than mapping it by guess — it appeared.
+4. **A special multiplier of 0 also means ×1**, by the same sentinel rule as the speed multiplier.
 
 **A near-miss worth recording.** Seven race names came back from the console looking corrupted —
 `Se'eth` as `Se?eth`. Checked before reporting: the character is `0x2019`, a typographic apostrophe,

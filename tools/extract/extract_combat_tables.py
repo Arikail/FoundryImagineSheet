@@ -651,6 +651,105 @@ def load_raw(name):
         return json.load(fh)["entries"]
 
 
+""" Movement base, by Agility.                                                              """
+MOVE_ATTRS = [
+    ("walk", ["move_walk_hourly", "move_walk_10_sec", "move_walk_1_sec"]),
+    ("jog",  ["move_jog_hourly",  "move_jog_10_sec",  "move_jog_1_sec"]),
+    ("run",  ["move_run_hourly",  "move_run_10_sec",  "move_run_1_sec"])
+]
+JUMP_ATTRS = [("jumpStand", "move_jump_stand"), ("jumpUp", "move_jump_up")]
+
+
+def _agl_switch(region):
+    """
+    Walk one switch(tmpmoveagl) and return {agility: {field: base}}.
+
+    Each case writes its nine rates (and two jumps) as a leading numeric literal followed
+    by the race's modifier: `move_walk_hourly: 2+racetmpwalkhourly+...`. In the multiplier
+    copy the same line is wrapped -- `(((2+racetmpwalkhourly+...)*racetmpspeedmulti)...` --
+    so the literal is taken as the first number after an optional run of open parens.
+
+    Jump is written twice per case, once for the multiply form and once for the add form
+    (`2*(racetmpjumpstand...)` against `2+racetmpjumpstand...`). Both carry the same base,
+    and that is asserted rather than assumed.
+    """
+    bases, labels, found = {}, [], {}
+    for line in region:
+        for lab in re.findall(r'case\s+(\d+)\s*:', line):
+            if found:                       # a new group opens after one that wrote
+                labels, found = [], {}
+            labels.append(int(lab))
+        for field, attrs in MOVE_ATTRS:
+            for scale, attr in enumerate(attrs):
+                m = re.search(r'%s:\s*\(*\s*(-?[\d.]+)\s*[+*]' % re.escape(attr), line)
+                if m:
+                    found["%s.%d" % (field, scale)] = float(m.group(1))
+        for field, attr in JUMP_ATTRS:
+            m = re.search(r'%s:\s*\(*\s*(-?[\d.]+)\s*[+*]' % re.escape(attr), line)
+            if m:
+                seen = found.get(field)
+                if seen is not None and seen != float(m.group(1)):
+                    raise SystemExit("jump base disagrees within one case: %s %s vs %s"
+                                     % (field, seen, m.group(1)))
+                found[field] = float(m.group(1))
+        if re.search(r'\bbreak\s*;', line) and labels and found:
+            for lab in labels:
+                bases[lab] = dict(found)
+            labels, found = [], {}
+    return bases
+
+
+def movement_bases():
+    """
+    Read the Agility base movement table out of calcMovement (sheet-worker.js:30856).
+
+    HIS RACE MOVEMENT FIELDS ARE MODIFIERS, NOT FINISHED RATES. Every case of the switch
+    is of the shape
+
+        setAttrs({move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod});
+                                    ^ base for this Agility
+                                      ^ the race's modifier
+
+    so a race carrying 0/0/0 -- Human, Civilized among them -- walks at the full base for
+    its Agility rather than not walking at all. This matches the Player's Guide, which
+    prints base tables on page 36 and a separate "Racial Movement Modifiers" table beside
+    them; the nine figures his Human(Barbaric) row carries are that book table's +1/+10/+1,
+    +2/+20/+2, +2/+30/+3 exactly.
+
+    The switch appears TWICE -- once for races with no speed multiplier and once, wrapped in
+    (( ... )*racetmpspeedmulti), for races with one. Both copies are read and compared, so a
+    drift between them is reported rather than silently taking whichever was parsed first.
+    """
+    start, body = function_body("calcMovement")
+    edges = [i for i, l in enumerate(body) if "racetmpspeedmulti==0" in l.replace(" ", "")]
+    if not edges:
+        raise SystemExit("calcMovement: the no-multiplier branch was not found")
+    plain_at = edges[-1]
+    multi_at = next((i for i in range(plain_at, len(body))
+                     if "this race has speeded up movement" in body[i]), None)
+    if multi_at is None:
+        raise SystemExit("calcMovement: the multiplier branch was not found")
+
+    plain = _agl_switch(body[plain_at:multi_at])
+    multi = _agl_switch(body[multi_at:])
+    drift = sorted(k for k in set(plain) & set(multi) if plain[k] != multi[k])
+    if set(plain) != set(multi):
+        drift.append("case coverage differs: %s vs %s" % (sorted(plain), sorted(multi)))
+
+    rows, ceiling = [], max(plain)
+    for agl in sorted(plain):
+        v = plain[agl]
+        shaped = {f: [v["%s.%d" % (f, s)] for s in range(3)] for f, _ in MOVE_ATTRS}
+        shaped["jumpStand"] = v.get("jumpStand", 0)
+        shaped["jumpUp"] = v.get("jumpUp", 0)
+        if rows and rows[-1][2] == shaped and rows[-1][1] == agl - 1:
+            rows[-1][1] = agl
+        else:
+            rows.append([agl, agl, shaped])
+    missing = [a for a in range(0, ceiling + 1) if a not in plain]
+    return rows, drift, missing, ceiling, start
+
+
 def js(value):
     return json.dumps(value, ensure_ascii=False)
 
@@ -865,6 +964,32 @@ def main():
     out.append("\tskill:  %s\n"  % js(skill_bands))
     out.append("};\n\n")
 
+    # MOVEMENT BASE BY AGILITY
+    move_rows, move_drift, move_missing, move_ceiling, move_line = movement_bases()
+    out.append("// @MARKER MOVEMENT BASE BY AGILITY\n")
+    out.append("// From calcMovement (sheet-worker.js:%d), the base distances every character\n" % move_line)
+    out.append("// walks, jogs and runs before its race is taken into account.\n")
+    out.append("//\n")
+    out.append("// A RACE'S MOVEMENT FIGURES ARE MODIFIERS, NOT FINISHED RATES. His switch reads\n")
+    out.append("//     move_walk_hourly: 2+racetmpwalkhourly+tmpwalktemphourlymod\n")
+    out.append("// so the race's number is ADDED to the base below. A race carrying 0/0/0 --\n")
+    out.append("// Human(Civilized) among them -- is a race with no modifier, and walks at the full\n")
+    out.append("// base for its Agility. It is NOT a race with no movement, and must never be\n")
+    out.append("// \"fixed\" by inventing figures for it.\n")
+    out.append("//\n")
+    out.append("// Each row is [lowest Agility, highest Agility, bases], and each of walk/jog/run is\n")
+    out.append("// [hourly (miles), 10 seconds (feet), 1 second (feet)]. His bands are irregular --\n")
+    out.append("// 0-1, 2-4, then singles, then 11-12 and 13-14 -- which is why this is generated.\n")
+    out.append("//\n")
+    out.append("// His switch stops at Agility %d and has no default, so a higher rating would leave\n" % move_ceiling)
+    out.append("// the previous values in place. The port clamps to the top band instead.\n")
+    out.append("export const MOVEMENT_BASE = [\n")
+    for lo, hi, v in move_rows:
+        out.append("\t[%2d, %2d, { walk: %s, jog: %s, run: %s, jumpStand: %s, jumpUp: %s }],\n"
+                   % (lo, hi, js(v["walk"]), js(v["jog"]), js(v["run"]),
+                      js(v["jumpStand"]), js(v["jumpUp"])))
+    out.append("];\n\n")
+
     out.append("// @END (CODE)\n")
 
     with open(OUT, "w", encoding="utf-8") as fh:
@@ -923,6 +1048,14 @@ def main():
           % (len(melee_bands),  melee_bands[-1][1] + 1,
              len(damage_bands), damage_bands[-1][1] + 1,
              len(skill_bands),  skill_bands[-1][1] + 1))
+    print("movement base      %d bands, Agility 0-%d (race figures are MODIFIERS on these)"
+          % (len(move_rows), move_ceiling))
+    if move_missing:
+        print("  WARNING: his switch has no case for Agility %s"
+              % ", ".join(str(a) for a in move_missing))
+    if move_drift:
+        print("  WARNING: his two copies of the base table disagree at %s"
+              % ", ".join(str(d) for d in move_drift))
     if not (melee_ambi and damage_ambi and skill_ambi):
         print("  WARNING: a penalty table does not zero for Ambidextrous -- check his short-circuit")
     if shield_unresolved:
