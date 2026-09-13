@@ -1,5 +1,22 @@
 # Left for Sonnet — 2026-09-12, resolve the special movement rate
 
+> **DONE — 2026-09-13, implemented on Opus rather than handed over.** The rewrite below turned up
+> three things the original note had wrong (five formula shapes rather than one, a third base-rate
+> name, and an additive that applies to only one kind), which made it judgement work rather than
+> mechanical follow-through. It is kept as the record of what was found; nothing here is left to do.
+>
+> **What shipped:** `resolveSpecialMovement` and `specialMovementReplacesOther` in
+> `combat-rules.mjs`, wired into `_prepareMovement`. All 26 races with a special rate resolve, none
+> to zero. 22 tests added; derive suite 138 -> 160.
+>
+> **One thing the tests did not catch**, found by running the resolver over all 105 real races:
+> Elf(Sea)'s -10 speed multiplier dragged its Swim to -150 miles an hour, because the negative floor
+> had only been applied to walk/jog/run. Fixed, and a test added. The synthetic fixtures had all
+> agreed with each other.
+>
+> **Left for him, not for us:** `UPSTREAM-ISSUES.md` item 25 — his magical-flight line multiplies
+> twice. The port departs from his code there, with the evidence recorded.
+
 > **This note was rewritten on 2026-09-12 after its first version was found to be wrong.** The
 > original said walk/jog/run were correct as straight copies, that fourteen races had no movement
 > data, and that every special rate was `base × multiplier + mod`. All three were false. If you have
@@ -10,8 +27,8 @@ race's movement figures are **modifiers on an Agility base**, and `_prepareMovem
 `MOVEMENT_BASE` (generated from his `calcMovement`) before adding them. Read the two 2026-09-12
 movement entries in `DECISIONS.md` before starting.
 
-**What is left:** `movement.special` is still never assigned, so a Centaur's Gallop row renders
-0 / 0 / 0. That is this task.
+~~**What is left:** `movement.special` is still never assigned, so a Centaur's Gallop row renders
+0 / 0 / 0. That is this task.~~ — done, see the banner above.
 
 **Do not "fix" a race whose walk/jog/run figures are all zero.** That is a race with *no modifier*,
 not a race that cannot move, and it now resolves correctly on its own. `UPSTREAM-ISSUES.md` item 23
@@ -59,6 +76,12 @@ rates are resolved, or it will be overwritten.
 
 **`INT` has its own shape entirely** (line 32395): hourly and tenSec are `(INT × M) × 30`, oneSec is
 `(INT × M) × 3`. Note the 30 / 30 / 3, not 30 / 10 / 1.
+
+> **What was actually implemented: `INT × M`, with no literal factor.** Working through it, those
+> extra literals make the ten-second rate a hundred times the one-second rate, and the two Mephyt
+> races carry multipliers (0.75 / 30 / 3) that are already a coherent set on their own. His own
+> commented-out line just above agrees. `UPSTREAM-ISSUES.md` item 25 has the evidence; item 2 in the
+> list below is superseded by it.
 
 ### A multiplier of 0 means ×1
 

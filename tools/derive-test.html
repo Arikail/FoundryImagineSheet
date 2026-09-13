@@ -262,6 +262,83 @@ check("Agility past his top band holds that band",
 check("a rating below his table takes the bottom band",
 	R.getMovementBase(-5).walk[1], R.getMovementBase(0).walk[1]);
 
+// --- special movement -----------------------------------------------------------
+// Built on the rates just resolved, so "Walk" means the character's finished walk rate. The five
+// kinds do NOT share a formula: only Scurry adds its additive, and Slither alone ignores the
+// race's speed multiplier and replaces ordinary movement outright.
+const specialRace = (name, spec, extra = {}) => makeRace({
+	...zeroMods,
+	movement: { ...zeroMods.movement, specialName: name, special: spec, ...extra } });
+const walkTimes = (n) => ({ hourly: "Walk", hourlyMultiplier: n, hourlyMod: 0,
+                            tenSec: "Walk", tenSecMultiplier: n, tenSecMod: 0,
+                            oneSec: "Walk", oneSecMultiplier: n, oneSecMod: 0 });
+
+// Agility 11 with no modifiers: walk 4/40/4, run 12/110/11.
+const centaur = makeCharacter({ agl: 11 }, 12, [specialRace("Gallop:", walkTimes(4))]);
+check("Gallop is the resolved walk times four",   centaur.movement.special.tenSec, 160);
+check("...at the hourly scale",                   centaur.movement.special.hourly, 16);
+check("...and per second",                        centaur.movement.special.oneSec, 16);
+check("Gallop does not disturb walking",          centaur.movement.walk.tenSec, 40);
+
+// Djinn and Sylph fly from RUN, not walk. A hardcoded base passes every Walk test and fails here.
+const djinn = makeCharacter({ agl: 11 }, 12, [specialRace("Fly:",
+	{ ...walkTimes(3), hourly: "Run", tenSec: "Run", oneSec: "Run" })]);
+check("Fly can be worked from run instead",       djinn.movement.special.tenSec, 330);
+
+// Scurry is the only kind that adds its additive, and Arachen's differs between scales: +4 and +40.
+const arachen = makeCharacter({ agl: 11 }, 12, [specialRace("Scurry:",
+	{ ...walkTimes(4), hourlyMod: 4, tenSecMod: 40, oneSecMod: 4 })]);
+check("Scurry adds its hourly additive",          arachen.movement.special.hourly, 20);
+check("...and a different one per ten seconds",   arachen.movement.special.tenSec, 200);
+
+// The same additive on a kind that does not use one must be ignored, not quietly applied.
+const gallopMod = makeCharacter({ agl: 11 }, 12, [specialRace("Gallop:",
+	{ ...walkTimes(4), hourlyMod: 4, tenSecMod: 40, oneSecMod: 4 })]);
+check("Gallop ignores an additive",               gallopMod.movement.special.hourly, 16);
+
+// Slither is the whole of a snake's movement, and they cannot jump.
+const seeth = makeCharacter({ agl: 11 }, 12, [specialRace("Slither:", walkTimes(2))]);
+check("Slither resolves from walk",               seeth.movement.special.tenSec, 80);
+check("...and then walking is gone",              seeth.movement.walk.tenSec, 0);
+check("...running too",                           seeth.movement.run.tenSec, 0);
+check("...and snakes cannot jump",                seeth.movement.jumpStand, 0);
+
+// Magical flight reads Intelligence, not a movement rate, and takes no speed multiplier.
+const mephyt = makeCharacter({ agl: 11, int: 16 }, 12, [specialRace("Fly:",
+	{ hourly: "INT", hourlyMultiplier: 0.75, hourlyMod: 0,
+	  tenSec: "INT", tenSecMultiplier: 30,   tenSecMod: 0,
+	  oneSec: "INT", oneSecMultiplier: 3,    oneSecMod: 0 }, { speedMultiplier: 3 })]);
+check("magical flight comes from Intelligence",   mephyt.movement.special.tenSec, 480);
+check("...at its own hourly multiplier",          mephyt.movement.special.hourly, 12);
+check("...and ten seconds stays ten times one",   mephyt.movement.special.tenSec, mephyt.movement.special.oneSec * 10);
+
+// A multiplier of 0 is the same sentinel as the speed multiplier: it means one, not nil.
+const plainSwim = makeCharacter({ agl: 11 }, 12, [specialRace("Swim:", walkTimes(0))]);
+check("a special multiplier of 0 means one",      plainSwim.movement.special.tenSec, 40);
+
+// Merfolk was once cited as proof of a gap in his data. It was not: its walk modifier is zero,
+// which resolves normally, and the swim built on it is a real distance.
+check("a race with a zero walk modifier still swims", plainSwim.movement.special.hourly, 4);
+
+// A negative speed multiplier drags the special rate down with it, so the same floor applies.
+// Elf(Sea) is a Swim race carrying the -10, and would otherwise swim at -150 miles an hour.
+const seaElf = makeCharacter({ agl: 11 }, 12, [specialRace("Swim:", walkTimes(3), { speedMultiplier: -10 })]);
+check("a negative special rate takes the floor too", seaElf.movement.special.hourly, 1);
+check("...at ten seconds",                           seaElf.movement.special.tenSec, 10);
+
+// "None:" is his sentinel for having no special rate, carried by 79 of the 105 races. It must not
+// reach the sheet as a label, or every one of them prints a "None:" row reading 0 / 0 / 0.
+const noneRace = makeCharacter({ agl: 11 }, 12,
+	[makeRace({ ...zeroMods, movement: { ...zeroMods.movement, specialName: "None:" } })]);
+check("\"None:\" is dropped rather than shown",   noneRace.movement.specialName, "");
+
+// No special rate at all, and an unknown kind, both resolve to nothing without throwing.
+check("no special rate resolves to zero",         plain.movement.special.tenSec, 0);
+check("an unknown kind is not guessed at",
+	R.resolveSpecialMovement("Teleport:", walkTimes(4), { walk: { tenSec: 40 } }, 0, 10).tenSec, 0);
+check("an unknown base rate is not guessed at",
+	R.resolveSpecialMovement("Fly:", { ...walkTimes(4), hourly: "Aura" }, { walk: { tenSec: 40 } }, 0, 10).tenSec, 0);
+
 // --- class integration ----------------------------------------------------------
 const classItem = {
 	type: "class",

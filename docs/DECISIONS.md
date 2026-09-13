@@ -1109,6 +1109,50 @@ it — the data was examined closely and the code that consumes it was not.
 
 ---
 
+### 2026-09-13 — The five kinds of special movement do not share a formula
+
+Finishing the other half of the movement work. `movement.special` now resolves, so a Centaur's
+Gallop is a distance rather than a blank row. All 26 races that have a special rate produce one, and
+none of them lands on zero.
+
+**The formula is per-kind, not universal.** The handoff note had said `base × multiplier + mod` for
+all of them, which would have been wrong for four of the five:
+
+| Kind | Shape | |
+|---|---|---|
+| Fly, Gallop, Swim | `(base × M) × S` | |
+| Scurry | `((base × M) + mod) × S` | **the only kind that uses the additive** |
+| Slither | `base × M` | no additive, and **no speed multiplier** |
+
+Slither also **replaces** ordinary movement rather than adding to it — his code zeroes walk, jog, run
+and both jumps after resolving it: *"Slither is the only movement sssssnake people have"*, *"Snakes
+can`t jump"*. That is why it is a table of shapes in `combat-rules.mjs` rather than one expression.
+
+**A third base-rate name exists: `INT`.** Magical flight reads the Intelligence attribute rather than
+any movement rate. The earlier handoff note had explicitly said to stop and report if a third name
+appeared rather than mapping it by guess; it appeared, in two races.
+
+**Decision: depart from his live code for magical flight, and say so loudly.** His INT line applies a
+literal 30 / 30 / 3 on top of the race's own multiplier. Three independent things say that is a slip:
+the two Mephyt races carry per-scale multipliers of 0.75 / 30 / 3 where every other race's are
+uniform, and those are already a coherent set on their own; his extra literals would make the
+ten-second rate a hundred times the one-second rate, which nothing else in the system does; and the
+version commented out directly above that line is the multiplier alone. Logged as
+`UPSTREAM-ISSUES.md` item 25 for him to settle — it is one line either way.
+
+**This is a case the standing conflict rule does not cover.** "The sheet wins" settles
+sheet-versus-rulebook. Here his code disagrees with his own data and his own commented-out line, and
+there is no rulebook in it at all. Recorded because the next intra-sheet contradiction will want the
+same treatment: follow the reading that the data supports, implement it in one place, and hand him
+the evidence rather than the conclusion.
+
+**The negative floor had to be extended.** Applying it to walk, jog and run was not enough — Elf(Sea)
+is a Swim race, so its -10 speed multiplier dragged the swim rate to -150 miles an hour. Caught by
+running the resolver over all 105 real races rather than by the unit tests, which used synthetic
+fixtures and all passed. Worth remembering: the fixtures agreed with each other and with me.
+
+---
+
 ### 2026-09-12 — Special movement is a formula, not a number, and the port copies it through as text
 
 > **Superseded in part.** The claim below that the preview zeros were his gap is wrong — see the

@@ -1332,5 +1332,105 @@ export const MODE_DAMAGE_TYPES = {
 		return Math.round(tmprate * 10) / 10;
 	}
 
+// @MARKER SPECIAL MOVEMENT
+//==================================================================================================================
+// The extra rate some races have -- Fly, Gallop, Swim, Scurry, Slither -- which is never written as
+// a distance. It is written RELATIVE to another of the character's own rates: the name of a base
+// rate, with a multiplier and an additive beside it, for each of the three scales.
+//
+// From calcSpecialMovement (sheet-worker.js:32110). 26 of his 105 races have one.
+//
+// THE FIVE KINDS DO NOT SHARE A FORMULA, which is why this is a table rather than one expression:
+// only Scurry adds its additive, and Slither alone ignores the race's speed multiplier. Reading
+// one kind's shape off another would be wrong for four of the five.
+//==================================================================================================================
+
+	// What each kind of special movement does with the additive and the race's speed multiplier.
+	// Slither also REPLACES ordinary movement rather than adding to it -- his comment: "Slither is
+	// the only movement sssssnake people have", and "Snakes can`t jump".
+	const SPECIAL_MOVEMENT_SHAPES = {
+		"Fly:":     { usesMod: false, usesSpeedMultiplier: true,  replacesMovement: false },
+		"Gallop:":  { usesMod: false, usesSpeedMultiplier: true,  replacesMovement: false },
+		"Swim:":    { usesMod: false, usesSpeedMultiplier: true,  replacesMovement: false },
+		"Scurry:":  { usesMod: true,  usesSpeedMultiplier: true,  replacesMovement: false },
+		"Slither:": { usesMod: false, usesSpeedMultiplier: false, replacesMovement: true  }
+	};
+
+	// This is the function which says whether a kind of special movement is the only movement its
+	// race has, rather than an extra on top of walking.
+	export function specialMovementReplacesOther(tmpname) {
+		var tmpshape = SPECIAL_MOVEMENT_SHAPES[("" + (tmpname ?? "")).trim()];
+		return tmpshape ? tmpshape.replacesMovement : false;
+	}
+
+	// This is the function which works the special rate out into real distances.
+	//
+	// tmpmovement is the character's ALREADY-RESOLVED walk and run, so "Walk" means this
+	// character's finished walking rate rather than the race's modifier.
+	//
+	// The base rate is named per scale in his data, but his own code branches on the HOURLY name
+	// alone and uses it for all three; that is followed here. All 26 races agree across the three
+	// anyway, so the two readings cannot currently diverge.
+	//
+	// A multiplier of 0 means one, the same sentinel as the race speed multiplier.
+	//
+	// An unrecognised kind or base name resolves to nothing rather than throwing or guessing: a new
+	// name in his data is a new fact about his system and should be read before being encoded.
+	//
+	// ONE DELIBERATE DEPARTURE FROM HIS LIVE CODE, for magical flight. His INT line multiplies by a
+	// further literal 30 / 30 / 3 on top of the race's own multiplier (sheet-worker.js:32397). Three
+	// things say that is a slip rather than the rule:
+	//
+	//   - Mephyt(Fire) and Mephyt(Ice), the only two races that use INT, carry per-scale multipliers
+	//     of 0.75 / 30 / 3 where every other race's are uniform. Those only make sense applied on
+	//     their own -- 30 feet per 10 seconds is exactly ten times 3 feet per second.
+	//   - With his extra literals the ten-second rate becomes ONE HUNDRED times the one-second rate
+	//     instead of ten, which no other rate in the system does.
+	//   - The version commented out directly above that line (32366-32368) is exactly this: the
+	//     multiplier alone, with no literal factor.
+	//
+	// So the multiplier is applied on its own here. This is sheet-versus-sheet rather than
+	// sheet-versus-book, so the standing "the sheet wins" rule does not settle it. Two races are
+	// affected and it is one line to put back. Logged for him as UPSTREAM-ISSUES.md item 25.
+	export function resolveSpecialMovement(tmpname, tmpspecial, tmpmovement, tmpspeedmultiplier, tmpintelligence) {
+		var tmpout = { hourly: 0, tenSec: 0, oneSec: 0 };
+		if (!tmpspecial || !tmpmovement) { return tmpout; }
+
+		var tmpshape = SPECIAL_MOVEMENT_SHAPES[("" + (tmpname ?? "")).trim()];
+		if (!tmpshape) { return tmpout; }
+
+		var tmpbasename = ("" + (tmpspecial.hourly ?? "")).trim().toLowerCase();
+		if (tmpbasename != "walk" && tmpbasename != "run" && tmpbasename != "int") { return tmpout; }
+
+		// Magical flight reads Intelligence and takes no speed multiplier -- his comment on the
+		// INT branch: "it never has a multiplier, even for speed".
+		var tmpspeed = parseFloat(tmpspeedmultiplier) || 0;
+		if (tmpspeed == 0) { tmpspeed = 1; }
+		if (!tmpshape.usesSpeedMultiplier || tmpbasename == "int") { tmpspeed = 1; }
+
+		// The same floor the ordinary rates take: a race carrying a negative speed multiplier drags
+		// its special rate negative too, so Elf(Sea) would otherwise swim at -150 miles an hour.
+		var tmpfloors = { hourly: 1, tenSec: 10, oneSec: 1 };
+
+		for (const tmpscale of ["hourly", "tenSec", "oneSec"]) {
+			var tmpmulti = parseFloat(tmpspecial[tmpscale + "Multiplier"]) || 0;
+			if (tmpmulti == 0) { tmpmulti = 1; }
+
+			var tmpmod = tmpshape.usesMod ? (parseFloat(tmpspecial[tmpscale + "Mod"]) || 0) : 0;
+
+			var tmpbase = 0;
+			if (tmpbasename == "int") {
+				tmpbase = parseFloat(tmpintelligence) || 0;
+			} else {
+				tmpbase = parseFloat((tmpmovement[tmpbasename] ?? {})[tmpscale]) || 0;
+			}
+
+			var tmprate = (((tmpbase * tmpmulti) + tmpmod) * tmpspeed);
+			if (tmprate < 0) { tmprate = tmpfloors[tmpscale]; }
+			tmpout[tmpscale] = Math.round(tmprate * 10) / 10;
+		}
+		return tmpout;
+	}
+
 // @MARKER ADD NEW combat rule functions HERE
 // @END (CODE)

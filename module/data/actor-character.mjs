@@ -18,7 +18,7 @@ import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
 	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList,
-	getMovementBase, resolveMovementRate
+	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -720,7 +720,31 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.movement.jumpStand = Math.max(0, tmpbase.jumpStand + (parseFloat(tmpracemove.jumpStand) || 0));
 		this.movement.jumpUp    = Math.max(0, tmpbase.jumpUp    + (parseFloat(tmpracemove.jumpUp)    || 0));
 
-		this.movement.specialName = tmpracemove.specialName;
+		// "None:" is his sentinel for a race with no special rate, not the name of one -- it is
+		// carried by exactly the 79 races whose special base rate is empty. It is dropped here so
+		// that absence reads as absence, and the sheet does not print a row labelled "None:".
+		this.movement.specialName =
+			(("" + (tmpracemove.specialName ?? "")).trim() == "None:") ? "" : tmpracemove.specialName;
+
+		// The special rate builds on the rates just resolved, so it has to come after them.
+		var tmpspecial = resolveSpecialMovement(tmpracemove.specialName, tmpracemove.special,
+			this.movement, tmpmulti, this.attributes.int.value);
+		this.movement.special.hourly = tmpspecial.hourly;
+		this.movement.special.tenSec = tmpspecial.tenSec;
+		this.movement.special.oneSec = tmpspecial.oneSec;
+
+		// For a slithering race the special rate is not an extra on top of walking, it is the whole
+		// of their movement -- "Slither is the only movement sssssnake people have", and they do
+		// not jump either. His sheet zeroes these after the fact too, so this runs last.
+		if (specialMovementReplacesOther(tmpracemove.specialName)) {
+			for (const tmpmode of ["walk", "jog", "run"]) {
+				this.movement[tmpmode].hourly = 0;
+				this.movement[tmpmode].tenSec = 0;
+				this.movement[tmpmode].oneSec = 0;
+			}
+			this.movement.jumpStand = 0;
+			this.movement.jumpUp    = 0;
+		}
 	}
 
 	// This is the function which reads the skill slot allowances off the Knowledge table.

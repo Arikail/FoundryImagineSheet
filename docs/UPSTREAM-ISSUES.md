@@ -476,6 +476,53 @@ broken is recorded here.
 
 ---
 
+## 25. Magical flight multiplies twice, making the ten-second rate a hundred times the one-second rate
+
+**Status:** open · **Severity:** two races (Mephyt(Fire), Mephyt(Ice)); the port departs from your
+code here, so this one needs your ruling
+
+`calcSpecialMovement`'s INT branch — magical flight — applies a literal 30 / 30 / 3 **on top of** the
+race's own per-scale multiplier (`sheet-worker.js:32397`):
+
+```js
+setAttrs({move_special_hourly: [[((0+tmpint)*hourracemulti)+tmpspecialtemphourlymod]*30] });
+setAttrs({move_special_10_sec: [[((0+tmpint)*tensecracemulti)+tmpspecialtemp10secmod]*30] });
+setAttrs({move_special_1_sec: [[((0+tmpint)*onesecracemulti)+tmpspecialtemp1secmod]*3] });
+```
+
+Both Mephyt rows carry per-scale multipliers of **0.75, 30, 3** where every other race in the file
+uses one value for all three scales:
+
+```
+Mephyt(Fire) ... 'INT', 0.75, 0,  'INT', 30, 0,  'INT', 3, 0 ...
+Centaur      ... 'Walk', 4,   0,  'Walk', 4,  0,  'Walk', 4, 0 ...
+```
+
+Those three numbers are already a complete set of rates on their own — 30 feet per 10 seconds is
+exactly ten times 3 feet per second, the same relationship every other rate in the system has.
+Multiplying them again gives a ten-second rate **one hundred times** the one-second rate:
+
+| | your live code | the multipliers alone |
+|---|---|---|
+| hourly | INT × 22.5 | INT × 0.75 |
+| 10 seconds | INT × 900 | INT × 30 |
+| 1 second | INT × 9 | INT × 3 |
+
+At Intelligence 16 the live code gives 14,400 feet per ten seconds — about 980 miles an hour — beside
+an hourly rate of 360 miles. The two scales do not describe the same creature.
+
+**The version commented out immediately above it (lines 32366-32368) is the multiplier alone**, with
+no literal factor, which matches the data exactly. That looks like the intended form and the live
+line like a revision that went one step too far.
+
+**What the port does:** applies the multiplier on its own, giving 12 mi/h, 480 ft per 10 seconds and
+48 ft per second at Intelligence 16. This is a **deliberate departure from your code**, which the
+standing "the sheet wins" rule does not cover — that rule settles sheet-versus-rulebook, and this is
+your code disagreeing with your own data and your own commented-out line. Three signals to one, but
+it is still your call, and it is one line to put back either way.
+
+---
+
 ## 24. Sea and Ice Elves have a speed multiplier of -10, which makes their movement negative
 
 **Status:** open · **Severity:** two races; needs a decision from you, not a guess from us
