@@ -1315,6 +1315,14 @@ export const MODE_DAMAGE_TYPES = {
 	// A speed multiplier of 0 means NO multiplier. That is his sentinel, not a stationary race --
 	// calcSpecialMovement says so in as many words: "most races are 0 (this makes the multiplier 1".
 	//
+	// A NEGATIVE multiplier is ignored the same way, because it is not a coherent quantity: a
+	// multiplier scales a rate, it does not reverse its direction. Only Elf(Sea) and Elf(Ice) carry
+	// one, both -10, against 0 for the other 103 races, and his own sheet multiplies straight
+	// through it into large negative distances. Those two are also the only elves of eleven with no
+	// disease-resistance modifier, where every other elf has one -- a -10 in this column beside a
+	// hole in the one before it. Read as a mis-keyed cell and skipped; see UPSTREAM-ISSUES.md
+	// item 24. They then walk and swim like any other elf, rather than at the floor below.
+	//
 	// tmpfloor is what a NEGATIVE rate becomes at this scale. The Player's Guide (p.36): a race
 	// whose penalties "cause a negative movement rate" has it "reduced to 1 mile (hourly), 10 feet
 	// (10 seconds) or 1 foot (1 second)". Only a rate below zero is lifted -- a rate that lands on
@@ -1325,7 +1333,7 @@ export const MODE_DAMAGE_TYPES = {
 	// book's floor is applied here rather than reproducing that. See docs/UPSTREAM-ISSUES.md.
 	export function resolveMovementRate(tmpbase, tmpracemod, tmpmultiplier, tmpfloor) {
 		var tmpmulti = parseFloat(tmpmultiplier) || 0;
-		if (tmpmulti == 0) { tmpmulti = 1; }
+		if (tmpmulti <= 0) { tmpmulti = 1; }
 
 		var tmprate = ((parseFloat(tmpbase) || 0) + (parseFloat(tmpracemod) || 0)) * tmpmulti;
 		if (tmprate < 0) { tmprate = tmpfloor; }
@@ -1405,7 +1413,7 @@ export const MODE_DAMAGE_TYPES = {
 		// Magical flight reads Intelligence and takes no speed multiplier -- his comment on the
 		// INT branch: "it never has a multiplier, even for speed".
 		var tmpspeed = parseFloat(tmpspeedmultiplier) || 0;
-		if (tmpspeed == 0) { tmpspeed = 1; }
+		if (tmpspeed <= 0) { tmpspeed = 1; }   // 0 is his "none"; negative is incoherent, see above
 		if (!tmpshape.usesSpeedMultiplier || tmpbasename == "int") { tmpspeed = 1; }
 
 		// The same floor the ordinary rates take: a race carrying a negative speed multiplier drags

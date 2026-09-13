@@ -1151,6 +1151,28 @@ is a Swim race, so its -10 speed multiplier dragged the swim rate to -150 miles 
 running the resolver over all 105 real races rather than by the unit tests, which used synthetic
 fixtures and all passed. Worth remembering: the fixtures agreed with each other and with me.
 
+**Then the floor turned out to be the wrong instrument for it.** The user pushed back on the result,
+and they were right to: flooring left a **sea** elf swimming at 1 mile an hour, slower than it walks.
+A number that is no longer absurd is not the same as a number that is right, and the floor had made
+the first look like the second.
+
+Looking again at the column rather than the symptom settled it. `speedMultiplier` is `-10` for
+exactly two races and `0` for the other 103, and those same two are the only Elves of eleven with **no
+disease-resistance modifier** — a value sitting in a column nobody uses, beside an empty cell every
+sibling race fills. **Decision: ignore a negative speed multiplier rather than floor it.** The ground
+is narrow and does not depend on the mis-keying being true: a multiplier scales a rate, it does not
+reverse its direction, so a negative one is not a quantity this system has a meaning for. Sea and Ice
+Elves now move like any other Elf, and a Sea Elf swims walk × 3 exactly as Merfolk does.
+
+The floor stays, because it is a real published rule and is honestly reachable — a Civilized Dwarf at
+Agility 5 goes under it on walking modifiers alone. It is simply no longer load-bearing for these two.
+The mis-keying itself is *not* acted on: correcting a disease resistance on an inference is his call,
+and the evidence rather than the conclusion is what went to him in `UPSTREAM-ISSUES.md` item 24.
+
+**The lesson worth keeping:** a clamp that turns a wrong number into a plausible one hides the
+question instead of answering it. The floor was a legitimate rule applied to an illegitimate input,
+which is the most comfortable kind of mistake to leave in place.
+
 ---
 
 ### 2026-09-12 — Special movement is a formula, not a number, and the port copies it through as text

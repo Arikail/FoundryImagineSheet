@@ -246,13 +246,22 @@ check("...and runs",                               plain.movement.run.tenSec, 11
 check("a speed multiplier of 0 means one, not nil", plain.movement.walk.hourly, 4);
 
 // A negative rate is lifted to the book's floor (Player's Guide p.36): 1 mile, 10 feet, 1 foot.
-// Elf(Sea) and Elf(Ice) carry a -10 multiplier in his data, which his own sheet multiplies
-// straight through into large negative distances.
-const cursed = makeCharacter({ agl: 11 }, 12, [makeRace({ movement: {
-	...zeroMods.movement, speedMultiplier: -10 } })]);
-check("a negative rate falls to the hourly floor", cursed.movement.walk.hourly, 1);
-check("...the ten second floor",                   cursed.movement.walk.tenSec, 10);
-check("...and the one second floor",               cursed.movement.walk.oneSec, 1);
+// This is reachable honestly: Dwarf(Civilized) carries -2 / -30 / -3 walking, and at Agility 5 the
+// base is only 1 / 10 / 1, so all three go under.
+const stumpy = makeCharacter({ agl: 5 }, 12, [makeRace({ ...zeroMods, movement: {
+	...zeroMods.movement, walk: { hourly: -2, tenSec: -30, oneSec: -3 } } })]);
+check("a negative rate falls to the hourly floor", stumpy.movement.walk.hourly, 1);
+check("...the ten second floor",                   stumpy.movement.walk.tenSec, 10);
+check("...and the one second floor",               stumpy.movement.walk.oneSec, 1);
+
+// A NEGATIVE speed multiplier is not a coherent quantity and is ignored, not floored. Only
+// Elf(Sea) and Elf(Ice) carry one (-10), and it reads as a mis-keyed cell -- they are also the only
+// two elves of eleven with no disease-resistance modifier. Flooring them left a sea elf swimming at
+// 1 mile an hour; ignoring it lets them move like any other elf.
+const negMulti = makeCharacter({ agl: 15 }, 12,
+	[makeRace({ ...zeroMods, movement: { ...zeroMods.movement, speedMultiplier: -10 } })]);
+check("a negative speed multiplier is ignored",    negMulti.movement.walk.tenSec, 50);
+check("...rather than flooring the race",          negMulti.movement.walk.hourly, 5);
 
 // His switch stops at 30 with no default; the port holds the top band rather than leaving
 // whatever the last character happened to have. This is tested against the table directly
@@ -320,11 +329,13 @@ check("a special multiplier of 0 means one",      plainSwim.movement.special.ten
 // which resolves normally, and the swim built on it is a real distance.
 check("a race with a zero walk modifier still swims", plainSwim.movement.special.hourly, 4);
 
-// A negative speed multiplier drags the special rate down with it, so the same floor applies.
-// Elf(Sea) is a Swim race carrying the -10, and would otherwise swim at -150 miles an hour.
-const seaElf = makeCharacter({ agl: 11 }, 12, [specialRace("Swim:", walkTimes(3), { speedMultiplier: -10 })]);
-check("a negative special rate takes the floor too", seaElf.movement.special.hourly, 1);
-check("...at ten seconds",                           seaElf.movement.special.tenSec, 10);
+// Elf(Sea) is the race that made this matter: a Swim race carrying the -10. Flooring it gave a sea
+// elf a swim of 1 mile an hour, slower than it walks. Ignoring the multiplier gives it walk x 3,
+// the same shape every other swimming race has.
+const seaElf = makeCharacter({ agl: 15 }, 12, [specialRace("Swim:", walkTimes(3), { speedMultiplier: -10 })]);
+check("a sea elf swims at three times its walk",  seaElf.movement.special.tenSec, 150);
+check("...and is not stuck at the floor",         seaElf.movement.special.hourly, 15);
+check("...while still walking normally",          seaElf.movement.walk.tenSec, 50);
 
 // "None:" is his sentinel for having no special rate, carried by 79 of the 105 races. It must not
 // reach the sheet as a label, or every one of them prints a "None:" row reading 0 / 0 / 0.

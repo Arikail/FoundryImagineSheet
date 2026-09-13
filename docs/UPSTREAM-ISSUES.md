@@ -550,15 +550,40 @@ the 5 a Wood Elf gets. The neighbouring columns look deliberate (index 36 is -10
 as a poison-resistance modifier), so the most likely reading is that a value slid one column, but
 that is a guess and we are not acting on it.
 
-**What the port does:** it applies the rule your Player's Guide already publishes for this exact
-situation (p.36) — *"some races have penalties that may cause a negative movement rate. In such
-cases, the appropriate movement rate is reduced to 1 mile (hourly), 10 feet (10 seconds) or 1 foot
-(1 second)"* — which your sheet never implements. Sea and Ice Elves come out at that floor instead
-of at a negative number. Only a rate below zero is lifted; a rate that lands on zero honestly stays
-zero.
+**There is a hole in the column immediately before it.** Of the eleven Elf races, every one carries a
+disease-resistance modifier at index 37 — except these same two, which carry nothing:
 
-Two things worth your confirmation: whether `-10` in index 38 is intended at all, and whether you
-want the book's floor implemented in the Roll20 sheet too.
+| Race | 36 poison | 37 disease | 38 speed |
+|---|---|---|---|
+| Elf(Dark) | -5 | -10 | 0 |
+| Elf(High) | -10 | -10 | 0 |
+| Elf(Wood) | -10 | -5 | 0 |
+| Elf(Shadow) | -10 | -20 | 0 |
+| **Elf(Sea)** | -10 | **0** | **-10** |
+| **Elf(Ice)** | -10 | **0** | **-10** |
+
+A `-10` sitting in a column no other race uses, directly beside an empty cell that every sibling race
+fills, looks like one value entered one column to the right. Nothing after index 38 is shifted — the
+walk, jog and run figures match the other Elves exactly — so it would be a single cell rather than a
+displaced row. **We have not acted on that reading**; correcting a disease resistance on a guess is
+not ours to do.
+
+**What the port does:** it ignores a negative speed multiplier rather than applying it, on the
+narrower ground that a negative multiplier is not a coherent quantity — multiplying scales a rate, it
+does not reverse its direction — and that 103 of your 105 races use `0` here to mean "none". Sea and
+Ice Elves therefore move exactly like every other Elf: at Agility 15 a Sea Elf walks 6 miles an hour
+and swims three times that, the same shape Merfolk has.
+
+The first version of this fix instead applied the floor your Player's Guide publishes for negative
+rates (p.36 — *"reduced to 1 mile (hourly), 10 feet (10 seconds) or 1 foot (1 second)"*). That
+stopped the negative numbers but left a **sea** elf swimming at 1 mile an hour, slower than it walks,
+which is its own kind of wrong. The floor is still implemented, because it is a real published rule
+and is genuinely reachable — a Civilized Dwarf at Agility 5 goes under it on walking modifiers alone
+— but it is no longer what these two races land on.
+
+Three things worth your confirmation: whether `-10` at index 38 is intended at all; whether it was
+meant for index 37, where these two Elves are the only ones with no disease modifier; and whether you
+want the book's negative floor implemented in the Roll20 sheet, which currently has no guard at all.
 
 **Two disagreements between that template and your sheet-worker**, both resolved in the
 sheet-worker's favour per the standing rule, both worth your confirmation:
