@@ -603,3 +603,36 @@ is plausible.
 **Also noticed:** `Beguiler`'s `classType` contains a paragraph of description rather than a class
 type ("This class has the focus of illusions and uses these skills to dazzle and confuse their
 foes..."). That has the look of the same kind of column slip as item 1, in a different row.
+
+---
+
+## 26. Five classes have no entry in `getSlotsNeededForClass`, so they read as costing no class skill slots
+
+**Status:** open · **Severity:** question, not a bug — a gap that follows from item 22
+
+`getSlotsNeededForClass` (sheet-worker.js:62881) gives each class the number of class skill slots it
+needs to run its whole progression — 92 cases, from 36 (Border Scout, Explorer) to 56 (Assassin,
+Monk). This is the number the Player's Guide's "slot tricks" exist to reach: Knowledge hands out a
+fixed allowance of class slots, and where it falls short the shortfall is made up by transferring
+racial or social slots in.
+
+The five classes of item 22 — Elemental Dancer, Elementalist, GME, Inquisitor, Summoner — have no
+`classRequirementsAndDetails` row, and four of them have no case in this switch either. GME does, at
+0, which is right: it is your stand-in for a being with no class at all, so it genuinely costs no
+class slots.
+
+**The consequence is quiet.** A class with no entry reads as 0, and 0 here does not mean "unknown",
+it means "this class is free to take" — it would let a character take the class without spending any
+of their Knowledge allowance. That is why the conversion reports it every run rather than letting it
+default silently.
+
+**What would settle it for Elemental Dancer**, the one of the five now authored from your Word
+template: a naive count of the skills across its fifteen titles comes to **60**, which is higher
+than any of your 86 classes. But its last five titles each list `Sense Supernatural` at 20%, 40%,
+60%, 80% and 99% — which reads as **one skill improving across five titles rather than five separate
+acquisitions**. Counting it once gives **56**, exactly your own ceiling and the same figure as
+Assassin and Monk.
+
+That is suggestive enough to be worth asking about and far too inferential to bake in, so nothing is
+written. **Is 56 right for Elemental Dancer, and do the other four want entries too?** A one-line
+answer per class closes this.

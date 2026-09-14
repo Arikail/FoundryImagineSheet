@@ -97,6 +97,15 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// Projectile Lore, from getProjectileLoreWhen. Only six of the 92 classes ever get it.
 			projectileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
+			// @MARKER SKILL SLOTS
+			// How many class skill slots this class needs to run its whole progression, from
+			// getSlotsNeededForClass (sheet-worker.js:62881). Knowledge hands out a fixed
+			// allowance of class slots; where it falls short of this number the shortfall is made
+			// up by transferring racial or social slots in, which is the Player's Guide's
+			// "Transferring Skill Slots". Zero is real for GME, his Game Master Extra, which is a
+			// stand-in for a being with no class at all rather than a class of its own.
+			skillSlotsNeeded: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER CLASSIFICATION
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".
 			classType: new fields.StringField({ required: true, initial: "" }),

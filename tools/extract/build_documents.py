@@ -392,6 +392,11 @@ def build_classes():
     weaponloremap = loretitles.get("weaponLoreWhen", {}) if loretitles else {}
     missileloremap = loretitles.get("missileLoreWhen", {}) if loretitles else {}
     projectileloremap = loretitles.get("projectileLoreWhen", {}) if loretitles else {}
+    # How many class skill slots the class needs for its whole progression, from
+    # getSlotsNeededForClass. A class missing from this map falls back to 0, which is reported by
+    # to_number rather than passing silently, because 0 reads as "costs no slots to take".
+    slotsneeded = load_named("classSkillSlots")
+    slotsmap = slotsneeded["entries"] if slotsneeded else {}
 
     docs = []
 
@@ -451,6 +456,7 @@ def build_classes():
             "weaponLoreTitle": to_number(weaponloremap.get(tmpname, 0), where, "weaponLoreTitle"),
             "missileLoreTitle": to_number(missileloremap.get(tmpname, 0), where, "missileLoreTitle"),
             "projectileLoreTitle": to_number(projectileloremap.get(tmpname, 0), where, "projectileLoreTitle"),
+            "skillSlotsNeeded": to_number(slotsmap.get(tmpname, 0), where, "skillSlotsNeeded"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
         }))
@@ -483,6 +489,18 @@ def load_manual_classes(tmpbuilt):
                  "his own data now builds this class; the manual entry is ignored")
             continue
         system = {k: v for k, v in tmprow.items() if not k.startswith("_")}
+        # A manual class is absent from getSlotsNeededForClass too -- the same missing row that
+        # made it manual in the first place -- so it has no slot requirement to copy. Left unset
+        # rather than counted off its own authored progression: the naive count of Elemental
+        # Dancer's fifteen titles comes to 60 against a range of 36-56 across his 86 classes,
+        # because its last five titles list one Sense Supernatural improving from 20% to 99%
+        # rather than five separate acquisitions. Reading that as one skill gives exactly 56, his
+        # own ceiling -- which is suggestive enough to be worth his confirmation and far too
+        # inferential to bake in. Reported every run; see UPSTREAM-ISSUES.md item 26.
+        if not system.get("skillSlotsNeeded"):
+            note("manual-class-no-slot-count", "manual/%s" % tmpname,
+                 "no entry in getSlotsNeededForClass and none authored; "
+                 "the class reads as costing no class skill slots until he supplies one")
         out.append(make_doc(tmpname, "class", system))
         note("manual-class-used", "manual/%s" % tmpname,
              "built from %s" % tmprow.get("_document", "a Word class template"))

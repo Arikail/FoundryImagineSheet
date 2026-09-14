@@ -177,6 +177,49 @@ def class_lore_when(tmpfunction):
     return titles, start
 
 
+def class_skill_slots_needed():
+    """
+    How many class skill slots a class needs to run its whole progression.
+
+    From getSlotsNeededForClass (sheet-worker.js:62881 onward), a plain ninety-two case switch:
+
+        case "Acrobat":   tmpslotsneeded=42; break;
+        case "Assassin":  tmpslotsneeded=56; break;
+
+    This is the number the Player's Guide's "slot tricks" exist to reach. Knowledge hands out a
+    fixed allowance of class slots, a class needs this many to finish, and where the allowance
+    falls short the shortfall is made up by transferring racial or social slots in -- which is
+    exactly why the book names the dual classed character as the motivating example: such a
+    character needs the slots of BOTH classes out of one Knowledge allowance.
+
+    The empty-string case is his "no class chosen" default and is dropped rather than recorded,
+    the same way build_documents.py drops the blank class row.
+
+    A class whose case assigns nothing would read as 0, which would silently mean "needs no
+    slots". None currently does, and the caller asserts that, because a zero arriving here by
+    accident would quietly make a class look free to take.
+
+    Note this switch does NOT have the shape getWeaponLoreWhen does. There the label and its
+    assignment share a line; here the assignment is on the line after the label, so the labels
+    are accumulated and resolved at the break -- several labels may share one body.
+    """
+    start, body = function_body("getSlotsNeededForClass")
+    slots = {}
+    labels, values = [], []
+    for line in body:
+        found = re.findall(r'case\s+"([^"]*)"\s*:', line)
+        if found and values:          # a new group begins after a group that already assigned
+            labels, values = [], []
+        labels.extend(found)
+        values.extend(re.findall(r'tmpslotsneeded\s*=\s*(\d+)\s*;', line))
+        if re.search(r'\bbreak\s*;', line):
+            for lab in labels:
+                if lab != "":         # his "no class chosen" default row
+                    slots[lab] = int(values[-1]) if values else 0
+            labels, values = [], []
+    return slots, start
+
+
 def banded_chain(tmpfunction, tmpassign, tmpvar, tmpceiling=30):
     """
     Read an Agility-banded if/else-if chain into ordered [min, max, value] rows.
@@ -1012,6 +1055,21 @@ def main():
             "projectileLoreWhen": proj_when
         }, fh, indent=2, ensure_ascii=False)
 
+    # How many class skill slots each class needs for its whole progression. A zero here would
+    # read as "this class is free to take", so a class that parsed to zero is reported loudly
+    # rather than written out quietly.
+    slots_needed, slots_line = class_skill_slots_needed()
+    zero_slots = sorted([k for k, v in slots_needed.items() if not v])
+    if zero_slots:
+        print("  WARNING: %d classes parsed as needing 0 slots: %s"
+              % (len(zero_slots), ", ".join(zero_slots)))
+    with open(os.path.join(NAMED, "classSkillSlots.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js",
+                        "function": "getSlotsNeededForClass", "line": slots_line},
+            "entries": slots_needed
+        }, fh, indent=2, ensure_ascii=False)
+
     with open(os.path.join(NAMED, "raceBodyTypes.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
@@ -1028,6 +1086,8 @@ def main():
     print("race body types    %d races (%d conditional: %s)" % (len(races), len(conditional), ", ".join(conditional)))
     print("class lore titles  %d classes (%d reach a Lore chart)"
           % (len(lore_titles), len([t for t in lore_titles.values() if t])))
+    print("class skill slots  %d classes (%d to %d slots needed)"
+          % (len(slots_needed), min(slots_needed.values()), max(slots_needed.values())))
     print("projectiles        %d name tests, %d launcher tests, %d launcher->ammo"
           % (len(projectiles), len(launchers), len(launcher_ammo)))
     print("projectile lore    %d classes (%d ever acquire it)"
