@@ -1,13 +1,15 @@
 # Left for Sonnet — 2026-09-12, off-hand fighting planning pass
 
+> **ALL FOUR ITEMS DONE 2026-09-14.** This whole note is closed out. The base penalty (half one)
+> and the two remaining follow-ups (items 1 and 4, above) are built; see `DECISIONS.md` → "Off-hand
+> fighting, first half" and "Off-hand fighting, second half". What's left of the subsystem — the
+> Knowledge buy-down (done) and Second Weapon Lore's seconds discount (genuinely blocked, not
+> built) — is tracked in `2026-09-12-offhand-half-two.md`, also closed out except for that one
+> blocker.
+
 This pass was research only; no code was written. What follows is the mechanical part of the
 build, which does not need the expensive window once the two design questions in `DECISIONS.md`
 ("Off-hand fighting: audit before schema design") are answered.
-
-> **UNBLOCKED 2026-09-12.** The user has answered both questions, so items 2 and 3 are now safe to
-> start. **Item 3 changed shape as a result and has been rewritten — read its correction notice
-> before building it.** The answers are recorded in `DECISIONS.md` → "RESOLVED 2026-09-12 — the
-> three questions above, answered by the user".
 
 Three earlier notes are still open: `2026-09-12-lore-corrections.md`,
 `2026-09-12-projectile-lore.md`, `2026-09-12-elemental-dancer.md`.
@@ -15,6 +17,12 @@ Three earlier notes are still open: `2026-09-12-lore-corrections.md`,
 ---
 
 ## 1. Generate the two remaining lore-title tables
+
+> **DONE 2026-09-14 — do not redo.** `get2ndWeaponKnowWhen` / `get2ndWeaponLoreWhen` are generated
+> into `classLoreTitles.json` beside the existing five, propagated onto the class item as
+> `secondWeaponKnowTitle` / `secondWeaponLoreTitle`, and the character derives
+> `hasSecondWeaponKnowledge` / `hasSecondWeaponLore` from them. Used immediately by half-two's
+> Knowledge buy-down. See `DECISIONS.md` → "Off-hand fighting, second half".
 
 **Why it was left:** identical to a pattern already run three times; no judgement at all.
 
@@ -105,6 +113,11 @@ source of truth, and 26 modules still parse.
 ---
 
 ## 4. Check whether creatures use any of this
+
+> **DONE 2026-09-14.** They do not, and cannot structurally: `handleCreatureAttack` has zero
+> references to off-hand, second weapon, or hand. A creature's ten attack slots are named strings,
+> not weapons assigned to a hand. The creature model needs no `hand` field. See `DECISIONS.md` →
+> "Off-hand fighting, second half".
 
 **Why it was left:** a quick read, and it decides whether the creature model needs the same fields.
 

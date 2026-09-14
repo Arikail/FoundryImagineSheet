@@ -141,9 +141,10 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 	// What fighting with this weapon in the off hand costs. Off-handedness is derived from the
 	// weapon's hand against the character's handedness, so nothing is stored and an Ambidextrous
 	// character is simply never off-hand. Applies to missile attacks as well as melee -- see the
-	// note in getToHitModifiers.
+	// note in getToHitModifiers. The Knowledge chance is already gated by title eligibility on
+	// the actor (0 if the class has not reached it), so it is passed through as-is.
 	var tmpoffhand = resolveOffhandPenalties(tmpw, tmpsys.attributes.agl.rating,
-		tmpsys.physical?.handedness);
+		tmpsys.physical?.handedness, tmpsys.combat.secondWeaponKnowChance);
 
 	// To hit
 	var tmpmods = getToHitModifiers({

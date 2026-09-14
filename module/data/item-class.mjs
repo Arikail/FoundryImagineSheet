@@ -97,6 +97,16 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// Projectile Lore, from getProjectileLoreWhen. Only six of the 92 classes ever get it.
 			projectileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
+			// The titles at which the class becomes eligible for the two off-hand fighting
+			// skills, from get2ndWeaponKnowWhen / get2ndWeaponLoreWhen (sheet-worker.js:95195,
+			// 95294). Zero means the class never gets it -- true of 70 of 92 for Knowledge and
+			// 73 of 92 for Lore. Being eligible is not the same as having the skill: a character
+			// still needs the actual "Second Weapon Knowledge" / "Second Weapon Lore" skill on
+			// their sheet, and its own percentage is what buys the off-hand penalty down. See
+			// resolveOffhandPenalties in combat-rules.mjs.
+			secondWeaponKnowTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+			secondWeaponLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER SKILL SLOTS
 			// How many class skill slots this class needs to run its whole progression, from
 			// getSlotsNeededForClass (sheet-worker.js:62881). Knowledge hands out a fixed

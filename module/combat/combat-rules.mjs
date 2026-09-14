@@ -1001,19 +1001,25 @@ export const MODE_DAMAGE_TYPES = {
 	// is tested first and stops there:
 	//
 	//     Second Weapon Lore       -> no penalty at all
-	//     Second Weapon Knowledge  -> the penalty bought down by the skill's own levels
+	//     Second Weapon Knowledge  -> the full banded penalty, bought down by the skill's levels
 	//     neither                  -> the full banded penalty
+	//
+	// tmpknowledgechance is the "Second Weapon Knowledge" skill's own resolved percentage, ALREADY
+	// gated by whether the class has reached the title that makes the discipline available at all
+	// -- pass 0 when it has not, exactly as passing no skill in at all would read. This mirrors
+	// how getLoreModifiers takes an already-resolved hasWeaponLore rather than re-deriving title
+	// eligibility itself; the actor model is where class + title + the skill item all meet.
+	//
+	// The buy-down (sheet-worker.js:83188-83195): every 20% of the skill's chance removes one
+	// point of the melee and damage penalty and 5% of the skill penalty, and the reduction can
+	// cancel the penalty but never turn it positive. It starts from the SAME banded tables the
+	// full-penalty tier reads -- his setSecondWeaponKnowValues seeds tempOffHandToHit etc. from
+	// combat_mod_tohit_offhand and its siblings, which are exactly getOffhandMeleeAdj and its
+	// siblings, before subtracting nothing else and adding the levels back on.
 	//
 	// Returns { offhand, tier, melee, damage, skill }. A weapon that is not in the off hand comes
 	// back with tier "none" and three zeroes, so the caller can add these unconditionally.
-	//
-	// NOT YET IMPLEMENTED: the "knowledge" tier's buy-down. Second Weapon Knowledge gives
-	// skillChance/20 levels, each worth one point of to-hit and damage back and 5% of skills, never
-	// past zero (sheet-worker.js:83188). That needs skills resolving to a number on the actor and is
-	// the second half of this subsystem; until it lands, a weapon with Knowledge but not Lore takes
-	// the full penalty, which is his behaviour for a character whose skill has not yet reached one
-	// level. See docs/sonnet/2026-09-12-offhand-planning.md.
-	export function resolveOffhandPenalties(tmpweapon, tmpagility, tmphandedness) {
+	export function resolveOffhandPenalties(tmpweapon, tmpagility, tmphandedness, tmpknowledgechance) {
 		var tmpout = { offhand: false, tier: "none", melee: 0, damage: 0, skill: 0 };
 
 		var tmpsystem = tmpweapon?.system ?? tmpweapon ?? {};
@@ -1025,10 +1031,21 @@ export const MODE_DAMAGE_TYPES = {
 			return tmpout;
 		}
 
-		tmpout.tier   = tmpsystem.secondWeaponKnowledge ? "knowledge" : "full";
 		tmpout.melee  = getOffhandPenalty("melee",  tmpagility, tmphandedness);
 		tmpout.damage = getOffhandPenalty("damage", tmpagility, tmphandedness);
 		tmpout.skill  = getOffhandPenalty("skill",  tmpagility, tmphandedness);
+
+		if (tmpsystem.secondWeaponKnowledge) {
+			tmpout.tier = "knowledge";
+			var tmplevels = Math.floor((parseInt(tmpknowledgechance) || 0) / 20);
+			if (tmplevels > 0) {
+				tmpout.melee  = Math.min(0, tmpout.melee  + tmplevels);
+				tmpout.damage = Math.min(0, tmpout.damage + tmplevels);
+				tmpout.skill  = Math.min(0, tmpout.skill  + (tmplevels * 5));
+			}
+		} else {
+			tmpout.tier = "full";
+		}
 		return tmpout;
 	}
 

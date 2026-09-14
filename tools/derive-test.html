@@ -548,6 +548,51 @@ const listed = makeCharacter({}, 7, [loreClassFull(7, 0)],
 check("the stored list is parsed into names", listed.combat.weaponLoreNames, ["Bastard Sword", "Dagger"]);
 check("an unset list is empty",               listed.combat.missileLoreNames, []);
 
+// --- off-hand fighting: title eligibility and the skill's own chance --------------
+// Eligibility for Second Weapon Knowledge / Lore comes from the class's title for it, from
+// get2ndWeaponKnowWhen / get2ndWeaponLoreWhen, exactly as Weapon/Missile Lore do. Being
+// eligible is not the same as having the skill -- the skill's own percentage still has to be
+// read off the actor, and only counts once the title is reached.
+const offhandClass = (k, l) => ({
+	type: "class", name: "Duelist",
+	system: { attackSkillList: "Beginner(1), Novice(4)", loreAttackTitle: 0,
+	          secondWeaponKnowTitle: k, secondWeaponLoreTitle: l,
+	          advancement: { titles: [] }, classMods: [] },
+	getTitleName() { return ""; }
+});
+// AGL 16 against a skill rating of 4 is (16-4) x 5% = 60% with no other modifiers.
+const secondWeaponKnow = { type: "skill", name: "Second Weapon Knowledge",
+	system: { attr1: "AGL", attr2: "", skillRating: 4, startingBonus: 0, abilityBonus: 0,
+	          misc: 0, isCommon: false, category: "class" } };
+const secondWeaponLore = { type: "skill", name: "Second Weapon Lore",
+	system: { attr1: "AGL", attr2: "", skillRating: 4, startingBonus: 0, abilityBonus: 0,
+	          misc: 0, isCommon: false, category: "class" } };
+
+const notEligible = makeCharacter({ agl: 16 }, 5, [offhandClass(8, 10), secondWeaponKnow]);
+check("below the class's title, not eligible",        notEligible.combat.hasSecondWeaponKnowledge, false);
+check("...so the chance reads as zero even with the skill trained",
+	notEligible.combat.secondWeaponKnowChance, 0);
+
+const eligibleNoSkill = makeCharacter({ agl: 16 }, 8, [offhandClass(8, 10)]);
+check("at the title but with no skill item, still zero",
+	eligibleNoSkill.combat.hasSecondWeaponKnowledge, true);
+check("...the chance itself is zero",          eligibleNoSkill.combat.secondWeaponKnowChance, 0);
+
+const eligibleWithSkill = makeCharacter({ agl: 16 }, 8, [offhandClass(8, 10), secondWeaponKnow]);
+check("eligible and trained: the skill's own chance comes through",
+	eligibleWithSkill.combat.secondWeaponKnowChance, 60);
+check("Second Weapon Lore is a separate skill and a separate title",
+	eligibleWithSkill.combat.hasSecondWeaponLore, false);
+
+const bothOffhand = makeCharacter({ agl: 16 }, 10,
+	[offhandClass(8, 10), secondWeaponKnow, secondWeaponLore]);
+check("both can be eligible on one character",
+	[bothOffhand.combat.hasSecondWeaponKnowledge, bothOffhand.combat.hasSecondWeaponLore], [true, true]);
+check("...each reads its own named skill",
+	[bothOffhand.combat.secondWeaponKnowChance, bothOffhand.combat.secondWeaponLoreChance], [60, 60]);
+check("no class means neither is ever eligible",
+	makeCharacter({}, 20).combat.hasSecondWeaponKnowledge, false);
+
 // --- the Lore attack chart --------------------------------------------------------
 // A class reaches the Lore chart at its own title -- Archer at 3, Warrior at 6, Acrobat at 12,
 // and about half of them never. The chart itself is the standard one read a level up.

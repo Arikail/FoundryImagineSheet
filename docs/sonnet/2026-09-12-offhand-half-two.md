@@ -1,12 +1,27 @@
 # Left for Sonnet — 2026-09-12, off-hand fighting, second half
 
+> **Items 0, 1 and 3 DONE 2026-09-14. Item 2 is BLOCKED, not built — read its notice below before
+> touching it.** See `DECISIONS.md` → "Off-hand fighting, second half" for the full account.
+>
+> - **Item 0 (the blocker):** cleared. Skills already resolve to `totalChance` on embedded skill
+>   items via `_prepareSkills()`. A new `_getSkillChance(name)` helper and `_prepareOffhandSkills()`
+>   step read a named skill's chance off the actor.
+> - **Item 1 (Knowledge buy-down):** built exactly as specced — `floor(chance/20)` levels, each
+>   worth a point of melee/damage and 5% of skill, floored at zero independently per figure.
+> - **Item 3 (the two planning-note items):** both done; see `2026-09-12-offhand-planning.md`.
+> - **Item 2 (Lore's seconds discount):** genuinely blocked, per its own instruction below to stop
+>   and raise it. His sheet computes `offhand_2nd_lore_seconds`, stores it, and reads it back
+>   exactly once — into a display string. It is never subtracted from anything a round or an
+>   attack costs. There is no base off-hand-attack seconds cost anywhere in his 180k lines for a
+>   discount to reduce. **Do not invent one.** This needs a number from the user (what does an
+>   off-hand attack cost in seconds, before Lore's levels reduce it), not mechanical work.
+
 Half one is built: the `hand` field, derived off-handedness, the three generated penalty tables and
 the full-penalty tier, with the tag on the combat page. **Do not rebuild any of it.** See
 `DECISIONS.md` → "Off-hand fighting, first half", and note that items 2 and 3 of
 `2026-09-12-offhand-planning.md` are now marked DONE.
 
-What remains is the half that makes the two skills worth having. **Read the blocker first — part of
-this may not be startable yet.**
+The description below is kept for the reasoning, not as work still to do.
 
 ---
 
@@ -68,7 +83,7 @@ Both items below are unchanged and still wanted:
 
 ## Verification
 
-All four suites, as ever: combat (330 at the time of writing), derivation 123, creature 129,
+All four suites, as ever: combat (335 now), derivation 173, creature 129,
 availability 39, and 26 modules parsing. Run them with
 
 ```

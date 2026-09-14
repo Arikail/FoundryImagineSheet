@@ -1294,3 +1294,71 @@ is partly answered. **The one that is still genuinely open — "is `sheet-worker
 grown teeth:** when it was written it guarded ~7,000 unextracted rows, and it now sits underneath
 4,367 built documents and every combat rule in the system. It stays on the board as blocking Epic 6,
 and it is the one question here worth putting to the dev directly.
+
+### 2026-09-14 — Off-hand fighting, second half: the Knowledge buy-down, and a genuine blocker on Lore's seconds
+
+The two remaining lore-title tables generated cleanly (`get2ndWeaponKnowWhen`, `get2ndWeaponLoreWhen`
+into `classLoreTitles.json` beside the existing five, following the pattern exactly), giving
+`secondWeaponKnowTitle` / `secondWeaponLoreTitle` on the class item. 22 of 92 classes ever reach
+Second Weapon Knowledge, 19 of 92 reach Second Weapon Lore.
+
+**Eligibility and the skill's own chance are two different things, and both are now real.** A
+character derives `hasSecondWeaponKnowledge` / `hasSecondWeaponLore` from class + title exactly as
+the other four lores do (`hasLore`). But unlike those, holding the discipline is not binary — the
+skill's own resolved percentage decides how much it buys back, so a new step,
+`_prepareOffhandSkills()`, runs immediately after `_prepareSkills()` and reads a named skill's
+`totalChance` straight off the actor's embedded items. It could not live inside `_prepareCombat`,
+which runs *before* `_prepareSkills` in `prepareDerivedData()` — items are prepared in title/class
+order and a skill's `totalChance` is not finished yet when combat derives. Rather than reorder
+existing derivation (risking something else depending on the current order), this is a small
+step of its own, immediately after skills. Not eligible reads identically to no skill at all: zero,
+whether the reason is a missing title or a missing item.
+
+**The buy-down itself matches his sheet exactly** (`setSecondWeaponKnowValues`,
+sheet-worker.js:83152-83198): `floor(chance / 20)` levels, each buying back one point of melee and
+damage penalty and 5% of skill penalty, off the *same* banded tables the full-penalty tier reads —
+his code seeds `tempOffHandToHit` etc. from `combat_mod_tohit_offhand` and its siblings before
+subtracting the levels, which are exactly `getOffhandMeleeAdj` and its siblings. The reduction can
+cancel the penalty but never turns it positive (`if (tempOffHandToHit>0) { tempOffHandToHit=0; }`,
+three times over) — floored at zero on all three figures independently, not just when all three
+would cross at once.
+
+**Second Weapon Lore's seconds discount is genuinely blocked, and this is a finding rather than
+something to invent.** The half-two note asked to work out where an off-hand attack's seconds cost
+comes from before writing the discount, and to stop and raise it if his sheet never charges the
+extra second anywhere. It does not. Every reference to `offhand_2nd_lore_seconds` was checked:
+it is computed once (`secondWeaponKnowLevels` for Lore, capped at 5,
+sheet-worker.js:83242-83250), stored, and read back exactly once — into the *display* string
+`"2nd Weapon Lore[...](Offhand Seconds): +N"` at line 82666. **It is never subtracted from a
+weapon's speed, an attack's cost, or anything the round tracker touches.** This is the same shape
+as `MLDamMod` (`UPSTREAM-ISSUES.md` item 21) — a value computed, shown, and mechanically inert —
+except here there is no base cost anywhere in his sheet for the discount to reduce. The RESOLVED
+design answer ("fighting off-handed COSTS seconds, and ambidexterity is the absence of that cost")
+gives the *direction*, but not the number: what does an un-bought-down off-hand attack cost, in
+seconds, that five levels of Lore reduce to nothing? His sheet never picked one, so this port
+cannot invent one without it being exactly that — invented, not ported. **Left open, put to the
+user rather than guessed at.** Nothing was built for it; `resolveOffhandPenalties`'s "lore" tier
+still removes only the to-hit/damage/skill penalty, matching what his code actually executes for a
+Lore-flagged weapon.
+
+**Creatures do not use any of this** (`2026-09-12-offhand-planning.md` item 4, now answered).
+`handleCreatureAttack` (sheet-worker.js:179717-180022) was read in full: no reference to off-hand,
+second weapon, or hand at all. Structurally this could not be otherwise — a creature's ten attack
+slots are an encoded string of named attacks, not weapons assigned to a hand, so "which hand" has
+no meaning for a creature attack in his model. The creature-branch code inside
+`setGeneralCombatModifierDisplay` that reads `getCreatureSkillChance(..., "Second Weapon Knowledge")`
+is display-only and feeds the same dead-end `offhand_2nd_weapon_tohit` path characters use, which a
+creature's attack resolver never reads. The creature model needs no `hand` field and no port of any
+of this.
+
+**Verified:** 335 combat tests pass (5 new: the buy-down at 0%/20%/39%/60%/100% chance, pinning the
+floor and the "never past zero" rule independently per figure). 173 derivation tests (11 new:
+title eligibility below/at/above threshold, chance zero with no skill, chance zero when eligible
+but untrained, the real chance coming through once both eligible and trained, and that Knowledge
+and Lore read two separate named skills). Creature 129 and availability 39 unchanged; 26 modules
+parse. The sheet preview was reloaded and shows no console errors; it needed no changes, since the
+buy-down only affects roll-time numbers in `attack.mjs`, not anything the weapon-row builder shows.
+
+**Not verified:** anything needing a running Foundry V14 — that the computed chance actually reaches
+a live roll and that the off-hand-flagged weapon's to-hit/damage change on the chat card. No V14
+install exists on this machine.

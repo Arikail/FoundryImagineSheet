@@ -1042,6 +1042,8 @@ def main():
     weapon_when, weapon_line = class_lore_when("getWeaponLoreWhen")
     missile_when, missile_line = class_lore_when("getMissileLoreWhen")
     proj_when, proj_when_line = class_lore_when("getProjectileLoreWhen")
+    know2nd_when, know2nd_line = class_lore_when("get2ndWeaponKnowWhen")
+    lore2nd_when, lore2nd_line = class_lore_when("get2ndWeaponLoreWhen")
     with open(os.path.join(NAMED, "classLoreTitles.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
@@ -1052,7 +1054,11 @@ def main():
             "weaponLoreWhen": weapon_when,
             "missileLoreWhen": missile_when,
             "_projectileLoreSource": {"function": "getProjectileLoreWhen", "line": proj_when_line},
-            "projectileLoreWhen": proj_when
+            "projectileLoreWhen": proj_when,
+            "_secondWeaponKnowSource": {"function": "get2ndWeaponKnowWhen", "line": know2nd_line},
+            "secondWeaponKnowWhen": know2nd_when,
+            "_secondWeaponLoreSource": {"function": "get2ndWeaponLoreWhen", "line": lore2nd_line},
+            "secondWeaponLoreWhen": lore2nd_when
         }, fh, indent=2, ensure_ascii=False)
 
     # How many class skill slots each class needs for its whole progression. A zero here would
@@ -1096,6 +1102,10 @@ def main():
           % (len(weapon_when), len([t for t in weapon_when.values() if t])))
     print("missile lore when  %d classes (%d ever acquire it)"
           % (len(missile_when), len([t for t in missile_when.values() if t])))
+    print("2nd wpn know when  %d classes (%d ever acquire it)"
+          % (len(know2nd_when), len([t for t in know2nd_when.values() if t])))
+    print("2nd wpn lore when  %d classes (%d ever acquire it)"
+          % (len(lore2nd_when), len([t for t in lore2nd_when.values() if t])))
     print("armour coverage    %d families (%s)" % (len(armor_maps), ", ".join(armor_maps)))
     print("armour by item     %s" % ("; ".join("%s: %d area(s) need %s"
           % (fam, len(m), sorted(set(m.values()))[0]) for fam, m in armor_required.items()) or "none"))

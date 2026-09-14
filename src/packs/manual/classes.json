@@ -11,7 +11,8 @@
         "advancement.titles -- classtitledict['Elemental Dancer']",
         "advancement.goalAttr1 / goalAttr2 -- goalupdict['Elemental Dancer']",
         "loreAttackTitle -- getLoreAttackChart",
-        "weaponLoreTitle / missileLoreTitle / projectileLoreTitle -- getWeaponLoreWhen and siblings"
+        "weaponLoreTitle / missileLoreTitle / projectileLoreTitle -- getWeaponLoreWhen and siblings",
+        "secondWeaponKnowTitle / secondWeaponLoreTitle -- get2ndWeaponKnowWhen / get2ndWeaponLoreWhen (both 0 for this class)"
       ],
       "_notes": [
         "His sheet-worker and his Word document disagree twice, and the sheet-worker wins both times.",
@@ -73,6 +74,8 @@
       "weaponLoreTitle": 8,
       "missileLoreTitle": 0,
       "projectileLoreTitle": 0,
+      "secondWeaponKnowTitle": 0,
+      "secondWeaponLoreTitle": 0,
       "classType": "Warrior subclass",
       "description": "The Dancer class is an elemental warrior, focused on combat, body and mind, combined with their magical element of choice. They slowly learn to control their body, their mind, and then their element in that order. They are well trained and focused. Sometimes the element they choose affects their emotions and outlook and they must guard against this.\n\nCore Skills: Levitation, Martial Knowledge, Martial Lore, Telekinesis, <1st Kinesis>.\n\nSocial Skills: Required: Dancing, Drilling. Up to three from the following: Baking/Cooking, Calligraphy, Chirugeon, Diplomacy, Drawing/Sketching, Heraldry, History, Instruction, Philosophy, Physiology, Psychology, Running, Scribing, Survival, or Swimming.\n\nGoal Advancement: 18 skill points, +1 Strength 5%, +1 Will Force 5%.\n\nTitle Advancement: None. Racial Restrictions: None.\n\nElement table -- the angle-bracketed class skills are element-dependent:\nWater: Cryokinesis / Water Lore / Call of Water / Sonokinesis.\nAir: Electrokinesis / Wood Lore / Call of Air / Apparokinesis.\nEarth: Caustokinesis / Stone Lore / Call of Earth / Magnetokinesis.\nFire: Pyrokinesis / Metal Lore / Call of Fire / Aurakinesis.\nLight: Lumokinesis / Crystal Lore / Call of Life / Gravikinesis.\nDark: Umbrakinesis / Bone Lore / Call of Death / Gravikinesis.\n\nDancer Extension -- core skill requirements: Martial Knowledge 90%, Levitation 85%, Telekinesis 80%, <1st Kinesis> 75%, Martial Lore 70%. Attribute requirements: Strength, Agility and Will Force at racial maximum, Intelligence at racial maximum less 2, Knowledge 15."
     }

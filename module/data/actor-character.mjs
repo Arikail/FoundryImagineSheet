@@ -335,6 +335,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
+		this._prepareOffhandSkills();
 		this._prepareAvailability();
 
 		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
@@ -440,6 +441,20 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			? (parseInt(this.classItem.system.projectileLoreTitle) || 0) : 0;
 		this.combat.hasProjectileLore = hasLore(this.identity.title, this.combat.projectileLoreTitle);
 		this.combat.projectileLoreNames = parseLoreList(this.combat.projectileLoreList);
+
+		// Eligibility for the two off-hand fighting disciplines. This is title eligibility only
+		// -- whether the class has reached the title that makes the skill available at all -- not
+		// whether the character actually has the skill. The skill's own chance is read once
+		// skills have resolved, in _prepareOffhandSkills below, since embedded skill items are not
+		// finished computing here yet (see the ordering note on _prepareSkills).
+		this.combat.secondWeaponKnowTitle = this.classItem
+			? (parseInt(this.classItem.system.secondWeaponKnowTitle) || 0) : 0;
+		this.combat.secondWeaponLoreTitle = this.classItem
+			? (parseInt(this.classItem.system.secondWeaponLoreTitle) || 0) : 0;
+		this.combat.hasSecondWeaponKnowledge =
+			hasLore(this.identity.title, this.combat.secondWeaponKnowTitle);
+		this.combat.hasSecondWeaponLore =
+			hasLore(this.identity.title, this.combat.secondWeaponLoreTitle);
 
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,
@@ -798,6 +813,33 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				if (tmpskill.category == "social") { this.skillSlots.socialUsed++; }
 			}
 		}
+	}
+
+	// This is the function which resolves the two off-hand fighting skills' chances, once
+	// _prepareSkills above has finished computing every skill's totalChance. Split out as its
+	// own step, run straight after _prepareSkills in prepareDerivedData, because _prepareCombat
+	// -- where the title-eligibility flags above are set -- runs BEFORE skills are prepared, and
+	// changing that order would risk other combat fields silently depending on it.
+	//
+	// A character not yet eligible by title reads as 0, exactly as having no skill at all would --
+	// see the gating note on resolveOffhandPenalties in combat-rules.mjs.
+	_prepareOffhandSkills() {
+		this.combat.secondWeaponKnowChance = this.combat.hasSecondWeaponKnowledge
+			? this._getSkillChance("Second Weapon Knowledge") : 0;
+		this.combat.secondWeaponLoreChance = this.combat.hasSecondWeaponLore
+			? this._getSkillChance("Second Weapon Lore") : 0;
+	}
+
+	// This is the function which reads one named skill's resolved chance off the actor, for the
+	// handful of places (currently only off-hand fighting) that need a skill's own percentage
+	// rather than its presence. Zero if the character has no skill of that name -- untrained
+	// reads the same as absent, which is his behaviour too (storeTempSkillChanceAndMessage finds
+	// nothing and temp_skill_chance stays 0).
+	_getSkillChance(tmpname) {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return 0; }
+		var tmpskill = tmpactor.items.find(i => i.type == "skill" && i.name == tmpname);
+		return tmpskill ? (parseInt(tmpskill.system.totalChance) || 0) : 0;
 	}
 
 	// This is the function which produces the combined attribute value for a skill.

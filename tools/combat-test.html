@@ -728,11 +728,32 @@ check("Second Weapon Lore removes it entirely",
 check("Lore wins over Knowledge, they do not stack",
 	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true, secondWeaponLore: true },
 		12, "Right").tier, "lore");
-// Until the buy-down lands, Knowledge alone still pays full -- his behaviour for a character
-// whose skill has not yet bought one level. The tier is reported so the seam is visible.
-check("Knowledge alone is tiered but not yet bought down",
+// With no chance passed at all (or 0%), Knowledge alone still pays full -- a character whose
+// skill has not bought a single level yet, or who has not reached the class title.
+check("Knowledge with no chance passed still pays full",
 	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right"),
 	{ offhand: true, tier: "knowledge", melee: -3, damage: -5, skill: -15 });
+check("...and explicit 0% is identical",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right", 0),
+	{ offhand: true, tier: "knowledge", melee: -3, damage: -5, skill: -15 });
+
+// The buy-down itself (sheet-worker.js:83188-83195): every 20% removes one point of melee and
+// damage and 5% of skill, starting from the SAME banded full penalty at this Agility.
+check("20% buys back one level",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right", 20),
+	{ offhand: true, tier: "knowledge", melee: -2, damage: -4, skill: -10 });
+check("39% is still only one level -- it floors, does not round",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right", 39),
+	{ offhand: true, tier: "knowledge", melee: -2, damage: -4, skill: -10 });
+check("60% buys back three levels",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right", 60),
+	{ offhand: true, tier: "knowledge", melee: 0, damage: -2, skill: 0 });
+// The floor is the point of this test: a large enough skill cancels the penalty and stops --
+// it never turns into a bonus, on any of the three figures at once.
+check("100% floors all three at zero, never past it",
+	R.resolveOffhandPenalties({ ...offhandSword, secondWeaponKnowledge: true }, 12, "Right", 100),
+	{ offhand: true, tier: "knowledge", melee: 0, damage: 0, skill: 0 });
+
 check("an Ambidextrous wielder is never off-hand at all",
 	R.resolveOffhandPenalties(offhandSword, 5, "Ambidextrous").tier, "none");
 check("a real item's system block is unwrapped",
