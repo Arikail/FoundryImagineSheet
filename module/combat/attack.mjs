@@ -225,6 +225,7 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 
 		tmpdamage = {
 			dice: tmpdice, str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
+			loreSpecific: tmplore.specific,
 			projectileLore: tmpprojlore.damage, projectileLorePerDie: tmpprojlore.perDie,
 			rolled: tmpdmgroll.total, multiplier: tmpmulti, total: tmptotal,
 			type: MODE_DAMAGE_TYPES[tmpmode]

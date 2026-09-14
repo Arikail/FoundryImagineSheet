@@ -1455,3 +1455,87 @@ authoring Elementalist, Inquisitor and Summoner from their Word templates (GME i
 Game-Master stand-in, not a playable class, per the comment already on `skillSlotsNeeded`), and
 filling `classSkills` for the 85 other generated classes. Both need documents this session does
 not have.
+
+### 2026-09-14 — Lore corrections, item 1 done; item 2 turned out to be a real gap, not a UI question
+
+**Item 1, the chat card's lore note, is built.** `damage.lore` and `damage.projectileLore` were
+already computed and flagged; the card's damage breakdown now shows both, with `damage.loreSpecific`
+distinguishing the general tier from a weapon named in the list. The to-hit contribution needed no
+new code at all — `getToHitModifiers` already pushes a `{label:"Lore", value:N}` entry (and an
+`{label:"Off Hand", value:N}` one) onto the list the attack-line already iterates generically, so
+both were showing on the card before this pass touched anything.
+
+**Item 2 was framed as "mirror the panel, or decide it does not belong."** Checking properly found
+a third answer: **his sheet applies a real numeric Weapon/Missile Lore bonus to creature attacks,
+and the port does not.** This is not the display-only question the note anticipated.
+
+`setCombatModifierValues` (sheet-worker.js:82167) branches for a creature exactly as it does for a
+character, at lines 82266 and 82294: `getCreatureSkillChance(tmpCreatureSkillList, "Weapon Lore")`
+(and "Missile Lore"), and if the creature's chance is non-zero at all, `whenWeaponLoreAcquired=1`
+against `currentTitle=tmpCreatureLevel` — which is true for a creature of any level once it has the
+skill, with no title threshold the way a class has one. That sets the same
+`tempmeleemodweaponlore=2` / `tempdamagemodweaponlore=4` / `tempmodskillweaponlore=10` a character
+gets, into `combat_mod_melee_other` and `combat_mod_missile_other`. **`handleCreatureAttack`
+(179717) reads both of those fields directly** — they are in its own `getAttrs` list — so a
+creature that lists "Weapon Lore" or "Missile Lore" among its skills really does fight with the
+general bonus in his sheet.
+
+`module/combat/creature-attack.mjs` has no reference to `getLoreModifiers` or the `LORE_*`
+constants at all. `combat.hasWeaponLore` / `hasMissileLore` are derived on the creature model
+(`_prepareCombat`, `actor-creature.mjs:509-510`) and used for exactly one thing — choosing
+`loreAttackSkill`, the Lore attack chart — never for a numeric bonus.
+
+**Why this is not fixed here.** A creature has no per-weapon lore list the way a character does
+(there is nothing in his creature data resembling `weapon_lore_list`), so only the general tier
+could ever apply — but a creature's ten attack slots mix melee, missile and shaped attacks (touch,
+gaze, cloud, bolt...) with different to-hit paths already, and deciding how a flat "this creature
+has Weapon Lore" fact should reach each of those without a specific `getLoreModifiers`-shaped
+mechanism is a design question, not a mechanical extension of the existing pattern. Left for a
+proper pass with the same care the character-side lore work got, rather than wired in quickly to
+close out a checklist item.
+
+**`docs/sonnet/2026-09-12-lore-corrections.md` item 2 is rewritten** to record this rather than
+its original framing, and is no longer a Sonnet-tier item.
+
+**Item 3** (the `speedSpecial` sweep) is unaffected by any of this and is built separately — see
+below.
+
+**Verified for item 1:** 335 combat tests unchanged (no new rule logic, only a new field on an
+already-computed object and a template change); the chat card was checked by hand against the
+existing `damage.lore` / `damage.projectileLore` shapes already produced by
+`getLoreModifiers`/`getProjectileLoreDamage`, both covered by existing tests.
+
+### 2026-09-14 — Item 3 done, and a real drift found in the preview's duplicated weapon-row builder
+
+`docs/sonnet/2026-09-12-lore-corrections.md` item 3: confirmed a `speedSpecial` weapon's displayed
+speed is unaffected by lore. `#buildWeaponRows` on the sheet class is private, so this could not be
+tested from `tools/combat-test.html` at all — the note's own "Done when" named the wrong file. The
+sheet preview is the only place that logic runs, so a real Garrote (`speedSpecial: true`) was added
+to the preview's weapon list, specifically lored (added to `weaponLoreList` alongside the Bastard
+Sword, which already carries a real -2 speed modifier from that lore), and its rendered speed
+column checked: it reads **"Special"**, not a number, exactly as a plain unlored Garrote would.
+
+**Found on the way: the preview's own duplicate of `#buildWeaponRows` had already drifted from the
+real one.** The comment beside it says "kept in sync" is required; it had not been. The real sheet
+class adds the weapon's own lore speed modifier into `getWeaponSpeed` (`tmpspeedmod +
+tmplore.speed`); the preview's copy passed `character.combat.weaponSpeedMod` alone, silently
+dropping the lore term for every weapon rendered there — which is exactly how a field that never
+populates goes unnoticed, the same principle the description-tab pass was built around. Fixed to
+match. This means the Bastard Sword's displayed speed in the preview was wrong (too slow by the 2
+seconds her Weapon Lore should have bought back) until this pass, though `tools/combat-test.html`'s
+own coverage of `getWeaponSpeed` and `getLoreModifiers` was never affected, since neither of those
+pure functions had the bug — only this one duplicate call site did.
+
+**The sample chat card was also a hand-typed stub for lore**, built before Weapon Lore or off-hand
+fighting existed: it called `getToHitModifiers`/`getWeaponSpeed` without their `lore`/`offhand`
+parameters at all and hand-assembled a `damage` object with no `lore` field, so item 1's new
+chat-card line would have rendered against this stub with nothing to show — passing by omission,
+not by proof. Rewired to compute the sword's real lore contribution with `getLoreModifiers` and
+feed it through to-hit, speed and damage exactly as `attack.mjs` does, so the card now shows a real
+`+6 lore (specific)` on the damage line and `Lore +3` on the to-hit line, both reflecting the
+character's actual Weapon Lore rather than a value that was never wired.
+
+**Verified:** all four suites unchanged (335/173/129/39 — this was presentation and a preview-only
+fix, no rule-layer change), 26 modules parse. The preview was reloaded and its Garrote row confirmed
+"Special", the Bastard Sword and Dagger rows confirmed real lore-adjusted numbers, and the chat
+card confirmed both its to-hit and damage lines now carry the sword's real lore contribution.

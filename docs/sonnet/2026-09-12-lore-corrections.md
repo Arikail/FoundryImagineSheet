@@ -1,5 +1,21 @@
 # Left for Sonnet — 2026-09-12, lore corrections pass
 
+> **Items 1 and 3 DONE 2026-09-14.** Item 1: the chat card shows the lore damage contribution
+> (`damage.lore` / `damage.loreSpecific` / `damage.projectileLore`); the to-hit line needed no
+> code at all, since `getToHitModifiers` was already pushing a `"Lore"` entry onto the list the
+> card iterates generically. Item 3: confirmed a `speedSpecial` weapon's displayed speed ignores
+> lore, via the sheet preview rather than `tools/combat-test.html` as originally named (the
+> builder it tests is private and unreachable from there) — and found the preview's own duplicate
+> of that builder had drifted, silently dropping the lore speed term for every weapon it rendered.
+> Fixed. Full account in `DECISIONS.md` → "Lore corrections, item 1 done..." and "Item 3 done, and
+> a real drift found...".
+>
+> **Item 2 is rewritten, not done as scoped.** Checking properly found his sheet applies a real
+> numeric Weapon/Missile Lore bonus to creature attacks via `combat_mod_melee_other` /
+> `combat_mod_missile_other`, which the port's `creature-attack.mjs` does not implement at all —
+> a genuine gap, not the "does the panel belong" question this item was framed as. Left for a
+> proper design pass; see `DECISIONS.md` for the precise citation.
+
 What this pass deliberately did **not** do, because it is mechanical extension of a pattern that
 already exists in the repo. Each item is self-contained: you should not need to read the session
 it came from.

@@ -30,7 +30,7 @@
 	{{#if damage}}
 	<div class="damage">
 		<span class="total">{{damage.total}}</span> {{damage.type}} damage
-		<span class="breakdown">({{damage.dice}}{{#if damage.str}} {{#if (gt damage.str 0)}}+{{/if}}{{damage.str}} STR{{/if}}{{#if damage.magic}} +{{damage.magic}} magic{{/if}}{{#if damage.misc}} {{#if (gt damage.misc 0)}}+{{/if}}{{damage.misc}}{{/if}}
+		<span class="breakdown">({{damage.dice}}{{#if damage.str}} {{#if (gt damage.str 0)}}+{{/if}}{{damage.str}} STR{{/if}}{{#if damage.magic}} +{{damage.magic}} magic{{/if}}{{#if damage.lore}} {{#if (gt damage.lore 0)}}+{{/if}}{{damage.lore}} lore{{#if damage.loreSpecific}} (specific){{/if}}{{/if}}{{#if damage.projectileLore}} {{#if (gt damage.projectileLore 0)}}+{{/if}}{{damage.projectileLore}} projectile lore ({{damage.projectileLorePerDie}}/die){{/if}}{{#if damage.misc}} {{#if (gt damage.misc 0)}}+{{/if}}{{damage.misc}}{{/if}}
 		= {{damage.rolled}}{{#if (lt damage.multiplier 1)}}, halved for the called shot{{/if}})</span>
 	</div>
 	{{/if}}

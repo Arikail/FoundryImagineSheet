@@ -90,6 +90,12 @@ const dagger = byName(weapons, "Dagger");
 // here rather than only in the rule tests. The character is right-handed by default.
 Object.assign(dagger.system, { location: "carried", quantity: 1, hand: "left" });
 dagger.id = "w2";
+// A speedSpecial weapon -- "no ordinary swing timing", his own data has no number for it. Given
+// Weapon Lore over it too (see weaponLoreList below), so the check that its displayed speed
+// still reads "Special" is a real one: a nonzero lore speed modifier exists and is not shown.
+const garrote = byName(weapons, "Garrote");
+Object.assign(garrote.system, { location: "carried", quantity: 1, hand: "right" });
+garrote.id = "w3";
 const padding = byName(armor, "Body Suit(Padding)");
 Object.assign(padding.system, { location: "equipped", quantity: 1 });
 const chain = byName(armor, "Body Suit(Chain)");
@@ -143,7 +149,7 @@ const character = new ImagineCharacterData({
 		{ name: "Elvish", speak: true, write: false }
 	],
 	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
-	          weaponLoreList: "Bastard Sword", missileLoreList: "",
+	          weaponLoreList: "Bastard Sword, Garrote", missileLoreList: "",
 	          painThreshold: -2, highPainThreshold: false, damageAbsorb: 12,
 	          spiritArmor: 0, forceArmor: 4, outerKinetic: 0, magicShield: 0,
 	          invulnerable: false },
@@ -160,7 +166,7 @@ const character = new ImagineCharacterData({
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
 	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
 });
-const allItems = [...skills, sword, dagger, padding, chain, shield, tent, raceItem, classItem];
+const allItems = [...skills, sword, dagger, garrote, padding, chain, shield, tent, raceItem, classItem];
 character.parent = { items: allItems, name: "Calanar Elfriend" };
 character.prepareBaseData();
 character.prepareDerivedData();
@@ -199,25 +205,30 @@ const loreFor = (w) => {
 	return l.attack ? l : null;
 };
 
-const weaponRows = [sword, dagger].map(w => ({
-	id: w.id, name: w.name, damage: w.system.damage,
-	speed: w.system.speedSpecial ? "Special" : R.getWeaponSpeed(w.system.speed, w.system.minSpeed, character.combat.weaponSpeedMod),
-	reload: w.system.reloadSpeed || "",
-	modes: ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available).map(m => ({ mode: m, mod: w.system[m].mod })),
-	lore: loreFor(w),
-	equipped: w.system.location === "equipped",
+const weaponRows = [sword, dagger, garrote].map(w => {
 	// Mirrors ImagineCharacterSheet.#buildWeaponRows, which is private and cannot be called from
-	// here. Anything added to the row there has to be added here too or it renders blank.
-	hand: w.system.hand || "right",
-	offhand: R.isOffhandWeapon(w.system.hand, character.physical?.handedness)
-}));
+	// here. Anything added to the row there has to be added here too or it renders blank -- and
+	// this one had already drifted: the real sheet adds the weapon's own lore speed modifier
+	// into getWeaponSpeed, and this duplicate was missing it entirely. Fixed to match.
+	const lore = loreFor(w);
+	return {
+		id: w.id, name: w.name, damage: w.system.damage,
+		speed: w.system.speedSpecial ? "Special"
+			: R.getWeaponSpeed(w.system.speed, w.system.minSpeed, character.combat.weaponSpeedMod + lore.speed),
+		reload: w.system.reloadSpeed || "",
+		modes: ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available).map(m => ({ mode: m, mod: w.system[m].mod })),
+		lore, equipped: w.system.location === "equipped",
+		hand: w.system.hand || "right",
+		offhand: R.isOffhandWeapon(w.system.hand, character.physical?.handedness)
+	};
+});
 
 const ctx = {
 	actor: { name: "Calanar Elfriend", img: "" },
 	system: character,
 	attributes: attrRows,
 	skills: skillRows,
-	gear: [sword, dagger, padding, chain, shield, tent],
+	gear: [sword, dagger, garrote, padding, chain, shield, tent],
 	weapons: weaponRows,
 	lore: {
 		show: character.combat.hasWeaponLore || character.combat.hasMissileLore,
@@ -263,19 +274,23 @@ if (start) document.querySelector(`.tabstrip button[data-t="${start}"]`)?.click(
 
 // --- an attack card, resolved by the real rules --------------------------------------------
 // Natural 14 with the Bastard Sword's cut, against a target with a -3 defensive adjustment.
+// The sword is specifically lored (weaponLoreList above), so this exercises the chat card's
+// lore line with a real, nonzero value rather than a hand-typed stub that never populates it.
+const cardLore = loreFor(sword);
 const mods = R.getToHitModifiers({ mode: "cut", weapon: sword.system,
 	attacker: { meleeAttack: character.combat.meleeAttack, missileAttack: character.combat.missileAttack,
 	            meleeMisc: 0, missileMisc: 0 },
-	target: { defensiveAdjust: -3 }, situational: 0 });
+	target: { defensiveAdjust: -3 }, situational: 0, lore: cardLore.attack });
 const result = R.resolveAttack({ natural: 14, mods: mods.total, skill: character.combat.attackSkill, calledShot: false });
 const strMod = R.getStrengthDamageMod(character.combat.meleeDamage, "cut", false);
-const rolled = 17 + strMod;   // sample dice total of 17 on 5d6+1
+const rolled = 17 + strMod + cardLore.damage;   // sample dice total of 17 on 5d6+1
 const attack = {
 	weapon: sword.name, modeLabel: "Cut", actorName: "Calanar Elfriend", targetName: "Orc Raider",
 	aim: "Upper Torso", result, mods,
-	speed: R.getWeaponSpeed(sword.system.speed, sword.system.minSpeed, character.combat.weaponSpeedMod),
+	speed: R.getWeaponSpeed(sword.system.speed, sword.system.minSpeed, character.combat.weaponSpeedMod + cardLore.speed),
 	fumble: null,
-	damage: result.isHit ? { dice: sword.system.damage, str: strMod, magic: 0, misc: 0, rolled,
+	damage: result.isHit ? { dice: sword.system.damage, str: strMod, magic: 0, misc: 0,
+	                         lore: cardLore.damage, loreSpecific: cardLore.specific, rolled,
 	                         multiplier: 1, total: rolled, type: "Cutting" } : null,
 	applied: false, inCombat: true
 };
