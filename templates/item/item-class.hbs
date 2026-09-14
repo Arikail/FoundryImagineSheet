@@ -1,0 +1,152 @@
+{{!--
+	Class body. One root element, as the framework requires of every PART.
+
+	Titles and class skills are two separate lists in his data -- classtitledict carries no skill
+	column at all -- shown here paired by index because that is how a player actually reads them.
+	classMods has no fixed width: it runs two to five entries across the 87 classes extracted so
+	far, and Monk's row is a column short of everyone else's (UPSTREAM-ISSUES.md item 1). Rendered
+	exactly as long as it is; a short list is not an error to hide.
+--}}
+<section class="imagine-item-body class">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Spellcasting</h3>
+			<ul class="band-list">
+				<li><label>Casts Aura magic</label>
+					<span><input type="checkbox" name="system.casting.isCaster" {{#if system.casting.isCaster}}checked{{/if}}></span></li>
+				<li><label>Caster start title</label>
+					<span><input type="number" name="system.casting.casterStartTitle" value="{{system.casting.casterStartTitle}}" min="0"></span></li>
+				<li><label>Invokes Piety magic</label>
+					<span><input type="checkbox" name="system.casting.isInvoker" {{#if system.casting.isInvoker}}checked{{/if}}></span></li>
+				<li><label>Invoker start title</label>
+					<span><input type="number" name="system.casting.invokerStartTitle" value="{{system.casting.invokerStartTitle}}" min="0"></span></li>
+				<li><label>Commune title mod</label>
+					<span><input type="number" name="system.casting.communeTitleMod" value="{{system.casting.communeTitleMod}}"></span></li>
+				<li><label>Casting notes</label>
+					<span><input type="text" name="system.casting.castingNotes" value="{{system.casting.castingNotes}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Requirements</h3>
+			<ul class="band-list">
+				<li><label>Alignment</label>
+					<span><input type="text" name="system.requirements.alignment" value="{{system.requirements.alignment}}"></span></li>
+				<li><label>Focus attributes</label>
+					<span><input type="text" name="system.requirements.focusAttributes" value="{{system.requirements.focusAttributes}}" placeholder="STR, AGL"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Classification</h3>
+			<ul class="band-list">
+				<li><label>Class type</label>
+					<span><input type="text" name="system.classType" value="{{system.classType}}" placeholder="Warrior subclass"></span></li>
+				<li><label>Armour usage</label>
+					<span><input type="text" name="system.armorUsage" value="{{system.armorUsage}}"></span></li>
+				<li><label>Weapon usage</label>
+					<span><input type="text" name="system.weaponUsage" value="{{system.weaponUsage}}"></span></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Attack Progression</h3>
+			<ul class="band-list">
+				<li><label>Attack skill</label>
+					<span><input type="text" name="system.attackSkill" value="{{system.attackSkill}}"></span></li>
+				<li><label>Attack skill list</label>
+					<span><input type="text" name="system.attackSkillList" value="{{system.attackSkillList}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Lore Titles</h3>
+			<ul class="band-list">
+				<li><label>Lore attack chart</label>
+					<span><input type="number" name="system.loreAttackTitle" value="{{system.loreAttackTitle}}" min="0"></span></li>
+				<li><label>Weapon Lore</label>
+					<span><input type="number" name="system.weaponLoreTitle" value="{{system.weaponLoreTitle}}" min="0"></span></li>
+				<li><label>Missile Lore</label>
+					<span><input type="number" name="system.missileLoreTitle" value="{{system.missileLoreTitle}}" min="0"></span></li>
+				<li><label>Projectile Lore</label>
+					<span><input type="number" name="system.projectileLoreTitle" value="{{system.projectileLoreTitle}}" min="0"></span></li>
+			</ul>
+			<p class="muted">Zero means the class never gets it. This is the Lore chart threshold, not the
+			mastered-weapons title in the attack skill list above -- the two disagree for every class that
+			carries both.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Attribute Qualification</h3>
+	<table class="attr-grid">
+		<thead>
+			<tr>{{#each attribQualifyCells as |c|}}<th>{{c.key}}</th>{{/each}}</tr>
+		</thead>
+		<tbody>
+			<tr>
+				{{#each attribQualifyCells as |c|}}
+				<td><input type="number" name="system.requirements.attribQualify.{{c.index}}" value="{{c.value}}" min="0"></td>
+				{{/each}}
+			</tr>
+		</tbody>
+	</table>
+	<p class="muted">The minimum rating a character needs in each attribute to take this class. Zero
+	means no requirement.</p>
+
+	<h3 class="section-head">Class Modifiers
+		<button type="button" data-action="addClassMod"><i class="fa-solid fa-plus"></i> Add</button>
+	</h3>
+	{{#if classModRows.length}}
+	<ul class="band-list removable-list">
+		{{#each classModRows as |m|}}
+		<li>
+			<input type="text" name="system.classMods.{{m.index}}" value="{{m.value}}">
+			<button type="button" data-action="deleteClassMod" data-index="{{m.index}}"
+				data-tooltip="Remove this modifier"><i class="fa-solid fa-trash"></i></button>
+		</li>
+		{{/each}}
+	</ul>
+	{{else}}
+	<p class="empty">No class modifiers.</p>
+	{{/if}}
+	<p class="muted">His sheet encodes these as display strings it pattern-matches on. Kept here as the
+	text a player reads; the mechanical effect belongs on an Active Effect on this item.</p>
+
+	<h3 class="section-head">Titles and Class Skills
+		<span class="count">{{titleRows.length}}</span>
+		<button type="button" data-action="addTitle"><i class="fa-solid fa-plus"></i> Add</button>
+	</h3>
+	{{#if titleRows.length}}
+	{{#each titleRows as |t|}}
+	<details class="skill-group rider" data-sync="title-{{t.index}}">
+		<summary>Title {{t.number}}{{#if t.name}}: {{t.name}}{{/if}}
+			<button type="button" data-action="deleteTitle" data-index="{{t.index}}"
+				data-tooltip="Remove this title"><i class="fa-solid fa-trash"></i></button>
+		</summary>
+		<ul class="band-list">
+			<li><label>Title name</label>
+				<span><input type="text" name="system.advancement.titles.{{t.index}}" value="{{t.name}}"></span></li>
+			<li><label>Class skills</label>
+				<span><input type="text" name="system.advancement.classSkills.{{t.index}}" value="{{t.skills}}"
+					placeholder="his classtitledict carries no skill column -- left blank until authored"></span></li>
+		</ul>
+	</details>
+	{{/each}}
+	{{else}}
+	<p class="empty">No titles.</p>
+	{{/if}}
+
+	<h3 class="section-head">Goal Attributes</h3>
+	<ul class="band-list">
+		<li><label>First</label>
+			<span><input type="text" name="system.advancement.goalAttr1" value="{{system.advancement.goalAttr1}}"></span></li>
+		<li><label>Second</label>
+			<span><input type="text" name="system.advancement.goalAttr2" value="{{system.advancement.goalAttr2}}"></span></li>
+	</ul>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="5">{{system.description}}</textarea>
+</section>

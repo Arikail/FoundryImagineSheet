@@ -6,7 +6,10 @@
       "Creature": "Imagine Creature Sheet",
       "CreatureAttack": "Imagine Creature Attack Sheet",
       "Power": "Imagine Power Sheet",
-      "Trait": "Imagine Trait Sheet"
+      "Trait": "Imagine Trait Sheet",
+      "Class": "Imagine Class Sheet",
+      "Armor": "Imagine Armour Sheet",
+      "Race": "Imagine Race Sheet"
     },
     "Tab": {
       "attributes": "Attributes",

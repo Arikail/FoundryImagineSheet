@@ -249,6 +249,63 @@
 .move-table td { padding: 1px 4px; border: none; font-size: 12px; }
 .move-table thead th { padding: 1px 4px; }
 
+/* @MARKER ATTRIBUTE GRID */
+/* A compact 12-wide row of numbers (a race's mods/limits, a class's attribute qualification),
+   one column per attribute in the Player's Guide's order. A shared header row lets a race sheet
+   stack its Mods and Limits rows under a single set of labels. */
+
+.attr-grid {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2px 0 4px;
+}
+
+.attr-grid th {
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--imagine-muted);
+	font-weight: 600;
+	text-align: center;
+	padding: 0 1px 2px;
+}
+
+.attr-grid td {
+	padding: 1px;
+}
+
+.attr-grid td.row-label {
+	text-align: left;
+	font-size: 11px;
+	color: var(--imagine-muted);
+	white-space: nowrap;
+	padding-right: 6px;
+	width: 1%;
+}
+
+.attr-grid input[type="number"] {
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 1px;
+}
+
+/* @MARKER REMOVABLE LIST */
+/* A single-field-per-row list with its own Add/Remove, for arrays too plain to need the
+   collapsible rider-effect treatment -- a class's modifier strings, for instance. */
+
+.removable-list li {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: stretch;
+	padding: 2px 0;
+}
+
+.removable-list input[type="text"] {
+	flex: 1;
+}
+
 .encumbrance-status {
 	margin: 0;
 	font-size: 16px;

@@ -27,6 +27,11 @@
 	<div class="window-content" id="trait"></div>
 </div>
 
+<div class="frame imagine sheet item class">
+	<div class="frame-title">Class &mdash; item sheet (preview)</div>
+	<div class="window-content" id="class"></div>
+</div>
+
 <script type="module">
 // Standalone preview of the three item sheets. Foundry is not present, so its globals are
 // stubbed; the context each sheet builds in _prepareContext is reproduced here by hand, and the
@@ -114,10 +119,31 @@ const traitCtx = {
 	config: { categories: ["ability", "disability", "immunity"] }
 };
 
+// --- a class, taken straight from the extracted content ------------------------------
+// Elemental Dancer specifically: it's the one hand-authored class with classSkills actually
+// populated, so this is the only real document that exercises that field.
+const ATTRIBUTE_KEYS = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"];
+const classDocs = await (await fetch("../src/packs/documents/classes.json")).json();
+const classSource = classDocs.find(d => d.name === "Elemental Dancer");
+if (!classSource) { throw new Error("missing class in the extracted content: Elemental Dancer"); }
+const classItem = { name: classSource.name, img: "", system: structuredClone(classSource.system) };
+const classSys = classItem.system;
+const classCtx = {
+	item: classItem, system: classSys,
+	attribQualifyCells: ATTRIBUTE_KEYS.map((key, index) => ({
+		key, index, value: classSys.requirements.attribQualify[index] ?? 0
+	})),
+	titleRows: (classSys.advancement.titles ?? []).map((name, index) => ({
+		index, number: index + 1, name, skills: (classSys.advancement.classSkills ?? [])[index] ?? ""
+	})),
+	classModRows: (classSys.classMods ?? []).map((value, index) => ({ index, value }))
+};
+
 for (const [id, ctx, body] of [
 	["attack", attackCtx, "item-creature-attack"],
 	["power",  powerCtx,  "item-power"],
-	["trait",  traitCtx,  "item-trait"]
+	["trait",  traitCtx,  "item-trait"],
+	["class",  classCtx,  "item-class"]
 ]) {
 	const header = await render("../templates/item/item-header.hbs", ctx);
 	const rest = await render(`../templates/item/${body}.hbs`, ctx);
