@@ -635,3 +635,34 @@
 }
 .imagine-chat footer .speed { color: #6d675e; font-size: 11px; margin-right: auto; }
 .imagine-chat footer button { width: auto; flex: 0 0 auto; font-size: 11px; line-height: 1.4; }
+
+/* @MARKER DESCRIPTION TAB */
+/* physical, wealth and languages, all previously in the schema and reachable by nothing --
+   see DECISIONS.md, "The character sheet cannot show 19 fields the model carries". Reuses the
+   .panel / .band-list pattern the race sheet already established for the same kind of dense,
+   plain-field editing. */
+
+.tendencies-row { max-width: 420px; margin-bottom: 10px; }
+
+/* Height stays two small numbers, feet then inches, rather than one field -- matching how his
+   own sheet kept the two apart rather than as a single decimal. */
+.height-fields input { width: 40px; text-align: center; }
+
+.add-language { float: right; font-size: 10px; padding: 1px 6px; }
+
+.wealth-text {
+	display: block;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--imagine-muted);
+	margin-top: 6px;
+}
+.wealth-text textarea { width: 100%; box-sizing: border-box; font: inherit; margin-top: 2px; }
+
+.language-allowance { font-size: 11px; margin: 2px 0 6px; }
+
+.language-table input[type="text"] { width: 100%; box-sizing: border-box; }
+.language-table .col-check { width: 1%; text-align: center; white-space: nowrap; }
+.language-table .col-remove { width: 1%; white-space: nowrap; }
+.language-table .col-remove button { padding: 2px 6px; }

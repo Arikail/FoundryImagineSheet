@@ -1,5 +1,11 @@
 # Left for Sonnet — 2026-09-12, the character description tab
 
+> **DONE 2026-09-14.** Built exactly as specced below: the tab, the panels, the Add/Delete language
+> rows, and the Intelligence allowance line (which rendered for free — see `DECISIONS.md` → "The
+> description tab: 19 fields and a language list, made reachable"). Checked in the sheet preview
+> against a real derived character with every field given a genuine value. All four suites
+> unchanged (335/173/129/39), 26 modules parse. Not verified: anything needing a running V14.
+
 **The problem, in one line:** the character model carries 19 scalar fields and one array that no tab
 renders, so a player cannot record their height, eye colour, age, money or languages.
 

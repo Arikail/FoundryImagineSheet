@@ -1,0 +1,110 @@
+{{!--
+	Description tab. One root element, as the framework requires of every PART.
+
+	Everything here was already in the schema and reachable by nothing: physical.* (eleven
+	fields), wealth.*, languages, and identity.tendencies. See DECISIONS.md, "The character sheet
+	cannot show 19 fields the model carries, and languages are unwired end to end".
+
+	handedness stays on the Combat tab -- it drives shield coverage and off-hand resolution, so
+	it belongs beside the things that read it, and is not repeated here.
+--}}
+<section class="tab imagine-description" data-tab="description" data-group="primary">
+
+	<ul class="band-list tendencies-row">
+		<li><label>Tendencies</label>
+			<span><input type="text" name="system.identity.tendencies" value="{{system.identity.tendencies}}"
+				placeholder="Moral, Amoral, Aggressive..."></span></li>
+	</ul>
+
+	<div class="panel-row">
+
+		<div class="panel">
+			<h3>Physical Features</h3>
+			<ul class="band-list">
+				<li><label>Height</label>
+					<span class="height-fields">
+						<input type="number" name="system.physical.heightFeet" value="{{system.physical.heightFeet}}"> ft
+						<input type="number" name="system.physical.heightInches" value="{{system.physical.heightInches}}"> in
+					</span></li>
+				<li><label>Weight</label>
+					<span><input type="number" name="system.physical.weight" value="{{system.physical.weight}}"> lb</span></li>
+				<li><label>Frame</label>
+					<span><input type="text" name="system.physical.frame" value="{{system.physical.frame}}"></span></li>
+				<li><label>Hair</label>
+					<span><input type="text" name="system.physical.hair" value="{{system.physical.hair}}"></span></li>
+				<li><label>Eyes</label>
+					<span><input type="text" name="system.physical.eyes" value="{{system.physical.eyes}}"></span></li>
+				<li><label>Skin</label>
+					<span><input type="text" name="system.physical.skin" value="{{system.physical.skin}}"></span></li>
+				<li><label>Body Covering</label>
+					<span><input type="text" name="system.physical.bodyCovering" value="{{system.physical.bodyCovering}}"
+						placeholder="Scales, fur..."></span></li>
+				<li><label>Age</label>
+					<span><input type="number" name="system.physical.age" value="{{system.physical.age}}"></span></li>
+				<li><label>Apparent Age</label>
+					<span><input type="number" name="system.physical.apparentAge" value="{{system.physical.apparentAge}}"></span></li>
+				<li><label>Maximum Age</label>
+					<span><input type="text" name="system.physical.maxAge" value="{{system.physical.maxAge}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Wealth</h3>
+			<ul class="band-list">
+				<li><label>Copper</label>
+					<span><input type="number" name="system.wealth.copper" value="{{system.wealth.copper}}"></span></li>
+				<li><label>Silver</label>
+					<span><input type="number" name="system.wealth.silver" value="{{system.wealth.silver}}"></span></li>
+				<li><label>Gold</label>
+					<span><input type="number" name="system.wealth.gold" value="{{system.wealth.gold}}"></span></li>
+				<li><label>Platinum</label>
+					<span><input type="number" name="system.wealth.platinum" value="{{system.wealth.platinum}}"></span></li>
+			</ul>
+			<label class="wealth-text">Gems
+				<textarea name="system.wealth.gems" rows="2">{{system.wealth.gems}}</textarea></label>
+			<label class="wealth-text">Jewelry
+				<textarea name="system.wealth.jewelry" rows="2">{{system.wealth.jewelry}}</textarea></label>
+			<label class="wealth-text">Special
+				<textarea name="system.wealth.special" rows="2">{{system.wealth.special}}</textarea></label>
+		</div>
+
+		<div class="panel">
+			<h3>Languages
+				<button type="button" class="add-language" data-action="addLanguage">
+					<i class="fa-solid fa-plus"></i> Add</button>
+			</h3>
+			{{!-- Below rating 1, this is partial fluency in the character's OWN tongue, not a count
+			      of others -- writing always lags speaking. Rendered only if the Attributes module
+			      (Epic 2) has wired the Intelligence allowance by the time this runs; omitted rather
+			      than computed here if it has not. See DECISIONS.md. --}}
+			{{#if system.attributes.int.mods.spokenLanguages}}
+			<p class="muted language-allowance">Intelligence allows
+				{{system.attributes.int.mods.spokenLanguages}} spoken,
+				{{system.attributes.int.mods.writtenLanguages}} written.</p>
+			{{/if}}
+			{{#if languages.length}}
+			<table class="language-table">
+				<thead><tr><th>Name</th><th>Speak</th><th>Write</th><th></th></tr></thead>
+				<tbody>
+					{{#each languages as |lang|}}
+					<tr>
+						<td><input type="text" name="system.languages.{{lang.index}}.name" value="{{lang.name}}"></td>
+						<td class="col-check"><input type="checkbox"
+							name="system.languages.{{lang.index}}.speak" {{#if lang.speak}}checked{{/if}}></td>
+						<td class="col-check"><input type="checkbox"
+							name="system.languages.{{lang.index}}.write" {{#if lang.write}}checked{{/if}}></td>
+						<td class="col-remove">
+							<button type="button" data-action="deleteLanguage" data-index="{{lang.index}}">
+								<i class="fa-solid fa-trash"></i></button>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			{{else}}
+			<p class="empty">No languages recorded.</p>
+			{{/if}}
+		</div>
+
+	</div>
+</section>

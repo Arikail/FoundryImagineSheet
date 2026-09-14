@@ -16,6 +16,7 @@
       "skills": "Skills",
       "equipment": "Equipment",
       "combat": "Combat",
+      "description": "Description",
       "stats": "Stats",
       "traits": "Traits"
     },

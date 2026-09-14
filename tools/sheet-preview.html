@@ -29,6 +29,7 @@
 			<button data-t="skills">Skills</button>
 			<button data-t="combat">Combat</button>
 			<button data-t="equipment">Equipment</button>
+			<button data-t="description">Description</button>
 		</div>
 		<div id="tabs"></div>
 	</div>
@@ -128,7 +129,15 @@ const character = new ImagineCharacterData({
 	resistances: { magic: resistance(), illusion: resistance(), control: resistance(),
 	               poison: resistance(), disease: resistance() },
 	body: { bodyType: "", wounds: { "Left Arm": 9, "Neck": 40 }, armorDamage: { "Upper Torso": 2 }, hide: 0 },
-	physical: { weight: 215 },
+	physical: { weight: 215, heightFeet: 5, heightInches: 9, frame: "Lean", hair: "Chestnut, braided",
+	            bodyCovering: "", eyes: "Green", skin: "Fair, weathered", age: 24, apparentAge: 24,
+	            maxAge: "90 (Human)" },
+	wealth: { copper: 40, silver: 12, gold: 3, platinum: 0, special: "",
+	          gems: "A cracked blue quartz, uncut", jewelry: "A plain silver band" },
+	languages: [
+		{ name: "Common", speak: true, write: true },
+		{ name: "Elvish", speak: true, write: false }
+	],
 	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
 	          weaponLoreList: "Bastard Sword", missileLoreList: "",
 	          painThreshold: -2, highPainThreshold: false, damageAbsorb: 12,
@@ -220,7 +229,10 @@ const ctx = {
 		{ value: "Right",        label: "Right" },
 		{ value: "Left",         label: "Left" },
 		{ value: "Ambidextrous", label: "Ambidextrous (shields right)" }
-	]
+	],
+	// Same indexing the sheet class does for the description tab's languages, so a row can be
+	// written back to the right entry and removed by index.
+	languages: character.languages.map((l, i) => ({ ...l, index: i }))
 };
 
 async function render(path, context) {
@@ -229,7 +241,7 @@ async function render(path, context) {
 }
 document.getElementById("header").innerHTML = await render("../templates/actor/header.hbs", ctx);
 const tabs = document.getElementById("tabs");
-for (const name of ["attributes", "skills", "combat", "equipment"]) {
+for (const name of ["attributes", "skills", "combat", "equipment", "description"]) {
 	const div = document.createElement("div");
 	div.innerHTML = await render(`../templates/actor/tab-${name}.hbs`, ctx);
 	tabs.appendChild(div);

@@ -1362,3 +1362,46 @@ buy-down only affects roll-time numbers in `attack.mjs`, not anything the weapon
 **Not verified:** anything needing a running Foundry V14 — that the computed chance actually reaches
 a live roll and that the off-hand-flagged weapon's to-hit/damage change on the chat card. No V14
 install exists on this machine.
+
+### 2026-09-14 — The description tab: 19 fields and a language list, made reachable
+
+Built the fifth PART the earlier finding called for. `templates/actor/tab-description.hbs`, a
+`description` entry in `PARTS` and `TABS` on `ImagineCharacterSheet`, and the label in `lang/en.json`.
+Nothing about the mechanism is new — it follows the four existing PARTs exactly, and the languages
+array reuses the creature attack's rider-effect pattern (an indexed row, Add/Delete actions that
+replace the whole array, plain `name="system.languages.{{index}}.field"` bindings for everything
+else, which `submitOnChange` writes back on its own).
+
+**Layout groups the four things by kind, not by field count.** Physical Features (eleven fields:
+height, weight, frame, hair, eyes, skin, body covering, age, apparent age, maximum age — every one
+of `physical`'s fields except `handedness`), Wealth (four currency numbers plus gems/jewelry/special
+as free text), and Languages sit as three `.panel`s in the same `.panel-row` the race sheet already
+established for this kind of dense plain-field editing; Tendencies sits above them as a single row,
+next to Alignment's role in the header. `handedness` was deliberately left on the Combat tab and not
+duplicated — it drives shield coverage and off-hand resolution, so it belongs beside what reads it.
+
+**The Intelligence language allowance is rendered, not computed.** `this.attributes.int.mods` already
+carries `spokenLanguages` / `writtenLanguages` for every rating, because `_prepareAttributes` copies
+the whole matching row out of `ATTRIBUTE_TABLES` generically for every attribute — nothing new was
+wired for this tab. The line is guarded by `{{#if}}` and simply does not print if the value is ever
+absent, exactly as the finding specified: this tab renders what exists, and wiring the cap itself
+stays the Attributes module's job (Epic 2, Backlog).
+
+**No new Handlebars helpers.** The lore panel had already established the pattern of precomputing
+booleans and joined strings in the sheet class rather than templating `{{#if (or a b)}}`, because
+whether Foundry's environment ships those combinators cannot be checked from here. Nothing in this
+tab needed even that — every conditional is a single value or an `{{#each}}`, so the template stays
+inside what the preview harness's own helper stub (`eq`/`gt`/`lt`/`gte`/`localize`) already proves out.
+
+**Verified:** all four suites unchanged (combat 335, derivation 173, creature 129, availability 39) —
+expected, since nothing here is new derivation, only new surface on values that already existed. 26
+modules parse. The tab was checked in `tools/sheet-preview.html` against a real derived character
+with every new field given a genuine value rather than left at a schema default — including the
+Intelligence line reading "4 spoken, 2 written" off her actual rating, which is the check the note
+asked for specifically: "not a hand-typed stub, which is how a field that never populates goes
+unnoticed."
+
+**Not verified:** anything needing a running Foundry V14 — that the Add/Delete language buttons
+write back to the actor, and that the fields in general persist. No V14 install exists on this
+machine, and the preview harness does not wire `data-action` clicks at all (nor does any of the
+sheet's other action-driven UI, which carries the identical caveat already).

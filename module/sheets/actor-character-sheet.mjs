@@ -29,28 +29,32 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			rollAttributeSave: ImagineCharacterSheet.#onRollAttributeSave,
 			rollSkill: ImagineCharacterSheet.#onRollSkill,
 			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack,
-			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand
+			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand,
+			addLanguage: ImagineCharacterSheet.#onAddLanguage,
+			deleteLanguage: ImagineCharacterSheet.#onDeleteLanguage
 		}
 	};
 
 	// @MARKER SHEET PARTS
 	// Header first, then the tab strip, then one part per tab.
 	static PARTS = {
-		header:     { template: "systems/imagine-rpg/templates/actor/header.hbs" },
-		tabs:       { template: "templates/generic/tab-navigation.hbs" },
-		attributes: { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs" },
-		skills:     { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs" },
-		combat:     { template: "systems/imagine-rpg/templates/actor/tab-combat.hbs" },
-		equipment:  { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs" }
+		header:      { template: "systems/imagine-rpg/templates/actor/header.hbs" },
+		tabs:        { template: "templates/generic/tab-navigation.hbs" },
+		attributes:  { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs" },
+		skills:      { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs" },
+		combat:      { template: "systems/imagine-rpg/templates/actor/tab-combat.hbs" },
+		equipment:   { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs" },
+		description: { template: "systems/imagine-rpg/templates/actor/tab-description.hbs" }
 	};
 
 	static TABS = {
 		primary: {
 			tabs: [
-				{ id: "attributes", icon: "fa-solid fa-dice-d20" },
-				{ id: "skills",     icon: "fa-solid fa-list-check" },
-				{ id: "combat",     icon: "fa-solid fa-khanda" },
-				{ id: "equipment",  icon: "fa-solid fa-sack" }
+				{ id: "attributes",  icon: "fa-solid fa-dice-d20" },
+				{ id: "skills",      icon: "fa-solid fa-list-check" },
+				{ id: "combat",      icon: "fa-solid fa-khanda" },
+				{ id: "equipment",   icon: "fa-solid fa-sack" },
+				{ id: "description", icon: "fa-solid fa-scroll" }
 			],
 			initial: "attributes",
 			labelPrefix: "IMAGINE.Tab"
@@ -71,8 +75,15 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.handednessChoices =
 			ImagineCharacterSheet.#buildHandednessChoices(this.document.system.physical.handedness);
 		tmpcontext.lore = ImagineCharacterSheet.#buildLorePanel(this.document.system);
+		tmpcontext.languages = ImagineCharacterSheet.#buildLanguageRows(this.document.system);
 
 		return tmpcontext;
+	}
+
+	// This is the function which numbers the character's languages so a row can be written back
+	// to the right entry -- the same reason the creature attack's rider effects are numbered.
+	static #buildLanguageRows(tmpsystem) {
+		return (tmpsystem.languages ?? []).map((tmplang, tmpindex) => ({ ...tmplang, index: tmpindex }));
 	}
 
 	// This is the function which assembles the Lore panel. Holding Weapon or Missile Lore at all
@@ -251,6 +262,24 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		var tmpitem = this.document.items.get(target.dataset.itemId);
 		if (!tmpitem) { return; }
 		await tmpitem.update({ "system.hand": target.dataset.hand });
+	}
+
+	// This is the function which adds a blank language row. No ceiling here, unlike the creature
+	// attack's rider effects -- the Intelligence table caps how many are worth having, not how
+	// many the array can hold, and that cap is the Attributes module's to enforce, not this tab's.
+	static async #onAddLanguage(event, target) {
+		var tmplanguages = [...(this.document.system.languages ?? [])];
+		tmplanguages.push({ name: "", speak: true, write: false });
+		await this.document.update({ "system.languages": tmplanguages });
+	}
+
+	// This is the function which removes one language.
+	static async #onDeleteLanguage(event, target) {
+		var tmpindex = parseInt(target.dataset.index);
+		var tmplanguages = [...(this.document.system.languages ?? [])];
+		if (isNaN(tmpindex) || tmpindex < 0 || tmpindex >= tmplanguages.length) { return; }
+		tmplanguages.splice(tmpindex, 1);
+		await this.document.update({ "system.languages": tmplanguages });
 	}
 
 	// This is the function which rolls an attribute save. A save succeeds on a percentile roll
