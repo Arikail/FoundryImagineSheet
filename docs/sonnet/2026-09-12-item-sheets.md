@@ -1,5 +1,16 @@
 # Left for Sonnet — 2026-09-12, item sheets
 
+**DONE 2026-09-13.** All three sheets built exactly as specced below: `ImagineClassSheet`,
+`ImagineArmorSheet`, `ImagineRaceSheet` in `module/sheets/item-sheet.mjs`, their templates in
+`templates/item/`, registered in `module/imagine-rpg.mjs`, and previewed in `tools/item-preview.html`
+against Elemental Dancer, Skin Suit(Watertight) + a real Buckler, and Elf(Sea) respectively — chosen,
+as this note asked, to be real documents that exercise the interesting cases (populated
+`classSkills`, a full 19-location coverage grid plus the shield flags, and the special-movement /
+-10-speed-multiplier case) rather than hand-typed stubs. Board updated in `PROGRESS.md`. No deviation
+from the spec below worth recording as a new decision — the one thing this note flagged as
+speculative ("whichever of the second-weapon pair exists by the time you build this") turned out not
+to exist on `item-class.mjs` yet, so nothing was added for it.
+
 This pass decided **which** of the six remaining item sheets to build and what goes on each. The
 building itself is mechanical: the pattern exists three times over in `module/sheets/item-sheet.mjs`
 and is followed, not invented.
