@@ -28,7 +28,8 @@ import ImagineTraitData from "./data/item-trait.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import ImagineCreatureSheet from "./sheets/actor-creature-sheet.mjs";
 import {
-	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet, ImagineClassSheet, ImagineArmorSheet
+	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet,
+	ImagineClassSheet, ImagineArmorSheet, ImagineRaceSheet
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
@@ -151,6 +152,11 @@ Hooks.once("init", function () {
 		types: ["armor"],
 		makeDefault: true,
 		label: "IMAGINE.Sheet.Armor"
+	});
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineRaceSheet, {
+		types: ["race"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Race"
 	});
 
 	// @MARKER SYSTEM API

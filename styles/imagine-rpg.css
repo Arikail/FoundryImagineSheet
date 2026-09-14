@@ -321,6 +321,19 @@
 	padding: 1px;
 }
 
+/* @MARKER EDIT MOVE TABLE */
+/* The read-only .move-table on the attribute tab, given inputs -- a race's own walk/jog/run and
+   special-movement rates are entered here, not just displayed. */
+
+.edit-move-table { width: 100%; border-collapse: collapse; margin: 2px 0 4px; }
+.edit-move-table td { padding: 1px 4px; }
+.edit-move-table thead th { padding: 1px 4px; font-size: 10px; color: var(--imagine-muted); }
+.edit-move-table input[type="number"], .edit-move-table input[type="text"] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1px 3px;
+}
+
 /* @MARKER REMOVABLE LIST */
 /* A single-field-per-row list with its own Add/Remove, for arrays too plain to need the
    collapsible rider-effect treatment -- a class's modifier strings, for instance. */

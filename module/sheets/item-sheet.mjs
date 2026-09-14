@@ -345,5 +345,45 @@ export class ImagineArmorSheet extends ImagineItemSheet {
 	}
 }
 
+// @MARKER RACE SHEET
+
+export class ImagineRaceSheet extends ImagineItemSheet {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "item", "race"],
+		position: { width: 640, height: 760 }
+	};
+
+	static PARTS = {
+		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
+		body:   { template: "systems/imagine-rpg/templates/item/item-race.hbs" }
+	};
+
+	// This is the function which stacks the two 12-wide attribute rows under one shared header, in
+	// the Player's Guide's order rather than alphabetically. attributeLimits is the field
+	// getAttributeMax reads -- load-bearing, not decorative -- so mods and limits are kept as
+	// separate rows with their own group name rather than one merged table a template could
+	// confuse, since they are both twelve plain numbers and mixing them up silently changes a
+	// character's ceiling.
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+		var tmpsystem = this.document.system;
+
+		tmpcontext.attributeKeys = ATTRIBUTE_KEYS;
+		tmpcontext.attributeRows = [
+			{
+				group: "attributeMods", label: "Mods",
+				cells: ATTRIBUTE_KEYS.map((tmpkey) => ({ key: tmpkey, value: tmpsystem.attributeMods[tmpkey] }))
+			},
+			{
+				group: "attributeLimits", label: "Limits",
+				cells: ATTRIBUTE_KEYS.map((tmpkey) => ({ key: tmpkey, value: tmpsystem.attributeLimits[tmpkey] }))
+			}
+		];
+
+		return tmpcontext;
+	}
+}
+
 // @MARKER ADD NEW item sheet classes HERE
 // @END (CODE)

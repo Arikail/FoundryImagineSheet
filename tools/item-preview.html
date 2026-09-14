@@ -42,6 +42,11 @@
 	<div class="window-content" id="shield"></div>
 </div>
 
+<div class="frame imagine sheet item race">
+	<div class="frame-title">Race &mdash; item sheet (preview)</div>
+	<div class="window-content" id="race"></div>
+</div>
+
 <script type="module">
 // Standalone preview of the three item sheets. Foundry is not present, so its globals are
 // stubbed; the context each sheet builds in _prepareContext is reproduced here by hand, and the
@@ -195,13 +200,34 @@ const shieldSource = armorDocs.find(d => d.name === "Shield(Buckler/Bloodracite)
 if (!shieldSource) { throw new Error("missing shield in the extracted content: Shield(Buckler/Bloodracite)"); }
 const shieldCtx = buildArmorCtx({ name: shieldSource.name, img: "", system: structuredClone(shieldSource.system) });
 
+// --- a race, taken straight from the extracted content -------------------------------
+// Elf(Sea) specifically: it carries a special movement rate (Swim) and the -10 speed multiplier
+// that turned out to be a mis-keyed cell (UPSTREAM-ISSUES.md item 24), so it exercises the whole
+// movement section, not just the two attribute rows.
+const raceDocs = await (await fetch("../src/packs/documents/races.json")).json();
+const raceSource = raceDocs.find(d => d.name === "Elf(Sea)");
+if (!raceSource) { throw new Error("missing race in the extracted content: Elf(Sea)"); }
+const raceItem = { name: raceSource.name, img: "", system: structuredClone(raceSource.system) };
+const raceSys = raceItem.system;
+const raceCtx = {
+	item: raceItem, system: raceSys,
+	attributeKeys: ATTRIBUTE_KEYS,
+	attributeRows: [
+		{ group: "attributeMods", label: "Mods",
+		  cells: ATTRIBUTE_KEYS.map((key) => ({ key, value: raceSys.attributeMods[key] })) },
+		{ group: "attributeLimits", label: "Limits",
+		  cells: ATTRIBUTE_KEYS.map((key) => ({ key, value: raceSys.attributeLimits[key] })) }
+	]
+};
+
 for (const [id, ctx, body] of [
 	["attack", attackCtx, "item-creature-attack"],
 	["power",  powerCtx,  "item-power"],
 	["trait",  traitCtx,  "item-trait"],
 	["class",  classCtx,  "item-class"],
 	["armor",  armorCtx,  "item-armor"],
-	["shield", shieldCtx, "item-armor"]
+	["shield", shieldCtx, "item-armor"],
+	["race",   raceCtx,   "item-race"]
 ]) {
 	const header = await render("../templates/item/item-header.hbs", ctx);
 	const rest = await render(`../templates/item/${body}.hbs`, ctx);
