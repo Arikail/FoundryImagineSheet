@@ -14,6 +14,24 @@
 		<span class="slot"><label>Memorization</label> {{system.skillSlots.memorization}}</span>
 	</div>
 
+	{{!-- Most classes have nothing here -- his data never carried the skills gained at each
+	      title, only the title names -- so this only shows for a class hand-authored with them.
+	      Angle-bracketed entries such as "<1st Kinesis>" are element-dependent placeholders his
+	      templates resolve elsewhere, and are shown as written rather than hidden. --}}
+	{{#if classProgress.show}}
+	<h3 class="section-head">Class Progression</h3>
+	<table class="class-progress-table">
+		<tbody>
+			{{#each classProgress.rows as |row|}}
+			<tr class="{{#if row.current}}current-title{{/if}}">
+				<td class="col-title">{{row.title}}<span class="muted">{{row.titleName}}</span></td>
+				<td class="col-skills">{{row.skills}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{/if}}
+
 	{{#each skills as |list category|}}
 	<details class="skill-group" data-sync open>
 		<summary>{{category}} skills <span class="count">{{list.length}}</span></summary>

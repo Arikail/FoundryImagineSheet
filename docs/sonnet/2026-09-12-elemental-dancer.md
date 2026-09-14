@@ -1,5 +1,12 @@
 # Left for Sonnet — 2026-09-12, Elemental Dancer pass
 
+> **Items 3 and 4 DONE 2026-09-14.** See `DECISIONS.md` → "A character's Skills tab shows the
+> class skills around its current title" and item 27 in `UPSTREAM-ISSUES.md` (the Beguiler swap).
+> **Items 1 and 2 remain blocked on source material, not on effort** — they need the Word
+> templates for Elementalist, Inquisitor and Summoner, which this session does not have. GME is
+> confirmed NOT a playable class (a Game-Master stand-in; see the comment on `skillSlotsNeeded`
+> in `item-class.mjs`), so it needs no template at all.
+
 Mechanical follow-through from adding the Elemental Dancer class. Two earlier notes are still
 open: `2026-09-12-lore-corrections.md` and `2026-09-12-projectile-lore.md`.
 

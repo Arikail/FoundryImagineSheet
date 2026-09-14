@@ -37,6 +37,10 @@
 <div class="chat-title">Chat card: the same character's attack</div>
 <div class="chat" id="chat"></div>
 
+<div class="chat-title">Class Progression check: a real Elemental Dancer at title 7, against the
+	real class document -- not the Warrior above, who has nothing to show here</div>
+<div class="frame imagine sheet actor character" id="ed-check"></div>
+
 <script type="module">
 // Standalone preview of the character sheet and attack card, rendered against a character the real
 // data model has derived, built from real extracted content: the race, class, weapons and armour are
@@ -276,4 +280,50 @@ const attack = {
 	applied: false, inCombat: true
 };
 document.getElementById("chat").innerHTML = await render("../templates/chat/attack-card.hbs", attack);
+
+// --- class progression: the real Elemental Dancer document, at three titles ----------------
+// #buildClassProgress on the sheet class is private, so its logic is duplicated here -- the
+// same accepted gap the weapon-row builder already has (see DECISIONS.md, "Off-hand fighting,
+// first half"). Keep this in step with the sheet class if that logic ever changes.
+//
+// The point of using the REAL document rather than a hand-typed stub is exactly what the note
+// asked for: proving getClassSkills/getTitleName's 1-based indexing lines up against what
+// build_documents.py actually wrote for this class, not against an assumption of it.
+const edClass = byName(classes, "Elemental Dancer");
+edClass.system.getTitleName = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.titles;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
+edClass.system.getClassSkills = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.classSkills;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
+
+function buildClassProgress(classItem, title) {
+	const skills = classItem.system.advancement.classSkills ?? [];
+	if (!skills.some(s => s)) { return { show: false, rows: [] }; }
+	const rows = [];
+	for (const offset of [-1, 0, 1]) {
+		const at = title + offset;
+		if (at < 1) { continue; }
+		const titleName = classItem.system.getTitleName(at);
+		if (!titleName) { continue; }
+		rows.push({ title: at, titleName, skills: classItem.system.getClassSkills(at), current: offset === 0 });
+	}
+	return { show: rows.length > 0, rows };
+}
+
+const edCtx = {
+	system: { skillSlots: { classUsed: 0, class: 0, racialUsed: 0, racial: 0, socialUsed: 0, social: 0, memorization: 0 } },
+	skills: { class: [], racial: [], social: [] },
+	classProgress: buildClassProgress(edClass, 7)
+};
+const edCheckEl = document.getElementById("ed-check");
+edCheckEl.innerHTML = await render("../templates/actor/tab-skills.hbs", edCtx);
+edCheckEl.querySelector(".tab").classList.add("active"); // .tab defaults to display:none, see above
+
+// The Warrior fixture above must show nothing here -- his data carries no per-title skills at
+// all, so a class with an empty classSkills array is the other half of this check.
+const warriorProgress = buildClassProgress(classItem, character.identity.title);
+console.assert(warriorProgress.show === false, "Warrior should show no class progression panel");
 </script>

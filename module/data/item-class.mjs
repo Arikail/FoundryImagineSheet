@@ -138,5 +138,16 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 		if (tmpindex >= this.advancement.titles.length) { return ""; }
 		return this.advancement.titles[tmpindex];
 	}
+
+	// This is the function which returns the class skills gained at a given title, parallel to
+	// getTitleName above. His classtitledict carries only the title names, never the skills
+	// gained at each, so this is empty for every class built from the sheet-worker and populated
+	// only for classes hand-authored from his Word class templates (src/packs/manual/).
+	getClassSkills(tmpTitle) {
+		var tmpindex = parseInt(tmpTitle) - 1;
+		if (tmpindex < 0) { return ""; }
+		if (tmpindex >= this.advancement.classSkills.length) { return ""; }
+		return this.advancement.classSkills[tmpindex];
+	}
 }
 // @END (CODE)

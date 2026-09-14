@@ -76,8 +76,43 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			ImagineCharacterSheet.#buildHandednessChoices(this.document.system.physical.handedness);
 		tmpcontext.lore = ImagineCharacterSheet.#buildLorePanel(this.document.system);
 		tmpcontext.languages = ImagineCharacterSheet.#buildLanguageRows(this.document.system);
+		tmpcontext.classProgress = ImagineCharacterSheet.#buildClassProgress(this.document.system);
 
 		return tmpcontext;
+	}
+
+	// This is the function which shows the class skills gained around the character's current
+	// title -- the title just reached, and the one just below and just above it, so advancing a
+	// title is visible against what came before it and what is next.
+	//
+	// Most classes have nothing to show: his classtitledict never carried the skills gained at
+	// each title, only the title names, so classSkills is empty for every class built from the
+	// sheet-worker and populated only for classes hand-authored from his Word templates (see
+	// item-class.mjs, getClassSkills). A class with nothing recorded renders nothing here rather
+	// than three blank rows.
+	static #buildClassProgress(tmpsystem) {
+		var tmpclass = tmpsystem.classItem;
+		if (!tmpclass) { return { show: false, rows: [] }; }
+
+		var tmpskills = tmpclass.system.advancement.classSkills ?? [];
+		if (!tmpskills.some(s => s)) { return { show: false, rows: [] }; }
+
+		var tmptitle = parseInt(tmpsystem.identity.title) || 1;
+		var tmprows = [];
+		for (const tmpoffset of [-1, 0, 1]) {
+			var tmpat = tmptitle + tmpoffset;
+			if (tmpat < 1) { continue; }
+			var tmpskilltext = tmpclass.system.getClassSkills(tmpat);
+			var tmptitlename = tmpclass.system.getTitleName(tmpat);
+			if (!tmptitlename) { continue; }
+			tmprows.push({
+				title: tmpat,
+				titleName: tmptitlename,
+				skills: tmpskilltext,
+				current: tmpoffset == 0
+			});
+		}
+		return { show: tmprows.length > 0, rows: tmprows };
 	}
 
 	// This is the function which numbers the character's languages so a row can be written back

@@ -636,3 +636,34 @@ Assassin and Monk.
 That is suggestive enough to be worth asking about and far too inferential to bake in, so nothing is
 written. **Is 56 right for Elemental Dancer, and do the other four want entries too?** A one-line
 answer per class closes this.
+
+## 27. `Beguiler`'s description and class type are swapped
+
+**Status:** open · **Severity:** cosmetic; a data-entry slip in one row, not a parsing defect
+
+`classRequirementsAndDetails["Beguiler"]` is a full 22 columns — the right length, unlike Monk
+(item 1) — so this is not a missing-column problem. Two adjacent cells are simply transposed. Every
+other class puts its long description at index 9 and its short class type at index 10:
+
+```
+Warrior  -> idx9: "Warriors are the masters of brutal fighting..."   idx10: "Primary class"
+Bard     -> idx9: "A Warrior with magical reciting, singing..."      idx10: "Warrior subclass"
+Assassin -> idx9: "Assassins use stealth and deceit..."              idx10: "Rogue subclass"
+```
+
+Beguiler has the two the other way round:
+
+```
+Beguiler -> idx9: "Mage subclass"                                    idx10: "This class has the focus of illusions..."
+```
+
+**The consequence in the built document:** `description` reads "Mage subclass" and `classType`
+reads the paragraph that should be the description. The class functions — nothing downstream
+parses `classType` as anything but a display string — but a player opening the Beguiler class
+sees no description at all, and a class-type filter or listing would show a paragraph where it
+expects "Mage subclass".
+
+**What the port does:** builds the row as given, since guessing which of two plausible values goes
+where a class is concerned is exactly the kind of correction the project does not make unilaterally
+(same reasoning as Monk). Likely fix is swapping the two cells; worth your one-line confirmation
+rather than assumed.

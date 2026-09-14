@@ -1405,3 +1405,53 @@ unnoticed."
 write back to the actor, and that the fields in general persist. No V14 install exists on this
 machine, and the preview harness does not wire `data-action` clicks at all (nor does any of the
 sheet's other action-driven UI, which carries the identical caveat already).
+
+### 2026-09-14 — A character's Skills tab shows the class skills around its current title
+
+`docs/sonnet/2026-09-12-elemental-dancer.md` item 3, built. `getClassSkills(title)` on
+`item-class.mjs`, parallel to the existing `getTitleName(title)` — same 1-based indexing, same
+"outside the range" empty-string return. The Skills tab shows three rows around the character's
+current title (one below, current, one above) when the class has anything recorded, and nothing
+at all otherwise, which is what 85 of the 87 classes do — his `classtitledict` never carried the
+skills gained at each title, only the title names, so `classSkills` is empty for everything built
+from the sheet-worker and populated only for classes hand-authored from a Word template.
+Angle-bracketed placeholders ("`<1st Kinesis>`", "`<Call of Element>`") are shown exactly as
+written rather than resolved or hidden, since resolving them needs the element the player chose,
+which lives nowhere in the schema yet.
+
+**Verifying this needed the real Elemental Dancer document, not a hand-typed stub**, and the sheet
+preview's existing character is a Warrior with nothing to show. Rather than swap her class and
+risk destabilising every other fixture built around her (weapons, lore flags, the attack card), a
+second, minimal render was added lower on the same preview page: the real `classes.json` entry for
+Elemental Dancer, at title 7, through the same `tab-skills.hbs` template. This reuses the pattern
+the shield pass already accepted for weapon rows — `#buildClassProgress` is a private static
+method on the sheet class, so its dozen lines are duplicated in the harness with a comment to keep
+it in step, rather than making it non-private to suit a test, which would have been inconsistent
+with every other `#build*` helper on the class.
+
+**One rendering trap, caught by an unexpectedly collapsed `<div>`:** the preview's own CSS is
+`.tab { display: none; } .tab.active { display: block; }`, and only the elements inside `#tabs`
+ever get `.active` toggled by the tab-switching script. The second render landed in its own
+`#ed-check` container outside that script's reach, so the section rendered — 1,613 characters of
+real HTML — at a height of exactly 0. Fixed by adding `.active` to the rendered `.tab` by hand
+right after inserting it.
+
+**Verified:** the real Elemental Dancer document at title 7 shows titles 6, 7 and 8 with their
+real class skills, title 7 marked current; the Warrior fixture shows no panel at all
+(`buildClassProgress(...).show === false`, asserted and silent). All four suites unchanged
+(combat 335, derivation 173, creature 129, availability 39 — expected, since this is presentation
+of an already-existing field) and 26 modules parse. `tools/item-preview.html` was also reloaded,
+since `item-class.mjs` changed, and shows no console errors.
+
+**Also closed in the same pass, `docs/sonnet/2026-09-12-elemental-dancer.md` item 4:**
+`Beguiler`'s row is a full 22 columns, unlike Monk's, so item 22's parsing-defect explanation does
+not apply. Its `description` and `classType` cells are simply transposed against every other
+class's pattern (index 9 is always the long paragraph, index 10 the short type, and Beguiler has
+the two swapped) — a one-row data-entry slip, filed as `UPSTREAM-ISSUES.md` item 27 rather than
+silently reordered.
+
+**Not done, and blocked on source material, not on effort:** items 1 and 2 of the same note —
+authoring Elementalist, Inquisitor and Summoner from their Word templates (GME is confirmed a
+Game-Master stand-in, not a playable class, per the comment already on `skillSlotsNeeded`), and
+filling `classSkills` for the 85 other generated classes. Both need documents this session does
+not have.

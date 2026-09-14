@@ -397,6 +397,28 @@
 	padding: 6px 2px;
 }
 
+/* The three titles around the character's current one, for a class whose Word template recorded
+   what is gained at each. Most classes have nothing here -- his own data never carried it. */
+.class-progress-table { margin-bottom: 10px; }
+.class-progress-table td { padding: 3px 6px; vertical-align: top; }
+.class-progress-table .col-title {
+	width: 1%;
+	white-space: nowrap;
+	font-weight: 600;
+}
+.class-progress-table .col-title .muted {
+	display: block;
+	font-weight: 400;
+	font-size: 10px;
+	text-transform: none;
+}
+.class-progress-table .col-skills { font-size: 12px; }
+.class-progress-table tr.current-title {
+	background: var(--imagine-panel);
+	border-radius: 3px;
+}
+.class-progress-table tr.current-title .col-title { color: var(--imagine-accent); }
+
 /* @MARKER EQUIPMENT */
 
 .encumbrance-bar {
