@@ -1,0 +1,127 @@
+{{!--
+	Armour body. One root element, as the framework requires of every PART.
+
+	Armour, clothing and shields share this one item type because the layering engine has to walk
+	them together -- flexibility is what actually separates them, not the type. The coverage grid
+	is laid out in the schema's own order, not alphabetically: two singles, three torso thirds, then
+	six left/right pairs, matching the charts this was extracted from.
+--}}
+<section class="imagine-item-body armor">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Construction</h3>
+			<ul class="band-list">
+				<li><label>Material</label>
+					<span><input type="text" name="system.material" value="{{system.material}}"></span></li>
+				<li><label>Flexibility</label>
+					<span><select name="system.flexibility">
+						{{#each config.flexibility as |f|}}
+						<option value="{{f}}" {{#if (eq f ../system.flexibility)}}selected{{/if}}>{{f}}</option>
+						{{/each}}
+					</select></span></li>
+			</ul>
+			<p class="muted">A composite piece built from two materials -- a rigid shell over a flexible
+			lining -- is written "Rigid/Flexible" and the like. Flexibility drives the whole layering
+			engine: the first layer worn must be flexible, and rigid may never stack on rigid.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Shield</h3>
+			<ul class="band-list">
+				<li><label>Is a shield</label>
+					<span><input type="checkbox" name="system.isShield" {{#if system.isShield}}checked{{/if}}></span></li>
+				<li><label>Buckler worn on wrist</label>
+					<span><input type="checkbox" name="system.bucklerOnWrist" {{#if system.bucklerOnWrist}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">A Buckler is the one shield worn two ways. Ignored on every other size.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Magic</h3>
+			<ul class="band-list">
+				<li><label>Magic bonus</label>
+					<span><input type="number" name="system.magicBonus" value="{{system.magicBonus}}"></span></li>
+			</ul>
+			<p class="muted">Written "+N" in his data. On a shield his rule is to add the plus, then
+			double the whole value.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Coverage</h3>
+	<table class="coverage-grid">
+		<tbody>
+			{{#each coverageRows as |row|}}
+			<tr>
+				{{#if row.single}}
+				<td class="loc-label">{{row.label}}</td>
+				<td><input type="number" name="system.coverage.{{row.key}}" value="{{row.value}}" min="0"></td>
+				<td class="loc-label"></td>
+				<td></td>
+				{{else}}
+				<td class="loc-label">{{row.leftLabel}}</td>
+				<td><input type="number" name="system.coverage.{{row.leftKey}}" value="{{row.leftValue}}" min="0"></td>
+				<td class="loc-label">{{row.rightLabel}}</td>
+				<td><input type="number" name="system.coverage.{{row.rightKey}}" value="{{row.rightValue}}" min="0"></td>
+				{{/if}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<p class="muted">Armour value at each location. Zero means this piece does not cover it.</p>
+
+	{{#if coverageFromMaterialLabels.length}}
+	<p class="empty">Derived from material rather than fixed, not yet resolved:
+		{{#each coverageFromMaterialLabels}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}.
+		The giant-material rule that fills these in is not implemented yet.</p>
+	{{/if}}
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Penalties</h3>
+			<ul class="band-list">
+				<li><label>Skills</label>
+					<span><input type="number" name="system.penalties.skills" value="{{system.penalties.skills}}"></span></li>
+				<li><label>Defense</label>
+					<span><input type="number" name="system.penalties.defense" value="{{system.penalties.defense}}"></span></li>
+				<li><label>Initiative</label>
+					<span><input type="number" name="system.penalties.initiative" value="{{system.penalties.initiative}}"></span></li>
+				<li><label>Speed</label>
+					<span><input type="number" name="system.penalties.speed" value="{{system.penalties.speed}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Worn State</h3>
+			<ul class="band-list">
+				<li><label>Layer</label>
+					<span><input type="number" name="system.layer" value="{{system.layer}}" min="0" max="4"></span></li>
+				<li><label>Location</label>
+					<span><select name="system.location">
+						{{#each config.location as |l|}}
+						<option value="{{l}}" {{#if (eq l ../system.location)}}selected{{/if}}>{{l}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Armour damage</label>
+					<span><input type="number" name="system.armorDamage" value="{{system.armorDamage}}" min="0"></span></li>
+			</ul>
+			<p class="muted">Innermost layer is 1; shields and other fourth-layer objects use 4. Clothing
+			of 3 armour value or less does not consume a layer, and sits at 0.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Physical</h3>
+			<ul class="band-list">
+				<li><label>Quantity</label>
+					<span><input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></span></li>
+				<li><label>Weight</label>
+					<span><input type="number" name="system.weight" value="{{system.weight}}" step="0.1"></span></li>
+				<li><label>Cost</label>
+					<span><input type="text" name="system.cost" value="{{system.cost}}"></span></li>
+			</ul>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="4">{{system.description}}</textarea>
+</section>

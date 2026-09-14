@@ -32,6 +32,16 @@
 	<div class="window-content" id="class"></div>
 </div>
 
+<div class="frame imagine sheet item armor">
+	<div class="frame-title">Armour &mdash; item sheet (preview)</div>
+	<div class="window-content" id="armor"></div>
+</div>
+
+<div class="frame imagine sheet item armor">
+	<div class="frame-title">Armour, shield &mdash; item sheet (preview)</div>
+	<div class="window-content" id="shield"></div>
+</div>
+
 <script type="module">
 // Standalone preview of the three item sheets. Foundry is not present, so its globals are
 // stubbed; the context each sheet builds in _prepareContext is reproduced here by hand, and the
@@ -139,11 +149,59 @@ const classCtx = {
 	classModRows: (classSys.classMods ?? []).map((value, index) => ({ index, value }))
 };
 
+// --- armour and a shield, both taken from the extracted content ---------------------
+// Skin Suit(Watertight) covers all 19 locations, so it exercises the whole coverage grid;
+// the buckler is the shield case, and shows the flag pass added later (bucklerOnWrist).
+const ARMOR_COVERAGE_ROWS = [
+	{ label: "Head", key: "head" },
+	{ label: "Neck", key: "neck" },
+	{ leftLabel: "Shoulder L", leftKey: "shoulderLeft", rightLabel: "Shoulder R", rightKey: "shoulderRight" },
+	{ label: "Torso, upper", key: "torsoUpper" },
+	{ label: "Torso, mid", key: "torsoMid" },
+	{ label: "Torso, lower", key: "torsoLower" },
+	{ leftLabel: "Arm L", leftKey: "armLeft", rightLabel: "Arm R", rightKey: "armRight" },
+	{ leftLabel: "Forearm L", leftKey: "forearmLeft", rightLabel: "Forearm R", rightKey: "forearmRight" },
+	{ leftLabel: "Hand L", leftKey: "handLeft", rightLabel: "Hand R", rightKey: "handRight" },
+	{ leftLabel: "Thigh L", leftKey: "thighLeft", rightLabel: "Thigh R", rightKey: "thighRight" },
+	{ leftLabel: "Shin L", leftKey: "shinLeft", rightLabel: "Shin R", rightKey: "shinRight" },
+	{ leftLabel: "Foot L", leftKey: "footLeft", rightLabel: "Foot R", rightKey: "footRight" }
+];
+const ARMOR_LOCATION_LABELS = Object.fromEntries(ARMOR_COVERAGE_ROWS.flatMap((row) =>
+	row.key ? [[row.key, row.label]] : [[row.leftKey, row.leftLabel], [row.rightKey, row.rightLabel]]
+));
+function buildArmorCtx(item) {
+	const sys = item.system;
+	return {
+		item, system: sys,
+		config: {
+			flexibility: ["Clothing", "Flexible", "Semi-Flexible", "Rigid",
+			              "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid", "Mixed"],
+			location: ["equipped", "carried", "mount", "stash"]
+		},
+		coverageRows: ARMOR_COVERAGE_ROWS.map((row) => row.key
+			? { single: true, label: row.label, key: row.key, value: sys.coverage[row.key] }
+			: { single: false,
+			    leftLabel: row.leftLabel, leftKey: row.leftKey, leftValue: sys.coverage[row.leftKey],
+			    rightLabel: row.rightLabel, rightKey: row.rightKey, rightValue: sys.coverage[row.rightKey] }),
+		coverageFromMaterialLabels: (sys.coverageFromMaterial ?? []).map((k) => ARMOR_LOCATION_LABELS[k] ?? k)
+	};
+}
+const armorDocs = await (await fetch("../src/packs/documents/armor.json")).json();
+const armorSource = armorDocs.find(d => d.name === "Skin Suit(Watertight)");
+if (!armorSource) { throw new Error("missing armour in the extracted content: Skin Suit(Watertight)"); }
+const armorCtx = buildArmorCtx({ name: armorSource.name, img: "", system: structuredClone(armorSource.system) });
+
+const shieldSource = armorDocs.find(d => d.name === "Shield(Buckler/Bloodracite)");
+if (!shieldSource) { throw new Error("missing shield in the extracted content: Shield(Buckler/Bloodracite)"); }
+const shieldCtx = buildArmorCtx({ name: shieldSource.name, img: "", system: structuredClone(shieldSource.system) });
+
 for (const [id, ctx, body] of [
 	["attack", attackCtx, "item-creature-attack"],
 	["power",  powerCtx,  "item-power"],
 	["trait",  traitCtx,  "item-trait"],
-	["class",  classCtx,  "item-class"]
+	["class",  classCtx,  "item-class"],
+	["armor",  armorCtx,  "item-armor"],
+	["shield", shieldCtx, "item-armor"]
 ]) {
 	const header = await render("../templates/item/item-header.hbs", ctx);
 	const rest = await render(`../templates/item/${body}.hbs`, ctx);

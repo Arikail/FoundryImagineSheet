@@ -39,6 +39,33 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const ATTRIBUTE_KEYS = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"];
 const { ItemSheetV2 } = foundry.applications.sheets;
 
+// The nineteen coverage locations in item-armor.mjs's own declared order -- not alphabetical --
+// paired left/right where the body pairs them. Two singles lead (head, neck), three torso thirds
+// sit in the middle, then six left/right pairs: shoulder, arm, forearm, hand, thigh, shin, foot.
+const ARMOR_COVERAGE_ROWS = [
+	{ label: "Head", key: "head" },
+	{ label: "Neck", key: "neck" },
+	{ leftLabel: "Shoulder L", leftKey: "shoulderLeft", rightLabel: "Shoulder R", rightKey: "shoulderRight" },
+	{ label: "Torso, upper", key: "torsoUpper" },
+	{ label: "Torso, mid", key: "torsoMid" },
+	{ label: "Torso, lower", key: "torsoLower" },
+	{ leftLabel: "Arm L", leftKey: "armLeft", rightLabel: "Arm R", rightKey: "armRight" },
+	{ leftLabel: "Forearm L", leftKey: "forearmLeft", rightLabel: "Forearm R", rightKey: "forearmRight" },
+	{ leftLabel: "Hand L", leftKey: "handLeft", rightLabel: "Hand R", rightKey: "handRight" },
+	{ leftLabel: "Thigh L", leftKey: "thighLeft", rightLabel: "Thigh R", rightKey: "thighRight" },
+	{ leftLabel: "Shin L", leftKey: "shinLeft", rightLabel: "Shin R", rightKey: "shinRight" },
+	{ leftLabel: "Foot L", leftKey: "footLeft", rightLabel: "Foot R", rightKey: "footRight" }
+];
+
+// A flat key -> label lookup, derived from the rows above rather than typed a second time, so
+// coverageFromMaterial -- which names locations instead of carrying values -- can show a label a
+// player recognises rather than a raw schema key.
+const ARMOR_LOCATION_LABELS = Object.fromEntries(ARMOR_COVERAGE_ROWS.flatMap((tmprow) =>
+	tmprow.key
+		? [[tmprow.key, tmprow.label]]
+		: [[tmprow.leftKey, tmprow.leftLabel], [tmprow.rightKey, tmprow.rightLabel]]
+));
+
 
 // @MARKER BASE ITEM SHEET
 
@@ -269,6 +296,52 @@ export class ImagineClassSheet extends ImagineItemSheet {
 		if (isNaN(tmpindex) || tmpindex < 0 || tmpindex >= tmpmods.length) { return; }
 		tmpmods.splice(tmpindex, 1);
 		await this.document.update({ "system.classMods": tmpmods });
+	}
+}
+
+// @MARKER ARMOUR SHEET
+
+export class ImagineArmorSheet extends ImagineItemSheet {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "item", "armor"],
+		position: { width: 640, height: 760 }
+	};
+
+	static PARTS = {
+		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
+		body:   { template: "systems/imagine-rpg/templates/item/item-armor.hbs" }
+	};
+
+	// This is the function which lays the nineteen coverage locations out as rows -- one input for
+	// a single location, two side by side for a left/right pair -- and turns coverageFromMaterial's
+	// raw location keys into labels a player recognises.
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+		var tmpsystem = this.document.system;
+
+		// Mirrors the choices already declared on the fields in item-armor.mjs, the same way
+		// ImaginePowerSheet and ImagineTraitSheet mirror theirs -- the sheet needs its own copy to
+		// build the dropdown, but the field is what actually enforces it.
+		tmpcontext.config = {
+			flexibility: ["Clothing", "Flexible", "Semi-Flexible", "Rigid",
+			              "Rigid/Flexible", "Rigid/Semi-Flexible", "Rigid/Rigid", "Mixed"],
+			location: ["equipped", "carried", "mount", "stash"]
+		};
+
+		tmpcontext.coverageRows = ARMOR_COVERAGE_ROWS.map((tmprow) => tmprow.key
+			? { single: true, label: tmprow.label, key: tmprow.key, value: tmpsystem.coverage[tmprow.key] }
+			: { single: false,
+			    leftLabel: tmprow.leftLabel, leftKey: tmprow.leftKey, leftValue: tmpsystem.coverage[tmprow.leftKey],
+			    rightLabel: tmprow.rightLabel, rightKey: tmprow.rightKey, rightValue: tmpsystem.coverage[tmprow.rightKey] });
+
+		// The giant-material rule that resolves these into real values (getArmorGiantArmorValue in
+		// his sheet) is not implemented yet, so this is read-only display rather than an editable
+		// list -- the location names are the only thing there is to show.
+		tmpcontext.coverageFromMaterialLabels =
+			(tmpsystem.coverageFromMaterial ?? []).map((tmpkey) => ARMOR_LOCATION_LABELS[tmpkey] ?? tmpkey);
+
+		return tmpcontext;
 	}
 }
 

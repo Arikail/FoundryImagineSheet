@@ -28,7 +28,7 @@ import ImagineTraitData from "./data/item-trait.mjs";
 import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import ImagineCreatureSheet from "./sheets/actor-creature-sheet.mjs";
 import {
-	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet, ImagineClassSheet
+	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet, ImagineClassSheet, ImagineArmorSheet
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
@@ -146,6 +146,11 @@ Hooks.once("init", function () {
 		types: ["class"],
 		makeDefault: true,
 		label: "IMAGINE.Sheet.Class"
+	});
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineArmorSheet, {
+		types: ["armor"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Armor"
 	});
 
 	// @MARKER SYSTEM API

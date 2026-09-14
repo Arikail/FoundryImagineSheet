@@ -290,6 +290,37 @@
 	padding: 1px;
 }
 
+/* @MARKER COVERAGE GRID */
+/* Nineteen armour locations, paired left/right where the body pairs them. Two label/value pairs
+   per row rather than a body diagram -- the source charts this was extracted from are tables, not
+   pictures, and a row that has no right-hand pair (head, neck, the torso thirds) just leaves those
+   two cells blank. */
+
+.coverage-grid {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2px 0 4px;
+}
+
+.coverage-grid td {
+	padding: 1px 4px;
+}
+
+.coverage-grid td.loc-label {
+	text-align: right;
+	font-size: 11px;
+	color: var(--imagine-muted);
+	white-space: nowrap;
+	width: 1%;
+}
+
+.coverage-grid input[type="number"] {
+	width: 48px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 1px;
+}
+
 /* @MARKER REMOVABLE LIST */
 /* A single-field-per-row list with its own Add/Remove, for arrays too plain to need the
    collapsible rider-effect treatment -- a class's modifier strings, for instance. */
