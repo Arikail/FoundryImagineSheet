@@ -59,7 +59,8 @@ function makeCharacter(ratings, title = 12, items = [], extra = {}) {
 		body: { bodyType: "Humanoid", areas: [], armorDamage: extra.armorDamage ?? {} },
 		// The real schema always provides these; the fixture has to supply them too.
 		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
-		          weaponLoreList: extra.weaponLoreList ?? "", missileLoreList: extra.missileLoreList ?? "" },
+		          weaponLoreList: extra.weaponLoreList ?? "", missileLoreList: extra.missileLoreList ?? "",
+		          projectileLoreList: extra.projectileLoreList ?? "" },
 		physical: { weight: 0, handedness: extra.handedness ?? "" },
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -525,10 +526,10 @@ check("an unequipped shield covers nothing",           areaOf(packed, "Left Hand
 // --- lore from the class and the title --------------------------------------------
 // Holding Weapon or Missile Lore comes from the class's own title for it, which is generated
 // from getWeaponLoreWhen / getMissileLoreWhen. Zero means the class never acquires it.
-const loreClassFull = (w, m) => ({
+const loreClassFull = (w, m, p = 0) => ({
 	type: "class", name: "Ranger",
 	system: { attackSkillList: "Beginner(1), Novice(4)", loreAttackTitle: 0,
-	          weaponLoreTitle: w, missileLoreTitle: m,
+	          weaponLoreTitle: w, missileLoreTitle: m, projectileLoreTitle: p,
 	          advancement: { titles: [] }, classMods: [] },
 	getTitleName() { return ""; }
 });
@@ -547,6 +548,27 @@ const listed = makeCharacter({}, 7, [loreClassFull(7, 0)],
 	{ weaponLoreList: "Bastard Sword, Dagger" });
 check("the stored list is parsed into names", listed.combat.weaponLoreNames, ["Bastard Sword", "Dagger"]);
 check("an unset list is empty",               listed.combat.missileLoreNames, []);
+
+// Projectile Lore derives the same way, from its own class title (getProjectileLoreWhen), and
+// is independent of the other two -- a class can hold any combination of the three.
+const noProjYet = makeCharacter({}, 6, [loreClassFull(0, 0, 7)]);
+check("below the projectile title, no projectile lore", noProjYet.combat.hasProjectileLore, false);
+const gotProj = makeCharacter({}, 7, [loreClassFull(0, 0, 7)]);
+check("at the projectile title, projectile lore",       gotProj.combat.hasProjectileLore, true);
+check("...independent of weapon/missile, both zero here",
+	[gotProj.combat.hasWeaponLore, gotProj.combat.hasMissileLore], [false, false]);
+const archerLore = makeCharacter({}, 12, [loreClassFull(12, 3, 7)]);
+check("a class can hold all three at once", [archerLore.combat.hasWeaponLore,
+	archerLore.combat.hasMissileLore, archerLore.combat.hasProjectileLore], [true, true, true]);
+check("no class means no projectile lore either", makeCharacter({}, 20).combat.hasProjectileLore, false);
+
+// The list is stored and parsed exactly as the other two are, and names AMMUNITION rather than
+// the weapon in hand -- an Arrow, not the bow that fires it.
+const projListed = makeCharacter({}, 7, [loreClassFull(0, 0, 7)],
+	{ projectileLoreList: "Arrow(Long Bow/Normal), Bolt(Heavy Crossbow)" });
+check("the projectile list is parsed into names", projListed.combat.projectileLoreNames,
+	["Arrow(Long Bow/Normal)", "Bolt(Heavy Crossbow)"]);
+check("an unset projectile list is empty",        gotProj.combat.projectileLoreNames, []);
 
 // --- off-hand fighting: title eligibility and the skill's own chance --------------
 // Eligibility for Second Weapon Knowledge / Lore comes from the class's title for it, from

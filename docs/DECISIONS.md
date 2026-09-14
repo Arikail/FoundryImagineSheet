@@ -1539,3 +1539,51 @@ character's actual Weapon Lore rather than a value that was never wired.
 fix, no rule-layer change), 26 modules parse. The preview was reloaded and its Garrote row confirmed
 "Special", the Bastard Sword and Dagger rows confirmed real lore-adjusted numbers, and the chat
 card confirmed both its to-hit and damage lines now carry the sword's real lore contribution.
+
+### 2026-09-14 — Projectile Lore's remaining items: exercised, tested, and one cross-check that
+turned out to have no data to check against
+
+`docs/sonnet/2026-09-12-projectile-lore.md`, items 1 through 4.
+
+**Item 1, the Lore panel with all three rows, and item 2, the chat card's projectile damage
+line, both confirmed with a real Archer** rather than the Warrior fixture, who never acquires
+Projectile Lore. Archer's own titles (weapon 12, missile 3, projectile 7) all land at or before
+title 12, so a single character genuinely holds all three at once — the exact case item 1 asked
+for — built as a second, isolated render on the sheet preview, the same pattern the Elemental
+Dancer class-progression check established: `#buildLorePanel` is a private static method, so its
+half-dozen lines are duplicated with the same "keep in sync" comment, fed by the real `hasLore()`
+rule function against the real Archer document's title fields rather than hand-typed booleans.
+The rendered panel reads "Weapon, Missile, Projectile" and the projectile input carries
+`Arrow(Long Bow/Normal)`, both from real data. Item 2's line was actually already built as a side
+effect of the lore-corrections pass two entries above — `{{#if damage.projectileLore}}` sits in
+the same span as the weapon-lore line — so this pass exercised it rather than writing it: a real
+`Bow(Long)` attack, resolved through the real `getProjectileLoreDamage`, shows
+**"+10 projectile lore (2/die)"** on the chat card, and the bow's displayed speed (2) correctly
+shows the general Missile Lore -1 absorbed by the weapon's own minimum speed of 2 — a real,
+if unglamorous, confirmation that Projectile Lore carries no speed term of its own (its return
+shape has no `.speed` at all, unlike Weapon/Missile Lore) and that the two subsystems compose
+correctly on one weapon.
+
+**Item 3, the derivation tests, mirror the existing Weapon/Missile Lore block exactly**: title
+eligibility below, at and above the threshold; independence from the other two lores; a class
+holding all three; the stored list parsed into names; an unset list reading empty. `makeCharacter`
+gained `projectileLoreList` in its `extra` fixture, matching the pattern already there for the
+other two.
+
+**Item 4 turned out to have no data to cross-check at all, which is itself the finding.** The
+proposed check was whether the six Projectile-Lore classes are the same six whose `skilldict`
+entries include a "Projectile Lore" skill. `skilldict` carries exactly **one** "Projectile Lore"
+skill document, generic and undifferentiated (attr, rating, category "class"), with no
+class-specific association anywhere in it — his skills are drawn from category-wide slot
+allowances, not a per-class list of named skills. The only place a class-to-skill mapping exists
+at all is `advancement.classSkills`, which is empty for all 86 classes his own data builds and
+populated only where a Word template has been hand-authored (Elemental Dancer, so far) — and none
+of the six Projectile-Lore classes has one. So the comparison the note proposed cannot be run with
+data that exists today; this is neither an agreement nor a disagreement to record, but an absent
+premise, and is recorded as such rather than forced into one of the two boxes the note offered.
+
+**Verified:** derivation 180 (7 new), combat 335 unchanged, creature 129 and availability 39
+unchanged, 26 modules parse. Sheet preview reloaded clean, both new isolated renders (the Lore
+panel and the Long Bow's chat card) checked against their real computed values.
+
+**Item 5** stays blocked on the developer's answer to `UPSTREAM-ISSUES.md` item 21, as before.

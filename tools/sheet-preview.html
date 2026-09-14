@@ -41,6 +41,12 @@
 	real class document -- not the Warrior above, who has nothing to show here</div>
 <div class="frame imagine sheet actor character" id="ed-check"></div>
 
+<div class="chat-title">Lore panel check: a real Archer at title 12, who holds all three lores at
+	once -- the Warrior above only ever shows two</div>
+<div class="frame imagine sheet actor character" id="archer-check"></div>
+<div class="chat-title">The same Archer's Long Bow attack, for Projectile Lore's damage line</div>
+<div class="chat" id="archer-chat"></div>
+
 <script type="module">
 // Standalone preview of the character sheet and attack card, rendered against a character the real
 // data model has derived, built from real extracted content: the race, class, weapons and armour are
@@ -191,19 +197,21 @@ for (const it of skills) {
 for (const k of Object.keys(skillRows)) skillRows[k].sort((a, b) => a.name.localeCompare(b.name));
 
 // Lore, as the sheet class works it out: the general figures for every weapon of the kind, the
-// larger ones instead for a weapon named in the matching list.
-const loreFor = (w) => {
+// larger ones instead for a weapon named in the matching list. Parameterised on a combat object
+// so the Archer check below can reuse it without a second copy of the same logic.
+const loreForCombat = (w, combat) => {
 	const modes = ["thrust", "cut", "smash", "missile"].filter(m => w.system[m]?.available);
 	const l = R.getLoreModifiers({
 		mode: modes.length ? modes[0] : "thrust",
 		weaponName: w.name,
-		hasWeaponLore: character.combat.hasWeaponLore,
-		hasMissileLore: character.combat.hasMissileLore,
-		weaponLoreList: character.combat.weaponLoreNames,
-		missileLoreList: character.combat.missileLoreNames
+		hasWeaponLore: combat.hasWeaponLore,
+		hasMissileLore: combat.hasMissileLore,
+		weaponLoreList: combat.weaponLoreNames,
+		missileLoreList: combat.missileLoreNames
 	});
 	return l.attack ? l : null;
 };
+const loreFor = (w) => loreForCombat(w, character.combat);
 
 const weaponRows = [sword, dagger, garrote].map(w => {
 	// Mirrors ImagineCharacterSheet.#buildWeaponRows, which is private and cannot be called from
@@ -341,4 +349,77 @@ edCheckEl.querySelector(".tab").classList.add("active"); // .tab defaults to dis
 // all, so a class with an empty classSkills array is the other half of this check.
 const warriorProgress = buildClassProgress(classItem, character.identity.title);
 console.assert(warriorProgress.show === false, "Warrior should show no class progression panel");
+
+// --- lore panel and Projectile Lore check: a real Archer at title 12 -----------------------
+// The Warrior above holds Weapon and Missile Lore but never Projectile Lore (weaponLoreTitle
+// 12, missileLoreTitle 3 -- but the "Done when" for the projectile lore pass wants all three
+// showing together). Archer's own titles (weapon 12, missile 3, projectile 7) all land at or
+// before 12, so this is the real class document, not an invented one.
+const archerClass = byName(classes, "Archer");
+const archerCombat = {
+	hasWeaponLore: R.hasLore(12, archerClass.system.weaponLoreTitle),
+	hasMissileLore: R.hasLore(12, archerClass.system.missileLoreTitle),
+	hasProjectileLore: R.hasLore(12, archerClass.system.projectileLoreTitle),
+	weaponLoreList: "", missileLoreList: "",
+	projectileLoreList: "Arrow(Long Bow/Normal)",
+	weaponLoreNames: [], missileLoreNames: [],
+	projectileLoreNames: R.parseLoreList("Arrow(Long Bow/Normal)")
+};
+console.assert(archerCombat.hasWeaponLore && archerCombat.hasMissileLore && archerCombat.hasProjectileLore,
+	"Archer at title 12 should hold all three lores");
+
+// #buildLorePanel duplicated -- same reason and the same "keep in sync" caveat as
+// #buildClassProgress above; it is a private static method on the sheet class.
+function buildLorePanel(combat) {
+	const weapon = !!combat.hasWeaponLore, missile = !!combat.hasMissileLore, projectile = !!combat.hasProjectileLore;
+	const kinds = [weapon && "Weapon", missile && "Missile", projectile && "Projectile"].filter(Boolean);
+	return {
+		show: weapon || missile || projectile, hasWeapon: weapon, hasMissile: missile, hasProjectile: projectile,
+		label: kinds.join(", "), weaponText: combat.weaponLoreList ?? "",
+		missileText: combat.missileLoreList ?? "", projectileText: combat.projectileLoreList ?? ""
+	};
+}
+
+const bow = byName(weapons, "Bow(Long)");
+Object.assign(bow.system, { location: "equipped", quantity: 1, hand: "right" });
+bow.id = "aw1";
+const bowLore = loreForCombat(bow, archerCombat);
+const archerCtx = {
+	system: { combat: { ...archerCombat, attackSkill: "Expert", loreAttackSkill: "",
+	                     initiativeMod: -2, defensiveAdjust: -1, weaponSpeedMod: 0,
+	                     painThreshold: 0, damageAbsorb: 0 },
+	          body: { inShock: false, totalWounds: 0, shock: 40, areas: [] },
+	          physical: { handedness: "" } },
+	lore: buildLorePanel(archerCombat),
+	weapons: [{ id: bow.id, name: bow.name, damage: bow.system.damage,
+	            speed: R.getWeaponSpeed(bow.system.speed, bow.system.minSpeed, bowLore.speed),
+	            reload: bow.system.reloadSpeed || "", modes: [{ mode: "missile", mod: 0 }],
+	            lore: bowLore, equipped: true, hand: "right", offhand: false }],
+	handednessChoices: ctx.handednessChoices
+};
+const archerCheckEl = document.getElementById("archer-check");
+archerCheckEl.innerHTML = await render("../templates/actor/tab-combat.hbs", archerCtx);
+archerCheckEl.querySelector(".tab").classList.add("active");
+
+// The Long Bow's own attack, resolved by the real rules, to prove Projectile Lore's damage line
+// on the chat card with a real bow rather than only the sword's Weapon Lore line above.
+const projLore = R.getProjectileLoreDamage({
+	weaponName: bow.name, damageDice: bow.system.damage,
+	hasProjectileLore: archerCombat.hasProjectileLore, projectileLoreList: archerCombat.projectileLoreNames
+});
+console.assert(projLore.specific && projLore.damage > 0,
+	"the Long Bow should be specifically lored through its Arrow, for a nonzero damage bonus");
+const bowResult = R.resolveAttack({ natural: 16, mods: 0, skill: archerCtx.system.combat.attackSkill, calledShot: false });
+const bowStr = 0; // missile damage does not take the Strength bonus
+const bowRolled = 15 + bowStr + projLore.damage;   // sample dice total of 15 on 5d6
+const archerAttack = {
+	weapon: bow.name, modeLabel: "Missile", actorName: "Fenwick Archer", targetName: "",
+	aim: "", result: bowResult, mods: { list: [], total: 0 },
+	speed: archerCtx.weapons[0].speed, fumble: null,
+	damage: bowResult.isHit ? { dice: bow.system.damage, str: bowStr, magic: 0, misc: 0,
+		projectileLore: projLore.damage, projectileLorePerDie: projLore.perDie,
+		rolled: bowRolled, multiplier: 1, total: bowRolled, type: "Piercing" } : null,
+	applied: false, inCombat: false
+};
+document.getElementById("archer-chat").innerHTML = await render("../templates/chat/attack-card.hbs", archerAttack);
 </script>

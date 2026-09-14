@@ -1,5 +1,15 @@
 # Left for Sonnet — 2026-09-12, Projectile Lore pass
 
+> **Items 1-4 DONE 2026-09-14.** A real Archer at title 12 (weapon/missile/projectile titles
+> 12/3/7, all reachable at once) confirmed the Lore panel shows all three rows and the chat card
+> shows "+10 projectile lore (2/die)" on a real Long Bow attack — both as a second, isolated
+> render on the sheet preview, since the Warrior fixture never acquires this lore. Item 2's line
+> was already built as a side effect of the lore-corrections pass. Item 4 found there is no data
+> to cross-check against at all — `skilldict` carries one generic "Projectile Lore" skill with no
+> class association, and `classSkills` (the only class-to-skill mapping that exists) is empty for
+> all 86 generated classes. Full account in `DECISIONS.md` → "Projectile Lore's remaining items...".
+> Item 5 stays blocked on the developer.
+
 Mechanical follow-through from the Projectile Lore pass. Each item stands alone; you should not
 need the session it came from. The earlier note `2026-09-12-lore-corrections.md` is still open too.
 
