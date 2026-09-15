@@ -18,7 +18,8 @@ import { explainAvailability } from "../availability.mjs";
 import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
 	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList,
-	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther
+	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther,
+	getOffhandSecondsCap
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -828,6 +829,11 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			? this._getSkillChance("Second Weapon Knowledge") : 0;
 		this.combat.secondWeaponLoreChance = this.combat.hasSecondWeaponLore
 			? this._getSkillChance("Second Weapon Lore") : 0;
+
+		// How many of the round's ten seconds may go to off-hand actions -- a cap, not a pool;
+		// nothing here tracks how much of it a round has already spent. See getOffhandSecondsCap.
+		this.combat.offhandSecondsCap = getOffhandSecondsCap(
+			this.physical.handedness, this.combat.secondWeaponLoreChance);
 	}
 
 	// This is the function which reads one named skill's resolved chance off the actor, for the

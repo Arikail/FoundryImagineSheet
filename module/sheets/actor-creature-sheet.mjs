@@ -15,6 +15,7 @@
 //==================================================================================================================
 
 import { CREATURE_TYPES, CREATURE_BODY_TYPES, CREATURE_ATTACK_CHARTS } from "../creature-tables.mjs";
+import { isOffhandWeapon } from "../combat/combat-rules.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -30,6 +31,7 @@ export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(Act
 			rollAttributeSave: ImagineCreatureSheet.#onRollAttributeSave,
 			rollCreatureSkill: ImagineCreatureSheet.#onRollCreatureSkill,
 			rollCreatureAttack: ImagineCreatureSheet.#onRollCreatureAttack,
+			setAttackHand: ImagineCreatureSheet.#onSetAttackHand,
 			usePower: ImagineCreatureSheet.#onUsePower
 		}
 	};
@@ -159,7 +161,11 @@ export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(Act
 				minSpeed: tmpa.speedSpecial ? "" : tmpa.effectiveMinSpeed,
 				effects: tmpa.effects ?? [],
 				available: tmpa.available !== false,
-				unavailableReason: tmpa.unavailableReason ?? ""
+				unavailableReason: tmpa.unavailableReason ?? "",
+				// Blank means not hand-based at all -- a bite, a tail slap -- and is never off-hand.
+				hand: tmpa.hand,
+				offhand: tmpa.hand
+					? isOffhandWeapon(tmpa.hand, tmpactor.system.combat?.offhandHandedness) : false
 			});
 		}
 		return tmprows.sort((a, b) => a.name.localeCompare(b.name));
@@ -274,6 +280,14 @@ export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(Act
 			return;
 		}
 		await game.imagine.rollCreatureAttack(this.document, tmpitem);
+	}
+
+	// This is the function which sets which limb an attack comes from -- or clears it back to
+	// blank, for an attack that is not hand-based at all and must never read as off-hand.
+	static async #onSetAttackHand(event, target) {
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+		await tmpitem.update({ "system.hand": target.dataset.hand });
 	}
 
 	// This is the function which uses one of the creature's Powers.

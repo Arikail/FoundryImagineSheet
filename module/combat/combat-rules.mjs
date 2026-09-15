@@ -1049,6 +1049,21 @@ export const MODE_DAMAGE_TYPES = {
 		return tmpout;
 	}
 
+	// This is the function which gives how many of the round's ten seconds a character may spend
+	// on off-hand actions (Player's Guide, "Timing in the Combat Round"): 5 by default, one more
+	// for every 20% of Second Weapon Lore up to 5 extra, never past 10. An Ambidextrous character
+	// already has the full 10 seconds in each hand, so the skill has nothing to add for them --
+	// setSecondWeaponLoreValues (sheet-worker.js:83242-83250) writes 0 extra seconds in that case
+	// rather than the level count, which is why this returns 10 outright instead of 5 + levels.
+	//
+	// This is the cap itself, not a pool spent down through a round -- nothing here tracks how
+	// many of those seconds have been used yet.
+	export function getOffhandSecondsCap(tmphandedness, tmploreschance) {
+		if (("" + (tmphandedness ?? "")) == "Ambidextrous") { return 10; }
+		var tmplevels = Math.min(5, Math.floor((parseInt(tmploreschance) || 0) / 20));
+		return 5 + tmplevels;
+	}
+
 	// This is the function which gives one area's Endurance: the character's Endurance times the
 	// area's multiplier, rounded up with his +0.99 idiom (createBodyAreas, sheet-worker.js:180250).
 	export function getAreaEndurance(tmpendurance, tmpmultiplier) {

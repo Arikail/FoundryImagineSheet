@@ -78,6 +78,7 @@
 				<th>Type</th>
 				<th class="col-num">Damage</th>
 				<th class="col-num">Seconds</th>
+				<th class="col-hand">Hand</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -95,6 +96,26 @@
 				<td>{{a.attackType}}</td>
 				<td class="col-num">{{a.damage}} {{#if a.damageType}}<span class="muted">{{a.damageType}}</span>{{/if}}</td>
 				<td class="col-num">{{a.speed}}{{#if a.minSpeed}} <span class="muted">min {{a.minSpeed}}</span>{{/if}}</td>
+				{{!-- Blank is "not a limb at all" -- most attacks (bite, tail, breath) stay here and
+				      are never off-hand. Only Left, Right or Both put the off-hand penalty in play,
+				      judged against the creature's own handedness below. --}}
+				<td class="col-hand">
+					<span class="hand-pick">
+						<button type="button" class="{{#unless a.hand}}on{{/unless}}"
+							data-action="setAttackHand" data-item-id="{{a.id}}" data-hand=""
+							data-tooltip="Not hand-based">&mdash;</button>
+						<button type="button" class="{{#if (eq a.hand "left")}}on{{/if}}"
+							data-action="setAttackHand" data-item-id="{{a.id}}" data-hand="left"
+							data-tooltip="Left hand">L</button>
+						<button type="button" class="{{#if (eq a.hand "right")}}on{{/if}}"
+							data-action="setAttackHand" data-item-id="{{a.id}}" data-hand="right"
+							data-tooltip="Right hand">R</button>
+						<button type="button" class="{{#if (eq a.hand "both")}}on{{/if}}"
+							data-action="setAttackHand" data-item-id="{{a.id}}" data-hand="both"
+							data-tooltip="Both hands">2H</button>
+					</span>
+					{{#if a.offhand}} <span class="offhand-tag" data-tooltip="In the off hand: penalised by Agility unless the creature is Ambidextrous or Omnidextrous">off</span>{{/if}}
+				</td>
 				<td>
 					<button type="button" data-action="rollCreatureAttack" data-item-id="{{a.id}}">
 						<i class="fa-solid fa-dice-d20"></i> Attack</button>

@@ -331,6 +331,26 @@ const noAttack = makeCreature({ attackChart: "None" });
 check("a creature that does not attack has no chart", noAttack.combat.attackSkill, "None");
 check("and asking for its Lore chart does not invent one", noAttack.combat.loreAttackSkill, "");
 
+// --- combat: off-hand handedness -------------------------------------------------
+// Ambidextrous, Fully Ambidextrous and Omnidextrous all grant the same exemption
+// isOffhandWeapon reads as "Ambidextrous" -- his creature ability dictionary gives all three the
+// identical "10 seconds, no penalties" description, just over a different span of limbs -- and
+// the ability applies regardless of the stored handedness, which is otherwise only about which
+// side a shield covers.
+check("no stored handedness and no ability reads as blank (right-handed)",
+	makeCreature({}).combat.offhandHandedness, "");
+check("a stored handedness stands with no ability present",
+	makeCreature({ handedness: "Left" }).combat.offhandHandedness, "Left");
+check("the Ambidextrous ability fills in for a blank handedness",
+	makeCreature({ items: [trait("Ambidextrous")] }).combat.offhandHandedness, "Ambidextrous");
+check("Fully Ambidextrous reads the same way",
+	makeCreature({ items: [trait("Fully Ambidextrous")] }).combat.offhandHandedness, "Ambidextrous");
+check("Omnidextrous reads the same way",
+	makeCreature({ items: [trait("Omnidextrous")] }).combat.offhandHandedness, "Ambidextrous");
+check("the ability overrides a stored handedness rather than deferring to it",
+	makeCreature({ handedness: "Left", items: [trait("Ambidextrous")] }).combat.offhandHandedness,
+	"Ambidextrous");
+
 // Initiative is the better of the Agility and Intelligence adjustments, plus anything else --
 // the same rule a character uses, and lower is earlier.
 const init = makeCreature({ ratings: { agl: 18, int: 14 }, level: 20, initiativeMisc: 2 });
@@ -451,12 +471,24 @@ const noMods = C.getCreatureToHitModifiers({ mods: "melee", attacker: {} });
 check("a creature with no modifiers has an empty list", noMods.list, []);
 check("and a total of zero", noMods.total, 0);
 
+// The off-hand penalty, passed in already resolved -- see the note on getToHitModifiers in
+// combat-rules.mjs. Not melee-only: it reaches a missile attack the same as a character's does.
+check("the off-hand penalty reaches a melee attack",
+	C.getCreatureToHitModifiers({ mods: "melee", attacker: {}, offhand: -4 }).total, -4);
+check("...and a missile attack",
+	C.getCreatureToHitModifiers({ mods: "missile", attacker: {}, offhand: -4 }).total, -4);
+check("it is labelled in the modifier list",
+	C.getCreatureToHitModifiers({ mods: "melee", attacker: {}, offhand: -4 })
+		.list.some(m => m.label == "Off Hand"), true);
+
 // --- damage modifiers ----------------------------------------------------------
 // A creature gets no Strength damage bonus: the dice on its stat block are the whole of it.
 check("damage modifiers total the standing and situational figures",
 	C.getCreatureDamageMods({ damageMisc: 2, situational: 3 }).total, 5);
 check("no damage modifiers means none listed",
 	C.getCreatureDamageMods({}).list, []);
+check("the off-hand penalty is included in the damage total",
+	C.getCreatureDamageMods({ damageMisc: 2, offhand: -3 }).total, -1);
 
 // --- which rider effects fire --------------------------------------------------
 const riders = [

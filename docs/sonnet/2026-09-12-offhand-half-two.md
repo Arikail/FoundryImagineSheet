@@ -1,7 +1,8 @@
 # Left for Sonnet — 2026-09-12, off-hand fighting, second half
 
-> **Items 0, 1 and 3 DONE 2026-09-14. Item 2 is BLOCKED, not built — read its notice below before
-> touching it.** See `DECISIONS.md` → "Off-hand fighting, second half" for the full account.
+> **ALL FOUR ITEMS NOW DONE. Item 2 was answered by the developer 2026-09-14 and is built.** See
+> `DECISIONS.md` → "Off-hand fighting's last two blockers, both answered by the developer" for the
+> full account.
 >
 > - **Item 0 (the blocker):** cleared. Skills already resolve to `totalChance` on embedded skill
 >   items via `_prepareSkills()`. A new `_getSkillChance(name)` helper and `_prepareOffhandSkills()`
@@ -9,12 +10,15 @@
 > - **Item 1 (Knowledge buy-down):** built exactly as specced — `floor(chance/20)` levels, each
 >   worth a point of melee/damage and 5% of skill, floored at zero independently per figure.
 > - **Item 3 (the two planning-note items):** both done; see `2026-09-12-offhand-planning.md`.
-> - **Item 2 (Lore's seconds discount):** genuinely blocked, per its own instruction below to stop
->   and raise it. His sheet computes `offhand_2nd_lore_seconds`, stores it, and reads it back
->   exactly once — into a display string. It is never subtracted from anything a round or an
->   attack costs. There is no base off-hand-attack seconds cost anywhere in his 180k lines for a
->   discount to reduce. **Do not invent one.** This needs a number from the user (what does an
->   off-hand attack cost in seconds, before Lore's levels reduce it), not mechanical work.
+> - **Item 2 (Lore's seconds discount):** the finding below still stands as a fact about his sheet
+>   — it really does compute `offhand_2nd_lore_seconds`, store it, and read it back exactly once,
+>   into a display string, never subtracting it from anything. What was missing was not in his
+>   code: the 5-second base cost is a fixed Player's Guide rule (p.178) a player tracks by hand, not
+>   something his sheet ever needed to compute. The developer confirmed the number directly: 5
+>   seconds off the round for a non-ambidextrous character, Lore adding up to 5 more, capped at 10,
+>   Ambidextrous exempt outright. Built as `getOffhandSecondsCap` in `combat-rules.mjs`, exposed on
+>   the Combat tab as a cap rather than enforced as a round-tracker pool — see the DECISIONS.md
+>   entry for why enforcement is left open rather than decided alone.
 
 Half one is built: the `hand` field, derived off-handedness, the three generated penalty tables and
 the full-penalty tier, with the tag on the combat page. **Do not rebuild any of it.** See

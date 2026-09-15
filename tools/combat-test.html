@@ -769,6 +769,29 @@ check("it is labelled in the modifier list",
 	R.getToHitModifiers({ mode: "melee", weapon: {}, attacker: {}, offhand: -3 })
 		.list.some(m => m.label == "Off Hand"), true);
 
+// --- off-hand seconds cap -----------------------------------------------------
+// Player's Guide, "Timing in the Combat Round": 5 of the round's 10 seconds by default, one more
+// for every 20% of Second Weapon Lore up to 5 extra (setSecondWeaponLoreValues,
+// sheet-worker.js:83242-83250), never past 10. Ambidextrous already has the full 10 and is not
+// capped at all -- the skill writes 0 extra seconds for an Ambidextrous character rather than
+// the level count, which is why this returns 10 outright instead of 5 + levels.
+check("no Second Weapon Lore leaves the base 5", R.getOffhandSecondsCap("Right", 0), 5);
+check("under 20% still buys nothing",            R.getOffhandSecondsCap("Right", 19), 5);
+check("20% buys one extra second",               R.getOffhandSecondsCap("Right", 20), 6);
+check("39% is still only one level -- it floors", R.getOffhandSecondsCap("Right", 39), 6);
+check("a left-hander reads the same as a right-hander",
+	R.getOffhandSecondsCap("Left", 40), 7);
+check("the extra seconds cap at 5, for a total of 10",
+	R.getOffhandSecondsCap("Right", 100), 10);
+check("...and no chance ever passes 10",
+	R.getOffhandSecondsCap("Right", 999), 10);
+check("an Ambidextrous character is not capped at all, regardless of the skill",
+	R.getOffhandSecondsCap("Ambidextrous", 0), 10);
+check("...even with a maxed Second Weapon Lore",
+	R.getOffhandSecondsCap("Ambidextrous", 100), 10);
+check("blank handedness reads as the ordinary 5-second cap",
+	R.getOffhandSecondsCap("", 0), 5);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

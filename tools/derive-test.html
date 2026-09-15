@@ -615,6 +615,26 @@ check("...each reads its own named skill",
 check("no class means neither is ever eligible",
 	makeCharacter({}, 20).combat.hasSecondWeaponKnowledge, false);
 
+// --- off-hand seconds cap ---------------------------------------------------------
+// 5 of the round's 10 seconds by default, one more for every 20% of Second Weapon Lore up to 5
+// extra, never past 10 -- see getOffhandSecondsCap in combat-rules.mjs. Reuses the same
+// secondWeaponLoreChance the eligibility checks above already resolved.
+const unloredHand = makeCharacter({ agl: 16 }, 5, [offhandClass(8, 10)], { handedness: "Right" });
+check("with no Second Weapon Lore yet, the cap is the ordinary 5",
+	unloredHand.combat.offhandSecondsCap, 5);
+check("...and its chance is zero to have caused it",
+	unloredHand.combat.secondWeaponLoreChance, 0);
+
+const loredHand = makeCharacter({ agl: 16 }, 10,
+	[offhandClass(8, 10), secondWeaponLore], { handedness: "Right" });
+check("60% Second Weapon Lore buys three extra seconds",
+	[loredHand.combat.secondWeaponLoreChance, loredHand.combat.offhandSecondsCap], [60, 8]);
+
+const ambiLored = makeCharacter({ agl: 16 }, 10,
+	[offhandClass(8, 10), secondWeaponLore], { handedness: "Ambidextrous" });
+check("an Ambidextrous character is not capped at all, regardless of the skill",
+	ambiLored.combat.offhandSecondsCap, 10);
+
 // --- the Lore attack chart --------------------------------------------------------
 // A class reaches the Lore chart at its own title -- Archer at 3, Warrior at 6, Acrobat at 12,
 // and about half of them never. The chart itself is the standard one read a level up.

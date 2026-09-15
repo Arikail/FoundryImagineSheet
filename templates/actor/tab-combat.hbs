@@ -21,6 +21,11 @@
 		<div class="char-box"><label>Weapon Speed</label>
 			<span class="value">{{#if (gt system.combat.weaponSpeedMod 0)}}+{{/if}}{{system.combat.weaponSpeedMod}}</span>
 			<span class="sub">seconds per swing</span></div>
+		{{!-- 5 of the round's 10 seconds by default, more for Second Weapon Lore, unlimited for
+		      Ambidextrous. A cap, not a pool -- nothing here tracks what a round has spent of it. --}}
+		<div class="char-box"><label>Off-Hand Seconds</label>
+			<span class="value">{{system.combat.offhandSecondsCap}}</span>
+			<span class="sub">{{#if (eq system.physical.handedness "Ambidextrous")}}both hands, unlimited{{else}}of the round{{/if}}</span></div>
 		<div class="char-box"><label>Shock</label>
 			<span class="value {{#if system.body.inShock}}alarm{{/if}}">{{system.body.totalWounds}} / {{system.body.shock}}</span>
 			<span class="sub">{{#if system.body.inShock}}IN SHOCK{{else}}total wounds{{/if}}</span></div>

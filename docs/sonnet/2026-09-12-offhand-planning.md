@@ -114,10 +114,16 @@ source of truth, and 26 modules still parse.
 
 ## 4. Check whether creatures use any of this
 
-> **DONE 2026-09-14.** They do not, and cannot structurally: `handleCreatureAttack` has zero
-> references to off-hand, second weapon, or hand. A creature's ten attack slots are named strings,
-> not weapons assigned to a hand. The creature model needs no `hand` field. See `DECISIONS.md` →
-> "Off-hand fighting, second half".
+> **DONE 2026-09-14, then SUPERSEDED the same day.** The finding below is still an accurate fact
+> about his sheet: `handleCreatureAttack` really does have zero references to off-hand, second
+> weapon, or hand, and a creature's ten attack slots really are named strings with no hand assigned.
+> But the developer confirmed directly that creatures DO take an off-hand penalty in actual play
+> (an off-hand claw attack, say), exempt only for Ambidextrous/Fully Ambidextrous/Omnidextrous —
+> a rule his sheet never automated, not a misreading of what it contains. The creature model now
+> has a `hand` field after all (`item-creature-attack.mjs`, blank meaning "not hand-based" rather
+> than a third hand), built by extending the already-tested character off-hand pattern rather than
+> porting anything. See `DECISIONS.md` → "Off-hand fighting's last two blockers, both answered by
+> the developer".
 
 **Why it was left:** a quick read, and it decides whether the creature model needs the same fields.
 

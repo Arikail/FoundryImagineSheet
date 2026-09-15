@@ -30,6 +30,15 @@
 						<option value="{{t}}" {{#if (eq t ../system.damageType)}}selected{{/if}}>{{t}}</option>
 						{{/each}}
 					</select></span></li>
+				<li><label>Hand</label>
+					<span><select name="system.hand">
+						<option value="" {{#unless system.hand}}selected{{/unless}}>Not hand-based</option>
+						<option value="left" {{#if (eq system.hand "left")}}selected{{/if}}>Left</option>
+						<option value="right" {{#if (eq system.hand "right")}}selected{{/if}}>Right</option>
+						<option value="both" {{#if (eq system.hand "both")}}selected{{/if}}>Both</option>
+					</select></span>
+					<p class="muted">Only a hand-based attack -- a claw, a punch -- can be off-hand.
+					A bite, a tail slap or a breath is left at Not hand-based.</p></li>
 			</ul>
 		</div>
 

@@ -504,6 +504,17 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 
 		this.combat.attackSkill = this.combat.attackChart;
 
+		// Which handedness an off-hand attack is judged against. The Ambidextrous, Fully
+		// Ambidextrous and Omnidextrous abilities all grant the same exemption isOffhandWeapon
+		// reads as "Ambidextrous" -- his creature ability dictionary gives all three the identical
+		// "10 seconds and no penalties" description, just over a different span of limbs -- and
+		// the ability applies regardless of what the stored handedness says, since that field is
+		// only ever about which side a shield covers (see the note above _prepareBody). Absent the
+		// ability, the stored handedness stands, blank reading as right-handed as it does there.
+		var tmpabilities = this._getTraitNames("ability").join(",");
+		var tmpisambidextrous = tmpabilities.includes("Ambidextrous") || tmpabilities.includes("Omnidextrous");
+		this.combat.offhandHandedness = tmpisambidextrous ? "Ambidextrous" : (this.identity.handedness || "");
+
 		// The Lore chart, one step better, for a creature that has the skill for it.
 		var tmpskilltext = this.skills.map(s => String(s.name ?? "")).join(",");
 		this.combat.hasWeaponLore = tmpskilltext.includes("Weapon Lore");

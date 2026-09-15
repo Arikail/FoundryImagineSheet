@@ -68,6 +68,15 @@ export default class ImagineCreatureAttackData extends foundry.abstract.TypeData
 			damageType: new fields.StringField({ required: true, initial: "",
 			                choices: ["", ...CREATURE_DAMAGE_TYPES], label: "Damage Type" }),
 
+			// Which limb the attack comes from, when that means anything at all. Blank is "not
+			// hand-based" -- a bite, a tail slap, a breath -- and is never off-hand, unlike a
+			// weapon's `hand`, which is never blank because every weapon is held in something.
+			// Only Left, Right or Both (an off-hand claw, a two-fisted slam) make an attack
+			// eligible for the off-hand penalty at all; see isOffhandWeapon in combat-rules.mjs,
+			// which this reuses once the caller has ruled out blank.
+			hand: new fields.StringField({ required: true, initial: "",
+			                choices: ["", "left", "right", "both"], label: "Hand" }),
+
 			// How many of the round's ten seconds the attack takes, and the floor it can be
 			// driven down to. His Configurator offers 1 to 10, and "S" for an attack with no
 			// ordinary timing -- one that happens during an engagement rather than on a count.

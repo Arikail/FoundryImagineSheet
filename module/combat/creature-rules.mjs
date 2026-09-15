@@ -170,6 +170,12 @@ import { CREATURE_ATTACK_TYPES } from "../creature-tables.mjs";
 			if (tmpdef) { tmplist.push({ label: "Target's Defence", value: tmpdef }); }
 		}
 
+		// The off-hand penalty, worked out by resolveOffhandPenalties and passed in for the same
+		// reason a character's is -- see the note on getToHitModifiers in combat-rules.mjs. Not
+		// melee-only: an off-hand claw flung at range is penalised exactly as one swung in melee.
+		var tmpoffhand = parseInt(tmpinput.offhand) || 0;
+		if (tmpoffhand) { tmplist.push({ label: "Off Hand", value: tmpoffhand }); }
+
 		var tmpsituational = parseInt(tmpinput.situational) || 0;
 		if (tmpsituational) { tmplist.push({ label: "Situational", value: tmpsituational }); }
 
@@ -186,6 +192,8 @@ import { CREATURE_ATTACK_TYPES } from "../creature-tables.mjs";
 		var tmplist = [];
 		var tmpmisc = parseInt(tmpinput.damageMisc) || 0;
 		if (tmpmisc) { tmplist.push({ label: "Damage Other", value: tmpmisc }); }
+		var tmpoffhand = parseInt(tmpinput.offhand) || 0;
+		if (tmpoffhand) { tmplist.push({ label: "Off Hand", value: tmpoffhand }); }
 		var tmpsituational = parseInt(tmpinput.situational) || 0;
 		if (tmpsituational) { tmplist.push({ label: "Situational", value: tmpsituational }); }
 

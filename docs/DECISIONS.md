@@ -1587,3 +1587,108 @@ unchanged, 26 modules parse. Sheet preview reloaded clean, both new isolated ren
 panel and the Long Bow's chat card) checked against their real computed values.
 
 **Item 5** stays blocked on the developer's answer to `UPSTREAM-ISSUES.md` item 21, as before.
+
+### 2026-09-14 — Off-hand fighting's last two blockers, both answered by the developer
+
+The two questions raised at the end of the second-half pass -- what an off-hand attack costs in
+seconds before Second Weapon Lore's levels reduce it, and whether creatures take an off-hand
+penalty at all -- were put to W. Michael Tenery III directly, since neither could be answered from
+his sheet. Both came back:
+
+> "If you are not ambidextrous you only get 5 seconds to use in your off hand. An extra second in
+> your off hand means you get an additional second, so 5 becomes 6 seconds in your off hand. If
+> you are ambidextrous this does not apply as you are already getting 10 seconds in each hand.
+>
+> Creatures do take off hand penalties (if they use off hands like an off hand claw attack), unless
+> they have the Ability: Ambidextrous, or Omnidextrous."
+
+**The 5-second figure is real and independently confirmed in the Player's Guide** ("Timing in the
+Combat Round", p.178): "A character is only allowed 5 seconds (half of the 10 second round) to
+perform actions in his off hand. The exception to this is ambidextrous characters, who are allowed
+the full 10 seconds for both hands." The Second Weapon Lore skill entry (p.14463) matches too: "the
+non-ambidextrous practitioner can use the weapon faster in the off-hand... For each 20% of the
+skill, the practitioner gains 1 additional second. The off-hand bonus cannot cause the total time
+to exceed 10 seconds." This resolves the earlier finding cleanly: his sheet was never missing a
+base cost to discount from (`docs/DECISIONS.md`, "second half" entry above) -- the base cost is a
+fixed rulebook constant a player tracks by hand, and `offhand_2nd_lore_seconds` was only ever the
+sheet's way of telling them how many extra seconds that constant grows to. Nothing in his sheet
+subtracts it from anything because there is nothing computed to subtract it FROM.
+
+**Built as `getOffhandSecondsCap(handedness, secondWeaponLoreChance)`** in `combat-rules.mjs`: 5 by
+default, `+ min(5, floor(chance/20))` for Second Weapon Lore, 10 outright for Ambidextrous (matching
+`setSecondWeaponLoreValues`, sheet-worker.js:83242-83250, which writes 0 extra seconds for an
+Ambidextrous character rather than the level count -- so returning 10 directly, instead of 5 +
+levels, is the same answer by the more direct route). Wired into `_prepareOffhandSkills()` on the
+character model, right beside the `secondWeaponLoreChance` it consumes, and shown on the Combat tab
+next to Weapon Speed. **This is exposed as a cap, not enforced as a pool.** The book's own worked
+example (p.27824-27851, Orgo's rapier and longsword) and its rule about losing off-hand seconds
+proportionally to a bad initiative roll both describe a resource a player tracks through a round,
+which would mean new per-combatant, per-round state on `ImagineCombat` (`combat-document.mjs`
+currently tracks nothing but `initiative`) -- an architecture-locking addition the model-choice
+protocol says to raise before building, not decide alone mid-pass. Exposing the computed number
+follows the same precedent as `damageAbsorb`: give the player the figure, let them spend it by
+hand, same as his own sheet does (it computes and displays the discount; it never subtracts
+anything from a round tracker of its own either). **Round-tracker enforcement is left open, to
+raise with the user rather than build unasked.**
+
+**Creatures DO take the penalty -- overriding, not contradicting, the earlier finding.** The prior
+entry ("Creatures do not use any of this", the second-half write-up above) was correct about what
+`handleCreatureAttack` actually contains: zero references to off-hand, second weapon, or hand, and
+no `hand` field anywhere on his creature attack encoding. That finding stands as a fact about his
+code. It does not, it turns out, describe the whole ruleset -- this is the developer adding a rule
+his sheet never automated for creatures, not a correction to a misreading. His own creature ability
+dictionary already supports it: `"Ambidextrous"`, `"Fully Ambidextrous"` and `"Omnidextrous"` are
+real entries there (all three inside the `@MARKER CREATURE SPECIFIC FUNCTIONS BELOW` section), and
+all three carry the identical mechanical description -- "10 seconds... and no penalties" -- just
+over a different span of limbs (`Ambidextrous`: the primary pair; `Fully Ambidextrous`: all limbs;
+`Omnidextrous`: every limb independently). That a creature could be built with one of these
+abilities while its attacks structurally had no way to read it was the gap; the abilities were
+never the gap.
+
+**Built by extending the already-tested character pattern rather than porting anything,** since
+there is nothing on the creature side to port:
+- `item-creature-attack.mjs` gains a `hand` field, `"" | "left" | "right" | "both"`. Blank is not a
+  fourth hand -- it means "not hand-based at all" (a bite, a tail slap, a breath), and is load-bearing:
+  a weapon's `hand` defaults an unset value to `"right"` (`isOffhandWeapon`'s `tmphand ?? "right"`),
+  which would misread every blank creature attack as a left-of-right-handed off-hand strike if fed
+  through unguarded. The call site in `creature-attack.mjs` only asks `resolveOffhandPenalties` at
+  all when `tmpa.hand` is truthy, sidestepping the default rather than changing it -- `isOffhandWeapon`
+  keeps its existing, tested behaviour for weapons untouched.
+- `actor-creature.mjs` derives `combat.offhandHandedness` in `_prepareCombat`: `"Ambidextrous"` when
+  the trait list contains "Ambidextrous" or "Omnidextrous" (a substring check catches "Fully
+  Ambidextrous" too, since it contains "Ambidextrous"), else the creature's own stored
+  `identity.handedness` (blank reading as right-handed, as it already does for shield placement).
+  The ability wins outright rather than deferring to a stored handedness, since that field is only
+  ever about which side a shield covers -- a creature could plausibly have both set at once (Left
+  for its shield, Ambidextrous for its attacks) and both should be honoured on their own terms.
+- `getCreatureToHitModifiers` / `getCreatureDamageMods` in `creature-rules.mjs` gain an `offhand`
+  parameter, mirroring the character-side `getToHitModifiers`/damage functions exactly (a plain
+  labelled entry in the generic modifier list, so the chat card's `{{#each mods.list}}` shows it for
+  free, the same way Lore's line needed no template change).
+- `creature-attack.mjs` computes `resolveOffhandPenalties(tmpa, agility, offhandHandedness, 0)` once
+  per attack (guarded by `tmpa.hand`, as above) and feeds `.melee` into to-hit and `.damage` into the
+  damage roll. The `0` for Second Weapon Knowledge chance is deliberate: creatures have no
+  per-attack Knowledge/Lore item flags to buy the penalty down (unlike a character's weapon), so it
+  always resolves to the plain Agility-banded `"full"` tier once it applies -- `resolveOffhandPenalties`
+  needed no change to behave this way, since a creature attack's `system` object simply has no
+  `secondWeaponLore`/`secondWeaponKnowledge` fields for it to find.
+- The Combat tab's attack table gained the same L/R/2H hand picker and "off" tag the weapon table
+  has, plus a fourth "not hand-based" option the weapon picker does not need (a weapon is never
+  handless). The item sheet gained a matching Hand field.
+
+**Verified:** combat 345 (10 new, on `getOffhandSecondsCap`), derivation 184 (4 new, the cap at
+various Lore chances and handedness), creature 139 (10 new: 6 on `offhandHandedness` under
+blank/stored/Ambidextrous/Fully Ambidextrous/Omnidextrous/override-vs-stored, 4 on the `offhand`
+parameter reaching both creature modifier functions), availability 39 unchanged, 26 modules parse.
+`tools/creature-preview.html`'s duplicated `#buildAttackRows` (the same "keep in sync" duplication
+already caught drifting once this session, in the weapon-row builder) was updated alongside the
+real one and reloaded: the Cave Wyrm's Claw was given a left hand for the fixture, and with the
+wyrm's blank handedness reading right-handed, the Combat tab shows it tagged "off" with the hand
+picker showing "L" selected, and Bite/Tail Slap/Frost Breath/Withering Gaze all show no tag with
+"—" selected, exactly as attacks with no hand at all should. The character sheet preview's Combat
+tab shows a new "Off-Hand Seconds: 5, of the round" box next to Weapon Speed. The item sheet preview
+shows the new Hand field on Frost Breath, correctly defaulted to "Not hand-based".
+
+**Not verified:** anything needing a running Foundry V14. Also not built, and deliberately left
+open rather than decided alone: whether the off-hand seconds cap should become an enforced,
+spendable pool on the round tracker -- see the note under the seconds-cap section above.

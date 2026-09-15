@@ -11,7 +11,7 @@
 // Seconds buttons already wired by registerAttackCardListeners work on it unchanged.
 //==================================================================================================================
 
-import { resolveAttack, resolveFumble } from "./combat-rules.mjs";
+import { resolveAttack, resolveFumble, resolveOffhandPenalties } from "./combat-rules.mjs";
 import {
 	getCreatureAttackBehaviour, getAreaAttackSize, resolveTouchAttack,
 	getCreatureToHitModifiers, getCreatureDamageMods, getTriggeredEffects
@@ -112,6 +112,15 @@ export async function rollCreatureAttack(tmpactor, tmpattackitem) {
 	var tmpa = tmpattackitem.system;
 	var tmpbehaviour = getCreatureAttackBehaviour(tmpa.attackType);
 
+	// What fighting with this attack in the off hand costs. Blank hand means the attack is not
+	// hand-based at all -- a bite, a tail slap, a breath -- and is never off-hand; only an attack
+	// with a hand actually set (a claw, a punch) is even asked. Creatures have no Second Weapon
+	// Knowledge or Lore item flags to buy the penalty down, so it always resolves to the plain
+	// Agility-banded tier once it applies. See combat.offhandHandedness in actor-creature.mjs.
+	var tmpoffhand = tmpa.hand
+		? resolveOffhandPenalties(tmpa, tmpsys.attributes.agl.rating, tmpsys.combat.offhandHandedness, 0)
+		: { offhand: false, tier: "none", melee: 0, damage: 0, skill: 0 };
+
 	// To hit.
 	var tmpmods = getCreatureToHitModifiers({
 		mods: tmpbehaviour.mods,
@@ -122,7 +131,8 @@ export async function rollCreatureAttack(tmpactor, tmpattackitem) {
 			missileMisc: tmpsys.combat.missileMisc
 		},
 		target: (tmptarget && tmpoptions.useDefense) ? { defensiveAdjust: tmptarget.actor?.system?.combat?.defensiveAdjust } : null,
-		situational: tmpoptions.situational
+		situational: tmpoptions.situational,
+		offhand: tmpoffhand.melee
 	});
 
 	// The roll, in whichever of the three ways this type resolves.
@@ -198,7 +208,8 @@ export async function rollCreatureAttack(tmpactor, tmpattackitem) {
 	if (tmpresult.isHit && tmpa.damage) {
 		var tmpdammods = getCreatureDamageMods({
 			damageMisc: tmpsys.combat.damageMisc,
-			situational: tmpoptions.situationalDamage
+			situational: tmpoptions.situationalDamage,
+			offhand: tmpoffhand.damage
 		});
 
 		var tmpdmgroll = await new Roll(`${tmpa.damage} + @mods`, { mods: tmpdammods.total }).evaluate();

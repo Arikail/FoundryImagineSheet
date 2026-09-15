@@ -74,10 +74,11 @@ Handlebars.registerHelper("localize", (k) => {
 // Items are plain objects here. Where the sheet reads a getter the real data model provides
 // (an attack's effective minimum speed, whether a power has a use left), the fixture supplies
 // the same property so the templates see what they would in Foundry.
-const attack = (name, type, damage, damageType, speed, minSpeed, effects = []) => ({
+const attack = (name, type, damage, damageType, speed, minSpeed, effects = [], hand = "") => ({
 	id: "atk-" + name.toLowerCase().replace(/\W/g, ""), name, type: "creatureAttack",
 	system: { attackType: type, damage, damageType, speed, minSpeed, speedSpecial: false,
-	          effects, effectiveMinSpeed: minSpeed || speed, sourcebook: "", page: "", description: "" }
+	          effects, effectiveMinSpeed: minSpeed || speed, hand,
+	          sourcebook: "", page: "", description: "" }
 });
 // Traits are the real extracted content rather than fixtures, so this also checks that the
 // build pipeline's documents drop straight into the trait schema and render.
@@ -102,7 +103,9 @@ const items = [
 		{ name: "Venom", trigger: "If VIT save fails", description: "the victim's flesh swells and blackens",
 		  damage: "1d6", damageType: "Poison", duration: "3", durationType: "Periodic(Minutes)" }
 	]),
-	attack("Claw", "Melee", "2d6", "Cutting", 2, 0),
+	// Left in the off hand so the Combat tab has a real "off" tag to show, and the wyrm's blank
+	// handedness (right-handed by default) is what makes it so.
+	attack("Claw", "Melee", "2d6", "Cutting", 2, 0, [], "left"),
 	attack("Tail Slap", "Melee", "2d8", "Smashing", 4, 3),
 	attack("Frost Breath", "Strong Cone", "6d6", "Frost", 5, 5, [
 		{ name: "Numbing", trigger: "Auto", description: "limbs stiffen with cold",
@@ -179,7 +182,10 @@ const skillRows = creature.skills.map((s, i) => ({ index: i, name: s.name, chanc
 const attackRows = items.filter(i => i.type === "creatureAttack").map(i => ({
 	id: i.id, name: i.name, attackType: i.system.attackType, damage: i.system.damage,
 	damageType: i.system.damageType, speed: i.system.speed, minSpeed: i.system.effectiveMinSpeed,
-	effects: i.system.effects, available: true, unavailableReason: ""
+	effects: i.system.effects, available: true, unavailableReason: "",
+	// Kept in sync with #buildAttackRows in actor-creature-sheet.mjs.
+	hand: i.system.hand,
+	offhand: i.system.hand ? R.isOffhandWeapon(i.system.hand, creature.combat.offhandHandedness) : false
 })).sort((a, b) => a.name.localeCompare(b.name));
 const traitRows = { ability: [], disability: [], immunity: [] };
 for (const i of items.filter(i => i.type === "trait")) {
