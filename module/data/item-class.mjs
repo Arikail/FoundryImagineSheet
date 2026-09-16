@@ -107,6 +107,15 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			secondWeaponKnowTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 			secondWeaponLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
+			// The title at which the class may start acquiring Multiple Missile Lore combos, from
+			// getMultiMissileLoreWhen (sheet-worker.js:95492). Six classes reach it, all archers:
+			// Archer and Hunter and Mounted Archer at 10, Archer(Zen) and Border Scout at 13.
+			//
+			// There is NO equivalent for Multiple Missile Knowledge. His sheet gates that on
+			// holding the skill and nothing else -- no title function exists for it -- so there is
+			// no second field here and none should be invented.
+			multiMissileLoreTitle: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER SKILL SLOTS
 			// How many class skill slots this class needs to run its whole progression, from
 			// getSlotsNeededForClass (sheet-worker.js:62881). Knowledge hands out a fixed

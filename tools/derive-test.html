@@ -567,6 +567,20 @@ check("a class can hold all three at once", [archerLore.combat.hasWeaponLore,
 	archerLore.combat.hasMissileLore, archerLore.combat.hasProjectileLore], [true, true, true]);
 check("no class means no projectile lore either", makeCharacter({}, 20).combat.hasProjectileLore, false);
 
+// Multiple Missile Lore, gated the same way. Six classes reach it, all archers -- Archer at 10,
+// Archer(Zen) at 13. Its Knowledge half has no title gate in his sheet, so there is nothing here
+// for that side and nothing should be invented.
+const mmClass = (when) => ({ type: "class", name: "Archer",
+	system: { attackSkillList: "Beginner(1)", loreAttackTitle: 0, multiMissileLoreTitle: when,
+	          advancement: { titles: [] }, classMods: [] },
+	getTitleName() { return ""; } });
+check("below the class's title, no multiple missile lore",
+	makeCharacter({}, 9, [mmClass(10)]).combat.hasMultiMissileLore, false);
+check("at it, lore", makeCharacter({}, 10, [mmClass(10)]).combat.hasMultiMissileLore, true);
+check("a class that never gets it never does, however high the title",
+	makeCharacter({}, 20, [mmClass(0)]).combat.hasMultiMissileLore, false);
+check("no class means none either", makeCharacter({}, 20).combat.hasMultiMissileLore, false);
+
 // The list is stored and parsed exactly as the other two are, and names AMMUNITION rather than
 // the weapon in hand -- an Arrow, not the bow that fires it.
 const projListed = makeCharacter({}, 7, [loreClassFull(0, 0, 7)],

@@ -1044,6 +1044,10 @@ def main():
     proj_when, proj_when_line = class_lore_when("getProjectileLoreWhen")
     know2nd_when, know2nd_line = class_lore_when("get2ndWeaponKnowWhen")
     lore2nd_when, lore2nd_line = class_lore_when("get2ndWeaponLoreWhen")
+    # Multiple Missile Lore is gated by class title the way the five above are. Its Knowledge
+    # half has no such function -- holding the skill is the whole of it -- so there is nothing
+    # to generate for that side and no sixth entry here.
+    multimissile_when, multimissile_line = class_lore_when("getMultiMissileLoreWhen")
     with open(os.path.join(NAMED, "classLoreTitles.json"), "w", encoding="utf-8") as fh:
         json.dump({
             "_source": {"file": "docs/reference/sheet-worker.js",
@@ -1058,7 +1062,9 @@ def main():
             "_secondWeaponKnowSource": {"function": "get2ndWeaponKnowWhen", "line": know2nd_line},
             "secondWeaponKnowWhen": know2nd_when,
             "_secondWeaponLoreSource": {"function": "get2ndWeaponLoreWhen", "line": lore2nd_line},
-            "secondWeaponLoreWhen": lore2nd_when
+            "secondWeaponLoreWhen": lore2nd_when,
+            "_multiMissileLoreSource": {"function": "getMultiMissileLoreWhen", "line": multimissile_line},
+            "multiMissileLoreWhen": multimissile_when
         }, fh, indent=2, ensure_ascii=False)
 
     # How many class skill slots each class needs for its whole progression. A zero here would

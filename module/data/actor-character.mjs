@@ -479,6 +479,14 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.combat.hasSecondWeaponLore =
 			hasLore(this.identity.title, this.combat.secondWeaponLoreTitle);
 
+		// Multiple Missile Lore, the last of the family. Title eligibility only, as above; the
+		// combos themselves are named launcher/missile pairs and the mechanics that read them are
+		// not built yet. Its Knowledge half has no title gate in his sheet at all.
+		this.combat.multiMissileLoreTitle = this.classItem
+			? (parseInt(this.classItem.system.multiMissileLoreTitle) || 0) : 0;
+		this.combat.hasMultiMissileLore =
+			hasLore(this.identity.title, this.combat.multiMissileLoreTitle);
+
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,
 			tmparmorinit + (parseInt(this.combat.initiativeMisc) || 0));

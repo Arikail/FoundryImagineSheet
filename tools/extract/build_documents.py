@@ -396,6 +396,9 @@ def build_classes():
     # get2ndWeaponKnowWhen / get2ndWeaponLoreWhen. Zero means the class never gets it.
     know2ndmap = loretitles.get("secondWeaponKnowWhen", {}) if loretitles else {}
     lore2ndmap = loretitles.get("secondWeaponLoreWhen", {}) if loretitles else {}
+    # And the title at which a class may start acquiring Multiple Missile Lore combos, from
+    # getMultiMissileLoreWhen. Its Knowledge half has no title gate in his sheet at all.
+    multimissileloremap = loretitles.get("multiMissileLoreWhen", {}) if loretitles else {}
     # How many class skill slots the class needs for its whole progression, from
     # getSlotsNeededForClass. A class missing from this map falls back to 0, which is reported by
     # to_number rather than passing silently, because 0 reads as "costs no slots to take".
@@ -462,6 +465,7 @@ def build_classes():
             "projectileLoreTitle": to_number(projectileloremap.get(tmpname, 0), where, "projectileLoreTitle"),
             "secondWeaponKnowTitle": to_number(know2ndmap.get(tmpname, 0), where, "secondWeaponKnowTitle"),
             "secondWeaponLoreTitle": to_number(lore2ndmap.get(tmpname, 0), where, "secondWeaponLoreTitle"),
+            "multiMissileLoreTitle": to_number(multimissileloremap.get(tmpname, 0), where, "multiMissileLoreTitle"),
             "skillSlotsNeeded": to_number(slotsmap.get(tmpname, 0), where, "skillSlotsNeeded"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
