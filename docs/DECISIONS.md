@@ -1772,3 +1772,82 @@ slots; 0 left.").
 **Not verified:** anything needing a running Foundry V14 -- the trade and sacrifice dialogs, the
 2d4 landing on the chosen skill, and the untrained picker, which reads the skill compendium and so
 cannot be exercised in a preview harness at all.
+
+### 2026-09-16 — Dual Class Characters, built from the book alone
+
+His Roll20 sheet has no provision for a second class at all: one `classname` field, one stored
+title, nothing that could hold a second class's own progress. This is not a gap in the port to
+close against his code -- there is no code -- so the whole feature is read from the Player's
+Guide's "Dual Class Characters" (p.45-46) rather than ported.
+
+**A character may hold more than one class item.** `classItems` (`_findItems("class")`) is the
+full list; `classItem` stays the first, exactly as before, so every existing reader of a single
+class needed no change at all. `identity.isDualClass` is simply `classItems.length > 1`.
+
+**Each class advances on its own title, not the character's.** The book's own worked example
+under Experience and Advancement rule 7 settles this on its own: "if a Mage/Warrior advances from
+1st to 2nd Title in the Mage class only, he gains his Endurance Title bonus" -- a title that could
+move independently per class cannot be one shared number. `title` is now a field on the class item
+(`item-class.mjs`), zero meaning "follow the character's own `identity.title`", which is exactly
+what a single-classed character does and why nothing about a single class had to be touched.
+`_getClassTitle(classItem)` resolves it once and everything downstream uses that.
+
+**Attack skill is the greater of the two charts, each read at its own title.** Experience and
+Advancement rule 5: "Attack skill is determined by the greater of the two values." `getBetterAttackSkill`
+in `combat-rules.mjs` compares by position in `ATTACK_SKILL_ORDER` (further along wins, not a
+bigger number, since these are chart names), with "not on the chart at all" losing to anything
+that is and two unknowns returning the first argument rather than erroring. `_prepareCombat` walks
+every class in `classItems`, gets each one's chart at that class's own title, and folds them
+together with `getBetterAttackSkill`.
+
+**A lore is held if EITHER class has reached it, each at its own title — this is a reading, not a
+citation.** The book does not state a rule for lores or the Lore chart directly the way it does for
+attack skill. Two things point at the same answer, though: Class Determination rule 5 says the
+character "learns the skills of both classes", and Advancement rule 4's stated principle -- "where
+two versions of a skill are competitive... the better of the two values are applied" -- is exactly
+what rule 5 already does for the attack chart it is built from. `_getBestClassTitle(field)` applies
+that principle uniformly to `loreAttackTitle`, `weaponLoreTitle`, `missileLoreTitle`,
+`projectileLoreTitle`, `secondWeaponKnowTitle`, `secondWeaponLoreTitle` and `multiMissileLoreTitle`:
+each class is tested against its own title, the character holds the thing if any class has reached
+its own threshold, and the reported "when" is the threshold that actually granted it (or the
+lowest one not yet reached, so the sheet can say what is still to come rather than a bare zero
+that would read as "never"). This is flagged as a reading rather than a rule because a future
+session should feel free to revisit it if the developer says otherwise.
+
+**Class skill slot requirements are summed across both classes, not maxed.** This is the book's own
+stated motivation for the slot tricks existing at all -- "a dual classed character will need to
+have many class skill slots" -- which only makes sense if both progressions draw on the same one
+Knowledge allowance rather than each getting its own. `identity.classSlotsNeeded` sums
+`skillSlotsNeeded` across `classItems`.
+
+**Requirements are reported, never enforced.** The book's own Requirements section: Knowledge 15
+minimum, both classes' attribute minimums, and "the decision must be supported by the Game
+Master." Refusing the combination outright would be inventing an authority the book explicitly
+gives to a person, not a rule -- so `_getDualClassIssues()` lists what falls short (on a
+single-classed character it is always empty and costs nothing) and the header shows it in the
+alarm colour, exactly the same posture `dualClassIssues`'s sibling `skillSlots.classOver` already
+takes toward over-allocation.
+
+**The racial half of the requirement cannot be checked at all, and that is recorded rather than
+faked.** Requirements rule 2 is "must meet racial requirements for both classes," but nothing in
+his extracted data maps a race to which classes it may take -- the book's "Classes Available by
+Race" tables (p.64 onward) were never brought across in any prior pass. Rather than invent a
+mapping or silently skip the rule, `_getDualClassIssues` checks only attributes and Knowledge, and
+the comment on it says exactly why the racial check is absent, so a future pass extracting those
+tables has a clear seam to land in rather than a silent gap to rediscover.
+
+**The header shows both classes once there is more than one**, each with a stepper pair (plus one
+title, minus one title) rather than a typed number, because a class's title needs to move in whole
+steps and a stepper cannot be typed into the wrong shape. A single-classed character's header is
+byte-for-byte what it always rendered.
+
+**Verified:** derivation 251 (24 new: single-class parity, naming, per-class titles, the attack
+chart picking the better chart at the right title, a lore granted by either class, a lore a class
+has not yet reached still reporting its threshold, slot requirements summing, and the requirement
+report on both a qualifying and a falling-short dual-classed character), combat 352 (7 new, on
+`getBetterAttackSkill` alone), creature 139 and availability 39 unchanged, 27 modules parse. Sheet
+preview given a real second class (Mage at title 4, beside the Warrior at title 12) shows
+"Warrior/Mage" and both per-class title rows against real derived data.
+
+**Not verified:** anything needing a running Foundry V14 -- the title stepper buttons writing
+`system.title` back to the class item and the header re-rendering from it.

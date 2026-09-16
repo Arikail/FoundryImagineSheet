@@ -177,7 +177,17 @@ const character = new ImagineCharacterData({
 	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "",
 	            travelHours: 9, restHours: 5, jumpStand: 0, jumpUp: 0 }
 });
-const allItems = [...skills, sword, dagger, garrote, padding, chain, shield, tent, raceItem, classItem];
+// A second class, so the dual-class path renders against real content rather than only in the
+// rule tests. His Roll20 sheet has no provision for this at all; the Player's Guide does. The
+// Mage advances on its own title (4) while the Warrior follows the character's (12), which is
+// what a class title of 0 means, and the attack chart should come out the Warrior's either way.
+const secondClassItem = byName(classes, "Mage");
+secondClassItem.system.title = 4;
+secondClassItem.getTitleName = function (t) { const i = parseInt(t) - 1; const a = this.system.advancement.titles;
+                                              return (i < 0 || i >= a.length) ? "" : a[i]; };
+
+const allItems = [...skills, sword, dagger, garrote, padding, chain, shield, tent, raceItem,
+                  classItem, secondClassItem];
 character.parent = { items: allItems, name: "Calanar Elfriend" };
 character.prepareBaseData();
 character.prepareDerivedData();

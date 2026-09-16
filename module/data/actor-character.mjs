@@ -19,7 +19,7 @@ import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
 	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList,
 	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther,
-	getOffhandSecondsCap
+	getOffhandSecondsCap, getBetterAttackSkill
 } from "../combat/combat-rules.mjs";
 import { getSlotAllowance } from "../skills-rules.mjs";
 
@@ -312,7 +312,15 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// Race and class are embedded items. Cache them here so every later step can reach
 		// them without searching the collection again.
 		this.raceItem  = this._findItem("race");
-		this.classItem = this._findItem("class");
+
+		// A character may hold more than one class. The Player's Guide allows a dual-classed
+		// character who meets both classes' requirements, and his Roll20 sheet has no provision
+		// for it at all -- one classname field and nothing else -- so this half is built from the
+		// book rather than ported. classItem stays as the first one, which is what a single-classed
+		// character has and what everything reading one class still wants; classItems is the whole
+		// list, and the rules that combine two classes read that.
+		this.classItems = this._findItems("class");
+		this.classItem = this.classItems[0] ?? null;
 
 		// Racial attribute modifiers are folded into the base, BEFORE effects, so that a
 		// temporary magical bonus stacks on top of the racial baseline rather than competing
@@ -328,7 +336,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	}
 
 	// This is the function which finds an embedded item of a given type. Returns the first
-	// match, or null. A character is expected to hold at most one race and one class.
+	// match, or null. A character holds at most one race; a class uses _findItems below.
 	_findItem(tmptype) {
 		var tmpactor = this.parent;
 		if (!tmpactor || !tmpactor.items) { return null; }
@@ -336,6 +344,58 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			if (tmpitem.type == tmptype) { return tmpitem; }
 		}
 		return null;
+	}
+
+	// This is the function which finds every embedded item of a given type, in the order the
+	// actor holds them. Used for classes, where a second one means a dual-classed character.
+	_findItems(tmptype) {
+		var tmpactor = this.parent;
+		if (!tmpactor || !tmpactor.items) { return []; }
+		var tmpfound = [];
+		for (const tmpitem of tmpactor.items) {
+			if (tmpitem.type == tmptype) { tmpfound.push(tmpitem); }
+		}
+		return tmpfound;
+	}
+
+	// This is the function which asks every class the character holds whether it grants something
+	// at a title, and reports the best answer.
+	//
+	// Each class carries its own "when" for a lore or a chart, and each is tested against its own
+	// title, because a dual-classed character advances the two separately. A character HAS the
+	// thing if any class has reached its own threshold -- they learn the skills of both classes
+	// (Dual Class, Class Determination rule 5), and where two versions compete the better applies
+	// (Experience and Advancement rule 4).
+	//
+	// The `when` reported back is the threshold of whichever class actually granted it, or the
+	// lowest non-zero one where none has been reached yet, so the sheet can say what is still to
+	// come rather than showing a zero that reads as "never".
+	_getBestClassTitle(tmpfield) {
+		var tmpout = { when: 0, reached: false, title: 0 };
+		for (const tmpclass of this.classItems) {
+			var tmpwhen = parseInt(tmpclass.system[tmpfield]) || 0;
+			if (tmpwhen <= 0) { continue; }
+
+			var tmptitle = this._getClassTitle(tmpclass);
+			if (hasLore(tmptitle, tmpwhen)) {
+				if (!tmpout.reached || tmpwhen < tmpout.when) {
+					tmpout = { when: tmpwhen, reached: true, title: tmptitle };
+				}
+			} else if (!tmpout.reached && (tmpout.when == 0 || tmpwhen < tmpout.when)) {
+				tmpout = { when: tmpwhen, reached: false, title: tmptitle };
+			}
+		}
+		return tmpout;
+	}
+
+	// This is the function which gives one class's own title on this character.
+	//
+	// A dual-classed character advances each class separately, so the title belongs with the
+	// class. Zero on the class means "follow the character's own title", which is every
+	// single-classed character and why nothing had to change for one.
+	_getClassTitle(tmpclassitem) {
+		if (!tmpclassitem) { return 0; }
+		return (parseInt(tmpclassitem.system.title) || 0) || (parseInt(this.identity.title) || 0);
 	}
 
 	//==========================================================================================
@@ -347,8 +407,12 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	prepareDerivedData() {
 		super.prepareDerivedData();
 
-		this._prepareIdentity();
+		// Attributes first: the dual-class requirement check in _prepareIdentity compares against
+		// them, and _prepareAttributes is where a rating above its racial cap gets clamped down.
+		// Nothing in _prepareAttributes reads anything _prepareIdentity derives -- the title it
+		// uses for the cap rule is stored, not derived -- so the two swap safely.
 		this._prepareAttributes();
+		this._prepareIdentity();
 		this._prepareCharacteristics();
 		this._prepareResistances();
 		this._prepareEncumbrance();
@@ -431,28 +495,40 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			tmparmorskills = tmparmorskills + (parseInt(tmppen.skills) || 0);
 		}
 
-		var tmplist = this.classItem ? this.classItem.system.attackSkillList : "";
-		this.combat.attackSkill = getAttackSkillForTitle(tmplist, this.identity.title);
+		// The attack chart. A dual-classed character fights at the better of their two classes'
+		// charts -- Player's Guide, Dual Class, Experience and Advancement rule 5, "Attack skill is
+		// determined by the greater of the two values" -- and each class is read at ITS OWN title,
+		// since the two advance separately.
+		this.combat.attackSkill = "None";
+		for (const tmpclass of this.classItems) {
+			var tmpclassskill = getAttackSkillForTitle(tmpclass.system.attackSkillList,
+				this._getClassTitle(tmpclass));
+			this.combat.attackSkill = getBetterAttackSkill(this.combat.attackSkill, tmpclassskill);
+		}
 
 		// The Lore chart: the standard chart one level up, for a weapon the character has Weapon
 		// or Missile Lore in. A class reaches it at its own title and about half never do.
 		// His code keeps this as a second stored chart (special_attack_skill); it is derived here
 		// because everything it depends on already is.
-		var tmploretitle = this.classItem ? (parseInt(this.classItem.system.loreAttackTitle) || 0) : 0;
-		this.combat.loreAttackTitle = tmploretitle;
-		this.combat.loreAttackSkill = (tmploretitle > 0 && this.identity.title >= tmploretitle)
+		//
+		// Reached if EITHER class reaches it, each at its own title. The book does not rule on
+		// this one directly, so it follows rule 4's principle -- where two versions of something
+		// compete, the better applies -- which is also what rule 5 does for the chart it is built
+		// from. Recorded in DECISIONS.md as a reading rather than a citation.
+		this.combat.loreAttackTitle = this._getBestClassTitle("loreAttackTitle").when;
+		this.combat.loreAttackSkill = this._getBestClassTitle("loreAttackTitle").reached
 			? getNextAttackSkill(this.combat.attackSkill)
 			: "";
 
 		// Weapon and Missile Lore themselves, which are a different thing from the chart above:
 		// a class can hold the lore without ever reading the Lore attack chart, and the two
 		// titles rarely match. Zero means the class never acquires it at all.
-		this.combat.weaponLoreTitle = this.classItem
-			? (parseInt(this.classItem.system.weaponLoreTitle) || 0) : 0;
-		this.combat.missileLoreTitle = this.classItem
-			? (parseInt(this.classItem.system.missileLoreTitle) || 0) : 0;
-		this.combat.hasWeaponLore = hasLore(this.identity.title, this.combat.weaponLoreTitle);
-		this.combat.hasMissileLore = hasLore(this.identity.title, this.combat.missileLoreTitle);
+		var tmpweaponlore = this._getBestClassTitle("weaponLoreTitle");
+		var tmpmissilelore = this._getBestClassTitle("missileLoreTitle");
+		this.combat.weaponLoreTitle = tmpweaponlore.when;
+		this.combat.missileLoreTitle = tmpmissilelore.when;
+		this.combat.hasWeaponLore = tmpweaponlore.reached;
+		this.combat.hasMissileLore = tmpmissilelore.reached;
 
 		// The lists themselves are stored as he stores them, one comma-separated string each.
 		// Parsed here once so nothing downstream has to split a string.
@@ -460,9 +536,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.combat.missileLoreNames = parseLoreList(this.combat.missileLoreList);
 
 		// Projectile Lore, worth damage per die rather than a flat figure.
-		this.combat.projectileLoreTitle = this.classItem
-			? (parseInt(this.classItem.system.projectileLoreTitle) || 0) : 0;
-		this.combat.hasProjectileLore = hasLore(this.identity.title, this.combat.projectileLoreTitle);
+		var tmpprojlore = this._getBestClassTitle("projectileLoreTitle");
+		this.combat.projectileLoreTitle = tmpprojlore.when;
+		this.combat.hasProjectileLore = tmpprojlore.reached;
 		this.combat.projectileLoreNames = parseLoreList(this.combat.projectileLoreList);
 
 		// Eligibility for the two off-hand fighting disciplines. This is title eligibility only
@@ -470,22 +546,19 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// whether the character actually has the skill. The skill's own chance is read once
 		// skills have resolved, in _prepareOffhandSkills below, since embedded skill items are not
 		// finished computing here yet (see the ordering note on _prepareSkills).
-		this.combat.secondWeaponKnowTitle = this.classItem
-			? (parseInt(this.classItem.system.secondWeaponKnowTitle) || 0) : 0;
-		this.combat.secondWeaponLoreTitle = this.classItem
-			? (parseInt(this.classItem.system.secondWeaponLoreTitle) || 0) : 0;
-		this.combat.hasSecondWeaponKnowledge =
-			hasLore(this.identity.title, this.combat.secondWeaponKnowTitle);
-		this.combat.hasSecondWeaponLore =
-			hasLore(this.identity.title, this.combat.secondWeaponLoreTitle);
+		var tmpknow2nd = this._getBestClassTitle("secondWeaponKnowTitle");
+		var tmplore2nd = this._getBestClassTitle("secondWeaponLoreTitle");
+		this.combat.secondWeaponKnowTitle = tmpknow2nd.when;
+		this.combat.secondWeaponLoreTitle = tmplore2nd.when;
+		this.combat.hasSecondWeaponKnowledge = tmpknow2nd.reached;
+		this.combat.hasSecondWeaponLore = tmplore2nd.reached;
 
 		// Multiple Missile Lore, the last of the family. Title eligibility only, as above; the
 		// combos themselves are named launcher/missile pairs and the mechanics that read them are
 		// not built yet. Its Knowledge half has no title gate in his sheet at all.
-		this.combat.multiMissileLoreTitle = this.classItem
-			? (parseInt(this.classItem.system.multiMissileLoreTitle) || 0) : 0;
-		this.combat.hasMultiMissileLore =
-			hasLore(this.identity.title, this.combat.multiMissileLoreTitle);
+		var tmpmmlore = this._getBestClassTitle("multiMissileLoreTitle");
+		this.combat.multiMissileLoreTitle = tmpmmlore.when;
+		this.combat.hasMultiMissileLore = tmpmmlore.reached;
 
 		this.combat.initiativeMod = getInitiativeModifier(
 			tmpaglmods.initiativeAdjust, tmpintmods.initiativeAdjust,
@@ -621,12 +694,72 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		else                                    { tmpenc.status = "Overloaded"; }
 	}
 
-	// This is the function which fills in the identity values that come from the class item.
+	// This is the function which fills in the identity values that come from the class items.
+	//
+	// A dual-classed character is named for both -- "Mage/Warrior", which is how the Player's Guide
+	// writes them -- and carries a row per class, since each has its own title and its own title
+	// name. The single-class strings stay exactly what they were, so nothing that reads className
+	// has to know about any of this.
 	_prepareIdentity() {
 		this.identity.raceName  = this.raceItem ? this.raceItem.name : "";
 		this.identity.className = this.classItem ? this.classItem.name : "";
 		this.identity.classType = this.classItem ? this.classItem.system.classType : "";
 		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";
+
+		this.identity.classes = this.classItems.map(tmpclass => {
+			var tmptitle = this._getClassTitle(tmpclass);
+			return {
+				id: tmpclass.id,
+				name: tmpclass.name,
+				classType: tmpclass.system.classType,
+				title: tmptitle,
+				titleName: tmpclass.getTitleName(tmptitle),
+				skillSlotsNeeded: parseInt(tmpclass.system.skillSlotsNeeded) || 0
+			};
+		});
+		this.identity.isDualClass = this.identity.classes.length > 1;
+		this.identity.classNames = this.identity.classes.map(c => c.name).join("/");
+
+		// Both classes' progressions have to be paid for out of one Knowledge allowance, which is
+		// the Player's Guide's own reason for the slot tricks existing ("a dual classed character
+		// will need to have many class skill slots"). Summed rather than maxed for that reason.
+		this.identity.classSlotsNeeded = this.identity.classes
+			.reduce((tmptotal, tmpclass) => tmptotal + tmpclass.skillSlotsNeeded, 0);
+
+		this.identity.dualClassIssues = this._getDualClassIssues();
+	}
+
+	// This is the function which lists what stops this character being dual-classed.
+	//
+	// Player's Guide, "Dual Class Characters", Requirements: the character "must meet attribute
+	// requirements of both classes and must have a minimum Knowledge of 15", and must meet the
+	// racial requirements for both. It is also a decision the Game Master has to support, so
+	// nothing here refuses anything -- it reports, and the sheet shows it.
+	//
+	// THE RACIAL HALF CANNOT BE CHECKED. His data carries no race-to-class permissions at all --
+	// the "Classes Available by Race" tables are in the book and were never brought across -- so
+	// rule 2 is left to the Game Master and said so on the sheet rather than silently passed.
+	_getDualClassIssues() {
+		if (!this.identity.isDualClass) { return []; }
+
+		var tmpissues = [];
+		if ((parseInt(this.attributes.knw.value) || 0) < 15) {
+			tmpissues.push(`Dual class needs Knowledge 15; this character has ${this.attributes.knw.value}.`);
+		}
+
+		var tmporder = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"];
+		for (const tmpclass of this.classItems) {
+			var tmpqualify = tmpclass.system.requirements?.attribQualify ?? [];
+			for (var i = 0; i < tmporder.length; i++) {
+				var tmpneeded = parseInt(tmpqualify[i]) || 0;
+				if (!tmpneeded) { continue; }
+				var tmphas = parseInt(this.attributes[tmporder[i]].value) || 0;
+				if (tmphas < tmpneeded) {
+					tmpissues.push(`${tmpclass.name} needs ${tmporder[i].toUpperCase()} ${tmpneeded}; this character has ${tmphas}.`);
+				}
+			}
+		}
+		return tmpissues;
 	}
 
 	// This is the function which sets each attribute's maximum, its save percentage and its

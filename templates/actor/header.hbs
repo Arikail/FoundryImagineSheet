@@ -6,11 +6,38 @@
 	<div class="identity">
 		<input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
 
+		{{!-- A dual-classed character advances each class separately, so each carries its own title
+		      and gets its own row. One class reads exactly as it always did. --}}
 		<div class="identity-line">
 			<span class="field"><label>Race</label><span class="readout">{{#if system.identity.raceName}}{{system.identity.raceName}}{{else}}&mdash;{{/if}}</span></span>
+			{{#if system.identity.isDualClass}}
+			<span class="field"><label>Classes</label><span class="readout">{{system.identity.classNames}}</span></span>
+			{{else}}
 			<span class="field"><label>Class</label><span class="readout">{{#if system.identity.className}}{{system.identity.className}}{{else}}&mdash;{{/if}}</span></span>
 			<span class="field"><label>Title</label><span class="readout">{{system.identity.title}} {{system.identity.titleName}}</span></span>
+			{{/if}}
 		</div>
+
+		{{#if system.identity.isDualClass}}
+		<div class="identity-line class-titles">
+			{{#each system.identity.classes as |c|}}
+			<span class="field"><label>{{c.name}}</label>
+				<span class="readout">
+					<button type="button" class="title-step" data-action="stepClassTitle"
+						data-item-id="{{c.id}}" data-step="-1" data-tooltip="Back a title">&minus;</button>
+					{{c.title}}
+					<button type="button" class="title-step" data-action="stepClassTitle"
+						data-item-id="{{c.id}}" data-step="1" data-tooltip="On a title">+</button>
+					{{c.titleName}}</span></span>
+			{{/each}}
+		</div>
+		{{#if system.identity.dualClassIssues.length}}
+		{{!-- Reported, never refused: the book makes dual classing the Game Master's call. --}}
+		<div class="identity-line dual-class-issues">
+			{{#each system.identity.dualClassIssues as |issue|}}<span class="alarm">{{issue}}</span>{{/each}}
+		</div>
+		{{/if}}
+		{{/if}}
 
 		<div class="identity-line">
 			<span class="field"><label>Alignment</label>

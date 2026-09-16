@@ -404,6 +404,21 @@
 	border-style: dashed;
 }
 
+/* A dual-classed character's per-class titles, and whatever the book's requirements say is
+   short. Reported rather than refused: the Game Master has the last word on dual classing. */
+.class-titles .title-step {
+	width: auto;
+	font-size: 11px;
+	line-height: 1;
+	padding: 0 5px;
+	margin: 0 2px;
+}
+
+.dual-class-issues {
+	gap: 10px;
+	font-size: 11px;
+}
+
 .untrained-row {
 	margin: 0 0 8px;
 }

@@ -35,6 +35,7 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack,
 			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand,
 			rollUntrainedSkill: ImagineCharacterSheet.#onRollUntrainedSkill,
+			stepClassTitle: ImagineCharacterSheet.#onStepClassTitle,
 			transferSlot: ImagineCharacterSheet.#onTransferSlot,
 			sacrificeSlot: ImagineCharacterSheet.#onSacrificeSlot,
 			addLanguage: ImagineCharacterSheet.#onAddLanguage,
@@ -431,6 +432,21 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			content: `<div class="imagine-skill-roll">${tmplines}</div>`,
 			rolls: tmprolls
 		});
+	}
+
+	// This is the function which advances or steps back one class's own title.
+	//
+	// Only a dual-classed character has these: with one class the title lives on the character,
+	// where it always has, and this never renders. A class whose title is still zero is following
+	// the character's, so the first step starts from there rather than from nothing.
+	static async #onStepClassTitle(event, target) {
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+
+		var tmpstep = parseInt(target.dataset.step) || 0;
+		var tmpnow = (parseInt(tmpitem.system.title) || 0)
+			|| (parseInt(this.document.system.identity.title) || 0);
+		await tmpitem.update({ "system.title": Math.max(0, tmpnow + tmpstep) });
 	}
 
 	// This is the function which attempts a skill the character has never learned.

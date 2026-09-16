@@ -125,6 +125,22 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// stand-in for a being with no class at all rather than a class of its own.
 			skillSlotsNeeded: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
+			// @MARKER PER-CHARACTER STATE
+			// Everything above describes the class itself and is the same on every copy. This is
+			// the one thing that belongs to the character holding it: how far along this class
+			// they are.
+			//
+			// A DUAL-CLASSED CHARACTER ADVANCES EACH CLASS SEPARATELY. The Player's Guide's own
+			// example is a Mage/Warrior who "advances from 1st to 2nd Title in the Mage class
+			// only", so a title cannot live on the character as one number once there are two
+			// classes -- it belongs with the class, exactly as a skill item carries its own
+			// startingBonus and category.
+			//
+			// Zero means "follow the character's own title" (identity.title), which is what a
+			// single-classed character does and why nothing had to change for one. It is only
+			// worth setting on a character holding more than one class.
+			title: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
 			// @MARKER CLASSIFICATION
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".
 			classType: new fields.StringField({ required: true, initial: "" }),

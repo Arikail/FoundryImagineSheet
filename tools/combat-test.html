@@ -792,6 +792,19 @@ check("...even with a maxed Second Weapon Lore",
 check("blank handedness reads as the ordinary 5-second cap",
 	R.getOffhandSecondsCap("", 0), 5);
 
+// --- the better of two attack charts ------------------------------------------------
+// Player's Guide, Dual Class, Experience and Advancement rule 5: "Attack skill is determined by
+// the greater of the two values". Better is further along the chart order, not a bigger number.
+check("the later chart wins",            R.getBetterAttackSkill("Novice", "Expert"), "Expert");
+check("...whichever side it is given on", R.getBetterAttackSkill("Expert", "Novice"), "Expert");
+check("two of the same is that one",     R.getBetterAttackSkill("Master", "Master"), "Master");
+check("anything beats None",             R.getBetterAttackSkill("None", "Beginner"), "Beginner");
+check("...and None beats nothing",       R.getBetterAttackSkill("Beginner", "None"), "Beginner");
+check("an unknown name loses to a real chart",
+	R.getBetterAttackSkill("Nonsense", "Novice"), "Novice");
+check("two unknowns come back as the first, rather than erroring",
+	R.getBetterAttackSkill("Nonsense", "Gibberish"), "Nonsense");
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

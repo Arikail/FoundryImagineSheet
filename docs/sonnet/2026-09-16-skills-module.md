@@ -77,9 +77,11 @@ board row.
 
 ## 4. Dual class shares two foundations with this
 
-**Why it was left:** it is its own story, not a loose end of this one.
+> **DONE 2026-09-16, same day as this note.** Built as its own board row ("Dual Class Characters")
+> rather than as an item here. See `DECISIONS.md` → "Dual Class Characters, built from the book
+> alone" for the full account.
 
-The board's Dual Class row leans on the same two things this pass touched: `skillSlotsNeeded` (a
+Dual classing leaned on the same two things this pass touched: `skillSlotsNeeded` (a
 dual-classed character needs both classes' slots out of one Knowledge allowance, which is the
 motivating example the book gives for the slot tricks existing at all) and the duplicate-skill
 rule (dual class rule 6 of the first list, "May choose a skill twice and have two versions of the

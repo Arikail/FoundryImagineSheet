@@ -804,6 +804,107 @@ check("...and the skills are still all there", overSpent.skillSlots.classUsed, s
 check("...while the other categories are untouched",
 	[overSpent.skillSlots.racialOver, overSpent.skillSlots.socialOver], [false, false]);
 
+// --- dual class -------------------------------------------------------------------------
+// His Roll20 sheet has no provision for this at all -- one classname field -- so every figure
+// below is the Player's Guide's, not a port. Each class advances on its own title, which is why
+// the title lives on the class item once there are two of them.
+const dualClass = (name, opts = {}) => ({
+	type: "class", name,
+	system: {
+		attackSkillList: opts.attackSkillList ?? "Beginner at 1, Novice at 4",
+		loreAttackTitle: opts.loreAttackTitle ?? 0,
+		weaponLoreTitle: opts.weaponLoreTitle ?? 0,
+		missileLoreTitle: opts.missileLoreTitle ?? 0,
+		projectileLoreTitle: 0, secondWeaponKnowTitle: 0, secondWeaponLoreTitle: 0,
+		multiMissileLoreTitle: 0,
+		skillSlotsNeeded: opts.skillSlotsNeeded ?? 0,
+		title: opts.title ?? 0,
+		classType: opts.classType ?? "Primary class",
+		requirements: { alignment: "Any", focusAttributes: "", attribQualify: opts.attribQualify ?? [] },
+		advancement: { titles: opts.titles ?? [] }, classMods: []
+	},
+	getTitleName(t) { const a = this.system.advancement.titles; const i = parseInt(t) - 1;
+	                  return (i < 0 || i >= a.length) ? "" : a[i]; }
+});
+
+const singleClassed = makeCharacter({ knw: 20 }, 5, [dualClass("Warrior")]);
+check("one class is not dual classed", singleClassed.identity.isDualClass, false);
+check("...and its title still comes from the character, as it always did",
+	singleClassed.identity.classes[0].title, 5);
+
+// Each class carries its own title. Zero on the class means "follow the character's own".
+const mageWarrior = makeCharacter({ knw: 20 }, 1, [
+	dualClass("Mage", { title: 2, attackSkillList: "Beginner at 1" }),
+	dualClass("Warrior", { title: 1, attackSkillList: "Beginner at 1, Novice at 2, Intermediate at 5" })
+]);
+check("two classes is dual classed", mageWarrior.identity.isDualClass, true);
+check("named for both, as the book writes them", mageWarrior.identity.classNames, "Mage/Warrior");
+check("each class keeps its own title",
+	mageWarrior.identity.classes.map(c => [c.name, c.title]), [["Mage", 2], ["Warrior", 1]]);
+
+// Experience and Advancement rule 5: attack skill is the greater of the two values -- and each
+// class is read at ITS OWN title, so the Warrior's chart at title 1 beats the Mage's at title 2.
+check("the attack skill is the better of the two charts", mageWarrior.combat.attackSkill, "Beginner");
+const fightingMage = makeCharacter({ knw: 20 }, 1, [
+	dualClass("Mage", { title: 9, attackSkillList: "Beginner at 1" }),
+	dualClass("Warrior", { title: 6, attackSkillList: "Beginner at 1, Novice at 2, Intermediate at 5" })
+]);
+check("...which is the Warrior's at title 6, not the Mage's at 9",
+	fightingMage.combat.attackSkill, "Intermediate");
+check("a classless character still has no chart",
+	makeCharacter({}, 12).combat.attackSkill, "None");
+
+// Class Determination rule 5 and Advancement rule 4: the skills of both classes, better applying.
+// So a lore either class has reached is held, each judged on that class's own title.
+const loreFromSecond = makeCharacter({ knw: 20 }, 1, [
+	dualClass("Mage", { title: 12 }),
+	dualClass("Warrior", { title: 6, weaponLoreTitle: 6 })
+]);
+check("a lore only the second class grants is still held", loreFromSecond.combat.hasWeaponLore, true);
+check("...and reports the threshold of the class that granted it",
+	loreFromSecond.combat.weaponLoreTitle, 6);
+const loreNotYet = makeCharacter({ knw: 20 }, 1, [
+	dualClass("Mage", { title: 12 }),
+	dualClass("Warrior", { title: 5, weaponLoreTitle: 6 })
+]);
+check("a class short of its own threshold does not grant it",
+	loreNotYet.combat.hasWeaponLore, false);
+check("...and the threshold still shown is the one it is short of",
+	loreNotYet.combat.weaponLoreTitle, 6);
+check("a lore neither class ever gets stays at zero",
+	loreNotYet.combat.missileLoreTitle, 0);
+
+// Both progressions come out of one Knowledge allowance, which is the book's own reason the slot
+// tricks exist: "a dual classed character will need to have many class skill slots".
+const slotHungry = makeCharacter({ knw: 20 }, 5, [
+	dualClass("Mage", { skillSlotsNeeded: 46 }),
+	dualClass("Warrior", { skillSlotsNeeded: 37 })
+]);
+check("both classes' slot requirements are summed, not maxed",
+	slotHungry.identity.classSlotsNeeded, 83);
+check("one class needs only its own", singleClassed.identity.classSlotsNeeded, 0);
+
+// Requirements: Knowledge 15 and both classes' attribute minimums. It reports rather than refuses,
+// since the book makes it the Game Master's decision to support.
+const qualified = makeCharacter({ knw: 20, str: 16, int: 16 }, 5, [
+	dualClass("Mage", { attribQualify: [0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0] }),
+	dualClass("Warrior", { attribQualify: [15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] })
+]);
+check("meeting both classes' minimums and Knowledge 15 raises nothing",
+	qualified.identity.dualClassIssues, []);
+const underKnowledge = makeCharacter({ knw: 12 }, 5, [dualClass("Mage"), dualClass("Warrior")]);
+check("Knowledge under 15 is reported", underKnowledge.identity.dualClassIssues.length, 1);
+check("...and says what is short",
+	underKnowledge.identity.dualClassIssues[0].includes("Knowledge 15"), true);
+const underAttribute = makeCharacter({ knw: 20, str: 9 }, 5, [
+	dualClass("Mage"),
+	dualClass("Warrior", { attribQualify: [15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] })
+]);
+check("an unmet attribute minimum is reported against the class that wants it",
+	underAttribute.identity.dualClassIssues[0].includes("Warrior needs STR 15"), true);
+check("a single-classed character is never checked against any of it",
+	singleClassed.identity.dualClassIssues, []);
+
 // --- a skill attempted untrained ------------------------------------------------------
 // Player's Guide, "Who Can Use a Skill": the base chance alone, no starting bonus. Same first
 // half of the formula a held skill uses, and deliberately none of the second half.

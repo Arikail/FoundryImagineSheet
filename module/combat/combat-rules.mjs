@@ -141,6 +141,23 @@ export const MODE_DAMAGE_TYPES = {
 		return ATTACK_SKILL_ORDER[Math.min(tmpindex + 1, ATTACK_SKILL_ORDER.length - 1)];
 	}
 
+	// This is the function which picks the better of two attack charts.
+	//
+	// Player's Guide, "Dual Class Characters", Experience and Advancement rule 5: "Attack skill is
+	// determined by the greater of the two values" -- a Mage/Warrior fights at the Warrior's chart.
+	// Better means further along ATTACK_SKILL_ORDER, not a larger number, since these are names.
+	//
+	// Anything not on the chart order (including "None") loses to anything that is, and two
+	// unknowns come back as the first argument, so a classless character reads as "None" rather
+	// than as an error.
+	export function getBetterAttackSkill(tmpfirst, tmpsecond) {
+		var tmpfirstat = ATTACK_SKILL_ORDER.indexOf(tmpfirst);
+		var tmpsecondat = ATTACK_SKILL_ORDER.indexOf(tmpsecond);
+		if (tmpsecondat < 0) { return tmpfirst; }
+		if (tmpfirstat < 0) { return tmpsecond; }
+		return (tmpsecondat > tmpfirstat) ? tmpsecond : tmpfirst;
+	}
+
 
 //==================================================================================================================
 // @MARKER ATTACK RESOLUTION
