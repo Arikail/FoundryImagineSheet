@@ -21,6 +21,7 @@ import {
 	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther,
 	getOffhandSecondsCap
 } from "../combat/combat-rules.mjs";
+import { getSlotAllowance } from "../skills-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -202,6 +203,26 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				jewelry:  new fields.StringField({ required: true, initial: "" })
 			}),
 
+			// @MARKER SKILL SLOT TRICKS
+			// How many times each of the Player's Guide's slot trades has been made, and how many
+			// slots have been given up outright for a bonus. The Knowledge table's allowance is
+			// derived; these are the only stored part, because a trade is a decision rather than a
+			// calculation and nothing else on the character records that it happened.
+			//
+			// Kept as counts rather than as a list of moves: his sheet stores exactly the same
+			// thing (tmp_race_skill_slots_removed and its siblings), a move is not undoable once
+			// the slot it opened has been filled, and the arithmetic in getSlotAllowance only ever
+			// needs how many. The 2d4% a sacrifice grants is not here -- it is rolled once and
+			// added to the chosen skill's own modifier, which is where a permanent bonus belongs.
+			skillSlotMoves: new fields.SchemaField({
+				racialToClass:    new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				racialToSocial:   new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				socialToRacial:   new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				socialToClass:    new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				racialSacrificed: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				socialSacrificed: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 })
+			}),
+
 			// @MARKER COMBAT ADJUSTMENTS
 			// Everything granted by race, class, magic or condition arrives as an Active Effect.
 			// These misc fields are the manual override the Game Master can always reach for,
@@ -336,6 +357,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareMovement();
 		this._prepareSkillSlots();
 		this._prepareSkills();
+		this._prepareSkillSlotStatus();
 		this._prepareOffhandSkills();
 		this._prepareAvailability();
 
@@ -763,20 +785,56 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		}
 	}
 
-	// This is the function which reads the skill slot allowances off the Knowledge table.
-	// A character may not hold more skills in a category than they have slots for it.
+	// This is the function which reads the skill slot allowances off the Knowledge table, and
+	// then applies whatever trades the character has made to them.
+	//
+	// A character may not hold more skills in a category than they have slots for it -- but the
+	// allowance itself is not fixed, since the Player's Guide's "slot tricks" let racial and
+	// social slots be traded between categories or given up for a bonus. The base figures are
+	// Knowledge's; getSlotAllowance does the trading arithmetic, ported from his four conversion
+	// functions. Both are kept, so the sheet can show what the trades cost.
 	_prepareSkillSlots() {
 		var tmpknw = this.attributes.knw.mods;
 
+		var tmpbase = {
+			class:  parseInt(tmpknw.classSkills) || 0,
+			racial: parseInt(tmpknw.raceSkills) || 0,
+			social: parseInt(tmpknw.socialSkills) || 0
+		};
+		var tmpallowance = getSlotAllowance(tmpbase, this.skillSlotMoves);
+
 		this.skillSlots = {
-			class:         parseInt(tmpknw.classSkills) || 0,
-			racial:        parseInt(tmpknw.raceSkills) || 0,
-			social:        parseInt(tmpknw.socialSkills) || 0,
+			class:         tmpallowance.class,
+			racial:        tmpallowance.racial,
+			social:        tmpallowance.social,
+			classBase:     tmpbase.class,
+			racialBase:    tmpbase.racial,
+			socialBase:    tmpbase.social,
 			memorization:  parseInt(tmpknw.memorizationPoints) || 0,
 			classUsed:  0,
 			racialUsed: 0,
-			socialUsed: 0
+			socialUsed: 0,
+			classOver:  false,
+			racialOver: false,
+			socialOver: false
 		};
+	}
+
+	// This is the function which notices a category holding more skills than it has slots for.
+	//
+	// Split out as its own step, run straight after _prepareSkills, because the used counts are
+	// made there and the allowance is made in _prepareSkillSlots before it -- the comparison
+	// cannot live in either without one of them reading a value the other has not written yet.
+	//
+	// It flags rather than prevents. His sheet refuses the selection outright ("More selected than
+	// total slots. Nothing done.", sheet-worker.js:7049), but it refuses at a character-generation
+	// step this port has not built, and a skill here is an Item that can be dropped on an actor
+	// from anywhere. Flagging matches how availability already marks an item that should not be
+	// there without deleting it, and leaves the Game Master the last word.
+	_prepareSkillSlotStatus() {
+		this.skillSlots.classOver  = this.skillSlots.classUsed  > this.skillSlots.class;
+		this.skillSlots.racialOver = this.skillSlots.racialUsed > this.skillSlots.racial;
+		this.skillSlots.socialOver = this.skillSlots.socialUsed > this.skillSlots.social;
 	}
 
 	// This is the function which calculates every skill chance on the character, and counts
@@ -846,6 +904,24 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		if (!tmpactor || !tmpactor.items) { return 0; }
 		var tmpskill = tmpactor.items.find(i => i.type == "skill" && i.name == tmpname);
 		return tmpskill ? (parseInt(tmpskill.system.totalChance) || 0) : 0;
+	}
+
+	// This is the function which gives the chance for a skill the character does NOT hold,
+	// attempted as a common skill.
+	//
+	// Player's Guide, "Who Can Use a Skill": "a character may attempt almost any skill in the game,
+	// whether or not he has actually learned or acquired the skill... The common skill chance is
+	// simply the base chance without the starting bonus." So this is the same first half of the
+	// formula _prepareSkills uses, and deliberately none of the second: no starting bonus, no
+	// ability bonus, no modifiers of the skill's own, because the character has no skill of their
+	// own here to carry them.
+	//
+	// Two limits the book puts on it are the caller's, not this function's: a restricted skill
+	// cannot be attempted at all, and "any skill for which the character has rolled a starting
+	// bonus can no longer be attempted as a common skill" -- once held, it is rolled as itself.
+	getCommonSkillChance(tmpattr1, tmpattr2, tmprating) {
+		var tmpcombined = this._getCombinedAttributes(tmpattr1, tmpattr2);
+		return (tmpcombined - (parseInt(tmprating) || 0)) * 5;
 	}
 
 	// This is the function which produces the combined attribute value for a skill.

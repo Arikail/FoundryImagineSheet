@@ -376,6 +376,55 @@
 	margin-right: 4px;
 }
 
+/* The untraded allowance, shown beside a traded one so the trade's cost is visible. */
+.slot-summary .sub {
+	font-size: 10px;
+	color: var(--imagine-muted);
+	margin-left: 3px;
+}
+
+/* The Player's Guide's slot tricks. One button per trade, at the rate it trades at. */
+.slot-trades {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding: 6px 2px;
+}
+
+.slot-trades button {
+	font-size: 11px;
+	padding: 2px 8px;
+	width: auto;
+}
+
+/* A trade with nothing left to spend. Still clickable -- it says why on hover, and the Game
+   Master may have a reason the rules do not know about. */
+.slot-trades button.spent {
+	color: var(--imagine-muted);
+	border-style: dashed;
+}
+
+.untrained-row {
+	margin: 0 0 8px;
+}
+
+.untrained-row button {
+	font-size: 11px;
+	padding: 2px 10px;
+	width: auto;
+}
+
+/* A skill rolled for each copy the character holds; the one taken is marked. */
+.imagine-skill-roll .skill-roll-line {
+	font-size: 12px;
+	color: var(--imagine-muted);
+}
+
+.imagine-skill-roll .skill-roll-line.chosen {
+	color: inherit;
+	font-weight: 600;
+}
+
 .skill-group summary {
 	cursor: pointer;
 	font-size: 11px;

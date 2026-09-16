@@ -7,11 +7,50 @@
 --}}
 <section class="tab imagine-skills" data-tab="skills" data-group="primary">
 
+	{{!-- Used against the allowance. The allowance is Knowledge's figure as traded: where a trade
+	      has moved it, the untraded figure is shown beside it so the cost is visible. A category
+	      holding more than it has slots for is flagged rather than corrected -- see
+	      _prepareSkillSlotStatus. --}}
 	<div class="slot-summary">
-		<span class="slot"><label>Class</label> {{system.skillSlots.classUsed}} / {{system.skillSlots.class}}</span>
-		<span class="slot"><label>Racial</label> {{system.skillSlots.racialUsed}} / {{system.skillSlots.racial}}</span>
-		<span class="slot"><label>Social</label> {{system.skillSlots.socialUsed}} / {{system.skillSlots.social}}</span>
+		<span class="slot {{#if system.skillSlots.classOver}}alarm{{/if}}"><label>Class</label>
+			{{system.skillSlots.classUsed}} / {{system.skillSlots.class}}
+			{{#unless (eq system.skillSlots.class system.skillSlots.classBase)}}<span class="sub">was {{system.skillSlots.classBase}}</span>{{/unless}}</span>
+		<span class="slot {{#if system.skillSlots.racialOver}}alarm{{/if}}"><label>Racial</label>
+			{{system.skillSlots.racialUsed}} / {{system.skillSlots.racial}}
+			{{#unless (eq system.skillSlots.racial system.skillSlots.racialBase)}}<span class="sub">was {{system.skillSlots.racialBase}}</span>{{/unless}}</span>
+		<span class="slot {{#if system.skillSlots.socialOver}}alarm{{/if}}"><label>Social</label>
+			{{system.skillSlots.socialUsed}} / {{system.skillSlots.social}}
+			{{#unless (eq system.skillSlots.social system.skillSlots.socialBase)}}<span class="sub">was {{system.skillSlots.socialBase}}</span>{{/unless}}</span>
 		<span class="slot"><label>Memorization</label> {{system.skillSlots.memorization}}</span>
+	</div>
+
+	{{!-- The Player's Guide's "slot tricks". A class slot is what the others trade FOR: there is
+	      no trade out of class and no class slot may be given up, which is why neither appears. --}}
+	<details class="skill-group slot-tricks" data-sync>
+		<summary>Trade skill slots <span class="count">unused slots only</span></summary>
+		<div class="slot-trades">
+			{{#each slotTransfers as |t|}}
+			{{#if t.sacrifice}}
+			<button type="button" data-action="sacrificeSlot" data-category="{{t.key}}"
+				class="{{#unless t.allowed}}spent{{/unless}}"
+				data-tooltip="{{#if t.allowed}}Give up one {{t.from}} slot; a skill you hold gains the bonus{{else}}{{t.reason}}{{/if}}">
+				1 {{t.from}} &rarr; {{t.to}}</button>
+			{{else}}
+			<button type="button" data-action="transferSlot" data-transfer="{{t.key}}"
+				class="{{#unless t.allowed}}spent{{/unless}}"
+				{{#unless t.allowed}}data-tooltip="{{t.reason}}"{{/unless}}>
+				{{t.cost}} {{t.from}} &rarr; {{t.gain}} {{t.to}}</button>
+			{{/if}}
+			{{/each}}
+		</div>
+		<p class="muted">A trade spends slots that are still unused, and cannot be undone.</p>
+	</details>
+
+	{{!-- Almost any skill can be tried without having learned it, at the base chance alone. A
+	      skill already held is rolled from its own row instead. --}}
+	<div class="untrained-row">
+		<button type="button" data-action="rollUntrainedSkill">
+			<i class="fa-solid fa-dice-d20"></i> Attempt a skill untrained</button>
 	</div>
 
 	{{!-- Most classes have nothing here -- his data never carried the skills gained at each

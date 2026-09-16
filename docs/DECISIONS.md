@@ -1692,3 +1692,83 @@ shows the new Hand field on Frost Breath, correctly defaulted to "Not hand-based
 **Not verified:** anything needing a running Foundry V14. Also not built, and deliberately left
 open rather than decided alone: whether the off-hand seconds cap should become an enforced,
 spendable pool on the round tracker -- see the note under the seconds-cap section above.
+
+### 2026-09-16 — The Skills module's four open items, and one that was already done
+
+`docs/PROGRESS.md`'s Skills row listed five things outstanding. **Item 5 was stale and is now
+corrected: `getSlotsNeededForClass` is already extracted** -- `class_skill_slots_needed()` has been
+in `tools/extract/extract_combat_tables.py` since the class pass, and every one of the 87 class
+documents carries `skillSlotsNeeded` (Acrobat 42, Assassin 56, and so on) with the field on
+`item-class.mjs`. Nothing was rebuilt; the row was wrong, not the code.
+
+**Duplicate skills are rolled once per copy, best taken.** Player's Guide, "Duplicate Class and
+Racial Skills": a character may hold the same skill both racially and as a class skill, and then
+"a skill roll can be made for each multiple of the same skill, and the best roll can be chosen",
+with his own worked example of a Civilized Human Rogue's Move Unseen -- a failure beside a success
+is a success, and a critical beside an ordinary success may be taken as the critical. **The copies
+do not share a chance**, since each carries its own bonuses, so each is resolved against its own
+and only then compared; `pickBestSkillRoll` therefore takes resolved results rather than one chance
+and a handful of dice. Ranking is by outcome in `SKILL_OUTCOMES` order, and where two rolls share
+an outcome the wider margin is named the chosen one -- that tie-break is presentation only (two
+ordinary successes do the same thing) and is commented as such. Every roll is shown on the card,
+not just the winner, because the book leaves the choice with the player.
+
+**His sheet does not contradict this.** Its only duplicate handling is a guard at selection time
+that refuses the same skill twice *within* the racial list (sheet-worker.js:7017, "A duplicate
+skill was selected. Nothing done."), which is compatible with the book: no duplicates inside a
+category, duplicates across categories rolled twice.
+
+**The slot tricks are ported at his rates, from his four conversion functions**, not from the
+book's prose: racial buys a class slot one for one (52649) or two social slots (52336), and two
+social slots buy back one racial (56119) or one class slot (56433). **There is no fifth function**
+-- nothing converts out of class, which is why `SLOT_TRANSFERS` has no class row and the sheet
+shows no such button. A slot may also be given up outright for 2d4% on a skill already held
+(52310, and the social twin at 55824 rolls the same 2d4), added to that skill's own modifier and
+deliberately not floored at zero, as his code adds it.
+
+**The moves are stored as counts, the allowance is derived.** Six counters on the character
+(`skillSlotMoves`) mirror what his sheet stores in `tmp_race_skill_slots_removed` and its siblings;
+`getSlotAllowance` applies them to Knowledge's figures. The base figures are kept beside the
+adjusted ones so the tab can show what a trade cost ("13, was 14"). A trade needs the slot it
+spends to still be unused, which is his guard ("There are no open slots to convert", 7353), tested
+against what is left rather than against the allowance. **One of his guards is deliberately not
+ported**: social-to-racial also requires racial to have an unavailable slot to open into (7607),
+which is his twenty-row sheet running out of rows rather than a rule.
+
+**Over-allocation is flagged, not prevented.** His sheet refuses outright ("More selected than
+total slots. Nothing done.", 7049) -- but it refuses at a character-generation step this port has
+not built, and a skill here is an Item that can be dropped on an actor from anywhere. Flagging
+matches how availability already marks an item that should not be there without deleting it, and
+leaves the Game Master the last word. The comparison needed its own derivation step,
+`_prepareSkillSlotStatus`, because the allowance is made before skills are prepared and the used
+counts during -- the same ordering problem `_prepareOffhandSkills` has.
+
+**Untrained rolls take the base chance and nothing else.** Player's Guide, "Who Can Use a Skill":
+"a character may attempt almost any skill in the game, whether or not he has actually learned or
+acquired the skill... The common skill chance is simply the base chance without the starting
+bonus." Two limits in the same passage are the caller's rather than the formula's: a skill already
+held is rolled as itself ("any skill for which the character has rolled a starting bonus can no
+longer be attempted as a common skill"), and a restricted skill cannot be tried at all.
+
+**The restricted flag has nowhere to read from, and that is a finding.** `isRestricted` is already
+on the skill schema, and the picker honours it -- but **his `skilldict` has no restricted column at
+all**. Comparing rows shows the seventh column is learn time, not restriction: Climb carries "32"
+there and Second Weapon Lore, which the book marks `Restricted: Yes`, carries "". Restriction is
+stated per skill in the book and was never brought across, so all 674 extracted skills read as
+unrestricted today. Filtering on the flag now rather than later means nothing has to be rewired
+when it is populated; extracting it from the book is left written down rather than guessed at from
+the blank learn time, which is a correlation and not the datum.
+
+**Verified:** derivation 227 (44 new: the four trade rates, both sacrifices, the open-slot guards,
+over-allocation flagged on a real character holding one class skill too many, the untrained chance
+against a held skill's own, and the book's two worked duplicate-skill examples), combat 345,
+creature 139 and availability 39 unchanged, 27 modules parse (the new `skills-rules.mjs` added to
+the syntax harness). The sheet preview was given a real trade -- one racial for two social -- and
+shows "RACIAL 1 / 13 was 14, SOCIAL 1 / 14 was 12" against a real derived character, with all six
+trade buttons at their real rates; the isolated Elemental Dancer render doubles as the check of the
+refused state, where all six come back marked spent with their reasons ("Needs 2 unused social
+slots; 0 left.").
+
+**Not verified:** anything needing a running Foundry V14 -- the trade and sacrifice dialogs, the
+2d4 landing on the chosen skill, and the untrained picker, which reads the skill compendium and so
+cannot be exercised in a preview harness at all.

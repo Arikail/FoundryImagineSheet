@@ -28,6 +28,7 @@ globalThis.game = { imagine: { getAvailabilityRules: () => null } };
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 const R = await import("../module/combat/combat-rules.mjs");
+const S = await import("../module/skills-rules.mjs");
 
 const results = [];
 function check(label, actual, expected) {
@@ -62,6 +63,10 @@ function makeCharacter(ratings, title = 12, items = [], extra = {}) {
 		          weaponLoreList: extra.weaponLoreList ?? "", missileLoreList: extra.missileLoreList ?? "",
 		          projectileLoreList: extra.projectileLoreList ?? "" },
 		physical: { weight: 0, handedness: extra.handedness ?? "" },
+		skillSlotMoves: Object.assign({
+			racialToClass: 0, racialToSocial: 0, socialToRacial: 0, socialToClass: 0,
+			racialSacrificed: 0, socialSacrificed: 0
+		}, extra.skillSlotMoves ?? {}),
 		movement: {
 			walk: { hourly: 0, tenSec: 0, oneSec: 0 },
 			jog:  { hourly: 0, tenSec: 0, oneSec: 0 },
@@ -711,6 +716,123 @@ const slots = makeCharacter({ knw: 20 });
 check("skill slots read off the Knowledge table",
 	[slots.skillSlots.class, slots.skillSlots.racial, slots.skillSlots.social],
 	[slots.attributes.knw.mods.classSkills, slots.attributes.knw.mods.raceSkills, slots.attributes.knw.mods.socialSkills]);
+check("with no trades made, the allowance is the untraded figure",
+	[slots.skillSlots.classBase, slots.skillSlots.racialBase, slots.skillSlots.socialBase],
+	[slots.skillSlots.class, slots.skillSlots.racial, slots.skillSlots.social]);
+
+// --- the slot tricks, as rules -----------------------------------------------------
+// The four rates are his, from the four conversion functions: racial buys a class slot one for
+// one or two social slots, and two social slots buy back one racial or one class slot. There is
+// no trade out of class in his sheet at all, which is why there is no fifth entry to test.
+const base = { class: 10, racial: 6, social: 4 };
+check("one racial buys one class",
+	S.getSlotAllowance(base, { racialToClass: 1 }), { class: 11, racial: 5, social: 4 });
+check("one racial buys TWO social",
+	S.getSlotAllowance(base, { racialToSocial: 1 }), { class: 10, racial: 5, social: 6 });
+check("two social buy one racial",
+	S.getSlotAllowance(base, { socialToRacial: 1 }), { class: 10, racial: 7, social: 2 });
+check("two social buy one class",
+	S.getSlotAllowance(base, { socialToClass: 1 }), { class: 11, racial: 6, social: 2 });
+check("the same trade twice costs twice",
+	S.getSlotAllowance(base, { racialToSocial: 2 }), { class: 10, racial: 4, social: 8 });
+check("trades in different directions both land",
+	S.getSlotAllowance(base, { racialToClass: 1, socialToClass: 2 }),
+	{ class: 13, racial: 5, social: 0 });
+check("class slots are never traded away, only into",
+	Object.values(S.SLOT_TRANSFERS).some(t => t.from == "class"), false);
+
+// A slot given up for a bonus costs the slot and buys no other slot at all.
+check("giving up a racial slot costs the slot",
+	S.getSlotAllowance(base, { racialSacrificed: 2 }), { class: 10, racial: 4, social: 4 });
+check("giving up a social slot likewise",
+	S.getSlotAllowance(base, { socialSacrificed: 1 }), { class: 10, racial: 6, social: 3 });
+check("no moves at all changes nothing", S.getSlotAllowance(base, {}), base);
+check("only racial and social can be given up", S.SACRIFICEABLE_SLOTS, ["racial", "social"]);
+
+// His guard: the slot spent has to be one that is still open. A filled slot cannot be traded.
+check("a trade needs an unused slot to spend",
+	S.canTransferSlot("racialToClass", { racial: 3 }, { racial: 3 }).allowed, false);
+check("...and goes through when one is free",
+	S.canTransferSlot("racialToClass", { racial: 3 }, { racial: 2 }).allowed, true);
+check("a two-slot trade needs BOTH free",
+	S.canTransferSlot("socialToClass", { social: 3 }, { social: 2 }).allowed, false);
+check("...and goes through with two free",
+	S.canTransferSlot("socialToClass", { social: 3 }, { social: 1 }).allowed, true);
+check("an unknown trade is refused rather than guessed at",
+	S.canTransferSlot("classToRacial", { class: 9 }, { class: 0 }).allowed, false);
+check("giving up a slot needs a skill for the bonus to land on",
+	S.canSacrificeSlot("racial", { racial: 3 }, { racial: 0 }, false).allowed, false);
+check("...and goes through with one",
+	S.canSacrificeSlot("racial", { racial: 3 }, { racial: 0 }, true).allowed, true);
+check("a class slot cannot be given up",
+	S.canSacrificeSlot("class", { class: 9 }, { class: 0 }, true).allowed, false);
+
+// --- the trades on a real character -------------------------------------------------
+const traded = makeCharacter({ knw: 20 }, 12, [], { skillSlotMoves: { racialToSocial: 1 } });
+check("the traded allowance moves, and the untraded figure is kept beside it",
+	[traded.skillSlots.racial, traded.skillSlots.racialBase,
+	 traded.skillSlots.social, traded.skillSlots.socialBase],
+	[slots.skillSlots.racial - 1, slots.skillSlots.racial,
+	 slots.skillSlots.social + 2, slots.skillSlots.social]);
+check("nothing is over-allocated with no skills held",
+	[traded.skillSlots.classOver, traded.skillSlots.racialOver, traded.skillSlots.socialOver],
+	[false, false, false]);
+
+// Over-allocation is flagged, not corrected -- his sheet refuses the selection instead, at a
+// character-generation step this port has not built.
+const classSkill = (name) => ({ type: "skill", name,
+	system: { attr1: "KNW", attr2: "", skillRating: 10, startingBonus: 0, abilityBonus: 0,
+	          misc: 0, isCommon: false, category: "class" } });
+const overSpent = makeCharacter({ knw: 20 }, 12,
+	Array.from({ length: slots.skillSlots.class + 1 }, (_, i) => classSkill("Skill " + i)));
+check("holding more class skills than slots is flagged", overSpent.skillSlots.classOver, true);
+check("...and the skills are still all there", overSpent.skillSlots.classUsed, slots.skillSlots.class + 1);
+check("...while the other categories are untouched",
+	[overSpent.skillSlots.racialOver, overSpent.skillSlots.socialOver], [false, false]);
+
+// --- a skill attempted untrained ------------------------------------------------------
+// Player's Guide, "Who Can Use a Skill": the base chance alone, no starting bonus. Same first
+// half of the formula a held skill uses, and deliberately none of the second half.
+const untrained = makeCharacter({ str: 16, agl: 14, knw: 20 });
+check("one governing attribute, as it stands",
+	untrained.getCommonSkillChance("STR", "", 10), (16 - 10) * 5);
+check("two are averaged and rounded up, as for a held skill",
+	untrained.getCommonSkillChance("STR", "AGL", 10), (15 - 10) * 5);
+check("a rating above the attributes gives a negative chance rather than a floor",
+	untrained.getCommonSkillChance("AGL", "", 20), (14 - 20) * 5);
+check("it carries no starting bonus, unlike the same skill held",
+	untrained.getCommonSkillChance("STR", "", 10),
+	makeCharacter({ str: 16 }, 12, [{ type: "skill", name: "Climb",
+		system: { attr1: "STR", attr2: "", skillRating: 10, startingBonus: 30, abilityBonus: 0,
+		          misc: 0, isCommon: false, category: "class" } }])
+		.parent.items[0].system.totalChance - 30);
+
+// --- duplicate skills ---------------------------------------------------------------
+// Player's Guide, "Duplicate Class and Racial Skills": roll for each copy, take the best. His
+// worked example is a failed roll beside a made one, and a critical beside an ordinary success.
+check("rolled at the chance succeeds", S.resolveSkillOutcome(60, 60).outcome, "Succeeded");
+check("one over fails", S.resolveSkillOutcome(60, 61).outcome, "Failed");
+check("beating it by more than 20 is critical", S.resolveSkillOutcome(60, 39).outcome, "Critical success");
+check("...and by exactly 20 is not", S.resolveSkillOutcome(60, 40).outcome, "Succeeded");
+check("missing by more than 20 is a critical failure", S.resolveSkillOutcome(60, 81).outcome, "Critical failure");
+check("...and by exactly 20 is not", S.resolveSkillOutcome(60, 80).outcome, "Failed");
+
+const failMade = [S.resolveSkillOutcome(40, 75), S.resolveSkillOutcome(60, 50)];
+check("his example: one failed and one made is a success",
+	S.pickBestSkillRoll(failMade).best.outcome, "Succeeded");
+check("...and the made one is the one chosen", S.pickBestSkillRoll(failMade).bestIndex, 1);
+const critAndPlain = [S.resolveSkillOutcome(90, 60), S.resolveSkillOutcome(40, 39)];
+check("his example: a critical beside an ordinary success is the critical",
+	S.pickBestSkillRoll(critAndPlain).best.outcome, "Critical success");
+check("the copies are rolled against their OWN chances, not a shared one",
+	S.pickBestSkillRoll(critAndPlain).rolls.map(r => r.chance), [90, 40]);
+check("every roll is reported, not just the winner",
+	S.pickBestSkillRoll(failMade).rolls.length, 2);
+check("two of the same outcome pick the wider margin",
+	S.pickBestSkillRoll([S.resolveSkillOutcome(40, 39), S.resolveSkillOutcome(60, 45)]).bestIndex, 1);
+check("a single copy is simply itself",
+	S.pickBestSkillRoll([S.resolveSkillOutcome(50, 10)]).bestIndex, 0);
+check("no copies at all is not an error", S.pickBestSkillRoll([]).best, null);
 
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;

@@ -14,6 +14,10 @@
 
 import { rollWeaponAttack } from "../combat/attack.mjs";
 import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
+import {
+	resolveSkillOutcome, pickBestSkillRoll, canTransferSlot, canSacrificeSlot,
+	SLOT_TRANSFERS, SLOT_SACRIFICE_DICE, SACRIFICEABLE_SLOTS
+} from "../skills-rules.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -30,6 +34,9 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			rollSkill: ImagineCharacterSheet.#onRollSkill,
 			rollWeaponAttack: ImagineCharacterSheet.#onRollWeaponAttack,
 			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand,
+			rollUntrainedSkill: ImagineCharacterSheet.#onRollUntrainedSkill,
+			transferSlot: ImagineCharacterSheet.#onTransferSlot,
+			sacrificeSlot: ImagineCharacterSheet.#onSacrificeSlot,
 			addLanguage: ImagineCharacterSheet.#onAddLanguage,
 			deleteLanguage: ImagineCharacterSheet.#onDeleteLanguage
 		}
@@ -77,8 +84,45 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.lore = ImagineCharacterSheet.#buildLorePanel(this.document.system);
 		tmpcontext.languages = ImagineCharacterSheet.#buildLanguageRows(this.document.system);
 		tmpcontext.classProgress = ImagineCharacterSheet.#buildClassProgress(this.document.system);
+		tmpcontext.slotTransfers = ImagineCharacterSheet.#buildSlotTransfers(this.document);
 
 		return tmpcontext;
+	}
+
+	// This is the function which lists every slot trick with whether it can be taken right now, so
+	// one that has nothing left to spend explains itself on hover rather than failing on click.
+	// The rates themselves come from SLOT_TRANSFERS and are not restated here.
+	//
+	// The four trades and the two sacrifices are one list because the tab shows them as one row of
+	// buttons; a sacrifice carries no destination, which is what `sacrifice` marks.
+	static #buildSlotTransfers(tmpactor) {
+		var tmpslots = tmpactor.system.skillSlots;
+		var tmpallowance = { class: tmpslots.class, racial: tmpslots.racial, social: tmpslots.social };
+		var tmpused = { class: tmpslots.classUsed, racial: tmpslots.racialUsed, social: tmpslots.socialUsed };
+		var tmphasskill = tmpactor.items.some(i => i.type == "skill");
+
+		var tmprows = [];
+		for (const tmpkey of Object.keys(SLOT_TRANSFERS)) {
+			var tmptransfer = SLOT_TRANSFERS[tmpkey];
+			var tmpcheck = canTransferSlot(tmpkey, tmpallowance, tmpused);
+			tmprows.push({
+				key: tmpkey, sacrifice: false,
+				from: tmptransfer.from, to: tmptransfer.to,
+				cost: tmptransfer.cost, gain: tmptransfer.gain,
+				allowed: tmpcheck.allowed, reason: tmpcheck.reason
+			});
+		}
+
+		for (const tmpcategory of SACRIFICEABLE_SLOTS) {
+			var tmpsac = canSacrificeSlot(tmpcategory, tmpallowance, tmpused, tmphasskill);
+			tmprows.push({
+				key: tmpcategory, sacrifice: true,
+				from: tmpcategory, to: `${SLOT_SACRIFICE_DICE}%`,
+				cost: 1, gain: 1,
+				allowed: tmpsac.allowed, reason: tmpsac.reason
+			});
+		}
+		return tmprows;
 	}
 
 	// This is the function which shows the class skills gained around the character's current
@@ -342,24 +386,194 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	// This is the function which rolls a skill. Player's Guide p.93: the roll succeeds on
 	// equal to or under the total chance, and a margin of more than 20% either way is a
 	// critical success or failure.
+	// This is the function which rolls a skill, once for every copy of it the character holds.
+	//
+	// Player's Guide, "Duplicate Class and Racial Skills": the same skill held both racially and as
+	// a class skill is rolled for each copy and the best result taken. The copies do NOT share a
+	// chance -- each carries its own bonuses -- so each is rolled against its own and compared
+	// afterwards, which is what pickBestSkillRoll does. Every roll is shown, not just the winner.
+	//
+	// Copies are found by name, which is what makes two items one skill here. His sheet matches the
+	// same way when it refuses a duplicate within a category (sheet-worker.js:7017).
 	static async #onRollSkill(event, target) {
 		var tmpitem = this.document.items.get(target.dataset.itemId);
 		if (!tmpitem) { return; }
 
-		var tmpchance = tmpitem.system.totalChance;
-		var tmproll = await new Roll("1d100").evaluate();
-		var tmpmargin = tmpchance - tmproll.total;
+		var tmpcopies = this.document.items.filter(i => i.type == "skill" && i.name == tmpitem.name);
+		if (!tmpcopies.length) { tmpcopies = [tmpitem]; }
 
-		var tmpoutcome = "Failed";
-		if (tmproll.total <= tmpchance) {
-			tmpoutcome = (tmpmargin > 20) ? "Critical success" : "Succeeded";
-		} else {
-			tmpoutcome = (tmpmargin < -20) ? "Critical failure" : "Failed";
+		var tmprolls = [];
+		var tmpresults = [];
+		for (const tmpcopy of tmpcopies) {
+			var tmproll = await new Roll("1d100").evaluate();
+			tmprolls.push(tmproll);
+			var tmpresult = resolveSkillOutcome(tmpcopy.system.totalChance, tmproll.total);
+			tmpresult.category = tmpcopy.system.category;
+			tmpresults.push(tmpresult);
 		}
+
+		var tmpbest = pickBestSkillRoll(tmpresults);
+
+		var tmplines = tmpresults.map(function (tmpresult, tmpindex) {
+			var tmpchosen = tmpindex == tmpbest.bestIndex;
+			var tmplabel = tmpresult.category ? `${tmpresult.category} ` : "";
+			return `<div class="skill-roll-line${tmpchosen ? " chosen" : ""}">${tmplabel}${tmpresult.chance}%:
+				rolled ${tmpresult.roll} &mdash; <strong>${tmpresult.outcome}</strong></div>`;
+		}).join("");
+
+		var tmpheading = tmpresults.length > 1
+			? `${tmpitem.name} &mdash; held ${tmpresults.length} times, best taken`
+			: `${tmpitem.name}`;
+
+		await ChatMessage.create({
+			speaker: ChatMessage.getSpeaker({ actor: this.document }),
+			flavor: `${tmpheading} &mdash; <strong>${tmpbest.best.outcome}</strong>`,
+			content: `<div class="imagine-skill-roll">${tmplines}</div>`,
+			rolls: tmprolls
+		});
+	}
+
+	// This is the function which attempts a skill the character has never learned.
+	//
+	// Player's Guide, "Who Can Use a Skill": almost any skill may be tried untrained, at the base
+	// chance with no starting bonus. Two limits come from the same passage and are applied here
+	// rather than in the chance itself: a skill already held is rolled as itself instead (the book
+	// is explicit -- "any skill for which the character has rolled a starting bonus can no longer
+	// be attempted as a common skill"), and a restricted skill cannot be tried at all.
+	//
+	// THE RESTRICTED FLAG HAS NO DATA BEHIND IT YET. His skilldict carries no restricted column --
+	// the book states it per skill and he never brought it across -- so `isRestricted` is on the
+	// schema, honoured here, and false on all 674 extracted skills until something populates it.
+	// Filtering on it now rather than later means nothing has to be rewired when it lands.
+	static async #onRollUntrainedSkill(event, target) {
+		var tmppack = game.packs.get("world.imagine-skills");
+		if (!tmppack) {
+			ui.notifications.warn("No skill compendium in this world. Import the system content first.");
+			return;
+		}
+
+		var tmpindex = await tmppack.getIndex({ fields: ["system.attr1", "system.attr2",
+			"system.skillRating", "system.isRestricted"] });
+		var tmpheld = new Set(this.document.items.filter(i => i.type == "skill").map(i => i.name));
+		var tmpoffer = tmpindex
+			.filter(e => !tmpheld.has(e.name) && !e.system?.isRestricted)
+			.sort((a, b) => a.name.localeCompare(b.name));
+		if (!tmpoffer.length) {
+			ui.notifications.info("No skill left to attempt untrained.");
+			return;
+		}
+
+		var tmpoptions = tmpoffer
+			.map(e => `<option value="${e._id}">${foundry.utils.escapeHTML(e.name)}</option>`).join("");
+		var tmpchoice = await foundry.applications.api.DialogV2.prompt({
+			window: { title: "Attempt a Skill Untrained" },
+			content: `<p class="hint">The base chance alone, with no starting bonus.</p>
+				<div class="form-group"><label>Skill</label><select name="skill">${tmpoptions}</select></div>
+				<div class="form-group"><label>Modifier</label>
+					<input type="number" name="modifier" value="0"></div>`,
+			rejectClose: false,
+			ok: {
+				label: "Attempt it",
+				callback: (event, button) => ({
+					id: button.form.elements.skill.value,
+					modifier: parseInt(button.form.elements.modifier.value) || 0
+				})
+			}
+		});
+		if (!tmpchoice) { return; }
+
+		var tmpentry = tmpoffer.find(e => e._id == tmpchoice.id);
+		if (!tmpentry) { return; }
+
+		var tmpchance = this.document.system.getCommonSkillChance(
+			tmpentry.system?.attr1, tmpentry.system?.attr2, tmpentry.system?.skillRating)
+			+ tmpchoice.modifier;
+
+		var tmproll = await new Roll("1d100").evaluate();
+		var tmpresult = resolveSkillOutcome(tmpchance, tmproll.total);
 
 		await tmproll.toMessage({
 			speaker: ChatMessage.getSpeaker({ actor: this.document }),
-			flavor: `${tmpitem.name} &mdash; ${tmpchance}% &mdash; <strong>${tmpoutcome}</strong>`
+			flavor: `${tmpentry.name} (untrained) &mdash; ${tmpresult.chance}% &mdash;
+				<strong>${tmpresult.outcome}</strong>`
+		});
+	}
+
+	// This is the function which trades one category's skill slots for another's -- the Player's
+	// Guide's "slot tricks", ported from his four conversion functions. The rates are in
+	// SLOT_TRANSFERS; nothing about them is decided here.
+	//
+	// It asks first. His sheet's trade is a one-way door (there is no function that undoes one),
+	// and this port keeps that, so a mis-click would otherwise cost a slot with no way back.
+	static async #onTransferSlot(event, target) {
+		var tmpkey = target.dataset.transfer;
+		var tmptransfer = SLOT_TRANSFERS[tmpkey];
+		if (!tmptransfer) { return; }
+
+		var tmpslots = this.document.system.skillSlots;
+		var tmpallowed = canTransferSlot(tmpkey,
+			{ class: tmpslots.class, racial: tmpslots.racial, social: tmpslots.social },
+			{ class: tmpslots.classUsed, racial: tmpslots.racialUsed, social: tmpslots.socialUsed });
+		if (!tmpallowed.allowed) {
+			ui.notifications.warn(tmpallowed.reason);
+			return;
+		}
+
+		var tmpconfirmed = await foundry.applications.api.DialogV2.confirm({
+			window: { title: "Trade Skill Slots" },
+			content: `<p>Give up ${tmptransfer.cost} ${tmptransfer.from} slot${tmptransfer.cost > 1 ? "s" : ""}
+				for ${tmptransfer.gain} ${tmptransfer.to} slot${tmptransfer.gain > 1 ? "s" : ""}?</p>
+				<p class="hint">This cannot be undone.</p>`
+		});
+		if (!tmpconfirmed) { return; }
+
+		var tmpmoves = this.document.system.skillSlotMoves;
+		await this.document.update({ [`system.skillSlotMoves.${tmpkey}`]: (parseInt(tmpmoves[tmpkey]) || 0) + 1 });
+	}
+
+	// This is the function which gives up a slot outright for a bonus to a skill already held:
+	// 2d4%, added to that skill's own modifier, from his sacrificeRacialSkillSlot and its social
+	// twin. The bonus is added rather than floored at zero, as his code adds it -- a skill carrying
+	// a larger penalty stays negative.
+	static async #onSacrificeSlot(event, target) {
+		var tmpcategory = target.dataset.category;
+		var tmpslots = this.document.system.skillSlots;
+		var tmpskills = this.document.items.filter(i => i.type == "skill");
+
+		var tmpallowed = canSacrificeSlot(tmpcategory,
+			{ class: tmpslots.class, racial: tmpslots.racial, social: tmpslots.social },
+			{ class: tmpslots.classUsed, racial: tmpslots.racialUsed, social: tmpslots.socialUsed },
+			tmpskills.length > 0);
+		if (!tmpallowed.allowed) {
+			ui.notifications.warn(tmpallowed.reason);
+			return;
+		}
+
+		var tmpoptions = tmpskills
+			.map(s => `<option value="${s.id}">${foundry.utils.escapeHTML(s.name)}</option>`).join("");
+		var tmptarget = await foundry.applications.api.DialogV2.prompt({
+			window: { title: "Give Up a Skill Slot" },
+			content: `<p>Give up one ${tmpcategory} slot. The skill chosen gains ${SLOT_SACRIFICE_DICE}%.</p>
+				<div class="form-group"><label>Skill</label><select name="skill">${tmpoptions}</select></div>
+				<p class="hint">This cannot be undone.</p>`,
+			rejectClose: false,
+			ok: { label: "Give it up", callback: (event, button) => button.form.elements.skill.value }
+		});
+		if (!tmptarget) { return; }
+
+		var tmpskill = this.document.items.get(tmptarget);
+		if (!tmpskill) { return; }
+
+		var tmproll = await new Roll(SLOT_SACRIFICE_DICE).evaluate();
+		var tmpmoves = this.document.system.skillSlotMoves;
+		var tmpkey = tmpcategory == "racial" ? "racialSacrificed" : "socialSacrificed";
+
+		await this.document.update({ [`system.skillSlotMoves.${tmpkey}`]: (parseInt(tmpmoves[tmpkey]) || 0) + 1 });
+		await tmpskill.update({ "system.misc": (parseInt(tmpskill.system.misc) || 0) + tmproll.total });
+
+		await tmproll.toMessage({
+			speaker: ChatMessage.getSpeaker({ actor: this.document }),
+			flavor: `Gave up a ${tmpcategory} skill slot &mdash; ${tmpskill.name} gains the bonus`
 		});
 	}
 }

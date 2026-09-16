@@ -65,6 +65,7 @@ globalThis.game = { imagine: { getAvailabilityRules: () => ({
 
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 const R = await import("../module/combat/combat-rules.mjs");
+const S = await import("../module/skills-rules.mjs");
 
 Handlebars.registerHelper("eq", (a, b) => a === b);
 Handlebars.registerHelper("gt", (a, b) => a > b);
@@ -154,6 +155,10 @@ const character = new ImagineCharacterData({
 		{ name: "Common", speak: true, write: true },
 		{ name: "Elvish", speak: true, write: false }
 	],
+	// One racial slot traded for two social ones, so the traded allowance and the untraded figure
+	// beside it are both actually exercised here rather than only in the rule tests.
+	skillSlotMoves: { racialToClass: 0, racialToSocial: 1, socialToRacial: 0, socialToClass: 0,
+	                  racialSacrificed: 0, socialSacrificed: 0 },
 	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
 	          weaponLoreList: "Bastard Sword, Garrote", missileLoreList: "",
 	          painThreshold: -2, highPainThreshold: false, damageAbsorb: 12,
@@ -255,7 +260,28 @@ const ctx = {
 	],
 	// Same indexing the sheet class does for the description tab's languages, so a row can be
 	// written back to the right entry and removed by index.
-	languages: character.languages.map((l, i) => ({ ...l, index: i }))
+	languages: character.languages.map((l, i) => ({ ...l, index: i })),
+	// Kept in sync with #buildSlotTransfers in actor-character-sheet.mjs.
+	slotTransfers: (() => {
+		const allowance = { class: character.skillSlots.class, racial: character.skillSlots.racial,
+		                    social: character.skillSlots.social };
+		const used = { class: character.skillSlots.classUsed, racial: character.skillSlots.racialUsed,
+		               social: character.skillSlots.socialUsed };
+		const hasSkill = skills.length > 0;
+		const rows = Object.keys(S.SLOT_TRANSFERS).map((key) => {
+			const t = S.SLOT_TRANSFERS[key];
+			const check = S.canTransferSlot(key, allowance, used);
+			return { key, sacrifice: false, from: t.from, to: t.to, cost: t.cost, gain: t.gain,
+			         allowed: check.allowed, reason: check.reason };
+		});
+		for (const category of S.SACRIFICEABLE_SLOTS) {
+			const check = S.canSacrificeSlot(category, allowance, used, hasSkill);
+			rows.push({ key: category, sacrifice: true, from: category,
+			            to: `${S.SLOT_SACRIFICE_DICE}%`, cost: 1, gain: 1,
+			            allowed: check.allowed, reason: check.reason });
+		}
+		return rows;
+	})()
 };
 
 async function render(path, context) {
@@ -337,8 +363,32 @@ function buildClassProgress(classItem, title) {
 }
 
 const edCtx = {
-	system: { skillSlots: { classUsed: 0, class: 0, racialUsed: 0, racial: 0, socialUsed: 0, social: 0, memorization: 0 } },
+	// This render exists to check the class-progression rows only, so the slot figures are zeros
+	// -- but they carry the same shape the sheet builds, base figures included, so the "traded
+	// from" line has something to compare against rather than rendering against nothing.
+	system: { skillSlots: { classUsed: 0, class: 0, classBase: 0, racialUsed: 0, racial: 0,
+	                        racialBase: 0, socialUsed: 0, social: 0, socialBase: 0, memorization: 0,
+	                        classOver: false, racialOver: false, socialOver: false } },
 	skills: { class: [], racial: [], social: [] },
+	// Zero slots and no skills, so every trade comes back refused -- which makes this render the
+	// check that a trade with nothing to spend shows as spent and says why, the state the main
+	// character above never reaches.
+	slotTransfers: (() => {
+		const none = { class: 0, racial: 0, social: 0 };
+		const rows = Object.keys(S.SLOT_TRANSFERS).map((key) => {
+			const t = S.SLOT_TRANSFERS[key];
+			const check = S.canTransferSlot(key, none, none);
+			return { key, sacrifice: false, from: t.from, to: t.to, cost: t.cost, gain: t.gain,
+			         allowed: check.allowed, reason: check.reason };
+		});
+		for (const category of S.SACRIFICEABLE_SLOTS) {
+			const check = S.canSacrificeSlot(category, none, none, false);
+			rows.push({ key: category, sacrifice: true, from: category,
+			            to: `${S.SLOT_SACRIFICE_DICE}%`, cost: 1, gain: 1,
+			            allowed: check.allowed, reason: check.reason });
+		}
+		return rows;
+	})(),
 	classProgress: buildClassProgress(edClass, 7)
 };
 const edCheckEl = document.getElementById("ed-check");
