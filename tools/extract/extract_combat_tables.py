@@ -106,8 +106,35 @@ def attack_charts():
 
 
 def body_charts():
+    """
+    Every body chart, with one confirmed typo corrected on the way through.
+
+    Five charts write a thorax multiplier as `Vital:2` where every other area in every other
+    chart writes `Vital:x2`. His createBodyAreas looks for the "x", so `Vital:2` matches nothing
+    and the area silently keeps the previous area's multiplier -- x1 in all nine cases.
+
+    He confirmed it 2026-09-16: "Item 9 is a typo/bug fix, it should be x2." So it is corrected
+    here rather than reproduced, and every correction is reported. This is the only place the
+    extraction edits his data, and it is on his word (docs/UPSTREAM-ISSUES.md item 9).
+    """
     start, body = function_body("getBodyList")
     charts, _ = switch_cases(body, "newBodyList")
+
+    tmpfixed = []
+    for tmpname, tmpchart in charts.items():
+        # A multiplier with no "x" -- "(Vital:2)" -- and never a legitimate "(Vital:x2)".
+        tmpnew = re.sub(r"\(([A-Za-z]+):(\d)\)", r"(\1:x\2)", tmpchart)
+        if tmpnew != tmpchart:
+            charts[tmpname] = tmpnew
+            for tmparea in re.findall(r"([A-Za-z ]+)\([A-Za-z]+:\d\)", tmpchart):
+                tmpfixed.append("%s / %s" % (tmpname, tmparea.strip(",").strip()))
+
+    if tmpfixed:
+        print("  %d body-chart multiplier(s) corrected from his confirmed typo (item 9, x2 not x1):"
+              % len(tmpfixed))
+        for tmpentry in tmpfixed:
+            print("      %s" % tmpentry)
+
     return charts, start
 
 

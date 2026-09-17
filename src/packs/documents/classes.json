@@ -4110,6 +4110,78 @@
     }
   },
   {
+    "name": "Monk",
+    "type": "class",
+    "system": {
+      "casting": {
+        "isCaster": false,
+        "isInvoker": true,
+        "casterStartTitle": 0,
+        "invokerStartTitle": 3,
+        "communeTitleMod": 0,
+        "castingNotes": "False"
+      },
+      "requirements": {
+        "alignment": "Any",
+        "focusAttributes": "AGL, WIS, WIL",
+        "attribQualify": [
+          0,
+          14,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13
+        ]
+      },
+      "advancement": {
+        "titles": [
+          "Acolyte",
+          "Initiate",
+          "Brother",
+          "Friar",
+          "Adept",
+          "Disciple",
+          "Monk",
+          "Prophet",
+          "Master",
+          "Master",
+          "Master Monk",
+          "Master Monk",
+          "High Master",
+          "High Master",
+          "Grand Master"
+        ],
+        "goalAttr1": "AGL",
+        "goalAttr2": "WIS"
+      },
+      "classMods": [
+        "+30% to core skills",
+        "+10% to divine skills",
+        "+5% to combat skills"
+      ],
+      "armorUsage": "Any leather/hide. Any half shirt. Any long shirt or full shirt of ringmail. Any bracer. Any helm but great helm.",
+      "weaponUsage": "Bola, bow, cat's claws, club, dagger, knife, nunchaku, quarterstaff, rod, sai, scimitar, sling, spear, spear sword, stake staff, stars, tiger's claws, tri-staff.",
+      "attackSkill": "Novice",
+      "attackSkillList": "Novice at 1, Intermediate at 3, Advanced at 6, Expert at 9, Master at 12, Grandmaster(mastered weapons at 12)",
+      "loreAttackTitle": 11,
+      "weaponLoreTitle": 11,
+      "missileLoreTitle": 0,
+      "projectileLoreTitle": 0,
+      "secondWeaponKnowTitle": 0,
+      "secondWeaponLoreTitle": 0,
+      "multiMissileLoreTitle": 0,
+      "skillSlotsNeeded": 56,
+      "classType": "Priest subclass",
+      "description": "Monks seek enlightenment and understanding. They live either in a small community of like-minded individuals, or they follow their calling alone and walk among the races seeking knowledge, understanding their place in life. They are trained to fight both with and without weapons. Early in the career of a Monk they will gain a greater connection with their deity and be able to call upon divine power."
+    }
+  },
+  {
     "name": "Mounted Archer",
     "type": "class",
     "system": {

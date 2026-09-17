@@ -39,14 +39,18 @@ def load_raw(name):
 
 
 def map_dictionary(name, fields, payload):
-    """Returns (mapped, issues, widths). Rows of unexpected width are not mapped.
+    """Returns (mapped, issues, widths, repaired). Rows of unexpected width are not mapped.
 
     A map given as "LIST:<key>" means the row is a variable-length list rather
     than fixed columns, and is stored whole under that key.
+
+    A row listed in column_maps.ROW_REPAIRS is repaired first, on his confirmation rather than
+    on our reading, and reported. Without that, a short row is simply dropped.
     """
     mapped = {}
     issues = []
     widths = Counter()
+    repaired = []
 
     as_list = isinstance(fields, str) and fields.startswith("LIST:")
     list_key = fields.split(":", 1)[1] if as_list else None
@@ -54,6 +58,14 @@ def map_dictionary(name, fields, payload):
     for key, row in payload["entries"].items():
         if not isinstance(row, list):
             row = [row]
+
+        # A row he has confirmed a repair for. Without this the row is simply the wrong width
+        # and gets dropped, which is what happened to Monk until he confirmed the fix.
+        tmprepair = column_maps.ROW_REPAIRS.get((name, key))
+        if tmprepair and len(row) == tmprepair[0]:
+            row = row[:tmprepair[1]] + [""] + row[tmprepair[1]:]
+            repaired.append((key, tmprepair[2]))
+
         widths[len(row)] += 1
         if as_list:
             mapped[key] = {list_key: row}
@@ -63,7 +75,7 @@ def map_dictionary(name, fields, payload):
             continue
         mapped[key] = dict(zip(fields, row))
 
-    return mapped, issues, widths
+    return mapped, issues, widths, repaired
 
 
 def main():
@@ -88,8 +100,12 @@ def main():
             bad += 1
             continue
 
-        mapped, issues, widths = map_dictionary(name, fields, payload)
+        mapped, issues, widths, repaired = map_dictionary(name, fields, payload)
         total = len(payload["entries"])
+
+        for key, why in repaired:
+            print(f"{name:32} {'':6} {'':5}  REPAIRED \"{key}\" on his confirmation")
+            print(f"{'':32} {'':6} {'':5}    {why}")
 
         if not issues:
             print(f"{name:32} {total:6} {len(fields) if not isinstance(fields,str) else 'list':>5}  ok")

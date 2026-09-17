@@ -8,7 +8,11 @@ Status: `open` (not yet raised) / `raised` (passed to him) / `answered` / `fixed
 
 ## 1. `Monk` class row is one column short — affects the live sheet
 
-**Status:** open · **Severity:** real bug, currently visible in play
+**Status:** ANSWERED 2026-09-16, fix confirmed · **Severity:** real bug, currently visible in play
+
+**His answer:** *"sounds like the right fix"* — insert one empty `classMod` slot after index 14.
+The port now corrects the Monk row on build rather than leaving the class unbuildable, and reports
+that it did.
 
 `classRequirementsAndDetails["Monk"]` has **21 columns**; all 87 other classes have 22. Monk carries only 4 `classMod` slots (indices 11–14) where every other class has 5 (11–15). Every field after that point is shifted left by one.
 
@@ -100,7 +104,10 @@ Found while porting combat. In each case the Foundry port implements what the co
 
 ## 9. Five insect body charts write a torso multiplier without its "x"
 
-**Status:** open · **Severity:** data typo, probably understates Endurance
+**Status:** ANSWERED 2026-09-16, confirmed a typo · **Severity:** data typo, understates Endurance
+
+**His answer:** *"Item 9 is a typo/bug fix, it should be x2."* The five thorax sections are meant
+to be x2 like every other torso. The port now reads them as x2.
 
 Every body area in every other chart writes its multiplier as `x1`, `x2`, `x1/2` and so on. Five charts in `getBodyList` (sheet-worker.js:175002 onward) instead write `Vital:2` for their thorax sections: `Prothorax`, `Mesathorax` and `Metathorax` in **Giant Insect** and **Giant Insect(Wings)**, and `Thorax` in **Insectoid**, **Insectoid(Wings)** and **Insectoid(Wings/Stinger)**.
 
@@ -110,7 +117,33 @@ The evident intent is x2: the thorax is the insect's torso, and torso sections a
 
 ## 10. Creature abilities never get the mechanical treatment racial abilities do, and the two lists disagree
 
-**Status:** open · **Severity:** question; affects how creatures play, and which list the port builds from
+**Status:** PARTLY ANSWERED 2026-09-16 · **Severity:** one half settled, one half with him now
+
+**His answer:** *"Enhanced X is listed as an ability but it is flavor. It is why a creature 'might'
+have a higher stat than its counterpart, or have better hearing. The creature listings are right.
+The abilities is used to say how they were arrived at."*
+
+Two things settled by that:
+
+1. **Creatures skipping the racial switch is intended.** A creature's abilities explain its stat
+   block rather than modifying it — the numbers on the listing are already what they should be,
+   and the ability text says how the creature came to have them. So the creature path is not
+   missing a mechanical treatment; it never wanted one.
+2. **Where the two copies disagree, the creature row is the right one** — which is what the port
+   already keeps.
+
+**One thing this raises, and it needs his eye:** his own `calcAllCreatureCaracs` (sheet-worker.js:
+178346) *does* add +10 Perception, Affinity or Fortune for the matching "Enhanced ..." ability, and
++5 Perception per sense ability. If the stat block already includes the enhancement — which is what
+"the creature listings are right" reads as — then those additions are counting it a second time.
+The port copies his additions today. **Asked back: should those +10s stay, or is the listing
+already inclusive?**
+
+**And he asked for the list:** *"I'd have to see the 41 conflicts to be able to tell exactly what
+it means... So if it can provide a list, I will check on those when I see it."* Generated to
+`docs/reference/trait-conflicts.md` by `tools/extract/report_trait_conflicts.py` — 39 ability rows
+and 2 disability rows that differ, 40 racial-only rows, with the canonical-name differences called
+out first because those are the ones that can miss a `case`.
 
 There are two copies of each dictionary: a Character-side one used for racial abilities (`getRacialAbilityDetails`, `getRacialDisabilityDetails`, `getRacialImmunityDetails`, sheet-worker.js:45721, 45899, 45984) and a larger creature-side one (`getCreatureAbilityDetails`, `getCreatureDisabilityDetails`, `getCreatureImmunityDetails`, lines 176209, 177693, 177961). Columns are canonical name `[0]`, two values `[1]`/`[2]` whose meaning varies by entry, and description `[3]`.
 
@@ -161,7 +194,11 @@ The main weapon attack, `handlePhysicalAttacks`, reads each value into its own v
 
 ## 13. `divideWithMinAndMax` never applies its maximum
 
-**Status:** open · **Severity:** real bug; area attacks have no upper limit
+**Status:** ANSWERED 2026-09-16, confirmed a bug · **Severity:** real bug; area attacks have no upper limit
+
+**His answer:** *"Divide with min and max means that whatever is sent into the function as min
+cannot have a result below min, and whatever is sent as max cannot go over max."* That is what the
+port already does; his `=>` typo means his sheet does not.
 
 ```js
 function divideWithMinAndMax(tmpDividend, tmpDivisor, tmpMaxValue) {
@@ -205,7 +242,19 @@ The port halves it for both actor types, so the same rule does not change meanin
 
 ## 16. The arch-mortal attribute maximum: the comment says 25, the code sets 27
 
-**Status:** open · **Severity:** question, one of the two numbers is wrong
+**Status:** ANSWERED 2026-09-16 — **both numbers are right** · **Severity:** the port was missing a rule
+
+**His answer:** *"25 for normal statistic upgrades, 27 for magical upgrades. So you can raise it to
+25 with stat up rolls, and 27 is the cap when using magical boosts."*
+
+Neither number is wrong: they are **two different caps**. 25 is the ceiling for advancement by the
+character's own rolls; 27 is the ceiling a magical boost may reach. His comment and his code were
+each describing one of the two.
+
+**What this means for the port:** it currently applies a single cap of 27 and so allows natural
+advancement past 25. A second cap is needed — a natural maximum alongside the magical one — which
+also explains the separate "magical maximum" his creature path sets and that this port had noted
+without understanding.
 
 At the title-up commit, `setArchMortalAttributesMax(newTitle)` is called with this comment:
 
@@ -263,7 +312,31 @@ table by area name for the same reason.
 
 ## 19. Seventeen lore title gates are written `=>` instead of `>=`, so they never gate anything
 
-**Status:** open · **Severity:** real bug, currently visible in play; every affected lore counts as acquired from title 1
+**Status:** ANSWERED 2026-09-16 · **Severity:** downgraded — not the live bug this item claimed
+
+**His answer:** *"There is an actual chart for when they actually can use the special Lores.
+Missile Lore, Weapon Lore, Second Weapon Lore. It is in a function already. Yes they gain the
+skill at first but they cannot use the skill because it says 'Cannot be used non-acquired'. All of
+the ones that say cannot be used non-acquired cannot be used until they actually reach the title
+they are acquired at."*
+
+So the gates below are not what stops an early character using a lore — **the "cannot be used
+non-acquired" rule on the skill is**, tested against the title the skill is acquired at, and the
+chart of those titles is the `get*When` family this port already generates from. Acquiring the
+skill early is expected; using it early is what is blocked, elsewhere.
+
+**What this means for the port:** the behaviour is already right — `hasLore(title, when)` gates on
+exactly the title his chart gives. What is missing is the *general* rule: a skill marked "cannot be
+used non-acquired" should be unusable until its acquisition title, and the port has no such flag
+yet (it is the second flag the skills pass needs out of the books, beside `isRestricted` — see
+`docs/sonnet/2026-09-16-skills-module.md` item 1).
+
+**Still worth his fixing in the sheet**, since `=>` builds a throwaway arrow function and the gate
+below it does nothing, even if the practical effect is covered by the non-acquired rule.
+
+---
+
+**Original finding, kept for the record:**
 
 Item 13 records one place where an assignment was typed as an arrow function. It is not the only one. Searching the whole sheet for `=>` used where a comparison was meant finds **eighteen** occurrences: line 25604 (already filed as item 13) and seventeen title gates of this shape:
 
@@ -310,7 +383,14 @@ decision from you before it can be ported — only the broken gates need fixing.
 
 ## 20. "Enduring All" endures nine damage types out of ten
 
-**Status:** open · **Severity:** question, may well be intentional
+**Status:** ANSWERED 2026-09-16, intentional — **nothing to fix** · **Severity:** none
+
+**His answer:** *"Endure All existed as a spell before Obliteration existed as an energy type. It
+is a level 22 spell, so it doesn't include Obliteration. You need the special Endure Obliteration
+to be protected from it."*
+
+Deliberate, and for a reason the code could not have shown: the spell predates the damage type.
+The port's generated `ENDURED_BY` already matches this exactly, so nothing changes.
 
 `getIsEndured` (sheet-worker.js:120871) switches on the damage type, and each case looks for its
 own tag on anything worn and then for a blanket `Enduring All`:
@@ -408,7 +488,26 @@ single character-wide modifier.
 
 ## 22. Five classes have no `classRequirementsAndDetails` row at all
 
-**Status:** open · **Severity:** real gap; those classes cannot be built from the sheet alone
+**Status:** ANSWERED 2026-09-16 — **this finding was wrong** · **Severity:** the port was looking in one dictionary
+
+**His answer:** *"Items 22/26 is incorrect, the data is there. I can see it on the sheet when I try
+to make a Roll20 character of those types (minus Elemental Dancer)."* Plus, on what those five
+classes actually are:
+
+- **GME** — *"a special case in the class type. It isn't a real class. It allows you to select ANY
+  social skills, and any racial skills, 1 at a time to fill the slots, and they are 0-title
+  non-classed characters."* And separately: *"GMEs do not get the racial title 1 starting bonuses
+  like extra endurance, etc."*
+- **Elementalist, Summoner, Inquisitor** — *"have special choices (good vs. evil), etc. that make
+  it so that choice means a different varied skill. If it wants to resolve those it could either
+  add the choice that splits it down the path, or make a separate entry for Inquisitor Fanatical
+  Good vs Inquisitor Fanatical Evil, etc."*
+
+**What this means for the port:** the five are not missing data, they are data the port has not
+found yet because it only looked in `classRequirementsAndDetails`. Two jobs follow: find where
+these rows actually live, and decide between a choice field and one document per path for the three
+alignment-split classes (he is happy with either). GME wants its own treatment as a non-class: no
+class title, no racial title-1 bonuses, and skill slots filled from any list.
 
 `classtitledict` and `goalupdict` each hold **92** classes. `classRequirementsAndDetails` holds
 **88**. Five names appear in the first two and in no row of the third:
@@ -608,7 +707,10 @@ foes..."). That has the look of the same kind of column slip as item 1, in a dif
 
 ## 26. Five classes have no entry in `getSlotsNeededForClass`, so they read as costing no class skill slots
 
-**Status:** open · **Severity:** question, not a bug — a gap that follows from item 22
+**Status:** ANSWERED 2026-09-16 with item 22 · **Severity:** follows item 22 — the data exists, the port had not found it
+
+See item 22. GME legitimately needs no class slots (it is not a class); the other four are a
+lookup problem on this end, not a gap in his data.
 
 `getSlotsNeededForClass` (sheet-worker.js:62881) gives each class the number of class skill slots it
 needs to run its whole progression — 92 cases, from 36 (Border Scout, Explorer) to 56 (Assassin,

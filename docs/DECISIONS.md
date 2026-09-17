@@ -1931,3 +1931,79 @@ total.
 
 **Not verified:** anything needing a running Foundry V14 -- the new Firing dropdown on the attack
 dialog and the two new list fields writing back.
+
+### 2026-09-17 — The developer answered nine open questions, and three of them changed the port
+
+He worked through the open `UPSTREAM-ISSUES.md` list. Every answer is recorded against its item;
+this is what actually moved.
+
+**Item 16 was not a contradiction — there are two attribute ceilings.** *"25 for normal statistic
+upgrades, 27 for magical upgrades. So you can raise it to 25 with stat up rolls, and 27 is the cap
+when using magical boosts."* The comment saying 25 and the function setting 27 were each describing
+one of a pair, and looking again with that in hand found the other half of it in his code:
+`setMagicalAttributeMaximums` (sheet-worker.js:123007) carries a whole title-tiered table the port
+had never read — 23 at title 0, 25 at titles 1-10, 27 at 11-15 — which is the Master's Manual's
+mundane / mortal / arch-mortal ranges exactly. So the port now has `getMagicalAttributeMax`
+beside `getAttributeMax`, **and the ordinary ceiling at title 11 drops from 27 to 25**, which is
+the number his own comment always gave. His `setArchMortalAttributesMax` writing 27 into the
+*ordinary* maximum is the actual slip; that stays recorded rather than silently agreed with.
+
+Nothing is clamped by the magical ceiling yet. Doing that properly needs modifiers split into
+mundane and magical channels the way his sheet splits them (`tmp_mod_str_mundane` against
+`tmp_mod_str_magic`, with `setPassedSTRAttribMods` capping each against its own maximum), and the
+port has one undifferentiated `permMod`/`tempMod` pair. The figure is derived and carried on every
+attribute so the split has something to land on; the split itself is its own pass.
+
+**Item 1, Monk, is fixed — the first time this project has edited his data.** He confirmed the
+reading ("sounds like the right fix"), so `column_maps.py` gained a `ROW_REPAIRS` table: a row he
+has authorised a repair for, the repair, and the answer that authorised it. Monk's missing fifth
+`classMod` slot is inserted at index 15 on load, every repair is printed on every run, and
+`classRequirementsAndDetails` now maps 88 rows clean where it mapped 87 and dropped one. Monk's
+armour usage reads armour again instead of its weapon list.
+
+**Item 9, the insect thoraxes, likewise.** *"It should be x2."* `body_charts()` now rewrites a
+multiplier written without its `x` and reports each one; nine areas across five charts corrected,
+exactly the nine the finding predicted. This and Monk are the only two places the extraction
+changes what he wrote, both on his explicit confirmation, both reported every run.
+
+**Item 19 was wrong about its own consequence, and the correction is worth more than the finding.**
+The seventeen `=>` gates are still a typo, but they are not what stops an early character using a
+lore: *"Yes they gain the skill at first but they cannot use the skill because it says 'Cannot be
+used non-acquired'. All of the ones that say cannot be used non-acquired cannot be used until they
+actually reach the title they are acquired at."* So acquisition and usage are two different gates,
+and the port's `hasLore(title, when)` was already testing the one that matters. What this surfaces
+instead is a rule the port has not got: **a skill marked "cannot be used non-acquired" is unusable
+until its acquisition title**, which is a second per-skill flag to extract from the books beside
+`isRestricted` — neither is in his `skilldict`.
+
+**Item 20 is intentional, for a reason no amount of code reading would have found.** *"Endure All
+existed as a spell before Obliteration existed as an energy type. It is a level 22 spell, so it
+doesn't include Obliteration."* The generated `ENDURED_BY` already matches. Closed.
+
+**Item 10 settles half a question and opens a sharper one.** *"Enhanced X is listed as an ability
+but it is flavor. It is why a creature 'might' have a higher stat than its counterpart... The
+creature listings are right. The abilities is used to say how they were arrived at."* So creatures
+skipping the racial mechanical switch is by design — an ability explains the stat block rather than
+modifying it — and the creature row is the right one where the two copies disagree, which is what
+the port already keeps. **But his own `calcAllCreatureCaracs` adds +10 Perception for "Enhanced
+Perception" anyway**, which would be counting the same thing twice if the listing is already
+inclusive. The port copies his addition today and the question is back with him.
+
+**He asked to see the conflicts before ruling on them**, so `tools/extract/report_trait_conflicts.py`
+writes `docs/reference/trait-conflicts.md`: the 39 ability and 2 disability rows that differ and
+the 40 racial-only rows, canonical-name differences first because those are the ones that can miss
+a `case`. Generated rather than pasted, so it stays true as the data moves.
+
+**Items 22 and 26 were our mistake, not his gap.** *"The data is there. I can see it on the sheet
+when I try to make a Roll20 character of those types."* The five classes are not missing — the port
+looked in one dictionary and concluded absence. He also explained what they are: **GME is not a
+class at all** (*"It allows you to select ANY social skills, and any racial skills, 1 at a time to
+fill the slots, and they are 0-title non-classed characters"*, and separately, GMEs do not get the
+racial title-1 starting bonuses), and **Elementalist, Summoner and Inquisitor split on a choice**
+(good against evil) that changes which skills they get — he is happy with either a choice field or
+one document per path ("Inquisitor Fanatical Good vs Inquisitor Fanatical Evil"). Both are now real
+work items rather than a reported gap.
+
+**Verified:** derivation 258 (7 new on the two ceilings), combat 374, creature 139 and availability
+39 unchanged, 27 modules parse. The class documents rebuild at 88 with Monk's fields in their right
+columns, and the generated body charts carry nine corrected thorax multipliers.

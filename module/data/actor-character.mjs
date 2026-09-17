@@ -775,14 +775,25 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		return tmpissues;
 	}
 
-	// This is the function which sets each attribute's maximum, its save percentage and its
+	// This is the function which sets each attribute's two maximums, its save percentage and its
 	// table-driven modifiers.
 	//
-	// The maximum is the race's own limit for that attribute -- until title 11, when the racial
-	// limits are discarded and every attribute is capped at a flat 27 instead. It is applied
-	// here rather than in prepareBaseData so it also constrains anything an Active Effect added.
+	// THERE ARE TWO CEILINGS, not one. The ordinary maximum is the race's own limit until title
+	// 11, when racial limits are discarded and 25 applies; the magical maximum is higher and
+	// tiered by title (23 / 25 / 27). He confirmed the pair on 2026-09-16 -- "25 for normal
+	// statistic upgrades, 27 for magical upgrades" -- which resolved what had looked like a
+	// contradiction in his code. See getMagicalAttributeMax and UPSTREAM-ISSUES.md item 16.
+	//
+	// Only the ordinary maximum clamps the value today. Applying the magical one needs modifiers
+	// split into mundane and magical channels the way his sheet splits them (tmp_mod_str_mundane
+	// against tmp_mod_str_magic), which the port does not do yet -- so the figure is derived and
+	// shown, and nothing is clamped by it until there is a magical modifier to clamp.
+	//
+	// It is applied here rather than in prepareBaseData so it also constrains anything an Active
+	// Effect added.
 	_prepareAttributes() {
 		var tmpracelimits = this.raceItem ? this.raceItem.system.attributeLimits : null;
+		var tmpmagicalcap = ImagineCharacterData.getMagicalAttributeMax(this.identity.title);
 
 		for (const tmpkey of Object.keys(this.attributes)) {
 			var tmpattrib = this.attributes[tmpkey];
@@ -791,6 +802,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			var tmpcap = ImagineCharacterData.getAttributeMax(this.identity.title, tmpracelimit);
 
 			tmpattrib.max = tmpcap;
+			tmpattrib.magicalMax = tmpmagicalcap;
 			if (tmpattrib.value > tmpcap) { tmpattrib.value = tmpcap; }
 			if (tmpattrib.value < 0) { tmpattrib.value = 0; }
 
@@ -1137,10 +1149,34 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// caps by title below 11, and nothing grants 30 at title 16. The sheet wins on conflict.
 	static getAttributeMax(tmpTitle, tmpRaceLimit) {
 		var tmpTitleValue = parseInt(tmpTitle) || 0;
-		if (tmpTitleValue >= 11) { return 27; }   // arch-mortal: racial limits are discarded
+		if (tmpTitleValue >= 11) { return 25; }   // arch-mortal: racial limits are discarded
 		var tmpLimit = parseInt(tmpRaceLimit) || 0;
 		if (tmpLimit <= 0) { tmpLimit = 20; }     // no race chosen yet
 		return tmpLimit;
+	}
+
+	// This is the function which gives how high an attribute may be raised BY MAGIC, which is a
+	// different and higher ceiling from the one above.
+	//
+	// He settled this on 2026-09-16, answering what looked like a contradiction between a comment
+	// saying 25 and a function setting 27 (docs/UPSTREAM-ISSUES.md item 16): *"25 for normal
+	// statistic upgrades, 27 for magical upgrades. So you can raise it to 25 with stat up rolls,
+	// and 27 is the cap when using magical boosts."* Both numbers were right; they are two caps.
+	//
+	// The tiers are his own, from setMagicalAttributeMaximums (sheet-worker.js:123007), and they
+	// are the Master's Manual's four ranges exactly:
+	//
+	//     title 0        mundane      23
+	//     titles 1-10    mortal       25
+	//     titles 11-15   arch-mortal  27
+	//
+	// His function stops there and writes nothing above title 15, so nothing is invented for a
+	// deity range: title 16 and up hold the arch-mortal 27 until he says otherwise.
+	static getMagicalAttributeMax(tmpTitle) {
+		var tmpTitleValue = parseInt(tmpTitle) || 0;
+		if (tmpTitleValue < 1) { return 23; }
+		if (tmpTitleValue < 11) { return 25; }
+		return 27;
 	}
 
 	// @MARKER ADD NEW character data model functions HERE

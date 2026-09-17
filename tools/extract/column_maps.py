@@ -186,3 +186,20 @@ MAPS = {
     "goalupdict": GOALUPDICT,
 }
 MAPS.update(RATING_VALUE_MAPS)
+
+
+# A row in his data that is the wrong width, and the repair HE has confirmed for it.
+#
+# Nothing goes in here on our own reading. Each entry cites the answer that authorised it, and
+# each is reported every run, because this is the one place the extraction changes his data
+# rather than recording a problem with it.
+#
+#   (dictionary, key) -> (expected width the row is short of, index to insert a blank at, why)
+ROW_REPAIRS = {
+    ("classRequirementsAndDetails", "Monk"): (
+        21, 15,
+        "Monk carries 4 classMod slots where every other class has 5, shifting armourUsage, "
+        "weaponUsage, classModifier, titleName, attribQualify and casting one left. Confirmed "
+        "2026-09-16: 'sounds like the right fix'. See docs/UPSTREAM-ISSUES.md item 1."
+    ),
+}
