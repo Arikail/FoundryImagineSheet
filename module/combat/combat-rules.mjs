@@ -427,6 +427,11 @@ export const MODE_DAMAGE_TYPES = {
 		var tmpoffhand = parseInt(tmpinput.offhand) || 0;
 		if (tmpoffhand) { tmplist.push({ label: "Off Hand", value: tmpoffhand }); }
 
+		// Firing more than one missile at a time, already bought down by whichever of the two
+		// multi-missile skills applies. Passed in for the same reason lore and the off hand are.
+		var tmpmulti = parseInt(tmpinput.multiMissile) || 0;
+		if (tmpmulti) { tmplist.push({ label: "Multiple Missiles", value: tmpmulti }); }
+
 		var tmpsit = parseInt(tmpinput.situational) || 0;
 		if (tmpsit) { tmplist.push({ label: "Situational", value: tmpsit }); }
 
@@ -1262,6 +1267,135 @@ export const MODE_DAMAGE_TYPES = {
 	// Projectile Lore is looked up against its Arrow. Returns "" for anything not a launcher.
 	export function getProjectileForLauncher(tmpname) {
 		return matchWeaponName(tmpname, LAUNCHER_PROJECTILE) ?? "";
+	}
+
+	// @MARKER MULTIPLE MISSILE FIRE
+	// Firing more than one missile at a time, and the two skills that pay the penalty down.
+	//
+	// The penalties are the Player's Guide's, under "Unconventional Attacks" (p.182), and his
+	// sheet's three situational checkboxes carry exactly the same figures
+	// (sheet-worker.js:73015-73017), so book and sheet agree here and nothing had to be chosen.
+
+	// The three ways of firing more than once at a time.
+	//
+	//                                            shots  attack  damage  repeats
+	//                                            -----  ------  ------  -------
+	export const MULTI_MISSILE_MODES = {
+		twoWeapons:       { label: "Two weapons at once",  shots: 2, attack: -4, damage: 0,   repeats: false },
+		twoProjectiles:   { label: "Two projectiles",      shots: 2, attack: -4, damage: -6,  repeats: true },
+		threeProjectiles: { label: "Three projectiles",    shots: 3, attack: -8, damage: -12, repeats: true }
+	};
+
+	// What each 25% of Multiple Missile Knowledge buys back. Master's Manual, the skill's own
+	// General Usage: "For every 25% of the skill chance, the penalties are removed by -1 for hit
+	// rolls and -2 for damage rolls" -- and his sheet reads the same, floor(chance/25) levels with
+	// the bonus capped at the penalty it is cancelling (sheet-worker.js:64672-64684).
+	//
+	// Note the 25, where every other skill in the system steps at 20. It is the skill's own text
+	// and his code both, so it is not a typo in either.
+	export const MULTI_MISSILE_PER_LEVEL = { attack: 1, damage: 2 };
+
+	// "Firing two weapons at once, one in each hand" costs -4 "(ambidextrous or not) in addition to
+	// the normal off-hand weapon penalties" (Player's Guide, p.182). The parenthesis is the point:
+	// an Ambidextrous character escapes the off-hand penalty and does NOT escape this one, so the
+	// two are added independently and this function knows nothing about handedness.
+
+	// This is the function which reads a list of learned launcher/missile combinations.
+	//
+	// Both skills are learned per combination rather than once: "A skill roll is required to learn
+	// each particular combination of missile weapon type and projectile type... if the skill user
+	// goes and gets her arrows barbed she will have to reroll". His sheet stores them exactly as it
+	// stores a lore list -- one comma-separated string -- with each entry a "Launcher/Missile" pair
+	// and the launcher reading "Thrown" for a weapon thrown from the hand.
+	export function parseMissileCombos(tmplist) {
+		var tmpout = [];
+		for (const tmpentry of parseLoreList(tmplist)) {
+			var tmpat = tmpentry.indexOf("/");
+			if (tmpat < 1) { continue; }
+			tmpout.push({
+				launcher: tmpentry.slice(0, tmpat).trim(),
+				missile: tmpentry.slice(tmpat + 1).trim()
+			});
+		}
+		return tmpout;
+	}
+
+	// This is the function which says whether a learned combination covers the weapon in hand.
+	//
+	// The weapon may be either half of the pair: a character firing a Long Bow and a character
+	// holding the Arrow it fires are both covered by "Long Bow/Arrow". A pair whose two halves do
+	// not actually go together covers nothing, which is what stops a mistyped combo from applying
+	// to every bow in the game.
+	//
+	// His fourth and fifth match branches (sheet-worker.js:64699-64703) are for a launcher loaded
+	// with something other than its normal ammunition -- his switchedProjectiles path. Nothing in
+	// this port switches a launcher's ammunition yet, so those two are deliberately not ported
+	// rather than half-built.
+	export function hasMissileCombo(tmpweaponname, tmpcombos) {
+		var tmpweapon = getSimplifiedName(tmpweaponname);
+		if (!tmpweapon) { return false; }
+
+		for (const tmpcombo of tmpcombos ?? []) {
+			var tmpnormal = getProjectileForLauncher(tmpcombo.launcher);
+			if (tmpweapon == tmpcombo.launcher && tmpnormal == tmpcombo.missile) { return true; }
+			if (tmpweapon == tmpcombo.missile) {
+				if (tmpcombo.launcher == "Thrown") { return true; }
+				if (tmpnormal == tmpcombo.missile) { return true; }
+			}
+		}
+		return false;
+	}
+
+	// This is the function which works out what firing more than one missile costs this character.
+	//
+	//   tmpinput = {
+	//       mode:        a key of MULTI_MISSILE_MODES, or "" for an ordinary single shot
+	//       weaponName:  the weapon being fired
+	//       knowChance:  the character's own Multiple Missile Knowledge percentage
+	//       knowList:    the combinations learned with Knowledge
+	//       loreList:    the combinations learned with Lore
+	//   }
+	//
+	// The tiers do not stack, and Lore is tested first, exactly as the off-hand skills resolve:
+	//
+	//     Multiple Missile Lore       -> no penalty at all, for a learned combination
+	//     Multiple Missile Knowledge  -> the penalty, bought down 1/2 per 25% of the skill
+	//     neither                     -> the full penalty
+	//
+	// A combination that has not been learned pays full whatever the skill percentage is, because
+	// the skill is learned per combination rather than held in general -- which is why both lists
+	// are passed rather than a pair of booleans.
+	//
+	// Returns { attack, damage, shots, repeats, tier, levels }. An ordinary shot comes back with
+	// tier "none" and zeroes, so the caller can add these unconditionally.
+	export function resolveMultiMissile(tmpinput) {
+		var tmpmode = MULTI_MISSILE_MODES[tmpinput?.mode];
+		if (!tmpmode) {
+			return { attack: 0, damage: 0, shots: 1, repeats: false, tier: "none", levels: 0 };
+		}
+
+		var tmpout = {
+			attack: tmpmode.attack, damage: tmpmode.damage,
+			shots: tmpmode.shots, repeats: tmpmode.repeats,
+			tier: "full", levels: 0
+		};
+
+		if (hasMissileCombo(tmpinput.weaponName, parseMissileCombos(tmpinput.loreList))) {
+			tmpout.tier = "lore";
+			tmpout.attack = 0;
+			tmpout.damage = 0;
+			return tmpout;
+		}
+
+		if (hasMissileCombo(tmpinput.weaponName, parseMissileCombos(tmpinput.knowList))) {
+			tmpout.tier = "knowledge";
+			tmpout.levels = Math.floor((parseInt(tmpinput.knowChance) || 0) / 25);
+			if (tmpout.levels > 0) {
+				tmpout.attack = Math.min(0, tmpout.attack + (tmpout.levels * MULTI_MISSILE_PER_LEVEL.attack));
+				tmpout.damage = Math.min(0, tmpout.damage + (tmpout.levels * MULTI_MISSILE_PER_LEVEL.damage));
+			}
+		}
+		return tmpout;
 	}
 
 	// This is the function which gives Projectile Lore's damage for one attack.

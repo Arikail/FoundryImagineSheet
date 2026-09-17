@@ -71,6 +71,23 @@
 			<input type="text" name="system.combat.projectileLoreList" value="{{lore.projectileText}}"
 				placeholder="Arrow(Long Bow/Normal)"></label>
 		{{/if}}
+
+		{{!-- The two multi-missile skills are learned one launcher/missile pair at a time, so an
+		      entry here is what makes the skill apply at all rather than naming a larger bonus.
+		      "Thrown" is the launcher for a weapon thrown from the hand. --}}
+		{{#if lore.hasMultiKnow}}
+		<label>Multiple missile combinations known
+			<input type="text" name="system.combat.multiMissileKnowList" value="{{lore.multiKnowText}}"
+				placeholder="Long Bow/Arrow, Thrown/Dagger">
+			<span class="muted">{{lore.multiKnowChance}}% &mdash; {{lore.multiKnowLevels}} level(s), each worth
+			1 to hit and 2 damage off the penalty</span></label>
+		{{/if}}
+		{{#if lore.hasMultiLore}}
+		<label>Multiple missile combinations lored
+			<input type="text" name="system.combat.multiMissileLoreList" value="{{lore.multiLoreText}}"
+				placeholder="Long Bow/Arrow">
+			<span class="muted">removes the penalty entirely for these</span></label>
+		{{/if}}
 	</div>
 	{{/if}}
 	<h3 class="section-head">Magical Protection <span class="muted">taken off before armour</span></h3>

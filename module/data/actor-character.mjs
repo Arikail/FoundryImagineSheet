@@ -288,7 +288,20 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 				// Projectile Lore names AMMUNITION, not the weapon in hand -- an Arrow rather
 				// than the Long Bow that fires it. Only six of his 92 classes ever acquire it.
-				projectileLoreList: new fields.StringField({ required: true, initial: "" })
+				projectileLoreList: new fields.StringField({ required: true, initial: "" }),
+
+				// The launcher/missile combinations learned for firing more than one missile at a
+				// time. These are NOT a list of weapons singled out for a larger bonus, the way
+				// the three lists above are -- both multi-missile skills are learned one
+				// combination at a time ("a skill roll is required to learn each particular
+				// combination of missile weapon type and projectile type", Master's Manual), so an
+				// entry here is what makes the skill apply at all.
+				//
+				// Each entry is "Launcher/Missile" -- "Long Bow/Arrow", or "Thrown/Dagger" for a
+				// weapon thrown from the hand -- which is his shape (multi_missile_know_list /
+				// multi_missile_lore_list).
+				multiMissileKnowList: new fields.StringField({ required: true, initial: "" }),
+				multiMissileLoreList: new fields.StringField({ required: true, initial: "" })
 			}),
 
 			// @MARKER NOTES
@@ -1028,6 +1041,12 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			? this._getSkillChance("Second Weapon Knowledge") : 0;
 		this.combat.secondWeaponLoreChance = this.combat.hasSecondWeaponLore
 			? this._getSkillChance("Second Weapon Lore") : 0;
+
+		// Multiple Missile Knowledge's own percentage, which is what buys the multi-missile
+		// penalty down 1 and 2 at a time. Unlike its Lore half there is no class title gating it
+		// in his sheet at all -- holding the skill is the whole of it -- so this is read straight
+		// off the actor with no eligibility test in front of it.
+		this.combat.multiMissileKnowChance = this._getSkillChance("Multiple Missile Knowledge");
 
 		// How many of the round's ten seconds may go to off-hand actions -- a cap, not a pool;
 		// nothing here tracks how much of it a round has already spent. See getOffhandSecondsCap.

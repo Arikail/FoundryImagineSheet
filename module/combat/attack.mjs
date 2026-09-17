@@ -21,7 +21,8 @@ import {
 	getWeaponDamageDice, getStrengthDamageMod, combineDamageMultipliers,
 	resolveAreaDamage, applyAreaDamage, applyPainThreshold, absorbDamage, blowLands,
 	applyMagicalReductions, getWeaveValue, isEndured, isRebounded, getAreaArmorSlot,
-	getLoreModifiers, getProjectileLoreDamage, getWeaponSpeed
+	getLoreModifiers, getProjectileLoreDamage, getWeaponSpeed,
+	resolveMultiMissile, MULTI_MISSILE_MODES
 } from "./combat-rules.mjs";
 import { ARMOR_BLOCKING } from "../combat-tables.mjs";
 
@@ -76,6 +77,15 @@ const MODE_LABELS = { thrust: "Thrust", cut: "Cut", smash: "Smash", missile: "Mi
 						`<option value="${m}">${MODE_LABELS[m]} (${tmpweapon.system[m].mod >= 0 ? "+" : ""}${tmpweapon.system[m].mod})</option>`).join("")}
 					</select></div>
 				<div class="form-group"><label>Aimed at</label><select name="aim">${tmpaim}</select></div>
+				${tmpweapon.system.missile?.available ? `<div class="form-group"><label>Firing</label>
+					<select name="multiMissile">
+						<option value="">One at a time</option>
+						${Object.entries(MULTI_MISSILE_MODES).map(([k, m]) =>
+							`<option value="${k}">${m.label} (${m.attack} to hit${m.damage ? `, ${m.damage} damage` : ""})</option>`).join("")}
+					</select>
+					<p class="hint">Double and triple missile fire is only allowed at point blank or short
+					range. Multiple Missile Knowledge or Lore for this launcher and missile pays the
+					penalty down or removes it.</p></div>` : ""}
 				<div class="form-group"><label>Situational modifier</label>
 					<input type="number" name="situational" value="0"></div>
 				<div class="form-group"><label>Called shot</label>
@@ -101,7 +111,8 @@ const MODE_LABELS = { thrust: "Thrust", cut: "Cut", smash: "Smash", missile: "Mi
 						aim: tmpform.aim.value,
 						situational: parseInt(tmpform.situational.value) || 0,
 						calledShot: tmpform.calledShot.checked,
-						useDefense: tmpform.useDefense ? tmpform.useDefense.checked : false
+						useDefense: tmpform.useDefense ? tmpform.useDefense.checked : false,
+						multiMissile: tmpform.multiMissile ? tmpform.multiMissile.value : ""
 					};
 				}
 			}
@@ -146,6 +157,17 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 	var tmpoffhand = resolveOffhandPenalties(tmpw, tmpsys.attributes.agl.rating,
 		tmpsys.physical?.handedness, tmpsys.combat.secondWeaponKnowChance);
 
+	// Firing more than one missile at a time, and what the two multi-missile skills pay back of
+	// the penalty for it. Learned per launcher/missile combination rather than held in general,
+	// so both lists are passed and the weapon in hand is matched against them.
+	var tmpmissiles = resolveMultiMissile({
+		mode: tmpoptions.multiMissile,
+		weaponName: tmpweapon.name,
+		knowChance: tmpsys.combat.multiMissileKnowChance,
+		knowList: tmpsys.combat.multiMissileKnowList,
+		loreList: tmpsys.combat.multiMissileLoreList
+	});
+
 	// To hit
 	var tmpmods = getToHitModifiers({
 		mode: tmpmode,
@@ -159,7 +181,8 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 		target: (tmptarget && tmpoptions.useDefense) ? { defensiveAdjust: tmptarget.actor?.system?.combat?.defensiveAdjust } : null,
 		situational: tmpoptions.situational,
 		lore: tmplore.attack,
-		offhand: tmpoffhand.melee
+		offhand: tmpoffhand.melee,
+		multiMissile: tmpmissiles.attack
 	});
 
 	var tmpd20 = await new Roll("1d20").evaluate();
@@ -215,18 +238,32 @@ export async function rollWeaponAttack(tmpactor, tmpweapon) {
 			projectileLoreList: tmpsys.combat.projectileLoreNames
 		});
 
-		var tmpdmgroll = await new Roll(`${tmpdice} + @str + @magic + @misc + @lore + @projlore + @offhand`,
+		var tmpdmgroll = await new Roll(
+			`${tmpdice} + @str + @magic + @misc + @lore + @projlore + @offhand + @missiles`,
 			{ str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
-			  projlore: tmpprojlore.damage, offhand: tmpoffhand.damage }).evaluate();
+			  projlore: tmpprojlore.damage, offhand: tmpoffhand.damage,
+			  missiles: tmpmissiles.damage }).evaluate();
 		tmprolls.push(tmpdmgroll);
 
 		var tmpmulti = combineDamageMultipliers(tmpoptions.calledShot ? [0.5] : []);
-		var tmptotal = Math.max(0, parseInt(tmpdmgroll.total * tmpmulti) || 0);
+		var tmpeach = Math.max(0, parseInt(tmpdmgroll.total * tmpmulti) || 0);
+
+		// Two or three projectiles are ONE roll, and the others land on the same target for the
+		// same damage again -- "2nd projectile hits the same target for the same damage"
+		// (sheet-worker.js:65172). The Player's Guide says instead to "roll each attack
+		// separately" (p.182); his sheet is the source of truth where they disagree, and the
+		// disagreement is recorded in docs/UPSTREAM-ISSUES.md for him to confirm.
+		//
+		// Firing two WEAPONS is not this: those are two separate attacks, each rolled through
+		// here on its own, which is why only the projectile modes repeat.
+		var tmptotal = tmpmissiles.repeats ? (tmpeach * tmpmissiles.shots) : tmpeach;
 
 		tmpdamage = {
 			dice: tmpdice, str: tmpstrmod, magic: tmpmagic, misc: tmpmisc, lore: tmplore.damage,
 			loreSpecific: tmplore.specific,
 			projectileLore: tmpprojlore.damage, projectileLorePerDie: tmpprojlore.perDie,
+			multiMissile: tmpmissiles.damage, multiMissileTier: tmpmissiles.tier,
+			shots: tmpmissiles.shots, perShot: tmpeach,
 			rolled: tmpdmgroll.total, multiplier: tmpmulti, total: tmptotal,
 			type: MODE_DAMAGE_TYPES[tmpmode]
 		};

@@ -792,6 +792,84 @@ check("...even with a maxed Second Weapon Lore",
 check("blank handedness reads as the ordinary 5-second cap",
 	R.getOffhandSecondsCap("", 0), 5);
 
+// --- firing more than one missile at a time ------------------------------------------
+// The penalties are the Player's Guide's "Unconventional Attacks" table (p.182), and his three
+// situational checkboxes carry exactly the same figures, so nothing had to be chosen between them.
+check("two projectiles cost -4 to hit and -6 damage",
+	[R.MULTI_MISSILE_MODES.twoProjectiles.attack, R.MULTI_MISSILE_MODES.twoProjectiles.damage], [-4, -6]);
+check("three cost -8 and -12",
+	[R.MULTI_MISSILE_MODES.threeProjectiles.attack, R.MULTI_MISSILE_MODES.threeProjectiles.damage], [-8, -12]);
+check("two weapons at once cost -4 to hit and no damage",
+	[R.MULTI_MISSILE_MODES.twoWeapons.attack, R.MULTI_MISSILE_MODES.twoWeapons.damage], [-4, 0]);
+check("only the projectile modes repeat their damage",
+	[R.MULTI_MISSILE_MODES.twoProjectiles.repeats, R.MULTI_MISSILE_MODES.threeProjectiles.repeats,
+	 R.MULTI_MISSILE_MODES.twoWeapons.repeats], [true, true, false]);
+
+// A combination is "Launcher/Missile", and the weapon in hand may be either half of it.
+const combos = R.parseMissileCombos("Bow(Long)/Arrow(Long Bow/Normal), Thrown/Dagger");
+check("a combination parses into its two halves",
+	combos.map(c => [c.launcher, c.missile]),
+	[["Bow(Long)", "Arrow(Long Bow/Normal)"], ["Thrown", "Dagger"]]);
+check("an entry with no slash is not a combination", R.parseMissileCombos("Dagger").length, 0);
+check("an empty list parses to nothing", R.parseMissileCombos("").length, 0);
+check("the launcher named in the pair is covered",
+	R.hasMissileCombo("Bow(Long)", combos), true);
+check("...and so is the ammunition it fires",
+	R.hasMissileCombo("Arrow(Long Bow/Normal)", combos), true);
+check("a thrown weapon is covered by its Thrown pair",
+	R.hasMissileCombo("Dagger", combos), true);
+check("a weapon in no combination is not covered",
+	R.hasMissileCombo("Crossbow(Heavy)", combos), false);
+// A pair whose halves do not go together covers nothing, so a mistyped combo cannot apply to
+// every bow in the game.
+check("a launcher paired with the wrong ammunition covers neither half",
+	[R.hasMissileCombo("Bow(Long)", R.parseMissileCombos("Bow(Long)/Rock")),
+	 R.hasMissileCombo("Rock", R.parseMissileCombos("Bow(Long)/Rock"))], [false, false]);
+
+// The tiers, which do not stack -- Lore is tested first, exactly as the off-hand skills resolve.
+const mmInput = (extra) => Object.assign({
+	mode: "twoProjectiles", weaponName: "Bow(Long)", knowChance: 0, knowList: "", loreList: ""
+}, extra);
+check("an ordinary single shot costs nothing",
+	R.resolveMultiMissile({ mode: "", weaponName: "Bow(Long)" }),
+	{ attack: 0, damage: 0, shots: 1, repeats: false, tier: "none", levels: 0 });
+check("neither skill means the full penalty",
+	R.resolveMultiMissile(mmInput({})),
+	{ attack: -4, damage: -6, shots: 2, repeats: true, tier: "full", levels: 0 });
+check("a learned Lore combination removes it entirely",
+	R.resolveMultiMissile(mmInput({ loreList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: 0, damage: 0, shots: 2, repeats: true, tier: "lore", levels: 0 });
+check("Lore wins over Knowledge, they do not stack",
+	R.resolveMultiMissile(mmInput({ knowChance: 100, knowList: "Bow(Long)/Arrow(Long Bow/Normal)",
+		loreList: "Bow(Long)/Arrow(Long Bow/Normal)" })).tier, "lore");
+
+// Knowledge steps every 25%, not the 20% every other skill in the system uses. Each level is
+// worth 1 to hit and 2 damage, and it can cancel the penalty but never turn it into a bonus.
+check("24% buys nothing -- it floors",
+	R.resolveMultiMissile(mmInput({ knowChance: 24, knowList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: -4, damage: -6, shots: 2, repeats: true, tier: "knowledge", levels: 0 });
+check("25% buys one level: 1 to hit and 2 damage",
+	R.resolveMultiMissile(mmInput({ knowChance: 25, knowList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: -3, damage: -4, shots: 2, repeats: true, tier: "knowledge", levels: 1 });
+// The skill's own worked example claims "at 50% skill chance the practitioner could have no
+// penalties to hit or damage when firing two arrows at once" -- which its own rule does not give:
+// two levels off -4/-6 leaves -2/-2, and only 100% clears it. His sheet implements the rule, so
+// this pins the rule and the contradiction is written up in UPSTREAM-ISSUES.md item 29.
+check("50% buys two levels, which does NOT clear it -- the book's example is wrong",
+	R.resolveMultiMissile(mmInput({ knowChance: 50, knowList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: -2, damage: -2, shots: 2, repeats: true, tier: "knowledge", levels: 2 });
+check("100% floors both at zero and never past it",
+	R.resolveMultiMissile(mmInput({ knowChance: 100, knowList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: 0, damage: 0, shots: 2, repeats: true, tier: "knowledge", levels: 4 });
+check("three projectiles take longer to buy down than two",
+	R.resolveMultiMissile(mmInput({ mode: "threeProjectiles", knowChance: 50,
+		knowList: "Bow(Long)/Arrow(Long Bow/Normal)" })),
+	{ attack: -6, damage: -8, shots: 3, repeats: true, tier: "knowledge", levels: 2 });
+// Learned per combination: a high skill on a combination never learned pays full anyway.
+check("a combination never learned pays full however high the skill",
+	R.resolveMultiMissile(mmInput({ knowChance: 100, knowList: "Thrown/Dagger" })),
+	{ attack: -4, damage: -6, shots: 2, repeats: true, tier: "full", levels: 0 });
+
 // --- the better of two attack charts ------------------------------------------------
 // Player's Guide, Dual Class, Experience and Advancement rule 5: "Attack skill is determined by
 // the greater of the two values". Better is further along the chart order, not a bigger number.

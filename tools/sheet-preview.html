@@ -44,7 +44,7 @@
 <div class="chat-title">Lore panel check: a real Archer at title 12, who holds all three lores at
 	once -- the Warrior above only ever shows two</div>
 <div class="frame imagine sheet actor character" id="archer-check"></div>
-<div class="chat-title">The same Archer's Long Bow attack, for Projectile Lore's damage line</div>
+<div class="chat-title">The same Archer's Long Bow, firing two arrows at once</div>
 <div class="chat" id="archer-chat"></div>
 
 <script type="module">
@@ -423,7 +423,14 @@ const archerCombat = {
 	weaponLoreList: "", missileLoreList: "",
 	projectileLoreList: "Arrow(Long Bow/Normal)",
 	weaponLoreNames: [], missileLoreNames: [],
-	projectileLoreNames: R.parseLoreList("Arrow(Long Bow/Normal)")
+	projectileLoreNames: R.parseLoreList("Arrow(Long Bow/Normal)"),
+	// Archer reaches Multiple Missile Lore at title 10, so this one qualifies for both halves.
+	// Knowledge has no class title gating it at all -- holding the skill is the whole of it --
+	// which is why only the Lore row is derived from the class here.
+	hasMultiMissileLore: R.hasLore(12, archerClass.system.multiMissileLoreTitle),
+	multiMissileKnowChance: 50,
+	multiMissileKnowList: "Bow(Long)/Arrow(Long Bow/Normal)",
+	multiMissileLoreList: ""
 };
 console.assert(archerCombat.hasWeaponLore && archerCombat.hasMissileLore && archerCombat.hasProjectileLore,
 	"Archer at title 12 should hold all three lores");
@@ -432,11 +439,18 @@ console.assert(archerCombat.hasWeaponLore && archerCombat.hasMissileLore && arch
 // #buildClassProgress above; it is a private static method on the sheet class.
 function buildLorePanel(combat) {
 	const weapon = !!combat.hasWeaponLore, missile = !!combat.hasMissileLore, projectile = !!combat.hasProjectileLore;
-	const kinds = [weapon && "Weapon", missile && "Missile", projectile && "Projectile"].filter(Boolean);
+	const knowChance = parseInt(combat.multiMissileKnowChance) || 0;
+	const multiKnow = knowChance > 0, multiLore = !!combat.hasMultiMissileLore;
+	const kinds = [weapon && "Weapon", missile && "Missile", projectile && "Projectile",
+	               (multiKnow || multiLore) && "Multiple Missile"].filter(Boolean);
 	return {
-		show: weapon || missile || projectile, hasWeapon: weapon, hasMissile: missile, hasProjectile: projectile,
+		show: weapon || missile || projectile || multiKnow || multiLore,
+		hasWeapon: weapon, hasMissile: missile, hasProjectile: projectile,
+		hasMultiKnow: multiKnow, hasMultiLore: multiLore,
 		label: kinds.join(", "), weaponText: combat.weaponLoreList ?? "",
-		missileText: combat.missileLoreList ?? "", projectileText: combat.projectileLoreList ?? ""
+		missileText: combat.missileLoreList ?? "", projectileText: combat.projectileLoreList ?? "",
+		multiKnowText: combat.multiMissileKnowList ?? "", multiLoreText: combat.multiMissileLoreList ?? "",
+		multiKnowChance: knowChance, multiKnowLevels: Math.floor(knowChance / 25)
 	};
 }
 
@@ -469,16 +483,31 @@ const projLore = R.getProjectileLoreDamage({
 });
 console.assert(projLore.specific && projLore.damage > 0,
 	"the Long Bow should be specifically lored through its Arrow, for a nonzero damage bonus");
-const bowResult = R.resolveAttack({ natural: 16, mods: 0, skill: archerCtx.system.combat.attackSkill, calledShot: false });
+// ...and firing TWO arrows at once with it, which is the multi-missile path: a -4/-6 penalty
+// bought down two levels by this Archer's 50% Multiple Missile Knowledge on exactly this
+// launcher/missile combination, then the second arrow landing for the same damage again.
+const bowMulti = R.resolveMultiMissile({
+	mode: "twoProjectiles", weaponName: bow.name,
+	knowChance: archerCombat.multiMissileKnowChance,
+	knowList: archerCombat.multiMissileKnowList, loreList: archerCombat.multiMissileLoreList
+});
+console.assert(bowMulti.tier === "knowledge" && bowMulti.attack === -2 && bowMulti.damage === -2,
+	"50% Knowledge on a learned combination should buy two projectiles down to -2/-2");
+const bowMods = R.getToHitModifiers({ mode: "missile", weapon: bow.system, attacker: {},
+	lore: 0, offhand: 0, multiMissile: bowMulti.attack });
+const bowResult = R.resolveAttack({ natural: 16, mods: bowMods.total,
+	skill: archerCtx.system.combat.attackSkill, calledShot: false });
 const bowStr = 0; // missile damage does not take the Strength bonus
-const bowRolled = 15 + bowStr + projLore.damage;   // sample dice total of 15 on 5d6
+const bowRolled = 15 + bowStr + projLore.damage + bowMulti.damage;   // sample dice total of 15 on 5d6
 const archerAttack = {
 	weapon: bow.name, modeLabel: "Missile", actorName: "Fenwick Archer", targetName: "",
-	aim: "", result: bowResult, mods: { list: [], total: 0 },
+	aim: "", result: bowResult, mods: bowMods,
 	speed: archerCtx.weapons[0].speed, fumble: null,
 	damage: bowResult.isHit ? { dice: bow.system.damage, str: bowStr, magic: 0, misc: 0,
 		projectileLore: projLore.damage, projectileLorePerDie: projLore.perDie,
-		rolled: bowRolled, multiplier: 1, total: bowRolled, type: "Piercing" } : null,
+		multiMissile: bowMulti.damage, multiMissileTier: bowMulti.tier,
+		shots: bowMulti.shots, perShot: bowRolled,
+		rolled: bowRolled, multiplier: 1, total: bowRolled * bowMulti.shots, type: "Piercing" } : null,
 	applied: false, inCombat: false
 };
 document.getElementById("archer-chat").innerHTML = await render("../templates/chat/attack-card.hbs", archerAttack);

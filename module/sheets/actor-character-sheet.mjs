@@ -175,19 +175,37 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		var tmpweapon = !!tmpsystem.combat.hasWeaponLore;
 		var tmpmissile = !!tmpsystem.combat.hasMissileLore;
 		var tmpprojectile = !!tmpsystem.combat.hasProjectileLore;
+
+		// The two multi-missile lists are shown on different terms from the three above. Those
+		// name weapons singled out for a LARGER bonus, so they only matter once the class has
+		// granted the lore. A multi-missile combination is what makes its skill apply at all, and
+		// Knowledge has no class title gating it whatever -- so the Knowledge row shows whenever
+		// the character actually holds that skill, and only the Lore row waits on a title.
+		var tmpknowchance = parseInt(tmpsystem.combat.multiMissileKnowChance) || 0;
+		var tmpmultiknow = tmpknowchance > 0;
+		var tmpmultilore = !!tmpsystem.combat.hasMultiMissileLore;
+
 		var tmpkinds = [];
 		if (tmpweapon) { tmpkinds.push("Weapon"); }
 		if (tmpmissile) { tmpkinds.push("Missile"); }
 		if (tmpprojectile) { tmpkinds.push("Projectile"); }
+		if (tmpmultiknow || tmpmultilore) { tmpkinds.push("Multiple Missile"); }
+
 		return {
-			show: tmpweapon || tmpmissile || tmpprojectile,
+			show: tmpweapon || tmpmissile || tmpprojectile || tmpmultiknow || tmpmultilore,
 			hasWeapon: tmpweapon,
 			hasMissile: tmpmissile,
 			hasProjectile: tmpprojectile,
+			hasMultiKnow: tmpmultiknow,
+			hasMultiLore: tmpmultilore,
 			label: tmpkinds.join(", "),
 			weaponText: tmpsystem.combat.weaponLoreList ?? "",
 			missileText: tmpsystem.combat.missileLoreList ?? "",
-			projectileText: tmpsystem.combat.projectileLoreList ?? ""
+			projectileText: tmpsystem.combat.projectileLoreList ?? "",
+			multiKnowText: tmpsystem.combat.multiMissileKnowList ?? "",
+			multiLoreText: tmpsystem.combat.multiMissileLoreList ?? "",
+			multiKnowChance: tmpknowchance,
+			multiKnowLevels: Math.floor(tmpknowchance / 25)
 		};
 	}
 

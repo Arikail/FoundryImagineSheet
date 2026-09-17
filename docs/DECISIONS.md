@@ -1851,3 +1851,83 @@ preview given a real second class (Mage at title 4, beside the Warrior at title 
 
 **Not verified:** anything needing a running Foundry V14 -- the title stepper buttons writing
 `system.title` back to the class item and the header re-rendering from it.
+
+### 2026-09-16 — Multiple missile fire, and two places the books argue with themselves
+
+The last of the lore family. Firing more than one missile at a time, and the two skills that pay
+the penalty for it down or remove it outright.
+
+**The penalties are the same in both sources, so nothing had to be chosen.** Player's Guide,
+"Unconventional Attacks" (p.182), gives two projectiles -4 to hit and -6 damage, three -8 and -12,
+and firing two weapons at once -4 to hit; his three situational checkboxes carry exactly those
+figures (sheet-worker.js:73015-73017). `MULTI_MISSILE_MODES` holds all three with their shot
+counts.
+
+**Both skills are learned one combination at a time, which is what makes them unlike the other
+three lores.** Weapon, Missile and Projectile Lore all name weapons singled out for a LARGER bonus,
+and holding the lore at all comes from the class. These do not work that way: "A skill roll is
+required to learn each particular combination of missile weapon type and projectile type... if the
+skill user goes and gets her arrows barbed she will have to reroll" (Master's Manual). So an entry
+in the list is what makes the skill apply at all, and the character model carries two new string
+lists (`multiMissileKnowList` / `multiMissileLoreList`) in his own "Launcher/Missile" shape, with
+"Thrown" as the launcher for a weapon thrown from the hand.
+
+**Matching a combination to the weapon in hand takes either half of the pair.** A character firing
+a Long Bow and a character holding the Arrow it fires are both covered by "Long Bow/Arrow". A pair
+whose halves do not actually belong together covers neither half, which is what stops a mistyped
+combination from applying to every bow in the game. Two of his five match branches
+(sheet-worker.js:64699-64703) are for a launcher loaded with something other than its normal
+ammunition -- his `switchedProjectiles` path -- and nothing in this port switches a launcher's
+ammunition yet, so those two are deliberately not ported rather than half-built.
+
+**The tiers do not stack and Lore is tested first**, exactly as the off-hand skills resolve: Lore
+removes the penalty entirely for a learned combination, Knowledge buys it down, neither pays full.
+Knowledge's step is `chance / 25` -- the only buy-down in the system that is not 20 -- worth 1 to
+hit and 2 damage per level, capped at the penalty so it can cancel but never turn into a bonus.
+Both the Master's Manual's text and his code say 25, so it is implemented rather than normalised;
+noted for him in `UPSTREAM-ISSUES.md` item 29.
+
+**Two projectiles are ONE roll in this port, because his sheet says so and the book says
+otherwise.** The Player's Guide says "Roll each attack separately" (p.182). His
+`handlePhysicalAttacks` makes one attack roll and reports that the others land for the same damage
+again (sheet-worker.js:65168-65187, "2nd projectile hits the same target for the same damage").
+These genuinely differ at the table -- separate rolls let one arrow hit and the other miss, in
+different body areas -- and the standing rule is that where the sheet and a book disagree the sheet
+wins, so the port multiplies: a hit does its damage times the number of projectiles, shown on the
+card as "23 each x 2 projectiles". `resolveMultiMissile` reports `shots` and `repeats`, so if he
+says the book's version is what he plays, the attack path loops rather than multiplies and nothing
+else moves. Written up as `UPSTREAM-ISSUES.md` item 28.
+
+**Firing two WEAPONS does not repeat.** Those are two separate attacks, each rolled through the
+normal path on its own, so only the projectile modes carry `repeats`. The -4 is also independent of
+the off-hand penalty -- "both hands suffer a -4 penalty to hit (ambidextrous or not) in addition to
+the normal off-hand weapon penalties" -- and the parenthesis is the point: an Ambidextrous
+character escapes the off-hand penalty and does not escape this one, which is why the multi-missile
+rules know nothing about handedness and the two are simply added.
+
+**The book's own worked example for Knowledge is wrong**, and the port implements the rule rather
+than the example. "At 50% skill chance the practitioner could have no penalties to hit or damage
+when firing two arrows at once" -- but two levels off -4/-6 leaves -2/-2, and only 100% clears it.
+His sheet implements the rule; so does this. `UPSTREAM-ISSUES.md` item 29 carries the arithmetic.
+
+**Not built, and deliberately:** the third thing both skills cover is "penalties for special
+projectile types" (barbed arrows and the like). That is its own subsystem -- his
+`switchedProjectiles` / `altProjectileName` path -- and nothing in the port models a launcher
+loaded with anything but its normal ammunition yet, so the two skills reduce the two penalties
+that exist here and the third is left for when special projectiles land. The "point blank or short
+range only" restriction on double and triple fire is likewise a hint on the dialog rather than a
+gate, because the attack flow does not model range at all.
+
+**Verified:** combat 374 (22 new: the three modes' figures, combination parsing and matching from
+either half, a mismatched pair covering nothing, all three tiers, the 25% step flooring at 24%, the
+cap at zero, three projectiles taking longer to buy down than two, and a high skill on a
+combination never learned still paying full), derivation 251, creature 139 and availability 39
+unchanged, 27 modules parse. The sheet preview's Archer -- the real class document, at title 12,
+which reaches Multiple Missile Lore at 10 -- now shows the two new rows on the Lore panel, and his
+Long Bow firing two arrows resolves through the real rules end to end: "Multiple Missiles -2" on
+the to-hit line (the -4 bought down two levels by a 50% Knowledge on exactly that combination),
+"-2 multiple missiles" in the damage breakdown, and "23 each x 2 projectiles -- knowledge" for 46
+total.
+
+**Not verified:** anything needing a running Foundry V14 -- the new Firing dropdown on the attack
+dialog and the two new list fields writing back.

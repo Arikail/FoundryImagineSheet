@@ -667,3 +667,78 @@ expects "Mage subclass".
 where a class is concerned is exactly the kind of correction the project does not make unilaterally
 (same reasoning as Monk). Likely fix is swapping the two cells; worth your one-line confirmation
 rather than assumed.
+
+## 28. Double/triple missile fire: the book says roll each attack separately, your sheet rolls once
+
+**Status:** open · **Severity:** rules disagreement, and the two give different results at the table
+
+The Player's Guide, "Unconventional Attacks" (p.182), on firing two or three projectiles at once:
+
+> Double/Triple Missile Fire: Daggers, stilettos, arrows, stars, and rocks/bullets (sling) can be
+> fired two or three at a time. This maneuver can only be tried at point blank or short range.
+> **Roll each attack separately.**
+
+Your sheet does not roll each attack separately. `handlePhysicalAttacks` makes ONE attack roll and
+then reports that the others land for the same damage again (sheet-worker.js:65168-65187):
+
+```
+// 2 Projectiles
+if (sitModSpecial.includes("2 Projectiles") && tempMissileCheck=="on") {
+    if (damageListing.includes("Damage")) {
+        extraDamageListing=" 2nd projectile hits the same target for the same damage.";
+```
+
+**These are not the same maneuver.** Rolling separately means each arrow can hit or miss on its
+own, can land in a different body area, and can fumble on its own. One roll with repeated damage
+means both arrows always share the first one's fate — two hits or two misses, both in the same
+location. The penalties (-4/-6 for two, -8/-12 for three) are identical either way, so the
+difference is entirely in how the hits resolve.
+
+**What the port does:** follows your sheet, per the standing rule that where the sheet and a book
+disagree the sheet wins. Firing two projectiles is one roll, and a hit does its damage times the
+number of projectiles, shown on the card as "23 each × 2 projectiles".
+
+**Worth a line back either way.** If the single roll is deliberate — it is faster at the table and
+it is what your code has done for years — the port is already right and this note can be closed. If
+the book's version is what you play, the change is small and localised: `resolveMultiMissile`
+already reports `shots`, so the attack path would loop that many attack rolls instead of
+multiplying one damage figure.
+
+## 29. Multiple Missile Knowledge's worked example contradicts its own rule
+
+**Status:** open · **Severity:** the book disagrees with the book; your sheet follows the rule, and so does the port
+
+Master's Manual, Multiple Missile Knowledge, General Usage — first the rule:
+
+> For every 25% of the skill chance, the penalties are removed by -1 for hit rolls and -2 for
+> damage rolls
+
+then, three lines later, the worked example:
+
+> Thus, at 50% skill chance the practitioner could have no penalties to hit or damage when firing
+> two arrows at once.
+
+**The two do not agree.** Firing two arrows costs -4 to hit and -6 damage (Player's Guide, p.182).
+50% is two levels, and two levels by the stated rule removes 2 of the to-hit penalty and 4 of the
+damage penalty:
+
+```
+  25%  ->  1 level   ->  hit -3,  damage -4
+  50%  ->  2 levels  ->  hit -2,  damage -2     <- the example claims this is zero and zero
+  75%  ->  3 levels  ->  hit -1,  damage  0
+ 100%  ->  4 levels  ->  hit  0,  damage  0
+```
+
+By the rule as written, two arrows only come entirely free at 100%. The example would come out
+right if each level were worth 2 to hit and 3 damage, which is not what the rule says.
+
+**Your sheet implements the rule, not the example** (sheet-worker.js:64672-64684): levels are
+`chance/25`, the to-hit bonus is the level count and the damage bonus is twice it, each capped at
+the penalty it is cancelling. The port does the same, so a 50% practitioner fires two arrows at
+-2/-2 rather than clean.
+
+**A second, smaller thing while you are here:** the 25 is the only one of its kind. Every other
+buy-down skill in your sheet steps every 20% — Second Weapon Knowledge (83188), Projectile
+Knowledge (82740), Second Weapon Lore's extra seconds (83242). The Master's Manual says 25 for this
+one and your code agrees, so the port implements 25 and has not quietly normalised it; noted only
+so you know it was seen rather than missed.
