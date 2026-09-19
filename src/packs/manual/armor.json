@@ -1,0 +1,23 @@
+{
+  "_about": "Hand-authored armour, merged into the generated pack by tools/extract/build_documents.py (apply_manual_content). Put entries under \"entries\", keyed by name, with the item's system fields. A new name is added, tagged sourcebook \"Custom\" unless you give one. A name his data already builds is ignored unless the entry says \"_override\": true, in which case only the fields you give are laid over his. Keys starting with _ are notes and never read. Full guide: docs/ADDING-CONTENT.md. Rebuild with: python tools/extract/build_documents.py --write",
+  "_example": {
+    "_note": "An example of the shape. Copy entries from here into \"entries\" to use them.",
+    "Quilted Vest": {
+      "material": "Padding",
+      "flexibility": "Flexible",
+      "weight": 4,
+      "coverage": {
+        "torsoUpper": 2,
+        "torsoMid": 2,
+        "torsoLower": 2
+      },
+      "penalties": {
+        "skills": 0,
+        "defense": 0,
+        "initiative": 0,
+        "speed": 0
+      }
+    }
+  },
+  "entries": {}
+}

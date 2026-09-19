@@ -2331,3 +2331,48 @@ The combat suite's "every class parses to a real chart" check now skips a non-cl
 whose bare "Beginner" is meant not to parse. In the preview, the real Warrior's Skills tab now shows
 its progression from his data, and Elemental Dancer(Water) at title 7 shows "Balanced Mind, Call of
 Water, Elemental Knowledge, Mind Dance, Kinetics Lore".
+
+### 2026-09-19 — A method of adding content to every pack, with no code change
+
+**The user's requirement:** "leave a method of adding new content to every module." **What existed:**
+one hand-authored file, `src/packs/manual/classes.json`, read by a classes-only loader, holding one
+entry that his data now builds anyway (Elemental Dancer). The in-Foundry route was also undocumented.
+That matters because the runtime importer updates the system's compendiums **by name**, so a Game
+Master who edited a stock entry would lose the edit at the next re-import.
+
+**Decision: two routes, both documented in `docs/ADDING-CONTENT.md`.**
+
+1. **In Foundry**, for a Game Master's own table. Create items in a compendium of your own, set the
+   Sourcebook field, and drag them on. No code was needed for this route to be sound: the Content
+   Availability window already discovers sourcebooks from *every* Item compendium
+   (`#discoverSourcebooks`), so any name a Game Master tags content with ("Custom", "Our Campaign")
+   becomes a switch by itself. The guide is plain about the one trap: stock entries are overwritten
+   on re-import, so change a copy under a new name and forbid the original.
+2. **In the content files**, for content that ships with the system. There is one
+   `src/packs/manual/<pack>.json` per pack, all nine, each with a worked `_example`, merged by one
+   shared `apply_manual_content` in `build_documents.py`. It replaces `load_manual_classes`.
+
+**Sub-decisions on route 2:**
+- *Additive by default; overriding his data must be said.* A name his data already builds is
+  ignored and reported, unless the entry carries `"_override": true`. In that case only the given
+  fields are laid over his (objects merge, lists replace) and the override is reported on **every**
+  build. His sheet is the source of truth, so a silent override would contradict the project's
+  first rule. A loud one is a correction he can see.
+- *Hand content defaults to sourcebook "Custom"*, so all of it sits under one switch unless tagged
+  otherwise. That is the "tagged by sourcebook, custom content supported" architecture from
+  2026-09-10, finally with a default.
+- *A misspelt field is reported*, checked against every name the item type's schema file declares
+  plus every key the generated documents carry. It is a flat name set, not a tree, because the schemas
+  build some fields through helper functions. A typo is almost never another field's real name, so
+  the flat check catches what matters. Without it, a misspelt field would vanish silently on import.
+- *A base class with paths cannot be overridden whole.* Each path is its own document, so each is
+  overridden by its own name.
+- *The Elemental Dancer entry is removed* from `manual/classes.json`, since his data builds it. A
+  `_history` note in the file says why, so the file does not look as though content went missing.
+
+**Verified:** with every example moved into `entries`, plus a deliberate typo and two collisions,
+the build reported 8 added (all tagged Custom), 1 override (Climb's description only), 3 ignored
+(one of them a collision in my own first example, Rope Use, which is a real skill of his and was
+renamed Knot Craft), and the typo "damge". With the files as shipped (no entries), the generated
+documents are byte-identical to before. The JavaScript suites are untouched by a build-tool change.
+**Not verified:** route 1 in a running Foundry V14.

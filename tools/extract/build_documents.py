@@ -572,9 +572,7 @@ def build_classes():
         }))
         if tmpbasename not in blockedraces:
             note("class-missing-from-table", where, "no entry in classRaceAndDetails; no race is barred")
-    # A manual entry is redundant once his data builds the class under its own name or as the
-    # base of its paths -- Elemental Dancer is now built from his inline row, one document per element.
-    docs.extend(load_manual_classes({d["name"] for d in docs} | {d["system"]["baseClass"] for d in docs}))
+    # Hand-authored classes are merged by apply_manual_content in main(), as for every other pack.
     return docs
 
 
@@ -696,47 +694,144 @@ def build_class_skills(tmpentries, tmppathvar, tmppath):
     return tmplist, tmpstrings
 
 
-def load_manual_classes(tmpbuilt):
-    """
-    Class documents hand-authored from his own Word class templates.
+# @MARKER HAND-AUTHORED CONTENT
+# Every pack can take hand-authored entries, from src/packs/manual/<pack>.json, merged over what his
+# sheet-worker builds. This is the way content is added to the system without touching code: a new
+# class, a homebrew weapon, a race from a book he has not yet put in his sheet, or a correction to
+# one of his entries. See docs/ADDING-CONTENT.md.
+#
+# The file shape, the same for every pack:
+#
+#     {
+#       "_about": "anything -- keys starting with _ are notes and are never read as content",
+#       "entries": {
+#         "Name Of Thing": { ...the item's system fields, exactly as a document of that pack has them... },
+#         "Another":       { "_override": true, ...only the fields to change on his entry of that name... }
+#       }
+#     }
+#
+# The rules:
+#   - A NEW name is added as a new document. Fields left out take the schema's defaults when it is
+#     imported into Foundry, so an entry only has to say what matters.
+#   - A name his data ALREADY builds is ignored and reported, unless the entry says "_override": true.
+#     Then its fields are laid over his, field by field (a list replaces a list whole), and that too is
+#     reported, every run. His data is the source of truth, so changing it has to be said out loud.
+#   - A class name that is the BASE of his paths (Elemental Dancer, of Elemental Dancer(Water) and the
+#     rest) counts as built.
+#   - With no sourcebook given, a hand-authored entry is tagged "Custom". That puts every piece of
+#     homebrew under one switch in the Game Master's content settings, so it can all be turned off
+#     together, or kept out of a campaign that wants the published game only.
+#   - A field name the pack's documents do not have is reported, since it is almost always a typo
+#     that would otherwise be silently dropped on import.
 
-    Five classes appear in his classtitledict and goalupdict but have no row at all in
-    classRequirementsAndDetails, so nothing can be built for them from the sheet-worker alone
-    (docs/UPSTREAM-ISSUES.md item 22). Those are authored in src/packs/manual/classes.json from
-    the .doc templates and merged here.
+MANUAL_DIR = os.path.join(HERE, "..", "..", "src", "packs", "manual")
 
-    A manual entry NEVER overwrites a class his own data can build: if he later adds the missing
-    rows, the generated one wins and the manual entry is reported as redundant instead.
-    """
-    path = os.path.join(HERE, "..", "..", "src", "packs", "manual", "classes.json")
+# The document type each pack holds, and, for the three trait packs, the category a hand-authored
+# entry gets if it does not say.
+PACK_TYPES = {
+    "skills": ("skill", None), "weapons": ("weapon", None), "armor": ("armor", None),
+    "equipment": ("equipment", None), "races": ("race", None), "classes": ("class", None),
+    "abilities": ("trait", "ability"), "disabilities": ("trait", "disability"),
+    "immunities": ("trait", "immunity"),
+}
+
+
+def merge_fields(tmpbase, tmpover):
+    """Lay tmpover over tmpbase: objects merge key by key, anything else -- lists included -- is
+    replaced whole."""
+    tmpout = dict(tmpbase)
+    for tmpkey, tmpvalue in tmpover.items():
+        if isinstance(tmpvalue, dict) and isinstance(tmpout.get(tmpkey), dict):
+            tmpout[tmpkey] = merge_fields(tmpout[tmpkey], tmpvalue)
+        else:
+            tmpout[tmpkey] = tmpvalue
+    return tmpout
+
+
+def schema_field_names(tmptype):
+    """Every field name the item type's data model declares, read from module/data/item-<type>.mjs.
+
+    A flat set of names rather than a tree: the schema files build some fields through helpers
+    (modField(), movementRateField()), which a tree reading would have to execute. A misspelt field
+    is almost never another field's real name, so checking each name against the whole set catches
+    what the check exists to catch."""
+    tmpfile = {"creatureAttack": "item-creature-attack"}.get(tmptype, "item-" + tmptype)
+    path = os.path.join(HERE, "..", "..", "module", "data", tmpfile + ".mjs")
     if not os.path.exists(path):
-        return []
+        return set()
+    tmptext = open(path, encoding="utf-8").read()
+    return set(re.findall(r'(\w+)\s*:\s*(?:new\s+fields\.|\w+Field\()', tmptext))
+
+
+def unknown_fields(tmpsystem, tmpnames, tmpprefix=""):
+    """The field paths in tmpsystem whose name the pack's schema does not declare."""
+    tmpout = []
+    for tmpkey, tmpvalue in tmpsystem.items():
+        if tmpkey.startswith("_"):
+            continue
+        if tmpkey not in tmpnames:
+            tmpout.append(tmpprefix + tmpkey)
+        elif isinstance(tmpvalue, dict):
+            tmpout.extend(unknown_fields(tmpvalue, tmpnames, tmpprefix + tmpkey + "."))
+    return tmpout
+
+
+def generated_field_names(tmpvalue, tmpnames):
+    """Every key anywhere in a generated document's system, added to tmpnames."""
+    if isinstance(tmpvalue, dict):
+        for tmpkey, tmpinner in tmpvalue.items():
+            tmpnames.add(tmpkey)
+            generated_field_names(tmpinner, tmpnames)
+    elif isinstance(tmpvalue, list):
+        for tmpinner in tmpvalue:
+            generated_field_names(tmpinner, tmpnames)
+    return tmpnames
+
+
+def apply_manual_content(tmppack, tmpdocs):
+    """Merge src/packs/manual/<pack>.json into one pack's generated documents."""
+    path = os.path.join(MANUAL_DIR, tmppack + ".json")
+    if not os.path.exists(path):
+        return tmpdocs
     with open(path, encoding="utf-8") as fh:
         payload = json.load(fh)
 
-    out = []
+    tmptype, tmpcategory = PACK_TYPES[tmppack]
+    tmpbyname = {d["name"]: d for d in tmpdocs}
+    # a class his paths are built from counts as built, under its base name
+    tmpbases = {d["system"].get("baseClass") for d in tmpdocs if tmppack == "classes"} - {None, ""}
+    # what "a field of this pack" means: every name its schema declares, and every key its generated
+    # documents carry (a few, like the coverage areas, are keys inside an object field)
+    tmpknown = schema_field_names(tmptype)
+    for tmpdoc in tmpdocs:
+        generated_field_names(tmpdoc["system"], tmpknown)
+
     for tmpname, tmprow in payload.get("entries", {}).items():
-        if tmpname in tmpbuilt:
-            note("manual-class-redundant", "manual/%s" % tmpname,
-                 "his own data now builds this class; the manual entry is ignored")
+        where = "manual/%s/%s" % (tmppack, tmpname)
+        tmpsystem = {k: v for k, v in tmprow.items() if not k.startswith("_")}
+        for tmpfield in unknown_fields(tmpsystem, tmpknown):
+            note("manual-unknown-field", where, "%s is not a field of this pack's documents" % tmpfield)
+
+        if tmpname in tmpbyname or tmpname in tmpbases:
+            if not tmprow.get("_override"):
+                note("manual-ignored", where, "his data already builds this; say \"_override\": true to change it")
+                continue
+            if tmpname not in tmpbyname:
+                note("manual-ignored", where, "is the base of several path documents; override each path by its own name")
+                continue
+            tmpdoc = tmpbyname[tmpname]
+            tmpdoc["system"] = merge_fields(tmpdoc["system"], tmpsystem)
+            note("manual-override", where, "fields laid over his: %s" % ", ".join(sorted(tmpsystem)))
             continue
-        system = {k: v for k, v in tmprow.items() if not k.startswith("_")}
-        # A manual class is absent from getSlotsNeededForClass too -- the same missing row that
-        # made it manual in the first place -- so it has no slot requirement to copy. Left unset
-        # rather than counted off its own authored progression: the naive count of Elemental
-        # Dancer's fifteen titles comes to 60 against a range of 36-56 across his 86 classes,
-        # because its last five titles list one Sense Supernatural improving from 20% to 99%
-        # rather than five separate acquisitions. Reading that as one skill gives exactly 56, his
-        # own ceiling -- which is suggestive enough to be worth his confirmation and far too
-        # inferential to bake in. Reported every run; see UPSTREAM-ISSUES.md item 26.
-        if not system.get("skillSlotsNeeded"):
-            note("manual-class-no-slot-count", "manual/%s" % tmpname,
-                 "no entry in getSlotsNeededForClass and none authored; "
-                 "the class reads as costing no class skill slots until he supplies one")
-        out.append(make_doc(tmpname, "class", system))
-        note("manual-class-used", "manual/%s" % tmpname,
-             "built from %s" % tmprow.get("_document", "a Word class template"))
-    return out
+
+        if not tmpsystem.get("sourcebook"):
+            tmpsystem["sourcebook"] = "Custom"
+        if tmpcategory and not tmpsystem.get("category"):
+            tmpsystem["category"] = tmpcategory
+        tmpdocs.append(make_doc(tmpname, tmptype, tmpsystem))
+        tmpbyname[tmpname] = tmpdocs[-1]
+        note("manual-added", where, "added (sourcebook %s)" % tmpsystem["sourcebook"])
+    return tmpdocs
 
 
 # Abilities, disabilities and immunities: which pair of dictionaries feeds each category, and
@@ -830,7 +925,7 @@ def main():
     print(f"{'pack':14} {'documents':>10}")
     print("-" * 28)
     for tmpname, tmpbuilder in BUILDERS.items():
-        docs = tmpbuilder()
+        docs = apply_manual_content(tmpname, tmpbuilder())
         total += len(docs)
         print(f"{tmpname:14} {len(docs):10}")
         if args.write:
