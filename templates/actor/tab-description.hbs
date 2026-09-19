@@ -16,6 +16,25 @@
 				placeholder="Moral, Amoral, Aggressive..."></span></li>
 	</ul>
 
+	{{!-- What the race gives. For a half race this is already the two combined: skills from both
+	      (a shared one at the better bonus), abilities from both, the lesser ages. Listed, not
+	      applied -- see DECISIONS.md, "The rest of a race". --}}
+	{{#with system.identity.race as |race|}}
+	<div class="panel race-panel">
+		<h3>{{#if ../system.identity.isHalfRace}}Half Race{{else}}Race{{/if}}: {{../system.identity.raceName}}</h3>
+		<p class="muted">Starting age {{race.ages.startLow}}&ndash;{{race.ages.startHigh}}, maximum {{race.ages.maxAge}}</p>
+		<p><label>Racial skills</label>
+			{{#each race.skills as |s|}}<span class="race-chip">{{s.name}}{{#if s.bonus}} {{s.bonus}}{{/if}}</span>{{else}}<span class="muted">none listed</span>{{/each}}
+			{{#if race.skillNote}}<span class="muted">({{race.skillNote}})</span>{{/if}}</p>
+		{{#if race.abilities.length}}<p><label>Abilities</label>
+			{{#each race.abilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if race.disabilities.length}}<p><label>Disabilities</label>
+			{{#each race.disabilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if race.immunities.length}}<p><label>Immunities</label>
+			{{#each race.immunities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+	</div>
+	{{/with}}
+
 	<div class="panel-row">
 
 		<div class="panel">

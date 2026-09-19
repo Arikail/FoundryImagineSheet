@@ -135,6 +135,39 @@ export default class ImagineRaceData extends foundry.abstract.TypeDataModel {
 			// chart in his sheet; that part is not modelled yet.
 			bodyType: new fields.StringField({ required: true, initial: "Humanoid" }),
 
+			// @MARKER RACIAL SKILLS
+			// The racial skills a member of this race may choose from, with his bonus on each
+			// ("+10%", or blank), from raceSkillDetailValues (getRaceSkillDetails). How MANY may
+			// be chosen is not the race's -- Knowledge sets it. The note is his third column, which
+			// is empty for every race but one ("Evoke (special type: Tree)" for the Dryad).
+			racialSkills: new fields.ArrayField(new fields.SchemaField({
+				name:  new fields.StringField({ required: true, initial: "" }),
+				bonus: new fields.StringField({ required: true, initial: "" })
+			})),
+			racialSkillNote: new fields.StringField({ required: true, initial: "" }),
+
+			// @MARKER RACIAL ABILITIES
+			// By name, from raceFeatureAbilities (getRacialFeatureAbilities). These are the names
+			// his trait compendia describe (abilities, disabilities, immunities). They are listed,
+			// not applied: his racial mechanics switch (setTempRacialAbilities) is not ported yet.
+			abilities:    new fields.ArrayField(new fields.StringField()),
+			disabilities: new fields.ArrayField(new fields.StringField()),
+			immunities:   new fields.ArrayField(new fields.StringField()),
+
+			// @MARKER MIXED RACES
+			// The races this one can have children with, from racefertiledict -- the list his
+			// Half Race picker offers as the second race. Empty means it cannot breed outside itself.
+			fertileWith: new fields.ArrayField(new fields.StringField()),
+
+			// @MARKER AGES
+			// From getAge: the range a new character's age is rolled within, and the maximum age,
+			// which is a number of years or a word ("Immortal") -- so it is text.
+			ages: new fields.SchemaField({
+				startLow:  new fields.NumberField({ required: true, integer: true, initial: 0 }),
+				startHigh: new fields.NumberField({ required: true, integer: true, initial: 0 }),
+				maxAge:    new fields.StringField({ required: true, initial: "" })
+			}),
+
 			// @MARKER PROVENANCE
 			sourcebook:  new fields.StringField({ required: true, initial: "" }),
 			page:        new fields.StringField({ required: true, initial: "" }),

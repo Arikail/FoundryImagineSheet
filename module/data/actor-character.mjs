@@ -22,7 +22,7 @@ import {
 	getOffhandSecondsCap, getBetterAttackSkill, resolveEncumbrance, resolveLoadedMovement
 } from "../combat/combat-rules.mjs";
 import { getSlotAllowance } from "../skills-rules.mjs";
-import { combineHalfRace, getHalfRaceName } from "../race-rules.mjs";
+import { combineHalfRace, getHalfRaceName, isClassBlockedForRaces, canRacesBreed } from "../race-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -709,6 +709,17 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			? "Only two races combine: his sheet's Multi Race is not implemented. "
 			  + this.raceItems.slice(2).map(tmprace => tmprace.name).join(", ") + " ignored."
 			: "";
+		// What the race (or the half race, already combined) gives, for the sheet to show. Listed,
+		// not applied: the ability mechanics and the racial-skill picker are not ported yet.
+		var tmpracesys = this.raceItem ? this.raceItem.system : null;
+		this.identity.race = tmpracesys ? {
+			skills:       tmpracesys.racialSkills ?? [],
+			skillNote:    tmpracesys.racialSkillNote ?? "",
+			abilities:    tmpracesys.abilities ?? [],
+			disabilities: tmpracesys.disabilities ?? [],
+			immunities:   tmpracesys.immunities ?? [],
+			ages:         tmpracesys.ages ?? { startLow: 0, startHigh: 0, maxAge: "" }
+		} : null;
 		this.identity.className = this.classItem ? this.classItem.name : "";
 		this.identity.classType = this.classItem ? this.classItem.system.classType : "";
 		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";
@@ -734,6 +745,36 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			.reduce((tmptotal, tmpclass) => tmptotal + tmpclass.skillSlotsNeeded, 0);
 
 		this.identity.dualClassIssues = this._getDualClassIssues();
+		this.identity.raceIssues = this._getRaceIssues();
+	}
+
+	// This is the function which lists what is wrong with the character's race against the rest
+	// of the character. Reported, never refused -- his sheet lets the player override a barred
+	// class ("is usually not this class. This was overriden!"), and the Player's Guide makes a
+	// mixed race the Game Master's call.
+	//
+	//   a class the race cannot take      his classRaceAndDetails, via isClassBlockedForRaces:
+	//                                     for a half race, only if BOTH races are barred
+	//   two races that cannot breed       his racefertiledict, the list his Half Race picker
+	//                                     offers -- so on his sheet this pair could not be chosen
+	_getRaceIssues() {
+		var tmpissues = [];
+		var tmpnames = this.raceItems.map(tmprace => tmprace.name);
+		if (tmpnames.length == 0) { return tmpissues; }
+
+		for (const tmpclass of this.classItems) {
+			if (isClassBlockedForRaces(tmpclass.system.blockedRaces, tmpnames)) {
+				tmpissues.push(`${this.identity.raceName} is usually not a ${tmpclass.name}.`);
+			}
+		}
+
+		if (this.raceItems.length > 1) {
+			var tmpfirst = this.raceItems[0];
+			if (!canRacesBreed(tmpfirst.name, tmpfirst.system.fertileWith, this.raceItems[1].name)) {
+				tmpissues.push(`${tmpfirst.name} and ${this.raceItems[1].name} cannot have children together.`);
+			}
+		}
+		return tmpissues;
 	}
 
 	// This is the function which lists what stops this character being dual-classed.
@@ -743,9 +784,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// racial requirements for both. It is also a decision the Game Master has to support, so
 	// nothing here refuses anything -- it reports, and the sheet shows it.
 	//
-	// THE RACIAL HALF CANNOT BE CHECKED. His data carries no race-to-class permissions at all --
-	// the "Classes Available by Race" tables are in the book and were never brought across -- so
-	// rule 2 is left to the Game Master and said so on the sheet rather than silently passed.
+	// The racial half is checked separately, for every character and not only a dual-classed
+	// one, by _getRaceIssues -- his classRaceAndDetails does carry which races each class is
+	// closed to, which an earlier pass here missed.
 	_getDualClassIssues() {
 		if (!this.identity.isDualClass) { return []; }
 

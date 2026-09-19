@@ -145,6 +145,12 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// classType distinguishes a primary class from a subclass, e.g. "Priest subclass".
 			classType: new fields.StringField({ required: true, initial: "" }),
 
+			// @MARKER RACE RESTRICTIONS
+			// The races that may NOT take this class, from his classRaceAndDetails. A list of
+			// barred races rather than allowed ones: empty, as Warrior's is, means any race. A
+			// half race is barred only if BOTH its races are (setClassDetails, sheet-worker.js:51163).
+			blockedRaces: new fields.ArrayField(new fields.StringField()),
+
 			// @MARKER PROVENANCE
 			sourcebook:  new fields.StringField({ required: true, initial: "" }),
 			page:        new fields.StringField({ required: true, initial: "" }),

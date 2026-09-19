@@ -2208,3 +2208,22 @@ parse, `race-rules.mjs` newly added to the syntax check's list. In `tools/sheet-
 real Warrior, re-derived as Human(Civilized:Village)|Elf(High), reads "Half Race
 Human(Civilized:Village)|Elf(High)" with Strength 18 and Agility 20 from ratings of 19 and 18.
 **Not verified:** a second race being dropped onto a character in a running Foundry V14.
+
+### 2026-09-18 — The trait conflicts are ruled on: creature is always right
+
+He answered the conflicts report. Canonical names: *"Creature is always right... though they share
+similar names, when applied to creatures they are slightly different. The racial ability list and
+creature ability lists are not 100% identical."* Values: *"The creature values are right. I don't
+know what Racial value 30 or 50 means. Enhanced Taste doesn't do a whole heck of a lot on a
+creature, thus the no value."*
+
+**Nothing changes in the build** — the pipeline already keeps the creature row on every conflict, so
+all 14 decisions land where they already were. What changes is the reading of the data: the two
+copies are *deliberately* different (one name, slightly different meaning per actor type), not two
+drifted copies of one truth. That is also why a shared trait document is a simplification worth
+watching: a future racial mechanical-effects system should not assume a creature ability row
+describes what a race's ability of the same name does. The racial `Enhanced Taste` 30/50 is
+unexplained and is left out; racial-only rows still stay available for characters.
+
+Open from item 10 and untouched by this: whether his `calcAllCreatureCaracs` +10 for "Enhanced
+Perception" double-counts a stat block that already includes it.

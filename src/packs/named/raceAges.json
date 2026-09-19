@@ -1,0 +1,589 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "function": "getAge",
+    "line": 38995
+  },
+  "entries": {
+    "Apocritara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Cervara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Chetahl": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Gryphara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Hippotara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Hobgoblin": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Jumara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Kerasara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Lagara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Lissara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Lotara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Loxodara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Lutrinara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Mellivara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Susara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Ursara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Vulpara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 80
+    },
+    "Arachen": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Beastman": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Brachara": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Geebra": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Goblin(Forest)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Goblin(Mountain)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Goblin(Mountain:Magic)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Goblin(Plains)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Ogre": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Ogre(Magic)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "S’rett": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Saurian": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Scethen": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Xar’Xeth": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 70
+    },
+    "Avian(Dark)": {
+      "startLow": 35,
+      "startHigh": 50,
+      "maxAge": 250
+    },
+    "Avian(Mountain)": {
+      "startLow": 35,
+      "startHigh": 50,
+      "maxAge": 250
+    },
+    "Centaur": {
+      "startLow": 35,
+      "startHigh": 50,
+      "maxAge": 250
+    },
+    "Avian(Forest)": {
+      "startLow": 25,
+      "startHigh": 40,
+      "maxAge": 180
+    },
+    "Kenku": {
+      "startLow": 25,
+      "startHigh": 40,
+      "maxAge": 180
+    },
+    "Ba’Cora": {
+      "startLow": 32,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Brok": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Dwarf(Civilized)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Dwarf(Dark)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Dwarf(Mountain)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Dwarf(Fire)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Testudara": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 200
+    },
+    "Brownie": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 2000
+    },
+    "Changeling": {
+      "startLow": 100,
+      "startHigh": 136,
+      "maxAge": 1200
+    },
+    "Elf(Wood)": {
+      "startLow": 100,
+      "startHigh": 136,
+      "maxAge": 1200
+    },
+    "Elf(Wild)": {
+      "startLow": 100,
+      "startHigh": 136,
+      "maxAge": 1200
+    },
+    "Se’eth": {
+      "startLow": 100,
+      "startHigh": 136,
+      "maxAge": 1200
+    },
+    "Crystori": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 1000
+    },
+    "Dao": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 300
+    },
+    "Djinn": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 300
+    },
+    "Ifrit": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 300
+    },
+    "Marid": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 300
+    },
+    "Dryad": {
+      "startLow": 100,
+      "startHigh": 154,
+      "maxAge": 1600
+    },
+    "Elf(Gray)": {
+      "startLow": 100,
+      "startHigh": 154,
+      "maxAge": 1600
+    },
+    "Dwarf(Iron)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 1000
+    },
+    "Dwarf(Stone)": {
+      "startLow": 23,
+      "startHigh": 50,
+      "maxAge": 1000
+    },
+    "Elf(Dark)": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Elf(High)": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Elf(Desert)": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Elf(Ice)": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Elf(Sea)": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Katara": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Nymph": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Satyr/Fawn": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Sylph": {
+      "startLow": 100,
+      "startHigh": 127,
+      "maxAge": 1000
+    },
+    "Elf(Dread)": {
+      "startLow": 54,
+      "startHigh": 74,
+      "maxAge": 500
+    },
+    "Elf(Shadow)": {
+      "startLow": 300,
+      "startHigh": 3000,
+      "maxAge": "Immortal"
+    },
+    "Elf(Silver)": {
+      "startLow": 300,
+      "startHigh": 3000,
+      "maxAge": "Immortal"
+    },
+    "Equara": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Famorian": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Human(Civilized:City)": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Human(Civilized:Port)": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Human(Civilized:Town)": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Human(Civilized:Village)": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Ratahl": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Sasquatch/Yeti": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Taurian": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Fairy": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Fairy(Dark)": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Gnome": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Gremlin": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Mephyt(Fire)": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Mephyt(Ice)": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Nixie": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Podling": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Sporeling": {
+      "startLow": 16,
+      "startHigh": 5000,
+      "maxAge": 5000
+    },
+    "Formless": {
+      "startLow": 200,
+      "startHigh": 2000,
+      "maxAge": "Immortal"
+    },
+    "Gaunt": {
+      "startLow": 18,
+      "startHigh": 21,
+      "maxAge": 100
+    },
+    "Giant(Civilized)": {
+      "startLow": 100,
+      "startHigh": 154,
+      "maxAge": 1600
+    },
+    "Giant(Civilized:Seafaring)": {
+      "startLow": 100,
+      "startHigh": 154,
+      "maxAge": 1600
+    },
+    "Giant(True)": {
+      "startLow": 100,
+      "startHigh": 154,
+      "maxAge": "Immortal"
+    },
+    "Grahl": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 100
+    },
+    "Grethen": {
+      "startLow": 22,
+      "startHigh": 28,
+      "maxAge": 120
+    },
+    "Wildling": {
+      "startLow": 22,
+      "startHigh": 28,
+      "maxAge": 120
+    },
+    "Human(Barbaric)": {
+      "startLow": 16,
+      "startHigh": 19,
+      "maxAge": 80
+    },
+    "Leprechaun": {
+      "startLow": 16,
+      "startHigh": 2500,
+      "maxAge": 2500
+    },
+    "Maginos": {
+      "startLow": 10,
+      "startHigh": 40,
+      "maxAge": 1000
+    },
+    "Maginos(Clay)": {
+      "startLow": 10,
+      "startHigh": 40,
+      "maxAge": 1000
+    },
+    "Maginos(Metal)": {
+      "startLow": 10,
+      "startHigh": 40,
+      "maxAge": 1000
+    },
+    "Maginos(Stone)": {
+      "startLow": 10,
+      "startHigh": 40,
+      "maxAge": 1000
+    },
+    "Maginos(Wood)": {
+      "startLow": 10,
+      "startHigh": 40,
+      "maxAge": 1000
+    },
+    "Mechanos": {
+      "startLow": 10,
+      "startHigh": 30,
+      "maxAge": 1000
+    },
+    "Merfolk": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Midfolk(Forest)": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Sura’keth": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 100
+    },
+    "Midfolk(River)": {
+      "startLow": 22,
+      "startHigh": 31,
+      "maxAge": 120
+    },
+    "Midfolk(Town)": {
+      "startLow": 21,
+      "startHigh": 30,
+      "maxAge": 120
+    },
+    "Planar": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 1000
+    },
+    "Sha’Cora": {
+      "startLow": 18,
+      "startHigh": 32,
+      "maxAge": 100
+    },
+    "Whalrog": {
+      "startLow": 18,
+      "startHigh": 32,
+      "maxAge": 100
+    },
+    "Wolfen": {
+      "startLow": 18,
+      "startHigh": 32,
+      "maxAge": 100
+    },
+    "Sura’rath": {
+      "startLow": 18,
+      "startHigh": 24,
+      "maxAge": 70
+    },
+    "Troll": {
+      "startLow": 4,
+      "startHigh": 24,
+      "maxAge": 500
+    },
+    "Troll(Ice)": {
+      "startLow": 4,
+      "startHigh": 24,
+      "maxAge": 500
+    },
+    "Troll(Rock)": {
+      "startLow": 9,
+      "startHigh": 14,
+      "maxAge": 300
+    }
+  }
+}

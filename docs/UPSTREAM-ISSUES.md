@@ -117,7 +117,21 @@ The evident intent is x2: the thorax is the insect's torso, and torso sections a
 
 ## 10. Creature abilities never get the mechanical treatment racial abilities do, and the two lists disagree
 
-**Status:** PARTLY ANSWERED 2026-09-16 · **Severity:** one half settled, one half with him now
+**Status:** ANSWERED 2026-09-18 — the conflict list is ruled on, the Enhanced-X +10 question is still open · **Severity:** nothing left to reconcile
+
+**His ruling on the conflict list (2026-09-18):** *"Creature is always right. This is because though
+they share similar names, when applied to creatures they are slightly different. The racial ability
+list and creature ability lists are not 100% identical."* On the five value rows: *"The creature
+values are right. I don't know what Racial value 30 or 50 means. Enhanced Taste doesn't do a whole
+heck of a lot on a creature, thus the no value."*
+
+So the 9 canonical-name rows and 5 value rows in `docs/reference/trait-conflicts.md` all resolve to
+the creature copy, which is what the pipeline already builds — **no code or data change follows**.
+The two lists are deliberately not identical, not drifted: the same name means a slightly different
+thing on a creature. The racial `Enhanced Taste` 30/50 is unexplained even to him, so it is not
+carried anywhere.
+
+**Earlier answer, 2026-09-16, kept below:**
 
 **His answer:** *"Enhanced X is listed as an ability but it is flavor. It is why a creature 'might'
 have a higher stat than its counterpart, or have better hearing. The creature listings are right.

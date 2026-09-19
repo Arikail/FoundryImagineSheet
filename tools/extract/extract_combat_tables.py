@@ -247,6 +247,51 @@ def class_skill_slots_needed():
     return slots, start
 
 
+def race_ages():
+    """
+    Each race's starting-age range and maximum age, from getAge (sheet-worker.js:38995).
+
+    A switch of this shape, several races sharing one body:
+
+        case "Arachen":
+        case "Beastman":
+            tmplowage=9;
+            tmphighage=14;
+            ...
+            tmpAgesArray[4]=70;
+            break;
+
+    tmplowage/tmphighage are the starting-age range the creation step rolls within, and
+    tmpAgesArray[4] is the maximum age. The maximum is NOT always a number -- Formless and a few
+    others are "Immortal" -- so it is kept as written. The random roll inside each case is creation
+    machinery, not data, and is not extracted.
+
+    The empty-string case is his "no race" default and is dropped.
+    """
+    start, body = function_body("getAge")
+    ages = {}
+    labels, values = [], {}
+    for line in body:
+        found = re.findall(r'case\s+"([^"]*)"\s*:', line)
+        if found and values:
+            labels, values = [], {}
+        labels.extend(found)
+        for key, pat in (("startLow", r'tmplowage\s*=\s*(\d+)\s*;'),
+                         ("startHigh", r'tmphighage\s*=\s*(\d+)\s*;')):
+            m = re.search(pat, line)
+            if m:
+                values[key] = int(m.group(1))
+        m = re.search(r'tmpAgesArray\[4\]\s*=\s*(?:"([^"]*)"|(\d+))\s*;', line)
+        if m:
+            values["maxAge"] = m.group(1) if m.group(1) is not None else int(m.group(2))
+        if re.search(r'\bbreak\s*;', line):
+            for lab in labels:
+                if lab != "":
+                    ages[lab] = dict(values)
+            labels, values = [], {}
+    return ages, start
+
+
 def banded_chain(tmpfunction, tmpassign, tmpvar, tmpceiling=30):
     """
     Read an Agility-banded if/else-if chain into ordered [min, max, value] rows.
@@ -1116,6 +1161,20 @@ def main():
             "_conditional": conditional,
             "entries": races
         }, fh, indent=2, ensure_ascii=False)
+
+    # Starting-age ranges and maximum ages. A race missing any of the three is reported rather
+    # than written out with a hole in it.
+    ages, ages_line = race_ages()
+    for tmpname, tmpages in ages.items():
+        missing = [k for k in ("startLow", "startHigh", "maxAge") if k not in tmpages]
+        if missing:
+            print("  WARNING: getAge case %s has no %s" % (tmpname, ", ".join(missing)))
+    with open(os.path.join(NAMED, "raceAges.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js", "function": "getAge", "line": ages_line},
+            "entries": ages
+        }, fh, indent=2, ensure_ascii=False)
+    print("race ages          %d races" % len(ages))
 
     print("attack charts      %d skill levels" % len([k for k in attack if k]))
     print("body charts        %d body types" % len(bodies))

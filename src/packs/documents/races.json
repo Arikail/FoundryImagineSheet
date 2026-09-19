@@ -85,7 +85,70 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Insectoid(Wings)"
+      "bodyType": "Insectoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60",
+        "Antennae",
+        "Hide(Chitinous)",
+        "Extra Insect Limbs(Arms)",
+        "Insect Wings",
+        "Vibration Sensing",
+        "Pincers/Mandibles"
+      ],
+      "disabilities": [
+        "Compound Eyes",
+        "Loud Flier",
+        "Poor Circulation",
+        "Frost Weakness"
+      ],
+      "immunities": [
+        "Fire Resistant"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -174,7 +237,71 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Arachen"
+      "bodyType": "Arachen",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Fear",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision120",
+        "Climbing",
+        "Hide(Chitinous)",
+        "Jumping",
+        "Sleepless",
+        "Vibration Sensing",
+        "Venom(Paralysis)",
+        "Web Weaving",
+        "Natural Weapons(Arachen)"
+      ],
+      "disabilities": [
+        "Insect Leg Loss"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -263,7 +390,54 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Flight(Wings)",
+        "Night Vision",
+        "Silent Flight",
+        "Natural Weapons(Dark Avian)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)"
+      ],
+      "ages": {
+        "startLow": 35,
+        "startHigh": 50,
+        "maxAge": "250"
+      }
     }
   },
   {
@@ -352,7 +526,80 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Flight(Wings)",
+        "Farsight"
+      ],
+      "disabilities": [],
+      "immunities": [
+        "Fire Hardened"
+      ],
+      "fertileWith": [
+        "Avian(Dark)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Kenku"
+      ],
+      "ages": {
+        "startLow": 25,
+        "startHigh": 40,
+        "maxAge": "180"
+      }
     }
   },
   {
@@ -441,7 +688,52 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        },
+        {
+          "name": "Truth Tell",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Flight(Wings)",
+        "Farsight"
+      ],
+      "disabilities": [],
+      "immunities": [
+        "Fire Hardened"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 35,
+        "startHigh": 50,
+        "maxAge": "250"
+      }
     }
   },
   {
@@ -530,7 +822,71 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Cause Disease",
+          "bonus": ""
+        },
+        {
+          "name": "Channel Life Force",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Convert Negative Life Force",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Darkness",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Good",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Fear",
+          "bonus": ""
+        },
+        {
+          "name": "Life Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Dead",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Flight(Wings)",
+        "Night Vision",
+        "Infravision120",
+        "Hide(Fur)",
+        "Natural Weapons(Ba’Cora)"
+      ],
+      "disabilities": [
+        "Light Sensitivity"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 32,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -619,7 +975,67 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Hide(5)",
+        "Natural Weapons(Beastman)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -708,7 +1124,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Brachara"
+      "bodyType": "Brachara",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Water Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Extra Insect Limbs(Legs)",
+        "Antennae",
+        "Hide(Chitinous)",
+        "Digging",
+        "Climbing",
+        "Eyestalks",
+        "Gills",
+        "Swimming",
+        "Regeneration(Natural)",
+        "Vibration Sensing",
+        "Pincers/Mandibles"
+      ],
+      "disabilities": [
+        "Compound Eyes",
+        "Light Sensitivity",
+        "Water Dependence",
+        "Insect Leg Loss"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -797,7 +1271,56 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Speak to Dead",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "-10%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(Skin)",
+        "Natural Weapons(Brok)"
+      ],
+      "disabilities": [
+        "Living Touch Aversion"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -886,7 +1409,69 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Natural Weapons(Brownie)"
+      ],
+      "disabilities": [
+        "Quick Temper",
+        "Iron Aversion"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "2000"
+      }
     }
   },
   {
@@ -975,7 +1560,50 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Centaur"
+      "bodyType": "Centaur",
+      "racialSkills": [
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Truth Tell",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Quadruped",
+        "Natural Weapons(Centaur)"
+      ],
+      "disabilities": [
+        "Climbing Impaired",
+        "No Rigid Armor(Shins)",
+        "No Rigid Armor(Tail)"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 35,
+        "startHigh": 50,
+        "maxAge": "250"
+      }
     }
   },
   {
@@ -1064,7 +1692,66 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves/Tail)"
+      "bodyType": "Humanoid(Hooves/Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Enhanced Hearing",
+        "Hide(5)",
+        "Lateral Vision",
+        "Antlers",
+        "Natural Weapons(Cervara)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -1153,7 +1840,22 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [],
+      "racialSkillNote": "",
+      "abilities": [
+        "Changeling Form"
+      ],
+      "disabilities": [
+        "Iron Aversion"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 136,
+        "maxAge": "1200"
+      }
     }
   },
   {
@@ -1242,7 +1944,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Balance",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Break Fall",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Leap",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(4)",
+        "Terrain Fur",
+        "Not Easily Surprised",
+        "Natural Weapons(Chetahl)"
+      ],
+      "disabilities": [
+        "Armor Fur Chafe",
+        "Plate Ruins Terrain Fur",
+        "Water Avoidance"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -1331,7 +2091,73 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Life Sense",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Soul Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sing",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": ""
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(Crystal)",
+        "Living Crystal",
+        "Breathless",
+        "Heat as Food",
+        "Light as Water",
+        "Sleepless",
+        "Vibration Sensing",
+        "Vibration Language"
+      ],
+      "disabilities": [
+        "Cannot Swim",
+        "Easily Tracked",
+        "No Intake",
+        "No Sense of Smell",
+        "No Sense of Taste",
+        "Weakness(Frost)"
+      ],
+      "immunities": [
+        "Disease",
+        "Fire Hardened",
+        "Poison(Greater)",
+        "Sleep",
+        "Transformation of Form(Lesser)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -1420,7 +2246,57 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Caustokinesis",
+          "bonus": "+40%"
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Hide(10)",
+        "Earth Elemental Form"
+      ],
+      "disabilities": [
+        "Weakness(Electricity)"
+      ],
+      "immunities": [
+        "Acid",
+        "Disease",
+        "Poison(Greater)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "300"
+      }
     }
   },
   {
@@ -1509,7 +2385,56 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Electrokinesis",
+          "bonus": "+40%"
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Phase",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Farsight",
+        "Magical Flight",
+        "Air Elemental Form"
+      ],
+      "disabilities": [
+        "Weakness(Acid)"
+      ],
+      "immunities": [
+        "Electricity",
+        "Pressure"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "300"
+      }
     }
   },
   {
@@ -1598,7 +2523,70 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Evoke",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Plant Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Speak to Plant",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Control Growth",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "Evoke (special type: Tree)",
+      "abilities": [
+        "Exceptional Sight",
+        "Evoke Special(Tree)"
+      ],
+      "disabilities": [
+        "Weakness(Fire)"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 154,
+        "maxAge": "1600"
+      }
     }
   },
   {
@@ -1687,7 +2675,71 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Trap(u)",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+15%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+15%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -1776,7 +2828,72 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Detect Trap(u)",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+5%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+5%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim",
+        "Light Sensitivity"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -1865,7 +2982,84 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Trap(u)",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(5)",
+        "Ultravision"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim",
+        "Weakness(Frost)"
+      ],
+      "immunities": [
+        "Fire Resistant",
+        "Pressure"
+      ],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -1954,7 +3148,77 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Metal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Imbue",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Empower",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Hide(15)",
+        "Magical Hearing",
+        "Magical Sight",
+        "Magical Smell",
+        "Magical Touch",
+        "Magical Voice"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim",
+        "Forged Form",
+        "Forged Offspring",
+        "Infertile",
+        "No Intake",
+        "No Sense of Taste"
+      ],
+      "immunities": [
+        "Disease",
+        "Frost Resistant",
+        "Fire",
+        "Poison(Greater)",
+        "Transformation of Form(Lesser)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2043,7 +3307,75 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision30"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -2132,7 +3464,77 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Danger Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Imbue",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Empower",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Hide(20)",
+        "Magical Hearing",
+        "Magical Sight",
+        "Magical Smell",
+        "Magical Touch",
+        "Magical Voice"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim",
+        "Sculpted Form",
+        "Sculpted Offspring",
+        "Infertile",
+        "No Intake",
+        "No Sense of Taste"
+      ],
+      "immunities": [
+        "Disease",
+        "Fire Resistant",
+        "Frost",
+        "Poison(Greater)",
+        "Transformation of Form(Lesser)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2221,7 +3623,93 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Darkness",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Detect Trap(u)",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Fear",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Infravision120"
+      ],
+      "disabilities": [
+        "Sunlight Intolerant"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2310,7 +3798,92 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision",
+        "Reduced Consumption"
+      ],
+      "disabilities": [
+        "Frost Sensitivity"
+      ],
+      "immunities": [
+        "Fire Hardened"
+      ],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2399,7 +3972,77 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Awaken Plant",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Haunted Grove",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Dead",
+          "bonus": ""
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Call Twilight"
+      ],
+      "disabilities": [
+        "Light Sensitivity"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 54,
+        "startHigh": 74,
+        "maxAge": "500"
+      }
     }
   },
   {
@@ -2488,7 +4131,74 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Aura",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Decipher",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Meditate",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 154,
+        "maxAge": "1600"
+      }
     }
   },
   {
@@ -2577,7 +4287,74 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2666,7 +4443,82 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Cryokinesis",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Aura",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [
+        "Fire Sensitivity"
+      ],
+      "immunities": [
+        "Frost Hardened"
+      ],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2755,7 +4607,89 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Water Lore",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Swimming",
+        "Gills",
+        "Webbed Feet/Hands"
+      ],
+      "disabilities": [
+        "Water Dependence"
+      ],
+      "immunities": [
+        "Pressure"
+      ],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Wild)",
+        "Elf(Wood))",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -2844,7 +4778,95 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Beguile",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Bone Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Empower",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Flesh Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Darkness",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Poison Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Possession",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Scrying",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sense Projection",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Shadow Shift",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Sing",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Song Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Thought Projection",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [
+        "Very Low Fertility"
+      ],
+      "immunities": [
+        "Aging"
+      ],
+      "fertileWith": [
+        "Elf(Silver)"
+      ],
+      "ages": {
+        "startLow": 300,
+        "startHigh": 3000,
+        "maxAge": "Immortal"
+      }
     }
   },
   {
@@ -2933,7 +4955,95 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Empower",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Light",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Scrying",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sense Projection",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Sing",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Song Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Thought Projection",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Water Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [
+        "Very Low Fertility"
+      ],
+      "immunities": [
+        "Aging"
+      ],
+      "fertileWith": [
+        "Elf(Shadow)"
+      ],
+      "ages": {
+        "startLow": 300,
+        "startHigh": 3000,
+        "maxAge": "Immortal"
+      }
     }
   },
   {
@@ -3022,7 +5132,94 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 136,
+        "maxAge": "1200"
+      }
     }
   },
   {
@@ -3111,7 +5308,90 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Forest)",
+        "Dryad",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Satyr/Fawn",
+        "Sylph"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 136,
+        "maxAge": "1200"
+      }
     }
   },
   {
@@ -3200,7 +5480,58 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves)"
+      "bodyType": "Humanoid(Hooves)",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Brace",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(10)",
+        "Lateral Vision",
+        "Natural Weapons(Equara)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Gryphara"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -3289,7 +5620,92 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Body Control",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": ""
+        },
+        {
+          "name": "Life Sense",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Still Life Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Meditate",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sense Projection",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [
+        "Light Sensitivity",
+        "Thin Skinned",
+        "Slow Breeding"
+      ],
+      "immunities": [
+        "Fear",
+        "Transformation of Form"
+      ],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 21,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -3378,7 +5794,61 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Disguise",
+          "bonus": ""
+        },
+        {
+          "name": "Escape",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision"
+      ],
+      "disabilities": [
+        "Near Insanity"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -3467,7 +5937,68 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cartography",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap",
+          "bonus": ""
+        },
+        {
+          "name": "Distance Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Force",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Law",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Truth Tell",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(10)",
+        "Natural Weapons(Giant)"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Requires Giant Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Giant(Civilized:Seafaring)",
+        "Giant(True)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 154,
+        "maxAge": "1600"
+      }
     }
   },
   {
@@ -3556,7 +6087,68 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cartography",
+          "bonus": ""
+        },
+        {
+          "name": "Sail",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap",
+          "bonus": ""
+        },
+        {
+          "name": "Distance Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Force",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Navigate",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Truth Tell",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(10)",
+        "Natural Weapons(Giant)"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Requires Giant Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Giant(Civilized)",
+        "Giant(True)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 154,
+        "maxAge": "1600"
+      }
     }
   },
   {
@@ -3645,7 +6237,83 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cartography",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Distance Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Fearless",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Truth Tell",
+          "bonus": ""
+        },
+        {
+          "name": "Steadfast",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Hide(15)",
+        "Hard to Kill",
+        "Natural Weapons(True Giant)"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Easily Tracked",
+        "Requires Giant Weapons",
+        "Loud",
+        "Oversleeper",
+        "Very Low Fertility"
+      ],
+      "immunities": [
+        "Aging",
+        "Fire Resistant",
+        "Pressure",
+        "Transformation of Form"
+      ],
+      "fertileWith": [
+        "Giant(Civilized)",
+        "Giant(Civilized:Seafaring)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 154,
+        "maxAge": "Immortal"
+      }
     }
   },
   {
@@ -3734,7 +6402,90 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Plant Shape",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Soothe",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Speak to Plant",
+          "bonus": ""
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision120",
+        "Animal Friendship"
+      ],
+      "disabilities": [
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
     }
   },
   {
@@ -3823,7 +6574,81 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Balance",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -3912,7 +6737,57 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision30"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -4001,7 +6876,66 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision30",
+        "Gift of Magic"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -4090,7 +7024,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -4179,7 +7171,62 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Leap",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+50%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60",
+        "Hide(8)",
+        "Hard to Surprise",
+        "Howl Communication",
+        "Natural Weapons(Grahl)"
+      ],
+      "disabilities": [
+        "Howl Communication"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Vulpara",
+        "Wolfen"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -4268,7 +7315,36 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Flight(Wings)",
+        "Entropy Touch",
+        "Natural Weapons(Gremlin)"
+      ],
+      "disabilities": [
+        "Iron Aversion",
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
     }
   },
   {
@@ -4357,7 +7433,69 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Darkness",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Shadow Shift",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(10)",
+        "Regeneration(Natural)"
+      ],
+      "disabilities": [
+        "Lesser Weakness(Electricity)",
+        "Lesser Weakness(Frost)"
+      ],
+      "immunities": [
+        "Acid Hardened",
+        "Fire Hardened"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 22,
+        "startHigh": 28,
+        "maxAge": "120"
+      }
     }
   },
   {
@@ -4446,7 +7584,67 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Farsight",
+        "Hide(Feathers/Fur)",
+        "Magical Hearing",
+        "Magical Smell",
+        "Flight(Wings)",
+        "Magical Flight",
+        "Beak",
+        "Talons/Large Claws",
+        "Raking Talons/Claws"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Equara"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -4535,7 +7733,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Brace",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Hearing",
+        "Enhanced Smell",
+        "Hide(1/3)",
+        "Hide(1/3)",
+        "Natural Weapons(Hippotara)"
+      ],
+      "disabilities": [
+        "Quick Temper"
+      ],
+      "immunities": [
+        "Stubborn"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -4624,7 +7888,75 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Fearless",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Life Sense",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Speak to Dead",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision(Enhanced)"
+      ],
+      "disabilities": [],
+      "immunities": [
+        "Fire Resistant"
+      ],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -4713,7 +8045,97 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Hobgoblin",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 19,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -4802,7 +8224,96 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cheat",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Law",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Lie",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Meditate",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Sleight of Hand",
+          "bonus": ""
+        },
+        {
+          "name": "Steal",
+          "bonus": ""
+        },
+        {
+          "name": "Street Knowledge",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -4891,7 +8402,97 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cheat",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Lie",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Navigate",
+          "bonus": ""
+        },
+        {
+          "name": "Sail",
+          "bonus": ""
+        },
+        {
+          "name": "Sleight of Hand",
+          "bonus": ""
+        },
+        {
+          "name": "Steal",
+          "bonus": ""
+        },
+        {
+          "name": "Street Knowledge",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -4980,7 +8581,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cheat",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Lie",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Village)",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -5069,7 +8736,89 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Goblin(Plains)",
+        "Hobgoblin",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Merfolk",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -5158,7 +8907,56 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Pyrokinesis",
+          "bonus": "+40%"
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Light",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Leap",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Phase",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision120",
+        "Fire Elemental Form"
+      ],
+      "disabilities": [
+        "Quick Temper",
+        "Weakness(Frost)"
+      ],
+      "immunities": [
+        "Fire",
+        "Fatigue"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "300"
+      }
     }
   },
   {
@@ -5247,7 +9045,64 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves/Tail)"
+      "bodyType": "Humanoid(Hooves/Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Night Vision(Enhanced)",
+        "Night Vision(Enhanced)",
+        "Hide(5)",
+        "Patterned Fur",
+        "Light Sleeper",
+        "Natural Weapons(Jumara)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -5336,7 +9191,69 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Centaur"
+      "bodyType": "Centaur",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Charming",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Scrying",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+25%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Hide(8)",
+        "Natural Weapons(Katara)"
+      ],
+      "disabilities": [
+        "Quick Temper"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -5425,7 +9342,66 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Farsight",
+        "Flight(Wings)",
+        "Natural Weapons(Kenku)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Dark)",
+        "Avian(Forest)"
+      ],
+      "ages": {
+        "startLow": 25,
+        "startHigh": 40,
+        "maxAge": "180"
+      }
     }
   },
   {
@@ -5514,7 +9490,72 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Brace",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Lateral Vision",
+        "Exceptional Hearing",
+        "Enhanced Smell",
+        "Hide(1/3)",
+        "Hide(1/3)",
+        "Lateral Vision",
+        "Horns",
+        "Natural Weapons(Kerasara)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -5603,7 +9644,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+15%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Leap",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Enhanced Hearing",
+        "Hide(6)",
+        "Lateral Vision"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -5692,7 +9791,76 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Curse",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Darkness",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Scrying",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "Scrying:only treasure owned/handled",
+      "abilities": [
+        "Exceptional Sight",
+        "Fickle Luck",
+        "Treasure Sniffing"
+      ],
+      "disabilities": [
+        "Quick Temper",
+        "Iron Aversion"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 2500,
+        "maxAge": "2500"
+      }
     }
   },
   {
@@ -5781,7 +9949,53 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision",
+        "Enhanced Smell",
+        "Hide(6)",
+        "Regeneration(Natural)",
+        "Gills",
+        "Webbed Feet/Hands",
+        "Claws",
+        "Tail Slap"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -5870,7 +10084,60 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Steal",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Enhanced Hearing",
+        "Hide(6)",
+        "Claws"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -5959,7 +10226,59 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Brace",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Enhanced Hearing",
+        "Enhanced Smell",
+        "Hide(1/3)",
+        "Lateral Vision",
+        "Infrasonic Speech",
+        "Prehensile Trunk",
+        "Tusks"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -6048,7 +10367,58 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Underwater Vision",
+        "Enhanced Hearing",
+        "Enhanced Smell",
+        "Hide(5)",
+        "Webbed Feet/Hands",
+        "Claws"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -6137,7 +10507,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Cryokinesis",
+          "bonus": "+40%"
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Supernatural",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Fearless",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Phase",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": ""
+        },
+        {
+          "name": "Water Lore",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Ultravision",
+        "Underwater Vision",
+        "Water Elemental Form",
+        "Swimming",
+        "Swimming"
+      ],
+      "disabilities": [
+        "Weakness(Fire)"
+      ],
+      "immunities": [
+        "Frost"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "300"
+      }
     }
   },
   {
@@ -6226,7 +10654,83 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Brace",
+          "bonus": ""
+        },
+        {
+          "name": "Cartography",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Distance Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Force",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Breathless",
+        "Mecho-Magical Mind",
+        "Metal Mechanical Form",
+        "Magical Hearing",
+        "Magical Sight",
+        "Magical Touch",
+        "Magical Voice",
+        "Natural Weapons(Mechanos)"
+      ],
+      "disabilities": [
+        "Cannot Cast Spells",
+        "Cannot Swim",
+        "Infertile",
+        "Mechanical Engine",
+        "No Healing",
+        "No Regeneration",
+        "No Ressurection",
+        "No Intake",
+        "No Sense of Smell",
+        "No Sense of Taste"
+      ],
+      "immunities": [
+        "Aging",
+        "Disease",
+        "Fatigue",
+        "Fear",
+        "Fire Hardened",
+        "Frost Hardened",
+        "Poison(Greater)",
+        "Hold",
+        "Shock",
+        "Sleep",
+        "Transformation of Form(Lesser)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 10,
+        "startHigh": 30,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -6315,7 +10819,62 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Martial Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(Fur)",
+        "Claws",
+        "Raking Claws",
+        "Fangs/Sharp Teeth"
+      ],
+      "disabilities": [],
+      "immunities": [
+        "Fear"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -6404,7 +10963,84 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Animal Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Pyrokinesis",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Special Fire Shape",
+        "Skin(Heat)",
+        "Wing Projection",
+        "Natural Weapons(Fire Mephyt)"
+      ],
+      "disabilities": [
+        "Frost Sensitivity"
+      ],
+      "immunities": [
+        "Fire Hardened"
+      ],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
     }
   },
   {
@@ -6493,7 +11129,88 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings)"
+      "bodyType": "Humanoid(Wings)",
+      "racialSkills": [
+        {
+          "name": "Animal Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Cryokinesis",
+          "bonus": ""
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Special Frost Shape",
+        "Skin(Cold)",
+        "Wing Projection",
+        "Natural Weapons(Ice Mephyt)"
+      ],
+      "disabilities": [
+        "Fire Sensitivity"
+      ],
+      "immunities": [
+        "Frost Hardened"
+      ],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
     }
   },
   {
@@ -6582,7 +11299,90 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Transform(Fish Tail)",
+        "Swimming",
+        "Gills",
+        "Webbed Feet/Hands"
+      ],
+      "disabilities": [
+        "Water Dependence"
+      ],
+      "immunities": [
+        "Pressure"
+      ],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Human(Civilized:City)",
+        "Human(Barbaric)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)",
+        "Gaunt",
+        "Hobgoblin",
+        "Midfolk(Forest)",
+        "Midfolk(River)",
+        "Midfolk(Town)",
+        "Ogre",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -6671,7 +11471,87 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Track",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Dark)",
+        "Avian(Forest)",
+        "Avian(Mountain)",
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(River)",
+        "Midfolk(Town)"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -6760,7 +11640,75 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Navigate",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sail",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Dark)",
+        "Avian(Forest)",
+        "Avian(Mountain)",
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(Town)"
+      ],
+      "ages": {
+        "startLow": 22,
+        "startHigh": 31,
+        "maxAge": "120"
+      }
     }
   },
   {
@@ -6849,7 +11797,75 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Alignment",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Avian(Dark)",
+        "Avian(Forest)",
+        "Avian(Mountain)",
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Midfolk(Forest)",
+        "Midfolk(River)"
+      ],
+      "ages": {
+        "startLow": 21,
+        "startHigh": 30,
+        "maxAge": "120"
+      }
     }
   },
   {
@@ -6938,7 +11954,81 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Water Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "Animal Shape: (water animals only)",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Swimming(Enhanced)",
+        "Gills",
+        "Webbed Feet/Hands",
+        "Wing Projection"
+      ],
+      "disabilities": [
+        "Requires Fairy Weapons",
+        "Water Dependence"
+      ],
+      "immunities": [
+        "Pressure"
+      ],
+      "fertileWith": [
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
     }
   },
   {
@@ -7027,7 +12117,74 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Beguile",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Charming",
+          "bonus": "+15%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight"
+      ],
+      "disabilities": [
+        "Weakness(Fire)"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -7116,7 +12273,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision30",
+        "Hide(5)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Human(Civilized:City)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Human(Barbaric)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre(Magic)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -7205,7 +12420,74 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision30",
+        "Gift of Magic",
+        "Hide(5)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Dwarf(Dark)",
+        "Dwarf(Civilized)",
+        "Dwarf(Fire)",
+        "Dwarf(Mountain)",
+        "Human(Civilized:City)",
+        "Goblin(Forest)",
+        "Goblin(Mountain)",
+        "Goblin(Mountain:Magic)",
+        "Goblin(Plains)",
+        "Human(Barbaric)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)",
+        "Ogre"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -7294,7 +12576,58 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Life Sense",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Meditate",
+          "bonus": ""
+        },
+        {
+          "name": "Body Control",
+          "bonus": ""
+        },
+        {
+          "name": "Fearless",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Steadfast",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Spirit Travel",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Sleepless"
+      ],
+      "disabilities": [
+        "Obsessive",
+        "Very Low Fertility"
+      ],
+      "immunities": [
+        "Transformation of Form"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -7383,7 +12716,63 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap(u)",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Lie",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(u)",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        },
+        {
+          "name": "Steal",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision",
+        "Hide(8)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -7472,7 +12861,64 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Saurian"
+      "bodyType": "Saurian",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": "+30%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(Scales)",
+        "Natural Weapons(S’rett)"
+      ],
+      "disabilities": [
+        "Weakness(Frost)"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Saurian",
+        "Sura’keth",
+        "Sura’rath"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -7561,7 +13007,58 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Smell",
+          "bonus": "+15%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(15)",
+        "Natural Weapons(Sasquatch/Yeti)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -7650,7 +13147,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves)"
+      "bodyType": "Humanoid(Hooves)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Charming",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Play",
+          "bonus": ""
+        },
+        {
+          "name": "Recite",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Hide(5)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wood)",
+        "Elf(Wild)",
+        "Human(Barbaric)",
+        "Human(Civilized:City)",
+        "Human(Civilized:Port)",
+        "Human(Civilized:Town)",
+        "Human(Civilized:Village)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -7739,7 +13302,71 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Saurian"
+      "bodyType": "Saurian",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(Scales)",
+        "Keen",
+        "Balancing Tail",
+        "Terrain Blending",
+        "Tail Slap",
+        "Natural Weapons(Saurian)"
+      ],
+      "disabilities": [
+        "Frost Magic Weakness(Greater)",
+        "Scale Armor Chafe",
+        "Upper Armor Off-balance"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "S’rett",
+        "Sura’keth",
+        "Sura’rath"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -7828,7 +13455,65 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Scethen"
+      "bodyType": "Scethen",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Fear",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60",
+        "Hide(Chitinous)",
+        "Jumping",
+        "Sleepless",
+        "Vibration Sensing",
+        "Stinger",
+        "Natural Weapons(Scethen)"
+      ],
+      "disabilities": [
+        "Insect Leg Loss"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -7917,7 +13602,68 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Snake(Arms)"
+      "bodyType": "Snake(Arms)",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Darkness",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Good",
+          "bonus": ""
+        },
+        {
+          "name": "Fear",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Hide(Scales)",
+        "Constriction Grapple",
+        "Venom(Strong)",
+        "Natural Weapons(Se’eth)"
+      ],
+      "disabilities": [
+        "No Locomotive Limbs",
+        "Weakness(Frost)"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 136,
+        "maxAge": "1200"
+      }
     }
   },
   {
@@ -8006,7 +13752,54 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Diving(Water)",
+        "Hide(Skin)",
+        "Swimming",
+        "Gills",
+        "Webbed Feet/Hands",
+        "Natural Weapons(Sha’Cora)"
+      ],
+      "disabilities": [
+        "Salt Water Dependence"
+      ],
+      "immunities": [
+        "Pressure"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 32,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -8095,7 +13888,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Wings/Large Tail)"
+      "bodyType": "Humanoid(Wings/Large Tail)",
+      "racialSkills": [
+        {
+          "name": "Acrobatics",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Break Fall",
+          "bonus": ""
+        },
+        {
+          "name": "Slow Fall",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Leap",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Farsight",
+        "Hide(Scales)",
+        "Patterned Fur",
+        "Flight(Wings)",
+        "Claws",
+        "Fangs/Sharp Teeth",
+        "Tail Slap"
+      ],
+      "disabilities": [
+        "Weakness(Frost)"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "S’rett",
+        "Saurian",
+        "Sura’rath"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -8184,7 +14043,63 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Saurian"
+      "bodyType": "Saurian",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(Scales)",
+        "Patterned Fur",
+        "Gills",
+        "Webbed Feet/Hands",
+        "Claws",
+        "Fangs/Sharp Teeth",
+        "Tail Slap"
+      ],
+      "disabilities": [
+        "Fire Weakness"
+      ],
+      "immunities": [
+        "Frost Resistant"
+      ],
+      "fertileWith": [
+        "S’rett",
+        "Saurian",
+        "Sura’keth"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "70"
+      }
     }
   },
   {
@@ -8273,7 +14188,61 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves/Tail)"
+      "bodyType": "Humanoid(Hooves/Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Fearless",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Enhanced Hearing",
+        "Enhanced Smell",
+        "Hide(10)",
+        "Tusks",
+        "Natural Weapons(Susara)"
+      ],
+      "disabilities": [
+        "Quick Temper"
+      ],
+      "immunities": [
+        "Stubborn"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -8362,7 +14331,66 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Recite",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Wing Projection"
+      ],
+      "disabilities": [
+        "Weakness(Fire)"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Elf(Dark)",
+        "Elf(Desert)",
+        "Elf(Dread)",
+        "Elf(Gray)",
+        "Elf(High)",
+        "Elf(Ice)",
+        "Elf(Sea)",
+        "Elf(Wild)",
+        "Elf(Wood)"
+      ],
+      "ages": {
+        "startLow": 100,
+        "startHigh": 127,
+        "maxAge": "1000"
+      }
     }
   },
   {
@@ -8451,7 +14479,44 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Hooves)"
+      "bodyType": "Humanoid(Hooves)",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Intimidation",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Hide(10)",
+        "Natural Weapons(Taurian)"
+      ],
+      "disabilities": [
+        "Quick Temper"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 24,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -8540,7 +14605,55 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Enhanced Smell",
+        "Hide(Scales/Shell)",
+        "Shell Armor"
+      ],
+      "disabilities": [
+        "Bad Swimmer",
+        "Poor Flexibility",
+        "Reduced Jumping"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 23,
+        "startHigh": 50,
+        "maxAge": "200"
+      }
     }
   },
   {
@@ -8629,7 +14742,54 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+15%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+30%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(4)",
+        "Regeneration(Greater)",
+        "Natural Weapons(Troll)"
+      ],
+      "disabilities": [
+        "Fire Magic Weakness"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 4,
+        "startHigh": 24,
+        "maxAge": "500"
+      }
     }
   },
   {
@@ -8718,7 +14878,75 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+15%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Lie",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "Blend(snow/ice only)",
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Hide(8)",
+        "Regeneration",
+        "Claws",
+        "Tusks"
+      ],
+      "disabilities": [
+        "Worsened Fire Weakness"
+      ],
+      "immunities": [
+        "Frost"
+      ],
+      "fertileWith": [
+        "Troll(Rock)"
+      ],
+      "ages": {
+        "startLow": 4,
+        "startHigh": 24,
+        "maxAge": "500"
+      }
     }
   },
   {
@@ -8807,7 +15035,52 @@
       },
       "formless": false,
       "canSwim": false,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Force",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": "+50%"
+        }
+      ],
+      "racialSkillNote": "Blend(rock surfaces only)",
+      "abilities": [
+        "Ultravision",
+        "Regeneration(Slow)",
+        "Hide(15)"
+      ],
+      "disabilities": [
+        "Fire Magic Weakness",
+        "Sunlight Conversion"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Troll(Ice)"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "300"
+      }
     }
   },
   {
@@ -8896,7 +15169,66 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Tail)"
+      "bodyType": "Humanoid(Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Danger Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Fearless",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Exceptional Sight",
+        "Night Vision(Enhanced)",
+        "Enhanced Smell",
+        "Hide(10)",
+        "Claws",
+        "Fangs/Sharp Teeth"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -8985,7 +15317,60 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid(Large Tail)"
+      "bodyType": "Humanoid(Large Tail)",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Set Trap(w)",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Steal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Surprise Attack",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision",
+        "Hide(8)"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Grahl"
+      ],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "80"
+      }
     }
   },
   {
@@ -9074,7 +15459,60 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+5%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": ""
+        },
+        {
+          "name": "Track",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Diving(Water)",
+        "Hide(Skin)",
+        "Swimming",
+        "Webbed Feet/Hands",
+        "Natural Weapons(Whalrog)"
+      ],
+      "disabilities": [],
+      "immunities": [
+        "Frost Hardened",
+        "Pressure"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 32,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -9163,7 +15601,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Phase",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Regeneration(Natural)",
+        "Hide(10)"
+      ],
+      "disabilities": [
+        "Lesser Weakness(Acid)",
+        "Lesser Weakness(Fire)"
+      ],
+      "immunities": [
+        "Electricity Hardened",
+        "Frost Hardened"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 22,
+        "startHigh": 28,
+        "maxAge": "120"
+      }
     }
   },
   {
@@ -9252,7 +15756,63 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Humanoid"
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Berserking",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Hide(15)",
+        "Claws",
+        "Raking Claws",
+        "Fangs/Sharp Teeth"
+      ],
+      "disabilities": [],
+      "immunities": [],
+      "fertileWith": [
+        "Grahl"
+      ],
+      "ages": {
+        "startLow": 18,
+        "startHigh": 32,
+        "maxAge": "100"
+      }
     }
   },
   {
@@ -9341,7 +15901,73 @@
       },
       "formless": false,
       "canSwim": true,
-      "bodyType": "Insectoid"
+      "bodyType": "Insectoid",
+      "racialSkills": [
+        {
+          "name": "Climb",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Depth Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Jewelry Knowledge",
+          "bonus": ""
+        },
+        {
+          "name": "Leap",
+          "bonus": ""
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unseen",
+          "bonus": ""
+        },
+        {
+          "name": "Smell",
+          "bonus": "+40%"
+        },
+        {
+          "name": "Speak to Stone",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "abilities": [
+        "Infravision60",
+        "Antennae",
+        "Hide(Chitinous)",
+        "Digging Claws",
+        "Sleepless",
+        "Vibration Sensing",
+        "Natural Weapons(Xar’Xeth)"
+      ],
+      "disabilities": [
+        "Compound Eyes",
+        "Frost Weakness",
+        "Poor Circulation",
+        "Slow Adult Learner",
+        "Infertile"
+      ],
+      "immunities": [],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 9,
+        "startHigh": 14,
+        "maxAge": "70"
+      }
     }
   }
 ]

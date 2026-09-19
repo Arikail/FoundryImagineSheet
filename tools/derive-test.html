@@ -1120,6 +1120,46 @@ const tripleChar = makeCharacter({}, 5, [makeRace(), elfish, Object.assign(makeR
 check("a third race is reported, not silently dropped",
 	[tripleChar.identity.raceName, tripleChar.identity.raceWarning.includes("Third")], ["Testfolk|Elfish", true]);
 
+// --- the rest of a race: skills, abilities, ages, fertility, class restrictions ---------------
+check("racial skills merge: each once, the first race's order then the second's",
+	RR.mergeRacialSkills([{ name: "Climb", bonus: "" }, { name: "Listen", bonus: "+10%" }],
+	                     [{ name: "Listen", bonus: "+20%" }, { name: "Track", bonus: "" }]).map(s => s.name + s.bonus),
+	["Climb", "Listen+20%", "Track"]);
+check("...a shared skill keeps the better bonus even when it is the FIRST race's (his code takes the second's)",
+	RR.mergeRacialSkills([{ name: "Listen", bonus: "+20%" }], [{ name: "Listen", bonus: "" }])[0].bonus, "+20%");
+check("ability lists merge with duplicates removed",
+	RR.mergeNameLists(["Night Vision", "Climbing"], ["Climbing", "Flight(Wings)"]),
+	["Climbing", "Flight(Wings)", "Night Vision"]);
+check("the lesser age wins",               RR.lesserAge(100, 1000), 100);
+check("a number beats Immortal either way round",
+	[RR.lesserAge("Immortal", 100), RR.lesserAge(100, "Immortal")], [100, 100]);
+check("two Immortals stay Immortal",       RR.lesserAge("Immortal", "Immortal"), "Immortal");
+
+check("a class barring the race is barred",           RR.isClassBlockedForRaces(["Elf(High)"], ["Elf(High)"]), true);
+check("an empty list bars nobody, as Warrior's",      RR.isClassBlockedForRaces([], ["Elf(High)"]), false);
+check("a half race is barred only if BOTH races are", [
+	RR.isClassBlockedForRaces(["Elf(High)"], ["Elf(High)", "Human"]),
+	RR.isClassBlockedForRaces(["Elf(High)", "Human"], ["Elf(High)", "Human"])], [false, true]);
+check("fertile partners come from the first race's list",
+	[RR.canRacesBreed("Elf(High)", ["Human"], "Human"), RR.canRacesBreed("Centaur", [], "Human")], [true, false]);
+
+const skilled1 = makeRace({ racialSkills: [{ name: "Climb", bonus: "+10%" }], abilities: ["Climbing"],
+	ages: { startLow: 18, startHigh: 24, maxAge: "100" }, fertileWith: ["Elfish"] });
+const skilled2 = Object.assign(makeRace({ racialSkills: [{ name: "Blend", bonus: "" }], abilities: ["Night Vision"],
+	ages: { startLow: 100, startHigh: 127, maxAge: "1000" }, fertileWith: [] }), { name: "Elfish" });
+const mixed = makeCharacter({}, 5, [skilled1, skilled2]);
+check("a half race lists both races' skills",   mixed.identity.race.skills.map(s => s.name), ["Climb", "Blend"]);
+check("...both races' abilities",               mixed.identity.race.abilities, ["Climbing", "Night Vision"]);
+check("...and the lesser ages",                 [mixed.identity.race.ages.startLow, mixed.identity.race.ages.maxAge], [18, "100"]);
+check("a fertile pair raises no issue",          mixed.identity.raceIssues, []);
+const barren = makeCharacter({}, 5, [Object.assign(makeRace({ fertileWith: [] }), { name: "Loner" }), skilled2]);
+check("an infertile pair is reported, not refused",
+	[barren.identity.raceName, barren.identity.raceIssues.length], ["Loner|Elfish", 1]);
+const barredClass = { ...fighterClass, name: "Knightly", id: "k1",
+	system: { ...fighterClass.system, blockedRaces: ["Testfolk"] } };
+check("a class the race is barred from is reported",
+	makeCharacter({}, 5, [makeRace(), barredClass]).identity.raceIssues, ["Testfolk is usually not a Knightly."]);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

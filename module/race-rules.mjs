@@ -85,6 +85,78 @@
 		return (tmpText1 == "" ? "0" : tmpText1) + "|" + (tmpText2 == "" ? "0" : tmpText2);
 	}
 
+	// This is the function which reads one of his racial-skill bonuses ("+20%", "-10%", or blank)
+	// as a number.
+	function percentToNumber(tmpPercent) {
+		return parseInt(("" + (tmpPercent ?? "")).replace("%", "").replace("+", "")) || 0;
+	}
+
+	// This is the function which merges two races' racial-skill lists as his
+	// combineTwoRaceSkillDetails does: every skill from both, once, in the first race's order and
+	// then the second's, a skill both offer keeping the BETTER bonus.
+	//
+	// "Better" is the evident intent rather than what his code does. His getBestModifierPercent
+	// declares both its parameters as numberString1, so the second shadows the first and a shared
+	// skill always takes the SECOND race's bonus. UPSTREAM-ISSUES.md item 32.
+	export function mergeRacialSkills(tmpSkills1, tmpSkills2) {
+		var tmpOut = [];
+		var tmpSeen = {};
+		for (const tmpSkill of [...(tmpSkills1 ?? []), ...(tmpSkills2 ?? [])]) {
+			if (tmpSeen[tmpSkill.name] !== undefined) {
+				var tmpKept = tmpOut[tmpSeen[tmpSkill.name]];
+				if (percentToNumber(tmpSkill.bonus) > percentToNumber(tmpKept.bonus)) { tmpKept.bonus = tmpSkill.bonus; }
+				continue;
+			}
+			tmpSeen[tmpSkill.name] = tmpOut.length;
+			tmpOut.push({ name: tmpSkill.name, bonus: tmpSkill.bonus ?? "" });
+		}
+		return tmpOut;
+	}
+
+	// This is the function which merges two name lists with duplicates removed, as his half race
+	// merges abilities, disabilities and immunities (mergeTwoStringLists, removeDuplicatesInArray).
+	// His further steps are NOT ported: removeLesserAbilities (keep only the stronger of two
+	// versions of one ability, as the Player's Guide asks) and remove2ndRaceBodyAbilities (drop the
+	// second race's abilities that need a body the character has not got). Both are name-matching
+	// rules over his ability vocabulary; until the racial ability mechanics are ported the lists
+	// are display only, so a lesser version showing beside a greater one misleads nobody.
+	export function mergeNameLists(tmpList1, tmpList2) {
+		return [...new Set([...(tmpList1 ?? []), ...(tmpList2 ?? [])])].sort();
+	}
+
+	// This is the function which takes the lesser of two ages, as his setAge does for a half race.
+	// A maximum age can be a word ("Immortal"), which is longer than any number of years, so a
+	// number always wins against one; two words keep the first. His lesserOfTwoNumbers compares
+	// a word as NaN and falls through to the first, which gets "Immortal" and 100 wrong one way
+	// round -- the port reads what he evidently means.
+	export function lesserAge(tmpAge1, tmpAge2) {
+		var tmpNumber1 = parseFloat(tmpAge1);
+		var tmpNumber2 = parseFloat(tmpAge2);
+		if (isNaN(tmpNumber1) && isNaN(tmpNumber2)) { return tmpAge1; }
+		if (isNaN(tmpNumber1)) { return tmpAge2; }
+		if (isNaN(tmpNumber2)) { return tmpAge1; }
+		return (tmpNumber2 < tmpNumber1) ? tmpAge2 : tmpAge1;
+	}
+
+	// This is the function which says whether a class is closed to a character's race or races,
+	// from the class's blockedRaces. His setClassDetails: one race is barred if it is on the list;
+	// a half race only if BOTH are ("isRace1Blocked && isRace2Blocked"). His sheet also lets the
+	// player override the bar, so this reports rather than refuses.
+	export function isClassBlockedForRaces(tmpBlockedRaces, tmpRaceNames) {
+		var tmpNames = (tmpRaceNames ?? []).slice(0, 2);
+		if (tmpNames.length == 0) { return false; }
+		var tmpBlocked = tmpBlockedRaces ?? [];
+		return tmpNames.every(tmpName => tmpBlocked.includes(tmpName));
+	}
+
+	// This is the function which says whether two races can have children together. His sheet
+	// only offers the first race's fertileWith list as the second race, so an incompatible pair
+	// cannot be picked there; the port has no picker to restrict, so it reports the pair instead.
+	export function canRacesBreed(tmpRace1Name, tmpRace1FertileWith, tmpRace2Name) {
+		if (tmpRace1Name == tmpRace2Name) { return true; }
+		return (tmpRace1FertileWith ?? []).includes(tmpRace2Name);
+	}
+
 	// This is the function which builds the race a Half Race character actually has, out of the
 	// two races' data. It returns the same shape as a race item's system data, so everything that
 	// reads a race reads this unchanged.
@@ -133,6 +205,21 @@
 			// strips the second race's body-specific abilities to fit it (remove2ndRaceBodyAbilities,
 			// sheet-worker.js:46254).
 			bodyType:           tmpRace1.bodyType ?? "Humanoid",
+			racialSkills:       mergeRacialSkills(tmpRace1.racialSkills, tmpRace2.racialSkills),
+			racialSkillNote:    [tmpRace1.racialSkillNote, tmpRace2.racialSkillNote].filter(n => n).join("; "),
+			abilities:          mergeNameLists(tmpRace1.abilities, tmpRace2.abilities),
+			disabilities:       mergeNameLists(tmpRace1.disabilities, tmpRace2.disabilities),
+			immunities:         mergeNameLists(tmpRace1.immunities, tmpRace2.immunities),
+			// A half race's own children are not modelled; the first race's list is carried so
+			// the field is never missing.
+			fertileWith:        [...(tmpRace1.fertileWith ?? [])],
+			// setAge: the lesser of each (sheet-worker.js:38986-38991). Apparent age, which he
+			// averages, is entered on the sheet rather than derived, so there is nothing to combine.
+			ages: {
+				startLow:  lesserAge(tmpRace1.ages?.startLow ?? 0, tmpRace2.ages?.startLow ?? 0),
+				startHigh: lesserAge(tmpRace1.ages?.startHigh ?? 0, tmpRace2.ages?.startHigh ?? 0),
+				maxAge:    "" + lesserAge(tmpRace1.ages?.maxAge ?? "", tmpRace2.ages?.maxAge ?? "")
+			},
 			sourcebook:         "",
 			page:               "",
 			description:        ""

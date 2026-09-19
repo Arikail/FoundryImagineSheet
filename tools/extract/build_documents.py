@@ -106,6 +106,23 @@ def load_named(name):
         return json.load(fh)
 
 
+def load_raw_entries(name):
+    """The entries of a dictionary as parse_dictionaries.py wrote it, for the few that are used
+    straight from the raw parse rather than through a column map -- ones whose rows are nested
+    lists (race skills) or plain comma lists (race features), where a column map adds nothing."""
+    path = os.path.join(HERE, "..", "..", "src", "packs", "raw", name + ".json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh).get("entries", {})
+
+
+def split_list(tmpvalue):
+    """His comma-separated name lists ("Infravision60,Antennae,Hide(Chitinous)") as a list, with
+    his "None" and empty entries dropped."""
+    return [s.strip() for s in str(tmpvalue or "").split(",") if s.strip() and s.strip() != "None"]
+
+
 def make_doc(name, doctype, system):
     return {"name": clean_text(name), "type": doctype, "system": system}
 
@@ -300,9 +317,39 @@ def build_races():
     bodymap = bodytypes["entries"] if bodytypes else {}
     conditional = bodytypes.get("_conditional", []) if bodytypes else []
 
+    # The rest of a race, from four more of his tables. Each is keyed by the same race name.
+    #   raceSkillDetailValues   the racial skills a member may choose, with his bonus on each
+    #                           (getRaceSkillDetails, sheet-worker.js:51856)
+    #   raceFeatureAbilities    abilities, disabilities, immunities -- three comma lists
+    #                           (getRacialFeatureAbilities, 45588)
+    #   racefertiledict         which races it can have children with (32833) -- the list his
+    #                           Half Race picker offers as the second race
+    #   raceAges                starting-age range and maximum age (getAge, 38995), walked out
+    #                           of his switch by extract_combat_tables.py
+    # His "(Slight Physique)" variants of a few races are separate keys in the first two and are
+    # not carried: the port has no slight-physique option yet.
+    raceskills = load_raw_entries("raceSkillDetailValues")
+    racefeatures = load_raw_entries("raceFeatureAbilities")
+    racefertile = load_raw_entries("racefertiledict")
+    raceages = (load_named("raceAges") or {}).get("entries", {})
+
     docs = []
     for tmpname, tmprow in payload["entries"].items():
         where = "raceStatsAndMoveDetails/%s" % tmpname
+        for tmptable, tmpsource in (("raceSkillDetailValues", raceskills), ("raceFeatureAbilities", racefeatures),
+                                    ("racefertiledict", racefertile), ("getAge", raceages)):
+            if tmpname not in tmpsource:
+                note("race-missing-from-table", where, "no entry in %s" % tmptable)
+
+        tmpskillrow = raceskills.get(tmpname, ["", [], ""])
+        tmpracialskills = [{"name": clean_text(s[0]), "bonus": clean_text(str(s[1] or ""))}
+                           for s in (tmpskillrow[1] or []) if s and s[0]]
+        tmpskillnote = clean_text(str(tmpskillrow[2] if len(tmpskillrow) > 2 else ""))
+        if tmpskillnote == "None":
+            tmpskillnote = ""
+        tmpfeatures = racefeatures.get(tmpname, ["", "", ""])
+        tmpages = raceages.get(tmpname, {})
+
         if tmpname not in bodymap:
             note("race-body-type-defaulted", where, "no case in getRacialBodyType; using Humanoid")
         if tmpname in conditional:
@@ -368,6 +415,18 @@ def build_races():
             "formless": to_bool(tmprow.get("formless")),
             "canSwim": to_bool(tmprow.get("canSwim")),
             "bodyType": bodymap.get(tmpname, "Humanoid"),
+            "racialSkills": tmpracialskills,
+            "racialSkillNote": tmpskillnote,
+            "abilities": [clean_text(a) for a in split_list(tmpfeatures[0])],
+            "disabilities": [clean_text(a) for a in split_list(tmpfeatures[1] if len(tmpfeatures) > 1 else "")],
+            "immunities": [clean_text(a) for a in split_list(tmpfeatures[2] if len(tmpfeatures) > 2 else "")],
+            "fertileWith": [clean_text(a) for a in split_list(",".join(racefertile.get(tmpname, [])))],
+            "ages": {
+                "startLow": tmpages.get("startLow", 0),
+                "startHigh": tmpages.get("startHigh", 0),
+                # a number of years, or a word -- "Immortal"
+                "maxAge": str(tmpages.get("maxAge", "")),
+            },
         }))
     return docs
 
@@ -382,6 +441,11 @@ def build_classes():
 
     titlemap = titles["entries"] if titles else {}
     goalmap = goals["entries"] if goals else {}
+
+    # Which races may NOT take each class, from his classRaceAndDetails (sheet-worker.js:51088),
+    # read by setClassDetails as blockedRacesDetails. It is a list of barred races, not allowed
+    # ones: Warrior's is empty, which means every race may be a Warrior.
+    blockedraces = load_raw_entries("classRaceAndDetails")
 
     # When a class starts reading the Lore attack chart, from getLoreAttackChart via
     # extract_combat_tables.py. Zero means it never does, which is true of about half of them.
@@ -469,7 +533,10 @@ def build_classes():
             "skillSlotsNeeded": to_number(slotsmap.get(tmpname, 0), where, "skillSlotsNeeded"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
+            "blockedRaces": [clean_text(r) for r in blockedraces.get(tmpname, [])],
         }))
+        if tmpname not in blockedraces:
+            note("class-missing-from-table", where, "no entry in classRaceAndDetails; no race is barred")
     docs.extend(load_manual_classes({d["name"] for d in docs}))
     return docs
 
