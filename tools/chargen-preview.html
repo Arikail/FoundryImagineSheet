@@ -1,0 +1,126 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG character generator preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; }
+	.frame { max-width: 760px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; font-size: 13px; }
+	.window-content { padding: 12px 14px; }
+	.caption { color: #d8d0c0; text-align: center; font-size: 12px; margin-top: 18px; }
+	pre.result { max-width: 760px; margin: 12px auto; color: #d8d0c0; font-size: 11px; white-space: pre-wrap; }
+</style>
+<div id="frames"></div>
+<pre class="result" id="result"></pre>
+<script type="module">
+// Walks the character generator through every step, rendering the real template with the view the
+// real window builds (buildGeneratorView), against real content from src/packs/documents/. Then
+// assembles the character with assembleCharacter and derives it with the real character model, so
+// what the generator makes is checked as a finished character, not just as a form.
+//
+// Scripted choices: a Heroic half Human(Civilized:Village)|Elf(High) Mage, female, with a swap,
+// the three Civilized Human points, two racial and two social skills. Every die is scripted.
+//
+// Must be served over HTTP -- see tools/combat-test.html.
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
+
+const V = await import("../module/chargen-view.mjs");
+const C = await import("../module/chargen-rules.mjs");
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+const load = async (f) => (await (await fetch(`../src/packs/documents/${f}.json`)).json());
+const [races, classes, skills] = await Promise.all(["races", "classes", "skills"].map(load));
+const content = { races, classes, skills };
+
+const template = Handlebars.compile(await (await fetch("../templates/apps/character-generator.hbs")).text());
+const framesEl = document.getElementById("frames");
+function show(caption, state) {
+	const view = V.buildGeneratorView(state, content, () => true);
+	const cap = document.createElement("div"); cap.className = "caption"; cap.textContent = caption;
+	// Classes as the real window carries them: imagine and character-generator on the window,
+	// window-content on its body.
+	const frame = document.createElement("div"); frame.className = "frame imagine character-generator";
+	frame.innerHTML = `<div class="frame-title">Imagine RPG — New Character (preview)</div>
+		<div class="window-content">${template(view)}</div>`;
+	framesEl.append(cap, frame);
+	return view;
+}
+
+// A die that always shows the same face, and one that walks round the faces in turn.
+const cycle = () => { let i = 0; return (sides) => (i++ % sides) + 1; };
+
+const state = V.newGeneratorState();
+state.name = "Aelwen of the Village"; state.gender = "Female"; state.slightPhysique = true; state.charType = "heroic";
+show("Step 1: Basics", state);
+
+state.step = 1; state.race1 = "Human(Civilized:Village)"; state.race2 = "Elf(High)";
+show("Step 2: Race -- a Half Race, the second race offered only from the first's fertile partners", state);
+
+state.step = 2;
+state.rolled = C.rollAttributeSets("heroic", cycle());
+state.swaps = [{ to: "int", from: ["str", "str", "vit"] }];
+state.humanBonuses = ["aur", "aur", "int"];
+show("Step 3: Attributes -- Heroic, two sets, one 3:1 swap, the half Civilized Human's three points (no moves)", state);
+
+state.step = 3; state.className = "Mage";
+const classView = show("Step 4: Class", state);
+if (classView.classIssues.length) { state.override = true; }
+
+state.step = 4;
+const skillView = V.buildGeneratorView(state, content, () => true);
+state.racialSkillNames = skillView.racialSkills.slice(0, 2).map(s => s.name);
+state.socialSkillNames = skillView.socialSkills.slice(0, 2).map(s => s.name);
+show("Step 5: Skills -- the class's first-title skills, and two racial and two social picks", state);
+
+state.step = 5; state.handedness = "Right"; state.age = 19; state.heightFeet = 5; state.heightInches = 6; state.weight = 125;
+state.alignment = "Neutral Good"; state.languages = [{ name: "Common", write: true }, { name: "Elvish", write: false }];
+state.wealth = { copper: 20, silver: 10, gold: 2, platinum: 0 };
+show("Step 6: Details", state);
+
+state.step = 6;
+show("Step 7: Review", state);
+
+// --- the character it makes, derived by the real model --------------------------------------
+const derived = V.deriveGenerator(state, content, () => true);
+const assembled = C.assembleCharacter(V.choicesFromState(state, derived), content, cycle());
+const character = new ImagineCharacterData({
+	...assembled.actor.system,
+	characteristics: Object.fromEntries(["endurance", "perception", "affinity", "fortune"].map(k =>
+		[k, { titleBonus: 0, raceMod: 0, permMod: 0, tempMod: 0 }])),
+	resistances: Object.fromEntries(["magic", "illusion", "control", "poison", "disease"].map(k => [k, { misc: 0, immune: false }])),
+	body: { bodyType: "", areas: [], armorDamage: {} },
+	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0, skillMisc: 0,
+	          weaponLoreList: "", missileLoreList: "", projectileLoreList: "", chosenAttackSkill: "Beginner" },
+	skillSlotMoves: { racialToClass: 0, racialToSocial: 0, socialToRacial: 0, socialToClass: 0, racialSacrificed: 0, socialSacrificed: 0 },
+	movement: { walk: {}, jog: {}, run: {}, special: {}, specialName: "", travelHours: 0, restHours: 0, jumpStand: 0, jumpUp: 0 }
+});
+const items = assembled.items.map((it, i) => ({ ...it, id: "i" + i,
+	getTitleName(t) { const a = this.system.advancement?.titles ?? []; return a[t - 1] ?? ""; } }));
+character.parent = { items, name: assembled.actor.name };
+character.prepareBaseData();
+character.prepareDerivedData();
+
+const genFinals = derived.finals;
+const lines = [
+	`Created: ${assembled.actor.name} -- ${character.identity.raceName} ${character.identity.className}, title ${character.identity.title}`,
+	`Items: ${assembled.items.map(i => i.name + (i.system.category ? " [" + i.system.category + "]" : "")).join(", ")}`,
+	`Issues: ${assembled.issues.join(" | ") || "none"}`,
+	"",
+	"Attribute   generator-final   character-model-value   (these must agree)",
+	...C.ATTRIBUTE_ORDER.map(k => `  ${k.toUpperCase()}        ${String(genFinals[k].final).padStart(3)}               ${String(character.attributes[k].value).padStart(3)}`),
+	"",
+	`Skills on the character: ${character.parent.items.filter(i => i.type == "skill").map(i => `${i.name} (${i.system.category}) start ${i.system.startingBonus} ability ${i.system.abilityBonus} = ${i.system.totalChance}%`).join("; ")}`,
+	`Languages: ${character.languages.map(l => l.name + (l.write ? " (writes)" : "")).join(", ")}; allowance ${character.languageAllowance.used} of ${character.languageAllowance.slots}`,
+	`Encumbrance: ${character.encumbrance.status}, max load ${character.encumbrance.maxLoad}`
+];
+const agree = C.ATTRIBUTE_ORDER.every(k => genFinals[k].final === character.attributes[k].value);
+lines.push("", agree ? "AGREE: the generator's finals are what the character model derives." : "DISAGREE -- see the table above.");
+document.getElementById("result").textContent = lines.join("\n");
+</script>

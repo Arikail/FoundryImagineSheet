@@ -33,6 +33,7 @@ import {
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
+import ImagineCharacterGenerator, { registerCharacterGeneratorButton } from "./apps/character-generator.mjs";
 import ImagineCombat from "./combat/combat-document.mjs";
 import { rollWeaponAttack, registerAttackCardListeners } from "./combat/attack.mjs";
 import { rollCreatureAttack } from "./combat/creature-attack.mjs";
@@ -176,7 +177,9 @@ Hooks.once("init", function () {
 		rollWeaponAttack: rollWeaponAttack,
 		rollCreatureAttack: rollCreatureAttack,
 		getAvailabilityRules: getAvailabilityRules,
-		explainAvailability: explainAvailability
+		explainAvailability: explainAvailability,
+		// The step-by-step character generator; also a button in the Actors directory.
+		generateCharacter: () => new ImagineCharacterGenerator().render(true)
 	};
 
 	// Records whether the content has ever been imported into this world, so the first-launch
@@ -193,6 +196,10 @@ Hooks.once("init", function () {
 	// content being added to a character. See module/availability.mjs.
 	registerAvailabilitySettings();
 	registerAvailabilityEnforcement();
+
+	// @MARKER CHARACTER GENERATOR
+	// A Create Character button in the Actors directory. See module/apps/character-generator.mjs.
+	registerCharacterGeneratorButton();
 
 	game.settings.registerMenu("imagine-rpg", "availabilityMenu", {
 		name: "Content Availability",

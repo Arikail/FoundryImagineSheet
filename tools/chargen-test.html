@@ -1,0 +1,136 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG character generation test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Tests for module/chargen-rules.mjs, checked against his character-creation code and the
+// Player's Guide's own statements of the rules. Every die is scripted, never random.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/chargen-test.html
+const C = await import("../module/chargen-rules.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+// A roller that hands out the given faces in order, then repeats the last.
+const dice = (...faces) => { let i = 0; return () => faces[Math.min(i++, faces.length - 1)]; };
+const always = (face) => () => face;
+
+// --- dice expressions -------------------------------------------------------------------------
+check("7d4d2 drops the two lowest: 1,1,4,4,4,3,2 keeps 4+4+4+3+2", C.rollDicePool("7d4d2", dice(1, 1, 4, 4, 4, 3, 2)), 17);
+check("6d4d1 drops the lowest one", C.rollDicePool("6d4d1", dice(1, 2, 2, 2, 2, 2)), 10);
+check("5d4 keeps all five", C.rollDicePool("5d4", always(3)), 15);
+check("a skill's starting dice ignore the % label", C.rollDicePool("2d6%", always(6)), 12);
+check("his 'dl0' typo reads as d10", C.rollDicePool("5dl0%", always(10)), 50);
+check("'Special' starts at nothing", C.rollDicePool("Special", always(6)), 0);
+check("blank starts at nothing", C.rollDicePool("", always(6)), 0);
+
+// --- the four character types -----------------------------------------------------------------
+check("his dice per attribute: STR 7d4d2, INT 6d4d1, SOC 5d4",
+	[C.ATTRIBUTE_DICE.str, C.ATTRIBUTE_DICE.int, C.ATTRIBUTE_DICE.soc, C.ATTRIBUTE_DICE.wil], ["7d4d2", "6d4d1", "5d4", "5d4"]);
+check("Adventurer rolls one set", C.rollAttributeSets("adventurer", always(2)).sets.length, 1);
+check("Heroic rolls two", C.rollAttributeSets("heroic", always(2)).sets.length, 2);
+check("Legendary rolls three", C.rollAttributeSets("legendary", always(2)).sets.length, 3);
+check("with all 4s every attribute of an Adventurer is 20 (five dice kept)",
+	Object.values(C.rollAttributeSets("adventurer", always(4)).best), Array(12).fill(20));
+check("Normal is the book's 5d4 for everything", C.CHARACTER_TYPES.normal.flatDice, "5d4");
+check("Normal adjusts 2:1, the rest 3:1",
+	[C.CHARACTER_TYPES.normal.ratio, C.CHARACTER_TYPES.adventurer.ratio, C.CHARACTER_TYPES.legendary.ratio], [2, 3, 3]);
+// Heroic: the higher of two per attribute. Set one all 1s (5 each), set two all 4s (20 each).
+const diceInASet = Object.values(C.ATTRIBUTE_DICE).reduce((n, d) => n + parseInt(d), 0);
+const heroic = C.rollAttributeSets("heroic", (() => { let i = 0; return () => (i++ < diceInASet ? 1 : 4); })());
+check("Heroic keeps the higher of the two rolls for each attribute", heroic.best.str, 20);
+check("...and reports both sets", [heroic.sets[0].str, heroic.sets[1].str], [5, 20]);
+
+// --- swaps ------------------------------------------------------------------------------------
+const tens = Object.fromEntries(C.ATTRIBUTE_ORDER.map(k => [k, 10]));
+check("a 3:1 swap takes three and gives one",
+	[C.applySwap(tens, { to: "str", from: ["agl", "agl", "wis"] }).str,
+	 C.applySwap(tens, { to: "str", from: ["agl", "agl", "wis"] }).agl], [11, 8]);
+check("the wrong number of points is refused",
+	C.checkSwap(tens, { to: "str", from: ["agl", "agl"] }, 3).allowed, false);
+check("Social Class cannot be raised", C.checkSwap(tens, { to: "soc", from: ["agl", "agl", "wis"] }, 3).allowed, false);
+check("...or spent", C.checkSwap(tens, { to: "str", from: ["soc", "agl", "wis"] }, 3).allowed, false);
+check("nothing may be left below 5",
+	C.checkSwap({ ...tens, agl: 6 }, { to: "str", from: ["agl", "agl", "wis"] }, 3).allowed, false);
+check("...but exactly 5 is fine",
+	C.checkSwap({ ...tens, agl: 7 }, { to: "str", from: ["agl", "agl", "wis"] }, 3).allowed, true);
+check("Normal's 2:1", C.checkSwap(tens, { to: "str", from: ["agl", "wis"] }, 2).allowed, true);
+
+// --- Civilized Humans, and physique -----------------------------------------------------------
+check("a Civilized Human gets three points and six moves",
+	C.getCivilizedHumanAllowance(["Human(Civilized:Village)"]), { bonus: 3, moves: 6 });
+check("half Civilized Human gets the points but not the moves (his setExtraRaceSheets; the book agrees)",
+	C.getCivilizedHumanAllowance(["Elf(High)", "Human(Civilized:City)"]), { bonus: 3, moves: 0 });
+check("a Barbaric Human gets neither", C.getCivilizedHumanAllowance(["Human(Barbaric)"]), { bonus: 0, moves: 0 });
+check("the three points may stack on one attribute",
+	C.applyHumanPoints(tens, ["str", "str", "str"], []).str, 13);
+check("...but never on Social Class", C.applyHumanPoints(tens, ["soc"], []).soc, 10);
+check("a move takes one and gives one",
+	[C.applyHumanPoints(tens, [], [{ from: "chm", to: "int" }]).chm,
+	 C.applyHumanPoints(tens, [], [{ from: "chm", to: "int" }]).int], [9, 11]);
+check("a slight physique is -1 STR, +1 AGL", [C.applyPhysique(tens, true).str, C.applyPhysique(tens, true).agl], [9, 11]);
+
+const built = C.buildRatings({ base: tens, slightPhysique: true, ratio: 3,
+	swaps: [{ to: "int", from: ["app", "app", "chm"] }, { to: "soc", from: ["str", "agl", "vit"] }],
+	humanBonuses: ["wil"], humanMoves: [] });
+check("buildRatings: physique, then the good swap, then the points",
+	[built.ratings.str, built.ratings.int, built.ratings.app, built.ratings.wil], [9, 11, 8, 11]);
+check("...and the bad swap is refused and reported", built.issues, ["Social Class cannot be adjusted."]);
+
+const finals = C.checkFinalAttributes({ ...tens, str: 19, agl: 4 },
+	{ attributeMods: { str: 2, agl: 0 }, attributeLimits: { str: 20, agl: 20 } });
+check("race added, then held to its limit", [finals.str.final, finals.str.overLimit], [20, true]);
+check("below 5 after the race is flagged", finals.agl.underMinimum, true);
+
+// --- class qualification and starting class skills --------------------------------------------
+const mageLike = { requirements: { attribQualify: [0, 0, 0, 15, 0, 0, 0, 0, 0, 14, 0, 0] } };
+check("an attribute short of the class is reported",
+	C.checkClassQualification(mageLike, C.checkFinalAttributes(tens, {}), ["Human"], false),
+	["Needs INT 15; has 10.", "Needs AUR 14; has 10."]);
+check("a barred race is reported too",
+	C.checkClassQualification({}, C.checkFinalAttributes(tens, {}), ["Elf(High)"], true),
+	["Elf(High) is usually not this class."]);
+
+const skillsClass = { advancement: { classSkillList: [
+	{ title: 1, name: "Detect Magic", core: false, requires: "" },
+	{ title: 1, name: "Scroll Knowledge", core: true, requires: "caster" },
+	{ title: 1, name: "Hermetic Lore", core: true, requires: "nonCaster" },
+	{ title: 2, name: "Cartography", core: false, requires: "" }] } };
+check("a caster starts with the title-1 skills, caster alternative included",
+	C.getStartingClassSkills(skillsClass, false).map(s => s.name), ["Detect Magic", "Scroll Knowledge"]);
+check("a race that cannot cast takes the no-casting alternative",
+	C.getStartingClassSkills(skillsClass, true).map(s => s.name), ["Detect Magic", "Hermetic Lore"]);
+
+check("a class modifier's percentage is read", C.parseClassModPercent("+10% to magical skills"), 10);
+check("a CORE class skill: dice + 30",
+	C.getClassSkillBonuses({ startingDice: "2d6%", types: [] }, true, ["+30% to core skills"], always(3)),
+	{ startingBonus: 6, abilityBonus: 30 });
+check("a Magical skill takes '+10% to magical skills'",
+	C.getClassSkillBonuses({ startingDice: "1d6%", types: ["Magical"] }, false,
+		["+30% to core skills", "+10% to magical skills", "+5% to combat skills"], always(1)),
+	{ startingBonus: 1, abilityBonus: 10 });
+check("a racial skill's dice count double, plus the race's bonus (his setRacialSkillAbility)",
+	C.getRacialSkillBonuses({ startingDice: "2d6%" }, "+10%", always(4)), { startingBonus: 16, abilityBonus: 10 });
+check("a social skill: its dice", C.getSocialSkillBonuses({ startingDice: "4d10%" }, always(5)),
+	{ startingBonus: 20, abilityBonus: 0 });
+
+// --- handedness and age -----------------------------------------------------------------------
+check("his handedness bands: 75 Right, 76 Left, 95 Left, 96 Ambidextrous",
+	[75, 76, 95, 96].map(n => C.rollHandedness([], always(n))), ["Right", "Left", "Left", "Ambidextrous"]);
+check("an Ambidextrous race always is", C.rollHandedness(["Night Vision", "Ambidextrous"], always(1)), "Ambidextrous");
+check("age rolls within the race's range",
+	[C.rollStartingAge({ startLow: 18, startHigh: 24 }, always(1)), C.rollStartingAge({ startLow: 18, startHigh: 24 }, always(7))],
+	[18, 24]);
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+const failed = results.length - passed;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${failed} failed`;
+</script>

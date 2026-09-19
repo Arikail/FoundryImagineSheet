@@ -984,3 +984,13 @@ Standard / Templar. Two things came up:
 **Also worth knowing:** your data now builds Elemental Dancer directly from the inline row, so the
 entry hand-authored from your Word template is no longer used. Where the template and your code
 differ, your code is what the port now shows.
+
+## 34. Eight skills write their starting dice "dl0" instead of "d10"
+
+**Status:** open · **Severity:** data typo; the port reads the evident intent
+
+In `skilldict`, eight skills give their starting dice with a lower-case letter L where the digit 1
+belongs: four "5dl0%", three "2dl0%", one "4dl0%". Your `rollDiceFromString` would not read "dl0"
+as d10, so on your sheet those skills probably start with no rolled bonus at all. The new character
+generator reads them as d10. The quickest fix on your side is a find-and-replace of `dl0` with `d10`
+in the dictionary.

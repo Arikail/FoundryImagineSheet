@@ -2376,3 +2376,94 @@ the build reported 8 added (all tagged Custom), 1 override (Climb's description 
 renamed Knot Craft), and the typo "damge". With the files as shipped (no entries), the generated
 documents are byte-identical to before. The JavaScript suites are untouched by a build-tool change.
 **Not verified:** route 1 in a running Foundry V14.
+
+### 2026-09-19 — The character generator, from his nine creation steps
+
+**Decision:** a step-by-step generator window, built on his own character creation. His sheet runs
+creation as nine numbered, confirmed steps (race, attributes, racial features, handedness and
+languages, class, skills, alignment, money and equipment, name; sheet-worker.js:4480-7963). The
+generator covers them in seven: Basics, Race, Attributes, Class, Skills, Details, Review. It
+creates the actor with its race, class and skill items in one go. It opens from a **Create
+Character** button in the Actors directory, or from `game.imagine.generateCharacter()`.
+
+**Three layers, so that almost all of it is tested outside Foundry:**
+- `module/chargen-rules.mjs`: the rules, pure, with dice passed in. `assembleCharacter` turns
+  the finished choices into `{ actor, items, issues }`.
+- `module/chargen-view.mjs`: what each step shows and whether it is finished, also pure.
+- `module/apps/character-generator.mjs`: only the Foundry face. It reads the form, rolls through
+  `CONFIG.Dice.randomUniform`, loads the compendiums, and calls `Actor.create`.
+
+The preview (`tools/chargen-preview.html`) calls the same view builder the window calls. So it
+renders what the window renders, not a hand-kept copy of it. That is the lesson of the preview's
+two earlier drifts, where a duplicated private builder silently fell out of step.
+
+**The rules, each from a named place in his code:**
+- *Attribute dice are per attribute, not per method* (his three rolling buttons, 4613/4711/4881):
+  STR, AGL, VIT and AUR use 7d4 keeping 5; INT, WIS, KNW, APP, CHM and PTY use 6d4 keeping 5;
+  SOC and WIL use 5d4. The methods differ only in the number of sets, keeping the best of each
+  attribute: Adventurer 1, Heroic 2, Legendary 3.
+- *Normal is the book's* (5d4 for everything, 2:1). His sheet has no button for it and does not
+  contradict it, the same footing dual classing was built on. It is labelled "not on his sheet" in
+  the type list.
+- *Swaps* are his "3-1 Attribute Adjustment": three points taken to add one, or two for Normal.
+  Social Class is never moved, and nothing may drop below 5. The minimum is the book's; his code
+  only floors at 0 but does not contradict it.
+- *Civilized Humans* get three +1 points (which may stack, never on Social Class) and six
+  one-point moves. A half race with a Civilized Human parent gets the points but not the moves:
+  his `setExtraRaceSheets`, and the book agrees.
+- *Slight physique* (female) is -1 STR, +1 AGL. His sheet folds it into the racial modifier; the
+  port has no physique field, so it lands in the stored rating. The numbers are the same.
+- *The stored rating is roll + physique + swaps + human points.* Racial modifiers and limits are
+  NOT added. The character model adds them, exactly as his `calcFinals` adds `race_mod` to
+  `best_roll`. The preview proves the two agree: for all twelve attributes, the generator's
+  "final" equals what the character model derives for the created character.
+- *Class qualification* compares the class's attribute requirements with the final attributes,
+  and checks barred races (both, for a half race). It reports, and has an override tick box, as
+  his sheet's `override_race_restriction` does.
+- *Starting class skills* are the class's title-1 skills. The no-casting alternative is used for
+  a race with the disability "Cannot Cast Spells", which is his `nocast`.
+- *Starting skill bonuses*, rolled once at creation:
+  - A class skill gets its dice, plus 30 if core, plus every class modifier naming its type
+    ("+10% to magical skills" on a Magical skill). This is his `setClassSkillAbility`.
+  - A racial skill's dice count double, plus the race's bonus (his `setRacialSkillAbility`,
+    "tmprandom*2").
+  - A social skill gets its dice.
+  The roll is `startingBonus`; the fixed part is `abilityBonus`.
+- *Handedness* is his `determineHandedness`: an Ambidextrous race always is; otherwise d100 gives
+  1-75 Right, 76-95 Left, 96-100 Ambidextrous.
+- *GME* is title 0, has no class skills, may take any race's racial skills, and picks its attack
+  chart.
+
+**Sub-decisions:**
+- *The second race offers only fertile partners*, as his Half Race picker does
+  (`racefertiledict`). An infertile pair cannot be made here at all. Dropping race items on a
+  sheet by hand still can, and is flagged there.
+- *Selects, checkboxes and numbers redraw at once; text is read when a button is pressed*, so
+  typing is never interrupted. "Next" always works and says why a step is not finished, rather
+  than sitting disabled with no explanation.
+- *Every per-character skill field is set outright* (`misc`, `isCommon`), not left to schema
+  defaults. The compendium copy carries none of them, and the preview showed a skill missing
+  `misc` working out as NaN.
+- *The attribute rolls go to chat*, as his rolling buttons post theirs.
+
+**Not built yet, and why** (`docs/sonnet/2026-09-19-character-generator.md`):
+- His height/frame/weight tables, and the hair, eye and skin colour tables. These are entered by
+  hand for now.
+- Starting money by social class.
+- Buying equipment.
+- The social-class and cross-skill modifiers on skills (`getExtraClassRacialMods`,
+  `getSocialSkillMods`).
+- The special races with their own creation rules: Changeling, Formless, Famorian's evokes.
+- Slot trades during creation. They exist on the sheet afterwards.
+
+**Also found:** eight skills write their starting dice "dl0" (a lower-case L for the 1 of "d10");
+the dice reader takes them as d10 (`UPSTREAM-ISSUES.md` item 34).
+
+**Verified:** the new `tools/chargen-test.html` passes 46 of 46. Derivation 325, combat 406, creature
+140 and availability 39 are unchanged, and 31 modules parse. `tools/chargen-preview.html` walks
+every step with real content. It makes a Heroic, female, half Human(Civilized:Village)|Elf(High)
+Mage who correctly fails the Mage's Will Force 14 and takes the override. Created, she derives
+exactly the attributes the generator showed. Her class skills carry his bonuses (Detect Magic
+30 core + 10 magical), her languages fit her allowance, and she is not encumbered.
+**Not verified:** anything needing a running Foundry V14. That covers the window itself, the
+directory button, reading the form, `Actor.create` with embedded items, and the chat card.

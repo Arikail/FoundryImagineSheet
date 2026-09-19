@@ -767,3 +767,56 @@
 .language-table .slot-label { display: block; font-size: 10px; font-weight: bold; margin-bottom: 1px; }
 .language-table tr.over-allowance .slot-label { color: #a2462e; }
 .language-over { color: #a2462e; font-size: 10px; margin: 0 0 4px; }
+
+/* @MARKER CHARACTER GENERATOR */
+/* The step-by-step window (module/apps/character-generator.mjs). Same palette as the sheets;
+ * entered values in fields, worked-out values as flat text, as everywhere else. */
+.imagine.character-generator {
+	--imagine-ink: #1c1a17;
+	--imagine-muted: #6d675e;
+	--imagine-rule: #cfc7b8;
+	--imagine-panel: #f7f4ee;
+	--imagine-accent: #6b4e2e;
+}
+.imagine.character-generator .window-content { background: #fdfbf6; color: var(--imagine-ink); font-size: 13px; }
+.chargen { display: flex; flex-direction: column; height: 100%; gap: 8px; }
+.chargen-steps { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0 0 6px;
+	border-bottom: 2px solid var(--imagine-rule); }
+.chargen-steps li { flex: 1; }
+.chargen-steps button { width: 100%; font-size: 12px; padding: 3px 4px; border: 1px solid var(--imagine-rule);
+	background: var(--imagine-panel); border-radius: 3px; }
+.chargen-steps li.current button { background: var(--imagine-accent); border-color: var(--imagine-accent);
+	color: #fff; font-weight: bold; }
+.chargen-steps li.done button { color: var(--imagine-accent); }
+.chargen-body { flex: 1; overflow-y: auto; padding-right: 4px; }
+.chargen-body h2 { margin: 4px 0 8px; font-size: 18px; border: none; }
+.chargen-body h3 { margin: 12px 0 4px; font-size: 14px; }
+.chargen-body label.row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.chargen-body label.row > input[type="text"], .chargen-body label.row > select { flex: 1; }
+.chargen-body label.row > input[type="number"] { width: 70px; flex: none; }
+.chargen-body label.check { display: inline-flex; align-items: center; gap: 4px; }
+.chargen-body label.row.check { display: flex; }
+.chargen-body p label { font-weight: bold; margin-right: 4px; }
+.chargen-race, .chargen-class { margin-top: 10px; padding: 8px 10px; background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule); border-radius: 4px; }
+.chargen-attributes { width: 100%; border-collapse: collapse; }
+.chargen-attributes th { font-size: 11px; color: var(--imagine-muted); text-align: left; padding: 2px 4px;
+	border-bottom: 1px solid var(--imagine-rule); }
+.chargen-attributes td { padding: 2px 4px; border-bottom: 1px solid #ece6da; }
+.chargen-attributes td input { width: 56px; }
+.chargen-attributes td.strong { font-weight: bold; }
+.chargen-attributes tr.over td.strong, .chargen-attributes tr.under td.strong { color: #a2462e; }
+.chargen-attributes.compact { width: auto; }
+.chargen .swap-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0; }
+.chargen .pick-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	gap: 2px 10px; max-height: 150px; overflow-y: auto; padding: 4px; border: 1px solid var(--imagine-rule);
+	border-radius: 3px; font-size: 12px; }
+.chargen .pick-list.tall { max-height: 220px; }
+.chargen .alarm { color: #a2462e; margin: 2px 0; }
+.chargen .ok { color: #3f6b2e; font-weight: bold; }
+.chargen-footer { display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+	padding-top: 6px; border-top: 1px solid var(--imagine-rule); }
+.chargen-footer .alarm { flex: 1; font-size: 12px; }
+.chargen-footer button { flex: none; width: auto; padding: 4px 14px; }
+.chargen-footer button.primary { background: var(--imagine-accent); color: #fff; border-color: var(--imagine-accent); }
+.imagine-chargen-button { flex: 1 1 100%; }
