@@ -151,9 +151,15 @@ const character = new ImagineCharacterData({
 	            maxAge: "90 (Human)" },
 	wealth: { copper: 40, silver: 12, gold: 3, platinum: 0, special: "",
 	          gems: "A cracked blue quartz, uncut", jewelry: "A plain silver band" },
+	// Intelligence 18 allows four slots, two of them writing. The fourth row is left open, as the
+	// Player's Guide allows, and the fifth is one too many and also a third written language --
+	// so both of the allowance's flags are actually rendered here, not only tested.
 	languages: [
 		{ name: "Common", speak: true, write: true },
-		{ name: "Elvish", speak: true, write: false }
+		{ name: "Elvish", speak: true, write: false },
+		{ name: "Dwarvish", speak: true, write: true },
+		{ name: "", speak: true, write: false },
+		{ name: "Old Imperial", speak: false, write: true }
 	],
 	// One racial slot traded for two social ones, so the traded allowance and the untraded figure
 	// beside it are both actually exercised here rather than only in the rule tests.
@@ -268,9 +274,10 @@ const ctx = {
 		{ value: "Left",         label: "Left" },
 		{ value: "Ambidextrous", label: "Ambidextrous (shields right)" }
 	],
-	// Same indexing the sheet class does for the description tab's languages, so a row can be
-	// written back to the right entry and removed by index.
-	languages: character.languages.map((l, i) => ({ ...l, index: i })),
+	// Kept in sync with #buildLanguageRows in actor-character-sheet.mjs, which is private: the
+	// model's slot assignment merged onto each row, plus the index to write it back by.
+	languages: character.languages.map((l, i) =>
+		({ ...l, ...(character.languageAllowance.rows[i] ?? {}), index: i })),
 	// Kept in sync with #buildSlotTransfers in actor-character-sheet.mjs.
 	slotTransfers: (() => {
 		const allowance = { class: character.skillSlots.class, racial: character.skillSlots.racial,

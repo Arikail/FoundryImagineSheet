@@ -63,6 +63,7 @@ function makeCharacter(ratings, title = 12, items = [], extra = {}) {
 		          weaponLoreList: extra.weaponLoreList ?? "", missileLoreList: extra.missileLoreList ?? "",
 		          projectileLoreList: extra.projectileLoreList ?? "" },
 		physical: { weight: 0, handedness: extra.handedness ?? "" },
+		languages: extra.languages ?? [],
 		skillSlotMoves: Object.assign({
 			racialToClass: 0, racialToSocial: 0, socialToRacial: 0, socialToClass: 0,
 			racialSacrificed: 0, socialSacrificed: 0
@@ -125,6 +126,89 @@ check("the magical ceiling is always at or above the ordinary one",
 
 const capped = makeCharacter({ str: 30 }, 1); // no race, so the maximum is the 20 default
 check("rating above the maximum is clamped", capped.attributes.str.value, 20);
+
+// --- the Intelligence language allowance, against his setLangSheet ------------------
+// His labels for every rating, read out of both copies of his switch (setLangSheet at
+// sheet-worker.js:49228 and setUpdateLanguageSheet at 50561, which agree case for case).
+// "None" is written here as no slots at all.
+const SW = "Speaks/writes:", SP = "Speaks:";
+const rep = (n, s) => Array(n).fill(s);
+const HIS_LANGUAGE_LABELS = {
+	0: [], 1: [], 2: [], 3: [],
+	4: ["Speaks(quarter):"], 5: ["Speaks(third):"], 6: ["Speaks(third):"], 7: ["Speaks(two-thirds):"],
+	8: [SP], 9: ["Speaks/third writes:"], 10: ["Speaks/third writes:"],
+	11: ["Speaks/two-thirds writes:"], 12: ["Speaks/two-thirds writes:"], 13: [SW],
+	14: [SW, SP], 15: [SW, SP], 16: [SW, SP, SP], 17: [SW, SW, SP], 18: [SW, SW, SP, SP],
+	19: [...rep(3, SW), SP, SP], 20: [...rep(4, SW), SP, SP], 21: [...rep(5, SW), SP, SP],
+	22: [...rep(6, SW), SP, SP], 23: [...rep(7, SW), SP, SP], 24: [...rep(8, SW), SP, SP],
+	25: [...rep(9, SW), SP], 26: rep(10, SW), 27: rep(10, SW), 28: rep(10, SW), 29: rep(10, SW),
+	30: rep(10, SW)
+};
+// Read straight off the table rather than through a character, since a character with no race
+// is capped at 20 and the ratings above it would never be reached.
+const { ATTRIBUTE_TABLES } = await import("../module/config-tables.mjs");
+const labelMismatches = [];
+for (let r = 0; r <= 30; r++) {
+	const row = ATTRIBUTE_TABLES.int[r];
+	const got = ImagineCharacterData.getLanguageSlotLabels(row.spokenLanguages, row.writtenLanguages);
+	if (JSON.stringify(got) !== JSON.stringify(HIS_LANGUAGE_LABELS[r])) { labelMismatches.push(r); }
+}
+check("slot labels match his switch at every Intelligence 0-30", labelMismatches, []);
+
+const lang3  = makeCharacter({ int: 3 });
+check("Intelligence 3 allows no language at all", lang3.languageAllowance.slots, 0);
+const lang4  = makeCharacter({ int: 4 });
+check("Intelligence 4 is one language, a quarter spoken -- not a quarter of a second one",
+	[lang4.languageAllowance.slots, lang4.languageAllowance.labels[0]], [1, "Speaks(quarter):"]);
+const lang8  = makeCharacter({ int: 8 });
+check("Intelligence 8 speaks one fully and writes nothing",
+	[lang8.languageAllowance.slots, lang8.languageAllowance.writtenSlots], [1, 0]);
+const lang9  = makeCharacter({ int: 9 });
+check("Intelligence 9 is the first to write, a third of the one it speaks",
+	[lang9.languageAllowance.writtenSlots, lang9.languageAllowance.labels], [1, ["Speaks/third writes:"]]);
+const lang16 = makeCharacter({ int: 16 });
+check("Intelligence 16 is three slots, one of which writes",
+	[lang16.languageAllowance.slots, lang16.languageAllowance.writtenSlots], [3, 1]);
+
+const within = makeCharacter({ int: 14 }, 12, [], { languages: [
+	{ name: "Common", speak: true, write: true }, { name: "Elvish", speak: true, write: false }] });
+check("two languages, one written, fit Intelligence 14",
+	[within.languageAllowance.used, within.languageAllowance.overSpoken, within.languageAllowance.overWritten],
+	[2, false, false]);
+const overWrite = makeCharacter({ int: 14 }, 12, [], { languages: [
+	{ name: "Common", speak: true, write: true }, { name: "Elvish", speak: true, write: true }] });
+check("writing both at Intelligence 14 is flagged -- only one slot writes",
+	[overWrite.languageAllowance.overSpoken, overWrite.languageAllowance.overWritten], [false, true]);
+const overSpeak = makeCharacter({ int: 14 }, 12, [], { languages: [
+	{ name: "Common", speak: true, write: false }, { name: "Elvish", speak: true, write: false },
+	{ name: "Dwarvish", speak: true, write: false }] });
+check("a third language at Intelligence 14 is flagged, not removed",
+	[overSpeak.languageAllowance.overSpoken, overSpeak.languages.length], [true, 3]);
+const openSlot = makeCharacter({ int: 14 }, 12, [], { languages: [
+	{ name: "Common", speak: true, write: false }, { name: "", speak: true, write: false }] });
+check("an empty row is a slot left open, and counts",
+	[openSlot.languageAllowance.used, openSlot.languageAllowance.overSpoken], [2, false]);
+// Slots are handed out by use, not by position -- "a character can use a written slot for a
+// spoken slot, but not vice versa" (Player's Guide, Intelligence).
+const A = (langs, labels) => ImagineCharacterData.assignLanguageSlots(langs, labels).map(r =>
+	`${r.slotLabel}${r.overSpoken ? " OVER" : ""}${r.overWritten ? " WRITE-OVER" : ""}`);
+const L = (w) => ({ name: "x", speak: true, write: w });
+check("a written language added second still takes the writing slot",
+	A([L(false), L(true)], [SW, SP]), [SP, SW]);
+check("a spoken language may use a writing slot nobody wrote in",
+	A([L(false), L(false)], [SW, SP]), [SP, SW]);
+check("a second written language with one writing slot speaks, but is over on writing",
+	A([L(true), L(true)], [SW, SP]), [SW, SP + " WRITE-OVER"]);
+check("with every slot taken, the extra language is over",
+	A([L(false), L(false), L(false)], [SW, SP]), [SP, SW, " OVER"]);
+check("a partly-written slot counts as a writing slot",
+	A([L(true)], ["Speaks/third writes:"]), ["Speaks/third writes:"]);
+check("the model carries one assignment per language",
+	within.languageAllowance.rows.length, 2);
+
+const dropped = makeCharacter({ int: 3 }, 12, [], { languages: [{ name: "Common", speak: true, write: false }] });
+check("Intelligence falling below 4 flags a language already held",
+	dropped.languageAllowance.overSpoken, true);
 
 // --- characteristics: ceiling of each category's average ------------------------
 const ch = makeCharacter({

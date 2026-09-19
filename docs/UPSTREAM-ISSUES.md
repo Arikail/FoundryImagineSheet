@@ -844,3 +844,30 @@ buy-down skill in your sheet steps every 20% — Second Weapon Knowledge (83188)
 Knowledge (82740), Second Weapon Lore's extra seconds (83242). The Master's Manual says 25 for this
 one and your code agrees, so the port implements 25 and has not quietly normalised it; noted only
 so you know it was seen rather than missed.
+
+## 30. Two Player's Guide language rules your sheet does not implement
+
+**Status:** open · **Severity:** question; nothing is broken, the port just needs to know whether to build them
+
+The port now works out the language allowance from Intelligence exactly as your `setLangSheet`
+(sheet-worker.js:49228) and `setUpdateLanguageSheet` (50561) do. The two switches agree for every
+rating 0-30, and the labels match yours: "Speaks(quarter):", "Speaks/third writes:" and so on.
+The Player's Guide has two further rules that change the number, and neither appears anywhere in
+your code:
+
+1. **Language Lore doubles spoken languages.** Skill description (p.117): *"Beings who have
+   Language Lore as an acquired skill can learn double their normal number of spoken
+   languages."* Your sheet has Language Lore in the skill list and in seven classes' progressions,
+   and nothing reads it against the language slots.
+2. **Racial skill slots can be sacrificed for languages** (Skill Slot Sacrificing for Languages,
+   p.78): one racial slot for a third of a language, two for two-thirds, three for a whole one.
+   Your four slot-conversion functions have no language route.
+
+**What the port does now:** neither. It follows your sheet, so a Language Lore holder at
+Intelligence 14 has two slots, not four. **Both are small to add if you want them:** one flag on
+the allowance for the first, and a seventh counter beside the six `tmp_*_slots_removed` moves the
+port already mirrors for the second. Are these rules you still use at the table, or ones that
+were dropped?
+
+**One small thing seen along the way:** your sheet has a *quarter* step at Intelligence 4
+("Speaks(quarter):"). The book describes only thirds. The port uses your quarter.

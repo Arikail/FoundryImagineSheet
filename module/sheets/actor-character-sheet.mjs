@@ -162,8 +162,13 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 
 	// This is the function which numbers the character's languages so a row can be written back
 	// to the right entry -- the same reason the creature attack's rider effects are numbered.
+	//
+	// Each row also carries the slot it sits in and its two flags, which the data model has
+	// already worked out (assignLanguageSlots) -- they are only merged in here.
 	static #buildLanguageRows(tmpsystem) {
-		return (tmpsystem.languages ?? []).map((tmplang, tmpindex) => ({ ...tmplang, index: tmpindex }));
+		var tmpslotrows = tmpsystem.languageAllowance?.rows ?? [];
+		return (tmpsystem.languages ?? []).map((tmplang, tmpindex) =>
+			({ ...tmplang, ...(tmpslotrows[tmpindex] ?? {}), index: tmpindex }));
 	}
 
 	// This is the function which assembles the Lore panel. Holding Weapon or Missile Lore at all

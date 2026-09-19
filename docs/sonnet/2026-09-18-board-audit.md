@@ -20,8 +20,6 @@ and is NOT in this list.
    match what its body records. Change no content. Done when every item whose body quotes his
    answer carries `ANSWERED` on its status line.
 
-3. **Add a derivation test for the ordinary/magical pair at the boundaries**, if one does not
-   already exist: title 0, 1, 10, 11, 15 and 16 for `getMagicalAttributeMax`, and 10 and 11 for
-   `getAttributeMax` with a race limit above and below 25. Mirror the existing cap tests in
-   `tools/derive-test.html`. Done when the new tests pass and the other three suites are
-   unchanged (374/139/39).
+3. ~~Add a derivation test for the ordinary/magical pair at the boundaries.~~ **Already done.**
+   It was checked later the same day: `tools/derive-test.html` already covers both ceilings at
+   titles 0, 1, 10, 11, 16 and 20, with race limits above and below. Nothing to do.

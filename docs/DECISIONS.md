@@ -2052,3 +2052,57 @@ where content lives, and the board still described the compile step it replaced.
 **Process note, since this is the third time.** Before starting any row marked Backlog, grep the
 code for it first. The board has tended to lag behind work done under a neighbouring row: movement
 under Races & Classes, the load limit under combat, the importer under content extraction.
+
+### 2026-09-18 — The Intelligence language allowance, and slots handed out by use
+
+**Decision:** `_prepareLanguages` derives `languageAllowance` from the Intelligence table, and the
+description tab shows it as his own slot labels with flags for anything past the allowance. Done
+on Opus at the user's direction. This closes the Attributes module.
+
+**What his code says.** `setLangSheet(int_final)` (sheet-worker.js:49228) runs at character
+creation, and `setUpdateLanguageSheet` (50561) runs from the Update Languages step on the
+character's *current* `intelligence`. Each is a 31-case switch writing up to ten labelled slots.
+The two switches were compared case by case for every rating from 0 to 30, and they agree. Every
+case follows one rule, and it reads straight off the `spokenLanguages`/`writtenLanguages` columns
+already in `ATTRIBUTE_TABLES.int`:
+- 0: no language at all. His label is "None".
+- Below 1: one language, partly spoken ("Speaks(quarter):", "(third)", "(two-thirds)").
+- 1 or more: the spoken figure rounded up gives the slot count. The first `floor(written)` slots
+  also write, and a fraction of writing lands on the next slot ("Speaks/third writes:").
+
+**Sub-decisions:**
+- *The rule is stated in code and his 31 cases are held in the test.* `getLanguageSlotLabels`
+  implements the rule. `derive-test.html` carries his labels for every rating, transcribed from his
+  switch, and checks the function against all 31. So a table that is already data is not copied a
+  second time, but every one of his cases is still verified.
+- *A fraction is partial command of one language*, never a share of a second. His one-slot labels
+  say so, and so does the Player's Guide ("1/3 ... the most basic vocabulary"). The tab used to
+  print "Intelligence allows 0.25 spoken", which read the other way; it no longer does.
+- *It follows current Intelligence*, because his update step reads the current attribute, and the
+  book defines the figures from Intelligence "after all modifications".
+- *An empty row is a slot.* The Player's Guide lets a character "leave any number of language
+  slots open for future learning". A blank row is exactly that, so it counts.
+- *Flag, never refuse or remove.* This is the same call made for skill slots and for switched-off
+  content. A character whose Intelligence drops keeps their languages, and the rows past the
+  allowance are marked.
+- *Slots are handed out by use, not by position.* His slots were fixed rows, with the name typed
+  beside a printed label. Here a language is a row with its own speak and write boxes, in any
+  order. Assigning labels by position put a written language beside "Speaks:" and an unwritten one
+  on "Speaks/writes:". That happened in the first preview render and is why this changed.
+  `assignLanguageSlots` fills the writing slots with written languages first, then gives the rest
+  the speaking slots, then any writing slot left over. That order is the book's own: "a character
+  can use a written slot for a spoken slot, but not vice versa." It is worked out on the model and
+  only merged in by the sheet. So the sheet preview's copy of the private row builder is one line
+  and has nothing to drift out of step with.
+
+**Not built, and asked instead (`UPSTREAM-ISSUES.md` item 30):** Language Lore doubling spoken
+languages, and sacrificing racial skill slots for languages. Both are in the Player's Guide and
+neither is anywhere in his code. Unlike dual classing, where his sheet had nothing at all, here his
+sheet does compute the number and simply leaves them out. So the port follows it until he says
+otherwise.
+
+**Verified:** derivation 275 (17 new), combat 374, creature 139 and availability 39 unchanged, 27
+modules parse. The description tab was checked in `tools/sheet-preview.html` against the real
+derived character at Intelligence 18. That character was given five languages, three written, so
+the open slot, the over-allowance row and the writing-over flag all actually render.
+**Not verified:** anything needing a running Foundry V14.

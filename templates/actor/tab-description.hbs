@@ -73,22 +73,30 @@
 				<button type="button" class="add-language" data-action="addLanguage">
 					<i class="fa-solid fa-plus"></i> Add</button>
 			</h3>
-			{{!-- Below rating 1, this is partial fluency in the character's OWN tongue, not a count
-			      of others -- writing always lags speaking. Rendered only if the Attributes module
-			      (Epic 2) has wired the Intelligence allowance by the time this runs; omitted rather
-			      than computed here if it has not. See DECISIONS.md. --}}
-			{{#if system.attributes.int.mods.spokenLanguages}}
-			<p class="muted language-allowance">Intelligence allows
-				{{system.attributes.int.mods.spokenLanguages}} spoken,
-				{{system.attributes.int.mods.writtenLanguages}} written.</p>
-			{{/if}}
+			{{!-- The allowance is worked out in _prepareLanguages from his setLangSheet. A fraction
+			      is partial command of ONE language ("Speaks(quarter):"), never a share of a second,
+			      and writing lags speaking. Rows past the allowance are flagged, never removed. --}}
+			{{#with system.languageAllowance as |allow|}}
+			<p class="muted language-allowance">
+				{{#if allow.slots}}
+				Language slots from Intelligence: {{allow.used}} of {{allow.slots}} in use,
+				{{allow.writtenUsed}} of {{allow.writtenSlots}} written.
+				{{else}}
+				Intelligence is too low to speak any language.
+				{{/if}}
+			</p>
+			{{#if allow.overSpoken}}<p class="language-over">More languages than Intelligence allows.</p>{{/if}}
+			{{#if allow.overWritten}}<p class="language-over">More written languages than Intelligence allows.</p>{{/if}}
+			{{/with}}
 			{{#if languages.length}}
 			<table class="language-table">
 				<thead><tr><th>Name</th><th>Speak</th><th>Write</th><th></th></tr></thead>
 				<tbody>
 					{{#each languages as |lang|}}
-					<tr>
-						<td><input type="text" name="system.languages.{{lang.index}}.name" value="{{lang.name}}"></td>
+					<tr class="{{#if lang.overSpoken}}over-allowance{{/if}}">
+						<td><span class="slot-label">{{#if lang.overSpoken}}Over allowance{{else}}{{lang.slotLabel}}{{/if}}
+							{{#if lang.overWritten}}<span class="language-over">(writing over)</span>{{/if}}</span>
+							<input type="text" name="system.languages.{{lang.index}}.name" value="{{lang.name}}"></td>
 						<td class="col-check"><input type="checkbox"
 							name="system.languages.{{lang.index}}.speak" {{#if lang.speak}}checked{{/if}}></td>
 						<td class="col-check"><input type="checkbox"

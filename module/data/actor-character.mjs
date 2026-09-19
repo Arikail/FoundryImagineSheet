@@ -428,6 +428,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareIdentity();
 		this._prepareCharacteristics();
 		this._prepareResistances();
+		this._prepareLanguages();
 		this._prepareEncumbrance();
 		this._prepareCombat();
 		this._prepareBody();
@@ -893,6 +894,50 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		tmpresist.value = tmpresist.immune ? null : tmpresist.base + tmpracemod + tmpresist.misc;
 	}
 
+	// @MARKER LANGUAGE ALLOWANCE
+	// This is the function which works out how many languages the character's Intelligence
+	// allows, and whether the languages recorded on the sheet fit inside it.
+	//
+	// Ported from his setLangSheet (sheet-worker.js:49228, run at character creation) and its
+	// twin setUpdateLanguageSheet (50561, run from the Update Languages step). The two switches
+	// agree case for case across all 31 ratings -- checked 2026-09-18. The update copy reads the
+	// character's CURRENT intelligence, not the creation-time int_final, so the allowance
+	// follows the attribute as it stands, which is what a derived value does anyway. The Player's
+	// Guide agrees: the figures come from "Intelligence score after all modifications".
+	//
+	// A row on the sheet is a slot, named or not. The Player's Guide lets a character "leave any
+	// number of language slots open for future learning", and an empty row is exactly that, so
+	// it counts against the allowance like a named one.
+	//
+	// Nothing is refused or removed. A character whose Intelligence falls keeps every language
+	// they had, and the rows past the allowance are flagged -- the same call already made for
+	// skill slots and for content the campaign has switched off.
+	_prepareLanguages() {
+		var tmpintmods  = this.attributes.int.mods;
+		var tmpspoken   = parseFloat(tmpintmods.spokenLanguages)  || 0;
+		var tmpwritten  = parseFloat(tmpintmods.writtenLanguages) || 0;
+		var tmplabels   = ImagineCharacterData.getLanguageSlotLabels(tmpspoken, tmpwritten);
+
+		// A slot writes if his label says it does, whole or partly ("Speaks/third writes:").
+		var tmpwriteslots = tmplabels.filter(tmplabel => tmplabel.includes("writes")).length;
+
+		var tmplanguages = this.languages ?? [];
+		var tmpwrittenused = tmplanguages.filter(tmplang => tmplang.write).length;
+
+		this.languageAllowance = {
+			spoken:       tmpspoken,          // straight off his Intelligence table
+			written:      tmpwritten,
+			labels:       tmplabels,          // his own slot labels, one per slot
+			slots:        tmplabels.length,
+			writtenSlots: tmpwriteslots,
+			used:         tmplanguages.length,
+			writtenUsed:  tmpwrittenused,
+			overSpoken:   tmplanguages.length > tmplabels.length,
+			overWritten:  tmpwrittenused > tmpwriteslots,
+			rows:         ImagineCharacterData.assignLanguageSlots(tmplanguages, tmplabels)
+		};
+	}
+
 	// This is the function which sets the character's movement rates from their race.
 	// Every mode is tracked at three scales at once -- per hour, per 10 second combat round,
 	// and per second.
@@ -1131,6 +1176,88 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			tmpSaveValue = 90;
 		}
 		return tmpSaveValue;
+	}
+
+	// This is the function which turns the Intelligence table's language figures into his slot
+	// labels, exactly as setLangSheet writes them into tmp_lang1_sw through tmp_lang10_sw.
+	//
+	// His switch is written out case by case, one per rating, but every case follows the same
+	// rule, and the rule is stated here rather than the 31 cases copied, since the figures it
+	// reads are already in ATTRIBUTE_TABLES.int. The derivation suite holds his labels for every
+	// rating 0-30 and checks this function against all of them.
+	//
+	//     spoken  written   slots
+	//     0       0         none at all -- his "None"
+	//     below 1 0         one language, only partly spoken: "Speaks(quarter):"
+	//     1+      any       spoken rounded up; the first floor(written) of them also write,
+	//                       and a fractional written figure lands on the next slot
+	//
+	// A fraction below 1 is a degree of command of ONE language, not a share of a second one.
+	// The Player's Guide: "1/3 indicates the character has only the most basic vocabulary, 2/3
+	// indicates ... limited comprehension", and a full language adds grammar.
+	static getLanguageSlotLabels(tmpSpoken, tmpWritten) {
+		// his fractions, rounded to the two places the table carries them at
+		var tmpFractionWords = { 0.25: "quarter", 0.33: "third", 0.66: "two-thirds" };
+		var tmpFractionWord = function (tmpValue) {
+			return tmpFractionWords[Math.round(tmpValue * 100) / 100] || "";
+		};
+
+		var tmpLabels = [];
+		if (tmpSpoken <= 0) { return tmpLabels; }
+		if (tmpSpoken < 1) {
+			tmpLabels.push("Speaks(" + tmpFractionWord(tmpSpoken) + "):");
+			return tmpLabels;
+		}
+
+		var tmpSlots        = Math.ceil(tmpSpoken);
+		var tmpFullWritten  = Math.floor(tmpWritten);
+		var tmpPartWritten  = tmpWritten - tmpFullWritten;
+		for (let tmpSlot = 0; tmpSlot < tmpSlots; tmpSlot++) {
+			if (tmpSlot < tmpFullWritten) {
+				tmpLabels.push("Speaks/writes:");
+			} else if (tmpSlot == tmpFullWritten && tmpPartWritten > 0) {
+				tmpLabels.push("Speaks/" + tmpFractionWord(tmpPartWritten) + " writes:");
+			} else {
+				tmpLabels.push("Speaks:");
+			}
+		}
+		return tmpLabels;
+	}
+
+	// This is the function which decides which of his slots each recorded language sits in, so
+	// every row can show the slot it is actually using and whether it is past the allowance.
+	//
+	// His sheet had no need of this: its slots were fixed rows with the label printed beside
+	// each, and the player typed a name into one. Here a language is a row with its own speak
+	// and write boxes, in whatever order they were added, so the slots are handed out by USE
+	// rather than by position. Otherwise a written language added second would sit beside a
+	// "Speaks:" label while an unwritten one sat on "Speaks/writes:".
+	//
+	// The Player's Guide sets the order: "A character can use a written slot for a spoken slot,
+	// but not vice versa." So written languages take the writing slots first, the rest take the
+	// speaking slots, and a speaking language may overflow into a writing slot nobody wrote in.
+	// A written language with no writing slot left still speaks, in a speaking slot if one is
+	// free -- it is over on writing only.
+	//
+	// Returns one entry per language, in the order given: { slotLabel, overSpoken, overWritten }.
+	static assignLanguageSlots(tmpLanguages, tmpLabels) {
+		var tmpWriteSlots = tmpLabels.filter(tmpLabel => tmpLabel.includes("writes"));
+		var tmpSpeakSlots = tmpLabels.filter(tmpLabel => !tmpLabel.includes("writes"));
+		var tmpRows = tmpLanguages.map(() => ({ slotLabel: "", overSpoken: false, overWritten: false }));
+
+		// pass 1 -- written languages into the writing slots
+		tmpLanguages.forEach((tmpLang, tmpIndex) => {
+			if (tmpLang.write && tmpWriteSlots.length > 0) { tmpRows[tmpIndex].slotLabel = tmpWriteSlots.shift(); }
+		});
+		// pass 2 -- everything still unplaced into a speaking slot, then any writing slot left
+		tmpLanguages.forEach((tmpLang, tmpIndex) => {
+			if (tmpRows[tmpIndex].slotLabel != "") { return; }
+			if (tmpLang.write) { tmpRows[tmpIndex].overWritten = true; }
+			if (tmpSpeakSlots.length > 0)      { tmpRows[tmpIndex].slotLabel = tmpSpeakSlots.shift(); }
+			else if (!tmpLang.write && tmpWriteSlots.length > 0) { tmpRows[tmpIndex].slotLabel = tmpWriteSlots.shift(); }
+			else                               { tmpRows[tmpIndex].overSpoken = true; }
+		});
+		return tmpRows;
 	}
 
 	// This is the function which returns the highest rating an attribute may reach.
