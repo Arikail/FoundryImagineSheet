@@ -19,7 +19,7 @@ import {
 	getAttackSkillForTitle, getBodyChart, getAreaEndurance, getStrongestMaterial,
 	getInitiativeModifier, getAreaArmor, getAreaShield, getNextAttackSkill, hasLore, parseLoreList,
 	getMovementBase, resolveMovementRate, resolveSpecialMovement, specialMovementReplacesOther,
-	getOffhandSecondsCap, getBetterAttackSkill
+	getOffhandSecondsCap, getBetterAttackSkill, resolveEncumbrance, resolveLoadedMovement
 } from "../combat/combat-rules.mjs";
 import { getSlotAllowance } from "../skills-rules.mjs";
 
@@ -433,6 +433,8 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareCombat();
 		this._prepareBody();
 		this._prepareMovement();
+		// The book's encumbrance penalty, beside the unencumbered rates rather than over them.
+		this.movement.loaded = resolveLoadedMovement(this.movement, this.encumbrance);
 		this._prepareSkillSlots();
 		this._prepareSkills();
 		this._prepareSkillSlotStatus();
@@ -443,9 +445,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		//   evoke mutations      -- buildCharacterBody in the original sheet adds extra torsos,
 		//                           limbs, wings and tails on top of the body chart. Only the
 		//                           stock charts are used here.
-		//   movement penalties   -- encumbrance is calculated, but the penalty each band
-		//                           applies to movement has not been confirmed against his
-		//                           code yet, so it is not applied.
+		//   encumbrance extras   -- quality tags, floating items, and the Lighten Load / Spirit
+		//                           of the Donkey magic his calcEncumbrance reads; see the
+		//                           encumbrance block in combat-rules.mjs.
 	}
 
 	// This is the function which flags every item on the character that the campaign's
@@ -663,49 +665,14 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	}
 
 	// This is the function which totals carried weight and works out how encumbered the
-	// character is.
-	//
-	// Maximum load is the Strength table's load limit multiplied by the character's own body
-	// weight, so a heavier character of the same Strength carries more. The bands fall at a
-	// quarter, half, three quarters and the whole of that maximum, which is how
-	// changeAttribs sets them in the original sheet.
-	//
-	// Only what is worn or carried counts. Anything left on a mount or in a stash is not on
-	// the character. Tagalong items are skipped because their weight is already counted as
-	// part of another item -- a scabbard is part of the sword.
+	// character is. The arithmetic is his calcEncumbrance, shared with the creature model --
+	// see resolveEncumbrance in combat-rules.mjs for the bands, the size scaling of armour and
+	// gear, and the magical-plus weight reduction.
 	_prepareEncumbrance() {
-		var tmploadlimit = parseFloat(this.attributes.str.mods.loadLimit) || 0;
-		var tmpbodyweight = parseFloat(this.physical.weight) || 0;
-		var tmpmaxload = tmploadlimit * tmpbodyweight;
-
-		var tmpcarried = 0;
-		var tmpactor = this.parent;
-		if (tmpactor && tmpactor.items) {
-			for (const tmpitem of tmpactor.items) {
-				var tmpsys = tmpitem.system;
-				if (tmpsys.weight === undefined) { continue; }
-				if (tmpsys.isTagalong) { continue; }
-				if (tmpsys.location != "equipped" && tmpsys.location != "carried") { continue; }
-				tmpcarried = tmpcarried + ((parseFloat(tmpsys.weight) || 0) * (tmpsys.quantity ?? 1));
-			}
-		}
-
-		this.encumbrance = {
-			carried: parseFloat(tmpcarried.toFixed(1)),
-			maxLoad: parseFloat(tmpmaxload.toFixed(1)),
-			none:    parseFloat((tmpmaxload * 0.25).toFixed(1)),
-			slight:  parseFloat((tmpmaxload * 0.5).toFixed(1)),
-			moderate:parseFloat((tmpmaxload * 0.75).toFixed(1)),
-			heavy:   parseFloat(tmpmaxload.toFixed(1)),
-			status:  ""
-		};
-
-		var tmpenc = this.encumbrance;
-		if      (tmpcarried <= tmpenc.none)     { tmpenc.status = "Unencumbered"; }
-		else if (tmpcarried <= tmpenc.slight)   { tmpenc.status = "Slight"; }
-		else if (tmpcarried <= tmpenc.moderate) { tmpenc.status = "Moderate"; }
-		else if (tmpcarried <= tmpenc.heavy)    { tmpenc.status = "Heavy"; }
-		else                                    { tmpenc.status = "Overloaded"; }
+		var tmpphys = this.physical ?? {};
+		var tmpinches = ((parseInt(tmpphys.heightFeet) || 0) * 12) + (parseInt(tmpphys.heightInches) || 0);
+		this.encumbrance = resolveEncumbrance(this.parent?.items,
+			this.attributes.str.mods.loadLimit, tmpphys.weight, tmpinches);
 	}
 
 	// This is the function which fills in the identity values that come from the class items.
@@ -942,9 +909,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// Every mode is tracked at three scales at once -- per hour, per 10 second combat round,
 	// and per second.
 	//
-	// Encumbrance penalties are NOT applied yet. The encumbrance band itself is worked out in
-	// _prepareEncumbrance; what is missing is the movement penalty each band carries, which has
-	// not been read out of his code yet.
+	// The rates here are UNENCUMBERED, as his sheet shows them. His sheet never slows a loaded
+	// character down; the Player's Guide does, so the rates at the current load are worked out
+	// alongside as movement.loaded (resolveLoadedMovement) rather than replacing these.
 	_prepareMovement() {
 		if (!this.raceItem) { return; }
 		var tmpracemove = this.raceItem.system.movement;

@@ -871,3 +871,35 @@ were dropped?
 
 **One small thing seen along the way:** your sheet has a *quarter* step at Intelligence 4
 ("Speaks(quarter):"). The book describes only thirds. The port uses your quarter.
+
+## 31. Encumbrance never slows anyone down in your sheet, and two small things in `calcEncumbrance`
+
+**Status:** open · **Severity:** one question, two minor code notes
+
+**The question.** `calcEncumbrance` (sheet-worker.js:81745) works out the four bands, scales armour
+and gear by the being's size, lightens magical items, and writes `encumbrance_status`. Nothing
+reads that status except its label on the sheet, so a heavily encumbered character walks exactly
+as fast as an unburdened one. The Player's Guide's Encumbrance Table (p.38) has a penalty for
+each band: 3/4 speed, 1/2 speed, and 1/4 speed with no running or sprinting. Your top band's own
+label, "Over weight(cannot move)", suggests movement was meant to follow the load.
+
+**What the port does:** it shows your unencumbered rates as they are. When the load costs
+something, it also shows a second set, "At current load: 1/2 speed", worked out with the book's
+factors. It does not replace your figures. Should the loaded rates simply *be* the rates? Or is
+leaving them to the player on purpose? The book's fatigue multipliers (x2/x3/x4) are not ported
+either, since there is no fatigue system yet.
+
+**Two small things seen while porting it:**
+1. **An unreachable branch in the size scaling.** Under one foot tall, the code tests
+   `tmp_character_weight<21`, then `<20`. Anything under 20 is already under 21, so the x.0075
+   case can never run. The other bands step 20 / 40 / 80 and so on, so perhaps `<10` then `<20`
+   was meant. The port leaves the unreachable case out rather than guess.
+2. **`tmp_weight` is not defined inside `calcEncumbrance`.** The function reads the body weight
+   into `tmp_character_weight`, but works the bands out from `tmp_weight`. That is a global set by
+   a different function (line 29651). It works whenever that other function has run first. If it
+   has not, the bands come out as 0 and everything reads "Over weight". The port uses the body
+   weight directly.
+
+**The port also scales by size only when a height has been entered.** Your character creation
+always sets one, but a Foundry actor starts at 0, and 0 inches would otherwise read as "under a
+foot" and shrink the whole load to a hundredth.

@@ -2106,3 +2106,53 @@ modules parse. The description tab was checked in `tools/sheet-preview.html` aga
 derived character at Intelligence 18. That character was given five languages, three written, so
 the open slot, the over-allowance row and the writing-over flag all actually render.
 **Not verified:** anything needing a running Foundry V14.
+
+### 2026-09-18 — Encumbrance: his calcEncumbrance ported whole, and the book's movement penalty beside it
+
+**What was expected:** the Equipment row said the one gap was "the movement penalty for each band,
+not yet read out of his code". **What his code says:** there is none. `calcEncumbrance`
+(sheet-worker.js:81745) sets `encumbrance_status`, and nothing reads it but its label. But the
+same function does three things the port was missing, and all of them move a character between
+bands:
+- **Armour and general gear are scaled by the being's size** before the bands are read. A ladder
+  of height brackets, then weight within each, runs from x.005 under a foot to x10 past 40,000 lb.
+  Six to seven feet is the standard. Weapons are exempt: "there are different weapon versions for
+  different sized beings already". The preview's 5'9", 215 lb Warrior now carries gear at x.9.
+- **A magical plus lightens the item**, from x.9 at +1 to x.05 at +10. It applies to armour and
+  weapons, the two item types that carry `magicBonus`.
+- **His band labels**: "Not encumbered / Slightly encumbered / Encumbered / Heavily encumbered /
+  Over weight(cannot move)". The port had invented "Unencumbered / Slight / Moderate / Heavy /
+  Overloaded". Renamed, because the sheet wins.
+
+**Decision:** one pure `resolveEncumbrance` in `combat-rules.mjs`, called by both actor models.
+His one function serves both of his sheets, so the port's two copies became one. The movement
+penalty comes from the Player's Guide (Encumbrance Table, p.38: 3/4, 1/2, and 1/4 with no
+running). It is shown as `movement.loaded`, **beside** his unencumbered rates, never over them.
+
+**Sub-decisions:**
+- *Beside, not over.* His sheet shows unencumbered rates and nothing else. Replacing them would
+  quietly change a number his table relies on. Showing the loaded rates next to them, only when
+  the load costs something, gives the book's answer without hiding his. Whether the loaded rates
+  should simply *be* the rates is `UPSTREAM-ISSUES.md` item 31.
+- *Special movement is not slowed.* The book gives flying its own encumbrance rules, as gliding
+  ratios, which are not a speed factor. Scaling a flight rate by 1/2 would invent a rule.
+- *Height 0 means not entered.* His ladder would read it as "under a foot" and shrink the load
+  to a hundredth. His character creation always sets a height, and a Foundry actor starts at 0.
+- *His unreachable branch is not invented.* Under a foot, `<21` is tested before `<20`, so his
+  x.0075 case never runs. The port reproduces what runs.
+
+**Not ported, each needing something the port lacks:** quality tags ([Shoddy] x1.75 through
+[Master] x.75) and [Float] items weighing nothing. Both need a field on the item, and both are in
+the Sonnet note. Also not ported: Lighten Load, Spirit of the Donkey and the temporary
+weight/capacity modifiers, which are magic items in the deferred magic phase. The book's fatigue
+multipliers are not ported, as there is no fatigue system.
+
+**Verified:** combat 406 (32 new, covering every size bracket boundary tested, the plus table,
+the labels and factors, the book's own worked warrior, and the loaded rates), derivation 280 (5
+new), creature 140 (1 new: a creature's gear scales by its size too), availability 39, 27 modules
+parse. In `tools/sheet-preview.html`, the main Warrior reads "Not encumbered, 64.8 / 387 lb" with no
+loaded table. A new isolated render gives the same derived Warrior two real 100 lb iron bars from
+the equipment pack. That reads "Encumbered, 244.8 / 387 lb", and "At current load: 1/2 speed"
+shows walk 60 → 30 per ten seconds. This was checked through the page text; the Browser pane was
+hidden and screenshots came back blank, so the red styling has not been looked at by eye.
+**Not verified:** anything needing a running Foundry V14.

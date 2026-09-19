@@ -883,6 +883,66 @@ check("an unknown name loses to a real chart",
 check("two unknowns come back as the first, rather than erroring",
 	R.getBetterAttackSkill("Nonsense", "Gibberish"), "Nonsense");
 
+// --- encumbrance, against his calcEncumbrance (sheet-worker.js:81745) -------------------
+// Size scaling of armour and gear. Six to seven feet is his standard, with no adjustment.
+check("6'0\" to 6'11\" is the standard, x1",       R.getSizeWeightMultiplier(72, 215), 1);
+check("...right up to 6'11\"",                     R.getSizeWeightMultiplier(83, 215), 1);
+check("5'9\" at 215 lb carries gear at x.9",       R.getSizeWeightMultiplier(69, 215), 0.9);
+check("5'9\" at 149 lb is x.8",                    R.getSizeWeightMultiplier(69, 149), 0.8);
+check("5'9\" at 100 lb is x.7",                    R.getSizeWeightMultiplier(69, 100), 0.7);
+check("a 3'6\" halfling at 70 lb is x.4",          R.getSizeWeightMultiplier(42, 70), 0.4);
+check("under a foot and under 21 lb is x.005",     R.getSizeWeightMultiplier(8, 5), 0.005);
+check("...and his unreachable <20 branch is not invented: 25 lb is x.01",
+	R.getSizeWeightMultiplier(8, 25), 0.01);
+check("7'6\" at 400 lb is x1.2",                   R.getSizeWeightMultiplier(90, 400), 1.2);
+check("eleven feet and over goes by weight alone", R.getSizeWeightMultiplier(200, 5000), 4);
+check("...up to x10 past 40,000 lb",               R.getSizeWeightMultiplier(400, 50000), 10);
+check("height not entered takes no adjustment",    R.getSizeWeightMultiplier(0, 215), 1);
+
+check("+1 weighs x.9",   R.getMagicWeightMultiplier(1), 0.9);
+check("+5 weighs x.5",   R.getMagicWeightMultiplier(5), 0.5);
+check("+10 weighs x.05", R.getMagicWeightMultiplier(10), 0.05);
+check("no plus weighs as normal", R.getMagicWeightMultiplier(0), 1);
+check("a plus with no case in his switch weighs as normal", R.getMagicWeightMultiplier(12), 1);
+
+// His labels, and the book's speed for each band. Bands for a 400 lb load limit: 100/200/300/400.
+const bands = { none: 100, slight: 200, moderate: 300, heavy: 400 };
+check("his five labels, in order",
+	[0, 150, 250, 350, 450].map(w => R.getEncumbranceBand(w, bands).status),
+	["Not encumbered", "Slightly encumbered", "Encumbered", "Heavily encumbered", "Over weight(cannot move)"]);
+check("exactly on a band's figure is still inside it",
+	R.getEncumbranceBand(100, bands).status, "Not encumbered");
+check("the book's speed factors: 1, 3/4, 1/2, 1/4, none",
+	[0, 150, 250, 350, 450].map(w => R.getEncumbranceBand(w, bands).speedFactor), [1, 0.75, 0.5, 0.25, 0]);
+check("heavily encumbered cannot run", R.getEncumbranceBand(350, bands).canRun, false);
+check("encumbered still can",          R.getEncumbranceBand(250, bands).canRun, true);
+
+// The Player's Guide's own worked example: Strength 17 (load limit 1.6), 250 lb, so 400 lb.
+const item = (type, weight, extra = {}) => ({ type, system: { weight, quantity: 1, location: "carried", ...extra } });
+const ex = R.resolveEncumbrance([], 1.6, 250, 72);
+check("the book's warrior: bands at 100/200/300/400",
+	[ex.none, ex.slight, ex.moderate, ex.heavy], [100, 200, 300, 400]);
+check("armour and gear are scaled by size, weapons are not",
+	R.resolveEncumbrance([item("armor", 100), item("equipment", 50), item("weapon", 10)], 1.6, 215, 69).carried,
+	(150 * 0.9) + 10);
+check("a magical plus lightens the item itself",
+	R.resolveEncumbrance([item("armor", 100, { magicBonus: 2 })], 1.6, 250, 72).carried, 80);
+check("...and a magic weapon too",
+	R.resolveEncumbrance([item("weapon", 10, { magicBonus: 5 })], 1.6, 250, 72).carried, 5);
+check("the size multiplier is reported",
+	R.resolveEncumbrance([], 1.6, 215, 69).sizeMultiplier, 0.9);
+
+const move = { walk: { hourly: 3, tenSec: 40, oneSec: 4 }, jog: { hourly: 6, tenSec: 80, oneSec: 8 },
+               run: { hourly: 12, tenSec: 160, oneSec: 16 } };
+const slowed = R.resolveLoadedMovement(move, { speedFactor: 0.5, canRun: true });
+check("encumbered halves every rate", [slowed.walk.tenSec, slowed.jog.hourly, slowed.run.oneSec], [20, 3, 8]);
+const heavy = R.resolveLoadedMovement(move, { speedFactor: 0.25, canRun: false });
+check("heavily encumbered walks at a quarter", heavy.walk.tenSec, 10);
+check("...and cannot run at all", [heavy.run.hourly, heavy.run.tenSec, heavy.run.oneSec], [0, 0, 0]);
+check("...though it can still jog", heavy.jog.tenSec, 20);
+check("slightly encumbered keeps a decimal rather than truncating",
+	R.resolveLoadedMovement(move, { speedFactor: 0.75, canRun: true }).walk.hourly, 2.3);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

@@ -47,6 +47,10 @@
 <div class="chat-title">The same Archer's Long Bow, firing two arrows at once</div>
 <div class="chat" id="archer-chat"></div>
 
+<div class="chat-title">Encumbrance check: the Warrior above with two real 100 lb iron bars added --
+	carried at x.9 for his 5'9" and 215 lb, which puts him in "Encumbered" at half speed</div>
+<div class="frame imagine sheet actor character" id="load-check"></div>
+
 <script type="module">
 // Standalone preview of the character sheet and attack card, rendered against a character the real
 // data model has derived, built from real extracted content: the race, class, weapons and armour are
@@ -518,4 +522,19 @@ const archerAttack = {
 	applied: false, inCombat: false
 };
 document.getElementById("archer-chat").innerHTML = await render("../templates/chat/attack-card.hbs", archerAttack);
+
+// --- encumbrance at load: the same Warrior, re-derived with two real iron bars ----------------
+// Runs after every render above, so re-deriving the character here cannot disturb them. The bars
+// are real equipment documents; the load, the size scaling and the half-speed movement all come
+// out of the real model, not a stub.
+const equipmentDocs = await load("equipment");
+const ironBars = byName(equipmentDocs, "Metal Bar(Iron)");
+Object.assign(ironBars.system, { location: "carried", quantity: 2, isTagalong: false });
+character.parent.items = [...allItems, ironBars];
+character.prepareDerivedData();
+console.assert(character.encumbrance.status === "Encumbered",
+	"two iron bars should put the Warrior in Encumbered, got " + character.encumbrance.status);
+const loadCheckEl = document.getElementById("load-check");
+loadCheckEl.innerHTML = await render("../templates/actor/tab-attributes.hbs", { ...ctx, system: character });
+loadCheckEl.querySelector(".tab").classList.add("active");
 </script>

@@ -67,6 +67,19 @@
 					{{/if}}
 				</tbody>
 			</table>
+			{{!-- The rates above are unencumbered, as his sheet shows them. His sheet never applies
+			      the load; the Player's Guide does, so the loaded rates sit beside them rather than
+			      over them. Shown only when the load actually costs something. --}}
+			{{#if system.encumbrance.penalty}}
+			<p class="loaded-heading">At current load: <span class="muted">{{system.encumbrance.penalty}}</span></p>
+			<table class="move-table loaded">
+				<tbody>
+					<tr><td>Walk</td><td>{{system.movement.loaded.walk.hourly}}</td><td>{{system.movement.loaded.walk.tenSec}}</td><td>{{system.movement.loaded.walk.oneSec}}</td></tr>
+					<tr><td>Jog</td><td>{{system.movement.loaded.jog.hourly}}</td><td>{{system.movement.loaded.jog.tenSec}}</td><td>{{system.movement.loaded.jog.oneSec}}</td></tr>
+					<tr><td>Run</td><td>{{system.movement.loaded.run.hourly}}</td><td>{{system.movement.loaded.run.tenSec}}</td><td>{{system.movement.loaded.run.oneSec}}</td></tr>
+				</tbody>
+			</table>
+			{{/if}}
 		</div>
 
 		<div class="panel">
@@ -74,10 +87,10 @@
 			<p class="encumbrance-status">{{system.encumbrance.status}}</p>
 			<p class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb</p>
 			<ul class="band-list">
-				<li><label>Unencumbered to</label> <span>{{system.encumbrance.none}}</span></li>
-				<li><label>Slight to</label> <span>{{system.encumbrance.slight}}</span></li>
-				<li><label>Moderate to</label> <span>{{system.encumbrance.moderate}}</span></li>
-				<li><label>Heavy to</label> <span>{{system.encumbrance.heavy}}</span></li>
+				<li><label>Not encumbered to</label> <span>{{system.encumbrance.none}}</span></li>
+				<li><label>Slightly to</label> <span>{{system.encumbrance.slight}}</span></li>
+				<li><label>Encumbered to</label> <span>{{system.encumbrance.moderate}}</span></li>
+				<li><label>Heavily to</label> <span>{{system.encumbrance.heavy}}</span></li>
 			</ul>
 		</div>
 	</div>

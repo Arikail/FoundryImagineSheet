@@ -362,7 +362,14 @@ check("initiative takes the better adjustment plus the modifier",
 const load = makeCreature({ ratings: { str: 16 }, level: 20, weight: 200 });
 check("maximum load is the Strength limit times body weight", load.encumbrance.maxLoad, 300);
 check("unencumbered up to a quarter of it", load.encumbrance.none, 75);
-check("nothing carried is unencumbered", load.encumbrance.status, "Unencumbered");
+check("nothing carried is not encumbered, in his words", load.encumbrance.status, "Not encumbered");
+// One calcEncumbrance serves both his sheets, so a creature's gear scales by its size too.
+const bigLoad = makeCreature({ ratings: { str: 16 }, level: 20, weight: 400 });
+bigLoad.physical.heightFeet = 7; bigLoad.physical.heightInches = 6;
+bigLoad.parent = { items: [{ type: "equipment", name: "pack",
+	system: { weight: 100, quantity: 1, location: "carried", isTagalong: false } }] };
+bigLoad.prepareDerivedData();
+check("a 7'6\" 400 lb creature carries 100 lb of gear as 120", bigLoad.encumbrance.carried, 120);
 
 // --- level-derived values ------------------------------------------------------
 const levelled = makeCreature({ level: 7, ratings: { knw: 14 } });

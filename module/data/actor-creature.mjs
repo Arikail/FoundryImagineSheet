@@ -30,7 +30,7 @@ import ImagineCharacterData from "./actor-character.mjs";
 import { CREATURE_TYPES, CREATURE_BODY_TYPES, CREATURE_ATTACK_CHARTS } from "../creature-tables.mjs";
 import {
 	getBodyChart, parseBodyChart, getAreaEndurance, getStrongestMaterial,
-	getInitiativeModifier, getNextAttackSkill, getAreaArmor, getAreaShield
+	getInitiativeModifier, getNextAttackSkill, getAreaArmor, getAreaShield, resolveEncumbrance
 } from "../combat/combat-rules.mjs";
 
 const fields = foundry.data.fields;
@@ -618,39 +618,14 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 	// Same rule as a character: the Strength table's load limit times its own body weight, with
 	// the bands at a quarter, half, three quarters and the whole of it. His creature recalculation
 	// calls the same calcEncumbrance (checkAllCreatureValues, sheet-worker.js:178196).
+	//
+	// The arithmetic -- bands, size scaling of armour and gear, magical-plus weight reduction --
+	// is resolveEncumbrance in combat-rules.mjs, the one port of his one calcEncumbrance.
 	_prepareEncumbrance() {
-		var tmploadlimit = parseFloat(this.attributes.str.mods?.loadLimit) || 0;
-		var tmpbodyweight = parseFloat(this.physical.weight) || 0;
-		var tmpmaxload = tmploadlimit * tmpbodyweight;
-
-		var tmpcarried = 0;
-		var tmpactor = this.parent;
-		if (tmpactor && tmpactor.items) {
-			for (const tmpitem of tmpactor.items) {
-				var tmpsys = tmpitem.system;
-				if (tmpsys.weight === undefined) { continue; }
-				if (tmpsys.isTagalong) { continue; }
-				if (tmpsys.location != "equipped" && tmpsys.location != "carried") { continue; }
-				tmpcarried = tmpcarried + ((parseFloat(tmpsys.weight) || 0) * (tmpsys.quantity ?? 1));
-			}
-		}
-
-		this.encumbrance = {
-			carried: parseFloat(tmpcarried.toFixed(1)),
-			maxLoad: parseFloat(tmpmaxload.toFixed(1)),
-			none:    parseFloat((tmpmaxload * 0.25).toFixed(1)),
-			slight:  parseFloat((tmpmaxload * 0.5).toFixed(1)),
-			moderate:parseFloat((tmpmaxload * 0.75).toFixed(1)),
-			heavy:   parseFloat(tmpmaxload.toFixed(1)),
-			status:  ""
-		};
-
-		var tmpenc = this.encumbrance;
-		if      (tmpcarried <= tmpenc.none)     { tmpenc.status = "Unencumbered"; }
-		else if (tmpcarried <= tmpenc.slight)   { tmpenc.status = "Slight"; }
-		else if (tmpcarried <= tmpenc.moderate) { tmpenc.status = "Moderate"; }
-		else if (tmpcarried <= tmpenc.heavy)    { tmpenc.status = "Heavy"; }
-		else                                    { tmpenc.status = "Overloaded"; }
+		var tmpphys = this.physical ?? {};
+		var tmpinches = ((parseInt(tmpphys.heightFeet) || 0) * 12) + (parseInt(tmpphys.heightInches) || 0);
+		this.encumbrance = resolveEncumbrance(this.parent?.items,
+			this.attributes.str.mods?.loadLimit, tmpphys.weight, tmpinches);
 	}
 
 	// This is the function which flags every item on the creature that the campaign's content

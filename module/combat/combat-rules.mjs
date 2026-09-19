@@ -1623,5 +1623,186 @@ export const MODE_DAMAGE_TYPES = {
 		return tmpout;
 	}
 
+// @MARKER ENCUMBRANCE
+//==================================================================================================================
+// Ported from his calcEncumbrance (sheet-worker.js:81745), which both of his sheets call -- the
+// character's and the creature's -- so both actor models call resolveEncumbrance below rather
+// than each keeping its own copy.
+//
+// What his function does, in order:
+//     1. the four bands: a quarter, half, three quarters and the whole of load limit x body weight
+//     2. armour and general equipment are totalled and then scaled by the being's SIZE
+//     3. weapons are added unscaled -- his comment: "there are different weapon versions for
+//        different sized beings already"
+//     4. each item's own weight is scaled by its magical plus (+1 is x.9 down to +10 at x.05)
+//     5. the total is read against the bands for his status label
+//
+// What is NOT ported yet, each needing something the port does not have:
+//     - quality tags ([Shoddy] x1.75 ... [Master] x.75) -- no quality field on items yet
+//     - [Float] items weighing nothing -- no float flag on items yet
+//     - Lighten Load, Spirit of the Donkey and the temporary weight/capacity modifiers -- magic
+//       items, which are the deferred magic phase
+//
+// His sheet stops at the status label. It never slows anyone down: encumbrance_status is written
+// and nothing reads it. The Player's Guide does (Encumbrance, p.38) -- 3/4 speed slightly
+// encumbered, 1/2 encumbered, 1/4 heavily encumbered and no running or sprinting -- so the speed
+// factor is returned beside the label, and the character's sheet shows its movement at the
+// current load NEXT TO the unencumbered rates his sheet shows, rather than replacing them. See
+// UPSTREAM-ISSUES.md item 31.
+//==================================================================================================================
+
+	// His status labels, and the book's penalty for each. "Over weight(cannot move)" is his own
+	// wording, and the only place his sheet says anything about movement at all.
+	// The penalty text is the Player's Guide's own Encumbrance Table wording, movement half only
+	// (fatigue belongs to the fatigue rules, which are not ported).
+	const ENCUMBRANCE_BANDS = [
+		//  status                         speedFactor  canRun  penalty
+		{ status: "Not encumbered",            speedFactor: 1,    canRun: true,  penalty: "" },
+		{ status: "Slightly encumbered",       speedFactor: 0.75, canRun: true,  penalty: "3/4 speed" },
+		{ status: "Encumbered",                speedFactor: 0.5,  canRun: true,  penalty: "1/2 speed" },
+		{ status: "Heavily encumbered",        speedFactor: 0.25, canRun: false, penalty: "1/4 speed, cannot run or sprint" },
+		{ status: "Over weight(cannot move)",  speedFactor: 0,    canRun: false, penalty: "cannot move" }
+	];
+
+	// His magical-plus weight adjustments (getItemWeight). A plus outside 1-10 has no case in his
+	// switch and so weighs as normal.
+	const MAGIC_WEIGHT_MULTIPLIERS = {
+		// plus: multiplier
+		1: 0.9,  2: 0.8,  3: 0.7,  4: 0.6,  5: 0.5,
+		6: 0.4,  7: 0.3,  8: 0.2,  9: 0.1,  10: 0.05
+	};
+
+	// This is the function which gives the multiplier his calcEncumbrance puts on armour and
+	// general equipment for the size of the being carrying it. Six to seven feet is the standard
+	// and takes no adjustment; smaller beings carry smaller gear, bigger ones bigger.
+	//
+	// Height 0 means "not entered", and takes no adjustment. His character creation always sets a
+	// height, but a port actor starts at 0, and his ladder would read that as "under one foot" and
+	// shrink the whole load to a hundredth. That is the one deliberate difference.
+	//
+	// Under one foot his code tests weight<21, then weight<20 -- which can never be reached, since
+	// anything under 20 is already under 21 -- then everything else. The unreachable branch
+	// (x.0075) is left out rather than guessed at; UPSTREAM-ISSUES.md item 31 asks.
+	export function getSizeWeightMultiplier(tmpheightinches, tmpbodyweight) {
+		var tmpinches = parseInt(tmpheightinches) || 0;
+		var tmpweight = parseFloat(tmpbodyweight) || 0;
+		if (tmpinches <= 0) { return 1; }
+
+		if (tmpinches < 12) {          // under 1 foot
+			return (tmpweight < 21) ? 0.005 : 0.01;
+		} else if (tmpinches < 24) {   // under 2 feet
+			if (tmpweight < 21) { return 0.02; } else if (tmpweight < 40) { return 0.05; } else { return 0.1; }
+		} else if (tmpinches < 36) {   // under 3 feet
+			if (tmpweight < 41) { return 0.1; } else if (tmpweight < 80) { return 0.2; } else { return 0.3; }
+		} else if (tmpinches < 48) {   // under 4 feet
+			if (tmpweight < 61) { return 0.3; } else if (tmpweight < 100) { return 0.4; } else { return 0.5; }
+		} else if (tmpinches < 60) {   // under 5 feet
+			if (tmpweight < 81) { return 0.5; } else if (tmpweight < 120) { return 0.6; } else { return 0.7; }
+		} else if (tmpinches < 72) {   // under 6 feet
+			if (tmpweight < 101) { return 0.7; } else if (tmpweight < 150) { return 0.8; } else { return 0.9; }
+		} else if (tmpinches < 84) {   // under 7 feet -- the standard, no adjustment
+			return 1;
+		} else if (tmpinches < 96) {   // under 8 feet
+			if (tmpweight < 201) { return 1.0; } else if (tmpweight < 350) { return 1.1; } else { return 1.2; }
+		} else if (tmpinches < 108) {  // under 9 feet
+			if (tmpweight < 301) { return 1.3; } else if (tmpweight < 500) { return 1.4; } else { return 1.5; }
+		} else if (tmpinches < 120) {  // under 10 feet
+			if (tmpweight < 401) { return 1.6; } else if (tmpweight < 800) { return 1.7; } else { return 1.8; }
+		} else if (tmpinches < 132) {  // under 11 feet
+			if (tmpweight < 701) { return 1.9; } else if (tmpweight < 1000) { return 2; } else { return 2.1; }
+		}
+		// eleven feet and over goes by weight alone
+		if (tmpweight < 1501)  { return 2.2; }
+		if (tmpweight < 1801)  { return 2.4; }
+		if (tmpweight < 2201)  { return 2.6; }
+		if (tmpweight < 2801)  { return 2.8; }
+		if (tmpweight < 3501)  { return 3; }
+		if (tmpweight < 4501)  { return 3.5; }
+		if (tmpweight < 6001)  { return 4; }
+		if (tmpweight < 8001)  { return 4.5; }
+		if (tmpweight < 11001) { return 5; }
+		if (tmpweight < 14001) { return 6; }
+		if (tmpweight < 20001) { return 7; }
+		if (tmpweight < 30001) { return 8; }
+		if (tmpweight < 40001) { return 9; }
+		return 10;                     // 40001+
+	}
+
+	// This is the function which gives the multiplier a magical plus puts on an item's weight.
+	export function getMagicWeightMultiplier(tmpplus) {
+		return MAGIC_WEIGHT_MULTIPLIERS[parseInt(tmpplus) || 0] ?? 1;
+	}
+
+	// This is the function which reads a carried weight against the four bands and returns his
+	// label, with the book's speed factor and whether the being can still run.
+	export function getEncumbranceBand(tmpcarried, tmpbands) {
+		var tmpindex = 4;
+		if      (tmpcarried <= tmpbands.none)     { tmpindex = 0; }
+		else if (tmpcarried <= tmpbands.slight)   { tmpindex = 1; }
+		else if (tmpcarried <= tmpbands.moderate) { tmpindex = 2; }
+		else if (tmpcarried <= tmpbands.heavy)    { tmpindex = 3; }
+		return ENCUMBRANCE_BANDS[tmpindex];
+	}
+
+	// This is the function which works out everything encumbrance-related for one being.
+	//
+	// tmpitems is the actor's items -- anything with a system.weight. Only what is equipped or
+	// carried counts; a mount or a stash is not on the being. A tagalong's weight is already part
+	// of another item (a scabbard is part of the sword), so it is skipped.
+	export function resolveEncumbrance(tmpitems, tmploadlimit, tmpbodyweight, tmpheightinches) {
+		var tmpmaxload = (parseFloat(tmploadlimit) || 0) * (parseFloat(tmpbodyweight) || 0);
+		var tmpsizemulti = getSizeWeightMultiplier(tmpheightinches, tmpbodyweight);
+
+		var tmpscaled = 0;     // armour and general equipment -- scaled by size
+		var tmpweapons = 0;    // weapons -- never scaled by size
+		for (const tmpitem of (tmpitems ?? [])) {
+			var tmpsys = tmpitem.system ?? {};
+			if (tmpsys.weight === undefined) { continue; }
+			if (tmpsys.isTagalong) { continue; }
+			if (tmpsys.location != "equipped" && tmpsys.location != "carried") { continue; }
+
+			var tmpweight = (parseFloat(tmpsys.weight) || 0)
+			              * getMagicWeightMultiplier(tmpsys.magicBonus)
+			              * (tmpsys.quantity ?? 1);
+			if (tmpitem.type == "weapon") { tmpweapons = tmpweapons + tmpweight; }
+			else                          { tmpscaled  = tmpscaled  + tmpweight; }
+		}
+		var tmpcarried = (tmpscaled * tmpsizemulti) + tmpweapons;
+
+		var tmpenc = {
+			carried:        parseFloat(tmpcarried.toFixed(1)),
+			maxLoad:        parseFloat(tmpmaxload.toFixed(1)),
+			none:           parseFloat((tmpmaxload * 0.25).toFixed(1)),
+			slight:         parseFloat((tmpmaxload * 0.5).toFixed(1)),
+			moderate:       parseFloat((tmpmaxload * 0.75).toFixed(1)),
+			heavy:          parseFloat(tmpmaxload.toFixed(1)),
+			sizeMultiplier: tmpsizemulti
+		};
+		var tmpband = getEncumbranceBand(tmpcarried, tmpenc);
+		tmpenc.status      = tmpband.status;
+		tmpenc.speedFactor = tmpband.speedFactor;
+		tmpenc.canRun      = tmpband.canRun;
+		tmpenc.penalty     = tmpband.penalty;
+		return tmpenc;
+	}
+
+	// This is the function which gives a being's movement at its current load, per the Player's
+	// Guide: every rate times the band's speed factor, and no running at all once heavily
+	// encumbered. Special movement is left alone -- flying has encumbrance rules of its own in the
+	// book (gliding ratios), which are not a speed factor.
+	export function resolveLoadedMovement(tmpmovement, tmpencumbrance) {
+		var tmpfactor = tmpencumbrance.speedFactor ?? 1;
+		var tmpout = {};
+		for (const tmpmode of ["walk", "jog", "run"]) {
+			var tmpmodefactor = (tmpmode == "run" && !tmpencumbrance.canRun) ? 0 : tmpfactor;
+			tmpout[tmpmode] = {};
+			for (const tmpscale of ["hourly", "tenSec", "oneSec"]) {
+				var tmprate = (parseFloat((tmpmovement[tmpmode] ?? {})[tmpscale]) || 0) * tmpmodefactor;
+				tmpout[tmpmode][tmpscale] = Math.round(tmprate * 10) / 10;
+			}
+		}
+		return tmpout;
+	}
+
 // @MARKER ADD NEW combat rule functions HERE
 // @END (CODE)

@@ -494,13 +494,35 @@ const e0 = encumbered([]);
 check("max load = load limit x body weight", e0.maxLoad, 200);
 check("band thresholds at 25/50/75/100%",
 	[e0.none, e0.slight, e0.moderate, e0.heavy], [50, 100, 150, 200]);
-check("nothing carried is unencumbered", e0.status, "Unencumbered");
+// His labels (calcEncumbrance), not the ones the port first invented.
+check("nothing carried is not encumbered", e0.status, "Not encumbered");
 
 check("carried weight totals up",        encumbered([gear(30), gear(25)]).carried, 55);
-check("just over a quarter is Slight",   encumbered([gear(60)]).status, "Slight");
-check("just over a half is Moderate",    encumbered([gear(120)]).status, "Moderate");
-check("just over three quarters is Heavy", encumbered([gear(175)]).status, "Heavy");
-check("beyond the load limit is Overloaded", encumbered([gear(250)]).status, "Overloaded");
+check("just over a quarter is slightly encumbered", encumbered([gear(60)]).status, "Slightly encumbered");
+check("just over a half is encumbered",  encumbered([gear(120)]).status, "Encumbered");
+check("just over three quarters is heavily encumbered", encumbered([gear(175)]).status, "Heavily encumbered");
+check("beyond the load limit cannot move", encumbered([gear(250)]).status, "Over weight(cannot move)");
+
+// The character carries the size scaling through from its own height and weight: 5'9" and 200 lb
+// puts armour and gear at x.9, while weapons are not scaled.
+function sized(items) {
+	const c = makeCharacter({ str: 11 }, 5, items);
+	c.physical = { weight: 200, heightFeet: 5, heightInches: 9 };
+	c.prepareDerivedData();
+	return c;
+}
+check("a 5'9\" 200 lb character carries 100 lb of gear as 90",
+	sized([gear(100)]).encumbrance.carried, 90);
+check("...but a 10 lb sword as 10",
+	sized([{ type: "weapon", name: "sword", system: { weight: 10, quantity: 1, location: "carried" } }]).encumbrance.carried, 10);
+
+// The Player's Guide's movement penalty, beside his unencumbered rates rather than over them.
+const noRace = encumbered([gear(120)]);
+check("the loaded rates are worked out even with no race",
+	typeof makeCharacter({}, 5).movement.loaded, "object");
+check("an encumbered character's penalty reads as the book words it",
+	noRace.penalty, "1/2 speed");
+check("an unburdened character carries no penalty text", e0.penalty, "");
 
 // Things not on your person do not weigh you down.
 check("stashed gear does not count",  encumbered([gear(500, "stash")]).carried, 0);
