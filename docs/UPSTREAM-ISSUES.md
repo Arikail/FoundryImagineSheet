@@ -938,10 +938,18 @@ and the two ages as your `setAge` takes them.
 2. **The Player's Guide gives every mixed-race character -5 Social Class** ("Mixed race
    characters are often shunned by both of the parent races"). Nothing in your half-race code
    applies it, so the port does not either. Should it?
-3. **Which races can breed with which** is in the book (the Mixed Race Table, p.33, plus a
-   "Half/Mixed Races:" line on every race in the bestiaries). Your sheet does not check it, and the
-   book says mixed races are "offered only through GM interaction", so the port does not check it
-   either. Say if you want at least a warning.
+3. ~~Which races can breed with which: your sheet does not check it.~~ **Corrected the same
+   day:** it does. `racefertiledict` (32833) is the list your Half Race picker offers as the second
+   race, so an infertile pair cannot be chosen at all. The port has no picker, so it reports an
+   infertile pair on the sheet rather than refusing it, the same way it reports an unqualified
+   dual class. No question here any more.
+
+**A second slip, in `getBestModifierPercent`.** Its signature is
+`function getBestModifierPercent(numberString1, numberString1)`: both parameters have the same
+name, so the second shadows the first and both numbers are read from the second argument. When
+both halves of a half race offer the same racial skill, `combineTwoRaceSkillDetails` therefore
+always takes the **second** race's bonus rather than the better one, and a blank bonus comes out as
+"+0%". The port keeps the better bonus, which is plainly what the name says.
 
 **One slip seen in passing:** in `setNewCharacteristics` (27499-27505), a half race's new Endurance
 at titles 11-12 adds both races' maximums and then immediately overwrites the sum with the first

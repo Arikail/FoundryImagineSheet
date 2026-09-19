@@ -2227,3 +2227,55 @@ unexplained and is left out; racial-only rows still stay available for character
 
 Open from item 10 and untouched by this: whether his `calcAllCreatureCaracs` +10 for "Enhanced
 Perception" double-counts a stat block that already includes it.
+
+### 2026-09-18 — The rest of a race: skills, abilities, ages, fertility and which classes it can take
+
+**Decision:** the race and class documents now carry everything his half-race code merges, and
+the class eligibility check the board wrongly called "book-only". All of it is generated from his
+tables, never hand-typed:
+
+| field | from his | onto |
+|---|---|---|
+| `racialSkills` (name + bonus), `racialSkillNote` | `raceSkillDetailValues` (getRaceSkillDetails, 51856) | race |
+| `abilities`, `disabilities`, `immunities` | `raceFeatureAbilities` (getRacialFeatureAbilities, 45588) | race |
+| `fertileWith` | `racefertiledict` (32833), the list his Half Race picker offers | race |
+| `ages` (startLow, startHigh, maxAge) | the `getAge` switch (38995), walked by a new `race_ages()` | race |
+| `blockedRaces` | `classRaceAndDetails` (51088), read by setClassDetails | class |
+
+**How a half race combines them** (`race-rules.mjs`): racial skills from both, each once, with a
+shared skill at the better bonus. Abilities and the other two lists are merged with duplicates
+removed. Ages take the lesser of the two, and "Immortal" counts as longer than any number. A class
+is barred only if **both** races are barred, as his `setClassDetails` has it.
+
+**Sub-decisions:**
+- *Barred-races, not allowed-races.* `classRaceAndDetails` lists the races that may NOT take a
+  class. Warrior's list is empty, meaning anyone can be a Warrior. Reading it the other way round
+  would have closed Warrior to every race.
+- *Reported, never refused.* His sheet lets a barred class be overridden ("is usually not this
+  class. This was overriden!"), and on his sheet an infertile pair simply cannot be picked. The port
+  has no picker, so both show as flags on the header, `identity.raceIssues`, the same way dual-class
+  requirements are shown.
+- *His two slips are not reproduced.* `getBestModifierPercent` declares both its parameters with
+  one name, so a shared skill always gets the second race's bonus; the port keeps the better one.
+  `lesserOfTwoNumbers` compares "Immortal" as NaN and falls through to the first value; the port
+  treats a word as longer than any number. Both are in `UPSTREAM-ISSUES.md` item 32.
+- *Listed, not applied.* Abilities are names his trait compendia describe. The mechanics behind them
+  (his `setTempRacialAbilities` switch) are still unported, and so is the racial-skill picker. His
+  "keep only the stronger version of an ability" and "drop abilities the body cannot use" steps are
+  left out too, since they only matter once the lists do something.
+- *The Description tab gains a Race panel*, showing the effective race: starting-age range, maximum
+  age, racial skill options with bonuses, abilities, disabilities, immunities.
+- *Not carried:* his "(Slight Physique)" variants of a few races, since the port has no
+  slight-physique option. Also Gremlin and Changeling racial skills: his code writes Gremlin's
+  inline, as it does the Fairies', and Changeling has a table of its own. Both are in the Sonnet
+  note.
+
+**Also corrected:** the dual-class code said "the racial half cannot be checked". It can now, for
+every character and not only dual-classed ones.
+
+**Verified:** `build_documents.py --check` is clean apart from the two missing racial-skill rows
+above. Every race has ages and every class has a blocked-races entry. Derivation 320 (16 new),
+combat 406, creature 140, availability 39, 28 modules parse. In `tools/sheet-preview.html`, the
+real Human(Civilized:Village)|Elf(High) Warrior/Mage shows no race issues, a Race panel with
+Listen at the Elf's +20% rather than the Human's +10%, Detect Magic and Sing from the Elf, and the
+Human's ages (18–24, maximum 100, not the Elf's 1000).

@@ -567,6 +567,7 @@ const halfAttrRows = attrRows.map(r => {
 const halfEl = document.getElementById("halfrace-check");
 const halfCtx = { ...ctx, system: character, attributes: halfAttrRows };
 halfEl.innerHTML = await render("../templates/actor/header.hbs", halfCtx)
-                 + await render("../templates/actor/tab-attributes.hbs", halfCtx);
-halfEl.querySelector(".tab").classList.add("active");
+                 + await render("../templates/actor/tab-attributes.hbs", halfCtx)
+                 + await render("../templates/actor/tab-description.hbs", halfCtx);
+halfEl.querySelectorAll(".tab").forEach(t => t.classList.add("active"));
 </script>
