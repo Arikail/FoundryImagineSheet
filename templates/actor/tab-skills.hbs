@@ -59,16 +59,26 @@
 	      templates resolve elsewhere, and are shown as written rather than hidden. --}}
 	{{#if classProgress.show}}
 	<h3 class="section-head">Class Progression</h3>
+	{{#each classProgress.classes as |klass|}}
+	{{#if ../classProgress.showNames}}<h4 class="class-progress-name">{{klass.name}} &mdash; title {{klass.title}}</h4>{{/if}}
 	<table class="class-progress-table">
 		<tbody>
-			{{#each classProgress.rows as |row|}}
-			<tr class="{{#if row.current}}current-title{{/if}}">
+			{{#each klass.rows as |row|}}
+			<tr class="{{#if row.current}}current-title{{/if}} {{#unless row.reached}}unreached-title{{/unless}}">
 				<td class="col-title">{{row.title}}<span class="muted">{{row.titleName}}</span></td>
-				<td class="col-skills">{{row.skills}}</td>
+				<td class="col-skills">{{row.skillText}}</td>
 			</tr>
 			{{/each}}
 		</tbody>
 	</table>
+	{{/each}}
+	{{#if classProgress.owed}}
+	<p class="alarm">{{classProgress.owed}} class skill(s) earned but not on this character.
+		Run <code>game.imagine.grantClassSkills(actor)</code> to give them.</p>
+	{{/if}}
+	{{#each classProgress.usage as |usage|}}
+	<p class="muted class-usage">{{usage.name}} may use armour: {{usage.armorUsage}}. Weapons: {{usage.weaponUsage}}.</p>
+	{{/each}}
 	{{/if}}
 
 	{{#each skills as |list category|}}
@@ -89,10 +99,12 @@
 			</thead>
 			<tbody>
 				{{#each list as |skill|}}
-				<tr class="{{#unless skill.available}}unavailable{{/unless}}"
-				    {{#unless skill.available}}data-tooltip="{{skill.unavailableReason}}"{{/unless}}>
+				<tr class="{{#unless skill.available}}unavailable{{/unless}} {{#unless skill.usableByTitle}}not-yet-acquired{{/unless}}"
+				    {{#unless skill.available}}data-tooltip="{{skill.unavailableReason}}"{{/unless}}
+				    {{#unless skill.usableByTitle}}data-tooltip="{{skill.titleGateReason}}"{{/unless}}>
 					<td class="col-name">{{skill.name}}{{#unless skill.available}}
-						<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{skill.unavailableReason}}"></i>{{/unless}}</td>
+						<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{skill.unavailableReason}}"></i>{{/unless}}{{#unless skill.usableByTitle}}
+						<i class="fa-solid fa-hourglass-half not-yet-mark" aria-label="{{skill.titleGateReason}}"></i>{{/unless}}</td>
 					<td class="col-num muted">{{skill.attr1}}{{#if skill.attr2}}/{{skill.attr2}}{{/if}}</td>
 					<td class="col-num muted">{{skill.skillRating}}</td>
 					<td class="col-num derived">{{skill.baseChance}}%</td>

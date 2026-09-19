@@ -29,6 +29,7 @@ globalThis.game = { imagine: { getAvailabilityRules: () => null } };
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 const R = await import("../module/combat/combat-rules.mjs");
 const S = await import("../module/skills-rules.mjs");
+const C = await import("../module/class-rules.mjs");
 
 const results = [];
 function check(label, actual, expected) {
@@ -1175,6 +1176,84 @@ check("a GME takes no racial first-title Endurance bonus (his 'GMEs (0 title) ge
 	gme.characteristics.endurance.raceMod, 0);
 check("an ordinary class still takes it",
 	makeCharacter({}, 1, [makeRace(), fighterClass]).characteristics.endurance.raceMod, 4);
+
+// --- class progression: the skills a title brings, his setClassSkillLists ---------------------
+// A stand-in class with a progression of the shape his own carry: a casting pair at title 1 (the
+// nocast alternative), plain skills later, and one skill listed twice.
+const progClass = {
+	type: "class", name: "Mageling", id: "m1",
+	system: { classType: "Primary class", attackSkillList: "Beginner at 1", blockedRaces: [],
+	          classMods: ["+10% to magical skills"], armorUsage: "Leather or less", weaponUsage: "Dagger, Staff",
+	          advancement: { titles: [], goalAttr1: "", goalAttr2: "",
+	            classSkillList: [
+	              { title: 1, name: "Detect Magic",   core: true,  requires: "" },
+	              { title: 1, name: "Scroll Knowledge", core: true, requires: "caster" },
+	              { title: 1, name: "Hermetic Lore",  core: true,  requires: "nonCaster" },
+	              { title: 3, name: "Identify",       core: false, requires: "" },
+	              { title: 7, name: "Absorb Aura",    core: true,  requires: "" },
+	              { title: 9, name: "Identify",       core: true,  requires: "" }
+	            ] } },
+	getTitleName(t) { return ["Apprentice", "Adept", "Magus"][t - 1] ?? ""; }
+};
+check("a title's own skills, caster",     C.getClassSkillsAtTitle(progClass.system, 1, false).map(s => s.name),
+	["Detect Magic", "Scroll Knowledge"]);
+check("...and for a race that cannot cast", C.getClassSkillsAtTitle(progClass.system, 1, true).map(s => s.name),
+	["Detect Magic", "Hermetic Lore"]);
+check("everything up to a title includes the titles passed through",
+	C.getClassSkillsThroughTitle(progClass.system, 3, false).map(s => s.name),
+	["Detect Magic", "Scroll Knowledge", "Identify"]);
+check("a title the class has not reached brings nothing yet",
+	C.getClassSkillsThroughTitle(progClass.system, 2, false).map(s => s.name),
+	["Detect Magic", "Scroll Knowledge"]);
+check("a skill listed twice is dated from the EARLIEST title",
+	C.getClassSkillTitle(progClass.system, "Identify"), 3);
+check("a skill the class never gives has no title",
+	C.getClassSkillTitle(progClass.system, "Swim"), 0);
+check("only the skills not already held are owed",
+	C.getClassSkillsToGrant(progClass.system, 7, false, ["Detect Magic", "Identify"]).map(s => s.name),
+	["Scroll Knowledge", "Absorb Aura"]);
+check("a non-classed class (his GME) is owed nothing at any title",
+	C.getClassSkillsToGrant({ ...progClass.system, nonClassed: true }, 15, false, []), []);
+
+// His handleHighTitleClassSkillRoll: below the title, the roll is refused by title NAME.
+check("a class skill at or below the title is usable",
+	C.checkClassSkillTitle(3, 5, "Magus").usable, true);
+check("...above it is refused",
+	C.checkClassSkillTitle(7, 5, "Sorcerer"),
+	{ usable: false, reason: "This skill cannot be used before Sorcerer (title 7)." });
+check("...and with no title name, by number alone",
+	C.checkClassSkillTitle(7, 5, "").reason, "This skill cannot be used before title 7.");
+check("a racial or social skill (acquiredAtTitle 0) is never gated",
+	C.checkClassSkillTitle(0, 1, "").usable, true);
+
+const progRows = C.buildClassProgression(progClass.system, 3, false);
+check("the progression panel has a row per title that brings skills",
+	progRows.map(r => r.title), [1, 3, 7, 9]);
+check("...marking the titles reached and the one just reached",
+	[progRows[0].reached, progRows[1].current, progRows[2].reached], [true, true, false]);
+check("...and names a core skill as such",
+	progRows[0].skillText, "Detect Magic (core), Scroll Knowledge (core)");
+check("armour and weapon usage are carried for display",
+	C.getClassUsageRestrictions([progClass]),
+	[{ name: "Mageling", armorUsage: "Leather or less", weaponUsage: "Dagger, Staff" }]);
+
+// On the character: what the title has earned, and what is still owed.
+const heldSkill = (name, title) => ({ type: "skill", name, id: name,
+	system: { attr1: "int", attr2: "", skillRating: 10, category: "class", acquiredAtTitle: title,
+	          startingBonus: 0, abilityBonus: 0, misc: 0, isCommon: false, types: [] } });
+const mageling = makeCharacter({}, 3, [makeRace(), progClass, heldSkill("Detect Magic", 1), heldSkill("Absorb Aura", 7)]);
+check("the character's progression is listed per class",
+	mageling.identity.classProgression.map(c => [c.name, c.title, c.rows.length]), [["Mageling", 3, 4]]);
+check("a title's name comes off the class",
+	mageling.identity.classProgression[0].rows[0].titleName, "Apprentice");
+check("the skills earned but not held are owed",
+	mageling.identity.classProgression[0].owed.map(s => s.name), ["Scroll Knowledge", "Identify"]);
+check("and counted for the sheet", mageling.identity.classSkillsOwed, 2);
+check("a skill from a title already reached is usable",
+	mageling.parent.items[2].system.usableByTitle, true);
+check("one held ahead of its title is refused, and says which title",
+	[mageling.parent.items[3].system.usableByTitle, mageling.parent.items[3].system.titleGateReason],
+	[false, "This skill cannot be used before title 7."]);
 
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;

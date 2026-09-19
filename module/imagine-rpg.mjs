@@ -32,6 +32,7 @@ import {
 	ImagineClassSheet, ImagineArmorSheet, ImagineRaceSheet
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
+import { grantClassSkills, registerClassAdvancement } from "./class-advancement.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
 import ImagineCharacterGenerator, { registerCharacterGeneratorButton } from "./apps/character-generator.mjs";
 import ImagineCombat from "./combat/combat-document.mjs";
@@ -179,7 +180,11 @@ Hooks.once("init", function () {
 		getAvailabilityRules: getAvailabilityRules,
 		explainAvailability: explainAvailability,
 		// The step-by-step character generator; also a button in the Actors directory.
-		generateCharacter: () => new ImagineCharacterGenerator().render(true)
+		generateCharacter: () => new ImagineCharacterGenerator().render(true),
+		// Gives a character every class skill their title has earned. It runs by itself when a
+		// title changes; this is here for a character imported from elsewhere, or one whose
+		// grant was refused when the content was switched off.
+		grantClassSkills: grantClassSkills
 	};
 
 	// Records whether the content has ever been imported into this world, so the first-launch
@@ -200,6 +205,10 @@ Hooks.once("init", function () {
 	// @MARKER CHARACTER GENERATOR
 	// A Create Character button in the Actors directory. See module/apps/character-generator.mjs.
 	registerCharacterGeneratorButton();
+
+	// @MARKER CLASS ADVANCEMENT
+	// Grants a title's class skills when the title is reached. See module/class-advancement.mjs.
+	registerClassAdvancement();
 
 	game.settings.registerMenu("imagine-rpg", "availabilityMenu", {
 		name: "Content Availability",

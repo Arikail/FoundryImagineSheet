@@ -486,6 +486,30 @@
 }
 .class-progress-table tr.current-title .col-title { color: var(--imagine-accent); }
 
+/* A title the character has not reached yet: shown, so the player can see what is coming,
+ * and faded, so it is not mistaken for what they have. */
+.class-progress-table tr.unreached-title td { color: #9a948a; }
+
+.class-progress-name {
+	margin: 8px 0 2px;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	color: var(--imagine-accent);
+}
+
+.class-usage { font-size: 11px; margin: 2px 0; }
+
+/* A class skill held but earned at a title above the character's -- his "this skill cannot be
+ * used before <name> title". Faded like disallowed content, but not struck through: it is the
+ * character's skill, it is simply not theirs to use yet. */
+.imagine.sheet tr.not-yet-acquired td { color: #9a948a; }
+.imagine.sheet .not-yet-mark {
+	margin-left: 5px;
+	color: #8a7a4a;
+	font-size: 10px;
+}
+
 /* @MARKER EQUIPMENT */
 
 .encumbrance-bar {

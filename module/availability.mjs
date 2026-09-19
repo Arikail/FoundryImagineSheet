@@ -109,6 +109,27 @@ const SKILL_TYPE_SUBSYSTEMS = {
 		return `${tmptype}:${tmpname}`;
 	}
 
+	// This is the function which lists the override keys an item answers to, most specific
+	// first. Nearly everything answers to one key, its own name.
+	//
+	// A class with a choice in it is one document per path -- "Elementalist(Call of Death)",
+	// "Knight(Dark Templar)" -- so a Game Master switching off "Elementalist" would otherwise
+	// have switched off nothing at all, six documents being named something else. The base
+	// class is therefore a second key BELOW the path's own: setting the path decides it, and
+	// setting the base class decides every path that has no key of its own.
+	//
+	// The base class comes from the document's own baseClass field where it has one (that is
+	// what build_documents.py writes), and from the name before the bracket otherwise, so a
+	// path a Game Master authored by hand behaves the same way.
+	export function getOverrideKeys(tmpitem) {
+		var tmpkeys = [getOverrideKey(tmpitem.type, tmpitem.name)];
+		if (tmpitem.type != "class") { return tmpkeys; }
+
+		var tmpbase = tmpitem.system?.baseClass || ("" + tmpitem.name).split("(")[0].trim();
+		if (tmpbase && tmpbase != tmpitem.name) { tmpkeys.push(getOverrideKey("class", tmpbase)); }
+		return tmpkeys;
+	}
+
 	// This is the function which decides whether an item may be used, and says why.
 	// Returns { available, reason }. Pure -- everything it needs arrives in tmprules, so it
 	// can be tested without Foundry running.
@@ -136,9 +157,12 @@ const SKILL_TYPE_SUBSYSTEMS = {
 			}
 		}
 
-		// 2. Individual overrides.
-		var tmpkey = getOverrideKey(tmpitem.type, tmpitem.name);
-		if (tmprules.overrides && Object.prototype.hasOwnProperty.call(tmprules.overrides, tmpkey)) {
+		// 2. Individual overrides. Most specific key first -- a class path's own key answers
+		// before the base class's, so one path can be allowed out of a class that is otherwise
+		// switched off.
+		for (const tmpkey of getOverrideKeys(tmpitem)) {
+			if (!tmprules.overrides) { break; }
+			if (!Object.prototype.hasOwnProperty.call(tmprules.overrides, tmpkey)) { continue; }
 			var tmpallowed = tmprules.overrides[tmpkey] === true;
 			return {
 				available: tmpallowed,

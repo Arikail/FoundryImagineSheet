@@ -74,6 +74,7 @@ globalThis.game = { imagine: { getAvailabilityRules: () => ({
 const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
 const R = await import("../module/combat/combat-rules.mjs");
 const S = await import("../module/skills-rules.mjs");
+const C = await import("../module/class-rules.mjs");
 
 Handlebars.registerHelper("eq", (a, b) => a === b);
 Handlebars.registerHelper("gt", (a, b) => a > b);
@@ -356,13 +357,13 @@ const attack = {
 document.getElementById("chat").innerHTML = await render("../templates/chat/attack-card.hbs", attack);
 
 // --- class progression: the real Elemental Dancer document, at three titles ----------------
-// #buildClassProgress on the sheet class is private, so its logic is duplicated here -- the
-// same accepted gap the weapon-row builder already has (see DECISIONS.md, "Off-hand fighting,
-// first half"). Keep this in step with the sheet class if that logic ever changes.
+// The rows themselves come from the REAL rule, buildClassProgression in class-rules.mjs, which
+// is what the sheet renders as well -- only the wrapper around them is assembled here, and that
+// is three fields. The panel used to be duplicated in full; it no longer is.
 //
-// The point of using the REAL document rather than a hand-typed stub is exactly what the note
-// asked for: proving getClassSkills/getTitleName's 1-based indexing lines up against what
-// build_documents.py actually wrote for this class, not against an assumption of it.
+// The point of using the REAL document rather than a hand-typed stub is proving the class's own
+// classSkillList lines up against what build_documents.py actually wrote for it, not against an
+// assumption of it.
 const edClass = byName(classes, "Elemental Dancer(Water)");
 edClass.system.getTitleName = function (t) {
 	const i = parseInt(t) - 1; const a = this.advancement.titles;
@@ -374,17 +375,13 @@ edClass.system.getClassSkills = function (t) {
 };
 
 function buildClassProgress(classItem, title) {
-	const skills = classItem.system.advancement.classSkills ?? [];
-	if (!skills.some(s => s)) { return { show: false, rows: [] }; }
-	const rows = [];
-	for (const offset of [-1, 0, 1]) {
-		const at = title + offset;
-		if (at < 1) { continue; }
-		const titleName = classItem.system.getTitleName(at);
-		if (!titleName) { continue; }
-		rows.push({ title: at, titleName, skills: classItem.system.getClassSkills(at), current: offset === 0 });
-	}
-	return { show: rows.length > 0, rows };
+	const rows = C.buildClassProgression(classItem.system, title, false)
+		.map((row) => ({ ...row, titleName: classItem.system.getTitleName(row.title) }));
+	return {
+		show: rows.length > 0, showNames: false, owed: 0,
+		classes: [{ name: classItem.name, title, rows }],
+		usage: C.getClassUsageRestrictions([classItem])
+	};
 }
 
 const edCtx = {

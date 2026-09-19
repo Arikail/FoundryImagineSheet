@@ -96,6 +96,31 @@ check("forbidding one class leaves the rest",
 	A.isItemAvailable(cls("Warrior"), rules({ overrides: { "class:Monk": false } })), true);
 check("override key is type-specific (a skill called Monk is untouched)",
 	A.isItemAvailable(skill("Monk", []), rules({ overrides: { "class:Monk": false } })), true);
+
+// --- a class with paths -------------------------------------------------------------
+// A class with a choice in it is one document per path, so switching off the base class has to
+// reach them; otherwise a Game Master forbidding "Elementalist" forbids nothing at all.
+const path = (name, base) => ({ type: "class", name, system: { sourcebook: "", baseClass: base } });
+check("a path document answers to its base class's key",
+	A.isItemAvailable(path("Elementalist(Call of Death)", "Elementalist"),
+	                  rules({ overrides: { "class:Elementalist": false } })), false);
+check("...and to its own, which is read first",
+	A.isItemAvailable(path("Elementalist(Call of Death)", "Elementalist"),
+	                  rules({ overrides: { "class:Elementalist": false,
+	                                       "class:Elementalist(Call of Death)": true } })), true);
+check("one path may be forbidden while its siblings stay",
+	[A.isItemAvailable(path("Knight(Dark Templar)", "Knight"), rules({ overrides: { "class:Knight(Dark Templar)": false } })),
+	 A.isItemAvailable(path("Knight(Templar)", "Knight"), rules({ overrides: { "class:Knight(Dark Templar)": false } }))],
+	[false, true]);
+check("a path authored by hand, with no baseClass, still answers to the name before the bracket",
+	A.isItemAvailable({ type: "class", name: "Knight(Hearthguard)", system: {} },
+	                  rules({ overrides: { "class:Knight": false } })), false);
+check("the base class itself is unaffected by a path's key",
+	A.isItemAvailable(cls("Knight"), rules({ overrides: { "class:Knight(Templar)": false } })), true);
+check("only classes have a second key",
+	A.getOverrideKeys(skill("Detect Magic(Greater)", [])), ["skill:Detect Magic(Greater)"]);
+check("a class with no path has one key",
+	A.getOverrideKeys(cls("Warrior")), ["class:Warrior"]);
 check("allow override lets one entry back in from a disabled book",
 	A.isItemAvailable(skill("Abasement", [], "Mysteries of the Planes"),
 	                  rules({ sourcebooks: { "mysteries-of-the-planes": false },

@@ -131,38 +131,36 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		return tmprows;
 	}
 
-	// This is the function which shows the class skills gained around the character's current
-	// title -- the title just reached, and the one just below and just above it, so advancing a
-	// title is visible against what came before it and what is next.
+	// This is the function which shows each class's whole skill progression -- every title that
+	// brings skills, which ones, and whether the character has reached it yet.
 	//
-	// Most classes have nothing to show: his classtitledict never carried the skills gained at
-	// each title, only the title names, so classSkills is empty for every class built from the
-	// sheet-worker and populated only for classes hand-authored from his Word templates (see
-	// item-class.mjs, getClassSkills). A class with nothing recorded renders nothing here rather
-	// than three blank rows.
+	// It reads what the data model has already worked out (identity.classProgression, built by
+	// buildClassProgression in class-rules.mjs), so the sheet and the character generator's preview
+	// cannot drift apart. A dual-classed character gets one panel per class, each on its own title.
+	//
+	// ROW CORRECTED 2026-09-19: this used to read advancement.classSkills, the per-title TEXT, and
+	// said in a comment that his sheet-worker carried no per-title skills. It does -- his
+	// setClassSkillLists holds all 92 classes' progressions -- and classSkillList is where the
+	// extraction now puts them, so every class has something to show here rather than the handful
+	// authored from his Word templates.
 	static #buildClassProgress(tmpsystem) {
-		var tmpclass = tmpsystem.classItem;
-		if (!tmpclass) { return { show: false, rows: [] }; }
+		var tmpclasses = (tmpsystem.identity.classProgression ?? []).filter(tmpclass => tmpclass.rows.length);
+		if (!tmpclasses.length) { return { show: false, classes: [], owed: 0 }; }
 
-		var tmpskills = tmpclass.system.advancement.classSkills ?? [];
-		if (!tmpskills.some(s => s)) { return { show: false, rows: [] }; }
-
-		var tmptitle = parseInt(tmpsystem.identity.title) || 1;
-		var tmprows = [];
-		for (const tmpoffset of [-1, 0, 1]) {
-			var tmpat = tmptitle + tmpoffset;
-			if (tmpat < 1) { continue; }
-			var tmpskilltext = tmpclass.system.getClassSkills(tmpat);
-			var tmptitlename = tmpclass.system.getTitleName(tmpat);
-			if (!tmptitlename) { continue; }
-			tmprows.push({
-				title: tmpat,
-				titleName: tmptitlename,
-				skills: tmpskilltext,
-				current: tmpoffset == 0
-			});
-		}
-		return { show: tmprows.length > 0, rows: tmprows };
+		return {
+			show: true,
+			// Named only when there is more than one, the way the title steppers are.
+			showNames: tmpclasses.length > 1,
+			classes: tmpclasses.map(tmpclass => ({
+				name: tmpclass.name,
+				title: tmpclass.title,
+				rows: tmpclass.rows
+			})),
+			// Ordinarily zero: the grant runs on every title change. A number here means a
+			// character who earned skills the grant could not give them -- worth saying so.
+			owed: tmpsystem.identity.classSkillsOwed ?? 0,
+			usage: tmpsystem.identity.classUsage ?? []
+		};
 	}
 
 	// This is the function which numbers the character's languages so a row can be written back
@@ -287,7 +285,12 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 				// Flagged rather than hidden: a skill the campaign's switches disallow stays
 				// visible, with the reason, so nothing vanishes from a player's sheet.
 				available: tmpsys.available !== false,
-				unavailableReason: tmpsys.unavailableReason ?? ""
+				unavailableReason: tmpsys.unavailableReason ?? "",
+				// A class skill whose title has not been reached: held, shown, and refused on the
+				// roll -- his "this skill cannot be used before <name> title".
+				usableByTitle: tmpsys.usableByTitle !== false,
+				titleGateReason: tmpsys.titleGateReason ?? "",
+				acquiredAtTitle: parseInt(tmpsys.acquiredAtTitle) || 0
 			};
 			if (tmpout[tmpsys.category]) { tmpout[tmpsys.category].push(tmprow); }
 		}
@@ -427,6 +430,15 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	static async #onRollSkill(event, target) {
 		var tmpitem = this.document.items.get(target.dataset.itemId);
 		if (!tmpitem) { return; }
+
+		// His handleHighTitleClassSkillRoll refuses a class skill the character's title has not
+		// reached, and says so instead of rolling (sheet-worker.js:64169). The skill is on the
+		// sheet before its title -- that is how his own sheet writes it -- so the refusal is here
+		// rather than the row being hidden.
+		if (tmpitem.system.usableByTitle === false) {
+			ui.notifications.warn(`${this.document.name}: ${tmpitem.system.titleGateReason}`);
+			return;
+		}
 
 		var tmpcopies = this.document.items.filter(i => i.type == "skill" && i.name == tmpitem.name);
 		if (!tmpcopies.length) { tmpcopies = [tmpitem]; }

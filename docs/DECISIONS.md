@@ -2467,3 +2467,60 @@ exactly the attributes the generator showed. Her class skills carry his bonuses 
 30 core + 10 magical), her languages fit her allowance, and she is not encumbered.
 **Not verified:** anything needing a running Foundry V14. That covers the window itself, the
 directory button, reading the form, `Actor.create` with embedded items, and the chat card.
+
+### 2026-09-19 — Finishing classes: skills granted by title, the title gate, and path-aware switches
+
+**The ask:** "time to finish classes." Four things were left on the Races & Classes row that belong
+to the class half. The race half's leftovers (Gaunt, the racial ability *mechanics*, Multi/Part/Trace
+Race) are all waiting on the developer, so they stay where they are.
+
+**What his sheet actually does, found by reading it rather than assuming.**
+`setClassSkillLists` (sheet-worker.js:57903) gives a class its whole progression at once, each skill
+tagged with the title it arrives at, and `setFinalClassSkills` (63177) writes **all fifteen titles**
+onto the sheet at creation. Only the first title's skills get a live ability and chance; every later
+title's are written with `_ability`=0 and `_chance`=0 (63292 onward). They are on the sheet, and they
+do not work yet. A later title's skills come alive on reaching that title: `handleLevelTitle` (66058)
+asks `getTitleToAcquireSkillsByGoal` (92462) which title a goal buys, and its answer is the plain
+title boundary — goal 0 → title 1, 3 → 2, up to 42 → 15. **Reaching title N is exactly when title N's
+skills are acquired**, so granting on the title is his rule and not a simplification of it.
+
+**Decisions:**
+- *Class skills are granted automatically on reaching the title* (the user's call, asked this pass).
+  `module/class-advancement.mjs` watches the character's title, a dual-classed character's per-class
+  title, and a class arriving on an actor, and creates every entitled skill the character does not
+  already hold. Bonuses come from the same `getClassSkillBonuses` character generation uses, so a
+  skill granted at title 7 is built exactly like one the character started with.
+- *A grant never takes anything away.* It never removes a skill, never touches one already held
+  (whoever added it), and never grants past the class's own list. A skill the campaign's switches
+  disallow is skipped and named, not forced on: the Game Master turned it off deliberately.
+- *Slots are not policed by the grant.* His own sheet marks the excess "REMOVED" rather than refusing
+  the title, and the slot panel already reports an overrun.
+- *A class skill above the character's title is refused on the roll*, not hidden — his
+  `handleHighTitleClassSkillRoll` (64169), "this skill cannot be used before <name> title", by title
+  NAME. This also closes the second of the two per-skill flags left open on the Skills row (his
+  2026-09-17 answer on item 19, "cannot be used non-acquired"): `acquiredAtTitle` was already on the
+  skill schema and read by nothing. It is read now.
+- *A class's armour and weapon usage are shown, never enforced.* His sheet carries both as text and
+  displays them (51018-51019, 51297-51298) and never compares them against what the character wears.
+  Deciding whether a suit is "Leather or less" would mean inventing a comparison he does not make,
+  against strings in 40-odd shapes; the Player's Guide's cost for breaking the rule is the Game
+  Master's to apply. Displayed on the Skills tab beside the progression.
+- *An availability override on a base class covers its paths* (the user's call). A class with a
+  choice is one document per path, so forbidding `class:Elementalist` would otherwise forbid nothing
+  at all, six documents being named something else. `getOverrideKeys` returns the path's own key
+  first and the base class's second, so one path can still be allowed out of a class otherwise
+  switched off. The base class comes from the document's `baseClass` field, or the name before the
+  bracket for a path a Game Master authored by hand.
+
+**Corrected:** the sheet's class-progression panel read `advancement.classSkills`, the per-title
+text, and carried a comment saying his sheet-worker held no per-title skills. It does, and
+`classSkillList` is where the extraction puts them, so every class has a progression to show rather
+than the handful authored from his Word templates. The panel now shows every title that brings
+skills, marks the ones reached, and renders one block per class for a dual-classed character.
+`tools/sheet-preview.html` no longer duplicates the panel logic; it calls the real rule.
+
+**Verified:** derivation 347 (22 new), availability 46 (7 new), combat 406, creature 140 and
+character generation 46 unchanged; 33 modules parse. The preview renders a real Elemental
+Dancer(Water)'s fifteen titles with his own title names and core marks, and its usage line.
+**Not verified:** anything needing a running Foundry V14 — the three hooks, the grant's
+`createEmbeddedDocuments`, the notifications, and the refused roll.

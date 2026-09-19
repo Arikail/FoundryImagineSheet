@@ -23,6 +23,8 @@ import {
 } from "../combat/combat-rules.mjs";
 import { getSlotAllowance } from "../skills-rules.mjs";
 import { combineHalfRace, getHalfRaceName, isClassBlockedForRaces, canRacesBreed } from "../race-rules.mjs";
+import { buildClassProgression, getClassSkillsToGrant, getClassUsageRestrictions,
+         checkClassSkillTitle } from "../class-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -426,6 +428,16 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		return tmpout;
 	}
 
+	// This is the function which reads a title's name off a class. The lookup lives on the class's
+	// data model (item-class.mjs, getTitleName), and older code reached it through the item, so
+	// both are tried -- and a class carrying neither answers with no name rather than throwing.
+	static getClassTitleName(tmpclassitem, tmptitle) {
+		if (!tmpclassitem) { return ""; }
+		if (tmpclassitem.system?.getTitleName) { return tmpclassitem.system.getTitleName(tmptitle) || ""; }
+		if (tmpclassitem.getTitleName) { return tmpclassitem.getTitleName(tmptitle) || ""; }
+		return "";
+	}
+
 	// This is the function which gives one class's own title on this character.
 	//
 	// A dual-classed character advances each class separately, so the title belongs with the
@@ -758,6 +770,47 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 		this.identity.dualClassIssues = this._getDualClassIssues();
 		this.identity.raceIssues = this._getRaceIssues();
+		this._prepareClassProgression();
+	}
+
+	// @MARKER CLASS PROGRESSION
+	// This is the function which works out what each class has given this character so far and
+	// what it still owes -- his whole skill progression laid out against the title reached.
+	//
+	// "Owed" is what the title entitles the character to and the character does not hold. Ordinarily
+	// it is empty, because the grant runs whenever the title changes (grantClassSkills on the actor).
+	// It is derived all the same, so a character imported from elsewhere, or one whose grant was
+	// refused because the content was switched off, shows the gap on the sheet rather than hiding it.
+	//
+	// A race that cannot cast takes the no-casting skill wherever a class offers the pair, so the
+	// disability is read once here and handed to every call below.
+	_prepareClassProgression() {
+		this.identity.cannotCast = (this.identity.race?.disabilities ?? []).includes("Cannot Cast Spells");
+
+		var tmpheld = [];
+		if (this.parent?.items) {
+			tmpheld = this.parent.items.filter(tmpitem => tmpitem.type == "skill").map(tmpitem => tmpitem.name);
+		}
+
+		this.identity.classProgression = this.classItems.map(tmpclass => {
+			var tmptitle = this._getClassTitle(tmpclass);
+			return {
+				id:    tmpclass.id,
+				name:  tmpclass.name,
+				title: tmptitle,
+				// The title NAME is added here rather than in the rules module, which knows nothing
+				// of items: it is the class item's own classtitledict lookup.
+				rows:  buildClassProgression(tmpclass.system, tmptitle, this.identity.cannotCast)
+				           .map(tmprow => ({ ...tmprow,
+				                             titleName: ImagineCharacterData.getClassTitleName(tmpclass, tmprow.title) })),
+				owed:  getClassSkillsToGrant(tmpclass.system, tmptitle, this.identity.cannotCast, tmpheld)
+			};
+		});
+		this.identity.classSkillsOwed = this.identity.classProgression
+			.reduce((tmptotal, tmpclass) => tmptotal + tmpclass.owed.length, 0);
+
+		// Shown, never enforced -- see getClassUsageRestrictions on why his sheet does the same.
+		this.identity.classUsage = getClassUsageRestrictions(this.classItems);
 	}
 
 	// This is the function which lists what is wrong with the character's race against the rest
@@ -1114,6 +1167,19 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		var tmpactor = this.parent;
 		if (!tmpactor || !tmpactor.items) { return; }
 
+		// The title a class skill's gate is measured against. A dual-classed character is measured
+		// against whichever class has climbed highest: the skill was granted by one of the two, and
+		// the port does not record which, so the generous reading is the safe one -- it can only
+		// fail to gate a skill, never refuse one the character has genuinely earned.
+		var tmpgatetitle = 0;
+		var tmpgatename = "";
+		for (const tmpclass of this.classItems) {
+			var tmpclasstitle = this._getClassTitle(tmpclass);
+			if (tmpclasstitle <= tmpgatetitle) { continue; }
+			tmpgatetitle = tmpclasstitle;
+			tmpgatename = tmpclass.name;
+		}
+
 		for (const tmpitem of tmpactor.items) {
 			if (tmpitem.type != "skill") { continue; }
 			var tmpskill = tmpitem.system;
@@ -1121,6 +1187,16 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			var tmpcombined = this._getCombinedAttributes(tmpskill.attr1, tmpskill.attr2);
 			tmpskill.combinedAttributes = tmpcombined;
 			tmpskill.baseChance = (tmpcombined - tmpskill.skillRating) * 5;
+
+			// @MARKER TITLE GATE
+			// A class skill held but not yet reached -- his "this skill cannot be used before
+			// <name> title". It stays on the sheet, with its chance shown, and the roll refuses.
+			var tmpgateclass = this.classItems.find(tmpclass => tmpclass.name == tmpgatename);
+			var tmptitlename = ImagineCharacterData.getClassTitleName(tmpgateclass,
+				parseInt(tmpskill.acquiredAtTitle) || 0);
+			var tmpgate = checkClassSkillTitle(tmpskill.acquiredAtTitle, tmpgatetitle, tmptitlename);
+			tmpskill.usableByTitle = tmpgate.usable;
+			tmpskill.titleGateReason = tmpgate.reason;
 
 			if (tmpskill.isCommon) {
 				tmpskill.totalChance = tmpskill.baseChance + tmpskill.misc;
