@@ -955,3 +955,32 @@ always takes the **second** race's bonus rather than the better one, and a blank
 at titles 11-12 adds both races' maximums and then immediately overwrites the sum with the first
 race's alone, before halving. So it comes out as half the first race's maximum rather than the
 average of the two. The port has no title-Endurance roll yet, so nothing is affected here.
+
+## 33. Class paths: two small slips around the choices made when a class is taken
+
+**Status:** open · **Severity:** minor; the port works around both
+
+The port now builds the classes whose skills depend on a choice as one document per path, all
+from your code. Every class's per-title skills come from `setClassSkillLists` (57903), and the
+five classes `checkClassQualification` answers inline from its own rows (50885). That covers
+Elemental Dancer's six elements, Elementalist and Summoner's Call of Life / Call of Death,
+Innominate's Detect Evil / Detect Good, Inquisitor's Bless / Blasphemy, and the Knights'
+Standard / Templar. Two things came up:
+
+1. **Innominate's Detect Good path can never get its own alignment.** In `getAlignRequirements`
+   (51258-51265) both branches test `goodorevilselect=="Detect Evil"`:
+   ```
+   if (goodorevilselect=="Detect Evil") { ...Good (Active), Fanatical Good (Active) }
+   else if (goodorevilselect=="Detect Evil") { ...Evil (Active), Fanatical Evil (Active) }   <- never reached
+   ```
+   So choosing Detect Good still demands a Good alignment. The port reads the evident intent:
+   Detect Good is the evil path, requiring Evil (Active) or Fanatical Evil (Active).
+2. **The Knight variant can never be chosen.** `setClassSkillLists` gives Knight and Knight(Dark) a
+   Templar variant (Shield Knowledge in place of Stun, Fearless in place of Meditate), but
+   `knight_choice_sheet` is only ever set to `"knight_choice_none"` (34834, 50882), so the select is
+   never shown. The port offers both variants: "Knight" and "Knight(Templar)", "Knight(Dark)" and
+   "Knight(Dark Templar)". Say if the Templar is retired and should go.
+
+**Also worth knowing:** your data now builds Elemental Dancer directly from the inline row, so the
+entry hand-authored from your Word template is no longer used. Where the template and your code
+differ, your code is what the port now shows.

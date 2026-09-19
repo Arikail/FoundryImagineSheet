@@ -82,6 +82,11 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.weapons = ImagineCharacterSheet.#buildWeaponRows(this.document);
 		tmpcontext.handednessChoices =
 			ImagineCharacterSheet.#buildHandednessChoices(this.document.system.physical.handedness);
+		// A GME picks its attack chart outright; the same selected-flag list the handedness
+		// dropdown uses, so it renders the same way everywhere.
+		tmpcontext.chosenAttackSkillChoices = ["Beginner", "Novice", "Intermediate", "Advanced", "Expert", "Master"]
+			.map(tmpskill => ({ value: tmpskill, label: tmpskill,
+			                    selected: tmpskill == this.document.system.combat.chosenAttackSkill }));
 		tmpcontext.lore = ImagineCharacterSheet.#buildLorePanel(this.document.system);
 		tmpcontext.languages = ImagineCharacterSheet.#buildLanguageRows(this.document.system);
 		tmpcontext.classProgress = ImagineCharacterSheet.#buildClassProgress(this.document.system);

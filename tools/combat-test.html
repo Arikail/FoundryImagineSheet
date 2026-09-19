@@ -93,9 +93,12 @@ check("no progression -> None", R.getAttackSkillForTitle("", 5), "None");
 check("Weapon Lore reads one step up", R.getNextAttackSkill("Novice"), "Intermediate");
 check("one step above Grandmaster is Grandmaster", R.getNextAttackSkill("Grandmaster"), "Grandmaster");
 
-// every class in the content should resolve to a real chart
+// every class in the content should resolve to a real chart -- except a non-classed one (GME),
+// whose chart is picked by the player rather than read from a progression, so its bare
+// "Beginner" is expected not to parse.
 const classes = await (await fetch("../src/packs/documents/classes.json")).json();
-const unresolved = classes.filter(c => c.system.attackSkillList && R.getAttackSkillForTitle(c.system.attackSkillList, 20) === "None")
+const unresolved = classes.filter(c => !c.system.nonClassed)
+                          .filter(c => c.system.attackSkillList && R.getAttackSkillForTitle(c.system.attackSkillList, 20) === "None")
                           .map(c => `${c.name}: ${c.system.attackSkillList}`);
 check("every class's attack progression parses to a real chart", unresolved, []);
 

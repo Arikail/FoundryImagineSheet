@@ -139,8 +139,8 @@ const traitCtx = {
 // populated, so this is the only real document that exercises that field.
 const ATTRIBUTE_KEYS = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"];
 const classDocs = await (await fetch("../src/packs/documents/classes.json")).json();
-const classSource = classDocs.find(d => d.name === "Elemental Dancer");
-if (!classSource) { throw new Error("missing class in the extracted content: Elemental Dancer"); }
+const classSource = classDocs.find(d => d.name === "Elemental Dancer(Water)");
+if (!classSource) { throw new Error("missing class in the extracted content: Elemental Dancer(Water)"); }
 const classItem = { name: classSource.name, img: "", system: structuredClone(classSource.system) };
 const classSys = classItem.system;
 const classCtx = {

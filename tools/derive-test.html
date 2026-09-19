@@ -1160,6 +1160,22 @@ const barredClass = { ...fighterClass, name: "Knightly", id: "k1",
 check("a class the race is barred from is reported",
 	makeCharacter({}, 5, [makeRace(), barredClass]).identity.raceIssues, ["Testfolk is usually not a Knightly."]);
 
+// --- GME: his "0-title non-classed" Game Master Extra ---------------------------------------
+const gmeClass = { ...fighterClass, name: "GME", id: "g1",
+	system: { ...fighterClass.system, attackSkillList: "Beginner", nonClassed: true, blockedRaces: [] } };
+const gme = makeCharacter({}, 0, [makeRace(), gmeClass]);
+check("a GME is marked non-classed", gme.identity.isNonClassed, true);
+check("a GME fights on the chart picked for it, Beginner by default -- not 'None' from his bare list",
+	gme.combat.attackSkill, "Beginner");
+const gmePicked = makeCharacter({}, 0, [makeRace(), gmeClass]);
+gmePicked.combat.chosenAttackSkill = "Expert";
+gmePicked.prepareDerivedData();
+check("...and on a picked one", gmePicked.combat.attackSkill, "Expert");
+check("a GME takes no racial first-title Endurance bonus (his 'GMEs (0 title) get no 1st title endurance modifier')",
+	gme.characteristics.endurance.raceMod, 0);
+check("an ordinary class still takes it",
+	makeCharacter({}, 1, [makeRace(), fighterClass]).characteristics.endurance.raceMod, 4);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

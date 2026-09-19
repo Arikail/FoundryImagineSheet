@@ -55,6 +55,17 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 				// his Word class templates (src/packs/manual/). Angle-bracketed entries such as
 				// "<1st Kinesis>" are placeholders his templates resolve from a per-class table.
 				classSkills: new fields.ArrayField(new fields.StringField(), { initial: [] }),
+				// The same progression one skill at a time, from his setClassSkillLists: the title a
+				// skill arrives at, whether it is a CORE skill (the class's +30%), and whether it is
+				// only for a race that can cast ("caster") or cannot ("nonCaster") -- a few casting
+				// classes give a race that cannot cast a different skill in that slot.
+				classSkillList: new fields.ArrayField(new fields.SchemaField({
+					title:    new fields.NumberField({ required: true, integer: true, initial: 1, min: 0 }),
+					name:     new fields.StringField({ required: true, initial: "" }),
+					core:     new fields.BooleanField({ required: true, initial: false }),
+					requires: new fields.StringField({ required: true, initial: "",
+						choices: { "": "Any race", caster: "Casting races", nonCaster: "No-casting races" } })
+				})),
 				goalAttr1:  new fields.StringField({ required: true, initial: "" }),
 				goalAttr2:  new fields.StringField({ required: true, initial: "" })
 			}),
@@ -150,6 +161,19 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// barred races rather than allowed ones: empty, as Warrior's is, means any race. A
 			// half race is barred only if BOTH its races are (setClassDetails, sheet-worker.js:51163).
 			blockedRaces: new fields.ArrayField(new fields.StringField()),
+
+			// @MARKER PATHS
+			// A class with a choice made when it is taken -- Elementalist's Call of Life or Call of
+			// Death, Elemental Dancer's element, and so on -- is one document per path. baseClass is
+			// the class his tables know it by ("Elementalist"); path is the choice ("Call of Death"),
+			// blank for a class with no choice.
+			baseClass: new fields.StringField({ required: true, initial: "" }),
+			path:      new fields.StringField({ required: true, initial: "" }),
+
+			// A "class" that is not one. His GME (Game Master Extra) is a 0-title non-classed
+			// character: no class skills, no racial title-1 Endurance bonus, and an attack chart
+			// picked outright (his gme_all_attack_skills_select) rather than earned by title.
+			nonClassed: new fields.BooleanField({ required: true, initial: false }),
 
 			// @MARKER PROVENANCE
 			sourcebook:  new fields.StringField({ required: true, initial: "" }),

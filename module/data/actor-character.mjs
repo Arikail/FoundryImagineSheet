@@ -236,6 +236,12 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				initiativeMisc: new fields.NumberField({ required: true, integer: true, initial: 0 }),
 				skillMisc:      new fields.NumberField({ required: true, integer: true, initial: 0 }),
 
+				// The attack chart a GME fights on. A GME earns no chart by title -- his sheet has the
+				// player pick one outright (gme_all_attack_skills_select, Beginner by default) -- so it
+				// is stored. Read only while the character holds a non-classed class.
+				chosenAttackSkill: new fields.StringField({ required: true, initial: "Beginner",
+					choices: ["Beginner", "Novice", "Intermediate", "Advanced", "Expert", "Master"] }),
+
 				// @MARKER PAIN THRESHOLD
 				// A SIGNED modifier on every point of damage coming in, applied before armour
 				// and before anything magical takes its share. His own note beside the field
@@ -534,10 +540,14 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// charts -- Player's Guide, Dual Class, Experience and Advancement rule 5, "Attack skill is
 		// determined by the greater of the two values" -- and each class is read at ITS OWN title,
 		// since the two advance separately.
+		//
+		// A GME's chart is not earned: his sheet sets it straight from the player's pick
+		// (setFinalClass, sheet-worker.js:51283), so a non-classed class reads the stored choice.
 		this.combat.attackSkill = "None";
 		for (const tmpclass of this.classItems) {
-			var tmpclassskill = getAttackSkillForTitle(tmpclass.system.attackSkillList,
-				this._getClassTitle(tmpclass));
+			var tmpclassskill = tmpclass.system.nonClassed
+				? (this.combat.chosenAttackSkill || "Beginner")
+				: getAttackSkillForTitle(tmpclass.system.attackSkillList, this._getClassTitle(tmpclass));
 			this.combat.attackSkill = getBetterAttackSkill(this.combat.attackSkill, tmpclassskill);
 		}
 
@@ -736,6 +746,8 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 			};
 		});
 		this.identity.isDualClass = this.identity.classes.length > 1;
+		// A GME: his "0-title non-classed" character (see nonClassed on the class item).
+		this.identity.isNonClassed = this.classItems.some(tmpclass => tmpclass.system.nonClassed);
 		this.identity.classNames = this.identity.classes.map(c => c.name).join("/");
 
 		// Both classes' progressions have to be paid for out of one Knowledge allowance, which is
@@ -866,7 +878,11 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// original sheet kept it (race_start_end_mod).
 		if (this.raceItem) {
 			var tmpracesys = this.raceItem.system;
-			this.characteristics.endurance.raceMod  = tmpracesys.endurance.startMod;
+			// The starting-Endurance figure is a first-title bonus. A GME never takes a first title, so
+			// his sheet gives it none: "GMEs (0 title) get no 1st title endurance modifier"
+			// (sheet-worker.js:8142).
+			var tmpnonclassed = this.classItems.some(tmpclass => tmpclass.system.nonClassed);
+			this.characteristics.endurance.raceMod  = tmpnonclassed ? 0 : tmpracesys.endurance.startMod;
 			this.characteristics.perception.raceMod = tmpracesys.characteristicMods.perception;
 			this.characteristics.affinity.raceMod   = tmpracesys.characteristicMods.affinity;
 			this.characteristics.fortune.raceMod    = tmpracesys.characteristicMods.fortune;

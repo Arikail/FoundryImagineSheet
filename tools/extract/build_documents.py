@@ -30,6 +30,9 @@ import re
 import sys
 from collections import Counter
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from column_maps import CLASSREQUIREMENTSANDDETAILS  # noqa: E402 -- names the inline class rows too
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAMED = os.path.join(HERE, "..", "..", "src", "packs", "named")
 OUT = os.path.join(HERE, "..", "..", "src", "packs", "documents")
@@ -469,23 +472,38 @@ def build_classes():
     slotsneeded = load_named("classSkillSlots")
     slotsmap = slotsneeded["entries"] if slotsneeded else {}
 
+    # Every class's class skills, title by title, from setClassSkillLists via
+    # extract_combat_tables.py -- see build_class_skills below.
+    skilllists = (load_named("classSkillLists") or {}).get("entries", {})
+
+    # The rows to build from: his dictionary, plus the five classes his checkClassQualification
+    # answers inline before it ever reaches the dictionary (Elemental Dancer, Elementalist,
+    # Summoner, Inquisitor, GME). Those rows have the dictionary's 22 columns, so the dictionary's
+    # own column map names them.
+    rows = dict(details["entries"])
+    for tmpbasename, tmpcells in ((load_named("specialClassRows") or {}).get("entries", {})).items():
+        if tmpbasename in rows:
+            note("special-class-duplicate", "specialClassRows/%s" % tmpbasename,
+                 "also in classRequirementsAndDetails; the inline row is the one his code uses")
+        rows[tmpbasename] = dict(zip(CLASSREQUIREMENTSANDDETAILS, tmpcells))
+
     docs = []
 
-    for tmpname, tmprow in details["entries"].items():
-        if tmpname == "":
+    for tmpbasename, tmprow in rows.items():
+        if tmpbasename == "":
             continue  # the blank key is the "no class" default row
-        where = "classRequirementsAndDetails/%s" % tmpname
+        where = "classRequirementsAndDetails/%s" % tmpbasename
 
         tmptitles = []
-        if tmpname in titlemap:
-            tmptitles = [clean_text(t) for t in titlemap[tmpname].get("titles", []) if clean_text(t)]
+        if tmpbasename in titlemap:
+            tmptitles = [clean_text(t) for t in titlemap[tmpbasename].get("titles", []) if clean_text(t)]
         else:
             note("missing-titles", where, "no entry in classtitledict")
 
         tmpgoal1 = tmpgoal2 = ""
-        if tmpname in goalmap:
-            tmpgoal1 = clean_text(goalmap[tmpname].get("goalAttr1", ""))
-            tmpgoal2 = clean_text(goalmap[tmpname].get("goalAttr2", ""))
+        if tmpbasename in goalmap:
+            tmpgoal1 = clean_text(goalmap[tmpbasename].get("goalAttr1", ""))
+            tmpgoal2 = clean_text(goalmap[tmpbasename].get("goalAttr2", ""))
         else:
             note("missing-goalup", where, "no entry in goalupdict")
 
@@ -499,7 +517,19 @@ def build_classes():
         if not isinstance(tmpqualify, list):
             tmpqualify = []
 
-        docs.append(make_doc(tmpname, "class", {
+        if tmpbasename not in skilllists:
+            note("class-missing-skill-list", where, "no case in setClassSkillLists")
+
+        # One document per path for a class with a choice; one document otherwise.
+        for tmpname, tmppathvar, tmppath in class_paths(tmpbasename):
+          tmpalignment = clean_text(str(tmprow.get("alignRequirements", "Any")))
+          if (tmpbasename, tmppath) in PATH_ALIGNMENTS:
+              tmpalignment = PATH_ALIGNMENTS[(tmpbasename, tmppath)]
+          if tmpalignment == "@align":
+              note("class-alignment-unresolved", where, "his row defers to getAlignRequirements and no path resolves it")
+              tmpalignment = "Any"
+          tmpskilllist, tmpskillstrings = build_class_skills(skilllists.get(tmpbasename, []), tmppathvar, tmppath)
+          docs.append(make_doc(tmpname, "class", {
             "casting": {
                 "isCaster": to_bool(tmprow.get("isCaster")),
                 "isInvoker": to_bool(tmprow.get("isInvoker")),
@@ -509,12 +539,14 @@ def build_classes():
                 "castingNotes": clean_text(str(tmprow.get("casting", ""))),
             },
             "requirements": {
-                "alignment": clean_text(str(tmprow.get("alignRequirements", "Any"))),
+                "alignment": tmpalignment,
                 "focusAttributes": clean_text(str(tmprow.get("focusAttributes", ""))),
                 "attribQualify": tmpqualify,
             },
             "advancement": {
                 "titles": tmptitles,
+                "classSkills": tmpskillstrings,
+                "classSkillList": tmpskilllist,
                 "goalAttr1": tmpgoal1,
                 "goalAttr2": tmpgoal2,
             },
@@ -523,22 +555,145 @@ def build_classes():
             "weaponUsage": clean_text(str(tmprow.get("weaponUsage", "Any"))),
             "attackSkill": clean_text(str(tmprow.get("attackSkill", ""))),
             "attackSkillList": clean_text(str(tmprow.get("attackSkillList", ""))),
-            "loreAttackTitle": to_number(loremap.get(tmpname, 0), where, "loreAttackTitle"),
-            "weaponLoreTitle": to_number(weaponloremap.get(tmpname, 0), where, "weaponLoreTitle"),
-            "missileLoreTitle": to_number(missileloremap.get(tmpname, 0), where, "missileLoreTitle"),
-            "projectileLoreTitle": to_number(projectileloremap.get(tmpname, 0), where, "projectileLoreTitle"),
-            "secondWeaponKnowTitle": to_number(know2ndmap.get(tmpname, 0), where, "secondWeaponKnowTitle"),
-            "secondWeaponLoreTitle": to_number(lore2ndmap.get(tmpname, 0), where, "secondWeaponLoreTitle"),
-            "multiMissileLoreTitle": to_number(multimissileloremap.get(tmpname, 0), where, "multiMissileLoreTitle"),
-            "skillSlotsNeeded": to_number(slotsmap.get(tmpname, 0), where, "skillSlotsNeeded"),
+            "loreAttackTitle": to_number(loremap.get(tmpbasename, 0), where, "loreAttackTitle"),
+            "weaponLoreTitle": to_number(weaponloremap.get(tmpbasename, 0), where, "weaponLoreTitle"),
+            "missileLoreTitle": to_number(missileloremap.get(tmpbasename, 0), where, "missileLoreTitle"),
+            "projectileLoreTitle": to_number(projectileloremap.get(tmpbasename, 0), where, "projectileLoreTitle"),
+            "secondWeaponKnowTitle": to_number(know2ndmap.get(tmpbasename, 0), where, "secondWeaponKnowTitle"),
+            "secondWeaponLoreTitle": to_number(lore2ndmap.get(tmpbasename, 0), where, "secondWeaponLoreTitle"),
+            "multiMissileLoreTitle": to_number(multimissileloremap.get(tmpbasename, 0), where, "multiMissileLoreTitle"),
+            "skillSlotsNeeded": to_number(slotsmap.get(tmpbasename, 0), where, "skillSlotsNeeded"),
             "classType": clean_text(str(tmprow.get("classType", ""))),
             "description": clean_text(str(tmprow.get("description", ""))),
-            "blockedRaces": [clean_text(r) for r in blockedraces.get(tmpname, [])],
+            "blockedRaces": [clean_text(r) for r in blockedraces.get(tmpbasename, [])],
+            "baseClass": tmpbasename,
+            "path": tmppath or "",
+            "nonClassed": tmpbasename in NON_CLASSED,
         }))
-        if tmpname not in blockedraces:
+        if tmpbasename not in blockedraces:
             note("class-missing-from-table", where, "no entry in classRaceAndDetails; no race is barred")
-    docs.extend(load_manual_classes({d["name"] for d in docs}))
+    # A manual entry is redundant once his data builds the class under its own name or as the
+    # base of its paths -- Elemental Dancer is now built from his inline row, one document per element.
+    docs.extend(load_manual_classes({d["name"] for d in docs} | {d["system"]["baseClass"] for d in docs}))
     return docs
+
+
+# @MARKER CLASS PATHS
+# The classes whose skills or alignment depend on a choice made when the class is taken. Each
+# becomes one document per path, named in his own parenthesised style ("Archer(Arcane)",
+# "Witch(Black)"), so a Game Master can allow or forbid a single path and a compendium lists each.
+# The variable is the one setClassSkillLists and getAlignRequirements test; the options are the
+# ones his sheet's selects offer (ImagineTabbedCharacterSheet.html, around line 32470).
+CLASS_PATHS = {
+    # class               variable          options
+    "Elemental Dancer":   ("dancerelement",  ["Water", "Air", "Earth", "Fire", "Light", "Dark"]),
+    "Elementalist":       ("lifedeath",      ["Call of Life", "Call of Death"]),
+    "Summoner":           ("lifedeath",      ["Call of Life", "Call of Death"]),
+    "Innominate":         ("goodevil",       ["Detect Evil", "Detect Good"]),
+    "Inquisitor":         ("blessblasphemy", ["Bless", "Blasphemy"]),
+    "Knight":             ("knightvariant",  ["Standard", "Templar"]),
+    "Knight(Dark)":       ("knightvariant",  ["Standard", "Templar"]),
+}
+
+# A path whose document is not simply "Class(Option)". The Knights' Standard variant is the
+# ordinary Knight -- nothing in his data names it -- so it keeps the plain name, and his own
+# modifier text calls the dark one's other variant "Dark Templar". NOTE his sheet never shows the
+# variant select at all (knight_choice_sheet is only ever set to "knight_choice_none"), so on his
+# sheet a Templar cannot actually be chosen; UPSTREAM-ISSUES.md item 33.
+PATH_NAMES = {
+    ("Knight", "Standard"):       "Knight",
+    ("Knight", "Templar"):        "Knight(Templar)",
+    ("Knight(Dark)", "Standard"): "Knight(Dark)",
+    ("Knight(Dark)", "Templar"):  "Knight(Dark Templar)",
+}
+
+# The alignment each path requires, from getAlignRequirements (sheet-worker.js:51237). Eight short
+# strings, so transcribed with the line cited rather than walked. A path not listed keeps the
+# alignment on its class row.
+#
+# Innominate's second branch is written `goodorevilselect=="Detect Evil"` a second time, so his
+# "Detect Good" path can never reach its own requirement and falls through to the default, Good.
+# The port takes the evident intent: Detect Good is the evil path. UPSTREAM-ISSUES.md item 33.
+PATH_ALIGNMENTS = {
+    ("Elementalist", "Call of Life"):  "True Neutral or Neutral Good",
+    ("Elementalist", "Call of Death"): "True Neutral or Neutral Evil",
+    ("Summoner", "Call of Life"):      "Any Non-Evil, Passive",
+    ("Summoner", "Call of Death"):     "Any Evil, Passive",
+    ("Innominate", "Detect Evil"):     "Good (Active), Fanatical Good (Active)",
+    ("Innominate", "Detect Good"):     "Evil (Active), Fanatical Evil (Active)",
+    ("Inquisitor", "Bless"):           "Fanatical Good",
+    ("Inquisitor", "Blasphemy"):       "Fanatical Evil",
+}
+
+# Classes that are not a class at all. GME, the Game Master Extra, is "0-title non-classed" in his
+# words (UPSTREAM-ISSUES.md item 22): any social and racial skills, no class skills, no racial
+# title-1 bonuses, and an attack chart picked outright rather than earned.
+NON_CLASSED = {"GME"}
+
+
+def class_paths(tmpbasename):
+    """[(document name, path variable, path option)] -- a single entry for a class with no choice."""
+    if tmpbasename not in CLASS_PATHS:
+        return [(tmpbasename, None, None)]
+    tmpvar, tmpoptions = CLASS_PATHS[tmpbasename]
+    return [(PATH_NAMES.get((tmpbasename, tmpoption), "%s(%s)" % (tmpbasename, tmpoption)), tmpvar, tmpoption)
+            for tmpoption in tmpoptions]
+
+
+def build_class_skills(tmpentries, tmppathvar, tmppath):
+    """
+    One path's class skills, out of his setClassSkillLists entries.
+
+    An entry conditioned on the path variable is kept only if it matches this path. An entry whose
+    name IS the path choice (lifedeath, goodevil, blessblasphemy) takes the path's option as its
+    name. An entry conditioned on `nocast` -- a race that cannot cast -- is kept either way, marked
+    requires "caster" or "nonCaster", because which one applies depends on the character's race.
+
+    Returns (structured list, per-title strings). The strings are what the sheet's class-progression
+    rows show: a title's skills comma-joined, and where a slot differs for races that cannot cast,
+    "Scroll Knowledge (no-casting races: Hermetic Lore)".
+    """
+    tmplist = []
+    for tmpentry in tmpentries:
+        tmpkeep = True
+        tmprequires = ""
+        for tmpvar, tmpval in tmpentry.get("when", {}).items():
+            if tmpvar == "nocast":
+                tmprequires = "nonCaster" if tmpval == "yes" else "caster"
+            elif tmpvar == tmppathvar:
+                if tmpval.startswith("!"):
+                    tmpkeep = tmppath not in tmpval[1:].split("|")
+                else:
+                    tmpkeep = (tmpval == tmppath)
+            else:
+                note("class-skill-unknown-condition", "setClassSkillLists",
+                     "condition %s=%s not resolved" % (tmpvar, tmpval))
+        if not tmpkeep:
+            continue
+        tmpskill = tmpentry.get("name")
+        if tmpskill is None:
+            if tmpentry.get("choice") != tmppathvar or not tmppath:
+                note("class-skill-unresolved-choice", "setClassSkillLists",
+                     "a skill named by %s with no path to resolve it" % tmpentry.get("choice"))
+                continue
+            tmpskill = tmppath
+        tmplist.append({"slot": tmpentry["slot"], "title": tmpentry["title"], "name": clean_text(tmpskill),
+                        "core": bool(tmpentry.get("core")), "requires": tmprequires})
+
+    tmpstrings = []
+    for tmptitle in range(1, max([e["title"] for e in tmplist], default=0) + 1):
+        tmpparts = []
+        for tmpslot in sorted(set(e["slot"] for e in tmplist if e["title"] == tmptitle)):
+            tmpinslot = [e for e in tmplist if e["slot"] == tmpslot]
+            tmptext = ", ".join(e["name"] for e in tmpinslot if e["requires"] != "nonCaster")
+            tmpnoncast = [e["name"] for e in tmpinslot if e["requires"] == "nonCaster"]
+            if tmpnoncast:
+                tmptext = "%s (no-casting races: %s)" % (tmptext, ", ".join(tmpnoncast))
+            tmpparts.append(tmptext)
+        tmpstrings.append(", ".join(tmpparts))
+    for tmpentry in tmplist:
+        del tmpentry["slot"]
+    return tmplist, tmpstrings
 
 
 def load_manual_classes(tmpbuilt):

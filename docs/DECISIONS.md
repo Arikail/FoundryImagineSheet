@@ -2279,3 +2279,55 @@ combat 406, creature 140, availability 39, 28 modules parse. In `tools/sheet-pre
 real Human(Civilized:Village)|Elf(High) Warrior/Mage shows no race issues, a Race panel with
 Listen at the Elf's +20% rather than the Human's +10%, Detect Magic and Sing from the Elf, and the
 Human's ages (18–24, maximum 100, not the Elf's 1000).
+
+### 2026-09-18 — Every class's skills by title, class paths as documents, and GME
+
+**What was found.** His `setClassSkillLists` (sheet-worker.js:57903-62868) carries **every class's
+class skills, title by title**: the slot, the title a skill arrives at, whether it is CORE, and 82
+conditional lines. The port had said his data held no per-title skills because `classtitledict`
+does not, and only Elemental Dancer showed any (hand-authored from a Word template). Also found:
+`checkClassQualification` answers five classes from **inline rows** before it ever reaches his
+class dictionary (Elemental Dancer, Elementalist, Summoner, Inquisitor, GME). They have the
+dictionary's 22 columns, and that is why those five first looked missing.
+
+**Decision:**
+- *Generated, as everything else is.* `class_skill_lists()` walks the switch, tracking the if-chains
+  around each line. `special_class_rows()` parses the five inline rows, named by the dictionary's
+  own column map. 92 classes, 4,360 skill lines.
+- *A class with a choice is one document per path*, the user's call over a choice field. Each path
+  resolves its own skill list and its alignment (his `getAlignRequirements`). The paths are
+  Elemental Dancer x6 (element), Elementalist and Summoner x2 (Call of Life/Death), Innominate x2
+  (Detect Evil/Good), Inquisitor x2 (Bless/Blasphemy), and Knight and Knight(Dark) x2
+  (Standard/Templar). They are named in his parenthesised style: "Elementalist(Call of Death)",
+  "Inquisitor(Bless)". The Knights' Standard keeps the plain name, since nothing in his data names
+  it, and the dark one's other variant is "Knight(Dark Templar)", his own wording. `baseClass`
+  and `path` on the class item record what his tables key by and which choice this is.
+- *A race that cannot cast keeps both options.* 24 slots across 24 casting classes give such a race
+  a different skill. That depends on the character's race, not the class, so each entry is marked
+  `requires: "caster"` or `"nonCaster"`. The per-title text shows it as "Scroll Knowledge
+  (no-casting races: Hermetic Lore)". Picking the right one belongs to character generation.
+- *GME is a class document flagged `nonClassed`*, because his sheet offers it in the class list.
+  Three of his GME rules now apply:
+  - It fights on a chart picked outright: a new `combat.chosenAttackSkill`, Beginner by default,
+    with a dropdown on the Combat tab. This is his `gme_all_attack_skills_select`.
+  - It has no racial first-title Endurance bonus ("GMEs (0 title) get no 1st title endurance
+    modifier", 8142).
+  - It has no class skills.
+  His other GME rules are already true of the port or belong to character generation: title 0,
+  no class slots, and any racial or social skill.
+- *His two slips are not reproduced* (`UPSTREAM-ISSUES.md` item 33). Innominate's second alignment
+  branch retests "Detect Evil", and the Knight variant select is never shown.
+- *The hand-authored Elemental Dancer is now redundant*, since his data builds it, and the pipeline
+  reports it as such. Under the standing rule, his code wins over the Word template.
+
+**Effect on content:** 88 class documents become 103. "Elemental Dancer", "Innominate" and the
+unsplit Elementalist-type classes are replaced by their paths. The runtime importer matches by
+name, so an old document in an existing world's compendium stays until removed. An availability
+override keyed `class:Elementalist` does not reach the paths, so each path is its own key.
+
+**Verified:** `build_documents.py --check` shows no class issues except the now-redundant manual
+entry. Derivation 325 (5 new, GME), combat 406, creature 140, availability 39, 28 modules parse.
+The combat suite's "every class parses to a real chart" check now skips a non-classed class,
+whose bare "Beginner" is meant not to parse. In the preview, the real Warrior's Skills tab now shows
+its progression from his data, and Elemental Dancer(Water) at title 7 shows "Balanced Mind, Call of
+Water, Elemental Knowledge, Mind Dance, Kinetics Lore".

@@ -363,7 +363,7 @@ document.getElementById("chat").innerHTML = await render("../templates/chat/atta
 // The point of using the REAL document rather than a hand-typed stub is exactly what the note
 // asked for: proving getClassSkills/getTitleName's 1-based indexing lines up against what
 // build_documents.py actually wrote for this class, not against an assumption of it.
-const edClass = byName(classes, "Elemental Dancer");
+const edClass = byName(classes, "Elemental Dancer(Water)");
 edClass.system.getTitleName = function (t) {
 	const i = parseInt(t) - 1; const a = this.advancement.titles;
 	return (i < 0 || i >= a.length) ? "" : a[i];
@@ -420,10 +420,19 @@ const edCheckEl = document.getElementById("ed-check");
 edCheckEl.innerHTML = await render("../templates/actor/tab-skills.hbs", edCtx);
 edCheckEl.querySelector(".tab").classList.add("active"); // .tab defaults to display:none, see above
 
-// The Warrior fixture above must show nothing here -- his data carries no per-title skills at
-// all, so a class with an empty classSkills array is the other half of this check.
+// Every class now carries its progression, generated from his setClassSkillLists -- the claim
+// this check used to make, that his data held no per-title skills, looked in the wrong place.
+// The Warrior's title 12 is a real row of his: Convince.
+classItem.system.getTitleName = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.titles;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
+classItem.system.getClassSkills = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.classSkills;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
 const warriorProgress = buildClassProgress(classItem, character.identity.title);
-console.assert(warriorProgress.show === false, "Warrior should show no class progression panel");
+console.assert(warriorProgress.show === true, "Warrior should show its class progression now");
 
 // --- lore panel and Projectile Lore check: a real Archer at title 12 -----------------------
 // The Warrior above holds Weapon and Missile Lore but never Projectile Lore (weaponLoreTitle

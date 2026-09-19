@@ -247,6 +247,119 @@ def class_skill_slots_needed():
     return slots, start
 
 
+def class_skill_lists():
+    """
+    Every class's class skills, title by title, from setClassSkillLists (sheet-worker.js:57903).
+
+    The board used to say his data carries no skills per title, because classtitledict does not.
+    This function does, for every class: a switch on the class with one line per skill slot,
+
+        setAttrs({selected_tmp_class_skill_7_level: 2 }); setAttrs({selected_tmp_class_skill_7_name: "Levitation" });
+        setAttrs({selected_tmp_class_skill_7_core: "" });
+
+    giving the slot, the title it arrives at, the skill, and whether it is a CORE skill (the class's
+    +30%). Some slots depend on something besides the class, written as if-chains around the line:
+
+        nocast           a race that cannot cast gets a different skill in that slot
+        dancerelement    Elemental Dancer's element: Water, Air, Earth, Fire, Light or Dark
+        knightvariant    Knight: Standard or Templar
+        lifedeath        Elementalist and Summoner: the skill IS the choice -- "Call of Life" or
+        goodevil         "Call of Death"; Innominate "Detect Evil" or "Detect Good"; Inquisitor
+        blessblasphemy   "Bless" or "Blasphemy". Written as a bare variable in the name slot.
+
+    Each entry records the condition it sits under as `when`: {variable: value} for an if or
+    else-if, {variable: "!v1|v2"} for the else. A name written as a variable is recorded as
+    `choice` instead of `name`. Resolving these for one path is the document builder's job.
+    """
+    start, body = function_body("setClassSkillLists")
+    skills = {}
+    labels = []
+    in_class_switch = False
+    stack = []          # the conditions currently open, innermost last: [var, value, seen-values]
+    pat = re.compile(r'selected_tmp_class_skill_(\d+)_level:\s*(\d+)\s*\}\);\s*setAttrs\(\{selected_tmp_class_skill_\d+_name:\s*'
+                     r'(?:"([^"]*)"|(\w+))\s*\}\);\s*setAttrs\(\{selected_tmp_class_skill_\d+_core:\s*"([^"]*)"')
+    for line in body:
+        if not in_class_switch:
+            if re.search(r'switch\s*\(\s*tmpclass\s*\)', line):
+                in_class_switch = True
+            continue
+        found = re.findall(r'case\s+"([^"]*)"\s*:', line)
+        if found:
+            if labels and all(lab in skills for lab in labels):
+                labels = []
+            labels = [lab for lab in labels] + found
+            for lab in found:
+                skills.setdefault(lab, [])
+            stack = []
+            continue
+        m_if = re.search(r'^\s*if\s*\(\s*(\w+)\s*==\s*"([^"]*)"\s*\)\s*\{', line)
+        m_elif = re.search(r'^\s*\}\s*else\s+if\s*\(\s*(\w+)\s*==\s*"([^"]*)"\s*\)\s*\{', line)
+        m_else = re.search(r'^\s*\}\s*else\s*\{', line)
+        if m_elif and stack:
+            stack[-1][2].append(stack[-1][1])
+            stack[-1][1] = m_elif.group(2)
+            continue
+        if m_else and stack:
+            stack[-1][2].append(stack[-1][1])
+            stack[-1][1] = "!" + "|".join(stack[-1][2])
+            continue
+        if m_if:
+            stack.append([m_if.group(1), m_if.group(2), []])
+            continue
+        m = pat.search(line)
+        if m:
+            entry = {"slot": int(m.group(1)), "title": int(m.group(2)), "core": m.group(5) == "CORE"}
+            if m.group(3) is not None:
+                entry["name"] = m.group(3)
+            else:
+                entry["choice"] = m.group(4)
+            if stack:
+                entry["when"] = {s[0]: s[1] for s in stack}
+            for lab in labels:
+                skills[lab].append(dict(entry))
+            continue
+        if re.match(r'^\s*\}\s*$', line) and stack:
+            stack.pop()
+            continue
+        if re.search(r'\bbreak\s*;', line):
+            labels = []
+            stack = []
+    skills.pop("", None)
+    return skills, start
+
+
+def special_class_rows():
+    """
+    The five classes his class dictionary does not hold, from checkClassQualification
+    (sheet-worker.js:50811).
+
+    Elemental Dancer, Elementalist, Summoner, Inquisitor and GME are answered by a switch BEFORE
+    classRequirementsAndDetails is consulted, each case assigning its whole row inline:
+
+        case "Elementalist":
+            classDetails=["no","no",0,0,0,"Beginner", ... ,tmpalignrequirements, ... ,false];
+
+    The rows have the same 22 columns as the dictionary, so the dictionary's column map applies.
+    This is why the port first reported these five as missing (UPSTREAM-ISSUES.md item 22): it only
+    looked in the dictionary. tmpalignrequirements is the one value that is not a literal -- it
+    comes from getAlignRequirements, which depends on the class's path choice -- and is kept as
+    the marker "@align" for the document builder to resolve.
+    """
+    start, body = function_body("checkClassQualification")
+    rows = {}
+    label = None
+    for line in body:
+        m = re.search(r'case\s+"([^"]+)"\s*:', line)
+        if m:
+            label = m.group(1)
+        m = re.search(r'classDetails\s*=\s*(\[.*\])\s*;?\s*$', line)
+        if m and label:
+            text = m.group(1).replace("tmpalignrequirements", '"@align"')
+            rows[label] = json.loads(text)
+            label = None
+    return rows, start
+
+
 def race_ages():
     """
     Each race's starting-age range and maximum age, from getAge (sheet-worker.js:38995).
@@ -1175,6 +1288,38 @@ def main():
             "entries": ages
         }, fh, indent=2, ensure_ascii=False)
     print("race ages          %d races" % len(ages))
+
+    # Every class's class skills by title. A class whose list came out empty, or whose slots are
+    # not numbered 1..n without a gap once its conditions are counted, is reported.
+    class_skills, class_skills_line = class_skill_lists()
+    for tmpname, tmplist in class_skills.items():
+        if not tmplist:
+            print("  WARNING: setClassSkillLists case %s has no skills" % tmpname)
+            continue
+        tmpslots = sorted(set(e["slot"] for e in tmplist))
+        if tmpslots != list(range(1, len(tmpslots) + 1)):
+            print("  WARNING: setClassSkillLists case %s skips slot numbers" % tmpname)
+    with open(os.path.join(NAMED, "classSkillLists.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js", "function": "setClassSkillLists",
+                        "line": class_skills_line},
+            "entries": class_skills
+        }, fh, indent=2, ensure_ascii=False)
+    special_rows, special_line = special_class_rows()
+    for tmpname, tmprow in special_rows.items():
+        if len(tmprow) != 22:
+            print("  WARNING: inline class row %s has %d columns, not 22" % (tmpname, len(tmprow)))
+    with open(os.path.join(NAMED, "specialClassRows.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js", "function": "checkClassQualification",
+                        "line": special_line},
+            "entries": special_rows
+        }, fh, indent=2, ensure_ascii=False)
+    print("special classes    %d inline rows (%s)" % (len(special_rows), ", ".join(special_rows)))
+
+    print("class skill lists  %d classes, %d skill lines (%d conditional)"
+          % (len(class_skills), sum(len(v) for v in class_skills.values()),
+             sum(1 for v in class_skills.values() for e in v if "when" in e)))
 
     print("attack charts      %d skill levels" % len([k for k in attack if k]))
     print("body charts        %d body types" % len(bodies))
