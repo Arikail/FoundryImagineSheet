@@ -994,3 +994,9 @@ belongs: four "5dl0%", three "2dl0%", one "4dl0%". Your `rollDiceFromString` wou
 as d10, so on your sheet those skills probably start with no rolled bonus at all. The new character
 generator reads them as d10. The quickest fix on your side is a find-and-replace of `dl0` with `d10`
 in the dictionary.
+
+**Confirmed against the book (2026-09-19):** the Player's Guide prints d10 for all eight: Shadowing,
+Sleight of Hand and Street Knowledge 2d10% (pp.139-140), Bookbinder, Candle/Oil Making, Dancing and
+Sewing 5d10% (pp.149-159), Espionage 4d10% (p.152). Each entry's rating and learn time match the
+book too, so these are one mistyped character each, most likely from copying out of a scanned
+text, where "l" and "1" are easily confused. That was the only such slip in the skill dictionaries.
