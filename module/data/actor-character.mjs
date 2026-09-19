@@ -22,6 +22,7 @@ import {
 	getOffhandSecondsCap, getBetterAttackSkill, resolveEncumbrance, resolveLoadedMovement
 } from "../combat/combat-rules.mjs";
 import { getSlotAllowance } from "../skills-rules.mjs";
+import { combineHalfRace, getHalfRaceName } from "../race-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -324,7 +325,15 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 		// Race and class are embedded items. Cache them here so every later step can reach
 		// them without searching the collection again.
-		this.raceItem  = this._findItem("race");
+		//
+		// A character may be of two races -- his Half Race (see module/race-rules.mjs). With two
+		// race items, raceItem is NOT either of them: it is a stand-in carrying the combined race
+		// his applyHalfRaceToAttribs would produce, in the same shape as a race item, so every
+		// step below that reads raceItem.system reads the half race without knowing it is one.
+		// raceItems is always the real items, in the order they were added; the first is the one
+		// whose body and special movement a half race keeps.
+		this.raceItems = this._findItems("race");
+		this.raceItem  = this._getEffectiveRace(this.raceItems);
 
 		// A character may hold more than one class. The Player's Guide allows a dual-classed
 		// character who meets both classes' requirements, and his Roll20 sheet has no provision
@@ -348,19 +357,29 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		}
 	}
 
-	// This is the function which finds an embedded item of a given type. Returns the first
-	// match, or null. A character holds at most one race; a class uses _findItems below.
-	_findItem(tmptype) {
-		var tmpactor = this.parent;
-		if (!tmpactor || !tmpactor.items) { return null; }
-		for (const tmpitem of tmpactor.items) {
-			if (tmpitem.type == tmptype) { return tmpitem; }
-		}
-		return null;
+	// This is the function which works out the race a character actually has.
+	//
+	//     no race item        null
+	//     one                 that item, as it is -- his One Race
+	//     two                 a stand-in { name, system } holding the two combined as his Half
+	//                         Race combines them (combineHalfRace), named "first|second" as his
+	//                         full_race_name is
+	//     three or more       the first two, as a Half Race. His Multi Race(3) and (4) are on his
+	//                         race-type list but not implemented ("not yet implemented. Nothing
+	//                         done."), so there is no rule of his to follow for a third race; the
+	//                         extras are reported on identity.raceWarning rather than dropped silently.
+	_getEffectiveRace(tmpraceitems) {
+		if (tmpraceitems.length == 0) { return null; }
+		if (tmpraceitems.length == 1) { return tmpraceitems[0]; }
+		return {
+			name:   getHalfRaceName(tmpraceitems[0].name, tmpraceitems[1].name),
+			system: combineHalfRace(tmpraceitems[0].system, tmpraceitems[1].system)
+		};
 	}
 
 	// This is the function which finds every embedded item of a given type, in the order the
-	// actor holds them. Used for classes, where a second one means a dual-classed character.
+	// actor holds them. Used for classes, where a second one means a dual-classed character, and
+	// for races, where a second one means a half race.
 	_findItems(tmptype) {
 		var tmpactor = this.parent;
 		if (!tmpactor || !tmpactor.items) { return []; }
@@ -683,6 +702,13 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// has to know about any of this.
 	_prepareIdentity() {
 		this.identity.raceName  = this.raceItem ? this.raceItem.name : "";
+		// His race_type values; only these two are implemented in his sheet.
+		this.identity.raceType  = (this.raceItems.length > 1) ? "Half Race" : "One Race";
+		this.identity.isHalfRace = this.raceItems.length > 1;
+		this.identity.raceWarning = (this.raceItems.length > 2)
+			? "Only two races combine: his sheet's Multi Race is not implemented. "
+			  + this.raceItems.slice(2).map(tmprace => tmprace.name).join(", ") + " ignored."
+			: "";
 		this.identity.className = this.classItem ? this.classItem.name : "";
 		this.identity.classType = this.classItem ? this.classItem.system.classType : "";
 		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";

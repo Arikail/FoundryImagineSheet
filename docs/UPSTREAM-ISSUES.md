@@ -903,3 +903,33 @@ either, since there is no fatigue system yet.
 **The port also scales by size only when a height has been entered.** Your character creation
 always sets one, but a Foundry actor starts at 0, and 0 inches would otherwise read as "under a
 foot" and shrink the whole load to a hundredth.
+
+## 32. Mixed races: Half Race is ported from your code; three questions about the rest
+
+**Status:** open · **Severity:** questions; Half Race works
+
+The port now supports a character of two races, ported from your `applyHalfRaceToAttribs`
+(sheet-worker.js:33770). Your `averageTwoFloatsRounded` turned out to be the Player's Guide's
+own Half Race rule 1, word for word in code: a modifier only one race has is taken whole, two
+bonuses are averaged rounding up, two penalties are averaged rounding towards the bigger one, and a
+bonus against a penalty is added. Special movement comes from the first race, swimming from either,
+and the two ages as your `setAge` takes them.
+
+1. **Multi Race(3), Multi Race(4), Part Race and Trace Race** are on your `race_type` list, but
+   `applyRaceToAttribs` (32966) answers each with "not yet implemented. Nothing done." The book has
+   rules for all of them: Multi and Part in the Player's Guide p.33, Trace in the Master's Manual.
+   Part and Trace both depend on the player *choosing* two areas to mix, so they are not a formula.
+   Do you want them built from the book, or are they on your own list? Until then the port combines
+   the first two races and reports any third on the sheet rather than dropping it silently.
+2. **The Player's Guide gives every mixed-race character -5 Social Class** ("Mixed race
+   characters are often shunned by both of the parent races"). Nothing in your half-race code
+   applies it, so the port does not either. Should it?
+3. **Which races can breed with which** is in the book (the Mixed Race Table, p.33, plus a
+   "Half/Mixed Races:" line on every race in the bestiaries). Your sheet does not check it, and the
+   book says mixed races are "offered only through GM interaction", so the port does not check it
+   either. Say if you want at least a warning.
+
+**One slip seen in passing:** in `setNewCharacteristics` (27499-27505), a half race's new Endurance
+at titles 11-12 adds both races' maximums and then immediately overwrites the sum with the first
+race's alone, before halving. So it comes out as half the first race's maximum rather than the
+average of the two. The port has no title-Endurance roll yet, so nothing is affected here.

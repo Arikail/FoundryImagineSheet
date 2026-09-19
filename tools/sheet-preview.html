@@ -51,6 +51,10 @@
 	carried at x.9 for his 5'9" and 215 lb, which puts him in "Encumbered" at half speed</div>
 <div class="frame imagine sheet actor character" id="load-check"></div>
 
+<div class="chat-title">Half Race check: the same Warrior as Human(Civilized:Village)|Elf(High), two real race
+	documents combined as his applyHalfRaceToAttribs combines them</div>
+<div class="frame imagine sheet actor character" id="halfrace-check"></div>
+
 <script type="module">
 // Standalone preview of the character sheet and attack card, rendered against a character the real
 // data model has derived, built from real extracted content: the race, class, weapons and armour are
@@ -537,4 +541,32 @@ console.assert(character.encumbrance.status === "Encumbered",
 const loadCheckEl = document.getElementById("load-check");
 loadCheckEl.innerHTML = await render("../templates/actor/tab-attributes.hbs", { ...ctx, system: character });
 loadCheckEl.querySelector(".tab").classList.add("active");
+
+// --- half race: the same Warrior, re-derived with a real second race --------------------------
+// Human has no attribute modifiers and Elf(High) +2 Agility, so the Elf's +2 comes through whole
+// (a modifier only one race has is not halved): the Warrior's rated 18 reads 20. His Strength is
+// Elf -1 against Human 0, so 19 reads 18. The maximums stay 25, not the averaged racial limit,
+// because he is title 12 and title 11 discards racial limits. Runs last, so it disturbs no render
+// above.
+const elfHigh = byName(races, "Elf(High)");
+character.parent.items = [...allItems, elfHigh];
+character.prepareBaseData();
+character.prepareDerivedData();
+console.assert(character.identity.raceName === "Human(Civilized:Village)|Elf(High)",
+	"half race name should be his first|second, got " + character.identity.raceName);
+console.assert(character.attributes.agl.value === 20 && character.attributes.str.value === 18,
+	"half race should give Agility 20 and Strength 18, got " + character.attributes.agl.value
+	+ " and " + character.attributes.str.value);
+// The attribute rows above were built from the first derivation, so this render needs its own --
+// the same shape, rebuilt from the re-derived character.
+const halfAttrRows = attrRows.map(r => {
+	const a = character.attributes[r.key];
+	return { ...r, rating: a.rating, value: a.value, max: a.max, save: a.save,
+	         mods: Object.entries(a.mods ?? {}).map(([k, v]) => ({ key: k, value: v })) };
+});
+const halfEl = document.getElementById("halfrace-check");
+const halfCtx = { ...ctx, system: character, attributes: halfAttrRows };
+halfEl.innerHTML = await render("../templates/actor/header.hbs", halfCtx)
+                 + await render("../templates/actor/tab-attributes.hbs", halfCtx);
+halfEl.querySelector(".tab").classList.add("active");
 </script>

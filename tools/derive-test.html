@@ -1070,6 +1070,56 @@ check("a single copy is simply itself",
 	S.pickBestSkillRoll([S.resolveSkillOutcome(50, 10)]).bestIndex, 0);
 check("no copies at all is not an error", S.pickBestSkillRoll([]).best, null);
 
+// --- half races, against his applyHalfRaceToAttribs (sheet-worker.js:33770) -------------
+const RR = await import("../module/race-rules.mjs");
+// averageTwoFloatsRounded, branch for branch -- which is also the Player's Guide's Half Race rule 1.
+check("the book's own example: +3 and +1 give +2",  RR.averageTwoFloatsRounded(3, 1), 2);
+check("two bonuses round up: +2 and +1 give +2",    RR.averageTwoFloatsRounded(2, 1), 2);
+check("two penalties round to the bigger: -2 and -3 give -3", RR.averageTwoFloatsRounded(-2, -3), -3);
+check("a modifier only one race has is taken whole", RR.averageTwoFloatsRounded(2, 0), 2);
+check("...a penalty too",                           RR.averageTwoFloatsRounded(0, -4), -4);
+check("a bonus against a penalty is added",         RR.averageTwoFloatsRounded(3, -1), 2);
+check("nothing from either is nothing",             RR.averageTwoFloatsRounded(0, 0), 0);
+check("limits average normally: 18 and 22 give 20", RR.averageTwoFloatsRounded(18, 22), 20);
+check("...and 18 and 21 round up to 20",            RR.averageTwoFloatsRounded(18, 21), 20);
+
+const elfish = makeRace({ bodyType: "Humanoid", canSwim: false,
+	attributeMods: { str: -1, agl: 2, vit: 0, int: 1, wis: 0, knw: 0, app: 0, chm: 0, soc: 0, aur: 3, pty: 0, wil: 0 },
+	attributeLimits: { str: 17, agl: 22, vit: 20, int: 21, wis: 20, knw: 20, app: 20, chm: 20, soc: 20, aur: 22, pty: 20, wil: 20 },
+	endurance: { startFormula: "", startMod: -2, titleFormula: "1d6", titleDice: "1d6", titleMax: 6, titleMod: 0 },
+	characteristicMods: { perception: 5, affinity: 0, fortune: 0 },
+	resistanceMods: { magic: 20, illusion: 0, control: 0, poison: -10, disease: 0 },
+	movement: { speedMultiplier: 1, walk: { hourly: 2, tenSec: 20, oneSec: 2 }, jog: { hourly: 2, tenSec: 20, oneSec: 2 },
+	            run: { hourly: 2, tenSec: 20, oneSec: 2 }, specialName: "None:",
+	            special: { hourly: "", hourlyMultiplier: 0, hourlyMod: 0, tenSec: "", tenSecMultiplier: 0,
+	                       tenSecMod: 0, oneSec: "", oneSecMultiplier: 0, oneSecMod: 0 }, jumpStand: 0, jumpUp: 0 } });
+elfish.name = "Elfish";
+const half = RR.combineHalfRace(makeRace().system, elfish.system);
+check("attribute modifiers combine: +2/-1 Strength, -1/+2 Agility, 0/+3 Aura",
+	[half.attributeMods.str, half.attributeMods.agl, half.attributeMods.aur], [1, 1, 3]);
+check("attribute maximums average: 18/17 Strength, 20/22 Agility",
+	[half.attributeLimits.str, half.attributeLimits.agl], [18, 21]);
+check("the starting Endurance modifier combines: +4 and -2", half.endurance.startMod, 2);
+check("Endurance formulas are kept as his first|second pair", half.endurance.titleFormula, "0|1d6");
+check("characteristic and resistance mods combine",
+	[half.characteristicMods.perception, half.resistanceMods.magic, half.resistanceMods.poison], [4, 15, -5]);
+check("walking mods combine: +10 and +20 per ten seconds", half.movement.walk.tenSec, 15);
+check("special movement is the FIRST race's, whole", half.movement.specialName, "Fly:");
+check("either race swimming is enough", half.canSwim, true);
+check("a half race is never formless", half.formless, false);
+
+const halfChar = makeCharacter({ str: 12, agl: 12, aur: 12 }, 5, [makeRace(), elfish]);
+check("a character with two races is a Half Race named first|second",
+	[halfChar.identity.raceType, halfChar.identity.raceName], ["Half Race", "Testfolk|Elfish"]);
+check("its attributes carry the combined modifiers",
+	[halfChar.attributes.str.value, halfChar.attributes.agl.value, halfChar.attributes.aur.value], [13, 13, 15]);
+check("...and the combined maximums", halfChar.attributes.agl.max, 21);
+check("...and the combined resistance, +5 against -10 added", halfChar.resistances.poison.raceMod, -5);
+check("one race is still One Race", makeCharacter({}, 5, [makeRace()]).identity.raceType, "One Race");
+const tripleChar = makeCharacter({}, 5, [makeRace(), elfish, Object.assign(makeRace(), { name: "Third" })]);
+check("a third race is reported, not silently dropped",
+	[tripleChar.identity.raceName, tripleChar.identity.raceWarning.includes("Third")], ["Testfolk|Elfish", true]);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

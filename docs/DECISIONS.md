@@ -2156,3 +2156,55 @@ the equipment pack. That reads "Encumbered, 244.8 / 387 lb", and "At current loa
 shows walk 60 → 30 per ten seconds. This was checked through the page text; the Browser pane was
 hidden and screenshots came back blank, so the red styling has not been looked at by eye.
 **Not verified:** anything needing a running Foundry V14.
+
+### 2026-09-18 — Half races: ported from his code, which turned out to have them
+
+**The user's requirement:** a character must be able to descend from two races. **What was
+found:** his sheet has a whole race-type system that the port had missed, because it searched for
+`race_list2` while his field is `race2_arwpick`. `race_type` offers One Race, Half Race, Multi
+Race(3), Multi Race(4), Part Race and Trace Race (sheet-worker.js:32591-32726). **Only Half Race
+is implemented.** `applyRaceToAttribs` (32966) returns "not yet implemented" for the other four.
+
+**Decision:** Half Race is ported from `applyHalfRaceToAttribs` (33770) into a new pure module,
+`module/race-rules.mjs`. A character may hold two race items. The model's `raceItem` becomes a
+stand-in `{ name, system }` holding the combined race, so every existing `raceItem.system` read
+gets half-race values without knowing it. `raceItems` is always the real items.
+
+**How the two combine**, each from a named place in his code: the numbers use his
+`averageTwoFloatsRounded`. That covers the attribute mods, attribute maximums, starting Endurance
+modifier, characteristic mods, resistance mods, speed multiplier, walk/jog/run mods and jumps.
+Endurance formulas are kept as his "first|second" pair. Special movement and body type come from
+the first race; swimming is allowed if either race can swim; a half race is never formless. The
+name is his `full_race_name`, "first|second".
+
+**`averageTwoFloatsRounded` is the book's rule, not a plain average.** A modifier only one race has
+is taken whole, two bonuses average rounding up, two penalties average rounding towards the bigger
+penalty, and a bonus against a penalty is added. That is the Player's Guide's Half Race rule 1
+exactly, so here his code and the book agree.
+
+**Sub-decisions:**
+- *A stand-in rather than a rewrite.* Eight places read `raceItem.system`. Routing them all
+  through a new accessor would touch every one; handing them a combined object of the same shape
+  touches none. The cost is that `raceItem` is not a document when there are two races. Only the
+  character model ever reads it, which was checked.
+- *Order matters, and it is the order the items were added.* The first race is the one whose body
+  and special movement a half race keeps, as in his code.
+- *A third race is reported, not dropped.* His Multi Race is unimplemented, so there is no rule of
+  his to follow. The first two combine, and the header names the ones ignored.
+- *Not applied:* the book's -5 Social Class for mixed races, which his code does not apply either,
+  and the breeding table, which the book leaves to the Game Master. Both are asked in
+  `UPSTREAM-ISSUES.md` item 32.
+- *Two title-Endurance numbers keep the first race's value* (`titleMax`, `titleMod`), because the
+  schema holds one number where he holds a pair. Nothing reads them yet. His pair is kept whole in
+  the formula fields beside them.
+
+**Not yet combined, because the race item does not carry them yet:** racial skills, racial
+abilities/disabilities/immunities, ages and class eligibility. His half race merges all four, and
+they are the next part of finishing Races & Classes.
+
+**Verified:** derivation 304 (24 new: every branch of the helper, a two-race combination field by
+field, and a character built from two races), combat 406, creature 140, availability 39; 28 modules
+parse, `race-rules.mjs` newly added to the syntax check's list. In `tools/sheet-preview.html` the
+real Warrior, re-derived as Human(Civilized:Village)|Elf(High), reads "Half Race
+Human(Civilized:Village)|Elf(High)" with Strength 18 and Agility 20 from ratings of 19 and 18.
+**Not verified:** a second race being dropped onto a character in a running Foundry V14.
