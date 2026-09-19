@@ -2007,3 +2007,27 @@ work items rather than a reported gap.
 **Verified:** derivation 258 (7 new on the two ceilings), combat 374, creature 139 and availability
 39 unchanged, 27 modules parse. The class documents rebuild at 88 with Monk's fields in their right
 columns, and the generated body charts carry nine corrected thorax multipliers.
+
+### 2026-09-18 — The 14 trait conflicts he was asked to rule on are dormant, not blocking
+
+Checked before deciding whether to wait on his answer: neither field the conflicts report asks
+about is read by any mechanical code today.
+
+`grep` for `canonicalName` outside `item-trait.mjs` finds only the sheet class copying it onto a
+display row (`actor-creature-sheet.mjs:185`) — nothing switches on it. The three substring checks
+that DO key off an ability's text (`actor-creature.mjs:409,435,441`, Enhanced Perception/Affinity/
+Fortune) match plain `.name`, not `canonicalName`, and they are the creature-side exceptions his
+own answer on item 10 called flavor everywhere else. `value1`/`value2` are likewise only ever
+copied onto that same display row, never parsed as a number or branched on.
+
+So the 9 canonical-name and 5 value disagreements in `docs/reference/trait-conflicts.md` have
+nowhere to matter yet: there is no racial mechanical ability-effects system in the port at all
+(no infravision distance, no hide bonus, nothing keyed by an ability's name), which is the
+character-side counterpart to what item 10 already found missing on the creature side. The
+conflicts are real facts about his data, and the pipeline already has a deterministic answer for
+all of them (the creature row wins, per his confirmation) — but a wrong pick among the 14 is
+inert today, not a live bug.
+
+**Held rather than chased down now.** Worth his answer before, and only before, a future pass
+builds that mechanical system — at which point a wrong canonical name would silently fail to
+match its `case` rather than merely being an unread string. No functional impact in the meantime.
