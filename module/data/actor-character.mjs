@@ -897,8 +897,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 	// Every mode is tracked at three scales at once -- per hour, per 10 second combat round,
 	// and per second.
 	//
-	// Encumbrance penalties are NOT applied yet: they need equipment items to weigh against
-	// the Strength load limit, and those item types do not exist yet.
+	// Encumbrance penalties are NOT applied yet. The encumbrance band itself is worked out in
+	// _prepareEncumbrance; what is missing is the movement penalty each band carries, which has
+	// not been read out of his code yet.
 	_prepareMovement() {
 		if (!this.raceItem) { return; }
 		var tmpracemove = this.raceItem.system.movement;
@@ -1134,19 +1135,22 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 
 	// This is the function which returns the highest rating an attribute may reach.
 	//
+	// This is the ORDINARY maximum -- how far stat-up rolls can take an attribute. The magical
+	// maximum is a separate, higher ceiling; see getMagicalAttributeMax below.
+	//
 	// Ported from his sheet, which does this in two places: the race's limits become the
 	// maximums when a race is chosen (sheet-worker.js:8099), and setArchMortalAttributesMax
-	// (line 27549) replaces all twelve with a flat 27 on titling to 11 -- discarding the racial
-	// limits, upwards or downwards. Twenty is the standing default before a race is picked
+	// (line 27549) replaces all twelve on titling to 11 -- discarding the racial limits, upwards
+	// or downwards. Twenty is the standing default before a race is picked
 	// (clearAttributeModifiersFinals, line 32502).
+	//
+	// That function writes 27, but his comment at its call site says 25, and he settled it on
+	// 2026-09-16: 25 is the ordinary cap and 27 the magical one (UPSTREAM-ISSUES.md item 16).
+	// So this returns 25, and the 27 lives in getMagicalAttributeMax.
 	//
 	// His code fires the arch-mortal replacement once, at exactly title 11, and the value then
 	// persists; a derived model recomputes every time, so the test is "title 11 or more", which
 	// reproduces the same resulting state.
-	//
-	// The Master's Manual's mundane / mortal / arch-mortal / deity tiers of 23 / 25 / 27 / 30
-	// are NOT implemented here, because they are not implemented in his sheet: nothing in it
-	// caps by title below 11, and nothing grants 30 at title 16. The sheet wins on conflict.
 	static getAttributeMax(tmpTitle, tmpRaceLimit) {
 		var tmpTitleValue = parseInt(tmpTitle) || 0;
 		if (tmpTitleValue >= 11) { return 25; }   // arch-mortal: racial limits are discarded

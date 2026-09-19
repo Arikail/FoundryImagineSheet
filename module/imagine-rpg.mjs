@@ -77,10 +77,11 @@ export const IMAGINE = {
 // rule and the data it applies to stay in one place. Reach them via
 // ImagineCharacterData.getAttribSave(rating).
 //
-// There is deliberately no table of attribute caps by being type here. The Master's Manual
-// describes mundane, mortal, arch-mortal and deity ranges, but his sheet implements none of
-// them: a maximum is the race's limit until title 11, and a flat 27 from then on. The sheet
-// wins on conflict -- see docs/DECISIONS.md.
+// There is deliberately no table of attribute caps by being type here. An attribute has two
+// ceilings, both worked out in ImagineCharacterData: the ordinary maximum (getAttributeMax --
+// the race's limit until title 11, then 25) and the magical maximum (getMagicalAttributeMax --
+// his 23 / 25 / 27 by title). He confirmed the pair on 2026-09-16 -- see docs/DECISIONS.md,
+// 2026-09-17.
 
 // @MARKER SYSTEM INITIALISATION
 Hooks.once("init", function () {

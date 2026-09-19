@@ -215,7 +215,8 @@ V14 specifics: effect changes live at `effect.system.changes` with `type` taking
 Acyclic; order matters:
 
 1. Attribute ratings (base + effects)
-2. Attribute `max` ← **the race's limit for that attribute**, 20 before a race is chosen, and a flat 27 from title 11 (`getAttributeMax(title, raceLimit)`)
+2. Attribute `max` ← **the race's limit for that attribute**, 20 before a race is chosen, and 25 from title 11 (`getAttributeMax(title, raceLimit)`); beside it, `magicalMax` ← 23 / 25 / 27 by title (`getMagicalAttributeMax(title)`), derived but not yet clamping anything
+   > **Corrected again 2026-09-18.** The "flat 27" below was right about his code but wrong about his intent: on 2026-09-16 he confirmed 25 is the ordinary cap and 27 the magical one, and his own `setMagicalAttributeMaximums` (sheet-worker.js:123007) turned out to carry the title tiers after all. See `DECISIONS.md` 2026-09-17.
    > **Corrected 2026-09-12.** This step originally read "Title/being-type table (Title 0→23, 1-10→25, 11-15→27, 16+→30)", taken from the Master's Manual. Nothing in his sheet implements those tiers: every `*_max` assignment was checked, there is no deity handler at title 16, and the only caps that exist are the per-race limits (sheet-worker.js:8099) and the flat arch-mortal 27 (`setArchMortalAttributesMax`, line 27549). The sheet wins on conflict, so the tiers are gone and `IMAGINE.attributeCaps` with them. See `DECISIONS.md` → "CORRECTION: a character's attribute maximum follows his sheet", and `UPSTREAM-ISSUES.md` item 16 for his comment/code disagreement at the call site.
 3. Attribute saves ← `getAttribSave`: `<18 → rating x5`; `18-20 → 90`; `>20 → 90 + (rating-20)`
 4. Attribute-derived modifiers ← lookup tables

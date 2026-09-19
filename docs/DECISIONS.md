@@ -2031,3 +2031,24 @@ inert today, not a live bug.
 **Held rather than chased down now.** Worth his answer before, and only before, a future pass
 builds that mechanical system — at which point a wrong canonical name would silently fail to
 match its `case` rather than merely being an unread string. No functional impact in the meantime.
+
+### 2026-09-18 — Board audit: three Backlog modules were already built, and one call was never logged
+
+**What was found.** A full read of the board against the code, before starting the Attributes
+module, found the same staleness that caught the Skills row and the five-class "gap". Attributes,
+Equipment and Races & Classes were all marked Backlog and all substantially built. The attribute
+maximum row still described the flat 27 that the 2026-09-17 answers replaced. Three comments, in
+`actor-character.mjs`, `imagine-rpg.mjs` and `DATA-MODEL.md`, still said "flat 27", and one said
+equipment item types "do not exist yet". All of these are corrected; the board carries the detail.
+
+**The call that was never logged: packs are built at runtime, not compiled.** Commit `cd57036` added
+`module/content-importer.mjs`, which builds the nine world compendia from `src/packs/documents/*.json`
+inside Foundry, idempotently and matched by name. `system.json` declares `"packs": []` on purpose. The
+reason, from the importer's own header: compiling needs Node and Foundry's CLI, while a runtime
+import lets whoever runs the game refresh content from inside Foundry when he sends a corrected
+sheet, which matters while his game is still changing. It is recorded here because it decides
+where content lives, and the board still described the compile step it replaced.
+
+**Process note, since this is the third time.** Before starting any row marked Backlog, grep the
+code for it first. The board has tended to lag behind work done under a neighbouring row: movement
+under Races & Classes, the load limit under combat, the importer under content extraction.
