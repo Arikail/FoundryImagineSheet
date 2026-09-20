@@ -1,0 +1,173 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG level up preview</title>
+<link rel="stylesheet" href="../styles/imagine-rpg.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<style>
+	body { margin: 0; background: #3a3632; font-family: "Signika", "Segoe UI", sans-serif; }
+	.frame { max-width: 640px; margin: 18px auto; background: #fdfbf6; border-radius: 5px;
+	         box-shadow: 0 8px 30px rgba(0,0,0,.45); overflow: hidden; }
+	.frame-title { background: #22201d; color: #d8d0c0; padding: 7px 12px; font-size: 13px; }
+	.window-content { padding: 12px 14px; }
+	.caption { color: #d8d0c0; text-align: center; font-size: 12px; margin-top: 18px; }
+	pre.result { max-width: 640px; margin: 12px auto; color: #d8d0c0; font-size: 11px; white-space: pre-wrap; }
+</style>
+<div id="frames"></div>
+<pre class="result" id="result"></pre>
+<script type="module">
+// Renders the real Level Up template against the view the real window builds (buildLevelUpView),
+// for a real character derived by the real character model, at each of its three steps -- and then
+// walks a level-up through the real rules to prove the numbers, not just the layout.
+//
+// The character: a Warrior at title 10, goal 29, holding real class skills, standing one award
+// short of Arch Mortal. That is the interesting place on his ladder -- it is where the goal-30
+// gate, the qualification screen and the 11th-title package all come into view at once.
+//
+// Must be served over HTTP -- see tools/combat-test.html.
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) }
+};
+globalThis.game = { imagine: { getAvailabilityRules: () => null } };
+
+const V = await import("../module/levelup-view.mjs");
+const A = await import("../module/advancement-rules.mjs");
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+const load = async (f) => (await (await fetch(`../src/packs/documents/${f}.json`)).json());
+const [races, classes, skills] = await Promise.all(["races", "classes", "skills"].map(load));
+const byName = (list, name) => structuredClone(list.find(d => d.name === name));
+
+// Real documents. The class's title names come off its own list, as they do in Foundry.
+const warrior = byName(classes, "Warrior");
+warrior.id = "cls1";
+warrior.system.getTitleName = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.titles;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
+const human = byName(races, "Human(Civilized:Village)");
+human.id = "rce1";
+
+// The Warrior's own Arch Mortal core skills, at the chances his table asks for, plus two more so
+// the skill-point step has something to spend on.
+const skillItem = (name, title, ability) => {
+	const doc = byName(skills, name) ?? { name, system: { attr1: "str", attr2: "agl", skillRating: 10 } };
+	doc.id = "skl" + name.replace(/\W/g, "");
+	doc.system = Object.assign(doc.system, {
+		category: "class", acquiredAtTitle: title, startingBonus: 0, abilityBonus: ability,
+		misc: 0, isCommon: false
+	});
+	return doc;
+};
+const held = [
+	skillItem("Body Parry", 1, 60), skillItem("Weapon Knowledge", 1, 60),
+	skillItem("Weapon Parry", 2, 60), skillItem("Sweep", 4, 45),
+	skillItem("Weapon Lore", 6, 35), skillItem("Dodge", 3, 20)
+];
+// An innate power, which his qualification screen requires at least one of.
+const power = { id: "pwr1", name: "Battle Fury", type: "power", system: { unlimited: true } };
+
+function makeCharacter(patch) {
+	const attributes = {};
+	const ratings = { str: 19, agl: 20, vit: 18, int: 14, wis: 12, knw: 15, app: 11,
+	                  chm: 11, soc: 10, aur: 8, pty: 9, wil: 15 };
+	for (const k of Object.keys(ratings)) { attributes[k] = { rating: ratings[k], permMod: 0, tempMod: 0 }; }
+	const characteristic = () => ({ titleBonus: 0, raceMod: 0, permMod: 0, tempMod: 0 });
+	const resistance = () => ({ misc: 0, immune: false });
+
+	const c = new ImagineCharacterData({
+		identity: Object.assign({ title: 10, goal: 29, exp: 205000, titlesToRaise: 0, goalsToRaise: 0,
+		                          titleToLevel: 0, goalToLevel: 0, attributeIncreases: 3,
+		                          archSpecialMet: false }, patch),
+		attributes,
+		characteristics: { endurance: characteristic(), perception: characteristic(),
+		                   affinity: characteristic(), fortune: characteristic() },
+		resistances: { magic: resistance(), illusion: resistance(), control: resistance(),
+		               poison: resistance(), disease: resistance() },
+		body: { bodyType: "Humanoid", areas: [], armorDamage: {} },
+		combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0,
+		          skillMisc: 0, weaponLoreList: "", missileLoreList: "", projectileLoreList: "" },
+		physical: { weight: 0, handedness: "Right", maxAge: "90" },
+		languages: [],
+		skillSlotMoves: { racialToClass: 0, racialToSocial: 0, socialToRacial: 0, socialToClass: 0,
+		                  racialSacrificed: 0, socialSacrificed: 0 },
+		movement: { walk: { hourly: 0, tenSec: 0, oneSec: 0 }, jog: { hourly: 0, tenSec: 0, oneSec: 0 },
+		            run: { hourly: 0, tenSec: 0, oneSec: 0 }, special: { hourly: 0, tenSec: 0, oneSec: 0 },
+		            specialName: "", travelHours: 0, restHours: 0, jumpStand: 0, jumpUp: 0 }
+	});
+	c.parent = { name: "Dorn Ironhand", items: [human, warrior, power, ...held] };
+	c.prepareBaseData();
+	c.prepareDerivedData();
+	return c;
+}
+
+const template = Handlebars.compile(await (await fetch("../templates/apps/level-up.hbs")).text());
+const framesEl = document.getElementById("frames");
+function show(caption, system, working) {
+	const actor = { name: "Dorn Ironhand", system, items: system.parent.items };
+	const view = V.buildLevelUpView(actor, working, true);
+	const el = document.createElement("div");
+	el.innerHTML = `<div class="caption">${caption}</div>
+		<div class="frame"><div class="frame-title">Imagine RPG — Level Up</div>
+		<div class="window-content">${template(Object.assign({ actor, system }, view))}</div></div>`;
+	framesEl.appendChild(el);
+	return view;
+}
+
+const notes = [];
+const note = (label, ok, detail) => notes.push(`${ok ? "ok  " : "BAD "} ${label}${detail ? " -- " + detail : ""}`);
+
+// --- step 1: experience, one award short of Arch Mortal ----------------------------------------
+const waiting = makeCharacter({});
+const expView = show("Experience: title 10, goal 29 -- one award short of the Arch Mortal line",
+	waiting, V.newLevelUpWorking());
+note("the experience step is the one shown", expView.isExperience === true);
+note("the Arch Mortal screen appears from 10th title", !!expView.archMortal,
+	expView.archMortal ? `${expView.archMortal.rows.length} qualifications, qualified=${expView.archMortal.qualified}` : "");
+
+// He is short: Agility must be at its racial maximum, and two core skills are under their chance.
+const unmet = (expView.archMortal?.rows ?? []).filter(r => !r.met).map(r => `${r.name} ${r.has}/${r.needed}`);
+note("the screen names exactly what is missing", unmet.length > 0, unmet.join(", "));
+
+// The gate itself, through the real rule rather than the screen.
+const refused = A.planExperienceGain({ exp: 205000, title: 10, goal: 29, titlesToRaise: 0,
+                                       goalsToRaise: 0, archQualified: false }, 2000);
+note("experience that would cross goal 30 is refused outright", refused.accepted === false, refused.reason);
+
+// --- step 2: a title, with the 11th-title package in view --------------------------------------
+const titling = makeCharacter({ exp: 206000, goal: 29, titlesToRaise: 1, goalsToRaise: 1,
+                                titleToLevel: 11, goalToLevel: 30, archSpecialMet: true });
+const titleView = show("Title 11 -- the Arch Mortal package, shown before it is applied", titling,
+	Object.assign(V.newLevelUpWorking(), { endurance: A.getTitleEndurance(human.system.endurance.titleFormula, 11, () => 1) }));
+note("the title step comes before the goal that crossed it", titleView.isTitle === true);
+note("11th takes the Endurance formula's maximum rather than rolling",
+	titleView.titleStep.endurance === A.maxOfDiceString(human.system.endurance.titleFormula),
+	`${human.system.endurance.titleFormula} -> +${titleView.titleStep.endurance}`);
+note("the package is shown in full", !!titleView.titleStep.archMortal?.immortal
+	&& titleView.titleStep.archMortal.senseSupernatural === 20,
+	titleView.titleStep.archMortal?.invulnerability);
+note("the class skills the title brings are listed",
+	Array.isArray(titleView.titleStep.skills),
+	titleView.titleStep.skills.map(s => s.name).join(", ") || "none at this title");
+
+// --- step 3: a goal, with his attribute offer and skill points ---------------------------------
+const goaling = makeCharacter({ exp: 206000, title: 11, goal: 29, titlesToRaise: 0, goalsToRaise: 1,
+                                titleToLevel: 0, goalToLevel: 30, archSpecialMet: true });
+const goalWorking = Object.assign(V.newLevelUpWorking(), {
+	spends: [{ itemId: held[3].id, name: held[3].name, points: 10 }]
+});
+const goalView = show("Goal 30 -- an Arch Mortal's attribute offer, and the skill points placed",
+	goaling, goalWorking);
+note("past goal 29 the offer is any attribute, at his 10%",
+	goalView.goalPlan.mode === "any" && goalView.goalPlan.rolls[0].chance === 10);
+note("a Warrior's goal gives 17 skill points", goalView.skillPoints.total === 17,
+	`${goalView.skillPoints.spent} placed, ${goalView.skillPoints.remaining} left`);
+note("the goal will not commit until the roll is made and every point placed",
+	goalView.canCommit === false);
+note("only acquired class skills are offered to spend on",
+	goalView.skillPoints.skills.every(s => held.find(h => h.id === s.id)),
+	goalView.skillPoints.skills.map(s => s.name).join(", "));
+
+document.getElementById("result").textContent = notes.join("\n");
+</script>

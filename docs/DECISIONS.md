@@ -2524,3 +2524,76 @@ character generation 46 unchanged; 33 modules parse. The preview renders a real 
 Dancer(Water)'s fifteen titles with his own title names and core marks, and its usage line.
 **Not verified:** anything needing a running Foundry V14 — the three hooks, the grant's
 `createEmbeddedDocuments`, the notifications, and the refused roll.
+
+### 2026-09-19 — Experience and levelling: his ladder, his goal rolls, and Arch Mortal
+
+**The ask:** "build the experience and levelling system." His advancement code was the one large
+subsystem still entirely unported — the thing that made the class-skill grant built earlier the same
+day the *consequence* of a title rising, with nothing to make one rise except typing a number.
+
+**How his ladder works**, from `getNewGoal`, `getNewTitle`, `getExpByGoal` and `getNextGoalExp`.
+Experience buys GOALS; three goals make a TITLE (`getTitleByGoal`: title = goal/3 + 1). A goal is the
+small step — a chance at an attribute, a handful of skill points. A title is the large one — class
+skills, Endurance, attack charts. Below title 1 sit three negative goals, his Zero Title. The ladder
+runs from -1,500 to 1,126,000 across 15 titles and 45 goals, and stops there: every deity rung above
+it is commented out in his code.
+
+**Tables are generated, never transcribed** (`tools/extract/extract_advancement_tables.py` →
+`module/advancement-tables.mjs`). Four of his functions describe the same ladder, so the generator
+reads all four and CROSS-CHECKS them, printing every disagreement. That is how the two defects below
+were found; a transcription would have copied them in silently.
+
+**Decisions:**
+- *The goal ladder comes from `getNewGoal`, not `getExpByGoal`.* His switch writes `case 30:` twice,
+  the second where `case 40:` belongs, so goal 40 answers 0 on his sheet (`UPSTREAM-ISSUES.md` 35).
+  `getNewGoal` is also the function that actually decides a character's goal, so it wins.
+- *Experience is queued, not applied.* His `titles_to_raise` / `goals_to_raise` are ported as they
+  are: adding experience works out the new title and goal and queues the steps, and the character
+  stays where they are until each is walked. Each step has a decision in it that only a player can
+  make, which is the reason his sheet does the same.
+- *His three refusals are kept.* Nothing may be added while a level-up is waiting; nothing is added
+  from an amount of zero or less; and experience that would carry a character across goal 30 without
+  the Arch Mortal qualifications adds NOTHING AT ALL, rather than creeping up to the line. The exp
+  cap for the character's CURRENT title trims the rest, and the trim is reported.
+- *A step is atomic here, where his is not.* His sheet stores the rolled results and the placed
+  points in temporary attributes, so a browser closed mid-goal leaves them half-applied. The window
+  rolls, places and commits in one action instead: a window closed early loses nothing, and the goal
+  is simply offered again. The QUEUE is stored exactly as his is, so the level-up itself survives
+  logging out.
+- *A title is taken before the goal that crossed it*, which is his own refusal in `handleGoalCommit`
+  ("Commit title before committing goal"). The window shows whichever step is next, so there is no
+  wrong order to get into.
+- *The Arch Mortal qualification is DERIVED, not stored.* His sheet keeps a Yes/No flag a player
+  presses a button to refresh, which goes stale the moment an attribute changes. Here the whole
+  screen is worked out on every render from `archmortalqualifylist` — now extracted onto every class
+  document (23 columns, mapped from his own column-header comment). The one part that cannot be
+  derived is the class's special requirement, a sentence only a Game Master can judge, and that is
+  the only piece stored (`identity.archSpecialMet`), settable by a GM alone.
+- *A character's powers are Items*, the same `power` type creatures use, rather than his one
+  comma-separated field. So the invulnerability granted at 11th, 13th and 15th is a real item, and
+  the qualification's "holds any power" is a count of them. Each invulnerability REPLACES the one
+  before, as his string-replace does — they never stack.
+- *Sense Supernatural is a skill item* set to his ability figure by title (20/40/60/80/99), taken
+  from the compendium where the content is imported so it carries its own description.
+- *Awards are not built.* The user's call: players enter the experience they were awarded, so his
+  `calcCreatureExp` and `handleSplitExp` have nothing to compute here.
+
+**Found in his code and reported** (`UPSTREAM-ISSUES.md` 35 and 36): the duplicate `case 30:`; goal
+-2 beginning at -1,000 in one function and -999 in another; and `setNewCharacteristics` overwriting
+the summed half-race Endurance with the first parent's alone at titles 11 and 12. The third is
+reproduced rather than corrected — the sheet is the source of truth — and is covered by a test that
+says so.
+
+**Also fixed:** `identity.titleName` called `getTitleName` on the class ITEM, where it lives on the
+class's DATA MODEL, so it would have thrown in Foundry. The preview caught it, because its class is a
+real document rather than a fixture carrying the method in both places.
+
+**Verified:** the new `tools/advancement-test.html` passes 77 of 77. Derivation 347, combat 406,
+creature 140, character generation 46 and availability 46 are unchanged, and 38 modules parse.
+`tools/levelup-preview.html` renders all three steps of the real template against the real view, for
+a real Warrior at title 10 standing one award short of the line: the qualification screen names
+exactly what he is missing (Sweep 65/75, Weapon Lore 30/65), the gate refuses the experience, 11th
+title takes the Endurance formula's maximum rather than rolling it (1d4+1 → +5), the package is
+listed before it is applied, and his own title names read through ("Lord" → "Battle Lord").
+**Not verified:** anything needing a running Foundry V14 — the window itself, its dice, the two
+commits, the power and skill creation, and the chat cards.

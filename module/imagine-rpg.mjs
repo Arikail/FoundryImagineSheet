@@ -33,6 +33,8 @@ import {
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import { grantClassSkills, registerClassAdvancement } from "./class-advancement.mjs";
+import { addExperience } from "./advancement.mjs";
+import ImagineLevelUp from "./apps/level-up.mjs";
 import ImagineAvailabilityConfig from "./apps/availability-config.mjs";
 import ImagineCharacterGenerator, { registerCharacterGeneratorButton } from "./apps/character-generator.mjs";
 import ImagineCombat from "./combat/combat-document.mjs";
@@ -184,7 +186,12 @@ Hooks.once("init", function () {
 		// Gives a character every class skill their title has earned. It runs by itself when a
 		// title changes; this is here for a character imported from elsewhere, or one whose
 		// grant was refused when the content was switched off.
-		grantClassSkills: grantClassSkills
+		grantClassSkills: grantClassSkills,
+		// @MARKER ADVANCEMENT
+		// The Level Up window, also a button on the character sheet. Experience is added through
+		// it rather than typed, because his cap, his refusals and the Arch Mortal line all apply.
+		levelUp: (tmpactor) => new ImagineLevelUp(tmpactor).render(true),
+		addExperience: addExperience
 	};
 
 	// Records whether the content has ever been imported into this world, so the first-launch

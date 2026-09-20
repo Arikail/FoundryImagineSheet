@@ -175,6 +175,34 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 			// picked outright (his gme_all_attack_skills_select) rather than earned by title.
 			nonClassed: new fields.BooleanField({ required: true, initial: false }),
 
+			// @MARKER ARCH MORTAL QUALIFICATIONS
+			// What a character of this class must have before they may pass 10th title, from his
+			// archmortalqualifylist (sheet-worker.js:122311) and the checks that read it
+			// (setArchmortalAttributeQualifications, 122429 onward).
+			//
+			// The twelve attribute entries are HIS OWN STRINGS, not numbers, because two of the
+			// three forms are relative to the character's racial maximum and cannot be resolved
+			// without one:
+			//     ""            no requirement
+			//     "RM"          at the character's racial maximum for that attribute
+			//     a positive n  at that rating
+			//     a negative n  the racial maximum plus n, floored at 0 -- "-1" is one below it
+			//
+			// Each of the five skills must have reached its chance. The power requirement is not a
+			// field: it is simply holding any power at all. The special requirement is a sentence
+			// only a Game Master can judge, and is blank where his data says "None".
+			archMortal: new fields.SchemaField({
+				attributes: new fields.SchemaField(Object.fromEntries(
+					["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"]
+						.map(tmpkey => [tmpkey, new fields.StringField({ required: true, initial: "" })])
+				)),
+				skills: new fields.ArrayField(new fields.SchemaField({
+					name:   new fields.StringField({ required: true, initial: "" }),
+					chance: new fields.NumberField({ required: true, integer: true, initial: 0 })
+				})),
+				special: new fields.StringField({ required: true, initial: "" })
+			}),
+
 			// @MARKER PROVENANCE
 			sourcebook:  new fields.StringField({ required: true, initial: "" }),
 			page:        new fields.StringField({ required: true, initial: "" }),

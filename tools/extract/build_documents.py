@@ -445,6 +445,12 @@ def build_classes():
     titlemap = titles["entries"] if titles else {}
     goalmap = goals["entries"] if goals else {}
 
+    # What a character of this class must have before they may pass 10th title into Arch Mortal,
+    # from archmortalqualifylist via his own column-header comment. His sheet checks these on a
+    # qualification screen and writes one Yes/No flag, which is what the goal-30 gate reads.
+    archqualify = load_named("archmortalqualifylist")
+    archmap = archqualify["entries"] if archqualify else {}
+
     # Which races may NOT take each class, from his classRaceAndDetails (sheet-worker.js:51088),
     # read by setClassDetails as blockedRacesDetails. It is a list of barred races, not allowed
     # ones: Warrior's is empty, which means every race may be a Warrior.
@@ -506,6 +512,29 @@ def build_classes():
             tmpgoal2 = clean_text(goalmap[tmpbasename].get("goalAttr2", ""))
         else:
             note("missing-goalup", where, "no entry in goalupdict")
+
+        # Arch Mortal qualifications. The twelve attribute entries are kept as his own strings
+        # ("RM", "-1", "14") rather than resolved to numbers here, because two of the three forms
+        # are relative to the character's racial maximum and cannot be resolved without one.
+        tmparch = {"attributes": {}, "skills": [], "special": ""}
+        if tmpbasename in archmap:
+            tmparchrow = archmap[tmpbasename]
+            for tmpattr in ("str", "agl", "vit", "int", "wis", "knw",
+                            "app", "chm", "soc", "aur", "pty", "wil"):
+                tmparch["attributes"][tmpattr] = clean_text(str(tmparchrow.get(tmpattr, "")))
+            for tmpwhich in (1, 2, 3, 4, 5):
+                tmpskill = clean_text(str(tmparchrow.get("skill%d" % tmpwhich, "")))
+                if not tmpskill:
+                    continue
+                tmparch["skills"].append({
+                    "name": tmpskill,
+                    "chance": to_number(tmparchrow.get("chance%d" % tmpwhich, 0), where,
+                                        "archMortal.chance%d" % tmpwhich),
+                })
+            tmpspecial = clean_text(str(tmparchrow.get("special", "")))
+            tmparch["special"] = "" if tmpspecial == "None" else tmpspecial
+        else:
+            note("missing-archmortal", where, "no entry in archmortalqualifylist")
 
         tmpmods = []
         for tmpkey in ("classMod1", "classMod2", "classMod3", "classMod4", "classMod5"):
@@ -569,6 +598,7 @@ def build_classes():
             "baseClass": tmpbasename,
             "path": tmppath or "",
             "nonClassed": tmpbasename in NON_CLASSED,
+            "archMortal": tmparch,
         }))
         if tmpbasename not in blockedraces:
             note("class-missing-from-table", where, "no entry in classRaceAndDetails; no race is barred")

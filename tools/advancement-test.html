@@ -1,0 +1,235 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG advancement test</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Tests for module/advancement-rules.mjs -- experience, goals, titles and Arch Mortal -- checked
+// against his own levelling code. Every die is scripted, never random.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/advancement-test.html
+const A = await import("../module/advancement-rules.mjs");
+const T = await import("../module/advancement-tables.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+const dice = (...faces) => { let i = 0; return () => faces[Math.min(i++, faces.length - 1)]; };
+const always = (face) => () => face;
+
+// --- the generated tables, against the figures his functions state ----------------------------
+check("48 goals and 16 titles come out of his ladder",
+	[Object.keys(T.GOAL_EXP).length, Object.keys(T.TITLE_EXP).length], [48, 16]);
+check("title 1 begins at 0 experience and title 11 -- Arch Mortal -- at 206,000",
+	[T.TITLE_EXP["1"], T.TITLE_EXP["11"]], [0, 206000]);
+check("goal 40 has a figure, though his getExpByGoal answers 0 for it (the duplicate case 30)",
+	T.GOAL_EXP["40"], 676000);
+check("his skill points are keyed by base class, GME at none",
+	[T.SKILL_POINTS_BY_CLASS["Warrior"], T.SKILL_POINTS_BY_CLASS["Monk"], T.SKILL_POINTS_BY_CLASS["GME"]],
+	[17, 21, 0]);
+
+// --- reading the ladder -----------------------------------------------------------------------
+check("no experience is title 1, goal 0",  [A.getTitleForExp(0), A.getGoalForExp(0)], [1, 0]);
+check("499 has still bought nothing",      [A.getTitleForExp(499), A.getGoalForExp(499)], [1, 0]);
+check("500 is the first goal",             A.getGoalForExp(500), 1);
+check("1,500 is title 2",                  [A.getTitleForExp(1500), A.getGoalForExp(1500)], [2, 3]);
+check("negative experience is Zero Title", [A.getTitleForExp(-600), A.getGoalForExp(-600)], [0, -2]);
+check("206,000 is Arch Mortal, title 11 goal 30",
+	[A.getTitleForExp(206000), A.getGoalForExp(206000)], [11, 30]);
+check("1,126,000 stays title 15 -- his ladder stops there, deities being off",
+	A.getTitleForExp(1126000), 15);
+
+check("three goals make a title, all the way up his ladder",
+	[3, 12, 30, 42].map(g => A.getTitleByGoal(g)), [2, 5, 11, 15]);
+check("everything below goal 0 is Zero Title", A.getTitleByGoal(-2), 0);
+check("a title's first and last goal",
+	[A.getLowGoalByTitle(5), A.getHighGoalByTitle(5)], [12, 14]);
+check("Zero Title runs -3 to -1",
+	[A.getLowGoalByTitle(0), A.getHighGoalByTitle(0)], [-3, -1]);
+check("every title begins where its own low goal begins",
+	[1, 5, 11, 15].filter(t => A.getExpForGoal(A.getLowGoalByTitle(t)) !== T.TITLE_EXP["" + t]), []);
+check("the next goal's cost, and 0 at the top of his ladder",
+	[A.getNextGoalExp(0), A.getNextGoalExp(1016000)], [500, 0]);
+
+// --- adding experience, against his roll_add_exp ----------------------------------------------
+const state = (patch) => Object.assign({ exp: 0, title: 1, goal: 0, titlesToRaise: 0,
+                                         goalsToRaise: 0, archQualified: false }, patch);
+
+const plain = A.planExperienceGain(state({ exp: 100 }), 300);
+check("experience below the next goal is simply added",
+	[plain.accepted, plain.exp, plain.goalsToRaise, plain.titlesToRaise], [true, 400, 0, 0]);
+
+const oneGoal = A.planExperienceGain(state({ exp: 100 }), 500);
+check("crossing a goal queues one goal and names it",
+	[oneGoal.goalsToRaise, oneGoal.goalToLevel, oneGoal.titlesToRaise], [1, 1, 0]);
+
+// 1,400 experience is already goal 2; 200 more crosses 1,500, which is goal 3 and title 2.
+const aTitle = A.planExperienceGain(state({ exp: 1400, goal: 2 }), 200);
+check("crossing a title queues the title as well, and the title to level is the NEXT one",
+	[aTitle.goalsToRaise, aTitle.titlesToRaise, aTitle.titleToLevel], [1, 1, 2]);
+
+const pending = A.planExperienceGain(state({ exp: 1000, goalsToRaise: 1 }), 500);
+check("nothing may be added while a level-up is waiting -- his own refusal",
+	[pending.accepted, pending.exp], [false, 1000]);
+check("...and it says why",
+	pending.reason, "There is a level-up waiting. Finish it before adding more experience.");
+
+check("nothing to add is refused too", A.planExperienceGain(state({}), 0).accepted, false);
+
+// His cap: a title-1 character cannot hold more than 8,999 -- title 3's figure, so a character
+// may climb about a title and a half before they must stop and level up.
+const capped = A.planExperienceGain(state({ exp: 4000, title: 1, goal: 5 }), 5000);
+check("experience above the title's cap is trimmed to it",
+	[capped.exp, capped.added, capped.cappedBy], [8999, 4999, 1]);
+check("...and the trim is reported rather than hidden",
+	capped.reason.includes("over the cap"), true);
+check("the cap is read against the title HELD, not the one being reached",
+	A.planExperienceGain(state({ exp: 0, title: 0 }), 99999).exp, 4499);
+
+// His Arch Mortal line. Note where it sits: the experience is not added AT ALL.
+const blocked = A.planExperienceGain(state({ exp: 205000, title: 10, goal: 29 }), 2000);
+check("crossing into goal 30 unqualified adds nothing and says why",
+	[blocked.accepted, blocked.exp, blocked.reason.includes("Arch Mortal")], [false, 205000, true]);
+const allowed = A.planExperienceGain(state({ exp: 205000, title: 10, goal: 29, archQualified: true }), 2000);
+check("...and qualified, it goes through",
+	[allowed.accepted, allowed.goal, allowed.titlesToRaise], [true, 30, 1]);
+
+// --- a goal advance, against his handleLevelGoal ----------------------------------------------
+const goalPlan = (patch) => A.planGoalAdvance(Object.assign(
+	{ goalToLevel: 5, goalAttributes: ["str", "agl"], atMax: {}, totalIncreases: 0 }, patch));
+
+check("two open class attributes roll separately at 5% each",
+	goalPlan({}).rolls.map(r => [r.key, r.chance]), [["str", 5], ["agl", 5]]);
+check("past goal 30 the pair rolls at 10% each",
+	goalPlan({ goalToLevel: 29 }).rolls.map(r => r.chance), [5, 5]);
+check("one at its maximum leaves the other rolling alone at 10%",
+	[goalPlan({ atMax: { str: true } }).mode, goalPlan({ atMax: { str: true } }).rolls[0].key,
+	 goalPlan({ atMax: { str: true } }).rolls[0].chance], ["one", "agl", 10]);
+check("both at maximum opens it to any attribute",
+	[goalPlan({ atMax: { str: true, agl: true } }).mode,
+	 goalPlan({ atMax: { str: true, agl: true } }).rolls[0].anyAttribute], ["any", true]);
+check("past goal 29 the class's pair stops mattering: any attribute, 10%",
+	[goalPlan({ goalToLevel: 30 }).mode, goalPlan({ goalToLevel: 30 }).rolls[0].chance], ["any", 10]);
+check("...and past goal 31 it is 20%",
+	goalPlan({ goalToLevel: 33 }).rolls[0].chance, 20);
+
+// His floor on increases: three fixed goals, each with its own allowance.
+check("goal 12 with no increases yet is a guaranteed pick",
+	[goalPlan({ goalToLevel: 12 }).mode, goalPlan({ goalToLevel: 12 }).rolls[0].chance], ["choose", 100]);
+check("...but goal 12 with one already is rolled as usual",
+	goalPlan({ goalToLevel: 12, totalIncreases: 1 }).mode, "two");
+check("goal 27 allows one, goal 42 allows two; above the allowance it is rolled as usual",
+	[goalPlan({ goalToLevel: 27, totalIncreases: 1 }).mode,
+	 goalPlan({ goalToLevel: 27, totalIncreases: 2 }).mode,
+	 goalPlan({ goalToLevel: 42, totalIncreases: 2 }).mode], ["choose", "two", "choose"]);
+
+const rolled = A.resolveGoalAdvance(goalPlan({}), [5, 6]);
+check("a roll at the chance succeeds; one above it does not",
+	rolled.map(r => r.increased), [true, false]);
+check("a natural 0 is never a success", A.resolveGoalAdvance(goalPlan({}), [0, 0]).map(r => r.increased), [false, false]);
+check("an any-attribute roll raises whatever was picked",
+	A.resolveGoalAdvance(goalPlan({ goalToLevel: 30 }), [7], ["knw"]),
+	[{ key: "knw", chance: 10, roll: 7, increased: true }]);
+check("...and raises nothing when nothing was picked",
+	A.resolveGoalAdvance(goalPlan({ goalToLevel: 30 }), [7], [""])[0].increased, false);
+
+// --- skill points -----------------------------------------------------------------------------
+check("skill points come from the class", A.getSkillPointsForGoal({ baseClass: "Warrior" }), 17);
+check("a path document is looked up by its base class",
+	A.getSkillPointsForGoal({ baseClass: "Elementalist" }, "Elementalist(Call of Death)"), 20);
+check("a non-classed character gets none", A.getSkillPointsForGoal({ baseClass: "GME", nonClassed: true }), 0);
+
+const acquired = { name: "Weapon Knowledge", acquiredAtTitle: 1 };
+const future = { name: "Nerve Strike", acquiredAtTitle: 14 };
+check("points may be spent on an acquired skill", A.checkSkillPointSpend(3, 17, acquired, 5).allowed, true);
+check("...not more than remain", A.checkSkillPointSpend(18, 17, acquired, 5).allowed, false);
+check("...not a negative number", A.checkSkillPointSpend(0, 17, acquired, 5).allowed, false);
+check("...not with no skill chosen", A.checkSkillPointSpend(1, 17, null, 5).allowed, false);
+check("...and not on a skill whose title has not come",
+	[A.checkSkillPointSpend(1, 17, future, 5).allowed, A.checkSkillPointSpend(1, 17, future, 14).allowed],
+	[false, true]);
+
+// --- the Endurance a title brings, against his setNewCharacteristics --------------------------
+check("below 11th the formula is rolled", A.getTitleEndurance("1d4+1", 5, always(3)), 4);
+check("11th and 12th take the maximum instead of a roll",
+	[A.getTitleEndurance("1d4+1", 11, always(1)), A.getTitleEndurance("1d4+1", 12, always(1))], [5, 5]);
+check("13th is the maximum doubled, 14th tripled, 15th quadrupled",
+	[A.getTitleEndurance("1d6", 13, always(1)), A.getTitleEndurance("1d6", 14, always(1)),
+	 A.getTitleEndurance("1d6", 15, always(1))], [12, 18, 24]);
+check("a half race rolls both formulas and halves the total, rounding up",
+	A.getTitleEndurance("1d4|1d6", 5, dice(3, 4)), 4);
+check("a half race never gains less than 1", A.getTitleEndurance("1d4|1d4", 5, always(1)), 1);
+check("his 11th-12th half-race slip is reproduced: the FIRST parent's formula alone",
+	A.getTitleEndurance("1d4|1d6", 11, always(1)), 2);
+check("13th onward adds both halves again", A.getTitleEndurance("1d4|1d6", 13, always(1)), 10);
+check("a race with no formula gains nothing", A.getTitleEndurance("", 5, always(4)), 0);
+check("the dice reader takes his modifier", A.rollDiceString("2d6+2", always(4)), 10);
+check("the maximum reader takes it too", A.maxOfDiceString("2d6+2"), 14);
+
+// --- Arch Mortal ------------------------------------------------------------------------------
+check("nothing arch-mortal happens below 11th", A.getArchMortalGains(10), null);
+const at11 = A.getArchMortalGains(11);
+check("11th raises every attribute maximum to 27, stops ageing and gives Sense Supernatural at 20",
+	[at11.attributeMax, at11.immortal, at11.senseSupernatural], [27, true, 20]);
+check("...and his first invulnerability, word for word",
+	at11.invulnerability, "Special Invulnerability (Constant: Normal weapons do 1/2. Blessed and +1 do full)");
+check("12th improves the sense but grants no new invulnerability",
+	[A.getArchMortalGains(12).senseSupernatural, A.getArchMortalGains(12).invulnerability], [40, ""]);
+check("13th and 15th replace it rather than stacking",
+	[A.getArchMortalGains(13).invulnerability.includes("1/4"),
+	 A.getArchMortalGains(15).invulnerability.startsWith("Invulnerability"),
+	 A.getArchMortalGains(15).replaces.length], [true, true, 2]);
+check("Sense Supernatural tops out at his 99, not 100", A.getArchMortalGains(15).senseSupernatural, 99);
+check("the attribute maximum is raised once, at 11th, not again after",
+	[A.getArchMortalGains(12).attributeMax, A.getArchMortalGains(15).attributeMax], [0, 0]);
+
+// --- the qualification screen, against his setArchmortal* chain -------------------------------
+check("an empty requirement is no requirement", A.getArchMortalAttributeNeeded("", 20), null);
+check("RM means the character's racial maximum", A.getArchMortalAttributeNeeded("RM", 19), 19);
+check("a positive figure is a flat rating", A.getArchMortalAttributeNeeded("15", 19), 15);
+check("a negative figure counts down from the maximum", A.getArchMortalAttributeNeeded("-4", 19), 15);
+check("...and never below zero", A.getArchMortalAttributeNeeded("-30", 19), 0);
+
+const warriorish = {
+	archMortal: {
+		attributes: { str: "-1", agl: "RM", vit: "", int: "14", wis: "", knw: "15",
+		              app: "", chm: "", soc: "", aur: "", pty: "", wil: "15" },
+		skills: [{ name: "Body Parry", chance: 90 }, { name: "Weapon Lore", chance: 65 }],
+		special: ""
+	}
+};
+const good = {
+	attributes: { str: 19, agl: 20, vit: 10, int: 14, wis: 10, knw: 15, app: 10, chm: 10, soc: 10, aur: 10, pty: 10, wil: 15 },
+	attributeMax: { str: 20, agl: 20, vit: 20, int: 20, wis: 20, knw: 20, app: 20, chm: 20, soc: 20, aur: 20, pty: 20, wil: 20 },
+	skillChances: { "Body Parry": 92, "Weapon Lore": 70 },
+	powerCount: 1
+};
+const passes = A.checkArchMortalQualification(warriorish, good);
+check("a character meeting everything qualifies", [passes.qualified, passes.rows.length], [true, 8]);
+check("only the attributes his row names are checked",
+	passes.rows.filter(r => r.kind == "attribute").map(r => r.name), ["STR", "AGL", "INT", "KNW", "WIL"]);
+
+const shortSkill = A.checkArchMortalQualification(warriorish,
+	{ ...good, skillChances: { "Body Parry": 89, "Weapon Lore": 70 } });
+check("a core skill short of its chance fails it, and the row says by how much",
+	[shortSkill.qualified, shortSkill.rows.find(r => r.name == "Body Parry").has], [false, 89]);
+check("holding no power at all fails it",
+	A.checkArchMortalQualification(warriorish, { ...good, powerCount: 0 }).qualified, false);
+check("a skill the character does not hold reads as 0, not as met",
+	A.checkArchMortalQualification(warriorish, { ...good, skillChances: {} }).qualified, false);
+
+const special = { archMortal: { ...warriorish.archMortal, special: "Slay a dragon." } };
+check("a class with a special requirement waits on the Game Master's word",
+	[A.checkArchMortalQualification(special, good).qualified,
+	 A.checkArchMortalQualification(special, { ...good, specialMet: true }).qualified], [false, true]);
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+const failed = results.length - passed;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${failed} failed`;
+</script>

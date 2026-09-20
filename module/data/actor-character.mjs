@@ -25,6 +25,7 @@ import { getSlotAllowance } from "../skills-rules.mjs";
 import { combineHalfRace, getHalfRaceName, isClassBlockedForRaces, canRacesBreed } from "../race-rules.mjs";
 import { buildClassProgression, getClassSkillsToGrant, getClassUsageRestrictions,
          checkClassSkillTitle } from "../class-rules.mjs";
+import { getNextGoalExp, getExpCap, checkArchMortalQualification } from "../advancement-rules.mjs";
 
 const fields = foundry.data.fields;
 
@@ -93,9 +94,33 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				exp:         new fields.NumberField({ required: true, integer: true, initial: 0 }),
 				alignment:   new fields.StringField({ required: true, initial: "" }),
 				tendencies:  new fields.StringField({ required: true, initial: "" }),
-				gender:      new fields.StringField({ required: true, initial: "" })
-				// DERIVED: titleName (from classtitledict), nextGoalExp (from goalupdict),
-				//          and the per-race attribute caps.
+				gender:      new fields.StringField({ required: true, initial: "" }),
+
+				// @MARKER THE LEVEL-UP QUEUE
+				// Experience buys goals, and goals are walked one at a time rather than applied
+				// in a lump: his titles_to_raise / goals_to_raise, and the step each points at.
+				// While either is above zero a level-up is outstanding, and his sheet refuses to
+				// add any more experience until it is finished (roll_add_exp, sheet-worker.js:8256).
+				//
+				// They are queued rather than applied because each step has a decision in it --
+				// an attribute roll, skill points to place -- that only a player can make.
+				titlesToRaise: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				goalsToRaise:  new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+				titleToLevel:  new fields.NumberField({ required: true, integer: true, initial: 0 }),
+				goalToLevel:   new fields.NumberField({ required: true, integer: true, initial: 0 }),
+
+				// How many attribute increases the character has been given across their whole
+				// career, which is what his minimum-increase floor at goals 12, 27 and 42 is
+				// measured against (handleLevelGoal, sheet-worker.js:65704).
+				attributeIncreases: new fields.NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+
+				// The one part of the Arch Mortal qualification nothing can check: his data gives
+				// about half the classes a requirement written as a sentence ("Known for the
+				// recovery of a lost lore spoken of in legend"), and only a Game Master can say
+				// whether it has been met. Everything else on that screen is derived.
+				archSpecialMet: new fields.BooleanField({ required: true, initial: false })
+				// DERIVED: titleName (from classtitledict), nextGoalExp, archMortal (the
+				//          qualification screen), and the per-race attribute caps.
 			}),
 
 			// @MARKER ATTRIBUTES
@@ -476,6 +501,9 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this._prepareSkills();
 		this._prepareSkillSlotStatus();
 		this._prepareOffhandSkills();
+		// After the skills: the Arch Mortal screen reads five class skills' chances, and those
+		// are not worked out until _prepareSkills has run.
+		this._prepareAdvancement();
 		this._prepareAvailability();
 
 		// NOT YET IMPLEMENTED, and deliberately so rather than guessed at:
@@ -744,7 +772,10 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		} : null;
 		this.identity.className = this.classItem ? this.classItem.name : "";
 		this.identity.classType = this.classItem ? this.classItem.system.classType : "";
-		this.identity.titleName = this.classItem ? this.classItem.getTitleName(this.identity.title) : "";
+		// Through the guarded helper: getTitleName lives on the class's DATA MODEL, so reaching
+		// for it on the item throws in Foundry. Found by tools/levelup-preview.html, whose class
+		// is a real document rather than a fixture carrying the method in both places.
+		this.identity.titleName = ImagineCharacterData.getClassTitleName(this.classItem, this.identity.title);
 
 		this.identity.classes = this.classItems.map(tmpclass => {
 			var tmptitle = this._getClassTitle(tmpclass);
@@ -753,7 +784,7 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 				name: tmpclass.name,
 				classType: tmpclass.system.classType,
 				title: tmptitle,
-				titleName: tmpclass.getTitleName(tmptitle),
+				titleName: ImagineCharacterData.getClassTitleName(tmpclass, tmptitle),
 				skillSlotsNeeded: parseInt(tmpclass.system.skillSlotsNeeded) || 0
 			};
 		});
@@ -771,6 +802,62 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		this.identity.dualClassIssues = this._getDualClassIssues();
 		this.identity.raceIssues = this._getRaceIssues();
 		this._prepareClassProgression();
+	}
+
+	// @MARKER ADVANCEMENT
+	// This is the function which works out where the character stands on his experience ladder,
+	// and whether they may pass 10th title.
+	//
+	// Nothing here changes anything. Levelling up is a decision at every step -- an attribute
+	// rolled for, skill points placed -- so it is driven by the Level Up window and applied by
+	// module/advancement.mjs. This only reports.
+	_prepareAdvancement() {
+		var tmpexp = parseInt(this.identity.exp) || 0;
+		this.identity.nextGoalExp = getNextGoalExp(tmpexp);
+		this.identity.expCap = getExpCap(this.identity.title);
+		// Whether a level-up is outstanding. While one is, his sheet refuses more experience.
+		this.identity.levelUpPending = (parseInt(this.identity.titlesToRaise) || 0) > 0
+		                            || (parseInt(this.identity.goalsToRaise) || 0) > 0;
+
+		// The two attributes this class raises on a goal advance, from his goalupdict. A
+		// dual-classed character is offered the FIRST class's pair, because his sheet has one
+		// class and one pair, and nothing in his code says how two would combine. Reported on the
+		// window rather than decided here, so a Game Master can see which class is being advanced.
+		var tmpclass = this.classItem;
+		this.identity.goalAttributes = tmpclass
+			? [tmpclass.system.advancement?.goalAttr1 ?? "", tmpclass.system.advancement?.goalAttr2 ?? ""]
+				.map(tmpkey => ("" + tmpkey).trim().toLowerCase()).filter(tmpkey => tmpkey)
+			: [];
+
+		// @MARKER ARCH MORTAL
+		// The qualification screen, derived rather than stored: his sheet keeps a Yes/No flag a
+		// player presses a button to refresh, which can go stale the moment an attribute changes.
+		// The one part that cannot be derived is the class's special requirement, a sentence only
+		// a Game Master can judge, and that IS stored (identity.archSpecialMet).
+		var tmpattributes = {};
+		var tmpmaximums = {};
+		for (const tmpkey of Object.keys(this.attributes)) {
+			tmpattributes[tmpkey] = this.attributes[tmpkey].value;
+			tmpmaximums[tmpkey] = this.attributes[tmpkey].max;
+		}
+		var tmpchances = {};
+		if (this.parent?.items) {
+			for (const tmpitem of this.parent.items) {
+				if (tmpitem.type != "skill") { continue; }
+				// A skill held twice counts at its best, the same rule the skill roll uses.
+				tmpchances[tmpitem.name] = Math.max(parseInt(tmpitem.system.totalChance) || 0,
+				                                    parseInt(tmpchances[tmpitem.name]) || 0);
+			}
+		}
+
+		this.identity.archMortal = tmpclass
+			? checkArchMortalQualification(tmpclass.system, {
+				attributes: tmpattributes, attributeMax: tmpmaximums, skillChances: tmpchances,
+				powerCount: this.parent?.items?.filter(tmpitem => tmpitem.type == "power").length ?? 0,
+				specialMet: !!this.identity.archSpecialMet
+			})
+			: { qualified: false, rows: [], reason: "No class, so no Arch Mortal qualifications." };
+		this.identity.archQualified = this.identity.archMortal.qualified;
 	}
 
 	// @MARKER CLASS PROGRESSION

@@ -1,0 +1,166 @@
+{{!--
+	Level Up. One step at a time, in his order: experience, then the title where a goal crosses
+	one, then the goal. The window shows whichever is next, so there is no wrong order to get
+	into. Everything shown is worked out by module/advancement-rules.mjs.
+--}}
+<div class="imagine level-up">
+
+	<header class="level-up-standing">
+		<div><label>Title</label> <strong>{{standing.title}}</strong> {{standing.titleName}}</div>
+		<div><label>Goal</label> <strong>{{standing.goal}}</strong></div>
+		<div><label>Experience</label> <strong>{{standing.exp}}</strong></div>
+		<div><label>Next goal at</label> {{standing.nextGoalExp}}
+			{{#if standing.toNextGoal}}<span class="muted">({{standing.toNextGoal}} to go)</span>{{/if}}</div>
+		{{#if standing.expCap}}<div class="muted">This title may hold {{standing.expCap}} before levelling.</div>{{/if}}
+	</header>
+
+	<section class="level-up-body">
+
+	{{!-- @MARKER EXPERIENCE --}}
+	{{#if isExperience}}
+		<h2>Experience</h2>
+		<p class="muted">Enter what was awarded. Experience above this title's cap is trimmed to it,
+			and none may be added while a level-up is waiting.</p>
+		<label class="row">Add experience <input type="number" name="addExp" value="" min="1" step="1"></label>
+		<button type="button" data-action="addExp">Add</button>
+	{{/if}}
+
+	{{!-- @MARKER TITLE --}}
+	{{#if isTitle}}
+		<h2>Title {{titleStep.title}}{{#if titleStep.titleName}} &mdash; {{titleStep.titleName}}{{/if}}</h2>
+		<p class="muted">{{titleStep.className}}. A title is taken before the goal that crossed it.</p>
+
+		{{#if titleStep.skills.length}}
+		<h3>Class skills this title brings</h3>
+		<ul class="level-up-skills">
+			{{#each titleStep.skills as |s|}}<li>{{s.name}}{{#if s.core}} <span class="muted">(core)</span>{{/if}}</li>{{/each}}
+		</ul>
+		{{else}}
+		<p class="muted">This title brings no new class skills.</p>
+		{{/if}}
+
+		<h3>Endurance</h3>
+		<p>{{#if titleStep.enduranceFormula}}The race's title formula is
+			<strong>{{titleStep.enduranceFormula}}</strong>.{{else}}This race has no title Endurance formula.{{/if}}
+			{{#if titleStep.isArchMortal}}<span class="muted">An Arch Mortal takes its maximum rather than rolling.</span>{{/if}}</p>
+		{{#if titleStep.endurance}}
+			<p class="level-up-result">+{{titleStep.endurance}} Endurance</p>
+		{{else}}
+			<button type="button" data-action="rollEndurance">Roll Endurance</button>
+		{{/if}}
+
+		{{#if titleStep.archMortal}}
+		<h3>Arch Mortal</h3>
+		<ul class="level-up-arch">
+			{{#if titleStep.archMortal.immortal}}
+			<li>Every attribute maximum becomes 27.</li>
+			<li>Ageing stops: maximum age becomes Immortal.</li>
+			{{/if}}
+			{{#if titleStep.archMortal.senseSupernatural}}
+			<li>Sense Supernatural at {{titleStep.archMortal.senseSupernatural}}%.</li>
+			{{/if}}
+			{{#if titleStep.archMortal.invulnerability}}
+			<li>{{titleStep.archMortal.invulnerability}}{{#if titleStep.archMortal.replaces.length}}
+				<span class="muted">(replaces the weaker one held)</span>{{/if}}</li>
+			{{/if}}
+		</ul>
+		{{/if}}
+
+		<button type="button" data-action="commitTitle" {{#unless titleStep.canCommit}}disabled{{/unless}}>Commit title</button>
+	{{/if}}
+
+	{{!-- @MARKER GOAL --}}
+	{{#if isGoal}}
+		<h2>Goal {{queue.goalToLevel}}</h2>
+		<p class="muted">{{queue.goals}} goal(s) still to take{{#if queue.titles}}, and {{queue.titles}} title(s){{/if}}.</p>
+
+		<h3>Attribute increase</h3>
+		{{#if goalPlan.isChoice}}
+		<p>This goal guarantees an increase: too few have come up so far, so one attribute is raised outright.</p>
+		{{else}}
+		<p class="muted">{{goalPlan.explanation}}</p>
+		{{/if}}
+
+		<table class="level-up-rolls">
+			<tbody>
+				{{#each goalPlan.rolls as |r|}}
+				<tr>
+					<td>{{#if r.anyAttribute}}
+						<select name="pick{{r.index}}">
+							<option value="">Choose an attribute</option>
+							{{#each ../attributeChoices as |a|}}
+							<option value="{{a.key}}" {{#if a.atMax}}disabled{{/if}}>{{a.label}}{{#if a.atMax}} (at maximum){{/if}}</option>
+							{{/each}}
+						</select>
+					{{else}}{{r.label}}{{/if}}</td>
+					<td class="col-num">{{r.chance}}%</td>
+					<td>{{#if r.result}}rolled {{r.result.roll}} &mdash;
+						<strong>{{#if r.result.increased}}+1{{else}}no increase{{/if}}</strong>{{/if}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{#unless goalPlan.rolled}}
+		<button type="button" data-action="rollAttribute">{{#if goalPlan.isChoice}}Take the increase{{else}}Roll{{/if}}</button>
+		{{/unless}}
+
+		<h3>Skill points</h3>
+		<p>{{skillPoints.remaining}} of {{skillPoints.total}} left to place.
+			<span class="muted">Each point is +1% on a class skill already acquired.</span></p>
+		{{#if skillPoints.skills.length}}
+		<div class="row">
+			<select name="spendSkill">
+				{{#each skillPoints.skills as |s|}}
+				<option value="{{s.id}}">{{s.name}} ({{s.chance}}%{{#if s.added}}, +{{s.added}} pending{{/if}})</option>
+				{{/each}}
+			</select>
+			<input type="number" name="spendPoints" value="1" min="1" step="1">
+			<button type="button" data-action="spendPoints">Place</button>
+		</div>
+		{{else}}
+		<p class="muted">No acquired class skills to improve.</p>
+		{{/if}}
+		{{#if skillPoints.spends.length}}
+		<ul class="level-up-spends">
+			{{#each skillPoints.spends as |s index|}}
+			<li>{{s.name}} +{{s.points}}
+				<button type="button" data-action="undoSpend" data-index="{{index}}">Undo</button></li>
+			{{/each}}
+		</ul>
+		{{/if}}
+
+		<button type="button" data-action="commitGoal" {{#unless canCommit}}disabled{{/unless}}>Commit goal</button>
+		{{#unless canCommit}}<p class="muted">Roll for the attribute and place every skill point first.</p>{{/unless}}
+	{{/if}}
+
+	{{!-- @MARKER ARCH MORTAL QUALIFICATIONS --}}
+	{{#if archMortal}}
+	<details class="level-up-qualify" {{#unless archMortal.qualified}}open{{/unless}}>
+		<summary>Arch Mortal qualifications &mdash;
+			<strong>{{#if archMortal.qualified}}qualified{{else}}not yet{{/if}}</strong></summary>
+		<p class="muted">Passing 10th title needs all of these. Experience that would cross goal
+			{{archMortalGoal}} is refused until they are met.</p>
+		<table class="level-up-qualify-table">
+			<tbody>
+				{{#each archMortal.rows as |q|}}
+				<tr class="{{#unless q.met}}unmet{{/unless}}">
+					<td>{{q.name}}</td>
+					<td class="col-num">{{q.has}} / {{q.needed}}</td>
+					<td class="col-num">{{#if q.met}}&check;{{else}}&mdash;{{/if}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{#if archMortal.special}}
+		<p>{{archMortal.special}}</p>
+		{{#if archMortal.isGM}}
+		<button type="button" data-action="setSpecial">{{#if archMortal.specialMet}}Withdraw{{else}}Judge met{{/if}}</button>
+		{{else}}
+		<p class="muted">Only the Game Master can judge this one.</p>
+		{{/if}}
+		{{/if}}
+	</details>
+	{{/if}}
+
+	</section>
+</div>

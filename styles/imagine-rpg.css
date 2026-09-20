@@ -510,6 +510,45 @@
 	font-size: 10px;
 }
 
+/* @MARKER LEVEL UP */
+
+.level-up-open {
+	width: auto;
+	padding: 2px 10px;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+.imagine.level-up .level-up-standing {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.imagine.level-up .level-up-standing label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	margin-right: 4px;
+}
+
+.imagine.level-up h3 { margin: 10px 0 4px; }
+.imagine.level-up .row { display: flex; gap: 6px; align-items: center; }
+.imagine.level-up .level-up-result { font-weight: 600; color: var(--imagine-accent); }
+.imagine.level-up .level-up-rolls td { padding: 3px 6px; }
+.imagine.level-up .level-up-skills,
+.imagine.level-up .level-up-arch,
+.imagine.level-up .level-up-spends { margin: 4px 0 4px 18px; }
+
+/* A qualification not yet met, on the Arch Mortal screen. */
+.imagine.level-up .level-up-qualify-table td { padding: 2px 6px; }
+.imagine.level-up .level-up-qualify-table tr.unmet td { color: #a2462e; }
+
 /* @MARKER EQUIPMENT */
 
 .encumbrance-bar {

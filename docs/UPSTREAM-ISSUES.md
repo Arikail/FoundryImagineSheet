@@ -1000,3 +1000,52 @@ Sleight of Hand and Street Knowledge 2d10% (pp.139-140), Bookbinder, Candle/Oil 
 Sewing 5d10% (pp.149-159), Espionage 4d10% (p.152). Each entry's rating and learn time match the
 book too, so these are one mistyped character each, most likely from copying out of a scanned
 text, where "l" and "1" are easily confused. That was the only such slip in the skill dictionaries.
+
+## 35. `getExpByGoal` writes `case 30:` twice, so goal 40 answers 0 experience
+
+**Status:** open · **Severity:** a level-up table returns 0 where it should return 676,000
+
+`getExpByGoal` (sheet-worker.js:91991) has two `case 30:` labels. The second sits exactly where
+`case 40:` belongs, between 39 and 41:
+
+```
+case 39: tempExp=606000; break;
+case 30: tempExp=676000; break;   // this should be case 40
+case 41: tempExp=746000; break;
+```
+
+JavaScript takes the first matching label, so the second is unreachable and `getExpByGoal(40)`
+falls off the end of the switch and returns 0. Goal 40 is the second goal of 14th title, so it only
+bites a character in the Arch Mortal range — which may be why it has not been noticed.
+
+Your other three experience functions agree with each other and with the fix: `getNewGoal` puts
+goal 40 at 676,000, and `getNextGoalExp` names 676,000 as a threshold. The port's tables are
+generated from `getNewGoal` for this reason, and the generator prints the disagreement on every
+run. Changing `case 30:` to `case 40:` is the whole fix.
+
+**Also in the same family, much smaller:** `getExpByGoal` says goal -2 begins at -1,000, while
+`getNewGoal`'s branch (`newTotalExp<-999`) puts it at -999. One of the two is out by a point. The
+port follows `getNewGoal`, since that is the function that actually decides a character's goal.
+
+## 36. A half race's 11th and 12th title Endurance is worked out from one parent only
+
+**Status:** open · **Severity:** a Half Race Arch Mortal gains less Endurance than intended
+
+`setNewCharacteristics` (sheet-worker.js:27479) rolls the Endurance a title brings. For a Half Race
+it takes both parents' formulas, adds them and halves the total — in every branch except the one
+for titles 11 and 12:
+
+```
+tempNewEND=getMaxValueFromDiceString(tempENDFormula1);
+tempNewEND=tempNewEND+getMaxValueFromDiceString(tempENDFormula2);
+tempNewEND=getMaxValueFromDiceString(tempENDFormula1);   // the sum is thrown away here
+tempNewEND=divideWithMinRoundUp(tempNewEND, 2);
+```
+
+The third line overwrites the sum with the first parent's figure alone, so the result is half of one
+parent rather than half of both. The 13th, 14th and 15th title branches directly below it do the
+same three steps without that line, which is what makes it look like a stray paste rather than a
+rule. A Human|Elf at 11th gains 3 where 13th gives 5.
+
+The port reproduces it, since your sheet is the source of truth, and says so in the code and in a
+test. Confirm it is a slip and it will be corrected in both places.

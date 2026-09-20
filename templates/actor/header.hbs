@@ -58,6 +58,12 @@
 				<input type="number" name="system.identity.exp" value="{{system.identity.exp}}"></span>
 			<span class="field"><label>Goal</label>
 				<input type="number" name="system.identity.goal" value="{{system.identity.goal}}"></span>
+			{{!-- Experience is typed in here or added through the window; the window is the one
+			      that applies his cap, his refusals and the Arch Mortal line. --}}
+			<span class="field"><label>Next goal</label>
+				<span class="readout">{{system.identity.nextGoalExp}}</span></span>
+			<button type="button" class="level-up-open {{#if system.identity.levelUpPending}}alarm{{/if}}"
+				data-action="openLevelUp">{{#if system.identity.levelUpPending}}Level up waiting{{else}}Experience &amp; levels{{/if}}</button>
 		</div>
 	</div>
 

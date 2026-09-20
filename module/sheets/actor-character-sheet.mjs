@@ -36,6 +36,7 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			setWeaponHand: ImagineCharacterSheet.#onSetWeaponHand,
 			rollUntrainedSkill: ImagineCharacterSheet.#onRollUntrainedSkill,
 			stepClassTitle: ImagineCharacterSheet.#onStepClassTitle,
+			openLevelUp: ImagineCharacterSheet.#onOpenLevelUp,
 			transferSlot: ImagineCharacterSheet.#onTransferSlot,
 			sacrificeSlot: ImagineCharacterSheet.#onSacrificeSlot,
 			addLanguage: ImagineCharacterSheet.#onAddLanguage,
@@ -472,6 +473,14 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			content: `<div class="imagine-skill-roll">${tmplines}</div>`,
 			rolls: tmprolls
 		});
+	}
+
+	// This is the function which opens the Level Up window. Experience, goals and titles are all
+	// taken there rather than typed onto the sheet, because each has decisions and refusals in it
+	// -- see module/apps/level-up.mjs.
+	static async #onOpenLevelUp(event, target) {
+		event.preventDefault();
+		game.imagine.levelUp(this.document);
 	}
 
 	// This is the function which advances or steps back one class's own title.

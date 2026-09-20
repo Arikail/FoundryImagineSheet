@@ -387,7 +387,46 @@
       ],
       "baseClass": "Acrobat",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Acrobatics",
+            "chance": 90
+          },
+          {
+            "name": "Balance",
+            "chance": 90
+          },
+          {
+            "name": "Dodge",
+            "chance": 85
+          },
+          {
+            "name": "Leap",
+            "chance": 85
+          },
+          {
+            "name": "Break Fall",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -796,7 +835,46 @@
       ],
       "baseClass": "Alchemist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Elixir",
+            "chance": 80
+          },
+          {
+            "name": "Poison Lore",
+            "chance": 80
+          },
+          {
+            "name": "Potion Lore",
+            "chance": 80
+          },
+          {
+            "name": "Empower",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -1209,7 +1287,46 @@
       ],
       "baseClass": "Arcanist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "-2",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Cartography",
+            "chance": 85
+          },
+          {
+            "name": "Legend Lore",
+            "chance": 85
+          },
+          {
+            "name": "Decipher",
+            "chance": 80
+          },
+          {
+            "name": "Identify",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          }
+        ],
+        "special": "Known for the discovery or recovery of a valuable or interesting magical item, spell, ritual or lost lore spoken of in legend."
+      }
     }
   },
   {
@@ -1532,7 +1649,46 @@
       ],
       "baseClass": "Archer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Brace",
+            "chance": 90
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 80
+          },
+          {
+            "name": "Projectile Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Quick Load",
+            "chance": 75
+          },
+          {
+            "name": "Perfect Shot",
+            "chance": 70
+          }
+        ],
+        "special": "Have a high quality or magical missile weapon."
+      }
     }
   },
   {
@@ -1936,7 +2092,46 @@
       ],
       "baseClass": "Archer(Arcane)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Spell Arrow",
+            "chance": 90
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 80
+          },
+          {
+            "name": "Arcane Arrow",
+            "chance": 70
+          },
+          {
+            "name": "Spell Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -2359,7 +2554,46 @@
       ],
       "baseClass": "Archer(Zen)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "-4",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Meditate",
+            "chance": 90
+          },
+          {
+            "name": "Zen Archery",
+            "chance": 90
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 80
+          },
+          {
+            "name": "Balanced Mind",
+            "chance": 75
+          },
+          {
+            "name": "Perfect Shot",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -2819,7 +3053,46 @@
       ],
       "baseClass": "Assassin",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          },
+          {
+            "name": "Disguise",
+            "chance": 85
+          },
+          {
+            "name": "Surprise Attack",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -3147,7 +3420,46 @@
       ],
       "baseClass": "Bandit",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "12",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Cover Tracks",
+            "chance": 85
+          },
+          {
+            "name": "Steal",
+            "chance": 85
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 80
+          },
+          {
+            "name": "Stun",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -3556,7 +3868,46 @@
       ],
       "baseClass": "Banisher",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "15",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Detect Supernatural",
+            "chance": 90
+          },
+          {
+            "name": "Spirit Weapon",
+            "chance": 90
+          },
+          {
+            "name": "Danger Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Protection from Supernatural",
+            "chance": 85
+          },
+          {
+            "name": "Banish",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -3961,7 +4312,46 @@
       ],
       "baseClass": "Bard",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "12",
+          "knw": "-1",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "14",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Play",
+            "chance": 90
+          },
+          {
+            "name": "Recite",
+            "chance": 90
+          },
+          {
+            "name": "Sing",
+            "chance": 90
+          },
+          {
+            "name": "Poem Lore",
+            "chance": 80
+          },
+          {
+            "name": "Song Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -4366,7 +4756,46 @@
       ],
       "baseClass": "Battlemancer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Parry",
+            "chance": 90
+          },
+          {
+            "name": "Imbue Weapon",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Imbue Armor",
+            "chance": 75
+          }
+        ],
+        "special": "Must have made 1 magical weapon both imbued personally and mastered with Weapon Lore. Must have 1 armor set both imbued personally and mastered with Armor Lore."
+      }
     }
   },
   {
@@ -4776,7 +5205,46 @@
       ],
       "baseClass": "Beastmaster",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Animal Lore",
+            "chance": 90
+          },
+          {
+            "name": "Speak to Animal",
+            "chance": 90
+          },
+          {
+            "name": "Tame Animal",
+            "chance": 90
+          },
+          {
+            "name": "Animal Projection",
+            "chance": 85
+          },
+          {
+            "name": "Summon Animal",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -5222,7 +5690,46 @@
       ],
       "baseClass": "Beguiler",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "18",
+          "app": "",
+          "chm": "-2",
+          "soc": "",
+          "aur": "17",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Illusion Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Charming",
+            "chance": 80
+          },
+          {
+            "name": "Enigma",
+            "chance": 80
+          },
+          {
+            "name": "Bind Control",
+            "chance": 75
+          },
+          {
+            "name": "Beguile",
+            "chance": 70
+          }
+        ],
+        "special": "Have permanent control of at least 3 beings."
+      }
     }
   },
   {
@@ -5566,7 +6073,46 @@
       ],
       "baseClass": "Berserker",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "-4",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Berserking",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Battle Cry",
+            "chance": 85
+          },
+          {
+            "name": "Sweep",
+            "chance": 85
+          },
+          {
+            "name": "Critical",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -5953,7 +6499,46 @@
       ],
       "baseClass": "Border Scout",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          },
+          {
+            "name": "Blend",
+            "chance": 85
+          },
+          {
+            "name": "Danger Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Surprise Attack",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -6337,7 +6922,46 @@
       ],
       "baseClass": "Bounty Hunter",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "14",
+          "vit": "12",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Track",
+            "chance": 90
+          },
+          {
+            "name": "Street Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Stun",
+            "chance": 90
+          },
+          {
+            "name": "Shadowing",
+            "chance": 85
+          },
+          {
+            "name": "Disarm",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -6718,7 +7342,46 @@
       ],
       "baseClass": "Buccaneer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "12",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Balance",
+            "chance": 90
+          },
+          {
+            "name": "Climb",
+            "chance": 90
+          },
+          {
+            "name": "Sail",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Navigate",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -7128,7 +7791,46 @@
       ],
       "baseClass": "Cacophonist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "-4",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Intone",
+            "chance": 90
+          },
+          {
+            "name": "Discord",
+            "chance": 85
+          },
+          {
+            "name": "Whisper",
+            "chance": 80
+          },
+          {
+            "name": "Bellow",
+            "chance": 75
+          },
+          {
+            "name": "Hymn Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -7514,7 +8216,46 @@
       ],
       "baseClass": "Cajoler",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "16",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Intimidation",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 75
+          },
+          {
+            "name": "Beguile",
+            "chance": 70
+          },
+          {
+            "name": "Incite",
+            "chance": 65
+          }
+        ],
+        "special": "Must have had at least one enemy killed or imprisoned without taking any direct action. Must have another be blamed and take the punishment for a crime the cajoler did or made to happen. Must be free from criminal bounty or warrant in the community in which they live and any neighboring communities. Must have at least one patsy, readily available."
+      }
     }
   },
   {
@@ -7892,7 +8633,46 @@
       ],
       "baseClass": "Cavalier",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Horsemanship",
+            "chance": 90
+          },
+          {
+            "name": "Shield Parry",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Armor Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Law",
+            "chance": 85
+          }
+        ],
+        "special": "Must have a steed either in superb condition or magical."
+      }
     }
   },
   {
@@ -8339,7 +9119,46 @@
       ],
       "baseClass": "Channeler",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Call Spirit",
+            "chance": 90
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Undead Lore",
+            "chance": 85
+          },
+          {
+            "name": "Aura of Life",
+            "chance": 75
+          },
+          {
+            "name": "Channel Life Force",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -8730,7 +9549,46 @@
       ],
       "baseClass": "Conqueror",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Direction Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Parry",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Track",
+            "chance": 85
+          },
+          {
+            "name": "Weapon Lore",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -9119,7 +9977,46 @@
       ],
       "baseClass": "Crypt Robber",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "-1",
+          "wil": "-3"
+        },
+        "skills": [
+          {
+            "name": "Detect Evil",
+            "chance": 90
+          },
+          {
+            "name": "Still Life Force",
+            "chance": 80
+          },
+          {
+            "name": "Undead Lore",
+            "chance": 80
+          },
+          {
+            "name": "Turn Undead",
+            "chance": 70
+          },
+          {
+            "name": "Speak to Dead",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -9516,7 +10413,46 @@
       ],
       "baseClass": "Curse Breaker",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-4",
+          "pty": "-1",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Detect Curse",
+            "chance": 90
+          },
+          {
+            "name": "Remove Curse",
+            "chance": 80
+          },
+          {
+            "name": "Counter Divinity",
+            "chance": 75
+          },
+          {
+            "name": "Counter Magic",
+            "chance": 75
+          },
+          {
+            "name": "Curse",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -9880,7 +10816,46 @@
       ],
       "baseClass": "Delver",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-4",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "RM",
+          "app": "",
+          "chm": "12",
+          "soc": "",
+          "aur": "14",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Cartography",
+            "chance": 90
+          },
+          {
+            "name": "Legend Lore",
+            "chance": 90
+          },
+          {
+            "name": "Decipher",
+            "chance": 85
+          },
+          {
+            "name": "Detect Trap(u)",
+            "chance": 85
+          },
+          {
+            "name": "Artifact Lore",
+            "chance": 80
+          }
+        ],
+        "special": "Have a special collection of some type of items that is the greatest in the world."
+      }
     }
   },
   {
@@ -10226,7 +11201,46 @@
       ],
       "baseClass": "Dervish",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "-4",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Balance",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Sweep",
+            "chance": 85
+          },
+          {
+            "name": "Second Weapon Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Spin Strike",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -10610,7 +11624,46 @@
       "blockedRaces": [],
       "baseClass": "Dreamer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-3",
+          "wis": "",
+          "knw": "-4",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Read Dream",
+            "chance": 90
+          },
+          {
+            "name": "Dream Shift",
+            "chance": 85
+          },
+          {
+            "name": "Dream Create",
+            "chance": 80
+          },
+          {
+            "name": "Dream Call",
+            "chance": 75
+          },
+          {
+            "name": "Dream Summon",
+            "chance": 65
+          }
+        ],
+        "special": "Must have created a dream animal and developed their own dream magic item."
+      }
     }
   },
   {
@@ -11044,7 +12097,46 @@
       ],
       "baseClass": "Druid",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "14",
+          "knw": "-1",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge(w)",
+            "chance": 90
+          },
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Speak to Animal",
+            "chance": 90
+          },
+          {
+            "name": "Tame Animal",
+            "chance": 90
+          },
+          {
+            "name": "Area Sense",
+            "chance": 85
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -11372,7 +12464,46 @@
       ],
       "baseClass": "Duelist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Disarm",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Parry",
+            "chance": 90
+          },
+          {
+            "name": "Feint",
+            "chance": 75
+          },
+          {
+            "name": "Weapon Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -11741,7 +12872,46 @@
       ],
       "baseClass": "Enchanter",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-3",
+          "pty": "",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Imbue",
+            "chance": 90
+          },
+          {
+            "name": "Imbue Weapon",
+            "chance": 80
+          },
+          {
+            "name": "Imbue Armor",
+            "chance": 80
+          },
+          {
+            "name": "Disenchant",
+            "chance": 70
+          },
+          {
+            "name": "Enchant Item",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -12148,7 +13318,46 @@
       ],
       "baseClass": "Exorcist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Undead Lore",
+            "chance": 90
+          },
+          {
+            "name": "Life Sense",
+            "chance": 85
+          },
+          {
+            "name": "Speak to Dead",
+            "chance": 85
+          },
+          {
+            "name": "Call Spirit",
+            "chance": 80
+          },
+          {
+            "name": "Exorcism",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -12495,7 +13704,46 @@
       "blockedRaces": [],
       "baseClass": "Explorer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-4",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "RM",
+          "app": "",
+          "chm": "12",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Cartography",
+            "chance": 90
+          },
+          {
+            "name": "Direction Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Decipher",
+            "chance": 80
+          },
+          {
+            "name": "Navigate",
+            "chance": 75
+          },
+          {
+            "name": "Legend Lore",
+            "chance": 70
+          }
+        ],
+        "special": "Known to have discovered a new land, a new type of valuable or interesting item, or a new species of flora or fauna."
+      }
     }
   },
   {
@@ -12947,7 +14195,46 @@
       ],
       "baseClass": "Gypsy",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-4",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "RM",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Cheat",
+            "chance": 90
+          },
+          {
+            "name": "Sleight of Hand",
+            "chance": 90
+          },
+          {
+            "name": "Play",
+            "chance": 85
+          },
+          {
+            "name": "Sing",
+            "chance": 85
+          },
+          {
+            "name": "Foretell",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -13342,7 +14629,46 @@
       "blockedRaces": [],
       "baseClass": "Harbinger",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "15",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-3",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Detect Supernatural",
+            "chance": 90
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Intone",
+            "chance": 80
+          },
+          {
+            "name": "Foretell",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -13754,7 +15080,46 @@
       ],
       "baseClass": "Harmonist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "-4",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Intone",
+            "chance": 90
+          },
+          {
+            "name": "Harmony",
+            "chance": 85
+          },
+          {
+            "name": "Whisper",
+            "chance": 80
+          },
+          {
+            "name": "Bellow",
+            "chance": 75
+          },
+          {
+            "name": "Hymn Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -14112,7 +15477,46 @@
       ],
       "baseClass": "Healer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-4",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Healing",
+            "chance": 90
+          },
+          {
+            "name": "Cure Disease",
+            "chance": 85
+          },
+          {
+            "name": "Cure Poison",
+            "chance": 85
+          },
+          {
+            "name": "Cure Insanity",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -14483,7 +15887,46 @@
       "blockedRaces": [],
       "baseClass": "Heretic",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-2",
+          "vit": "",
+          "int": "",
+          "wis": "17",
+          "knw": "-2",
+          "app": "",
+          "chm": "-4",
+          "soc": "",
+          "aur": "",
+          "pty": "19",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Sleight of Hand",
+            "chance": 90
+          },
+          {
+            "name": "Detect Alignment",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 80
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 80
+          }
+        ],
+        "special": "Must have converted 10 followers and one other clergy to a new belief system."
+      }
     }
   },
   {
@@ -14840,7 +16283,46 @@
       ],
       "baseClass": "Hermeticist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "14",
+          "vit": "",
+          "int": "15",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "14",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Animal Lore",
+            "chance": 90
+          },
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Hermetics Lore",
+            "chance": 90
+          },
+          {
+            "name": "Bestiary Lore",
+            "chance": 85
+          },
+          {
+            "name": "Stun",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -15229,7 +16711,46 @@
       "blockedRaces": [],
       "baseClass": "Hero",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Feint",
+            "chance": 90
+          },
+          {
+            "name": "Martial Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Fearless",
+            "chance": 85
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 70
+          },
+          {
+            "name": "Steadfast",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -15660,7 +17181,46 @@
       "blockedRaces": [],
       "baseClass": "Hunter",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "-2",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Track",
+            "chance": 90
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 75
+          },
+          {
+            "name": "Fearless",
+            "chance": 70
+          },
+          {
+            "name": "Perfect Shot",
+            "chance": 70
+          },
+          {
+            "name": "Surprise Attack",
+            "chance": 65
+          }
+        ],
+        "special": "Has slain or captured an Animal, Magical Animal, and Magical Creature of legend."
+      }
     }
   },
   {
@@ -16037,7 +17597,46 @@
       ],
       "baseClass": "Illuminator",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "16"
+        },
+        "skills": [
+          {
+            "name": "Lightfire Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Pyrokinesis",
+            "chance": 85
+          },
+          {
+            "name": "Lumokinesis",
+            "chance": 80
+          },
+          {
+            "name": "Light Step",
+            "chance": 75
+          },
+          {
+            "name": "Phase",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -16469,7 +18068,46 @@
       "blockedRaces": [],
       "baseClass": "Innominate",
       "path": "Detect Evil",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "15",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Balanced Mind",
+            "chance": 75
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Mind Dance",
+            "chance": 75
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -16901,7 +18539,46 @@
       "blockedRaces": [],
       "baseClass": "Innominate",
       "path": "Detect Good",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "15",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Balanced Mind",
+            "chance": 75
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Mind Dance",
+            "chance": 75
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -17320,7 +18997,46 @@
       "blockedRaces": [],
       "baseClass": "Intercessor",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Interdict",
+            "chance": 70
+          },
+          {
+            "name": "Interpose",
+            "chance": 80
+          },
+          {
+            "name": "Intervene",
+            "chance": 85
+          },
+          {
+            "name": "Steadfast Bulwark",
+            "chance": 85
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -17751,7 +19467,46 @@
       "blockedRaces": [],
       "baseClass": "Investigator",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Shadowing",
+            "chance": 90
+          },
+          {
+            "name": "Street Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Track",
+            "chance": 90
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 85
+          },
+          {
+            "name": "Stun",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -18137,7 +19892,46 @@
       ],
       "baseClass": "Jester",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "16",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Truth Tell",
+            "chance": 90
+          },
+          {
+            "name": "Mock",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 75
+          },
+          {
+            "name": "Beguile",
+            "chance": 70
+          },
+          {
+            "name": "Incite",
+            "chance": 65
+          }
+        ],
+        "special": "Must have influenced an important leader to take an action opposite of what they originally planned."
+      }
     }
   },
   {
@@ -18544,7 +20338,46 @@
       ],
       "baseClass": "Kineticist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "-1",
+          "wil": "16"
+        },
+        "skills": [
+          {
+            "name": "Kinetics Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Cryokinesis",
+            "chance": 85
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "Electrokinesis",
+            "chance": 75
+          },
+          {
+            "name": "Kinetics Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -18960,7 +20793,46 @@
       ],
       "baseClass": "Knight",
       "path": "Standard",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "15",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Evil",
+            "chance": 85
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 85
+          },
+          {
+            "name": "Bless",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -19376,7 +21248,46 @@
       ],
       "baseClass": "Knight",
       "path": "Templar",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "15",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Evil",
+            "chance": 85
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 85
+          },
+          {
+            "name": "Bless",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -19788,7 +21699,46 @@
       ],
       "baseClass": "Knight(Dark)",
       "path": "Standard",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "16",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Good",
+            "chance": 85
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 85
+          },
+          {
+            "name": "Blasphemy",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -20200,7 +22150,46 @@
       ],
       "baseClass": "Knight(Dark)",
       "path": "Templar",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "16",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Good",
+            "chance": 85
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 85
+          },
+          {
+            "name": "Blasphemy",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -20630,7 +22619,46 @@
       ],
       "baseClass": "Knight(Death)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Coexist with Undead",
+            "chance": 85
+          },
+          {
+            "name": "Control Undead",
+            "chance": 80
+          },
+          {
+            "name": "Shadow Walk",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -21049,7 +23077,46 @@
       "blockedRaces": [],
       "baseClass": "Legendier",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Decipher",
+            "chance": 85
+          },
+          {
+            "name": "Legend Lore",
+            "chance": 85
+          },
+          {
+            "name": "Artifact Lore",
+            "chance": 80
+          },
+          {
+            "name": "Navigate",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -21427,7 +23494,46 @@
       "blockedRaces": [],
       "baseClass": "Luckster",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Luck",
+            "chance": 90
+          },
+          {
+            "name": "Cheat",
+            "chance": 90
+          },
+          {
+            "name": "Charming",
+            "chance": 85
+          },
+          {
+            "name": "Danger Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Fate",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -21785,7 +23891,46 @@
       ],
       "baseClass": "Mage",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Detect Magic",
+            "chance": 90
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Detect Aura",
+            "chance": 85
+          },
+          {
+            "name": "Identify",
+            "chance": 80
+          },
+          {
+            "name": "Absorb Aura",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -22163,7 +24308,46 @@
       ],
       "baseClass": "Martial Artist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Break Fall",
+            "chance": 90
+          },
+          {
+            "name": "Martial Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Dodge",
+            "chance": 85
+          },
+          {
+            "name": "Feint",
+            "chance": 85
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -22510,7 +24694,46 @@
       "blockedRaces": [],
       "baseClass": "Medium",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Detect Supernatural",
+            "chance": 90
+          },
+          {
+            "name": "Divine Speaker",
+            "chance": 90
+          },
+          {
+            "name": "Planar Lore",
+            "chance": 90
+          },
+          {
+            "name": "Speak to Dead",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Supernatural",
+            "chance": 85
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -22880,7 +25103,46 @@
       ],
       "baseClass": "Mentalist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Mind Dance",
+            "chance": 90
+          },
+          {
+            "name": "Animal Projection",
+            "chance": 85
+          },
+          {
+            "name": "Sense Projection",
+            "chance": 85
+          },
+          {
+            "name": "Thought Projection",
+            "chance": 80
+          },
+          {
+            "name": "Body Control",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -23315,7 +25577,46 @@
       ],
       "baseClass": "Minstrel",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-4",
+          "wis": "12",
+          "knw": "-1",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "14",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Play",
+            "chance": 90
+          },
+          {
+            "name": "Recite",
+            "chance": 90
+          },
+          {
+            "name": "Sing",
+            "chance": 90
+          },
+          {
+            "name": "Poem Lore",
+            "chance": 80
+          },
+          {
+            "name": "Song Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -23692,7 +25993,46 @@
       ],
       "baseClass": "Missionary",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-1",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Language Lore",
+            "chance": 90
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Narrate",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 75
+          },
+          {
+            "name": "Convince",
+            "chance": 75
+          }
+        ],
+        "special": "Known for converting more than 50% of a particular group."
+      }
     }
   },
   {
@@ -24173,7 +26513,46 @@
       ],
       "baseClass": "Monk",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "12",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "-4",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Dodge",
+            "chance": 85
+          },
+          {
+            "name": "Feint",
+            "chance": 80
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Meditate",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -24515,7 +26894,46 @@
       ],
       "baseClass": "Mounted Archer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-2",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "-4",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Horsemanship",
+            "chance": 90
+          },
+          {
+            "name": "Brace",
+            "chance": 85
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 75
+          },
+          {
+            "name": "Projectile Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Quick Load",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -24965,7 +27383,46 @@
       ],
       "baseClass": "Necromancer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "18",
+          "wis": "16",
+          "knw": "17",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Control Undead",
+            "chance": 90
+          },
+          {
+            "name": "Bind Form",
+            "chance": 85
+          },
+          {
+            "name": "Bone Lore",
+            "chance": 80
+          },
+          {
+            "name": "Flesh Lore",
+            "chance": 75
+          },
+          {
+            "name": "Call Undead",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -25403,7 +27860,46 @@
       "blockedRaces": [],
       "baseClass": "Obscuratum",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "15",
+          "agl": "16",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Balanced Mind",
+            "chance": 75
+          },
+          {
+            "name": "Mind Dance",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -25837,7 +28333,46 @@
       ],
       "baseClass": "Paladin",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "-1",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Still Life Force",
+            "chance": 85
+          },
+          {
+            "name": "Turn Undead",
+            "chance": 85
+          },
+          {
+            "name": "Radiant Life Force",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -26238,7 +28773,46 @@
       "blockedRaces": [],
       "baseClass": "Plunderer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-2",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "RM",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "16",
+          "pty": "16",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Detect Trap(u)",
+            "chance": 85
+          },
+          {
+            "name": "Open Locks",
+            "chance": 80
+          },
+          {
+            "name": "Defy Magic",
+            "chance": 75
+          },
+          {
+            "name": "Detect Curse",
+            "chance": 70
+          },
+          {
+            "name": "Remove Curse",
+            "chance": 65
+          }
+        ],
+        "special": "Has retrieved at least 3 treasure troves worth over 5000 gp, with at least 1 treasure magical or divinely protected enough to cause death to the unwary."
+      }
     }
   },
   {
@@ -26641,7 +29215,46 @@
       ],
       "baseClass": "Priest",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "14",
+          "knw": "15",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Bless",
+            "chance": 90
+          },
+          {
+            "name": "Detect Evil",
+            "chance": 90
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Healing",
+            "chance": 90
+          },
+          {
+            "name": "Turn Undead",
+            "chance": 85
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -27052,7 +29665,46 @@
       ],
       "baseClass": "Priest(Dark)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "14",
+          "knw": "15",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Blasphemy",
+            "chance": 90
+          },
+          {
+            "name": "Detect Good",
+            "chance": 90
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Wounding",
+            "chance": 90
+          },
+          {
+            "name": "Fear",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -27513,7 +30165,46 @@
       ],
       "baseClass": "Psychokineticist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "-2",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "",
+          "wil": "18"
+        },
+        "skills": [
+          {
+            "name": "Kinetics Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Sonokinesis",
+            "chance": 85
+          },
+          {
+            "name": "Lumokinesis",
+            "chance": 80
+          },
+          {
+            "name": "Charming",
+            "chance": 75
+          },
+          {
+            "name": "Apparokinesis",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -27938,7 +30629,46 @@
       ],
       "baseClass": "Ranger",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "14",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "-4",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Track",
+            "chance": 90
+          },
+          {
+            "name": "Direction Knowledge",
+            "chance": 85
+          },
+          {
+            "name": "Herb Lore",
+            "chance": 85
+          },
+          {
+            "name": "Tame Animal",
+            "chance": 85
+          },
+          {
+            "name": "Missile Lore",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -28379,7 +31109,46 @@
       ],
       "baseClass": "Ritual Leader",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-4",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Festival Lore",
+            "chance": 90
+          },
+          {
+            "name": "Omen",
+            "chance": 85
+          },
+          {
+            "name": "Ritual Lore",
+            "chance": 80
+          },
+          {
+            "name": "Mass Ritual",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -28778,7 +31547,46 @@
       ],
       "baseClass": "Rogue",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          },
+          {
+            "name": "Detect Trap(u)",
+            "chance": 80
+          },
+          {
+            "name": "Open Locks",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -29099,7 +31907,46 @@
       ],
       "baseClass": "Runesmith",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-4",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Shield Parry",
+            "chance": 90
+          },
+          {
+            "name": "Wood Lore",
+            "chance": 80
+          },
+          {
+            "name": "Rune Lore",
+            "chance": 75
+          },
+          {
+            "name": "Metal Lore",
+            "chance": 70
+          },
+          {
+            "name": "Stone Lore",
+            "chance": 65
+          }
+        ],
+        "special": "Have 1 item with at least 4 permanent runes."
+      }
     }
   },
   {
@@ -29574,7 +32421,46 @@
       ],
       "baseClass": "Sage",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-1",
+          "wis": "12",
+          "knw": "RM",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-4",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Cartography",
+            "chance": 90
+          },
+          {
+            "name": "Decipher",
+            "chance": 90
+          },
+          {
+            "name": "Legend Lore",
+            "chance": 90
+          },
+          {
+            "name": "Identify",
+            "chance": 85
+          },
+          {
+            "name": "Language Lore",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -29972,7 +32858,46 @@
       ],
       "baseClass": "Seer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-4",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "12",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Area Sense",
+            "chance": 90
+          },
+          {
+            "name": "Divination",
+            "chance": 90
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Foretell",
+            "chance": 75
+          },
+          {
+            "name": "Foresee",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -30350,7 +33275,46 @@
       ],
       "baseClass": "Shadow Stalker",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "-4",
+          "knw": "-4",
+          "app": "",
+          "chm": "14",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-3"
+        },
+        "skills": [
+          {
+            "name": "Move Unheard",
+            "chance": 90
+          },
+          {
+            "name": "Move Unseen",
+            "chance": 90
+          },
+          {
+            "name": "Shadowing",
+            "chance": 90
+          },
+          {
+            "name": "Darkness",
+            "chance": 85
+          },
+          {
+            "name": "Shadow Walk",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -30724,7 +33688,46 @@
       ],
       "baseClass": "Shadowfrost Caster",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "16"
+        },
+        "skills": [
+          {
+            "name": "Shadowfrost Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Cryokinesis",
+            "chance": 85
+          },
+          {
+            "name": "Umbrakinesis",
+            "chance": 80
+          },
+          {
+            "name": "Shadow Walk",
+            "chance": 75
+          },
+          {
+            "name": "Shadow Shift",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -31168,7 +34171,46 @@
       ],
       "baseClass": "Shaman",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "12",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Evoke",
+            "chance": 85
+          },
+          {
+            "name": "Divine Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Animal Projection",
+            "chance": 75
+          },
+          {
+            "name": "Ritual Lore",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -31597,7 +34639,46 @@
       ],
       "baseClass": "Shaman(Drum)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "-1",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Chant",
+            "chance": 90
+          },
+          {
+            "name": "Drum",
+            "chance": 90
+          },
+          {
+            "name": "Recite",
+            "chance": 90
+          },
+          {
+            "name": "Poem Lore",
+            "chance": 80
+          },
+          {
+            "name": "Rhythm Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -31970,7 +35051,46 @@
       ],
       "baseClass": "Shaman(Rune)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "15",
+          "vit": "",
+          "int": "14",
+          "wis": "14",
+          "knw": "-1",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "-2",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Detect Magic",
+            "chance": 90
+          },
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Evoke",
+            "chance": 80
+          },
+          {
+            "name": "Identify",
+            "chance": 75
+          },
+          {
+            "name": "Rune Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -32355,7 +35475,46 @@
       ],
       "baseClass": "Sorcerer",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "18",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "-3",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Arcane Pact",
+            "chance": 85
+          },
+          {
+            "name": "Familiar",
+            "chance": 85
+          },
+          {
+            "name": "Summon Object",
+            "chance": 75
+          },
+          {
+            "name": "Control Supernatural",
+            "chance": 70
+          },
+          {
+            "name": "Summon Supernatural",
+            "chance": 65
+          }
+        ],
+        "special": "Must have the knowledge of and have summoned at least 5 supernatural beings."
+      }
     }
   },
   {
@@ -32760,7 +35919,46 @@
       ],
       "baseClass": "Trickster",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "RM",
+          "vit": "",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-4",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Sleight of Hand",
+            "chance": 90
+          },
+          {
+            "name": "Detect Magic",
+            "chance": 80
+          },
+          {
+            "name": "Move Unheard",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Open Locks",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -33131,7 +36329,46 @@
       ],
       "baseClass": "Vivisectionist",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-1",
+          "wis": "16",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "-3",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Scroll Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Control Undead",
+            "chance": 80
+          },
+          {
+            "name": "Flesh Lore",
+            "chance": 80
+          },
+          {
+            "name": "Bone Lore",
+            "chance": 75
+          },
+          {
+            "name": "Call Undead",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -33579,7 +36816,46 @@
       ],
       "baseClass": "Warden",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-2",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "-2",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Armor Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Protection from Good",
+            "chance": 80
+          },
+          {
+            "name": "Protection from Evil",
+            "chance": 80
+          },
+          {
+            "name": "Evoke",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -33896,7 +37172,46 @@
       "blockedRaces": [],
       "baseClass": "Warrior",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-1",
+          "agl": "RM",
+          "vit": "",
+          "int": "14",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "15"
+        },
+        "skills": [
+          {
+            "name": "Body Parry",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Weapon Parry",
+            "chance": 90
+          },
+          {
+            "name": "Sweep",
+            "chance": 75
+          },
+          {
+            "name": "Weapon Lore",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -34239,7 +37554,46 @@
       ],
       "baseClass": "Wilder",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "-4",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "14",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Wild Magic",
+            "chance": 90
+          },
+          {
+            "name": "Detect Magic",
+            "chance": 85
+          },
+          {
+            "name": "Speak to Animal",
+            "chance": 80
+          },
+          {
+            "name": "Tame Animal",
+            "chance": 80
+          },
+          {
+            "name": "Absorb Aura",
+            "chance": 75
+          }
+        ],
+        "special": "Have 1 spell or effect they are well known for."
+      }
     }
   },
   {
@@ -34703,7 +38057,46 @@
       ],
       "baseClass": "Witch(Black)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "12",
+          "wis": "12",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "-4",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Candle Lore",
+            "chance": 85
+          },
+          {
+            "name": "Ritual Lore",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Curse",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -35164,7 +38557,46 @@
       ],
       "baseClass": "Witch(Gray)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "12",
+          "wis": "12",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "-4",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Candle Lore",
+            "chance": 85
+          },
+          {
+            "name": "Stone Lore",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Ritual Lore",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -35627,7 +39059,46 @@
       ],
       "baseClass": "Witch(White)",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "12",
+          "wis": "12",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "RM",
+          "pty": "-4",
+          "wil": "-1"
+        },
+        "skills": [
+          {
+            "name": "Herb Lore",
+            "chance": 90
+          },
+          {
+            "name": "Candle Lore",
+            "chance": 85
+          },
+          {
+            "name": "Ritual Lore",
+            "chance": 80
+          },
+          {
+            "name": "Scroll Knowledge",
+            "chance": 75
+          },
+          {
+            "name": "Wood Lore",
+            "chance": 65
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -36038,7 +39509,46 @@
       ],
       "baseClass": "Witch Hunter",
       "path": "",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "-4",
+          "agl": "14",
+          "vit": "12",
+          "int": "-1",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Track",
+            "chance": 90
+          },
+          {
+            "name": "Fearless",
+            "chance": 85
+          },
+          {
+            "name": "Defy Magic",
+            "chance": 80
+          },
+          {
+            "name": "Steadfast",
+            "chance": 75
+          },
+          {
+            "name": "Defy Divinity",
+            "chance": 70
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -36469,7 +39979,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Water",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -36900,7 +40449,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Air",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -37331,7 +40919,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Earth",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -37762,7 +41389,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Fire",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -38193,7 +41859,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Light",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -38624,7 +42329,46 @@
       "blockedRaces": [],
       "baseClass": "Elemental Dancer",
       "path": "Dark",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "RM",
+          "agl": "RM",
+          "vit": "",
+          "int": "-2",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Martial Knowledge",
+            "chance": 95
+          },
+          {
+            "name": "Levitation",
+            "chance": 90
+          },
+          {
+            "name": "Telekinesis",
+            "chance": 85
+          },
+          {
+            "name": "<KINESIS>",
+            "chance": 80
+          },
+          {
+            "name": "Martial Lore",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -39005,7 +42749,46 @@
       ],
       "baseClass": "Elementalist",
       "path": "Call of Life",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Call of Water",
+            "chance": 90
+          },
+          {
+            "name": "Elemental Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Call of Air",
+            "chance": 85
+          },
+          {
+            "name": "Call of Earth",
+            "chance": 80
+          },
+          {
+            "name": "Call of Flame",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -39386,7 +43169,46 @@
       ],
       "baseClass": "Elementalist",
       "path": "Call of Death",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "15",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-1",
+          "pty": "",
+          "wil": "-4"
+        },
+        "skills": [
+          {
+            "name": "Call of Water",
+            "chance": 90
+          },
+          {
+            "name": "Elemental Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Call of Air",
+            "chance": 85
+          },
+          {
+            "name": "Call of Earth",
+            "chance": 80
+          },
+          {
+            "name": "Call of Flame",
+            "chance": 75
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -39785,7 +43607,46 @@
       ],
       "baseClass": "Summoner",
       "path": "Call of Life",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "18",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "-3",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Summon Object",
+            "chance": 85
+          },
+          {
+            "name": "Call of Water",
+            "chance": 80
+          },
+          {
+            "name": "Elemental Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Summon Animal",
+            "chance": 80
+          },
+          {
+            "name": "Summon Supernatural",
+            "chance": 75
+          }
+        ],
+        "special": "Must have the knowledge of and have summoned at least 5 supernatural beings."
+      }
     }
   },
   {
@@ -40184,7 +44045,46 @@
       ],
       "baseClass": "Summoner",
       "path": "Call of Death",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "RM",
+          "wis": "",
+          "knw": "18",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "-2",
+          "pty": "-3",
+          "wil": "-2"
+        },
+        "skills": [
+          {
+            "name": "Summon Object",
+            "chance": 85
+          },
+          {
+            "name": "Call of Water",
+            "chance": 80
+          },
+          {
+            "name": "Elemental Knowledge",
+            "chance": 80
+          },
+          {
+            "name": "Summon Animal",
+            "chance": 80
+          },
+          {
+            "name": "Summon Supernatural",
+            "chance": 75
+          }
+        ],
+        "special": "Must have the knowledge of and have summoned at least 5 supernatural beings."
+      }
     }
   },
   {
@@ -40615,7 +44515,46 @@
       "blockedRaces": [],
       "baseClass": "Inquisitor",
       "path": "Bless",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-3",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 90
+          },
+          {
+            "name": "Intimidation",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -41046,7 +44985,46 @@
       "blockedRaces": [],
       "baseClass": "Inquisitor",
       "path": "Blasphemy",
-      "nonClassed": false
+      "nonClassed": false,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "-3",
+          "vit": "",
+          "int": "",
+          "wis": "15",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "RM",
+          "wil": "RM"
+        },
+        "skills": [
+          {
+            "name": "Divine Knowledge",
+            "chance": 90
+          },
+          {
+            "name": "Lie",
+            "chance": 90
+          },
+          {
+            "name": "Truth Tell",
+            "chance": 90
+          },
+          {
+            "name": "Intimidation",
+            "chance": 85
+          },
+          {
+            "name": "Charming",
+            "chance": 80
+          }
+        ],
+        "special": ""
+      }
     }
   },
   {
@@ -41122,7 +45100,25 @@
       "blockedRaces": [],
       "baseClass": "GME",
       "path": "",
-      "nonClassed": true
+      "nonClassed": true,
+      "archMortal": {
+        "attributes": {
+          "str": "",
+          "agl": "",
+          "vit": "",
+          "int": "",
+          "wis": "",
+          "knw": "",
+          "app": "",
+          "chm": "",
+          "soc": "",
+          "aur": "",
+          "pty": "",
+          "wil": ""
+        },
+        "skills": [],
+        "special": ""
+      }
     }
   }
 ]

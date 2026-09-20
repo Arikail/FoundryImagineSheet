@@ -120,6 +120,28 @@ CLASSTITLEDICT = "LIST:titles"
     # goal advance.
 GOALUPDICT = ["goalAttr1", "goalAttr2"]
 
+    # archmortalqualifylist -- source: HIS OWN COLUMN-HEADER COMMENT, written
+    # above the dictionary at sheet-worker.js:122310-122311. What a character of
+    # this class must have before they may pass 10th title into Arch Mortal.
+    #
+    # The twelve attribute columns are read by setArchmortalAttributeQualifications
+    # (122429 onward), and are not plain numbers:
+    #     ""            no requirement at all
+    #     "RM"          the character's racial MAXIMUM for that attribute
+    #     a positive n  that rating
+    #     a negative n  the racial maximum plus n, so "-1" is one below it,
+    #                   floored at 0
+    # The five skill columns each pair a skill name with the chance it must have
+    # reached. The last column is a requirement only a Game Master can judge
+    # ("Known for the discovery of a valuable magical item"), and "None" means
+    # there is none.
+ARCHMORTALQUALIFYLIST = [
+    "str", "agl", "vit", "int", "wis", "knw",
+    "app", "chm", "soc", "aur", "pty", "wil",
+    "skill1", "chance1", "skill2", "chance2", "skill3", "chance3",
+    "skill4", "chance4", "skill5", "chance5", "special",
+]
+
 # ---------------------------------------------------------------------------
 # @MARKER ATTRIBUTE RATING TABLES
 # ---------------------------------------------------------------------------
@@ -184,6 +206,7 @@ MAPS = {
     "classRequirementsAndDetails": CLASSREQUIREMENTSANDDETAILS,
     "classtitledict": CLASSTITLEDICT,
     "goalupdict": GOALUPDICT,
+    "archmortalqualifylist": ARCHMORTALQUALIFYLIST,
 }
 MAPS.update(RATING_VALUE_MAPS)
 
