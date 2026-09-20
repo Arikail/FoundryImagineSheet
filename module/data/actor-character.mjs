@@ -1258,7 +1258,10 @@ export default class ImagineCharacterData extends foundry.abstract.TypeDataModel
 		// against whichever class has climbed highest: the skill was granted by one of the two, and
 		// the port does not record which, so the generous reading is the safe one -- it can only
 		// fail to gate a skill, never refuse one the character has genuinely earned.
-		var tmpgatetitle = 0;
+		// A character with no class at all falls back to their own title, so a skill held from a
+		// class since removed -- or a GME given one by hand -- is not refused for ever by a gate
+		// measured against a class that is not there.
+		var tmpgatetitle = this.classItems.length ? 0 : (parseInt(this.identity.title) || 0);
 		var tmpgatename = "";
 		for (const tmpclass of this.classItems) {
 			var tmpclasstitle = this._getClassTitle(tmpclass);

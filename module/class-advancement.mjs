@@ -30,6 +30,15 @@ import { explainAvailability } from "./availability.mjs";
 
 const SKILL_PACK = "world.imagine-skills";
 
+// The option a caller sets on its own update to say "I will do the grant myself". The title commit
+// sets it, because it wants to report the whole advance in one message rather than two.
+export const GRANT_HANDLED = "imagineGrantHandled";
+
+// Actors a grant is running for right now. Two grants racing on one actor would each read the held
+// skills before either had created anything, and the character would end up holding every skill of
+// that title TWICE -- each with its own rolled starting bonus, each eating a class skill slot.
+const granting = new Set();
+
 	// This is the function which rolls one die, through Foundry's own random source, so the dice
 	// settings the world uses apply to a granted skill's starting bonus as they do everywhere else.
 	function rollDie(tmpsides) {
@@ -47,18 +56,30 @@ const SKILL_PACK = "world.imagine-skills";
 
 	// @MARKER THE GRANT
 	// This is the function which gives an actor every class skill their title has earned and they
-	// do not hold yet. Returns the names granted, so a caller can say what happened.
+	// do not hold yet.
+	//
+	// Returns { granted, blocked, missing } -- all three, not just what worked, so a caller that
+	// silences the notifications (the title commit does, to say it all in one message) can still
+	// say what could not be given. A skill named by a class and absent from the compendium is a
+	// content gap; one the switches refused is a rule the Game Master set. Neither should vanish.
 	//
 	// A skill the campaign has switched off is skipped and named in the report, not forced onto the
 	// character: the Game Master turned it off deliberately, and a grant is no more entitled to
 	// ignore that than a player dragging the skill across would be.
 	export async function grantClassSkills(tmpactor, { notify = true } = {}) {
-		if (!tmpactor || tmpactor.type != "character") { return []; }
+		if (!tmpactor || tmpactor.type != "character") { return { granted: [], blocked: [], missing: [] }; }
 
+		var tmpnothing = { granted: [], blocked: [], missing: [] };
 		var tmpprogression = tmpactor.system.identity?.classProgression ?? [];
 		var tmpowed = tmpprogression.filter(tmpclass => tmpclass.owed.length);
-		if (!tmpowed.length) { return []; }
+		if (!tmpowed.length) { return tmpnothing; }
+		// Already running for this actor: the second caller would read the same "held" list as the
+		// first and grant everything twice. Reading the compendium below is an await, which is all
+		// the opening a second call needs.
+		if (granting.has(tmpactor.id)) { return tmpnothing; }
+		granting.add(tmpactor.id);
 
+		try {
 		var tmpskilldocs = await loadSkillDocuments();
 		var tmprules = game.imagine.getAvailabilityRules();
 		var tmpheld = tmpactor.items.filter(tmpitem => tmpitem.type == "skill").map(tmpitem => tmpitem.name);
@@ -96,7 +117,10 @@ const SKILL_PACK = "world.imagine-skills";
 		if (tmpnew.length) { await tmpactor.createEmbeddedDocuments("Item", tmpnew); }
 
 		if (notify) { reportGrant(tmpactor, tmpnew, tmpblocked, tmpmissing); }
-		return tmpnew.map(tmpitem => tmpitem.name);
+		return { granted: tmpnew.map(tmpitem => tmpitem.name), blocked: tmpblocked, missing: tmpmissing };
+		} finally {
+			granting.delete(tmpactor.id);
+		}
 	}
 
 	// This is the function which says what a grant did. Every part of it is worth saying out loud:
@@ -128,6 +152,7 @@ const SKILL_PACK = "world.imagine-skills";
 
 		Hooks.on("updateActor", function (tmpactor, tmpchanges, tmpoptions, tmpuserid) {
 			if (tmpuserid != game.user.id) { return; }
+			if (tmpoptions?.[GRANT_HANDLED]) { return; }   // the title commit grants and reports itself
 			if (tmpchanges.system?.identity?.title === undefined) { return; }
 			grantClassSkills(tmpactor);
 		});

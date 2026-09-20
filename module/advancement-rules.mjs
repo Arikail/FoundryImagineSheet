@@ -139,12 +139,21 @@ import { GOAL_EXP, TITLE_EXP, EXP_CAP_BY_TITLE, SKILL_POINTS_BY_CLASS } from "./
 		}
 
 		// The cap is read against the title the character HOLDS, not the one they are reaching.
+		//
+		// It trims what is being ADDED and never touches what is already there. His sheet writes
+		// the cap straight over the total, which takes experience away from a character already
+		// above it -- and one can be, since a Game Master may set a title back by hand. Here a
+		// character at or above the cap simply gains nothing, and is told so.
 		var tmpcap = getExpCap(tmptitle);
 		var tmptotal = tmpexp + tmpamount;
 		var tmpcappedby = 0;
 		if (tmpcap && tmptotal > tmpcap) {
-			tmpcappedby = tmptotal - tmpcap;
-			tmptotal = tmpcap;
+			tmpcappedby = tmptotal - Math.max(tmpcap, tmpexp);
+			tmptotal = Math.max(tmpcap, tmpexp);
+		}
+		if (tmptotal <= tmpexp) {
+			return tmprefused(`Title ${tmptitle} may hold ${tmpcap} experience, and this character `
+				+ `already has ${tmpexp}. Level up before adding more.`);
 		}
 
 		var tmpnewtitle = getTitleForExp(tmptotal);
@@ -155,7 +164,15 @@ import { GOAL_EXP, TITLE_EXP, EXP_CAP_BY_TITLE, SKILL_POINTS_BY_CLASS } from "./
 		// His Arch Mortal gate. Note WHERE it sits: the experience is not added at all, rather
 		// than added and the levelling blocked. A character who cannot pass the line does not
 		// creep up to it either.
-		if (tmpgoalsraised > 0 && tmpnewgoal >= ARCH_MORTAL_GOAL && !tmpstate?.archQualified) {
+		//
+		// IT GUARDS THE CROSSING, not the standing. His sheet stores the qualification as a flag a
+		// player refreshes, so once it reads Yes it stays Yes. This port DERIVES it every render,
+		// which is better -- it cannot go stale -- but it also means it can flip back to No when a
+		// Will Force is drained or a power is lost. Written his way, that would refuse all further
+		// experience to an Arch Mortal of 12th title who caught a stat drain. So the gate only
+		// looks at characters who are below the line and about to cross it.
+		if (tmpgoalsraised > 0 && tmpgoal < ARCH_MORTAL_GOAL && tmpnewgoal >= ARCH_MORTAL_GOAL
+		 && !tmpstate?.archQualified) {
 			return tmprefused("Blocked from levelling past 10th title. See the Arch Mortal qualifications.");
 		}
 
@@ -327,6 +344,8 @@ import { GOAL_EXP, TITLE_EXP, EXP_CAP_BY_TITLE, SKILL_POINTS_BY_CLASS } from "./
 	// This is the function which reads one of his Endurance dice strings -- "1d4+1", "2d6", "1d3".
 	// Anything it cannot read rolls as 0, the same answer the skill dice reader gives.
 	export function rollDiceString(tmpexpression, tmproll) {
+		var tmpflat = flatFormula(tmpexpression);
+		if (tmpflat !== null) { return tmpflat; }
 		var tmpmatch = ("" + (tmpexpression ?? "")).trim().toLowerCase().match(/^(\d+)d(\d+)\s*([+-]\s*\d+)?$/);
 		if (!tmpmatch) { return 0; }
 		var tmptotal = 0;
@@ -336,10 +355,21 @@ import { GOAL_EXP, TITLE_EXP, EXP_CAP_BY_TITLE, SKILL_POINTS_BY_CLASS } from "./
 
 	// The same string read for its highest possible result, his getMaxValueFromDiceString.
 	export function maxOfDiceString(tmpexpression) {
+		var tmpflat = flatFormula(tmpexpression);
+		if (tmpflat !== null) { return tmpflat; }
 		var tmpmatch = ("" + (tmpexpression ?? "")).trim().toLowerCase().match(/^(\d+)d(\d+)\s*([+-]\s*\d+)?$/);
 		if (!tmpmatch) { return 0; }
 		return (parseInt(tmpmatch[1]) * parseInt(tmpmatch[2]))
 		     + (tmpmatch[3] ? parseInt(tmpmatch[3].replace(/\s+/g, "")) : 0);
+	}
+
+	// This is the function which reads a formula that is a plain number rather than dice. One race
+	// writes its title Endurance that way -- Elf(Silver)'s is "1" -- and read as dice it would gain
+	// that race nothing at any title, for ever. Answers null when it is not a bare number, so the
+	// dice readers can go on to try it as dice.
+	function flatFormula(tmpexpression) {
+		var tmptext = ("" + (tmpexpression ?? "")).trim();
+		return /^-?\d+$/.test(tmptext) ? parseInt(tmptext) : null;
 	}
 
 	// His divideWithMinRoundUp: round up, and never answer less than 1.
@@ -376,7 +406,13 @@ import { GOAL_EXP, TITLE_EXP, EXP_CAP_BY_TITLE, SKILL_POINTS_BY_CLASS } from "./
 
 		return {
 			title: tmpat,
-			attributeMax: tmpat == 11 ? 27 : 0,
+			// His setArchMortalAttributesMax writes 27 into every *_max at 11th, but the pair he
+			// confirmed on 2026-09-16 is 25 for ordinary increases and 27 for magical ones
+			// (UPSTREAM-ISSUES item 16, and getAttributeMax / getMagicalAttributeMax here). What
+			// actually happens at 11th is that the RACIAL limits are discarded for those two, so
+			// both figures are reported rather than his single one.
+			attributeMax: tmpat == 11 ? 25 : 0,
+			magicalAttributeMax: tmpat == 11 ? 27 : 0,
 			immortal: tmpat == 11,
 			senseSupernatural: ARCH_MORTAL_SENSE_SUPERNATURAL[tmpat] ?? 0,
 			invulnerability: ARCH_MORTAL_INVULNERABILITY[tmpat] ?? "",

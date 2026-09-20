@@ -176,6 +176,10 @@ import { getClassSkillsAtTitle } from "./class-rules.mjs";
 					? getClassSkillsAtTitle(tmpclass.system, tmptitle, tmpsystem.identity.cannotCast) : [],
 				enduranceFormula: tmprace?.system?.endurance?.titleFormula ?? "",
 				endurance: tmpwork.endurance,
+				// A flag of its own, because a roll of 0 is a real answer -- a race with no title
+				// formula gains nothing -- and testing the number alone would leave the Roll button
+				// showing as though nothing had happened.
+				enduranceRolled: tmpwork.endurance !== null && tmpwork.endurance !== undefined,
 				// From 11th his Arch Mortal package: the maximums, ageing, the invulnerability and
 				// Sense Supernatural. Shown before it is applied, never sprung afterwards.
 				archMortal: getArchMortalGains(tmptitle),

@@ -23,9 +23,8 @@
 // as results. That keeps this side testable and the randomness in one place.
 //==================================================================================================================
 
-import { planExperienceGain, getTitleEndurance, getArchMortalGains,
-         ARCH_MORTAL_INVULNERABILITY } from "./advancement-rules.mjs";
-import { grantClassSkills } from "./class-advancement.mjs";
+import { planExperienceGain, getArchMortalGains } from "./advancement-rules.mjs";
+import { grantClassSkills, GRANT_HANDLED } from "./class-advancement.mjs";
 
 	// @MARKER EXPERIENCE
 
@@ -85,6 +84,13 @@ import { grantClassSkills } from "./class-advancement.mjs";
 		if (!tmpactor || tmpactor.type != "character") { return null; }
 		var tmpsystem = tmpactor.system;
 
+		// Nothing queued means nothing to commit. Without this a stray call would write goal 0 over
+		// a real goal and demote the character.
+		if ((parseInt(tmpsystem.identity.goalsToRaise) || 0) < 1) {
+			if (notify) { ui.notifications.warn(`${tmpactor.name} has no goal waiting to be taken.`); }
+			return null;
+		}
+
 		// His refusal: a title waiting on this goal is committed first.
 		if ((parseInt(tmpsystem.identity.titlesToRaise) || 0) > 0
 		 && (parseInt(tmpsystem.identity.titleToLevel) || 0) <= getTitleOfGoal(tmpsystem.identity.goalToLevel)) {
@@ -97,16 +103,45 @@ import { grantClassSkills } from "./class-advancement.mjs";
 
 		var tmpupdate = {};
 		var tmpraised = [];
+		var tmpatmax = [];
 		var tmpcount = parseInt(tmpsystem.identity.attributeIncreases) || 0;
 		for (const tmpincrease of tmpincreases ?? []) {
 			if (!tmpincrease.increased || !tmpincrease.key) { continue; }
 			var tmpattribute = tmpsystem.attributes[tmpincrease.key];
 			if (!tmpattribute) { continue; }
-			if ((parseInt(tmpattribute.value) || 0) >= (parseInt(tmpattribute.max) || 0)) { continue; }
+
+			// The roll succeeded, so it counts towards his minimum-increase floor at goals 12, 27
+			// and 42 whether or not there is room for it -- his handleGoalCommit counts a "Yes",
+			// not a point actually gained.
+			tmpcount = tmpcount + 1;
+
+			// Room is measured against the PERMANENT figure, not the displayed one. value carries
+			// tempMod as well, so a spell lifting Strength by 2 would otherwise read as "at the
+			// maximum" and the increase would be thrown away -- the roll spent, the chat card
+			// already announcing it, and the character a point short for good once the spell ends.
+			var tmppermanent = (parseInt(tmpattribute.rating) || 0)
+			                 + (parseInt(tmpattribute.raceMod) || 0)
+			                 + (parseInt(tmpattribute.permMod) || 0);
+			if (tmppermanent >= (parseInt(tmpattribute.max) || 0)) {
+				tmpatmax.push(tmpincrease.key.toUpperCase());
+				continue;
+			}
 			tmpupdate[`system.attributes.${tmpincrease.key}.rating`] =
 				(parseInt(tmpattribute.rating) || 0) + 1;
 			tmpraised.push(tmpincrease.key.toUpperCase());
-			tmpcount = tmpcount + 1;
+		}
+
+		// Skill points first, then the goal: each point is +1% on that skill's ability
+		// (commitSingleSkillPointAdds, sheet-worker.js:94756). In this order a failure part way
+		// through leaves the goal UNCOMMITTED and the step repeatable; the other way round would
+		// leave the goal spent and the points gone.
+		var tmpspent = 0;
+		for (const tmpspend of tmpspends ?? []) {
+			var tmpitem = tmpactor.items.get(tmpspend.itemId);
+			var tmppoints = parseInt(tmpspend.points) || 0;
+			if (!tmpitem || tmppoints < 1) { continue; }
+			await tmpitem.update({ "system.abilityBonus": (parseInt(tmpitem.system.abilityBonus) || 0) + tmppoints });
+			tmpspent = tmpspent + tmppoints;
 		}
 
 		// The goal itself, and one off the queue.
@@ -118,23 +153,13 @@ import { grantClassSkills } from "./class-advancement.mjs";
 		tmpupdate["system.identity.attributeIncreases"] = tmpcount;
 		await tmpactor.update(tmpupdate);
 
-		// Skill points: each point is +1% on that skill's ability
-		// (commitSingleSkillPointAdds, sheet-worker.js:94756).
-		var tmpspent = 0;
-		for (const tmpspend of tmpspends ?? []) {
-			var tmpitem = tmpactor.items.get(tmpspend.itemId);
-			var tmppoints = parseInt(tmpspend.points) || 0;
-			if (!tmpitem || tmppoints < 1) { continue; }
-			await tmpitem.update({ "system.abilityBonus": (parseInt(tmpitem.system.abilityBonus) || 0) + tmppoints });
-			tmpspent = tmpspent + tmppoints;
-		}
-
 		if (notify) {
 			ui.notifications.info(`${tmpactor.name} reaches goal ${tmpgoal}`
 				+ (tmpraised.length ? `, and gains +1 ${tmpraised.join(" and +1 ")}` : "")
+				+ (tmpatmax.length ? `, but ${tmpatmax.join(" and ")} is already at its maximum` : "")
 				+ (tmpspent ? `, with ${tmpspent} skill point(s) placed` : "") + ".");
 		}
-		return { goal: tmpgoal, raised: tmpraised, pointsSpent: tmpspent };
+		return { goal: tmpgoal, raised: tmpraised, atMax: tmpatmax, pointsSpent: tmpspent };
 	}
 
 	// The title a goal belongs to, without importing the whole ladder for one line.
@@ -181,11 +206,18 @@ import { grantClassSkills } from "./class-advancement.mjs";
 			// "Immortal", which is why maximum age is a string on this port as it is on his sheet.
 			tmpupdate["system.physical.maxAge"] = "Immortal";
 		}
-		await tmpactor.update(tmpupdate);
+		// GRANT_HANDLED tells the updateActor hook to keep out of this one: the commit grants the
+		// class skills itself, just below, so it can report the whole advance in one message. Left
+		// unmarked, the hook would grant them at the same time and the character would end up
+		// holding every skill of that title twice.
+		await tmpactor.update(tmpupdate, { [GRANT_HANDLED]: true });
 
 		// The class skills the title brings, which the class-advancement pass already builds.
 		// It reads the title off the actor, so it runs after the update above, not before.
-		var tmpgranted = await grantClassSkills(tmpactor, { notify: false });
+		// Silenced, because the message below says it all in one line -- but its report is read
+		// rather than dropped, so a skill the compendium does not hold or the switches refuse is
+		// still named.
+		var tmpgrant = await grantClassSkills(tmpactor, { notify: false });
 
 		var tmppower = tmpgains ? await applyArchMortalPower(tmpactor, tmpgains) : null;
 		var tmpsense = tmpgains ? await applyArchMortalSense(tmpactor, tmpgains) : 0;
@@ -194,14 +226,22 @@ import { grantClassSkills } from "./class-advancement.mjs";
 			var tmpname = tmpactor.system.identity.titleName || `title ${tmptitle}`;
 			var tmpparts = [];
 			if (tmpendurance) { tmpparts.push(`+${tmpendurance} Endurance`); }
-			if (tmpgranted.length) { tmpparts.push(`${tmpgranted.length} class skill(s): ${tmpgranted.join(", ")}`); }
-			if (tmpgains?.immortal) { tmpparts.push("ageing stops, and every attribute maximum is now 27"); }
+			if (tmpgrant.granted.length) {
+				tmpparts.push(`${tmpgrant.granted.length} class skill(s): ${tmpgrant.granted.join(", ")}`);
+			}
+			if (tmpgrant.blocked.length) { tmpparts.push(`not granted, switched off: ${tmpgrant.blocked.join(", ")}`); }
+			if (tmpgrant.missing.length) { tmpparts.push(`not in the compendium: ${tmpgrant.missing.join(", ")}`); }
+			if (tmpgains?.immortal) {
+				tmpparts.push(`ageing stops, and the racial attribute limits are discarded `
+					+ `(${tmpgains.attributeMax} ordinarily, ${tmpgains.magicalAttributeMax} magically)`);
+			}
 			if (tmppower) { tmpparts.push(tmppower); }
 			if (tmpsense) { tmpparts.push(`Sense Supernatural at ${tmpsense}%`); }
 			ui.notifications.info(`${tmpactor.name} reaches ${tmpname}`
 				+ (tmpparts.length ? ` -- ${tmpparts.join("; ")}` : "") + ".");
 		}
-		return { title: tmptitle, endurance: tmpendurance, granted: tmpgranted, archMortal: tmpgains };
+		return { title: tmptitle, endurance: tmpendurance, granted: tmpgrant.granted,
+		         blocked: tmpgrant.blocked, missing: tmpgrant.missing, archMortal: tmpgains };
 	}
 
 	// This is the function which gives an Arch Mortal their invulnerability, his
@@ -253,6 +293,11 @@ import { grantClassSkills } from "./class-advancement.mjs";
 		var tmpheld = tmpactor.items.find(tmpitem => tmpitem.type == "skill"
 			&& tmpitem.name == "Sense Supernatural");
 		if (tmpheld) {
+			// A floor, not an assignment. A character may already hold this skill the ordinary way,
+			// with a starting roll, the class's +30 and goal skill points spent on it over ten
+			// titles -- and his figure would otherwise DOWNGRADE them to 20 on reaching 11th.
+			var tmpnow = parseInt(tmpheld.system.abilityBonus) || 0;
+			if (tmpnow >= tmpgains.senseSupernatural) { return tmpnow; }
 			await tmpheld.update({ "system.abilityBonus": tmpgains.senseSupernatural });
 			return tmpgains.senseSupernatural;
 		}

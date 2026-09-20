@@ -173,8 +173,8 @@ check("the maximum reader takes it too", A.maxOfDiceString("2d6+2"), 14);
 // --- Arch Mortal ------------------------------------------------------------------------------
 check("nothing arch-mortal happens below 11th", A.getArchMortalGains(10), null);
 const at11 = A.getArchMortalGains(11);
-check("11th raises every attribute maximum to 27, stops ageing and gives Sense Supernatural at 20",
-	[at11.attributeMax, at11.immortal, at11.senseSupernatural], [27, true, 20]);
+check("11th discards the racial limits, stops ageing and gives Sense Supernatural at 20",
+	[at11.attributeMax, at11.immortal, at11.senseSupernatural], [25, true, 20]);
 check("...and his first invulnerability, word for word",
 	at11.invulnerability, "Special Invulnerability (Constant: Normal weapons do 1/2. Blessed and +1 do full)");
 check("12th improves the sense but grants no new invulnerability",
@@ -226,6 +226,43 @@ const special = { archMortal: { ...warriorish.archMortal, special: "Slay a drago
 check("a class with a special requirement waits on the Game Master's word",
 	[A.checkArchMortalQualification(special, good).qualified,
 	 A.checkArchMortalQualification(special, { ...good, specialMet: true }).qualified], [false, true]);
+
+// --- what the bug-fix pass of 2026-09-19 found ------------------------------------------------
+// Each of these is a defect that was in the first cut of this module. They are kept as tests
+// rather than as a note, so none of them can come back.
+
+// The cap must never TAKE experience away. A Game Master may set a title back by hand, leaving a
+// character above the cap for the title they now hold; his sheet would write the cap straight over
+// their total and delete the difference.
+const aboveCap = A.planExperienceGain(state({ exp: 30000, title: 3, goal: 16 }), 1);
+check("a character already above their title's cap gains nothing, and loses nothing",
+	[aboveCap.accepted, aboveCap.exp], [false, 30000]);
+check("...and is told why", aboveCap.reason.includes("already has 30000"), true);
+
+// The Arch Mortal gate guards the CROSSING, not the standing. Qualification is derived here rather
+// than stored, so it can flip back to false when a Will Force is drained or a power is lost -- and
+// an Arch Mortal of 12th title must not then be refused all further experience.
+const alreadyPast = A.planExperienceGain(
+	state({ exp: 350000, title: 12, goal: 34, archQualified: false }), 1000);
+check("a character already past goal 30 is not blocked when qualification lapses",
+	[alreadyPast.accepted, alreadyPast.exp], [true, 351000]);
+check("...but one still below it is",
+	A.planExperienceGain(state({ exp: 205000, title: 10, goal: 29, archQualified: false }), 2000).accepted,
+	false);
+
+// One race writes its title Endurance as a plain number rather than dice: Elf(Silver)'s is "1".
+// Read as dice it would gain that race nothing at any title, for ever.
+check("a flat formula is a formula", [A.rollDiceString("1", always(4)), A.maxOfDiceString("1")], [1, 1]);
+check("...and a title advance gains it",
+	[A.getTitleEndurance("1", 5, always(4)), A.getTitleEndurance("1", 13, always(4))], [1, 2]);
+check("a half race with one flat parent still adds both",
+	A.getTitleEndurance("1|1d6", 5, always(3)), 2);
+check("nonsense still reads as nothing", A.rollDiceString("Special", always(4)), 0);
+
+// The maximums at 11th are the pair he confirmed -- 25 ordinary, 27 magical -- not the flat 27 his
+// setArchMortalAttributesMax writes. The window used to promise 27 while the sheet enforced 25.
+check("11th reports both ceilings, matching what the character model enforces",
+	[A.getArchMortalGains(11).attributeMax, A.getArchMortalGains(11).magicalAttributeMax], [25, 27]);
 
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;

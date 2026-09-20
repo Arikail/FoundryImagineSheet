@@ -33,6 +33,7 @@ export default class ImagineLevelUp extends HandlebarsApplicationMixin(Applicati
 		tag: "form",
 		classes: ["imagine", "level-up"],
 		window: { title: "Imagine RPG — Level Up", resizable: true },
+		// Set per character in _prepareContext's sibling below, so two open windows are told apart.
 		position: { width: 640, height: 720 },
 		form: { handler: ImagineLevelUp.#onSubmit, submitOnChange: false, closeOnSubmit: false },
 		actions: {
@@ -58,8 +59,11 @@ export default class ImagineLevelUp extends HandlebarsApplicationMixin(Applicati
 	// exactly as they were -- see the note on atomic steps in module/advancement.mjs.
 	#working = newLevelUpWorking();
 
+	// The window belongs to one character, so its id carries that character's. A fixed id would
+	// mean opening a second character's level-up re-used -- or stole -- the first one's window,
+	// which is how ApplicationV2 keeps track of what is open.
 	constructor(tmpactor, tmpoptions = {}) {
-		super(tmpoptions);
+		super({ ...tmpoptions, id: `imagine-level-up-${tmpactor?.id ?? "unknown"}` });
 		this.#actor = tmpactor;
 	}
 
@@ -67,6 +71,11 @@ export default class ImagineLevelUp extends HandlebarsApplicationMixin(Applicati
 	// Through Foundry's own random source, so the world's dice settings apply here too.
 	static #die(tmpsides) {
 		return Math.ceil(CONFIG.Dice.randomUniform() * tmpsides) || 1;
+	}
+
+	// The title bar names the character, since more than one may be levelling at once.
+	get title() {
+		return `Imagine RPG — Level Up: ${this.#actor?.name ?? ""}`;
 	}
 
 	// @MARKER WHAT THE WINDOW SHOWS

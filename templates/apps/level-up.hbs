@@ -43,7 +43,7 @@
 		<p>{{#if titleStep.enduranceFormula}}The race's title formula is
 			<strong>{{titleStep.enduranceFormula}}</strong>.{{else}}This race has no title Endurance formula.{{/if}}
 			{{#if titleStep.isArchMortal}}<span class="muted">An Arch Mortal takes its maximum rather than rolling.</span>{{/if}}</p>
-		{{#if titleStep.endurance}}
+		{{#if titleStep.enduranceRolled}}
 			<p class="level-up-result">+{{titleStep.endurance}} Endurance</p>
 		{{else}}
 			<button type="button" data-action="rollEndurance">Roll Endurance</button>
@@ -53,7 +53,8 @@
 		<h3>Arch Mortal</h3>
 		<ul class="level-up-arch">
 			{{#if titleStep.archMortal.immortal}}
-			<li>Every attribute maximum becomes 27.</li>
+			<li>The racial attribute limits are discarded: {{titleStep.archMortal.attributeMax}} is the
+				maximum from here, and {{titleStep.archMortal.magicalAttributeMax}} for magical increases.</li>
 			<li>Ageing stops: maximum age becomes Immortal.</li>
 			{{/if}}
 			{{#if titleStep.archMortal.senseSupernatural}}

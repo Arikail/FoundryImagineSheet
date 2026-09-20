@@ -1,0 +1,348 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG level up walk</title>
+<style>body{font:13px monospace;padding:1rem}.p{color:#0a0}.f{color:#c00;font-weight:bold}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Walks a whole level-up through the REAL writing code -- addExperience, commitTitle, commitGoal
+// in module/advancement.mjs -- against a stub actor that records what it was asked to do.
+//
+// The rules suite (tools/advancement-test.html) checks the arithmetic. This checks the part that
+// touches a character: the order of the two commits, what each writes, the class skills a title
+// grants, and the Arch Mortal package. Every die is scripted.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/levelup-walk.html
+
+// @MARKER FOUNDRY STUBS
+// Just enough of Foundry for the writing code to run: notifications and chat are recorded rather
+// than shown, and the dice come from a scripted list.
+const notifications = [];
+globalThis.ui = { notifications: {
+	info: (m) => notifications.push("info: " + m),
+	warn: (m) => notifications.push("warn: " + m),
+	error: (m) => notifications.push("error: " + m)
+} };
+globalThis.foundry = {
+	abstract: { TypeDataModel: class {
+		constructor(data) { Object.assign(this, data); } prepareBaseData() {} prepareDerivedData() {} } },
+	data: { fields: new Proxy({}, { get: () => class { constructor() {} } }) },
+	utils: { deepClone: (o) => structuredClone(o) }
+};
+// The skill compendium the grant reads. Stubbed with the real generated documents, so a title
+// advance grants the same skills it would in a world with the content imported.
+let skillPack = null;
+globalThis.game = {
+	user: { id: "u1", isGM: true },
+	imagine: { getAvailabilityRules: () => null },
+	packs: { get: (id) => id === "world.imagine-skills" ? skillPack : null }
+};
+globalThis.CONFIG = { Dice: { randomUniform: () => 0.01 } };   // a natural 1 on any die
+
+const A = await import("../module/advancement.mjs");
+const R = await import("../module/advancement-rules.mjs");
+const { default: ImagineCharacterData } = await import("../module/data/actor-character.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+
+// @MARKER THE STUB ACTOR
+// Holds real data, applies updates the way Foundry does (expanding "system.a.b" paths) and
+// re-derives afterwards, so every check reads the same derived values the sheet would.
+const load = async (f) => (await (await fetch(`../src/packs/documents/${f}.json`)).json());
+const [races, classes, skills] = await Promise.all(["races", "classes", "skills"].map(load));
+skillPack = { getDocuments: async () => skills.map(d => ({ ...d, toObject: () => structuredClone(d) })) };
+const byName = (list, name) => structuredClone(list.find(d => d.name === name));
+
+const warrior = byName(classes, "Warrior");
+warrior.id = "cls1";
+warrior.system.getTitleName = function (t) {
+	const i = parseInt(t) - 1; const a = this.advancement.titles;
+	return (i < 0 || i >= a.length) ? "" : a[i];
+};
+const human = byName(races, "Human(Civilized:Village)");
+human.id = "rce1";
+
+function makeItem(doc, id, patch) {
+	const item = structuredClone(doc);
+	item.id = id;
+	item.system = Object.assign(item.system, patch ?? {});
+	item.update = async (changes) => {
+		for (const [path, value] of Object.entries(changes)) {
+			const keys = path.replace(/^system\./, "").split(".");
+			let target = item.system;
+			while (keys.length > 1) { target = target[keys.shift()]; }
+			target[keys[0]] = value;
+		}
+		actor.rederive();
+	};
+	return item;
+}
+
+const held = [
+	makeItem(byName(skills, "Body Parry"), "s1", { category: "class", acquiredAtTitle: 1, startingBonus: 0, abilityBonus: 60, misc: 0, isCommon: false }),
+	makeItem(byName(skills, "Weapon Knowledge"), "s2", { category: "class", acquiredAtTitle: 1, startingBonus: 0, abilityBonus: 60, misc: 0, isCommon: false })
+];
+const power = { id: "p1", name: "Battle Fury", type: "power", system: { unlimited: true } };
+
+const actor = {
+	name: "Dorn Ironhand",
+	type: "character",
+	items: [warrior, human, power, ...held],
+	created: [],
+	deleted: [],
+	system: null,
+	// Foundry's Collection has get/find/filter; the array has the last two, so only get is added.
+	prepareItems() {
+		this.items.get = (id) => this.items.find(i => i.id === id);
+	},
+	async update(changes) {
+		for (const [path, value] of Object.entries(changes)) {
+			const keys = path.replace(/^system\./, "").split(".");
+			let target = this.raw;
+			while (keys.length > 1) { target = target[keys.shift()]; }
+			target[keys[0]] = value;
+		}
+		this.rederive();
+	},
+	async createEmbeddedDocuments(type, docs) {
+		for (const doc of docs) {
+			const item = makeItem({ ...doc, system: doc.system ?? {} }, "new" + this.items.length);
+			this.items.push(item);
+			this.created.push(doc.name);
+		}
+		this.prepareItems();
+		this.rederive();
+	},
+	async deleteEmbeddedDocuments(type, ids) {
+		for (const id of ids) {
+			const at = this.items.findIndex(i => i.id === id);
+			if (at >= 0) { this.deleted.push(this.items[at].name); this.items.splice(at, 1); }
+		}
+		this.prepareItems();
+		this.rederive();
+	},
+	rederive() {
+		const data = new ImagineCharacterData(structuredClone(this.raw));
+		data.parent = this;
+		data.prepareBaseData();
+		data.prepareDerivedData();
+		this.system = data;
+	}
+};
+
+const ratings = { str: 19, agl: 20, vit: 18, int: 14, wis: 12, knw: 15, app: 11,
+                  chm: 11, soc: 10, aur: 8, pty: 9, wil: 15 };
+const attributes = {};
+for (const k of Object.keys(ratings)) { attributes[k] = { rating: ratings[k], permMod: 0, tempMod: 0 }; }
+const characteristic = () => ({ titleBonus: 0, raceMod: 0, permMod: 0, tempMod: 0 });
+const resistance = () => ({ misc: 0, immune: false });
+actor.raw = {
+	identity: { title: 10, goal: 29, exp: 205000, titlesToRaise: 0, goalsToRaise: 0, titleToLevel: 0,
+	            goalToLevel: 0, attributeIncreases: 3, archSpecialMet: true, alignment: "", gender: "" },
+	attributes,
+	characteristics: { endurance: characteristic(), perception: characteristic(),
+	                   affinity: characteristic(), fortune: characteristic() },
+	resistances: { magic: resistance(), illusion: resistance(), control: resistance(),
+	               poison: resistance(), disease: resistance() },
+	body: { bodyType: "Humanoid", areas: [], armorDamage: {} },
+	combat: { meleeMisc: 0, missileMisc: 0, damageMisc: 0, defenseMisc: 0, initiativeMisc: 0,
+	          skillMisc: 0, weaponLoreList: "", missileLoreList: "", projectileLoreList: "" },
+	physical: { weight: 0, handedness: "Right", maxAge: "90" },
+	languages: [],
+	skillSlotMoves: { racialToClass: 0, racialToSocial: 0, socialToRacial: 0, socialToClass: 0,
+	                  racialSacrificed: 0, socialSacrificed: 0 },
+	movement: { walk: { hourly: 0, tenSec: 0, oneSec: 0 }, jog: { hourly: 0, tenSec: 0, oneSec: 0 },
+	            run: { hourly: 0, tenSec: 0, oneSec: 0 }, special: { hourly: 0, tenSec: 0, oneSec: 0 },
+	            specialName: "", travelHours: 0, restHours: 0, jumpStand: 0, jumpUp: 0 }
+};
+actor.prepareItems();
+actor.rederive();
+
+// --- the character starts where he stands -----------------------------------------------------
+check("a title-10 Warrior, one award short of the line",
+	[actor.system.identity.title, actor.system.identity.goal, actor.system.identity.levelUpPending],
+	[10, 29, false]);
+check("he is short of the Arch Mortal qualifications",
+	actor.system.identity.archQualified, false);
+
+// --- unqualified, the award is refused outright ------------------------------------------------
+await A.addExperience(actor, 2000);
+check("experience that would cross goal 30 is not added at all",
+	[actor.system.identity.exp, actor.system.identity.goalsToRaise], [205000, 0]);
+
+// Give him the two core skills he lacks, at the chances his class asks for, so he qualifies.
+actor.items.push(makeItem(byName(skills, "Weapon Parry"), "s3", { category: "class", acquiredAtTitle: 2, startingBonus: 0, abilityBonus: 95, misc: 0, isCommon: false }));
+actor.items.push(makeItem(byName(skills, "Sweep"), "s4", { category: "class", acquiredAtTitle: 4, startingBonus: 0, abilityBonus: 95, misc: 0, isCommon: false }));
+actor.items.push(makeItem(byName(skills, "Weapon Lore"), "s5", { category: "class", acquiredAtTitle: 6, startingBonus: 0, abilityBonus: 95, misc: 0, isCommon: false }));
+actor.prepareItems();
+actor.rederive();
+check("with the core skills at their chances he qualifies",
+	actor.system.identity.archQualified, true);
+
+// --- qualified, the award goes through and queues the steps ------------------------------------
+await A.addExperience(actor, 2000);
+check("the award is added and the steps queued",
+	[actor.system.identity.exp, actor.system.identity.titlesToRaise,
+	 actor.system.identity.goalsToRaise, actor.system.identity.titleToLevel,
+	 actor.system.identity.goalToLevel], [207000, 1, 1, 11, 30]);
+check("...and a level-up now reads as waiting", actor.system.identity.levelUpPending, true);
+
+// His refusal: nothing more may be added on top of unfinished business.
+await A.addExperience(actor, 500);
+check("no more experience while the level-up waits", actor.system.identity.exp, 207000);
+
+// --- the title is taken first ------------------------------------------------------------------
+const endurance = R.getTitleEndurance(human.system.endurance.titleFormula, 11, () => 1);
+await A.commitTitle(actor, endurance);
+check("the title is taken and the queue shortened",
+	[actor.system.identity.title, actor.system.identity.titlesToRaise, actor.system.identity.titleToLevel],
+	[11, 0, 0]);
+check("11th takes the formula's maximum rather than rolling",
+	actor.system.characteristics.endurance.titleBonus, 5);
+check("ageing stops at 11th", actor.raw.physical.maxAge, "Immortal");
+check("the racial attribute limits are discarded at 11th, as his getAttributeMax does",
+	actor.system.attributes.str.max, 25);
+check("the invulnerability is created as a real power",
+	actor.created.filter(n => n.includes("Invulnerability")),
+	["Special Invulnerability (Constant: Normal weapons do 1/2. Blessed and +1 do full)"]);
+check("Sense Supernatural arrives at his 20%",
+	actor.items.find(i => i.name === "Sense Supernatural")?.system.abilityBonus, 20);
+check("the class skills the title brings are granted",
+	actor.created.includes("Intimidation"), true);
+
+// --- then the goal -----------------------------------------------------------------------------
+const plan = R.planGoalAdvance({ goalToLevel: actor.system.identity.goalToLevel,
+	goalAttributes: actor.system.identity.goalAttributes, atMax: {},
+	totalIncreases: actor.system.identity.attributeIncreases });
+check("past goal 29 the offer is any attribute at 10%",
+	[plan.mode, plan.rolls[0].chance], ["any", 10]);
+
+const rolled = R.resolveGoalAdvance(plan, [7], ["knw"]);
+await A.commitGoal(actor, rolled, [{ itemId: "s1", points: 5 }]);
+check("the goal is taken and the queue emptied",
+	[actor.system.identity.goal, actor.system.identity.goalsToRaise, actor.system.identity.goalToLevel],
+	[30, 0, 0]);
+check("the attribute rolled for is raised by one",
+	actor.system.attributes.knw.value, 16);
+check("...and counted against his minimum-increase floor",
+	actor.system.identity.attributeIncreases, 4);
+check("the skill points are added to that skill's ability",
+	actor.items.find(i => i.id === "s1").system.abilityBonus, 65);
+check("nothing is left waiting", actor.system.identity.levelUpPending, false);
+
+// --- a title advance below 11th brings no Arch Mortal anything ----------------------------------
+check("a 5th title advance grants no invulnerability and no Sense Supernatural",
+	R.getArchMortalGains(5), null);
+
+// --- and the second invulnerability replaces the first -------------------------------------------
+await actor.update({ "system.identity.title": 12, "system.identity.titlesToRaise": 1,
+                     "system.identity.titleToLevel": 13 });
+actor.created = []; actor.deleted = [];
+await A.commitTitle(actor, 10);
+check("13th replaces the invulnerability rather than stacking it",
+	[actor.deleted.some(n => n.includes("1/2")), actor.created.some(n => n.includes("1/4")),
+	 actor.items.filter(i => i.name.includes("Invulnerability")).length],
+	[true, true, 1]);
+check("Sense Supernatural improves to his 60 at 13th",
+	actor.items.find(i => i.name === "Sense Supernatural")?.system.abilityBonus, 60);
+
+// --- what the bug-fix pass of 2026-09-19 found, on a character --------------------------------
+
+// A successful roll on an attribute lifted by a SPELL must not be thrown away. value carries the
+// temporary modifier, so clamping against it would read "at the maximum" and lose the point for
+// good once the spell ended.
+await actor.update({ "system.identity.goalsToRaise": 1, "system.identity.goalToLevel": 31 });
+const beforeTemp = actor.system.attributes.agl.rating;
+actor.raw.attributes.agl.tempMod = 5;          // a spell, taking the displayed figure to its cap
+actor.rederive();
+await A.commitGoal(actor, [{ key: "agl", increased: true }], []);
+check("an increase on an attribute a spell has lifted still lands",
+	actor.system.attributes.agl.rating, beforeTemp + 1);
+actor.raw.attributes.agl.tempMod = 0;
+actor.rederive();
+
+// ...but one genuinely at its permanent maximum is not raised past it, and the roll still counts
+// towards his minimum-increase floor at goals 12, 27 and 42.
+await actor.update({ "system.identity.goalsToRaise": 1, "system.identity.goalToLevel": 32 });
+actor.raw.attributes.str.rating = actor.system.attributes.str.max;
+actor.rederive();
+const increasesBefore = actor.system.identity.attributeIncreases;
+await A.commitGoal(actor, [{ key: "str", increased: true }], []);
+check("an attribute at its permanent maximum is not raised past it",
+	actor.system.attributes.str.rating, actor.system.attributes.str.max);
+check("...but the successful roll still counts against his minimum-increase floor",
+	actor.system.identity.attributeIncreases, increasesBefore + 1);
+
+// A goal commit with nothing queued would have written goal 0 over a real goal.
+const goalBefore = actor.system.identity.goal;
+await A.commitGoal(actor, [], []);
+check("a goal commit with nothing waiting is refused, not applied",
+	actor.system.identity.goal, goalBefore);
+
+// Sense Supernatural is a floor, never a downgrade: a character who already holds it the ordinary
+// way, improved with goal skill points, must not be cut back to his figure for the title.
+const sense = actor.items.find(i => i.name === "Sense Supernatural");
+await sense.update({ "system.abilityBonus": 85 });
+await actor.update({ "system.identity.title": 13, "system.identity.titlesToRaise": 1,
+                     "system.identity.titleToLevel": 14 });
+await A.commitTitle(actor, 10);
+check("a better Sense Supernatural is left alone rather than cut to the title's figure",
+	actor.items.find(i => i.name === "Sense Supernatural").system.abilityBonus, 85);
+
+// --- the bare cases: no class, no race, no skills ----------------------------------------------
+// Every one of these is a character a Game Master can make in two clicks, and each used to be a
+// plausible way to throw: the view reads a class for its goal attributes and skill points, a race
+// for its Endurance formula, and the actor's skills for the points to spend.
+const V = await import("../module/levelup-view.mjs");
+
+const bare = {
+	name: "Nobody", type: "character",
+	items: [],
+	system: null
+};
+bare.items.get = () => null;
+bare.raw = structuredClone(actor.raw);
+bare.raw.identity = { title: 1, goal: 0, exp: 0, titlesToRaise: 1, goalsToRaise: 1, titleToLevel: 2,
+                      goalToLevel: 3, attributeIncreases: 0, archSpecialMet: false, alignment: "", gender: "" };
+bare.update = actor.update.bind(bare);
+bare.createEmbeddedDocuments = async () => {};
+bare.deleteEmbeddedDocuments = async () => {};
+bare.rederive = actor.rederive.bind(bare);
+bare.rederive();
+
+let threw = "";
+let bareView = null;
+try { bareView = V.buildLevelUpView(bare, V.newLevelUpWorking(), false); }
+catch (e) { threw = "" + e; }
+check("a character with no class, race or skills still builds a view", threw, "");
+check("...and it offers the title step, since a title is queued first",
+	bareView ? bareView.isTitle : null, true);
+check("...with no Endurance formula and no skills to grant",
+	bareView ? [bareView.titleStep.enduranceFormula, bareView.titleStep.skills.length] : null, ["", 0]);
+
+let goalThrew = "";
+let bareGoal = null;
+try {
+	await bare.update({ "system.identity.titlesToRaise": 0, "system.identity.titleToLevel": 0 });
+	bareGoal = V.buildLevelUpView(bare, V.newLevelUpWorking(), false);
+} catch (e) { goalThrew = "" + e; }
+check("...and its goal step builds too", goalThrew, "");
+check("...offering any attribute, since no class names a pair, and no skill points",
+	bareGoal ? [bareGoal.goalPlan.mode, bareGoal.skillPoints.total] : null, ["any", 0]);
+
+let commitThrew = "";
+try { await A.commitTitle(bare, 0); } catch (e) { commitThrew = "" + e; }
+check("committing a title on a classless character does not throw", commitThrew, "");
+
+const passed = results.filter(r => r.startsWith("PASS")).length;
+const failed = results.length - passed;
+document.getElementById("out").innerHTML =
+	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")
+	+ `\n\n${passed} passed, ${failed} failed`
+	+ `\n\nnotifications:\n${notifications.join("\n")}`;
+</script>

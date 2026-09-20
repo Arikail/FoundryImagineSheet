@@ -2597,3 +2597,65 @@ title takes the Endurance formula's maximum rather than rolling it (1d4+1 → +5
 listed before it is applied, and his own title names read through ("Lord" → "Battle Lord").
 **Not verified:** anything needing a running Foundry V14 — the window itself, its dice, the two
 commits, the power and skill creation, and the chat cards.
+
+### 2026-09-19 — Bug-fix pass over the class and levelling work
+
+Both passes of the day were reviewed, once by the window that wrote them and once by a reader given
+only the code and no account of what it was meant to do. The second read found more, and worse.
+Every fix below carries a test, in `tools/advancement-test.html` or the new `tools/levelup-walk.html`,
+so none of them can come back quietly.
+
+**The grant could run twice on one title.** `commitTitle` updated the title and then granted the
+class skills itself — and the `updateActor` hook, watching for exactly that change, granted them
+again. Both read the character's held skills before either had created anything, so a title that
+brings two skills could leave the character holding four, each with its own rolled starting bonus
+and each eating a class skill slot. The commit now marks its own update (`GRANT_HANDLED`) and the
+hook keeps out of it; the grant also refuses to run twice for one actor at once, since the
+compendium read in the middle of it is all the opening a second call needs.
+
+**A successful attribute roll could be thrown away.** The clamp compared the DISPLAYED value, which
+carries temporary modifiers, against the maximum, but wrote to the rating. A character under a spell
+that lifted Strength to its cap would have the roll silently discarded — the chat card already
+announcing "+1 Strength" — and be a point short for good once the spell ended. Room is now measured
+against the permanent figure (rating + race + permanent), and a roll that succeeds counts towards
+his minimum-increase floor whether or not there was room for it, which is what his handleGoalCommit
+counts.
+
+**The Arch Mortal gate now guards the crossing, not the standing.** His sheet stores the
+qualification as a flag, so once it reads Yes it stays Yes. This port derives it every render, which
+cannot go stale — but it also means it can flip back to No when a Will Force is drained or a power
+is lost, and written his way that refused ALL further experience to a 12th-title Arch Mortal. The
+gate now applies only to a character below the line who is about to cross it.
+
+**The experience cap could delete experience.** His sheet writes the cap over the total, which takes
+experience away from a character already above it — and one can be, since a Game Master may set a
+title back by hand. The cap now trims only what is being added, and a character already at or above
+it gains nothing and is told why.
+
+**One race gained no Endurance, ever.** Elf(Silver) writes its title formula as a plain "1" rather
+than dice, and both dice readers answered 0 for it. A bare number is now read as itself.
+
+**Sense Supernatural could be a downgrade.** An Arch Mortal's figure was assigned rather than
+floored, so a character who already held the skill the ordinary way — starting roll, the class's
++30, goal points spent over ten titles — was cut back to 20 on reaching 11th.
+
+**The window promised the wrong ceiling.** It said "every attribute maximum becomes 27", from his
+setArchMortalAttributesMax, while the character model enforces the pair he confirmed on 2026-09-16:
+25 ordinarily, 27 magically (`UPSTREAM-ISSUES.md` item 16). It now says what actually happens.
+
+**Smaller ones:** a level-up window with a fixed id would have stolen another character's window, so
+it is per character now and its title bar names them; a goal commit with nothing queued would have
+written goal 0 over a real goal; skill points are placed before the goal is committed, so a failure
+leaves the step repeatable rather than the points gone; a class skill whose title has not come was
+gated against a class that might not exist, leaving every such skill unusable on a character whose
+class had been removed; a title advance silenced the grant's report and then dropped it, hiding a
+skill missing from the compendium or refused by the switches; and a title whose Endurance came out 0
+left the Roll button showing as though nothing had happened.
+
+**Verified:** advancement 86 (9 new), the new `tools/levelup-walk.html` 34, derivation 347, combat
+406, creature 140, character generation 46 and availability 46, all passing; 38 modules parse. The
+walk drives the real writing code against a stub actor that records what it was asked to do, and
+covers the bare cases -- no class, no race, no skills -- which each used to be a plausible way to
+throw. **Not verified:** anything needing a running Foundry V14, which includes the hook interplay
+the first fix is about; the test proves the grant is not called twice by the commit, not that
+Foundry's hook behaves as documented.
