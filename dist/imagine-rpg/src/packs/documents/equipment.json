@@ -1,0 +1,5099 @@
+[
+  {
+    "name": "Scabbard(Knife/Holds 1 Small Blade)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Scabbard(Sword/Holds 1 Blade)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Strap(Holes/Hooks/Holds 4)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bandolier(Holds 8)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pouch(Holds 10)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Coffer(5“x 8“x 3“/Holds 12)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sack(Small/Holds 15)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Quiver(Cloth/Holds 20)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sack(Large/Holds 30)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.31,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Quiver(Leather/Holds 40)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wraparound Carryall(Holds 50)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Back Pack(Holds 60)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Backpack",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle Bags(Holds 80)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chest(Small:2' x 1' x 6“/Key/Holds 100)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chest(Large:3' x 5' x 2“/Key/Holds 150)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Trunk(5' x 5' x 3'/Holds 200)",
+    "type": "equipment",
+    "system": {
+      "weight": 10,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Abacus",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Animal Fat(1 lb.)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Arrow Head",
+    "type": "equipment",
+    "system": {
+      "weight": 0.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Anvil(Light)",
+    "type": "equipment",
+    "system": {
+      "weight": 30,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Anvil(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 70,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Astrolabe",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Astrology Charts",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Axe(Woodcutting)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ball(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bandages(Cloth)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Barding(Wool)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Battering Ram(Small Door)",
+    "type": "equipment",
+    "system": {
+      "weight": 50,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bed Roll",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bee Keeper Suit(Canvas)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bell(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bellows(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bellows(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Belt Claw",
+    "type": "equipment",
+    "system": {
+      "weight": 0.3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bit and Bridle",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Lock & Key)",
+    "type": "equipment",
+    "system": {
+      "weight": 2.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Medium)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Divine Teachings)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(History/1 Subject)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Illustrated Humanoid Anatomy)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Metaphysics)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Music)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Philosophy)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Phrases)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Poems)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Politics)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Songs)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Popular Story)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Recent Events)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Book(Theories of the Mind)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Boots(Leather)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Boots(High/Leather)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Bowl(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bowl(Fine China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bowl(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bowl(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bowstring(Sinew)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bowstring(Wire)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Broom",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brush(Animal Hair)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brush(Horse)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brush(Hair)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brush(Paint/Horse Hair)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brush(Paint/Sable Hair)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bureau/Dresser(4’ x 5’ x 2’)",
+    "type": "equipment",
+    "system": {
+      "weight": 75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cabinet(4’ x 5’x 2’)",
+    "type": "equipment",
+    "system": {
+      "weight": 50,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cage(Large: 3’ x 3’ x 3’)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cage(Small: 1’ x 1’ x 1’)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candelabra",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candle(6-hour)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candles(Magical/Rituals)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Paint/Cotton 1 sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Paint/Linen 1 sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Waterproof/sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Paint/Cotton 1 sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Paint/Linen 1 sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(Waterproof/sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Catches and Pulleys",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chair(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chalk(5 pieces)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chemistry Set(Advanced)",
+    "type": "equipment",
+    "system": {
+      "weight": 3.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chemistry Set(Basic)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "China(Fine Porcelain)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "China(Porcelain)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cleaver",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Clock(Mechanical)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Clock(Water)",
+    "type": "equipment",
+    "system": {
+      "weight": 21,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cloth(Polishing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cobbler’s Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Comb",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Compass(Directional Lodestone)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Compass(Drawing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Costume(Dance)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Costume(Dramatic)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Crucible(Covered)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cup(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cup(Fine China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cup(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cup(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cup(Measuring)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dice(Bone/Set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dice(Ivory/Set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dice(Wooden/Set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Doll",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Feathers",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Fishhooks(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Line(per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Line(per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Net (30’x 30’)",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Net (30'x 30')",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Pole",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Flint and Steel",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Forge(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 30,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Forge(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fork",
+    "type": "equipment",
+    "system": {
+      "weight": 0.13,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Frame(Wooden/Fine/per sq’)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Frame(Wooden/per sq’)",
+    "type": "equipment",
+    "system": {
+      "weight": 3.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Frame(Wooden/Fine/per sq')",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Frame(Wooden/per sq')",
+    "type": "equipment",
+    "system": {
+      "weight": 3.1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gemcutting Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Glass Flask(1 cup)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Glass Flask",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gloves(Leather)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Gloves(Silk)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Gloves(Climbing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Glowstone",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grappling Hook",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Halter(Livestock)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hankerchief(Silk)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Highly Polished Orb",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hoe",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hood(Bird,Cloth)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hood(Bird,Leather)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hooks and Wires",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Horse Shoes",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Indelible Ink(1 Color/1 cup)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Black)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Blue)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Green)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Indigo)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Purple)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Red)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ink(Well)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Intricately Carved Staff",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Intricately Carved Wand",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Iron Mallet",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Iron Saw",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Jeweled Dagger",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Kite(Box)",
+    "type": "equipment",
+    "system": {
+      "weight": 2.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Kite(Fighting)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Kite(Person-Lifting)",
+    "type": "equipment",
+    "system": {
+      "weight": 36,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Kite(Plain)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Knife(Tool)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.13,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Knife(Skinning)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lamp(Glowworm)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lamp(Oil)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lantern",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lantern(Bullseye)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lantern(Shuttered)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leather Working Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leecher’s Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Loadstone(Magnetic)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lock Picks(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Locksmith Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Loom",
+    "type": "equipment",
+    "system": {
+      "weight": 18,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Loom(Hand)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Magnifying Glass",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Manacles",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mask(Dramatic)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Marble",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Marbles(1 Pair/Eyes)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal File",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Flask(1 Cup)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Flask",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Working Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 18,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mirror(Large/Silver)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mirror(Small/Silver)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mop",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mortar and Pestle",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mug(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mug(Fine China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mug(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mug(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "10 Nails",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Nails",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Napkin(Cloth)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "10 Needles(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Needles(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Oar",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Oil(Rubbing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.33,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Padlock(Complex)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Padlock(Crude)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Padlock(Simple)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Padlock(Well-Made)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pan",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Paper Sheets",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Papyrus/Parchment Sheets",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pen",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pick(Digging)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pigments/Dye(1 color)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pins(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pipe(Glassblowing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pipe(Segment)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pipe(Smoking)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pitcher/Jug(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pitcher/Jug(China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pitcher/Jug(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pitcher/Jug(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plate(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plate(Fine China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plate(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plate(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Platter(Baked Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Platter(China/Blown Glass)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Platter(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Platter(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Playing Cards",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plow",
+    "type": "equipment",
+    "system": {
+      "weight": 30,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plumb Line",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(10’ Balancing)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(15’ Ferrier)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(5’ Walking Stick)",
+    "type": "equipment",
+    "system": {
+      "weight": 2.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(10' Balancing)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(15' Ferrier)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pole(5' Walking Stick)",
+    "type": "equipment",
+    "system": {
+      "weight": 2.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Polishing Cloth",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pot(Clay)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pot(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pottery(Earthen)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pottery(Fired)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Puppet(Angry)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Puppet(Happy)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Puppet(Sad)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Puzzle Box(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rags(1 lb.)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rake",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rare Bone Staff",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rare Bone Wand",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rare Wood Staff",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rare Wood Wand",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Reins",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Hemp per’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Silk per’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Hemp per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Silk per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ruler(Measure)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle Buckles",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle(Fixed Point)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle Harness",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle(High)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle(Soft)",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Saddle(War)",
+    "type": "equipment",
+    "system": {
+      "weight": 10,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Scales(Weights/Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Scales(Weights/Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Scissors",
+    "type": "equipment",
+    "system": {
+      "weight": 0.31,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Semi-precious Orb",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sewing Box",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sextant",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shackles(Leg)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shackles(Wrist)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sheers",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shepherd Crook",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shoes(Running)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Shoes(Dance)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Shoes(Climbing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Tabard(Page/Child's)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shovel",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sieve(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sieve(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Signet Ring",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Stone Working Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spade/Trowel",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spectacles(Farsight)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spectacles(Reading)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spike",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spinning Wheel",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spoon",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Springs(Assorted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(2-Inch)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(4-Inch)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(6-Inch)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(9-Inch)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(1-Foot)",
+    "type": "equipment",
+    "system": {
+      "weight": 16,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(2-Foot)",
+    "type": "equipment",
+    "system": {
+      "weight": 32,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spring Snare(3-Foot)",
+    "type": "equipment",
+    "system": {
+      "weight": 64,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spyglass",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Stain(Pint)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Star Charts",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Stone File",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sundial",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Surf Board",
+    "type": "equipment",
+    "system": {
+      "weight": 18,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tallow(1 lb.)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Table(5’x 5’)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Table(5'x 5')",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tarot Cards",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tattooing Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Telescope",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tent(1-person)",
+    "type": "equipment",
+    "system": {
+      "weight": 30,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tent(2-person)",
+    "type": "equipment",
+    "system": {
+      "weight": 60,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tent(4-person)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tent(8-person)",
+    "type": "equipment",
+    "system": {
+      "weight": 150,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Thread Spool(per’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Thread Spool(per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tinder Box",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tobacco Box",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tongs(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tongs(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Torch",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Heavy/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Light/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Wool/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Heavy/per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Light/per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Wool/per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Urn",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Utensils(Gold/set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Utensils(Silver/set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.44,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Utensils(Tin/set)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vellum Sheet",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vial(1/2 cup)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vial",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Waterskin(3-days)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Waterskin(1-week)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Weather Charts",
+    "type": "equipment",
+    "system": {
+      "weight": 0,
+      "isTagalong": true
+    }
+  },
+  {
+    "name": "Whetstone",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Windlass",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Windlass(Large)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Windlass(Small)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Steel per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Steel per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Working Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bath Salts(Common)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bath Salts(Exotic/Perfumed)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cologne(Animal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cologne(Herbal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cologne(Exotic)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Makeup(Bright Kit)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Makeup(Full Kit)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Makeup(Exotic Kit)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Makeup(1 Color)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Perfume(Fruit)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Perfume(Herbal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Perfume(Exotic)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Soap(Animal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Soap(Herbal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Soap(Exotic/Perfumed)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Talc Powder",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wig",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bagpipes",
+    "type": "equipment",
+    "system": {
+      "weight": 10,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Balafon",
+    "type": "equipment",
+    "system": {
+      "weight": 2.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Balalaika",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bambachi",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bamboo Flute",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bladder Pipe",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Branqing(Bianqing)",
+    "type": "equipment",
+    "system": {
+      "weight": 62,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Castanets",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Clapstick",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Conga",
+    "type": "equipment",
+    "system": {
+      "weight": 4.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cowhorn",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cymbal",
+    "type": "equipment",
+    "system": {
+      "weight": 2.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Didgeridoo",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Djembe",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dramyen",
+    "type": "equipment",
+    "system": {
+      "weight": 12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Drum",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dulcimer",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ektara",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Floor Harp",
+    "type": "equipment",
+    "system": {
+      "weight": 28,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Flute(Silver)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Flute(Wooden)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gankeke",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Getchu Vadyam",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gong",
+    "type": "equipment",
+    "system": {
+      "weight": 61,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gourd Shaker",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Guiro",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Guqin",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hammered Dulcimer",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Harp",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Harpsichord",
+    "type": "equipment",
+    "system": {
+      "weight": 110,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Horn",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Long Horn",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lute",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lyre",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mandolin",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Manjeera",
+    "type": "equipment",
+    "system": {
+      "weight": 2.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Maracas",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mbira",
+    "type": "equipment",
+    "system": {
+      "weight": 0.6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Nadaswaram",
+    "type": "equipment",
+    "system": {
+      "weight": 2.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ocarina",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pan Pipes",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Piccolo",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pipa",
+    "type": "equipment",
+    "system": {
+      "weight": 12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Psaltery",
+    "type": "equipment",
+    "system": {
+      "weight": 9,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pungi",
+    "type": "equipment",
+    "system": {
+      "weight": 2.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Recorder",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sacbut",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sarangi",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Serpent",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shawm",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sheng",
+    "type": "equipment",
+    "system": {
+      "weight": 2.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sitar",
+    "type": "equipment",
+    "system": {
+      "weight": 18,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Swarabat",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tabla",
+    "type": "equipment",
+    "system": {
+      "weight": 24,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tambour/Cymbal/Bell",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tongue Drum",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ukulele",
+    "type": "equipment",
+    "system": {
+      "weight": 1.4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vichitra Vina",
+    "type": "equipment",
+    "system": {
+      "weight": 22,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Viol",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Viol de gamba",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Xiao",
+    "type": "equipment",
+    "system": {
+      "weight": 0.8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Zither",
+    "type": "equipment",
+    "system": {
+      "weight": 9,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Animal Feed(per day)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Caramel)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Chocolate)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Gum)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Peppermint)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Sugar)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Candy(Taffy)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cheese",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Dairy Foods",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Eggs(Caviar)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Eggs(Fresh)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Eggs(Pickled)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Eggs(Roe/Fish)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fish(Dried)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fish(Smoked)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fruit(Dried)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fruit(Fresh)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fruit(Preserves)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grain",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grain(Corn)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grain(Dried)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Honey",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Iron Rations(per day)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Meat(Dried)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Meat(Fresh)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Meat(Smoked)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mushrooms",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rations(per day)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Roots",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Salt(Bar)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Salt(Lick)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Seafood",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vegetables(Cured)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vegetables(Fresh)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vegetables(Pickled)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vinegar",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Absinthe(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ale(Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ale(Small Keg)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Beer(Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Beer(Small Keg)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Brandy(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Caium(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Champagne(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cognac(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Everclear(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grain Spirits(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grog(Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hard Cider(Pitcher)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hard Cider(Small Keg)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Juice(Fruit/Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Juice(Vegetable/Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Kumis(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mead(Mug)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rum(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sake(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Schnapps(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Scotch(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sherry(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Sura(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tepache(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Tiswin(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Vodka(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Water",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Whiskey(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Whiskey(Dwarven/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Elven/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Fortified/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Honey/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Plum/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wine(Watered/Bottle)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Canvas(1 Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Cloth(Yard)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Coal(lb.)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grease(1 Pint)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hard Leather(Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leather(Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.63,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Soft Leather(Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.31,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leather Cord(1’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hard Leather(Sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leather(Sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.63,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Soft Leather(Sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.31,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leather Cord(1')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Brass)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Brass)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Bronze)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Bronze)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Copper)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Copper)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Iron)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Iron)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Lead)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Lead)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Steel)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Steel)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Bar(Tin)",
+    "type": "equipment",
+    "system": {
+      "weight": 100,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Metal Rod(Tin)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Beam(Soft)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Plank(Soft)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Board(Soft)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Dowel(Soft)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Beam(Medium)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Plank(Medium)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Board(Medium)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Dowel(Medium)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Beam(Hard)",
+    "type": "equipment",
+    "system": {
+      "weight": 30,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Plank(Hard)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Board(Hard)",
+    "type": "equipment",
+    "system": {
+      "weight": 6,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Dowel(Hard)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Beam(Rare)",
+    "type": "equipment",
+    "system": {
+      "weight": 25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Plank(Rare)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Board(Rare)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wood Dowel(Rare)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Oil(Pint)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pitch(Pint)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Satin(Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Silk(Sq.’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Satin(Sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Silk(Sq.')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.75,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Carabineer",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Climbing Hooks(Hand)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Climbing Spurs",
+    "type": "equipment",
+    "system": {
+      "weight": 0.32,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Descender",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gloves(Climbing/Soft Leather)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grappling Hook(Climbing)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hammer(Rock)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Harness(Climbing)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Knife(Hook)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Piton",
+    "type": "equipment",
+    "system": {
+      "weight": 0.13,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Pulley",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Giant Spidersilk per’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.08,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Rope(Giant Spidersilk per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.08,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Mask(Breathing/Filter)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Veil(Breathing/Cloth)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.13,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Veil(Breathing/Silk)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Veil(Breathing/Wool)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.19,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Evaporation Kit(Canister/Tarp/String/4 Poles)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Extractor(Screw tap/Spout)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Goggles(Sun/Tinted)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.32,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lotion(Sun/Grease/1 week)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Bellows",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Bladder(10 min/no pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Canister(30 min/needs pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Hose(Per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Hose(Per ')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Pump(Hand Pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Pump(Steam)",
+    "type": "equipment",
+    "system": {
+      "weight": 32,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Diving Bell(Helmet)",
+    "type": "equipment",
+    "system": {
+      "weight": 9,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Diving Suit(Air Tight)",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Diving Weights",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Gas Valve",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Goggles(Diving)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plugs(Nose)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.06,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Plugs(Ear)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.13,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Snorkel",
+    "type": "equipment",
+    "system": {
+      "weight": 0.44,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Webbed Fins",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Goggles(Snow)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grappling Hook(Ice)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hammer(Ice)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Shovel(Snow)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Ski Poles",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Skis(Cross Country/Wide)",
+    "type": "equipment",
+    "system": {
+      "weight": 4,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Skis(Downhill/Thin)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Backpack(Cooler)",
+    "type": "equipment",
+    "system": {
+      "weight": 15,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Goggles(Insulated)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Arrow(Fishing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bobber",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bobber(2 Color)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Bolt(Fishing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.25,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Buoy(Small 1’)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Buoy(Medium 3’)",
+    "type": "equipment",
+    "system": {
+      "weight": 10,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Buoy(Small 1')",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Buoy(Medium 3')",
+    "type": "equipment",
+    "system": {
+      "weight": 10,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chain(Small/1“ links/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chain(Medium/2“ links/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Chain(Large/3“ links/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Pole(Bamboo)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Pole(Deep Sea)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Pole(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Fishing Line(Reinforced/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Harpoon(Fishing Javelin)",
+    "type": "equipment",
+    "system": {
+      "weight": 7.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hook(Bone)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hook(Deep Sea)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hook(Metal)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Hook(Metal/3 Prong)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lead Weight",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lure(Colorful)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lure(Flashing)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lure(Simple)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.01,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Lure(Spinner)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Net(Drift/250’ x 250’)",
+    "type": "equipment",
+    "system": {
+      "weight": 250,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Net(Weighted/30’ x 30’)",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Net(Drift/250' x 250')",
+    "type": "equipment",
+    "system": {
+      "weight": 250,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Net(Weighted/30' x 30')",
+    "type": "equipment",
+    "system": {
+      "weight": 20,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Spear(Fishing)",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Trap(Crab/Lobster)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Trap(Fish)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Very Thin/1 32“ thick/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Thin/1 16“ thick/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Thick/1 8“ thick/per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Very Thin/1 32“ thick/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Thin/1 16“ thick/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Wire(Thick/1 8“ thick/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Bellows",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Bladder(10 min/no pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 1,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Canister(30 min/needs pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Hose(per ’)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Hose(per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.12,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air Hose(Per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.5,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Pump(Hand Pump)",
+    "type": "equipment",
+    "system": {
+      "weight": 8,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Air/Gas Pump(Steam)",
+    "type": "equipment",
+    "system": {
+      "weight": 32,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Control(Lever)",
+    "type": "equipment",
+    "system": {
+      "weight": 1.2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Goggles(Flying)",
+    "type": "equipment",
+    "system": {
+      "weight": 0.38,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Grappling Anchor",
+    "type": "equipment",
+    "system": {
+      "weight": 3,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Harness(Flying)",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.03,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Heavy/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.04,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Light/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Twine(Wool/per')",
+    "type": "equipment",
+    "system": {
+      "weight": 0.02,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Leecher's Tools",
+    "type": "equipment",
+    "system": {
+      "weight": 2,
+      "isTagalong": false
+    }
+  },
+  {
+    "name": "Crowbar",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "description": "A three-foot iron bar, flattened and split at one end for prying and drawn to a point at the other. Worth a bonus to forcing a door, a lid or a grate at the Game Master's discretion, and it can be swung in a pinch, though it is not a weapon. Not in the Roll20 sheet; added at the owner's request 2026-09-19.",
+      "sourcebook": "Custom"
+    }
+  }
+]

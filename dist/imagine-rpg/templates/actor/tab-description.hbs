@@ -1,0 +1,137 @@
+{{!--
+	Description tab. One root element, as the framework requires of every PART.
+
+	Everything here was already in the schema and reachable by nothing: physical.* (eleven
+	fields), wealth.*, languages, and identity.tendencies. See DECISIONS.md, "The character sheet
+	cannot show 19 fields the model carries, and languages are unwired end to end".
+
+	handedness stays on the Combat tab -- it drives shield coverage and off-hand resolution, so
+	it belongs beside the things that read it, and is not repeated here.
+--}}
+<section class="tab imagine-description" data-tab="description" data-group="primary">
+
+	<ul class="band-list tendencies-row">
+		<li><label>Tendencies</label>
+			<span><input type="text" name="system.identity.tendencies" value="{{system.identity.tendencies}}"
+				placeholder="Moral, Amoral, Aggressive..."></span></li>
+	</ul>
+
+	{{!-- What the race gives. For a half race this is already the two combined: skills from both
+	      (a shared one at the better bonus), abilities from both, the lesser ages. Listed, not
+	      applied -- see DECISIONS.md, "The rest of a race". --}}
+	{{#with system.identity.race as |race|}}
+	<div class="panel race-panel">
+		<h3>{{#if ../system.identity.isHalfRace}}Half Race{{else}}Race{{/if}}: {{../system.identity.raceName}}</h3>
+		<p class="muted">Starting age {{race.ages.startLow}}&ndash;{{race.ages.startHigh}}, maximum {{race.ages.maxAge}}</p>
+		<p><label>Racial skills</label>
+			{{#each race.skills as |s|}}<span class="race-chip">{{s.name}}{{#if s.bonus}} {{s.bonus}}{{/if}}</span>{{else}}<span class="muted">none listed</span>{{/each}}
+			{{#if race.skillNote}}<span class="muted">({{race.skillNote}})</span>{{/if}}</p>
+		{{#if race.abilities.length}}<p><label>Abilities</label>
+			{{#each race.abilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if race.disabilities.length}}<p><label>Disabilities</label>
+			{{#each race.disabilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if race.immunities.length}}<p><label>Immunities</label>
+			{{#each race.immunities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+	</div>
+	{{/with}}
+
+	<div class="panel-row">
+
+		<div class="panel">
+			<h3>Physical Features</h3>
+			<ul class="band-list">
+				<li><label>Height</label>
+					<span class="height-fields">
+						<input type="number" name="system.physical.heightFeet" value="{{system.physical.heightFeet}}"> ft
+						<input type="number" name="system.physical.heightInches" value="{{system.physical.heightInches}}"> in
+					</span></li>
+				<li><label>Weight</label>
+					<span><input type="number" name="system.physical.weight" value="{{system.physical.weight}}"> lb</span></li>
+				<li><label>Frame</label>
+					<span><input type="text" name="system.physical.frame" value="{{system.physical.frame}}"></span></li>
+				<li><label>Hair</label>
+					<span><input type="text" name="system.physical.hair" value="{{system.physical.hair}}"></span></li>
+				<li><label>Eyes</label>
+					<span><input type="text" name="system.physical.eyes" value="{{system.physical.eyes}}"></span></li>
+				<li><label>Skin</label>
+					<span><input type="text" name="system.physical.skin" value="{{system.physical.skin}}"></span></li>
+				<li><label>Body Covering</label>
+					<span><input type="text" name="system.physical.bodyCovering" value="{{system.physical.bodyCovering}}"
+						placeholder="Scales, fur..."></span></li>
+				<li><label>Age</label>
+					<span><input type="number" name="system.physical.age" value="{{system.physical.age}}"></span></li>
+				<li><label>Apparent Age</label>
+					<span><input type="number" name="system.physical.apparentAge" value="{{system.physical.apparentAge}}"></span></li>
+				<li><label>Maximum Age</label>
+					<span><input type="text" name="system.physical.maxAge" value="{{system.physical.maxAge}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Wealth</h3>
+			<ul class="band-list">
+				<li><label>Copper</label>
+					<span><input type="number" name="system.wealth.copper" value="{{system.wealth.copper}}"></span></li>
+				<li><label>Silver</label>
+					<span><input type="number" name="system.wealth.silver" value="{{system.wealth.silver}}"></span></li>
+				<li><label>Gold</label>
+					<span><input type="number" name="system.wealth.gold" value="{{system.wealth.gold}}"></span></li>
+				<li><label>Platinum</label>
+					<span><input type="number" name="system.wealth.platinum" value="{{system.wealth.platinum}}"></span></li>
+			</ul>
+			<label class="wealth-text">Gems
+				<textarea name="system.wealth.gems" rows="2">{{system.wealth.gems}}</textarea></label>
+			<label class="wealth-text">Jewelry
+				<textarea name="system.wealth.jewelry" rows="2">{{system.wealth.jewelry}}</textarea></label>
+			<label class="wealth-text">Special
+				<textarea name="system.wealth.special" rows="2">{{system.wealth.special}}</textarea></label>
+		</div>
+
+		<div class="panel">
+			<h3>Languages
+				<button type="button" class="add-language" data-action="addLanguage">
+					<i class="fa-solid fa-plus"></i> Add</button>
+			</h3>
+			{{!-- The allowance is worked out in _prepareLanguages from his setLangSheet. A fraction
+			      is partial command of ONE language ("Speaks(quarter):"), never a share of a second,
+			      and writing lags speaking. Rows past the allowance are flagged, never removed. --}}
+			{{#with system.languageAllowance as |allow|}}
+			<p class="muted language-allowance">
+				{{#if allow.slots}}
+				Language slots from Intelligence: {{allow.used}} of {{allow.slots}} in use,
+				{{allow.writtenUsed}} of {{allow.writtenSlots}} written.
+				{{else}}
+				Intelligence is too low to speak any language.
+				{{/if}}
+			</p>
+			{{#if allow.overSpoken}}<p class="language-over">More languages than Intelligence allows.</p>{{/if}}
+			{{#if allow.overWritten}}<p class="language-over">More written languages than Intelligence allows.</p>{{/if}}
+			{{/with}}
+			{{#if languages.length}}
+			<table class="language-table">
+				<thead><tr><th>Name</th><th>Speak</th><th>Write</th><th></th></tr></thead>
+				<tbody>
+					{{#each languages as |lang|}}
+					<tr class="{{#if lang.overSpoken}}over-allowance{{/if}}">
+						<td><span class="slot-label">{{#if lang.overSpoken}}Over allowance{{else}}{{lang.slotLabel}}{{/if}}
+							{{#if lang.overWritten}}<span class="language-over">(writing over)</span>{{/if}}</span>
+							<input type="text" name="system.languages.{{lang.index}}.name" value="{{lang.name}}"></td>
+						<td class="col-check"><input type="checkbox"
+							name="system.languages.{{lang.index}}.speak" {{#if lang.speak}}checked{{/if}}></td>
+						<td class="col-check"><input type="checkbox"
+							name="system.languages.{{lang.index}}.write" {{#if lang.write}}checked{{/if}}></td>
+						<td class="col-remove">
+							<button type="button" data-action="deleteLanguage" data-index="{{lang.index}}">
+								<i class="fa-solid fa-trash"></i></button>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			{{else}}
+			<p class="empty">No languages recorded.</p>
+			{{/if}}
+		</div>
+
+	</div>
+</section>

@@ -29,6 +29,7 @@ Foundry VTT **V14+**. No legacy/back-compat support — built exclusively on cur
 - `module/` — the system's JavaScript: data models (`data/`), sheets (`sheets/`), windows (`apps/`), combat (`combat/`), and the rules modules each of those reads
 - `templates/`, `styles/`, `lang/` — Handlebars templates, the stylesheet, and the strings Foundry itself asks for
 - `src/packs/` — content, in three stages: `raw/` (his dictionaries as parsed), `named/` (columns given names), `documents/` (Foundry documents, built from those), plus `manual/` for hand-authored entries
+- `dist/imagine-rpg/` — **the installable system**: drop it in `Data/systems/` and restart Foundry. Built by `python tools/build_system.py --zip`, which also writes `dist/imagine-rpg.zip`; `dist/imagine-rpg/BUILD.txt` records the commit it came from, so a stale build is visible
 - `tools/extract/` — the build-time extraction: parsers, column maps and document builders. Not shipped with the system
 - `tools/*.html` — browser test suites and previews. They stub Foundry, so they run over any static server; see the test routine at the foot of `docs/PROGRESS.md`
 - `ImagineRoll20CharacterSheet-main/` — the original Roll20 sheet export, the source material

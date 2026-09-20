@@ -1,0 +1,125 @@
+{{!--
+	Skills tab. Grouped by category, because slot allowances are counted per category and a
+	character may not exceed them.
+
+	Base is (combined attributes - skill rating) x 5%. Total adds the starting bonus rolled on
+	acquisition, any ability bonus earned since, and modifiers.
+--}}
+<section class="tab imagine-skills" data-tab="skills" data-group="primary">
+
+	{{!-- Used against the allowance. The allowance is Knowledge's figure as traded: where a trade
+	      has moved it, the untraded figure is shown beside it so the cost is visible. A category
+	      holding more than it has slots for is flagged rather than corrected -- see
+	      _prepareSkillSlotStatus. --}}
+	<div class="slot-summary">
+		<span class="slot {{#if system.skillSlots.classOver}}alarm{{/if}}"><label>Class</label>
+			{{system.skillSlots.classUsed}} / {{system.skillSlots.class}}
+			{{#unless (eq system.skillSlots.class system.skillSlots.classBase)}}<span class="sub">was {{system.skillSlots.classBase}}</span>{{/unless}}</span>
+		<span class="slot {{#if system.skillSlots.racialOver}}alarm{{/if}}"><label>Racial</label>
+			{{system.skillSlots.racialUsed}} / {{system.skillSlots.racial}}
+			{{#unless (eq system.skillSlots.racial system.skillSlots.racialBase)}}<span class="sub">was {{system.skillSlots.racialBase}}</span>{{/unless}}</span>
+		<span class="slot {{#if system.skillSlots.socialOver}}alarm{{/if}}"><label>Social</label>
+			{{system.skillSlots.socialUsed}} / {{system.skillSlots.social}}
+			{{#unless (eq system.skillSlots.social system.skillSlots.socialBase)}}<span class="sub">was {{system.skillSlots.socialBase}}</span>{{/unless}}</span>
+		<span class="slot"><label>Memorization</label> {{system.skillSlots.memorization}}</span>
+	</div>
+
+	{{!-- The Player's Guide's "slot tricks". A class slot is what the others trade FOR: there is
+	      no trade out of class and no class slot may be given up, which is why neither appears. --}}
+	<details class="skill-group slot-tricks" data-sync>
+		<summary>Trade skill slots <span class="count">unused slots only</span></summary>
+		<div class="slot-trades">
+			{{#each slotTransfers as |t|}}
+			{{#if t.sacrifice}}
+			<button type="button" data-action="sacrificeSlot" data-category="{{t.key}}"
+				class="{{#unless t.allowed}}spent{{/unless}}"
+				data-tooltip="{{#if t.allowed}}Give up one {{t.from}} slot; a skill you hold gains the bonus{{else}}{{t.reason}}{{/if}}">
+				1 {{t.from}} &rarr; {{t.to}}</button>
+			{{else}}
+			<button type="button" data-action="transferSlot" data-transfer="{{t.key}}"
+				class="{{#unless t.allowed}}spent{{/unless}}"
+				{{#unless t.allowed}}data-tooltip="{{t.reason}}"{{/unless}}>
+				{{t.cost}} {{t.from}} &rarr; {{t.gain}} {{t.to}}</button>
+			{{/if}}
+			{{/each}}
+		</div>
+		<p class="muted">A trade spends slots that are still unused, and cannot be undone.</p>
+	</details>
+
+	{{!-- Almost any skill can be tried without having learned it, at the base chance alone. A
+	      skill already held is rolled from its own row instead. --}}
+	<div class="untrained-row">
+		<button type="button" data-action="rollUntrainedSkill">
+			<i class="fa-solid fa-dice-d20"></i> Attempt a skill untrained</button>
+	</div>
+
+	{{!-- Most classes have nothing here -- his data never carried the skills gained at each
+	      title, only the title names -- so this only shows for a class hand-authored with them.
+	      Angle-bracketed entries such as "<1st Kinesis>" are element-dependent placeholders his
+	      templates resolve elsewhere, and are shown as written rather than hidden. --}}
+	{{#if classProgress.show}}
+	<h3 class="section-head">Class Progression</h3>
+	{{#each classProgress.classes as |klass|}}
+	{{#if ../classProgress.showNames}}<h4 class="class-progress-name">{{klass.name}} &mdash; title {{klass.title}}</h4>{{/if}}
+	<table class="class-progress-table">
+		<tbody>
+			{{#each klass.rows as |row|}}
+			<tr class="{{#if row.current}}current-title{{/if}} {{#unless row.reached}}unreached-title{{/unless}}">
+				<td class="col-title">{{row.title}}<span class="muted">{{row.titleName}}</span></td>
+				<td class="col-skills">{{row.skillText}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{/each}}
+	{{#if classProgress.owed}}
+	<p class="alarm">{{classProgress.owed}} class skill(s) earned but not on this character.
+		Run <code>game.imagine.grantClassSkills(actor)</code> to give them.</p>
+	{{/if}}
+	{{#each classProgress.usage as |usage|}}
+	<p class="muted class-usage">{{usage.name}} may use armour: {{usage.armorUsage}}. Weapons: {{usage.weaponUsage}}.</p>
+	{{/each}}
+	{{/if}}
+
+	{{#each skills as |list category|}}
+	<details class="skill-group" data-sync open>
+		<summary>{{category}} skills <span class="count">{{list.length}}</span></summary>
+		{{#if list.length}}
+		<table class="skill-table">
+			<thead>
+				<tr>
+					<th class="col-name">Skill</th>
+					<th class="col-num">Attrs</th>
+					<th class="col-num">Rating</th>
+					<th class="col-num">Base</th>
+					<th class="col-num">Total</th>
+					<th class="col-roll"></th>
+					<th class="col-src">Source</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each list as |skill|}}
+				<tr class="{{#unless skill.available}}unavailable{{/unless}} {{#unless skill.usableByTitle}}not-yet-acquired{{/unless}}"
+				    {{#unless skill.available}}data-tooltip="{{skill.unavailableReason}}"{{/unless}}
+				    {{#unless skill.usableByTitle}}data-tooltip="{{skill.titleGateReason}}"{{/unless}}>
+					<td class="col-name">{{skill.name}}{{#unless skill.available}}
+						<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{skill.unavailableReason}}"></i>{{/unless}}{{#unless skill.usableByTitle}}
+						<i class="fa-solid fa-hourglass-half not-yet-mark" aria-label="{{skill.titleGateReason}}"></i>{{/unless}}</td>
+					<td class="col-num muted">{{skill.attr1}}{{#if skill.attr2}}/{{skill.attr2}}{{/if}}</td>
+					<td class="col-num muted">{{skill.skillRating}}</td>
+					<td class="col-num derived">{{skill.baseChance}}%</td>
+					<td class="col-num derived strong">{{skill.totalChance}}%</td>
+					<td class="col-roll">
+						<button type="button" data-action="rollSkill" data-item-id="{{skill.id}}">Roll</button>
+					</td>
+					<td class="col-src muted">{{skill.sourcebook}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+		{{else}}
+		<p class="empty">No {{category}} skills.</p>
+		{{/if}}
+	</details>
+	{{/each}}
+</section>

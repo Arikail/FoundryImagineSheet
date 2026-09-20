@@ -1,0 +1,918 @@
+/* Imagine RPG system styles.
+ *
+ * Redesigned for Foundry's conventions rather than reproducing the Roll20 sheet's boxy table
+ * layout. The organising idea is that entered values and derived values should never be
+ * confusable: anything a player types sits in a field, anything the system worked out is flat
+ * text. On a sheet with this many numbers, that distinction carries a lot of weight.
+ */
+
+.imagine.sheet {
+	--imagine-ink: #1c1a17;
+	--imagine-muted: #6d675e;
+	--imagine-rule: #cfc7b8;
+	--imagine-panel: #f7f4ee;
+	--imagine-accent: #6b4e2e;
+	--imagine-derived: #2f2a22;
+}
+
+.imagine.sheet .window-content {
+	background: #fdfbf6;
+	color: var(--imagine-ink);
+	font-size: 13px;
+}
+
+/* @MARKER HEADER */
+
+.imagine-header {
+	display: grid;
+	grid-template-columns: 84px 1fr auto;
+	gap: 12px;
+	align-items: start;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--imagine-rule);
+}
+
+.imagine-header .portrait {
+	width: 84px;
+	height: 84px;
+	object-fit: cover;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+	background: var(--imagine-panel);
+}
+
+.imagine-header .charname {
+	font-size: 20px;
+	font-weight: 600;
+	border: none;
+	border-bottom: 1px solid transparent;
+	background: transparent;
+	padding: 0 0 2px 0;
+	width: 100%;
+}
+.imagine-header .charname:hover,
+.imagine-header .charname:focus {
+	border-bottom-color: var(--imagine-rule);
+}
+
+.identity-line {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 4px;
+}
+
+.identity-line .field {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 5px;
+}
+
+.identity-line label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-muted);
+}
+
+.identity-line input {
+	width: 84px;
+	height: 20px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--imagine-rule);
+	padding: 0 2px;
+}
+
+.identity-line .readout {
+	font-weight: 600;
+}
+
+/* The four characteristics, one per attribute category. */
+.characteristics {
+	display: flex;
+	gap: 8px;
+}
+
+.char-box {
+	min-width: 76px;
+	padding: 6px 8px;
+	text-align: center;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.char-box label {
+	display: block;
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+}
+
+.char-box .value {
+	display: block;
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.15;
+}
+
+.char-box .sub {
+	display: block;
+	font-size: 10px;
+	color: var(--imagine-muted);
+}
+
+/* @MARKER TABLES */
+
+.imagine.sheet table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+.imagine.sheet thead th {
+	font-size: 9px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+	text-align: left;
+	padding: 4px 6px;
+	border-bottom: 1px solid var(--imagine-rule);
+}
+
+.imagine.sheet tbody td {
+	padding: 3px 6px;
+	border-bottom: 1px solid #ece7dc;
+}
+
+.imagine.sheet tbody tr:hover td {
+	background: #f3efe6;
+}
+
+.col-num, .col-roll { text-align: center; width: 1%; white-space: nowrap; }
+.col-src { width: 1%; white-space: nowrap; font-size: 11px; }
+.col-mods { font-size: 11px; }
+
+/* Entered values get a field; derived values are flat text. */
+.imagine.sheet input[type="number"],
+.imagine.sheet input[type="text"] {
+	font: inherit;
+	color: inherit;
+}
+
+.attribute-table input[type="number"] {
+	width: 46px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+
+.derived { color: var(--imagine-derived); }
+.strong  { font-weight: 700; }
+.muted   { color: var(--imagine-muted); }
+
+.col-mods .mod {
+	display: inline-block;
+	margin-right: 9px;
+	white-space: nowrap;
+}
+.col-mods .mod em {
+	font-style: normal;
+	color: var(--imagine-muted);
+}
+
+.imagine.sheet button {
+	font-size: 11px;
+	line-height: 1;
+	padding: 3px 8px;
+	width: auto;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	cursor: pointer;
+}
+.imagine.sheet button:hover {
+	background: var(--imagine-accent);
+	border-color: var(--imagine-accent);
+	color: #fff;
+}
+
+/* @MARKER PANELS */
+
+.panel-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.panel {
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+	padding: 8px 10px;
+}
+
+.panel h3 {
+	margin: 0 0 6px 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--imagine-muted);
+	border: none;
+	font-weight: 600;
+}
+
+.resist-list, .band-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.resist-list li, .band-list li {
+	display: flex;
+	justify-content: space-between;
+	padding: 1px 0;
+}
+
+.resist-list label, .band-list label {
+	text-transform: capitalize;
+	color: var(--imagine-muted);
+}
+
+.resist-list .value { font-weight: 600; }
+
+.move-table td { padding: 1px 4px; border: none; font-size: 12px; }
+.move-table thead th { padding: 1px 4px; }
+/* Movement at the current load, under the unencumbered rates his sheet shows. */
+.loaded-heading { font-size: 11px; font-weight: bold; margin: 6px 0 1px; color: #a2462e; }
+.move-table.loaded td { color: #a2462e; }
+
+/* @MARKER ATTRIBUTE GRID */
+/* A compact 12-wide row of numbers (a race's mods/limits, a class's attribute qualification),
+   one column per attribute in the Player's Guide's order. A shared header row lets a race sheet
+   stack its Mods and Limits rows under a single set of labels. */
+
+.attr-grid {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2px 0 4px;
+}
+
+.attr-grid th {
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--imagine-muted);
+	font-weight: 600;
+	text-align: center;
+	padding: 0 1px 2px;
+}
+
+.attr-grid td {
+	padding: 1px;
+}
+
+.attr-grid td.row-label {
+	text-align: left;
+	font-size: 11px;
+	color: var(--imagine-muted);
+	white-space: nowrap;
+	padding-right: 6px;
+	width: 1%;
+}
+
+.attr-grid input[type="number"] {
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 1px;
+}
+
+/* @MARKER COVERAGE GRID */
+/* Nineteen armour locations, paired left/right where the body pairs them. Two label/value pairs
+   per row rather than a body diagram -- the source charts this was extracted from are tables, not
+   pictures, and a row that has no right-hand pair (head, neck, the torso thirds) just leaves those
+   two cells blank. */
+
+.coverage-grid {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2px 0 4px;
+}
+
+.coverage-grid td {
+	padding: 1px 4px;
+}
+
+.coverage-grid td.loc-label {
+	text-align: right;
+	font-size: 11px;
+	color: var(--imagine-muted);
+	white-space: nowrap;
+	width: 1%;
+}
+
+.coverage-grid input[type="number"] {
+	width: 48px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 1px;
+}
+
+/* @MARKER EDIT MOVE TABLE */
+/* The read-only .move-table on the attribute tab, given inputs -- a race's own walk/jog/run and
+   special-movement rates are entered here, not just displayed. */
+
+.edit-move-table { width: 100%; border-collapse: collapse; margin: 2px 0 4px; }
+.edit-move-table td { padding: 1px 4px; }
+.edit-move-table thead th { padding: 1px 4px; font-size: 10px; color: var(--imagine-muted); }
+.edit-move-table input[type="number"], .edit-move-table input[type="text"] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1px 3px;
+}
+
+/* @MARKER REMOVABLE LIST */
+/* A single-field-per-row list with its own Add/Remove, for arrays too plain to need the
+   collapsible rider-effect treatment -- a class's modifier strings, for instance. */
+
+.removable-list li {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: stretch;
+	padding: 2px 0;
+}
+
+.removable-list input[type="text"] {
+	flex: 1;
+}
+
+.encumbrance-status {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* @MARKER SKILLS */
+
+.slot-summary {
+	display: flex;
+	gap: 16px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.slot-summary label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-muted);
+	margin-right: 4px;
+}
+
+/* The untraded allowance, shown beside a traded one so the trade's cost is visible. */
+.slot-summary .sub {
+	font-size: 10px;
+	color: var(--imagine-muted);
+	margin-left: 3px;
+}
+
+/* The Player's Guide's slot tricks. One button per trade, at the rate it trades at. */
+.slot-trades {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding: 6px 2px;
+}
+
+.slot-trades button {
+	font-size: 11px;
+	padding: 2px 8px;
+	width: auto;
+}
+
+/* A trade with nothing left to spend. Still clickable -- it says why on hover, and the Game
+   Master may have a reason the rules do not know about. */
+.slot-trades button.spent {
+	color: var(--imagine-muted);
+	border-style: dashed;
+}
+
+/* A dual-classed character's per-class titles, and whatever the book's requirements say is
+   short. Reported rather than refused: the Game Master has the last word on dual classing. */
+.class-titles .title-step {
+	width: auto;
+	font-size: 11px;
+	line-height: 1;
+	padding: 0 5px;
+	margin: 0 2px;
+}
+
+.dual-class-issues {
+	gap: 10px;
+	font-size: 11px;
+}
+
+.untrained-row {
+	margin: 0 0 8px;
+}
+
+.untrained-row button {
+	font-size: 11px;
+	padding: 2px 10px;
+	width: auto;
+}
+
+/* A skill rolled for each copy the character holds; the one taken is marked. */
+.imagine-skill-roll .skill-roll-line {
+	font-size: 12px;
+	color: var(--imagine-muted);
+}
+
+.imagine-skill-roll .skill-roll-line.chosen {
+	color: inherit;
+	font-weight: 600;
+}
+
+.skill-group summary {
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-accent);
+	padding: 5px 0;
+}
+
+.skill-group .count {
+	color: var(--imagine-muted);
+	font-weight: 400;
+}
+
+.empty {
+	color: var(--imagine-muted);
+	font-style: italic;
+	padding: 6px 2px;
+}
+
+/* The three titles around the character's current one, for a class whose Word template recorded
+   what is gained at each. Most classes have nothing here -- his own data never carried it. */
+.class-progress-table { margin-bottom: 10px; }
+.class-progress-table td { padding: 3px 6px; vertical-align: top; }
+.class-progress-table .col-title {
+	width: 1%;
+	white-space: nowrap;
+	font-weight: 600;
+}
+.class-progress-table .col-title .muted {
+	display: block;
+	font-weight: 400;
+	font-size: 10px;
+	text-transform: none;
+}
+.class-progress-table .col-skills { font-size: 12px; }
+.class-progress-table tr.current-title {
+	background: var(--imagine-panel);
+	border-radius: 3px;
+}
+.class-progress-table tr.current-title .col-title { color: var(--imagine-accent); }
+
+/* A title the character has not reached yet: shown, so the player can see what is coming,
+ * and faded, so it is not mistaken for what they have. */
+.class-progress-table tr.unreached-title td { color: #9a948a; }
+
+.class-progress-name {
+	margin: 8px 0 2px;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	color: var(--imagine-accent);
+}
+
+.class-usage { font-size: 11px; margin: 2px 0; }
+
+/* A class skill held but earned at a title above the character's -- his "this skill cannot be
+ * used before <name> title". Faded like disallowed content, but not struck through: it is the
+ * character's skill, it is simply not theirs to use yet. */
+.imagine.sheet tr.not-yet-acquired td { color: #9a948a; }
+.imagine.sheet .not-yet-mark {
+	margin-left: 5px;
+	color: #8a7a4a;
+	font-size: 10px;
+}
+
+/* @MARKER LEVEL UP */
+
+.level-up-open {
+	width: auto;
+	padding: 2px 10px;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+.imagine.level-up .level-up-standing {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.imagine.level-up .level-up-standing label {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	margin-right: 4px;
+}
+
+.imagine.level-up h3 { margin: 10px 0 4px; }
+.imagine.level-up .row { display: flex; gap: 6px; align-items: center; }
+.imagine.level-up .level-up-result { font-weight: 600; color: var(--imagine-accent); }
+.imagine.level-up .level-up-rolls td { padding: 3px 6px; }
+.imagine.level-up .level-up-skills,
+.imagine.level-up .level-up-arch,
+.imagine.level-up .level-up-spends { margin: 4px 0 4px 18px; }
+
+/* A qualification not yet met, on the Arch Mortal screen. */
+.imagine.level-up .level-up-qualify-table td { padding: 2px 6px; }
+.imagine.level-up .level-up-qualify-table tr.unmet td { color: #a2462e; }
+
+/* @MARKER EQUIPMENT */
+
+.encumbrance-bar {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	padding: 6px 8px;
+	margin-bottom: 8px;
+	background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.encumbrance-bar .status {
+	font-weight: 600;
+	font-size: 14px;
+}
+
+/* Adding gear by hand, and the per-row edit and remove buttons beside it. */
+.gear-add {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 8px;
+}
+
+.gear-add button {
+	width: auto;
+	padding: 2px 10px;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+.gear-table .col-row-actions {
+	width: 1%;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.imagine.sheet .row-button {
+	width: auto;
+	padding: 0 5px;
+	margin-left: 2px;
+	font-size: 12px;
+	line-height: 1.4;
+	background: none;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.imagine.sheet .row-button:hover { background: var(--imagine-panel); }
+
+/* @MARKER CONTENT AVAILABILITY */
+
+/* Content the campaign's switches disallow stays on the sheet, flagged, rather than
+ * disappearing. Faded and struck through, with the reason in a tooltip. */
+.imagine.sheet tr.unavailable td {
+	color: #9a948a;
+}
+.imagine.sheet tr.unavailable .col-name {
+	text-decoration: line-through;
+}
+.imagine.sheet .unavailable-mark {
+	margin-left: 5px;
+	color: #a2462e;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+/* The Game Master's availability window. */
+.imagine.availability-config fieldset {
+	border: 1px solid #cfc7b8;
+	border-radius: 3px;
+	margin: 0 0 10px 0;
+	padding: 6px 10px 10px;
+}
+.imagine.availability-config legend {
+	font-weight: 600;
+	padding: 0 4px;
+}
+.imagine.availability-config .hint {
+	margin: 2px 0 8px;
+	font-size: 11px;
+	color: #6d675e;
+}
+.imagine.availability-config .master-switch {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 8px;
+}
+.imagine.availability-config .switch-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 3px 14px;
+}
+.imagine.availability-config .switch-grid label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.imagine.availability-config .switch-grid.dimmed {
+	opacity: 0.45;
+}
+.imagine.availability-config .override-table {
+	width: 100%;
+	margin-bottom: 8px;
+}
+.imagine.availability-config .override-add {
+	display: grid;
+	grid-template-columns: 110px 1fr 90px auto;
+	gap: 6px;
+	align-items: center;
+}
+.imagine.availability-config .empty {
+	color: #6d675e;
+	font-style: italic;
+}
+.imagine.availability-config .override-table th,
+.imagine.availability-config .override-table td {
+	text-align: left;
+	padding: 2px 6px;
+}
+
+/* @MARKER COMBAT TAB */
+
+.combat-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+.combat-stats .value.small { font-size: 14px; }
+.combat-stats .value.alarm,
+.imagine.sheet .alarm { color: #a2462e; }
+
+.imagine.sheet .section-head {
+	margin: 10px 0 4px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--imagine-accent);
+	border: none;
+}
+
+.weapon-table .mode-list { font-size: 11px; margin-left: 6px; }
+
+/* Handedness sits in the Body heading, because it is what decides which side of the body a
+   shield covers. Kept small and right-aligned so it reads as a setting, not a stat. */
+.imagine.sheet .section-head .handedness {
+	float: right;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: 0;
+	color: var(--color-text-dark-secondary, #666);
+}
+.imagine.sheet .section-head .handedness select {
+	height: 20px;
+	font-size: 11px;
+	margin-left: 4px;
+	width: auto;
+}
+
+/* A weapon the character has Lore in is marked in the weapons table. Capitalised when the lore
+   is specific to that weapon, lower case when it is the general kind. */
+.weapon-table .lore-tag {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 1px 4px;
+	border: 1px solid var(--imagine-accent, #7a6a4f);
+	border-radius: 3px;
+	color: var(--imagine-accent, #7a6a4f);
+}
+
+/* Which hand a weapon is in. Three small buttons rather than a dropdown, because the sheet's
+   data-action handlers are dispatched from a click. "2H" is both hands, which is what doubles a
+   Strength damage bonus. */
+.weapon-table .col-hand { white-space: nowrap; width: 1%; }
+
+.hand-pick { display: inline-flex; }
+.hand-pick button {
+	width: auto;
+	min-width: 22px;
+	padding: 0 4px;
+	font-size: 10px;
+	line-height: 18px;
+	border: 1px solid var(--imagine-rule, #c9bda4);
+	background: transparent;
+	border-radius: 0;
+	margin: 0 0 0 -1px;
+}
+.hand-pick button:first-child { border-radius: 3px 0 0 3px; margin-left: 0; }
+.hand-pick button:last-child  { border-radius: 0 3px 3px 0; }
+.hand-pick button.on {
+	background: var(--imagine-accent, #7a6a4f);
+	border-color: var(--imagine-accent, #7a6a4f);
+	color: #fff;
+}
+
+/* Derived, never tagged: a weapon is off-hand when its hand is not the wielder's dominant one.
+   An Ambidextrous character never shows this, however a weapon is tagged. */
+.weapon-table .offhand-tag {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 1px 4px;
+	border: 1px solid #a4542f;
+	border-radius: 3px;
+	color: #a4542f;
+}
+
+.lore-lists { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.lore-lists label { flex: 1 1 220px; font-size: 11px; }
+.lore-lists input { width: 100%; }
+
+/* Pain Threshold is an editable stat rather than a derived one: it is the Game Master's dial
+   for how hard a target feels a blow, and it is signed. */
+.combat-stats .pain-input {
+	width: 52px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0;
+	background: none;
+	border: 1px solid var(--imagine-rule, #c9bfa8);
+}
+
+.body-table .wound-input {
+	width: 46px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+.body-table tr.area-wounded td       { background: #fbf4e6; }
+.body-table tr.area-vitalitySave td  { background: #f7e3cf; }
+.body-table tr.area-effect td        { background: #f0d2c8; }
+.body-table tr.area-effect .state    { color: #a2462e; font-weight: 700; }
+
+/* @MARKER CHAT CARDS */
+
+.imagine-chat header { font-size: 13px; margin-bottom: 4px; }
+.imagine-chat header .target { color: #6d675e; margin-left: 4px; }
+.imagine-chat .attack-line { font-size: 11px; color: #4a453d; }
+.imagine-chat .attack-line span { margin-right: 6px; white-space: nowrap; }
+.imagine-chat .attack-line .final { font-weight: 700; color: #1c1a17; }
+.imagine-chat .aim { font-size: 11px; color: #6d675e; }
+.imagine-chat .zone {
+	margin: 5px 0;
+	padding: 4px 6px;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 3px;
+}
+.imagine-chat .zone-hit  { background: #e3eed9; color: #2f5a1c; }
+.imagine-chat .zone-miss { background: #efe9e0; color: #6d675e; }
+.imagine-chat .fumble { color: #a2462e; font-weight: 600; }
+.imagine-chat .damage { font-size: 12px; }
+.imagine-chat .damage .total { font-size: 18px; font-weight: 700; }
+.imagine-chat .damage .breakdown { color: #6d675e; font-size: 11px; }
+.imagine-chat footer {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 6px;
+	flex-wrap: wrap;
+}
+.imagine-chat footer .speed { color: #6d675e; font-size: 11px; margin-right: auto; }
+.imagine-chat footer button { width: auto; flex: 0 0 auto; font-size: 11px; line-height: 1.4; }
+
+/* @MARKER DESCRIPTION TAB */
+/* physical, wealth and languages, all previously in the schema and reachable by nothing --
+   see DECISIONS.md, "The character sheet cannot show 19 fields the model carries". Reuses the
+   .panel / .band-list pattern the race sheet already established for the same kind of dense,
+   plain-field editing. */
+
+.tendencies-row { max-width: 420px; margin-bottom: 10px; }
+
+/* Height stays two small numbers, feet then inches, rather than one field -- matching how his
+   own sheet kept the two apart rather than as a single decimal. */
+.height-fields input { width: 40px; text-align: center; }
+
+.add-language { float: right; font-size: 10px; padding: 1px 6px; }
+
+.wealth-text {
+	display: block;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--imagine-muted);
+	margin-top: 6px;
+}
+.wealth-text textarea { width: 100%; box-sizing: border-box; font: inherit; margin-top: 2px; }
+
+.language-allowance { font-size: 11px; margin: 2px 0 6px; }
+
+.language-table input[type="text"] { width: 100%; box-sizing: border-box; }
+.language-table .col-check { width: 1%; text-align: center; white-space: nowrap; }
+.language-table .col-remove { width: 1%; white-space: nowrap; }
+.language-table .col-remove button { padding: 2px 6px; }
+
+/* What a race gives, on the Description tab: small chips per skill or ability. */
+.race-panel p { margin: 3px 0; font-size: 11px; }
+.race-panel label { display: inline-block; min-width: 80px; font-weight: bold; }
+.race-chip { display: inline-block; margin: 1px 3px 1px 0; padding: 0 5px; border: 1px solid #cfc7b8;
+	border-radius: 8px; font-size: 10px; white-space: nowrap; }
+
+/* His slot label for each row, and the flag for rows past what Intelligence allows. Flagged the
+ * way disallowed content is -- the same muted red -- and never removed. */
+.language-table .slot-label { display: block; font-size: 10px; font-weight: bold; margin-bottom: 1px; }
+.language-table tr.over-allowance .slot-label { color: #a2462e; }
+.language-over { color: #a2462e; font-size: 10px; margin: 0 0 4px; }
+
+/* @MARKER CHARACTER GENERATOR */
+/* The step-by-step window (module/apps/character-generator.mjs). Same palette as the sheets;
+ * entered values in fields, worked-out values as flat text, as everywhere else. */
+.imagine.character-generator {
+	--imagine-ink: #1c1a17;
+	--imagine-muted: #6d675e;
+	--imagine-rule: #cfc7b8;
+	--imagine-panel: #f7f4ee;
+	--imagine-accent: #6b4e2e;
+}
+.imagine.character-generator .window-content { background: #fdfbf6; color: var(--imagine-ink); font-size: 13px; }
+.chargen { display: flex; flex-direction: column; height: 100%; gap: 8px; }
+.chargen-steps { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0 0 6px;
+	border-bottom: 2px solid var(--imagine-rule); }
+.chargen-steps li { flex: 1; }
+.chargen-steps button { width: 100%; font-size: 12px; padding: 3px 4px; border: 1px solid var(--imagine-rule);
+	background: var(--imagine-panel); border-radius: 3px; }
+.chargen-steps li.current button { background: var(--imagine-accent); border-color: var(--imagine-accent);
+	color: #fff; font-weight: bold; }
+.chargen-steps li.done button { color: var(--imagine-accent); }
+.chargen-body { flex: 1; overflow-y: auto; padding-right: 4px; }
+.chargen-body h2 { margin: 4px 0 8px; font-size: 18px; border: none; }
+.chargen-body h3 { margin: 12px 0 4px; font-size: 14px; }
+.chargen-body label.row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.chargen-body label.row > input[type="text"], .chargen-body label.row > select { flex: 1; }
+.chargen-body label.row > input[type="number"] { width: 70px; flex: none; }
+.chargen-body label.check { display: inline-flex; align-items: center; gap: 4px; }
+.chargen-body label.row.check { display: flex; }
+.chargen-body p label { font-weight: bold; margin-right: 4px; }
+.chargen-race, .chargen-class { margin-top: 10px; padding: 8px 10px; background: var(--imagine-panel);
+	border: 1px solid var(--imagine-rule); border-radius: 4px; }
+.chargen-attributes { width: 100%; border-collapse: collapse; }
+.chargen-attributes th { font-size: 11px; color: var(--imagine-muted); text-align: left; padding: 2px 4px;
+	border-bottom: 1px solid var(--imagine-rule); }
+.chargen-attributes td { padding: 2px 4px; border-bottom: 1px solid #ece6da; }
+.chargen-attributes td input { width: 56px; }
+.chargen-attributes td.strong { font-weight: bold; }
+.chargen-attributes tr.over td.strong, .chargen-attributes tr.under td.strong { color: #a2462e; }
+.chargen-attributes.compact { width: auto; }
+.chargen .swap-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0; }
+.chargen .pick-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	gap: 2px 10px; max-height: 150px; overflow-y: auto; padding: 4px; border: 1px solid var(--imagine-rule);
+	border-radius: 3px; font-size: 12px; }
+.chargen .pick-list.tall { max-height: 220px; }
+.chargen .alarm { color: #a2462e; margin: 2px 0; }
+.chargen .ok { color: #3f6b2e; font-weight: bold; }
+.chargen-footer { display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+	padding-top: 6px; border-top: 1px solid var(--imagine-rule); }
+.chargen-footer .alarm { flex: 1; font-size: 12px; }
+.chargen-footer button { flex: none; width: auto; padding: 4px 14px; }
+.chargen-footer button.primary { background: var(--imagine-accent); color: #fff; border-color: var(--imagine-accent); }
+.imagine-chargen-button { flex: 1 1 100%; }

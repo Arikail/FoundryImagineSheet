@@ -1,0 +1,47 @@
+{{!--
+	Trait body. One root element, as the framework requires of every PART.
+
+	An ability, a disability or an immunity -- one type separated by a category, because they
+	are one shape in his data.
+
+	The two values are text on purpose. What they mean changes from entry to entry: for Frost
+	Sensitivity they are a magic-resistance penalty and extra damage per die, and for Acid
+	Resistant a damage multiplier and a resistance bonus. A trait does not apply them itself;
+	the description is what the table reads.
+--}}
+<section class="imagine-item-body trait">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Kind</h3>
+			<ul class="band-list">
+				<li><label>Category</label>
+					<span><select name="system.category">
+						{{#each config.categories as |c|}}
+						<option value="{{c}}" {{#if (eq c ../system.category)}}selected{{/if}}>{{c}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Canonical name</label>
+					<span><input type="text" name="system.canonicalName" value="{{system.canonicalName}}"
+						placeholder="{{item.name}}"></span></li>
+			</ul>
+			<p class="muted">The canonical name is what his sheet displays when the entry is looked up
+			by a different spelling &mdash; "Acid Regeneration" resolves to "Regeneration(Acid)".</p>
+		</div>
+
+		<div class="panel">
+			<h3>Values</h3>
+			<ul class="band-list">
+				<li><label>Value 1</label>
+					<span><input type="text" name="system.value1" value="{{system.value1}}" placeholder="&mdash;"></span></li>
+				<li><label>Value 2</label>
+					<span><input type="text" name="system.value2" value="{{system.value2}}" placeholder="&mdash;"></span></li>
+			</ul>
+			<p class="muted">Their meaning is per entry rather than per column, so they are text. Nothing
+			reads them automatically.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="6">{{system.description}}</textarea>
+</section>

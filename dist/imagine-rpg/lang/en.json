@@ -1,0 +1,58 @@
+{
+  "IMAGINE": {
+    "SystemTitle": "Imagine Role Playing System",
+    "Sheet": {
+      "Character": "Imagine Character Sheet",
+      "Creature": "Imagine Creature Sheet",
+      "CreatureAttack": "Imagine Creature Attack Sheet",
+      "Power": "Imagine Power Sheet",
+      "Trait": "Imagine Trait Sheet",
+      "Class": "Imagine Class Sheet",
+      "Armor": "Imagine Armour Sheet",
+      "Race": "Imagine Race Sheet",
+      "Equipment": "Imagine Equipment Sheet",
+      "Weapon": "Imagine Weapon Sheet",
+      "Skill": "Imagine Skill Sheet"
+    },
+    "Tab": {
+      "attributes": "Attributes",
+      "skills": "Skills",
+      "equipment": "Equipment",
+      "combat": "Combat",
+      "description": "Description",
+      "stats": "Stats",
+      "traits": "Traits"
+    },
+    "Attribute": {
+      "str": "Strength",
+      "agl": "Agility",
+      "vit": "Vitality",
+      "int": "Intelligence",
+      "wis": "Wisdom",
+      "knw": "Knowledge",
+      "app": "Appearance",
+      "chm": "Charm",
+      "soc": "Social Class",
+      "aur": "Aura",
+      "pty": "Piety",
+      "wil": "Will Force"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "creature": "Creature"
+    },
+    "Item": {
+      "skill": "Skill",
+      "race": "Race",
+      "class": "Class",
+      "weapon": "Weapon",
+      "armor": "Armour",
+      "equipment": "Equipment",
+      "creatureAttack": "Creature Attack",
+      "power": "Power",
+      "trait": "Trait"
+    }
+  }
+}

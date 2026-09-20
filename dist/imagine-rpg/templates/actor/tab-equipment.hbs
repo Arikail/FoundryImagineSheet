@@ -1,0 +1,56 @@
+{{!--
+	Equipment tab. Weapons, armour and general gear together, since encumbrance counts them
+	together and what matters most is where a thing is: worn and carried weight counts against
+	the character, stowed on a mount or left in a stash does not.
+--}}
+<section class="tab imagine-equipment" data-tab="equipment" data-group="primary">
+
+	<div class="encumbrance-bar">
+		<span class="status">{{system.encumbrance.status}}</span>
+		<span class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb carried</span>
+	</div>
+
+	{{!-- Adding gear by hand, for something no compendium holds. Dragging from a compendium still
+	      works and is the better route for anything the system already knows. --}}
+	<div class="gear-add">
+		<button type="button" data-action="createGear" data-type="equipment">Add equipment</button>
+		<button type="button" data-action="createGear" data-type="weapon">Add weapon</button>
+		<button type="button" data-action="createGear" data-type="armor">Add armour</button>
+	</div>
+
+	{{#if gear.length}}
+	<table class="gear-table">
+		<thead>
+			<tr>
+				<th class="col-name">Item</th>
+				<th class="col-num">Type</th>
+				<th class="col-num">Qty</th>
+				<th class="col-num">Weight</th>
+				<th class="col-num">Location</th>
+				<th class="col-row-actions"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each gear as |item|}}
+			<tr class="{{#if (eq item.system.available false)}}unavailable{{/if}}"
+			    {{#if (eq item.system.available false)}}data-tooltip="{{item.system.unavailableReason}}"{{/if}}>
+				<td class="col-name">{{item.name}}{{#if (eq item.system.available false)}}
+					<i class="fa-solid fa-ban unavailable-mark" aria-label="Unavailable: {{item.system.unavailableReason}}"></i>{{/if}}</td>
+				<td class="col-num muted">{{item.type}}</td>
+				<td class="col-num">{{item.system.quantity}}</td>
+				<td class="col-num muted">{{item.system.weight}}</td>
+				<td class="col-num muted">{{item.system.location}}</td>
+				<td class="col-row-actions">
+					<button type="button" class="row-button" data-action="openItem"
+						data-item-id="{{item.id}}" data-tooltip="Edit this item">&#9998;</button>
+					<button type="button" class="row-button" data-action="deleteItem"
+						data-item-id="{{item.id}}" data-tooltip="Remove from this character">&times;</button>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	{{else}}
+	<p class="empty">Nothing carried. Drag items here from a compendium, or add one above.</p>
+	{{/if}}
+</section>

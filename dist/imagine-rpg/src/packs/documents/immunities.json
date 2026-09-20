@@ -1,0 +1,1939 @@
+[
+  {
+    "name": "(Energy Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Energy magical or otherwise has no effect."
+    }
+  },
+  {
+    "name": "Acid",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Acid",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Acid(Acid does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Acid Hardened",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Acid Hardened",
+      "value1": "-1",
+      "value2": "10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Acid Hardened(-1 per die of damage from acid. +10% to Magic Resistances to acid.)"
+    }
+  },
+  {
+    "name": "Acid Resistant",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Acid Resistant",
+      "value1": "0.5",
+      "value2": "20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Acid Resistant(Half damage from acid. +20% Magic Resistance to acid.)"
+    }
+  },
+  {
+    "name": "Aging",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Aging",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aging(Does not decay or age. The being is immortal. No spells or effects which cause aging will have an effect.)"
+    }
+  },
+  {
+    "name": "Arch Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    }
+  },
+  {
+    "name": "Aura",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Aura",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aura(Aura does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Aura Energy Attacks",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aura energy does half damage."
+    }
+  },
+  {
+    "name": "Aura energy attacks",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aura energy does half damage."
+    }
+  },
+  {
+    "name": "Aura/Chaos",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Aura",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aura(Aura does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Beam(Sleep)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Sleep",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
+    }
+  },
+  {
+    "name": "Cold",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Frost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost(Cold does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Complete Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    }
+  },
+  {
+    "name": "Control",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Control",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature is immune to control in any form, save those effects which use true names. This includes spells of aspect control."
+    }
+  },
+  {
+    "name": "Control(Complete)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Control(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
+    }
+  },
+  {
+    "name": "Control(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Control(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
+    }
+  },
+  {
+    "name": "Control(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Control(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature is immune to control that does not target their type."
+    }
+  },
+  {
+    "name": "Damage Immunity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Damage Immunity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Specified types of damage are removed or reduced."
+    }
+  },
+  {
+    "name": "Death",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    }
+  },
+  {
+    "name": "Death Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    }
+  },
+  {
+    "name": "Death Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    }
+  },
+  {
+    "name": "Death(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    }
+  },
+  {
+    "name": "Death(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    }
+  },
+  {
+    "name": "Disease",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Disease",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Disease(Unaffected by harmful parasites or infections)."
+    }
+  },
+  {
+    "name": "Divinity Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    }
+  },
+  {
+    "name": "Divinity Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    }
+  },
+  {
+    "name": "Divinity(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    }
+  },
+  {
+    "name": "Divinity(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    }
+  },
+  {
+    "name": "Electricity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Electricity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Electricity Hardened",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Electricity Hardened",
+      "value1": "-1",
+      "value2": "10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electricity Hardened(-1 per die of damage from electricity. +10% to Magic Resistances to electricity.)"
+    }
+  },
+  {
+    "name": "Electricity Resistant",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Electricity Resistant",
+      "value1": "0.5",
+      "value2": "20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electricity Resistant(Half damage from electricity. +20% Magic Resistance to electricity.)"
+    }
+  },
+  {
+    "name": "Energy Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "All energy attacks do half damage."
+    }
+  },
+  {
+    "name": "Energy(Complete)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Energy magical or otherwise has no effect."
+    }
+  },
+  {
+    "name": "Energy(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Energy magical or otherwise has no effect."
+    }
+  },
+  {
+    "name": "Energy(Lesser Acid)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Acid)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Chemical energy(Acid) does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Aura)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Aura)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Aura energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Cold)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Cold)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Electricity)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Electricity)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electrical energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Fire)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Fire)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Heat energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Frost)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Frost)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Heat)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Heat)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Heat energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Life)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Life energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Light)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Light)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Light energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Repulsion)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Repulsion)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Repulsive energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser Sonic)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser Sonic)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sonic energy does half damage."
+    }
+  },
+  {
+    "name": "Energy(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "One specific type of energy has does half damage."
+    }
+  },
+  {
+    "name": "Energy(greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Energy(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Energy magical or otherwise has no effect."
+    }
+  },
+  {
+    "name": "Fatigue",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fatigue",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fatigue(May need to rest but is unaffected by Fatigue)."
+    }
+  },
+  {
+    "name": "Fear",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fear",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fear(Immune to fear)"
+    }
+  },
+  {
+    "name": "Fire",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fire",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire(Heat does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Fire Hardened",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fire Hardened",
+      "value1": "-1",
+      "value2": "10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire Hardened(-1 per die of damage from fire/heat. +10% to Magic Resistances to fire/heat.)"
+    }
+  },
+  {
+    "name": "Fire Resistant",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fire Resistant",
+      "value1": "0.5",
+      "value2": "20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire Resistant(Half damage from fire/heat. +20% Magic Resistance to fire/heat.)"
+    }
+  },
+  {
+    "name": "Frost",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Frost",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost(Cold does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Frost Hardened",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Frost Hardened",
+      "value1": "-1",
+      "value2": "10",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Hardened(-1 per die of damage from frost/cold. +10% to Magic Resistances to frost/cold.)"
+    }
+  },
+  {
+    "name": "Frost Resistant",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Frost Resistant",
+      "value1": "0.5",
+      "value2": "20",
+      "sourcebook": "",
+      "page": "",
+      "description": "Frost Resistant(Half damage from frost/cold, +20% Magic Resistance to frost/cold)."
+    }
+  },
+  {
+    "name": "Greater Death",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
+    }
+  },
+  {
+    "name": "Greater Divinity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
+    }
+  },
+  {
+    "name": "Greater Mind",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    }
+  },
+  {
+    "name": "Greater Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Greater Poison",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    }
+  },
+  {
+    "name": "Heat",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Fire",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Fire(Heat does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "Hold",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Hold",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Hold(Cannot be held with the Hold spell or invocation)."
+    }
+  },
+  {
+    "name": "Illusion",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    }
+  },
+  {
+    "name": "Illusion(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Illusion(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
+    }
+  },
+  {
+    "name": "Illusions",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    }
+  },
+  {
+    "name": "Immune to Hold",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Hold",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Hold(Cannot be held with the Hold spell or invocation)."
+    }
+  },
+  {
+    "name": "Indestructible",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Indestructible",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be damaged by weapons, energy, nor can the being or creature be changed, transformed, disintegrated or affected by touch powers."
+    }
+  },
+  {
+    "name": "Insanity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be driven insane."
+    }
+  },
+  {
+    "name": "Invulnerability",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Invulnerability",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. +1 or better weapons to damage."
+    }
+  },
+  {
+    "name": "Invulnerable",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Invulnerable",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. +1 or better weapons to damage."
+    }
+  },
+  {
+    "name": "Lesser Control",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Control(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being or creature is immune to control that does not target their type."
+    }
+  },
+  {
+    "name": "Lesser Death",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Death(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
+    }
+  },
+  {
+    "name": "Lesser Divinity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Divinity(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
+    }
+  },
+  {
+    "name": "Lesser Illusion",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Illusion(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
+    }
+  },
+  {
+    "name": "Lesser Life",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Lesser Life",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Life-based magic effects heal."
+    }
+  },
+  {
+    "name": "Lesser Magic",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    }
+  },
+  {
+    "name": "Lesser Mind",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    }
+  },
+  {
+    "name": "Lesser Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "Lesser Poison",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    }
+  },
+  {
+    "name": "Lesser Transformation of Form",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    }
+  },
+  {
+    "name": "Life",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Life",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Immune to the effects of Life-based magic (negative life force beings only)."
+    }
+  },
+  {
+    "name": "Light",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Light",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Immune to blinding from light and light energy damage."
+    }
+  },
+  {
+    "name": "Magic",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all forms of Aura magic, whether skills or spells."
+    }
+  },
+  {
+    "name": "Magic Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    }
+  },
+  {
+    "name": "Magic One Type",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
+    }
+  },
+  {
+    "name": "Magic(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
+    }
+  },
+  {
+    "name": "Magic(One Type)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
+    }
+  },
+  {
+    "name": "Major Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Mind Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    }
+  },
+  {
+    "name": "Mind Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    }
+  },
+  {
+    "name": "Mind(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    }
+  },
+  {
+    "name": "Mind(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
+    }
+  },
+  {
+    "name": "Minor Physical",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Paralysis",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Paralysis",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be paralyized, or held."
+    }
+  },
+  {
+    "name": "Physical Arch",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    }
+  },
+  {
+    "name": "Physical Complete",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    }
+  },
+  {
+    "name": "Physical Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "Physical Major",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical Minor",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Arch",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    }
+  },
+  {
+    "name": "Physical(Arch)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    }
+  },
+  {
+    "name": "Physical(Complete)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    }
+  },
+  {
+    "name": "Physical(Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "Physical(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "Physical(Major",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Major Silver)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major Silver)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical as well as silver do full."
+    }
+  },
+  {
+    "name": "Physical(Major)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Minor)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "Physical(Special)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "A special immunity versus specified physical attacks."
+    }
+  },
+  {
+    "name": "Physical(complete)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    }
+  },
+  {
+    "name": "Physical(lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "Physical(special)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "A special immunity versus specified physical attacks."
+    }
+  },
+  {
+    "name": "Poision(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    }
+  },
+  {
+    "name": "Poison",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    }
+  },
+  {
+    "name": "Poison Greater",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    }
+  },
+  {
+    "name": "Poison Lesser",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    }
+  },
+  {
+    "name": "Poison(Greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
+    }
+  },
+  {
+    "name": "Poison(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Poison(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
+    }
+  },
+  {
+    "name": "Pressure",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Pressure",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Pressure(Immunity from pressure or lack of pressure)."
+    }
+  },
+  {
+    "name": "Shock",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Shock",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Shock(Unaffected by shock)."
+    }
+  },
+  {
+    "name": "Sleep",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Sleep",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
+    }
+  },
+  {
+    "name": "Sleepless",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Sleepless",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Immune to effects which cause sleep and needs no dormant time."
+    }
+  },
+  {
+    "name": "Sonic",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Sonic",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Sonic energy has no effect on the being or creature, including deafness effects."
+    }
+  },
+  {
+    "name": "Stubborn",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Stubborn",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Stubborn(+20% to CR)."
+    }
+  },
+  {
+    "name": "Time",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Time",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The flow of time around the being cannot be altered or distorted, i.e. Stasis, Time Sight, etc."
+    }
+  },
+  {
+    "name": "Touch",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Touch",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No powers or effects that require touch work against this creature. This power also applies without additional cost to any creature which has no form, is completely insubstantial and cannot be physically contacted."
+    }
+  },
+  {
+    "name": "Transformation of Form",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Transformation of Form(The creature cannot be changed from its physical form)."
+    }
+  },
+  {
+    "name": "Transformation of Form(Lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    }
+  },
+  {
+    "name": "Transformation of Form(Partial)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form(Partial)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
+    }
+  },
+  {
+    "name": "Transformation of Form(lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
+    }
+  },
+  {
+    "name": "Transformation of Form(partial)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Transformation of Form(Partial)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
+    }
+  },
+  {
+    "name": "Water Pressure",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Water Pressure",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Complete protection from liquid pressure."
+    }
+  },
+  {
+    "name": "Weapon Damage Immunity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Weapon Damage Immunity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being takes adjusted or no damage from one or more types of damage (cutting, smashing, piercing, etc.)."
+    }
+  },
+  {
+    "name": "all spells of type control",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Magic(One Type)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being is immune to all magics of type control."
+    }
+  },
+  {
+    "name": "edged weapons",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Weapon Damage Immunity(Non-Cutting)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "1/4 damage from edged weapons, all other weapon damage types do none."
+    }
+  },
+  {
+    "name": "electricity damage",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Electricity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
+    }
+  },
+  {
+    "name": "lllusions",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Illusion",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
+    }
+  },
+  {
+    "name": "lnsanity",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Insanity",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be driven insane."
+    }
+  },
+  {
+    "name": "mind(greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Mind(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "The being cannot be contacted or attacked mentally at all."
+    }
+  },
+  {
+    "name": "physical(arch)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Arch)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
+    }
+  },
+  {
+    "name": "physical(complete)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Complete)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
+    }
+  },
+  {
+    "name": "physical(greater)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Greater)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "physical(lesser)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Lesser)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
+    }
+  },
+  {
+    "name": "physical(major)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Major)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "physical(minor)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Minor)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
+    }
+  },
+  {
+    "name": "physical(special)",
+    "type": "trait",
+    "system": {
+      "category": "immunity",
+      "canonicalName": "Physical(Special)",
+      "value1": "",
+      "value2": "",
+      "sourcebook": "",
+      "page": "",
+      "description": "A special immunity versus specified physical attacks."
+    }
+  }
+]

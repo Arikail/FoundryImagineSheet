@@ -1,0 +1,224 @@
+{{!--
+	Character generator. One step at a time, in his order (module/chargen-view.mjs lists them).
+	Only the current step's inputs are rendered, so capturing the form merges that step's choices
+	without disturbing any other step's. Everything shown is worked out by buildGeneratorView.
+--}}
+<div class="imagine chargen">
+
+	<ol class="chargen-steps">
+		{{#each steps as |s|}}
+		<li class="{{#if s.current}}current{{/if}} {{#if s.done}}done{{/if}}">
+			<button type="button" data-action="goToStep" data-step="{{s.index}}" {{#unless s.done}}{{#unless s.current}}disabled{{/unless}}{{/unless}}>{{s.name}}</button>
+		</li>
+		{{/each}}
+	</ol>
+
+	<section class="chargen-body">
+
+	{{!-- @MARKER BASICS --}}
+	{{#if isBasics}}
+		<h2>Who is this?</h2>
+		<label class="row">Name <input type="text" name="name" value="{{state.name}}" placeholder="New Character"></label>
+		<label class="row">Gender <input type="text" name="gender" value="{{state.gender}}"></label>
+		<label class="row check"><input type="checkbox" name="slightPhysique" {{#if state.slightPhysique}}checked{{/if}}>
+			Slight physique (female): -1 Strength, +1 Agility</label>
+		<label class="row">Character type
+			<select name="charType">{{#each charTypes as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+		<p class="muted">Ask the Game Master which type the campaign uses. Rolls are kept per attribute; each type lets points be moved between attributes at its ratio later.</p>
+	{{/if}}
+
+	{{!-- @MARKER RACE --}}
+	{{#if isRace}}
+		<h2>Race</h2>
+		<label class="row">Race
+			<select name="race1">{{#each race1Options as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+		{{#if canBeHalf}}
+		<label class="row">Half Race with
+			<select name="race2">{{#each race2Options as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+		<p class="muted">Only races that can have children with the first are offered, as on his sheet. The two combine as his half race does: a modifier only one race has is taken whole, shared ones averaged.</p>
+		{{else}}{{#if state.race1}}<p class="muted">This race cannot have children with other races, so it cannot be half of a Half Race.</p>{{/if}}
+		{{/if}}
+		{{#if race}}
+		<div class="chargen-race">
+			<h3>{{raceName}}</h3>
+			<p>Body {{race.bodyType}}. Starting age {{race.ages.startLow}}&ndash;{{race.ages.startHigh}}, maximum {{race.ages.maxAge}}.</p>
+			{{#if race.abilities.length}}<p><label>Abilities</label> {{#each race.abilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+			{{#if race.disabilities.length}}<p><label>Disabilities</label> {{#each race.disabilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+			{{#if race.immunities.length}}<p><label>Immunities</label> {{#each race.immunities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		</div>
+		{{/if}}
+	{{/if}}
+
+	{{!-- @MARKER ATTRIBUTES --}}
+	{{#if isAttributes}}
+		<h2>Attributes <span class="muted">{{typeLabel}}, {{ratio}}:1</span></h2>
+		<p>
+			<button type="button" data-action="rollAttributes"><i class="fa-solid fa-dice"></i> Roll {{typeLabel}}</button>
+			<label class="check"><input type="checkbox" name="manual" {{#if state.manual}}checked{{/if}}> Enter them instead</label>
+		</p>
+		<table class="chargen-attributes">
+			<thead><tr><th></th>{{#if state.manual}}<th>Entered</th>{{else}}<th>Rolls</th><th>Best</th>{{/if}}
+				<th>Rating</th><th>Race</th><th>Final</th><th>Max</th></tr></thead>
+			<tbody>
+			{{#each attributes as |a|}}
+			<tr class="{{#if a.overLimit}}over{{/if}} {{#if a.underMinimum}}under{{/if}}">
+				<td>{{a.label}}</td>
+				{{#if ../state.manual}}
+				<td><input type="number" name="manualBase.{{a.key}}" value="{{a.manual}}" min="1" max="30"></td>
+				{{else}}
+				<td class="muted">{{#each a.rolls as |r|}}{{r}} {{/each}}</td><td>{{a.base}}</td>
+				{{/if}}
+				<td>{{a.rating}}</td><td>{{a.raceMod}}</td>
+				<td class="strong">{{a.final}}{{#if a.overLimit}} (held to max){{/if}}{{#if a.underMinimum}} (below 5){{/if}}</td>
+				<td class="muted">{{a.limit}}</td>
+			</tr>
+			{{/each}}
+			</tbody>
+		</table>
+
+		<h3>Adjust {{ratio}}:1 <button type="button" data-action="addSwap">Add</button></h3>
+		<p class="muted">Take {{ratio}} points to add 1. Social Class cannot be moved, and nothing may drop below 5.</p>
+		{{#each swaps as |sw|}}
+		<div class="swap-row">
+			Raise <select name="swaps.{{sw.index}}.to">{{#each sw.toOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			by taking from
+			{{#each sw.from as |f|}}
+			<select name="swaps.{{sw.index}}.from.{{f.n}}">{{#each f.options as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{/each}}
+			<button type="button" data-action="removeSwap" data-index="{{sw.index}}"><i class="fa-solid fa-trash"></i></button>
+		</div>
+		{{/each}}
+		{{#each ratingIssues as |i|}}<p class="alarm">{{i}}</p>{{/each}}
+
+		{{#if human.bonus}}
+		<h3>Civilized Human</h3>
+		<p class="muted">Add {{human.bonus}} points{{#if human.moves}} and move up to {{human.moves}}, one point at a time{{/if}}. Not Social Class.</p>
+		<div class="swap-row">Add 1 to
+			{{#each humanBonuses as |b|}}<select name="humanBonuses.{{b.n}}">{{#each b.options as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>{{/each}}
+		</div>
+		{{#each humanMoves as |m|}}
+		<div class="swap-row">Move 1 from
+			<select name="humanMoves.{{m.n}}.from">{{#each m.fromOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			to <select name="humanMoves.{{m.n}}.to">{{#each m.toOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+		</div>
+		{{/each}}
+		{{/if}}
+	{{/if}}
+
+	{{!-- @MARKER CLASS --}}
+	{{#if isClass}}
+		<h2>Class</h2>
+		<label class="row">Class
+			<select name="className">{{#each classOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+		{{#if klass}}
+		<div class="chargen-class">
+			<h3>{{klass.name}} <span class="muted">{{klass.classType}}</span></h3>
+			<p>{{klass.description}}</p>
+			<p><label>Alignment</label> {{klass.alignment}} &nbsp; <label>Focus</label> {{klass.focus}}</p>
+			<p><label>Attack</label> {{klass.attackSkillList}}</p>
+			<p><label>Modifiers</label> {{klass.classMods}}</p>
+			{{#if classIssues.length}}
+				{{#each classIssues as |i|}}<p class="alarm">{{i}}</p>{{/each}}
+				<label class="check"><input type="checkbox" name="override" {{#if state.override}}checked{{/if}}> Take it anyway (as his sheet's override)</label>
+			{{else}}<p class="ok">Qualified.</p>{{/if}}
+			{{#if nonClassed}}
+			<label class="row">Attack chart (a GME picks one)
+				<select name="chosenAttackSkill">{{#each attackSkillOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+			{{/if}}
+		</div>
+		{{/if}}
+	{{/if}}
+
+	{{!-- @MARKER SKILLS --}}
+	{{#if isSkills}}
+		<h2>Skills</h2>
+		<h3>Class skills <span class="muted">first title; slots {{slots.class}}</span></h3>
+		{{#if nonClassed}}<p class="muted">A GME has no class skills.</p>{{else}}
+		<p>{{#each classSkills as |s|}}<span class="race-chip">{{s.name}}{{#if s.core}} (core){{/if}}</span>{{else}}<span class="muted">none</span>{{/each}}</p>
+		{{#if cannotCast}}<p class="muted">This race cannot cast, so it takes the no-casting alternatives.</p>{{/if}}
+		{{/if}}
+		<h3>Racial skills <span class="muted">{{racialChosen}} of {{slots.racial}}</span></h3>
+		<div class="pick-list">
+			{{#each racialSkills as |s|}}<label><input type="checkbox" name="racialPick" value="{{s.name}}" {{#if s.checked}}checked{{/if}}> {{s.name}}{{#if s.bonus}} {{s.bonus}}{{/if}}</label>{{/each}}
+		</div>
+		<h3>Social skills <span class="muted">{{socialChosen}} of {{slots.social}}</span></h3>
+		<div class="pick-list tall">
+			{{#each socialSkills as |s|}}<label><input type="checkbox" name="socialPick" value="{{s.name}}" {{#if s.checked}}checked{{/if}}> {{s.name}}</label>{{/each}}
+		</div>
+		<p class="muted">Starting bonuses are rolled when the character is created: a racial skill's dice count double, and a class skill takes +30 if it is core, as on his sheet. Slots can be traded afterwards on the Skills tab.</p>
+	{{/if}}
+
+	{{!-- @MARKER DETAILS --}}
+	{{#if isDetails}}
+		<h2>Details</h2>
+		<label class="row">Handedness
+			<select name="handedness">{{#each handednessOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			<button type="button" data-action="rollHandedness"><i class="fa-solid fa-dice"></i> Roll</button></label>
+		<label class="row">Age <input type="number" name="age" value="{{state.age}}">
+			<button type="button" data-action="rollAge"><i class="fa-solid fa-dice"></i> Roll</button>
+			{{#if ages}}<span class="muted">{{ages.startLow}}&ndash;{{ages.startHigh}}, maximum {{ages.maxAge}}</span>{{/if}}</label>
+		{{!-- Height, frame and weight are rolled together, because his tables make them depend on
+		      each other: the race gives a height band, the band gives inches, the race and the
+		      character's Strength less Agility give a frame, and the frame with the inches gives a
+		      weight. That is his own Apply Height/Frame button. --}}
+		<label class="row">Height <input type="number" name="heightFeet" value="{{state.heightFeet}}"> ft
+			<input type="number" name="heightInches" value="{{state.heightInches}}"> in
+			<button type="button" data-action="rollPhysique"><i class="fa-solid fa-dice"></i> Roll height, frame &amp; weight</button></label>
+		<label class="row">Weight <input type="number" name="weight" value="{{state.weight}}"> lb
+			<span class="muted">(carrying capacity depends on it)</span></label>
+		<label class="row">Frame <input type="text" name="frame" value="{{state.frame}}"></label>
+		{{#if physique}}
+		<p class="muted">{{physique.summary}}</p>
+		{{/if}}
+		<label class="row">Hair
+			{{#if hairChoices.length}}
+			<select name="hair">{{#each hairChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="hair" value="{{state.hair}}">{{/if}}</label>
+		<label class="row">Eyes
+			{{#if eyesChoices.length}}
+			<select name="eyes">{{#each eyesChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="eyes" value="{{state.eyes}}">{{/if}}</label>
+		<label class="row">Skin
+			{{#if skinChoices.length}}
+			<select name="skin">{{#each skinChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="skin" value="{{state.skin}}">{{/if}}</label>
+		<label class="row">Alignment <input type="text" name="alignment" value="{{state.alignment}}"
+			placeholder="{{#if klass}}{{klass.alignment}}{{/if}}"></label>
+		<h3>Languages <span class="muted">Intelligence allows {{languageAllowance.spoken}} spoken, {{languageAllowance.written}} written</span></h3>
+		{{#each languages as |l|}}
+		<div class="swap-row"><input type="text" name="languages.{{l.n}}.name" value="{{l.name}}">
+			<label class="check"><input type="checkbox" name="languages.{{l.n}}.write" {{#if l.write}}checked{{/if}}> writes</label></div>
+		{{/each}}
+		<h3>Money</h3>
+		<div class="swap-row">
+			<label>Copper <input type="number" name="wealth.copper" value="{{state.wealth.copper}}"></label>
+			<label>Silver <input type="number" name="wealth.silver" value="{{state.wealth.silver}}"></label>
+			<label>Gold <input type="number" name="wealth.gold" value="{{state.wealth.gold}}"></label>
+			<label>Platinum <input type="number" name="wealth.platinum" value="{{state.wealth.platinum}}"></label>
+		</div>
+	{{/if}}
+
+	{{!-- @MARKER REVIEW --}}
+	{{#if isReview}}
+		<h2>{{#if state.name}}{{state.name}}{{else}}New Character{{/if}}</h2>
+		<p>{{raceName}} {{#if klass}}{{klass.name}}{{/if}}, title {{review.title}}. {{typeLabel}} character.</p>
+		<table class="chargen-attributes compact"><tbody>
+			{{#each attributes as |a|}}<tr><td>{{a.label}}</td><td class="strong">{{a.final}}</td></tr>{{/each}}
+		</tbody></table>
+		<h3>Items</h3>
+		<p>{{#each review.items as |it|}}<span class="race-chip">{{it.name}}{{#if it.category}} ({{it.category}}){{/if}}</span>{{/each}}</p>
+		{{#if review.issues.length}}<h3>To note</h3>{{#each review.issues as |i|}}<p class="alarm">{{i}}</p>{{/each}}{{/if}}
+	{{/if}}
+
+	</section>
+
+	<footer class="chargen-footer">
+		{{#if blocker}}<span class="alarm">{{blocker}}</span>{{/if}}
+		<button type="button" data-action="previousStep" {{#if isFirst}}disabled{{/if}}><i class="fa-solid fa-arrow-left"></i> Back</button>
+		{{#if isLast}}
+		<button type="button" data-action="createCharacter" class="primary"><i class="fa-solid fa-user-plus"></i> Create character</button>
+		{{else}}
+		<button type="button" data-action="nextStep">Next <i class="fa-solid fa-arrow-right"></i></button>
+		{{/if}}
+	</footer>
+</div>

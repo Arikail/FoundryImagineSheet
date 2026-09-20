@@ -1,0 +1,79 @@
+{{!--
+	Creature attack chat card. Built like the weapon card, with the three differences a creature
+	brings: an attack that can hit without a roll, an area shape sized from the creature's
+	Endurance, and rider effects that may be waiting on the target's own save.
+--}}
+<div class="imagine-chat attack-card creature-attack-card">
+	<header>
+		<strong>{{actorName}}</strong> — {{weapon}} ({{attackType}})
+		{{#if targetName}}<span class="target">vs {{targetName}}</span>{{/if}}
+	</header>
+
+	{{#if (eq resolveKind "auto")}}
+	<div class="attack-line">
+		<span class="skill">no roll to hit &mdash; this one lands</span>
+	</div>
+	{{else}}
+	<div class="attack-line">
+		<span class="natural">d20: {{result.natural}}</span>
+		{{#each mods.list as |m|}}<span class="mod">{{m.label}} {{#if (gt m.value 0)}}+{{/if}}{{m.value}}</span>{{/each}}
+		<span class="final">= {{result.final}}</span>
+		{{#if (eq resolveKind "touch")}}
+		<span class="skill">10 or better to touch</span>
+		{{else}}
+		<span class="skill">as {{result.skill}}</span>
+		{{/if}}
+	</div>
+	{{/if}}
+
+	{{#if aim}}<div class="aim">Aimed at: {{aim}}</div>{{/if}}
+
+	<div class="zone zone-{{#if result.isHit}}hit{{else}}miss{{/if}}">
+		{{#if result.isFumble}}FUMBLE{{else}}{{result.zone}}{{/if}}
+		{{#if result.calledShotDeclared}}
+			— Called shot: {{#if result.isCalledShot}}<strong>made</strong>{{else}}missed{{/if}}
+		{{/if}}
+	</div>
+
+	{{#if fumble}}<p class="fumble">{{fumble.text}}</p>{{/if}}
+
+	{{#if shape}}<p class="shape">It {{shape.text}}.</p>{{/if}}
+
+	{{#if damage}}
+	<div class="damage">
+		<span class="total">{{damage.total}}</span> {{damage.type}} damage
+		<span class="breakdown">({{damage.dice}}{{#if damage.misc}} {{#if (gt damage.misc 0)}}+{{/if}}{{damage.misc}}{{/if}}
+		= {{damage.rolled}}{{#if (lt damage.multiplier 1)}}, halved for the called shot{{/if}})</span>
+	</div>
+	{{/if}}
+
+	{{#if effects.length}}
+	<div class="rider-effects">
+		{{#each effects as |e|}}
+		<p class="rider rider-{{e.state}}">
+			<strong>{{e.name}}</strong>
+			{{#if (eq e.state "fires")}}<span class="fires">takes hold</span>
+			{{else if (eq e.state "pending")}}<span class="pending">{{e.trigger}}</span>
+			{{else}}<span class="muted">does not take hold</span>{{/if}}
+			{{#if e.description}} &mdash; {{e.description}}{{/if}}
+			{{#if e.damage}} {{e.damage}} {{e.damageType}}{{/if}}
+			{{#if e.duration}} for {{e.duration}} {{e.durationType}}{{/if}}
+		</p>
+		{{/each}}
+	</div>
+	{{/if}}
+
+	<footer>
+		{{#if speedSpecial}}
+		<span class="speed">special timing</span>
+		{{else}}
+		<span class="speed">{{speed}} seconds</span>
+		{{/if}}
+		{{#if damage}}{{#unless applied}}
+			<button type="button" data-imagine-action="applyDamage"><i class="fa-solid fa-droplet"></i> Apply damage</button>
+		{{/unless}}{{/if}}
+		{{#if inCombat}}{{#unless speedSpecial}}
+			<button type="button" data-imagine-action="spendTime"><i class="fa-solid fa-stopwatch"></i> Spend {{speed}}s</button>
+		{{/unless}}{{/if}}
+	</footer>
+</div>

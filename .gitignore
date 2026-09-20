@@ -24,3 +24,7 @@ __pycache__/
 
 # Local test-server config: the port changes every run.
 .claude/launch.json
+
+# The built system zip. The folder beside it IS committed -- it is the deliverable -- but the
+# archive is regenerated from it and would be a new binary blob on every build.
+dist/*.zip

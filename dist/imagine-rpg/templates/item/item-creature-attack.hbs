@@ -1,0 +1,130 @@
+{{!--
+	Creature attack body. One root element, as the framework requires of every PART.
+
+	The type is what decides how the attack resolves: most roll down the attack chart, Direct,
+	Gaze and Voice land without a roll, and Touch needs a 10 or better. The area shapes -- Bolt,
+	Cloud, Cone and Glob -- take their reach from the creature's own Endurance, so there is
+	nothing to enter for it here.
+
+	Rider effects are the reason this sheet exists. Three is the ceiling because three is what
+	his encoded attack string carries.
+--}}
+<section class="imagine-item-body creature-attack">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Attack</h3>
+			<ul class="band-list">
+				<li><label>Type</label>
+					<span><select name="system.attackType">
+						{{#each config.attackTypes as |t|}}
+						<option value="{{t}}" {{#if (eq t ../system.attackType)}}selected{{/if}}>{{t}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Damage</label>
+					<span><input type="text" name="system.damage" value="{{system.damage}}" placeholder="2d6"></span></li>
+				<li><label>Damage type</label>
+					<span><select name="system.damageType">
+						<option value="">&mdash;</option>
+						{{#each config.damageTypes as |t|}}
+						<option value="{{t}}" {{#if (eq t ../system.damageType)}}selected{{/if}}>{{t}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Hand</label>
+					<span><select name="system.hand">
+						<option value="" {{#unless system.hand}}selected{{/unless}}>Not hand-based</option>
+						<option value="left" {{#if (eq system.hand "left")}}selected{{/if}}>Left</option>
+						<option value="right" {{#if (eq system.hand "right")}}selected{{/if}}>Right</option>
+						<option value="both" {{#if (eq system.hand "both")}}selected{{/if}}>Both</option>
+					</select></span>
+					<p class="muted">Only a hand-based attack -- a claw, a punch -- can be off-hand.
+					A bite, a tail slap or a breath is left at Not hand-based.</p></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Timing</h3>
+			<ul class="band-list">
+				<li><label>Seconds</label>
+					<span><input type="number" name="system.speed" value="{{system.speed}}" min="0" max="10"></span></li>
+				<li><label>Minimum</label>
+					<span><input type="number" name="system.minSpeed" value="{{system.minSpeed}}" min="0" max="10"></span></li>
+				<li><label>Special timing</label>
+					<span><input type="checkbox" name="system.speedSpecial" {{#if system.speedSpecial}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">A minimum of 0 means the seconds are their own minimum. Special timing is for
+			an attack that happens during an engagement rather than on a count.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Rider Effects
+		<span class="count">{{effects.length}} / {{maxEffects}}</span>
+		{{#if canAddEffect}}
+		<button type="button" data-action="addEffect"><i class="fa-solid fa-plus"></i> Add</button>
+		{{/if}}
+	</h3>
+
+	{{#if effects.length}}
+	{{#each effects as |e|}}
+	<details class="skill-group rider" data-sync="rider-{{e.index}}" open>
+		<summary>{{#if e.name}}{{e.name}}{{else}}Effect {{e.number}}{{/if}}
+			<span class="count">{{e.trigger}}</span>
+			<button type="button" data-action="deleteEffect" data-index="{{e.index}}"
+				data-tooltip="Remove this effect"><i class="fa-solid fa-trash"></i></button>
+		</summary>
+
+		<div class="panel-row">
+			<div class="panel">
+				<ul class="band-list">
+					<li><label>Name</label>
+						<span><input type="text" name="system.effects.{{e.index}}.name" value="{{e.name}}"></span></li>
+					<li><label>Trigger</label>
+						<span><select name="system.effects.{{e.index}}.trigger">
+							{{#each ../config.effectTriggers as |t|}}
+							<option value="{{t}}" {{#if (eq t ../e.trigger)}}selected{{/if}}>{{t}}</option>
+							{{/each}}
+						</select></span></li>
+				</ul>
+			</div>
+			<div class="panel">
+				<ul class="band-list">
+					<li><label>Damage</label>
+						<span><input type="text" name="system.effects.{{e.index}}.damage" value="{{e.damage}}" placeholder="1d6"></span></li>
+					<li><label>Damage type</label>
+						<span><select name="system.effects.{{e.index}}.damageType">
+							<option value="">&mdash;</option>
+							{{#each ../config.effectDamageTypes as |t|}}
+							<option value="{{t}}" {{#if (eq t ../e.damageType)}}selected{{/if}}>{{t}}</option>
+							{{/each}}
+						</select></span></li>
+				</ul>
+			</div>
+			<div class="panel">
+				<ul class="band-list">
+					<li><label>Duration</label>
+						<span><input type="text" name="system.effects.{{e.index}}.duration" value="{{e.duration}}" placeholder="2d4"></span></li>
+					<li><label>Duration type</label>
+						<span><select name="system.effects.{{e.index}}.durationType">
+							<option value="">&mdash;</option>
+							{{#each ../config.effectDurationTypes as |t|}}
+							<option value="{{t}}" {{#if (eq t ../e.durationType)}}selected{{/if}}>{{t}}</option>
+							{{/each}}
+						</select></span></li>
+				</ul>
+			</div>
+		</div>
+
+		{{!-- His format for this reads as a fragment: "the victim burns for". --}}
+		<label class="field-label">Description</label>
+		<textarea name="system.effects.{{e.index}}.description" rows="2"
+			placeholder="the victim's flesh swells and blackens">{{e.description}}</textarea>
+	</details>
+	{{/each}}
+	{{else}}
+	<p class="empty">No rider effects. An attack can carry up to {{maxEffects}} &mdash; a venom, a
+	disease, a lingering burn.</p>
+	{{/if}}
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="3">{{system.description}}</textarea>
+</section>

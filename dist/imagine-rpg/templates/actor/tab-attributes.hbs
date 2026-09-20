@@ -1,0 +1,102 @@
+{{!--
+	Attributes tab. One root element, as the framework requires of every PART.
+
+	Rating is what the player sets. Everything to its right is derived: the effective value
+	after racial and effect modifiers, the cap in force, the save percentage, and whatever
+	modifiers that attribute's table contributes -- which differ from one attribute to the next,
+	so they render as name/value pairs rather than fixed columns.
+--}}
+<section class="tab imagine-attributes" data-tab="attributes" data-group="primary">
+
+	<table class="attribute-table">
+		<thead>
+			<tr>
+				<th class="col-name">Attribute</th>
+				<th class="col-num">Rating</th>
+				<th class="col-num">Value</th>
+				<th class="col-num">Max</th>
+				<th class="col-num">Save</th>
+				<th class="col-roll"></th>
+				<th class="col-mods">Modifiers</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each attributes as |attr|}}
+			<tr class="attribute-row" data-group-name="{{attr.group}}">
+				<td class="col-name">{{localize attr.label}}</td>
+				<td class="col-num">
+					<input type="number" name="system.attributes.{{attr.key}}.rating" value="{{attr.rating}}">
+				</td>
+				<td class="col-num derived">{{attr.value}}</td>
+				<td class="col-num derived muted">{{attr.max}}</td>
+				<td class="col-num derived strong">{{attr.save}}%</td>
+				<td class="col-roll">
+					<button type="button" data-action="rollAttributeSave" data-attribute="{{attr.key}}">Roll</button>
+				</td>
+				<td class="col-mods">
+					{{#each attr.mods as |mod|}}<span class="mod"><em>{{mod.key}}</em> {{mod.value}}</span>{{/each}}
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<div class="panel-row">
+
+		<div class="panel">
+			<h3>Resistances</h3>
+			<ul class="resist-list">
+				{{#each system.resistances as |res key|}}
+				<li><label>{{key}}</label>
+					<span class="value">{{#if res.immune}}Immune{{else}}{{res.value}}%{{/if}}</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Movement</h3>
+			<table class="move-table">
+				<thead><tr><th></th><th>Hour</th><th>10 sec</th><th>1 sec</th></tr></thead>
+				<tbody>
+					<tr><td>Walk</td><td>{{system.movement.walk.hourly}}</td><td>{{system.movement.walk.tenSec}}</td><td>{{system.movement.walk.oneSec}}</td></tr>
+					<tr><td>Jog</td><td>{{system.movement.jog.hourly}}</td><td>{{system.movement.jog.tenSec}}</td><td>{{system.movement.jog.oneSec}}</td></tr>
+					<tr><td>Run</td><td>{{system.movement.run.hourly}}</td><td>{{system.movement.run.tenSec}}</td><td>{{system.movement.run.oneSec}}</td></tr>
+					{{#if system.movement.specialName}}
+					<tr><td>{{system.movement.specialName}}</td><td>{{system.movement.special.hourly}}</td><td>{{system.movement.special.tenSec}}</td><td>{{system.movement.special.oneSec}}</td></tr>
+					{{/if}}
+				</tbody>
+			</table>
+			{{!-- The rates above are unencumbered, as his sheet shows them. His sheet never applies
+			      the load; the Player's Guide does, so the loaded rates sit beside them rather than
+			      over them. Shown only when the load actually costs something. --}}
+			{{#if system.encumbrance.penalty}}
+			<p class="loaded-heading">At current load: <span class="muted">{{system.encumbrance.penalty}}</span></p>
+			<table class="move-table loaded">
+				{{!-- The same three columns as the table above, named again: the two tables are
+				      separate elements, so a reader has nothing to carry the headings down from. --}}
+				<thead>
+					<tr><th></th><th>Hour</th><th>10 sec</th><th>1 sec</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Walk</td><td>{{system.movement.loaded.walk.hourly}}</td><td>{{system.movement.loaded.walk.tenSec}}</td><td>{{system.movement.loaded.walk.oneSec}}</td></tr>
+					<tr><td>Jog</td><td>{{system.movement.loaded.jog.hourly}}</td><td>{{system.movement.loaded.jog.tenSec}}</td><td>{{system.movement.loaded.jog.oneSec}}</td></tr>
+					<tr><td>Run</td><td>{{system.movement.loaded.run.hourly}}</td><td>{{system.movement.loaded.run.tenSec}}</td><td>{{system.movement.loaded.run.oneSec}}</td></tr>
+				</tbody>
+			</table>
+			{{/if}}
+		</div>
+
+		<div class="panel">
+			<h3>Encumbrance</h3>
+			<p class="encumbrance-status">{{system.encumbrance.status}}</p>
+			<p class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb</p>
+			<ul class="band-list">
+				<li><label>Not encumbered to</label> <span>{{system.encumbrance.none}}</span></li>
+				<li><label>Slightly to</label> <span>{{system.encumbrance.slight}}</span></li>
+				<li><label>Encumbered to</label> <span>{{system.encumbrance.moderate}}</span></li>
+				<li><label>Heavily to</label> <span>{{system.encumbrance.heavy}}</span></li>
+			</ul>
+		</div>
+	</div>
+</section>

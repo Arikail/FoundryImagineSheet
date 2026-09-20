@@ -1,0 +1,176 @@
+{{!--
+	Race body. One root element, as the framework requires of every PART.
+
+	A race supplies three kinds of thing: modifiers to attributes, characteristics and resistances;
+	a per-race cap on each attribute, separate from and stricter than the being-type cap that title
+	confers; and movement rates. These are read directly by the character rather than turned into
+	Active Effects, because a race is permanent character definition -- see item-race.mjs.
+--}}
+<section class="imagine-item-body race">
+
+	<h3 class="section-head">Attribute Mods and Limits</h3>
+	<table class="attr-grid">
+		<thead>
+			<tr><th></th>{{#each attributeKeys as |k|}}<th>{{k}}</th>{{/each}}</tr>
+		</thead>
+		<tbody>
+			{{#each attributeRows as |row|}}
+			<tr>
+				<td class="row-label">{{row.label}}</td>
+				{{#each row.cells as |c|}}
+				<td><input type="number" name="system.{{row.group}}.{{c.key}}" value="{{c.value}}"></td>
+				{{/each}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<p class="muted">Mods are added to the character's rating. Limits are the highest rating a member
+	of this race may reach in each attribute -- the field <code>getAttributeMax</code> reads, and
+	load-bearing rather than decorative. Title 11 and above discards it: 25 becomes the ordinary
+	maximum and 27 the magical one, the pair he confirmed on 2026-09-16 (UPSTREAM-ISSUES item 16).</p>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Endurance</h3>
+			<ul class="band-list">
+				<li><label>Start formula</label>
+					<span><input type="text" name="system.endurance.startFormula" value="{{system.endurance.startFormula}}" placeholder="2d6"></span></li>
+				<li><label>Start mod</label>
+					<span><input type="number" name="system.endurance.startMod" value="{{system.endurance.startMod}}"></span></li>
+				<li><label>Title formula</label>
+					<span><input type="text" name="system.endurance.titleFormula" value="{{system.endurance.titleFormula}}"></span></li>
+				<li><label>Title dice</label>
+					<span><input type="text" name="system.endurance.titleDice" value="{{system.endurance.titleDice}}" placeholder="1d4+1"></span></li>
+				<li><label>Title max</label>
+					<span><input type="number" name="system.endurance.titleMax" value="{{system.endurance.titleMax}}"></span></li>
+				<li><label>Title mod</label>
+					<span><input type="number" name="system.endurance.titleMod" value="{{system.endurance.titleMod}}"></span></li>
+			</ul>
+			<p class="muted">Gained on each title advance is rolled rather than fixed, which is why the
+			dice and maximum are carried separately from the flat modifier.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Characteristics</h3>
+			<ul class="band-list">
+				<li><label>Perception</label>
+					<span><input type="number" name="system.characteristicMods.perception" value="{{system.characteristicMods.perception}}"></span></li>
+				<li><label>Affinity</label>
+					<span><input type="number" name="system.characteristicMods.affinity" value="{{system.characteristicMods.affinity}}"></span></li>
+				<li><label>Fortune</label>
+					<span><input type="number" name="system.characteristicMods.fortune" value="{{system.characteristicMods.fortune}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Resistances</h3>
+			<ul class="resist-list">
+				<li><label>Magic</label>
+					<span><input type="number" name="system.resistanceMods.magic" value="{{system.resistanceMods.magic}}"></span></li>
+				<li><label>Illusion</label>
+					<span><input type="number" name="system.resistanceMods.illusion" value="{{system.resistanceMods.illusion}}"></span></li>
+				<li><label>Control</label>
+					<span><input type="number" name="system.resistanceMods.control" value="{{system.resistanceMods.control}}"></span></li>
+				<li><label>Poison</label>
+					<span><input type="number" name="system.resistanceMods.poison" value="{{system.resistanceMods.poison}}"></span></li>
+				<li><label>Disease</label>
+					<span><input type="number" name="system.resistanceMods.disease" value="{{system.resistanceMods.disease}}"></span></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Traits</h3>
+			<ul class="band-list">
+				<li><label>Formless</label>
+					<span><input type="checkbox" name="system.formless" {{#if system.formless}}checked{{/if}}></span></li>
+				<li><label>Can swim</label>
+					<span><input type="checkbox" name="system.canSwim" {{#if system.canSwim}}checked{{/if}}></span></li>
+				<li><label>Body type</label>
+					<span><input type="text" name="system.bodyType" value="{{system.bodyType}}" placeholder="Humanoid"></span></li>
+			</ul>
+			<p class="muted">Formless marks a race with no fixed body, which matters to the body chart
+			and to transformation.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Movement</h3>
+			<ul class="band-list">
+				<li><label>Speed multiplier</label>
+					<span><input type="number" name="system.movement.speedMultiplier" value="{{system.movement.speedMultiplier}}"></span></li>
+				<li><label>Jump, standing</label>
+					<span><input type="number" name="system.movement.jumpStand" value="{{system.movement.jumpStand}}"></span></li>
+				<li><label>Jump, running</label>
+					<span><input type="number" name="system.movement.jumpUp" value="{{system.movement.jumpUp}}"></span></li>
+			</ul>
+			<p class="muted">0 here means no multiplier -- his sentinel for "most races", not a
+			stationary race. A negative multiplier is not a coherent quantity and is ignored the same
+			way rather than applied; see UPSTREAM-ISSUES.md item 24.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Walk, Jog, Run</h3>
+	<table class="move-table edit-move-table">
+		<thead><tr><th></th><th>Hourly</th><th>10 sec</th><th>1 sec</th></tr></thead>
+		<tbody>
+			<tr>
+				<td>Walk</td>
+				<td><input type="number" name="system.movement.walk.hourly" value="{{system.movement.walk.hourly}}"></td>
+				<td><input type="number" name="system.movement.walk.tenSec" value="{{system.movement.walk.tenSec}}"></td>
+				<td><input type="number" name="system.movement.walk.oneSec" value="{{system.movement.walk.oneSec}}"></td>
+			</tr>
+			<tr>
+				<td>Jog</td>
+				<td><input type="number" name="system.movement.jog.hourly" value="{{system.movement.jog.hourly}}"></td>
+				<td><input type="number" name="system.movement.jog.tenSec" value="{{system.movement.jog.tenSec}}"></td>
+				<td><input type="number" name="system.movement.jog.oneSec" value="{{system.movement.jog.oneSec}}"></td>
+			</tr>
+			<tr>
+				<td>Run</td>
+				<td><input type="number" name="system.movement.run.hourly" value="{{system.movement.run.hourly}}"></td>
+				<td><input type="number" name="system.movement.run.tenSec" value="{{system.movement.run.tenSec}}"></td>
+				<td><input type="number" name="system.movement.run.oneSec" value="{{system.movement.run.oneSec}}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="muted">These are the race's own modifiers to the Agility-derived base rate, not finished
+	speeds -- see combat-rules.mjs's getMovementBase. A race field of 0 means no adjustment at that
+	scale, not zero movement.</p>
+
+	<h3 class="section-head">Special Movement</h3>
+	<ul class="band-list">
+		<li><label>Name</label>
+			<span><input type="text" name="system.movement.specialName" value="{{system.movement.specialName}}" placeholder="Fly:"></span></li>
+	</ul>
+	<table class="move-table edit-move-table">
+		<thead><tr><th></th><th>Base rate</th><th>Multiplier</th><th>Mod</th></tr></thead>
+		<tbody>
+			<tr>
+				<td>Hourly</td>
+				<td><input type="text" name="system.movement.special.hourly" value="{{system.movement.special.hourly}}" placeholder="Walk"></td>
+				<td><input type="number" name="system.movement.special.hourlyMultiplier" value="{{system.movement.special.hourlyMultiplier}}"></td>
+				<td><input type="number" name="system.movement.special.hourlyMod" value="{{system.movement.special.hourlyMod}}"></td>
+			</tr>
+			<tr>
+				<td>10 sec</td>
+				<td><input type="text" name="system.movement.special.tenSec" value="{{system.movement.special.tenSec}}" placeholder="Walk"></td>
+				<td><input type="number" name="system.movement.special.tenSecMultiplier" value="{{system.movement.special.tenSecMultiplier}}"></td>
+				<td><input type="number" name="system.movement.special.tenSecMod" value="{{system.movement.special.tenSecMod}}"></td>
+			</tr>
+			<tr>
+				<td>1 sec</td>
+				<td><input type="text" name="system.movement.special.oneSec" value="{{system.movement.special.oneSec}}" placeholder="Walk"></td>
+				<td><input type="number" name="system.movement.special.oneSecMultiplier" value="{{system.movement.special.oneSecMultiplier}}"></td>
+				<td><input type="number" name="system.movement.special.oneSecMod" value="{{system.movement.special.oneSecMod}}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="muted">Base rate names the rate this scale derives from -- "Walk", "Run", or "INT" for
+	magical flight, which reads the Intelligence attribute directly instead. Five formula shapes
+	exist across the kinds (Fly, Gallop, Swim, Scurry, Slither); see resolveSpecialMovement in
+	combat-rules.mjs. Leave the name blank for a race with no special movement.</p>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="4">{{system.description}}</textarea>
+</section>
