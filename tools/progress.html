@@ -51,6 +51,7 @@
 	.pill[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
 	.check { display: inline-flex; gap: 5px; align-items: center; font-size: 12px; font-weight: 400 !important; color: var(--ink) !important; }
 	.toolbar { display: flex; justify-content: space-between; align-items: center; margin: 4px 0 10px; color: var(--muted); font-size: 13px; }
+	#live.bad { color: var(--blocked); }
 	button.link { background: none; border: none; color: var(--accent); cursor: pointer; font: inherit; text-decoration: underline; padding: 0; }
 
 	.warn { background: var(--doing-bg); color: var(--ink); border: 1px solid var(--doing); border-radius: 6px; padding: 8px 12px; margin-bottom: 12px; font-size: 13px; }
@@ -118,7 +119,9 @@
 
 	<div class="toolbar">
 		<span id="count"></span>
-		<span><button class="link" id="clear">Clear filters</button> &middot; <button class="link" id="reload">Reload the board</button></span>
+		<span><label class="check" style="color:inherit"><input type="checkbox" id="auto" checked> Auto-refresh</label> &middot;
+			<span id="live"></span> &middot;
+			<button class="link" id="clear">Clear filters</button> &middot; <button class="link" id="reload">Reload now</button></span>
 	</div>
 	<div id="list"></div>
 </main>
@@ -127,8 +130,8 @@
 // Progress tool. Reads docs/PROGRESS.md (the board) and docs/task-dependencies.json, and shows every
 // task with its status and what it depends on, filterable by name, status and dependency.
 //
-// The board is the source of truth for status, so this page never goes out of date with it; press
-// "Reload the board" after it changes. The board carries no dependency data, so that lives in
+// The board is the source of truth for status, so this page never goes out of date with it: it
+// re-reads the board every 30 seconds and when the tab is brought back ("Reload now" forces it). The board carries no dependency data, so that lives in
 // docs/task-dependencies.json.
 //
 // Must be served over HTTP (fetch does not work from a file:// page), like the other tools:
@@ -361,29 +364,67 @@ $("dependsOn").addEventListener("change", (e) => { state.dependsOn = e.target.va
 $("neededBy").addEventListener("change", (e) => { state.neededBy = e.target.value; drawList(); });
 $("indirect").addEventListener("change", (e) => { state.indirect = e.target.checked; drawList(); });
 $("clear").addEventListener("click", resetFilters);
-$("reload").addEventListener("click", load);
+$("reload").addEventListener("click", () => load(true));
 
-async function load() {
+// --- reading and refreshing -------------------------------------------------------------------
+// The board is re-read every 30 seconds and whenever the tab is brought back, and the page is only
+// redrawn if the board or the dependency file actually changed, so an open panel is not collapsed
+// for nothing. The filters are kept across a refresh; the two dependency filters remember a task by
+// its NAME, because a new board row would shift the position-based ids.
+const REFRESH_MS = 30000;
+let lastKey = null;         // the last board + dependency text seen, to tell whether anything changed
+let timer = null;
+
+function setLive(text, bad) {
+	const el = $("live"); el.textContent = text; el.className = bad ? "bad" : "";
+}
+const clock = () => new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+async function load(manual) {
 	const warnings = [];
 	try {
 		const stamp = "?t=" + Date.now();
-		const [board, deps] = await Promise.all([
+		const [boardText, depText] = await Promise.all([
 			fetch("../docs/PROGRESS.md" + stamp).then(r => { if (!r.ok) { throw new Error("PROGRESS.md: " + r.status); } return r.text(); }),
-			fetch("../docs/task-dependencies.json" + stamp).then(r => { if (!r.ok) { throw new Error("task-dependencies.json: " + r.status); } return r.json(); })
+			fetch("../docs/task-dependencies.json" + stamp).then(r => { if (!r.ok) { throw new Error("task-dependencies.json: " + r.status); } return r.text(); })
 		]);
-		tasks = parseBoard(board).map((t, i) => ({ ...t, id: "t" + i, summary: "" }));
+		const key = boardText + "|@@@|" + depText;
+		if (key === lastKey && manual !== true) { setLive("Checked " + clock() + " - no change", false); return; }
+		const changed = lastKey !== null;
+		lastKey = key;
+
+		// Which tasks the two dependency filters point at, by name, before the ids are rebuilt.
+		const keepDepends = state.dependsOn ? byId.get(state.dependsOn)?.name : "";
+		const keepNeeded = state.neededBy ? byId.get(state.neededBy)?.name : "";
+
+		tasks = parseBoard(boardText).map((t, i) => ({ ...t, id: "t" + i, summary: "" }));
 		tasks.forEach(t => { t.summary = summarise(t.full); });
 		byId = new Map(tasks.map(t => [t.id, t]));
-		attachDependencies(deps, warnings);
+		attachDependencies(JSON.parse(depText), warnings);
 		tasks.forEach(work);
+		state.dependsOn = tasks.find(t => t.name === keepDepends)?.id ?? "";
+		state.neededBy = tasks.find(t => t.name === keepNeeded)?.id ?? "";
+
 		$("warnings").innerHTML = warnings.length
 			? `<div class="warn"><b>The dependency file is out of step with the board:</b><ul>${warnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul></div>` : "";
 		fillSelects(); redraw();
+		setLive((changed ? "Board changed - updated " : "Loaded ") + clock(), false);
 	} catch (err) {
+		// A failed refresh must not wipe a page that is already showing something useful.
+		if (lastKey !== null) { setLive("Could not refresh at " + clock() + " (" + err.message + ")", true); return; }
 		$("sub").textContent = "Could not read the board.";
 		$("list").innerHTML = `<div class="warn">${esc(err.message)}<br>This page has to be served over HTTP, not opened as a file. From the project folder run
 			<code>python -m http.server 8777 --bind 127.0.0.1</code> and open <code>http://127.0.0.1:8777/tools/progress.html</code>.</div>`;
 	}
 }
+
+function startTimer() {
+	clearInterval(timer);
+	timer = $("auto").checked ? setInterval(() => { if (!document.hidden) { load(); } }, REFRESH_MS) : null;
+}
+$("auto").addEventListener("change", () => { startTimer(); if ($("auto").checked) { load(); } else { setLive("Auto-refresh is off", false); } });
+document.addEventListener("visibilitychange", () => { if (!document.hidden && $("auto").checked) { load(); } });
+window.addEventListener("focus", () => { if ($("auto").checked) { load(); } });
+startTimer();
 load();
 </script>
