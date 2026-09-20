@@ -10,6 +10,14 @@
 		<span class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb carried</span>
 	</div>
 
+	{{!-- Adding gear by hand, for something no compendium holds. Dragging from a compendium still
+	      works and is the better route for anything the system already knows. --}}
+	<div class="gear-add">
+		<button type="button" data-action="createGear" data-type="equipment">Add equipment</button>
+		<button type="button" data-action="createGear" data-type="weapon">Add weapon</button>
+		<button type="button" data-action="createGear" data-type="armor">Add armour</button>
+	</div>
+
 	{{#if gear.length}}
 	<table class="gear-table">
 		<thead>
@@ -19,6 +27,7 @@
 				<th class="col-num">Qty</th>
 				<th class="col-num">Weight</th>
 				<th class="col-num">Location</th>
+				<th class="col-row-actions"></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -31,11 +40,17 @@
 				<td class="col-num">{{item.system.quantity}}</td>
 				<td class="col-num muted">{{item.system.weight}}</td>
 				<td class="col-num muted">{{item.system.location}}</td>
+				<td class="col-row-actions">
+					<button type="button" class="row-button" data-action="openItem"
+						data-item-id="{{item.id}}" data-tooltip="Edit this item">&#9998;</button>
+					<button type="button" class="row-button" data-action="deleteItem"
+						data-item-id="{{item.id}}" data-tooltip="Remove from this character">&times;</button>
+				</td>
 			</tr>
 			{{/each}}
 		</tbody>
 	</table>
 	{{else}}
-	<p class="empty">Nothing carried. Drag items here from a compendium.</p>
+	<p class="empty">Nothing carried. Drag items here from a compendium, or add one above.</p>
 	{{/if}}
 </section>

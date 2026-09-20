@@ -837,6 +837,12 @@ def apply_manual_content(tmppack, tmpdocs):
         generated_field_names(tmpdoc["system"], tmpknown)
 
     for tmpname, tmprow in payload.get("entries", {}).items():
+        # A key starting with _ is a note, at this level as well as inside a row -- which is what
+        # every manual file's own _about promises ("Keys starting with _ are notes and never
+        # read"). Without this, a Game Master who followed that and wrote a note beside their
+        # entries crashed the build instead, since a note is a string and a row is an object.
+        if tmpname.startswith("_"):
+            continue
         where = "manual/%s/%s" % (tmppack, tmpname)
         tmpsystem = {k: v for k, v in tmprow.items() if not k.startswith("_")}
         for tmpfield in unknown_fields(tmpsystem, tmpknown):

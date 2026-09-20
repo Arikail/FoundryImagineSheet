@@ -2659,3 +2659,40 @@ covers the bare cases -- no class, no race, no skills -- which each used to be a
 throw. **Not verified:** anything needing a running Foundry V14, which includes the hook interplay
 the first fix is about; the test proves the grant is not called twice by the commit, not that
 Foundry's hook behaves as documented.
+
+### 2026-09-19 — Adding gear from the sheet, and a crowbar
+
+**The ask:** a button for adding new inventory, and a crowbar, "even though that was not on the
+Roll20 sheet", with reasonable weights.
+
+**Adding gear.** The Equipment tab could only take items dragged from a compendium: nothing on it
+made, opened or removed anything. It now carries **Add equipment / Add weapon / Add armour**, and
+every row an edit and a remove button. A new item is created carried (not equipped -- a thing just
+picked up is in a pack) and its sheet opens at once, because an item called "New Equipment" weighing
+nothing is not what anyone wanted. A remove asks first, since the row buttons are small and a
+deletion here is final. Dragging from a compendium still works and is still the better route for
+anything the system already knows.
+
+**The crowbar goes through the content route, not into his data.** `src/packs/manual/equipment.json`
+is the file built for exactly this on 2026-09-19, so the entry lands in the pack on the next build,
+is tagged "Custom" automatically, and can be switched off with every other custom entry. Nothing
+generated from his dictionaries was touched, which is the rule: his data is his.
+
+**Its weight is anchored to his own figures, not to the real world.** 5 lb, beside his
+Pick(Digging) 5, Shovel 6, Tongs(Large) 5 and Grappling Hook 3. A real three-foot wrecking bar is
+about that, but the reason to write 5 is that a character carrying his shovel and this crowbar
+should feel the same about both. The entry says in its own description that it is not from the
+Roll20 sheet and when it was added, so a reader of the pack is never misled about its provenance,
+and a note beside it records the anchoring.
+
+**Found while doing it:** every manual file's `_about` promises that "any key starting with `_` is
+never read as content", but `apply_manual_content` only honoured that INSIDE a row. A Game Master
+who followed the documented convention and left a note beside their entries crashed the build with
+`'str' object has no attribute 'items'`. Fixed, and `docs/ADDING-CONTENT.md` now says so and carries
+the crowbar as its worked example.
+
+**Verified:** the pack builds 637 equipment documents where it built 636, and the Crowbar reads
+weight 5, sourcebook "Custom". `tools/sheet-preview.html` renders all three Add buttons and an edit
+and remove button on each of the seven gear rows, with no console errors. Derivation 347,
+availability 46 and advancement 86 unchanged; every module parses. **Not verified:** the buttons in
+a running Foundry V14 -- creating the item, opening its sheet and the delete confirmation.

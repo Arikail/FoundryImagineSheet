@@ -567,6 +567,39 @@
 	font-size: 14px;
 }
 
+/* Adding gear by hand, and the per-row edit and remove buttons beside it. */
+.gear-add {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 8px;
+}
+
+.gear-add button {
+	width: auto;
+	padding: 2px 10px;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+.gear-table .col-row-actions {
+	width: 1%;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.imagine.sheet .row-button {
+	width: auto;
+	padding: 0 5px;
+	margin-left: 2px;
+	font-size: 12px;
+	line-height: 1.4;
+	background: none;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+}
+
+.imagine.sheet .row-button:hover { background: var(--imagine-panel); }
+
 /* @MARKER CONTENT AVAILABILITY */
 
 /* Content the campaign's switches disallow stays on the sheet, flagged, rather than

@@ -5086,5 +5086,14 @@
       "weight": 2,
       "isTagalong": false
     }
+  },
+  {
+    "name": "Crowbar",
+    "type": "equipment",
+    "system": {
+      "weight": 5,
+      "description": "A three-foot iron bar, flattened and split at one end for prying and drawn to a point at the other. Worth a bonus to forcing a door, a lid or a grate at the Game Master's discretion, and it can be swung in a pinch, though it is not a weapon. Not in the Roll20 sheet; added at the owner's request 2026-09-19.",
+      "sourcebook": "Custom"
+    }
   }
 ]

@@ -91,6 +91,19 @@ and in Foundry, as the Game Master: `game.imagine.importContent()`.
   rest) cannot be overridden as a whole. Override each path by its own name.
 - **A misspelt field is reported**, checked against the item's schema, rather than silently dropped
   on import.
+- **A key starting with `_` is a note**, beside your entries as well as inside one, so you can leave
+  yourself a line about where a weight came from without it being read as an item.
+
+A worked entry, and the one the system ships with -- a crowbar, which his sheet has no equivalent
+of. Its weight is anchored to his own figures (Pick(Digging) 5, Shovel 6, Tongs(Large) 5) rather
+than to anything outside them, so encumbrance reads consistently:
+
+```json
+"entries": {
+  "_weights": "Anchored to his equipvalueslist: Pick(Digging) 5, Shovel 6, Tongs(Large) 5.",
+  "Crowbar": { "weight": 5, "description": "A three-foot iron bar, flattened and split at one end." }
+}
+```
 
 `--check` in place of `--write` reports all of this without writing anything.
 

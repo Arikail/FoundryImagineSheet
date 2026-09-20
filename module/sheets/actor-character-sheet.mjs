@@ -40,7 +40,10 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			transferSlot: ImagineCharacterSheet.#onTransferSlot,
 			sacrificeSlot: ImagineCharacterSheet.#onSacrificeSlot,
 			addLanguage: ImagineCharacterSheet.#onAddLanguage,
-			deleteLanguage: ImagineCharacterSheet.#onDeleteLanguage
+			deleteLanguage: ImagineCharacterSheet.#onDeleteLanguage,
+			createGear: ImagineCharacterSheet.#onCreateGear,
+			openItem: ImagineCharacterSheet.#onOpenItem,
+			deleteItem: ImagineCharacterSheet.#onDeleteItem
 		}
 	};
 
@@ -473,6 +476,53 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			content: `<div class="imagine-skill-roll">${tmplines}</div>`,
 			rolls: tmprolls
 		});
+	}
+
+	// @MARKER INVENTORY
+	// This is the function which makes a new piece of gear on the character, for something a
+	// compendium does not hold -- a rope cut in half, a Game Master's invention, a sword taken
+	// from an orc and not yet written up.
+	//
+	// It creates the item and opens its sheet straight away, because a thing called "New
+	// Equipment" weighing nothing is not what anyone wanted; the sheet is where it becomes real.
+	// Dragging from a compendium still works and is still the better route for anything the
+	// system already knows -- see docs/ADDING-CONTENT.md for putting it in a pack instead.
+	static async #onCreateGear(event, target) {
+		event.preventDefault();
+		var tmptype = target.dataset.type || "equipment";
+		var tmplabel = { equipment: "Equipment", weapon: "Weapon", armor: "Armour" }[tmptype] ?? "Equipment";
+
+		var tmpcreated = await this.document.createEmbeddedDocuments("Item", [{
+			name: `New ${tmplabel}`,
+			type: tmptype,
+			// Carried rather than equipped: a thing just picked up is in a pack, not in a hand,
+			// and carried is what counts against encumbrance either way.
+			system: { location: "carried", quantity: 1, weight: 0 }
+		}]);
+		if (tmpcreated?.length) { tmpcreated[0].sheet.render(true); }
+	}
+
+	// This is the function which opens a carried item's own sheet, to edit what it is.
+	static async #onOpenItem(event, target) {
+		event.preventDefault();
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (tmpitem) { tmpitem.sheet.render(true); }
+	}
+
+	// This is the function which removes a carried item from the character. Asked first: an item
+	// deleted here is gone, and a mis-click on a row of small buttons is easy.
+	static async #onDeleteItem(event, target) {
+		event.preventDefault();
+		var tmpitem = this.document.items.get(target.dataset.itemId);
+		if (!tmpitem) { return; }
+
+		var tmpconfirmed = await foundry.applications.api.DialogV2.confirm({
+			window: { title: "Imagine RPG" },
+			content: `<p>Remove <strong>${tmpitem.name}</strong> from ${this.document.name}?</p>`,
+			rejectClose: false,
+			modal: true
+		});
+		if (tmpconfirmed) { await tmpitem.delete(); }
 	}
 
 	// This is the function which opens the Level Up window. Experience, goals and titles are all
