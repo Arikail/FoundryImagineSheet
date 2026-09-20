@@ -125,6 +125,20 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Iridescent Green",
+          "Iridescent Blue"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Black/White",
+          "Yellow/Black",
+          "Yellow/Brownish Yellow"
+        ]
+      },
       "abilities": [
         "Infravision60",
         "Antennae",
@@ -281,6 +295,33 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Blonde",
+          "Red",
+          "Gray",
+          "Bluish Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Green",
+          "Blue",
+          "Red",
+          "Yellow"
+        ],
+        "skin": [
+          "Pale Blue",
+          "Bluish Gray",
+          "Brownish Gray",
+          "Tan",
+          "Gray",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision120",
         "Climbing",
@@ -422,6 +463,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pink",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Flight(Wings)",
         "Night Vision",
@@ -566,6 +625,35 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Tan",
+          "Light Brown",
+          "Brown"
+        ]
+      },
       "abilities": [
         "Flight(Wings)",
         "Farsight"
@@ -720,6 +808,35 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Tan",
+          "Light Brown",
+          "Brown"
+        ]
+      },
       "abilities": [
         "Flight(Wings)",
         "Farsight"
@@ -870,6 +987,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Mixed",
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "White",
+          "Silver",
+          "Tan",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Green",
+          "Red",
+          "Yellow",
+          "Silver"
+        ],
+        "skin": [
+          "Black",
+          "Brown",
+          "Gray"
+        ]
+      },
       "abilities": [
         "Flight(Wings)",
         "Night Vision",
@@ -1023,6 +1166,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "White",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Hide(5)",
@@ -1156,6 +1325,29 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Iridescent Blue",
+          "Iridescent Purple",
+          "Iridescent Red"
+        ],
+        "skin": [
+          "White",
+          "Gray",
+          "Pale Yellow",
+          "Tan",
+          "Peach",
+          "Orange",
+          "Dark Red",
+          "Reddish Brown",
+          "Greenish Brown",
+          "Blue",
+          "Brown",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Extra Insect Limbs(Legs)",
@@ -1307,6 +1499,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Reddish Blonde",
+          "Auburn",
+          "Red"
+        ],
+        "eyes": [
+          "Green",
+          "Blue"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Ruddy",
+          "Tan",
+          "Light Brown"
+        ]
+      },
       "abilities": [
         "Hide(Skin)",
         "Natural Weapons(Brok)"
@@ -1449,6 +1660,30 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Tan",
+          "Brown"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Natural Weapons(Brownie)"
@@ -1588,6 +1823,40 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White",
+          "Silvery"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Quadruped",
         "Natural Weapons(Centaur)"
@@ -1736,6 +2005,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Enhanced Hearing",
@@ -1843,6 +2130,31 @@
       "bodyType": "Humanoid",
       "racialSkills": [],
       "racialSkillNote": "This race's skills depend on the form it wears: his changelingRaceSkillDetailValues holds a list for each of 41 forms. Choosing them belongs to the form swap, which is not built yet.",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Changeling Form"
       ],
@@ -1984,6 +2296,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pink",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(4)",
@@ -2127,6 +2458,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Yellow",
+          "Golden",
+          "White",
+          "Silver"
+        ],
+        "skin": [
+          "Translucent Gray",
+          "Translucent Yellow",
+          "Translucent Orange",
+          "Translucent Brown",
+          "Translucent Green",
+          "Translucent Blue",
+          "Translucent Pink",
+          "Translucent Purple",
+          "Translucent Red"
+        ]
+      },
       "abilities": [
         "Hide(Crystal)",
         "Living Crystal",
@@ -2278,6 +2634,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Red",
+          "Gray"
+        ],
+        "eyes": [
+          "Violet",
+          "Red",
+          "Yellow",
+          "Golden",
+          "Silver"
+        ],
+        "skin": [
+          "Black",
+          "Gray",
+          "Brown",
+          "Red"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)",
         "Hide(10)",
@@ -2417,6 +2794,29 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "White",
+          "Silver",
+          "Gray",
+          "Blue"
+        ],
+        "eyes": [
+          "Bluish Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Yellow",
+          "Golden",
+          "Silver"
+        ],
+        "skin": [
+          "White",
+          "Gray",
+          "Silver",
+          "Blue"
+        ]
+      },
       "abilities": [
         "Farsight",
         "Magical Flight",
@@ -2563,6 +2963,31 @@
         }
       ],
       "racialSkillNote": "Evoke (special type: Tree)",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Evoke Special(Tree)"
@@ -2707,6 +3132,36 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision60"
       ],
@@ -2860,6 +3315,36 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision60"
       ],
@@ -3022,6 +3507,29 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Charcoal",
+          "Black",
+          "Auburn",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Red",
+          "Gray"
+        ],
+        "skin": [
+          "Tan",
+          "Bronze",
+          "Ruddy",
+          "Red",
+          "Brown",
+          "Gray",
+          "Charcoal"
+        ]
+      },
       "abilities": [
         "Hide(5)",
         "Ultravision"
@@ -3188,6 +3696,55 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Tin",
+          "Bronze",
+          "Copper",
+          "Mixed",
+          "Black Iron",
+          "Iron",
+          "Steel",
+          "Silver",
+          "Chrome",
+          "Rusted Iron",
+          "Golden"
+        ],
+        "eyes": [
+          "Russet",
+          "Amber",
+          "Agate",
+          "Aquamarine",
+          "Amethyst",
+          "Carnelian",
+          "Garnet",
+          "Tiger’s Eye",
+          "Tourmaline",
+          "Topaz",
+          "Peridot",
+          "Pearl",
+          "Opal",
+          "Black Pearl",
+          "Sapphire",
+          "Ruby",
+          "Diamond",
+          "Emerald"
+        ],
+        "skin": [
+          "Tin",
+          "Bronze",
+          "Copper",
+          "Mottled Rust",
+          "Black Iron",
+          "Iron",
+          "Steel",
+          "Gunmetal",
+          "Silver",
+          "Chrome",
+          "Rusted Iron",
+          "Golden"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Hide(15)",
@@ -3343,6 +3900,36 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision30"
       ],
@@ -3504,6 +4091,60 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Clear",
+          "Translucent",
+          "Flecked White",
+          "Light Brown",
+          "Tan",
+          "Dark Brown",
+          "Light Gray",
+          "Gray",
+          "Dark Gray",
+          "Blue",
+          "Green",
+          "Reddish Brown",
+          "Mixed",
+          "Marbled"
+        ],
+        "eyes": [
+          "Russet",
+          "Amber",
+          "Agate",
+          "Aquamarine",
+          "Amethyst",
+          "Carnelian",
+          "Garnet",
+          "Tiger’s Eye",
+          "Tourmaline",
+          "Topaz",
+          "Peridot",
+          "Pearl",
+          "Opal",
+          "Black Pearl",
+          "Sapphire",
+          "Ruby",
+          "Diamond",
+          "Emerald"
+        ],
+        "skin": [
+          "Clear",
+          "Translucent",
+          "Flecked White",
+          "Light Brown",
+          "Tan",
+          "Dark Brown",
+          "Light Gray",
+          "Gray",
+          "Dark Gray",
+          "Blue",
+          "Green",
+          "Reddish Brown",
+          "Mottled",
+          "Marbled"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Hide(20)",
@@ -3675,6 +4316,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan",
+          "Black"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Infravision120"
@@ -3846,6 +4513,30 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Dark Blonde",
+          "Auburn"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Green",
+          "Violet",
+          "Red",
+          "Gold"
+        ],
+        "skin": [
+          "Tan",
+          "Light Brown",
+          "Olive",
+          "Reddish",
+          "Bronze"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision",
@@ -4008,6 +4699,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Auburn"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Green",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Light Brown",
+          "Brown-Gray",
+          "Olive",
+          "Pink",
+          "Tan",
+          "Black"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Call Twilight"
@@ -4167,6 +4883,30 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Blue Gray",
+          "Pale(White)",
+          "Pink"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -4323,6 +5063,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -4483,6 +5248,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "White",
+          "Silver",
+          "Gray",
+          "Blue",
+          "Dark Blue"
+        ],
+        "eyes": [
+          "Green",
+          "Blue",
+          "Turquoise",
+          "Violet",
+          "Gold"
+        ],
+        "skin": [
+          "Bluish Gray",
+          "Blue",
+          "Pale",
+          "White"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -4651,6 +5438,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Blonde",
+          "Silver",
+          "Green",
+          "Aqua"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Silver"
+        ],
+        "skin": [
+          "Blue",
+          "Grayish Blue",
+          "Light Green",
+          "Silver",
+          "Pale",
+          "Olive"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Swimming",
@@ -4850,6 +5662,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -5027,6 +5864,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -5188,6 +6050,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -5360,6 +6247,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -5516,6 +6428,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(10)",
@@ -5660,6 +6590,21 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "White",
+          "Gray",
+          "Pale Blue"
+        ],
+        "eyes": [
+          "White",
+          "Gray",
+          "Blue/Gray"
+        ],
+        "skin": [
+          "Translucent White"
+        ]
+      },
       "abilities": [],
       "disabilities": [
         "Light Sensitivity",
@@ -5830,6 +6775,38 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Night Vision"
       ],
@@ -5981,6 +6958,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Hide(10)",
         "Natural Weapons(Giant)"
@@ -6131,6 +7130,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Hide(10)",
         "Natural Weapons(Giant)"
@@ -6285,6 +7306,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Hide(15)",
@@ -6462,6 +7505,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision120",
         "Animal Friendship"
@@ -6622,6 +7696,38 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -6761,6 +7867,38 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision30"
       ],
@@ -6908,6 +8046,38 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision30",
         "Gift of Magic"
@@ -7056,6 +8226,38 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Night Vision"
       ],
@@ -7207,6 +8409,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pink",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Infravision60",
         "Hide(8)",
@@ -7359,6 +8580,26 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "White",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Gray"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Flight(Wings)",
@@ -7518,6 +8759,19 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Black",
+          "Red"
+        ],
+        "skin": [
+          "Gray",
+          "Green",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(10)",
@@ -7665,6 +8919,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Red",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Farsight",
         "Hide(Feathers/Fur)",
@@ -7822,6 +9094,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Amber"
+        ],
+        "skin": [
+          "Dark Gray",
+          "Light Gray",
+          "Bluish Gray",
+          "Dark Brown",
+          "Light Brown",
+          "Brownish Silver"
+        ]
+      },
       "abilities": [
         "Exceptional Hearing",
         "Enhanced Smell",
@@ -7969,6 +9258,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Dark Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Red",
+          "Gray",
+          "Dark Brown",
+          "Dark Green"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)"
       ],
@@ -8138,6 +9453,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -8317,6 +9663,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -8495,6 +9872,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -8650,6 +10058,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -8821,6 +10260,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -8980,6 +10450,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Red",
+          "Gray",
+          "Yellow"
+        ],
+        "eyes": [
+          "Violet",
+          "Red",
+          "Yellow",
+          "Golden",
+          "Silver"
+        ],
+        "skin": [
+          "Black",
+          "Gray",
+          "Red",
+          "Yellow"
+        ]
+      },
       "abilities": [
         "Infravision120",
         "Fire Elemental Form"
@@ -9126,6 +10617,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -9280,6 +10789,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pink",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Hide(8)",
@@ -9427,6 +10955,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Farsight",
         "Flight(Wings)",
@@ -9579,6 +11124,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Amber"
+        ],
+        "skin": [
+          "Dark Gray",
+          "Light Gray",
+          "Bluish Gray",
+          "Dark Brown",
+          "Light Brown",
+          "Brownish Silver"
+        ]
+      },
       "abilities": [
         "Lateral Vision",
         "Exceptional Hearing",
@@ -9729,6 +11291,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Red",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -9876,6 +11457,36 @@
         }
       ],
       "racialSkillNote": "Scrying:only treasure owned/handled",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Fickle Luck",
@@ -10018,6 +11629,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Red",
+          "Amber"
+        ],
+        "skin": [
+          "Iridescent Blue",
+          "Iridescent Green",
+          "Blue",
+          "Green",
+          "Yellow",
+          "Black",
+          "Spotted",
+          "Striped"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision",
@@ -10165,6 +11797,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)",
         "Enhanced Hearing",
@@ -10303,6 +11952,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Amber"
+        ],
+        "skin": [
+          "Dark Gray",
+          "Light Gray",
+          "Bluish Gray",
+          "Dark Brown",
+          "Light Brown",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Enhanced Hearing",
         "Enhanced Smell",
@@ -10444,6 +12110,24 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Underwater Vision",
         "Enhanced Hearing",
@@ -10588,6 +12272,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Silver",
+          "Green",
+          "Gray",
+          "Blue"
+        ],
+        "eyes": [
+          "Bluish Green",
+          "Green",
+          "Blue",
+          "Golden",
+          "Silver"
+        ],
+        "skin": [
+          "Blue",
+          "Gray",
+          "Green",
+          "Silver"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Underwater Vision",
@@ -10731,6 +12436,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Green",
+          "Blue",
+          "Red"
+        ],
+        "skin": [
+          "Tin",
+          "Bronze",
+          "Copper",
+          "Mottled Rust",
+          "Black Iron",
+          "Iron",
+          "Steel",
+          "Gunmetal",
+          "Silver",
+          "Chrome",
+          "Rusted Iron",
+          "Golden"
+        ]
+      },
       "abilities": [
         "Breathless",
         "Mecho-Magical Mind",
@@ -10900,6 +12627,21 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Hide(Fur)",
         "Claws",
@@ -11052,6 +12794,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Red",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Red",
+          "Orange",
+          "Yellow"
+        ],
+        "skin": [
+          "Brown",
+          "Reddish Brown",
+          "Red",
+          "Orange"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -11222,6 +12985,28 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "White",
+          "Silver",
+          "Gray",
+          "Light Blue",
+          "Dark Blue"
+        ],
+        "eyes": [
+          "Green",
+          "Blue",
+          "Purple",
+          "Silver",
+          "Gray"
+        ],
+        "skin": [
+          "Light Blue",
+          "Gray",
+          "Silver",
+          "White"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -11376,6 +13161,33 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Auburn",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue"
+        ],
+        "skin": [
+          "Green",
+          "Bluish Green",
+          "Blue",
+          "Violet",
+          "Silver",
+          "Bronze",
+          "Gold"
+        ]
+      },
       "abilities": [
         "Transform(Fish Tail)",
         "Swimming",
@@ -11560,6 +13372,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -11717,6 +13560,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -11874,6 +13748,37 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [],
       "disabilities": [],
       "immunities": [],
@@ -12039,6 +13944,31 @@
         }
       ],
       "racialSkillNote": "Animal Shape: (water animals only)",
+      "features": {
+        "hair": [
+          "White",
+          "Silver",
+          "Light Green",
+          "Dark Green",
+          "Gray",
+          "Light Blue",
+          "Dark Blue"
+        ],
+        "eyes": [
+          "Black",
+          "Green",
+          "Blue",
+          "Silver",
+          "Gray"
+        ],
+        "skin": [
+          "Dark Blue",
+          "Light Blue",
+          "Light Green",
+          "Blue-Gray",
+          "Gray"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -12198,6 +14128,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight"
       ],
@@ -12346,6 +14301,39 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision30",
         "Hide(5)"
@@ -12501,6 +14489,39 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision30",
         "Gift of Magic",
@@ -12653,6 +14674,27 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Bluish Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Yellow",
+          "Golden",
+          "Silver"
+        ],
+        "skin": [
+          "White(Eggshell)",
+          "Gray",
+          "Silver",
+          "Pale",
+          "Golden",
+          "Red"
+        ]
+      },
       "abilities": [
         "Sleepless"
       ],
@@ -12801,6 +14843,34 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Mixed",
+          "White",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision",
@@ -12942,6 +15012,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale(Arctic)",
+          "Tan(Desert)",
+          "Gray/Black(Forest)",
+          "Black(Jungle)",
+          "Brown(Mountains)",
+          "Light Brown(Plains/Grassland)",
+          "Tan(Savannah)",
+          "Olive(Swamp)",
+          "Brown(River)Gray(Ocean/Sea)",
+          "Black(Wasteland)"
+        ]
+      },
       "abilities": [
         "Hide(Scales)",
         "Natural Weapons(S’rett)"
@@ -13088,6 +15183,33 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Russet",
+          "White"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Hide(15)",
         "Natural Weapons(Sasquatch/Yeti)"
@@ -13228,6 +15350,30 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Russet",
+          "White",
+          "Green",
+          "Gray"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Hide(5)"
@@ -13383,6 +15529,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale(Arctic)",
+          "Tan(Desert)",
+          "Gray/Black(Forest)",
+          "Black(Jungle)",
+          "Brown(Mountains)",
+          "Light Brown(Plains/Grassland)",
+          "Tan(Savannah)",
+          "Olive(Swamp)",
+          "Brown(River)Gray(Ocean/Sea)",
+          "Black(Wasteland)"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(Scales)",
@@ -13536,6 +15707,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Auburn",
+          "Brownish Gray",
+          "Bluish Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Green",
+          "Blue",
+          "Red",
+          "Yellow"
+        ],
+        "skin": [
+          "Pale Blue",
+          "Bluish Gray",
+          "Brownish Gray",
+          "Tan",
+          "Gray",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Infravision60",
         "Hide(Chitinous)",
@@ -13687,6 +15884,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale(Arctic)",
+          "Tan(Desert)",
+          "Gray/Black(Forest)",
+          "Black(Jungle)",
+          "Brown(Mountains)",
+          "Light Brown(Plains/Grassland)",
+          "Tan(Savannah)",
+          "Olive(Swamp)",
+          "Brown(River)Gray(Ocean/Sea)",
+          "Black(Wasteland)"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Hide(Scales)",
@@ -13821,6 +16043,21 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Black",
+          "Red",
+          "Gray"
+        ],
+        "skin": [
+          "Light Blue",
+          "Blue",
+          "Grayish Blue",
+          "White",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Diving(Water)",
         "Hide(Skin)",
@@ -13973,6 +16210,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale(Arctic)",
+          "Tan(Desert)",
+          "Gray/Black(Forest)",
+          "Black(Jungle)",
+          "Brown(Mountains)",
+          "Light Brown(Plains/Grassland)",
+          "Tan(Savannah)",
+          "Olive(Swamp)",
+          "Brown(River)Gray(Ocean/Sea)",
+          "Black(Wasteland)"
+        ]
+      },
       "abilities": [
         "Farsight",
         "Hide(Scales)",
@@ -14116,6 +16378,30 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Light Blue",
+          "Blue",
+          "Dark Blue",
+          "Teal",
+          "Light Green",
+          "Light Blue",
+          "Sea Green",
+          "Gray",
+          "Dark Gray"
+        ]
+      },
       "abilities": [
         "Hide(Scales)",
         "Patterned Fur",
@@ -14265,6 +16551,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Red",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Enhanced Hearing",
         "Enhanced Smell",
@@ -14408,6 +16713,31 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Blonde",
+          "White",
+          "Silvery",
+          "Green"
+        ],
+        "eyes": [
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Pale(White)",
+          "Olive",
+          "Pink",
+          "Tan"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Wing Projection"
@@ -14544,6 +16874,34 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Mixed",
+          "White",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
       "abilities": [
         "Hide(10)",
         "Natural Weapons(Taurian)"
@@ -14678,6 +17036,22 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Green",
+          "Yellow",
+          "Black"
+        ]
+      },
       "abilities": [
         "Enhanced Smell",
         "Hide(Scales/Shell)",
@@ -14815,6 +17189,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black Tufts"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Green",
+          "Yellowish"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(4)",
@@ -14967,6 +17360,32 @@
         }
       ],
       "racialSkillNote": "Blend(snow/ice only)",
+      "features": {
+        "hair": [
+          "Black",
+          "White",
+          "Green",
+          "Gray",
+          "Blue"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Red",
+          "Amber"
+        ],
+        "skin": [
+          "Pale",
+          "Gray",
+          "White",
+          "Blue",
+          "Translucent"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)",
         "Hide(8)",
@@ -15104,6 +17523,31 @@
         }
       ],
       "racialSkillNote": "Blend(rock surfaces only)",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "Red",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red"
+        ],
+        "skin": [
+          "Pale Gray"
+        ]
+      },
       "abilities": [
         "Ultravision",
         "Regeneration(Slow)",
@@ -15254,6 +17698,21 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Amber"
+        ],
+        "skin": [
+          "Brown",
+          "Black",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Exceptional Sight",
         "Night Vision(Enhanced)",
@@ -15398,6 +17857,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Brown",
+          "White",
+          "Pink",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision",
         "Hide(8)"
@@ -15536,6 +18014,25 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Mixed",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Gray"
+        ],
+        "skin": [
+          "Brown",
+          "Gray",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Diving(Water)",
         "Hide(Skin)",
@@ -15690,6 +18187,41 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Red",
+          "White",
+          "Silver",
+          "Light Green",
+          "Green",
+          "Dark Green",
+          "Dark Green",
+          "Yellow",
+          "Light Blue",
+          "Blue",
+          "Dark Blue",
+          "Bluish Gray",
+          "Violet"
+        ],
+        "eyes": [
+          "Green",
+          "Yellow",
+          "Silver",
+          "Gold(Multicolor Flecks)"
+        ],
+        "skin": [
+          "White(Birch)",
+          "Gray(Popular)",
+          "Yellow(Pine)",
+          "Light Tan(Spruce)",
+          "Brown(Oak)",
+          "Dark Brown(Mahogany)",
+          "Red(Cedar)",
+          "Purple(Purpleheart)",
+          "Stripped",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)",
         "Regeneration(Natural)",
@@ -15837,6 +18369,32 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Red",
+          "White",
+          "Mixed",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Green",
+          "Blue",
+          "Red",
+          "Yellow",
+          "Gray",
+          "Silver"
+        ],
+        "skin": [
+          "Brown",
+          "Gray",
+          "Tan",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Night Vision(Enhanced)",
         "Hide(15)",
@@ -15986,6 +18544,23 @@
         }
       ],
       "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [
+          "Iridescent Bluish Green",
+          "Iridescent Yellow"
+        ],
+        "skin": [
+          "Translucent",
+          "Gray",
+          "Red",
+          "Iridescent Green",
+          "Flat Green",
+          "Brown",
+          "Black",
+          "Mottled"
+        ]
+      },
       "abilities": [
         "Infravision60",
         "Antennae",

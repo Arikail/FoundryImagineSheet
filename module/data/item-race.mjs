@@ -146,6 +146,18 @@ export default class ImagineRaceData extends foundry.abstract.TypeDataModel {
 			})),
 			racialSkillNote: new fields.StringField({ required: true, initial: "" }),
 
+			// @MARKER COLOURING
+			// The hair, eye and skin colours a member of this race is found in, from his
+			// raceFeatureHair / raceFeatureEyes / raceFeatureSkin. Offered as choices at character
+			// creation rather than enforced: his sheet lists them and lets the player type anything.
+			// A race with none -- a construct, an elemental -- carries an empty list, which is an
+			// answer rather than a gap.
+			features: new fields.SchemaField({
+				hair: new fields.ArrayField(new fields.StringField()),
+				eyes: new fields.ArrayField(new fields.StringField()),
+				skin: new fields.ArrayField(new fields.StringField())
+			}),
+
 			// @MARKER RACIAL ABILITIES
 			// By name, from raceFeatureAbilities (getRacialFeatureAbilities). These are the names
 			// his trait compendia describe (abilities, disabilities, immunities). They are listed,

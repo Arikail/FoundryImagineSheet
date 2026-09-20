@@ -2734,3 +2734,58 @@ none of it has run in Foundry. The race item sheet and one old note still promis
 11th title, superseded by the 25/27 pair. The creature sheet showed a load and never what the load
 cost. The loaded movement table had no column headings, having been split from the table whose
 headings it was relying on.
+
+### 2026-09-19 — Height, frame and weight, and the colours a race comes in
+
+The largest of the character-generator gaps, and the one a table notices first: height, frame,
+weight, hair, eyes and skin were free text, typed by hand, while his sheet rolls all of them.
+
+**His three figures are not independent**, which is the whole shape of the problem:
+
+    race                    -> height TYPE     Human(Civilized:Village) -> "Average"
+    height type             -> INCHES          a d100 down that band's ladder
+    race                    -> frame TYPE      Human(Civilized:Village) -> "Average"
+    frame type + STR - AGL  -> FRAME           Wispy / Light / Medium / Heavy / ...
+    frame + inches          -> WEIGHT          a base for that height, plus a roll
+
+So weight cannot be rolled before height, and the frame cannot be settled before the attributes are.
+His own sheet imposes the same order — its Apply Height/Frame button sits after the attribute step —
+and the port rolls all three together in one action for that reason, and for a second: rolling them
+separately would let a player re-roll a height until the weight suited them.
+
+The measure at the frame step is **Strength minus Agility**, the Player's Guide's own rule (p.34):
+of two characters of a race, the strong slow one is the heavier-framed.
+
+**Generated, not transcribed.** `tools/extract/extract_physique_tables.py` walks twenty-odd of his
+functions into `module/physique-tables.mjs`: 112 races' height bands, twelve height ladders, 119
+races' frame types, the frame ladder, and six frames' weight tables (12 to 35 height bands each).
+Two things the parse had to be taught, both found by the figures coming out wrong rather than by
+reading: **the base is per rung, not per band** (his Tiny band walks 11 and 12), and **his condition
+and its assignment sit on separate lines**, so a rung's threshold has to be carried forward — the
+first cut read every rung as the last one and a six-foot man came out an inch tall.
+
+**Decisions:**
+- *A half race's height is the mean of its parents' rolls, rounded up*; its frame type is the FIRST
+  race's, as his half race takes the first race's body and special movement. Nothing in his code
+  averages two frame types, and there is no sensible way to: they are words, not numbers.
+- *The colours are offered, never enforced.* `raceFeatureHair` / `Eyes` / `Skin` are now on the race
+  document as `features`, and the Details step offers them as selects — both parents' lists for a
+  half race, with anything already typed kept at the top. His sheet lists them and still lets a
+  player write their own, and so does this.
+- *The slight-physique figures are extracted and set aside.* Every one of his functions answers
+  differently for a slight physique, and the port still has no such option (a rules call open with
+  him). The tables carry those figures unused, so adding the option later is reading a table rather
+  than extracting again.
+
+**Found in his data and reported** (`UPSTREAM-ISSUES.md` item 37): four races a character can be are
+missing from `getRaceHeightType` — Giant(Civilized) and the City, Port and Town Humans — so on his
+sheet they get no height, and therefore no weight and no carrying capacity. The port fills each from
+its siblings, which is unambiguous in every case, and says so on every extraction run.
+
+**Verified:** character generation 75 (21 new), and the other six suites unchanged (combat 411,
+derivation 364, creature 145, advancement 101, availability 46, walk 37); 40 modules parse.
+`tools/chargen-preview.html` rolls the whole physique for its half Human|Elf with scripted dice and
+the three figures hang together: 5'6" between the Average and Medium bands, a Light frame from
+STR 12 less AGL 19, and 110 lb at the bottom of what that frame runs to at that height. Her hair is
+offered from both parents' lists, Silvery and Green among them. **Not verified:** the Roll button in
+a running Foundry V14, and its chat card.

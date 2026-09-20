@@ -182,6 +182,87 @@ check("a language with no name is dropped",
 check("every skill's misc is set outright, never left to default to NaN",
 	itemsOf(assembled).filter(i => i.type === "skill").every(i => i.system.misc === 0), true);
 
+// --- height, frame and weight, against his own tables ------------------------------------------
+// His three figures depend on each other: the race gives a height band and a frame type, the band
+// gives inches, the frame type and (STR - AGL) give a frame, and the frame with the inches gives a
+// weight. Every die below is scripted, so each figure is worked out rather than looked up.
+const P = await import("../module/physique-rules.mjs");
+const T = await import("../module/physique-tables.mjs");
+
+check("a race knows its height band and its frame type",
+	[P.getHeightType("Human(Civilized:Village)"), P.getFrameType("Human(Civilized:Village)")],
+	["Average", "Average"]);
+check("a Dwarf is Short, a true Giant is a True Giant, a Brownie is Tiny",
+	["Dwarf(Mountain)", "Giant(True)", "Brownie"].map(P.getHeightType), ["Short", "True Giant", "Tiny"]);
+check("the four races missing from his height switch were filled from their siblings",
+	["Giant(Civilized)", "Human(Civilized:City)", "Human(Civilized:Port)", "Human(Civilized:Town)"]
+		.map(P.getHeightType), ["Giant", "Average", "Average", "Average"]);
+
+// The Average band is 72 inches at its middle rung: a d100 of 50 lands on "tmpinches=72" with no
+// roll at all, which is his 40-59 band.
+check("the middle of the Average band is six feet exactly",
+	(() => { const h = P.rollHeight("Human(Civilized:Village)", dice(50)); return [h.inches, h.feet, h.inchesPart]; })(),
+	[72, 6, 0]);
+check("a low roll takes height off the base",
+	P.rollHeight("Human(Civilized:Village)", dice(3, 6, 6, 6, 6)).inches, 72 - 24);
+check("a high roll adds to it",
+	P.rollHeight("Human(Civilized:Village)", dice(99, 6, 6, 6, 6)).inches, 72 + 24);
+check("the band's own shortest and tallest come back with it",
+	(() => { const h = P.rollHeight("Human(Civilized:Village)", dice(50));
+	         return [h.low.feet, h.low.inches, h.high.feet, h.high.inches]; })(), [4, 0, 8, 0]);
+check("a race his tables do not know rolls no height at all",
+	P.rollHeight("Nonesuch", dice(50)), null);
+
+// His two smallest bands have no d100 ladder at all: the height is one roll. Only two races are
+// that small -- a Podling and a Sporeling -- and a Podling's is 3d4 inches.
+check("a Miniscule race is a single roll, not a ladder",
+	[P.getHeightType("Podling"), P.rollHeight("Podling", always(3)).inches], ["Miniscule1", 9]);
+
+// The frame is STRENGTH MINUS AGILITY down the race's own ladder.
+check("a strong, slow character is heavier-framed than a quick one of the same race",
+	[P.getFrame("Human(Civilized:Village)", 18, 8).frame,
+	 P.getFrame("Human(Civilized:Village)", 8, 18).frame].filter((f, i, a) => a.indexOf(f) === i).length > 1,
+	true);
+check("the measure his ladder reads is Strength minus Agility",
+	P.getFrame("Human(Civilized:Village)", 17, 9).measure, 8);
+check("a race with no frame type answers with none, rather than guessing",
+	P.getFrame("Nonesuch", 12, 12).frame, "");
+
+// Weight needs both: the frame picks the table, the height picks the band within it.
+const midFrame = P.getFrame("Human(Civilized:Village)", 12, 12).frame;
+check("a frame and a height give a weight, with the band's own bounds",
+	(() => { const w = P.rollWeight(midFrame, 72, always(1));
+	         return [typeof w.weight, w.weight > 0, w.low > 0, w.high >= w.low]; })(),
+	["number", true, true, true]);
+check("a taller character of the same frame weighs more",
+	P.rollWeight(midFrame, 78, always(1)).weight >= P.rollWeight(midFrame, 60, always(1)).weight, true);
+check("a frame his tables do not hold weighs nothing, and says so by answering null",
+	P.rollWeight("Nonesuch", 72, always(1)), null);
+
+// All three together, which is his Apply Height/Frame button.
+const physique = P.rollPhysique("Human(Civilized:Village)", 14, 12, dice(50, 1, 1, 1, 1, 1, 1));
+check("the whole roll gives a height, a frame and a weight, with nothing left wanting",
+	[physique.height.inches, physique.frame !== "", physique.weight.weight > 0, physique.issues],
+	[72, true, true, []]);
+check("a race with no tables says what it could not do rather than throwing",
+	P.rollPhysique("Nonesuch", 14, 12, dice(50)).issues.length, 2);
+
+// A half race averages the two heights and takes the first race's frame.
+const halfHeight = P.rollHeight(["Human(Civilized:Village)", "Dwarf(Mountain)"], dice(50, 50));
+check("a half race stands between its parents",
+	[halfHeight.inches < 72, halfHeight.inches > P.rollHeight("Dwarf(Mountain)", dice(50)).inches],
+	[true, true]);
+check("...and takes the first race's frame type, as his half race takes its body",
+	P.getFrame(["Dwarf(Mountain)", "Human(Civilized:Village)"], 12, 12).type,
+	P.getFrameType("Dwarf(Mountain)"));
+
+// The tables themselves, so a regeneration that quietly loses a band is caught.
+check("his twelve height bands and six weight frames are all there",
+	[Object.keys(T.HEIGHT_BANDS).length, Object.keys(T.WEIGHT_BANDS).length], [12, 6]);
+check("the four races his height switch misses were filled, so none is left without a band",
+	["Giant(Civilized)", "Human(Civilized:City)", "Human(Civilized:Port)", "Human(Civilized:Town)"]
+		.filter(r => !T.HEIGHT_TYPE_BY_RACE[r]), []);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

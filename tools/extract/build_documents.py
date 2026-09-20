@@ -126,6 +126,20 @@ def split_list(tmpvalue):
     return [s.strip() for s in str(tmpvalue or "").split(",") if s.strip() and s.strip() != "None"]
 
 
+def feature_colours(tmprow):
+    """
+    One of his colour rows -- ["Hair:", "Black,Brown,Blonde"] -- as a plain list.
+
+    The label is his sheet's heading and is dropped. "None" is his own way of writing that the race
+    has no such feature (a construct has no hair), and comes back as an empty list rather than as a
+    colour called None.
+    """
+    if not tmprow or len(tmprow) < 2:
+        return []
+    return [c.strip() for c in str(tmprow[1] or "").split(",")
+            if c.strip() and c.strip().lower() not in ("none", "n/a")]
+
+
 def make_doc(name, doctype, system):
     return {"name": clean_text(name), "type": doctype, "system": system}
 
@@ -339,6 +353,11 @@ def build_races():
         raceskills.setdefault(tmpinline, tmprow)
     racefeatures = load_raw_entries("raceFeatureAbilities")
     racefertile = load_raw_entries("racefertiledict")
+    # The colours a member of a race is found in. Each row is [label, "a,comma,list"]; the label
+    # ("Hair:") is his sheet's own heading and is dropped.
+    racehair = load_raw_entries("raceFeatureHair")
+    raceeyes = load_raw_entries("raceFeatureEyes")
+    raceskin = load_raw_entries("raceFeatureSkin")
     raceages = (load_named("raceAges") or {}).get("entries", {})
 
     docs = []
@@ -440,6 +459,11 @@ def build_races():
             "bodyType": bodymap.get(tmpname, "Humanoid"),
             "racialSkills": tmpracialskills,
             "racialSkillNote": tmpskillnote,
+            "features": {
+                "hair": feature_colours(racehair.get(tmpname)),
+                "eyes": feature_colours(raceeyes.get(tmpname)),
+                "skin": feature_colours(raceskin.get(tmpname)),
+            },
             "abilities": [clean_text(a) for a in split_list(tmpfeatures[0])],
             "disabilities": [clean_text(a) for a in split_list(tmpfeatures[1] if len(tmpfeatures) > 1 else "")],
             "immunities": [clean_text(a) for a in split_list(tmpfeatures[2] if len(tmpfeatures) > 2 else "")],

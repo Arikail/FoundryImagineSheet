@@ -26,6 +26,26 @@ import {
 
 	export const STEPS = ["Basics", "Race", "Attributes", "Class", "Skills", "Details", "Review"];
 
+	// This is the function which lists the colours a race is found in, for one of the three
+	// features. A Half Race is offered both parents' lists, with anything on both shown once.
+	// "Other" is always last, so a player who wants a colour his tables do not list can still
+	// type one -- which is what his own sheet allows, the lists being a prompt rather than a rule.
+	export function colourChoices(tmpRaceDocs, tmpWhich, tmpChosen) {
+		var tmpAll = [];
+		for (const tmpRace of tmpRaceDocs ?? []) {
+			for (const tmpColour of tmpRace?.system?.features?.[tmpWhich] ?? []) {
+				if (!tmpAll.includes(tmpColour)) { tmpAll.push(tmpColour); }
+			}
+		}
+		var tmpOptions = tmpAll.map(tmpColour =>
+			({ value: tmpColour, label: tmpColour, selected: tmpColour == tmpChosen }));
+		// Something typed that is not on the list keeps its place at the top rather than vanishing.
+		if (tmpChosen && !tmpAll.includes(tmpChosen)) {
+			tmpOptions.unshift({ value: tmpChosen, label: tmpChosen + " (typed)", selected: true });
+		}
+		return tmpOptions;
+	}
+
 	const ATTRIBUTE_LABELS = {
 		str: "Strength", agl: "Agility", vit: "Vitality", int: "Intelligence", wis: "Wisdom", knw: "Knowledge",
 		app: "Appearance", chm: "Charm", soc: "Social Class", aur: "Aura", pty: "Piety", wil: "Will Force"
@@ -42,6 +62,8 @@ import {
 			className: "", override: false, chosenAttackSkill: "Beginner",
 			racialSkillNames: [], socialSkillNames: [],
 			handedness: "", age: 0, heightFeet: 0, heightInches: 0, weight: 0,
+			// What the last height/frame/weight roll said, kept so the Details step can show it.
+			physiqueSummary: "", physiqueIssues: [],
 			frame: "", hair: "", eyes: "", skin: "",
 			alignment: "", languages: [], wealth: { copper: 0, silver: 0, gold: 0, platinum: 0 }
 		};
@@ -244,6 +266,15 @@ import {
 		tmpView.handednessOptions = ["", "Right", "Left", "Ambidextrous"]
 			.map(tmpValue => tmpOption(tmpValue, tmpValue || "-- roll or choose --", tmpState.handedness));
 		tmpView.ages = tmpD.race?.ages ?? null;
+		// @MARKER COLOURING
+		// The colours a member of this race is found in. Offered as choices with anything already
+		// typed kept alongside: his sheet lists them and still lets a player write their own, and
+		// a Half Race is offered both parents' lists.
+		tmpView.hairChoices = colourChoices([tmpD.race1, tmpD.race2], "hair", tmpState.hair);
+		tmpView.eyesChoices = colourChoices([tmpD.race1, tmpD.race2], "eyes", tmpState.eyes);
+		tmpView.skinChoices = colourChoices([tmpD.race1, tmpD.race2], "skin", tmpState.skin);
+		// What the last physique roll said, for the line under the fields.
+		tmpView.physique = tmpState.physiqueSummary ? { summary: tmpState.physiqueSummary } : null;
 		tmpView.languageAllowance = { spoken: tmpD.intRow.spokenLanguages ?? 0, written: tmpD.intRow.writtenLanguages ?? 0 };
 		tmpView.languages = [0, 1, 2, 3, 4, 5].map(tmpN => ({ n: tmpN, name: tmpState.languages[tmpN]?.name ?? "",
 			write: !!tmpState.languages[tmpN]?.write }));

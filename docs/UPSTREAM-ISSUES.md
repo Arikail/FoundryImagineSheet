@@ -1049,3 +1049,31 @@ rule. A Human|Elf at 11th gains 3 where 13th gives 5.
 
 The port reproduces it, since your sheet is the source of truth, and says so in the code and in a
 test. Confirm it is a slip and it will be corrected in both places.
+
+## 37. Four races get no height at all: they are missing from `getRaceHeightType`
+
+**Status:** open · **Severity:** those four characters have no height, and so no weight either
+
+`getRaceHeightType` (sheet-worker.js:35583) answers a race with its height band. Four races a
+character can actually be have no case in it:
+
+```
+Giant(Civilized)          but Giant(Civilized:Seafaring) is there, as "Giant"
+Human(Civilized:City)     but Human(Civilized:Village) is there, as "Average"
+Human(Civilized:Port)
+Human(Civilized:Town)
+```
+
+The switch falls through to `""`, so `setTempRaceHeight`'s own switch matches nothing and the
+height array stays all zeroes. And because weight is read off the height — `getTempFrame` picks the
+table, the height picks the band within it — those four get no weight either, which then means no
+carrying capacity, encumbrance being a fraction of body weight.
+
+The port fills them from their siblings, which is unambiguous in each case (a Civilized Giant beside
+a Seafaring one; the three Humans beside the Village one), reports the substitution on every
+extraction run, and carries the evidence in `tools/extract/extract_physique_tables.py`. Four `case`
+lines in your switch would settle it properly.
+
+**Worth a look while you are there:** every other race in that switch is listed individually, so
+these four look like omissions rather than intent — but if a City Human is meant to be something
+other than Average, say so and the port will follow.

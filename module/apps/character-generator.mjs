@@ -15,6 +15,7 @@
 
 import { explainAvailability } from "../availability.mjs";
 import { rollAttributeSets, rollHandedness, rollStartingAge, assembleCharacter, ATTRIBUTE_ORDER } from "../chargen-rules.mjs";
+import { rollPhysique } from "../physique-rules.mjs";
 import { STEPS, newGeneratorState, deriveGenerator, checkStep, buildGeneratorView, choicesFromState } from "../chargen-view.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
@@ -41,6 +42,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 			removeSwap:      ImagineCharacterGenerator.#onRemoveSwap,
 			rollHandedness:  ImagineCharacterGenerator.#onRollHandedness,
 			rollAge:         ImagineCharacterGenerator.#onRollAge,
+			rollPhysique:    ImagineCharacterGenerator.#onRollPhysique,
 			createCharacter: ImagineCharacterGenerator.#onCreateCharacter
 		}
 	};
@@ -216,6 +218,58 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 
 	// This is the function which creates the character. Its skills' starting bonuses are rolled
 	// here, once, as his sheet rolls them when the skills are confirmed.
+	// This is the function which rolls height, frame and weight together, his Apply Height/Frame
+	// button (roll_apply_height_frame). They go together because his tables make them depend on
+	// one another -- see the note at the top of module/physique-rules.mjs -- and because rolling
+	// them one at a time would let a player re-roll a height until the weight suited them.
+	//
+	// It uses the character's FINAL attributes, race included, since the frame is read off
+	// Strength less Agility and a racial modifier moves both.
+	static async #onRollPhysique(event, target) {
+		event.preventDefault();
+		this.#captureForm();
+		var tmpderived = deriveGenerator(this.#state, this.#content, ImagineCharacterGenerator.#isAvailable);
+		var tmpfinals = tmpderived.finals ?? {};
+		var tmprolled = rollPhysique(this.#state.raceNames ?? [],
+			tmpfinals.str?.final ?? 0, tmpfinals.agl?.final ?? 0, ImagineCharacterGenerator.#die);
+
+		if (tmprolled.height) {
+			this.#state.heightFeet = tmprolled.height.feet;
+			this.#state.heightInches = tmprolled.height.inchesPart;
+		}
+		if (tmprolled.frame) { this.#state.frame = tmprolled.frame; }
+		if (tmprolled.weight) { this.#state.weight = tmprolled.weight.weight; }
+		this.#state.physiqueIssues = tmprolled.issues;
+		// The one-line account shown under the fields, so the roll is not only in chat.
+		this.#state.physiqueSummary = [
+			tmprolled.height ? `${tmprolled.height.type} build: ${tmprolled.height.low.feet}'${tmprolled.height.low.inches}" to ${tmprolled.height.high.feet}'${tmprolled.height.high.inches}"` : "",
+			tmprolled.frame ? `${tmprolled.frame} frame (${tmprolled.frameType}, STR less AGL ${tmprolled.frameMeasure})` : "",
+			tmprolled.weight ? `that frame at that height runs ${tmprolled.weight.low} to ${tmprolled.weight.high} lb` : ""
+		].filter(tmppart => tmppart).join(" &mdash; ");
+
+		var tmplines = [];
+		if (tmprolled.height) {
+			tmplines.push(`<div>Height: <strong>${tmprolled.height.feet}' ${tmprolled.height.inchesPart}"</strong>`
+				+ ` &mdash; a ${tmprolled.height.type} race runs ${tmprolled.height.low.feet}'`
+				+ ` ${tmprolled.height.low.inches}" to ${tmprolled.height.high.feet}' ${tmprolled.height.high.inches}"</div>`);
+		}
+		if (tmprolled.frame) {
+			tmplines.push(`<div>Frame: <strong>${tmprolled.frame}</strong>`
+				+ ` &mdash; a ${tmprolled.frameType} build, Strength less Agility ${tmprolled.frameMeasure}</div>`);
+		}
+		if (tmprolled.weight) {
+			tmplines.push(`<div>Weight: <strong>${tmprolled.weight.weight} lb</strong>`
+				+ ` &mdash; that frame at that height runs ${tmprolled.weight.low} to ${tmprolled.weight.high} lb</div>`);
+		}
+		for (const tmpissue of tmprolled.issues) { tmplines.push(`<div class="alarm">${tmpissue}</div>`); }
+
+		await ChatMessage.create({
+			content: `<h3>${this.#state.name || "A new character"} takes shape</h3>${tmplines.join("")}`,
+			speaker: ChatMessage.getSpeaker()
+		});
+		this.render();
+	}
+
 	static async #onCreateCharacter(event, target) {
 		this.#captureForm();
 		var tmpderived = deriveGenerator(this.#state, this.#content, ImagineCharacterGenerator.#isAvailable);

@@ -157,14 +157,31 @@
 		<label class="row">Age <input type="number" name="age" value="{{state.age}}">
 			<button type="button" data-action="rollAge"><i class="fa-solid fa-dice"></i> Roll</button>
 			{{#if ages}}<span class="muted">{{ages.startLow}}&ndash;{{ages.startHigh}}, maximum {{ages.maxAge}}</span>{{/if}}</label>
+		{{!-- Height, frame and weight are rolled together, because his tables make them depend on
+		      each other: the race gives a height band, the band gives inches, the race and the
+		      character's Strength less Agility give a frame, and the frame with the inches gives a
+		      weight. That is his own Apply Height/Frame button. --}}
 		<label class="row">Height <input type="number" name="heightFeet" value="{{state.heightFeet}}"> ft
-			<input type="number" name="heightInches" value="{{state.heightInches}}"> in</label>
+			<input type="number" name="heightInches" value="{{state.heightInches}}"> in
+			<button type="button" data-action="rollPhysique"><i class="fa-solid fa-dice"></i> Roll height, frame &amp; weight</button></label>
 		<label class="row">Weight <input type="number" name="weight" value="{{state.weight}}"> lb
 			<span class="muted">(carrying capacity depends on it)</span></label>
 		<label class="row">Frame <input type="text" name="frame" value="{{state.frame}}"></label>
-		<label class="row">Hair <input type="text" name="hair" value="{{state.hair}}"></label>
-		<label class="row">Eyes <input type="text" name="eyes" value="{{state.eyes}}"></label>
-		<label class="row">Skin <input type="text" name="skin" value="{{state.skin}}"></label>
+		{{#if physique}}
+		<p class="muted">{{physique.summary}}</p>
+		{{/if}}
+		<label class="row">Hair
+			{{#if hairChoices.length}}
+			<select name="hair">{{#each hairChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="hair" value="{{state.hair}}">{{/if}}</label>
+		<label class="row">Eyes
+			{{#if eyesChoices.length}}
+			<select name="eyes">{{#each eyesChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="eyes" value="{{state.eyes}}">{{/if}}</label>
+		<label class="row">Skin
+			{{#if skinChoices.length}}
+			<select name="skin">{{#each skinChoices as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			{{else}}<input type="text" name="skin" value="{{state.skin}}">{{/if}}</label>
 		<label class="row">Alignment <input type="text" name="alignment" value="{{state.alignment}}"
 			placeholder="{{#if klass}}{{klass.alignment}}{{/if}}"></label>
 		<h3>Languages <span class="muted">Intelligence allows {{languageAllowance.spoken}} spoken, {{languageAllowance.written}} written</span></h3>

@@ -55,6 +55,8 @@ function show(caption, state) {
 
 // A die that always shows the same face, and one that walks round the faces in turn.
 const cycle = () => { let i = 0; return (sides) => (i++ % sides) + 1; };
+// A roller that hands out the faces given, then repeats the last one for every die after them.
+const scripted = (...faces) => { let i = 0; return () => faces[Math.min(i++, faces.length - 1)]; };
 
 const state = V.newGeneratorState();
 state.name = "Aelwen of the Village"; state.gender = "Female"; state.slightPhysique = true; state.charType = "heroic";
@@ -120,6 +122,24 @@ const lines = [
 	`Languages: ${character.languages.map(l => l.name + (l.write ? " (writes)" : "")).join(", ")}; allowance ${character.languageAllowance.used} of ${character.languageAllowance.slots}`,
 	`Encumbrance: ${character.encumbrance.status}, max load ${character.encumbrance.maxLoad}`
 ];
+// --- height, frame and weight, rolled from his own tables for this same character --------------
+// Scripted dice: a d100 of 50 for each race's height band, then 1s for every other die, so the
+// figures below are worked out rather than random. Weight matters beyond flavour -- encumbrance
+// is a fraction of body weight -- so it is checked against the character's own load limit.
+const P = await import("../module/physique-rules.mjs");
+const physique = P.rollPhysique(state.raceNames ?? [state.race1, state.race2].filter(r => r),
+	genFinals.str.final, genFinals.agl.final, scripted(50, 50, 1));
+lines.push("",
+	`Physique: ${physique.height ? `${physique.height.feet}' ${physique.height.inchesPart}" (${physique.height.type} band, `
+		+ `${physique.height.low.feet}'${physique.height.low.inches}" to ${physique.height.high.feet}'${physique.height.high.inches}")` : "no height"}`,
+	`  Frame: ${physique.frame || "none"} (${physique.frameType || "no type"}, STR ${genFinals.str.final} less AGL ${genFinals.agl.final} = ${physique.frameMeasure})`,
+	`  Weight: ${physique.weight ? `${physique.weight.weight} lb (that frame at that height runs ${physique.weight.low} to ${physique.weight.high} lb)` : "no weight"}`,
+	`  ${physique.issues.length ? "Issues: " + physique.issues.join(" | ") : "Nothing left wanting."}`);
+
+// The colours her two races are found in, which the Details step offers as selects.
+const V2 = await import("../module/chargen-view.mjs");
+lines.push(`  Hair offered: ${V2.colourChoices([derived.race1, derived.race2], "hair", "").map(o => o.label).join(", ")}`);
+
 const agree = C.ATTRIBUTE_ORDER.every(k => genFinals[k].final === character.attributes[k].value);
 lines.push("", agree ? "AGREE: the generator's finals are what the character model derives." : "DISAGREE -- see the table above.");
 document.getElementById("result").textContent = lines.join("\n");
