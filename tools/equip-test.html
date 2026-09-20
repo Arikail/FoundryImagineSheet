@@ -1,0 +1,96 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imagine RPG best-armour test</title>
+<style>body{font:13px monospace;padding:1rem}</style>
+<pre id="out">running...</pre>
+<script type="module">
+// Tests for module/equip-rules.mjs against the layering rules in module/data/item-armor.mjs.
+//
+// Must be served over HTTP:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/equip-test.html
+const E = await import("../module/equip-rules.mjs");
+
+const results = [];
+function check(label, actual, expected) {
+	const ok = JSON.stringify(actual) === JSON.stringify(expected);
+	results.push(`${ok ? "PASS" : "FAIL"}  ${label}\n        expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+}
+
+// A piece of armour with the given flexibility, covering the given locations at the given value.
+let n = 0;
+function piece(name, flexibility, value, locations = ["torsoUpper", "torsoMid"], extra = {}) {
+	const coverage = {};
+	for (const l of locations) { coverage[l] = value; }
+	return { id: "id" + (++n), name, type: "armor",
+		system: { flexibility, isShield: false, coverage, penalties: { skills: 0, defense: 0, initiative: 0, speed: 0 }, ...extra } };
+}
+const names = (items, ids) => ids.map(id => items.find(i => i.id == id).name);
+
+// --- one location, several layers -----------------------------------------------------------------
+let a = [piece("Gambeson", "Flexible", 3), piece("Chain", "Semi-Flexible", 6), piece("Plate", "Rigid", 10)];
+let r = E.chooseBestArmor(a);
+check("flexible, semi-flexible and rigid stack, innermost first", names(a, r.worn).sort(), ["Chain", "Gambeson", "Plate"]);
+check("...and take layers 1, 2 and 3", [r.layers[a[0].id], r.layers[a[1].id], r.layers[a[2].id]], [1, 2, 3]);
+
+// --- the rules that refuse ------------------------------------------------------------------------
+a = [piece("Plate A", "Rigid", 10), piece("Plate B", "Rigid", 9)];
+r = E.chooseBestArmor(a);
+check("rigid never stacks on rigid; and a lone rigid piece cannot be the first layer", r.worn, []);
+
+a = [piece("Plate", "Rigid", 10), piece("Plate 2", "Rigid", 9), piece("Padding", "Flexible", 2)];
+r = E.chooseBestArmor(a);
+check("padding lets one rigid piece sit over it; the second rigid is left out", names(a, r.worn).sort(), ["Padding", "Plate"]);
+check("...and says why", r.left.map(x => x.why), ["does not layer over what is worn"]);
+
+a = [piece("Helm", "Rigid/Flexible", 8, ["head"])];
+check("a helm with its own lining may go against the body", E.chooseBestArmor(a).worn.length, 1);
+
+a = [piece("Suit", "Rigid/Rigid", 12), piece("Pad", "Flexible", 1)];
+check("a Rigid/Rigid suit may go over a lining", E.chooseBestArmor(a).worn.length, 2);
+
+// four layers at one place: the weakest is dropped
+a = [piece("L1", "Flexible", 2), piece("L1b", "Flexible", 3), piece("L2", "Semi-Flexible", 5), piece("L3", "Rigid", 9)];
+r = E.chooseBestArmor(a);
+check("never more than three layers on one location", r.worn.length, 3);
+check("...and the weakest piece is the one left", r.left.map(x => x.name), ["L1"]);
+
+// --- separate locations do not compete ------------------------------------------------------------
+a = [piece("Breastplate", "Rigid/Flexible", 10, ["torsoUpper"]), piece("Helm", "Rigid/Flexible", 8, ["head"]),
+     piece("Greaves", "Rigid/Flexible", 7, ["shinLeft", "shinRight"])];
+check("rigid pieces on different limbs are all worn", E.chooseBestArmor(a).worn.length, 3);
+check("...each on layer 1", Object.values(E.chooseBestArmor(a).layers), [1, 1, 1]);
+
+// --- clothing, shields, duplicates ----------------------------------------------------------------
+a = [piece("Tunic", "Clothing", 2), piece("Padded coat", "Flexible", 4)];
+r = E.chooseBestArmor(a);
+check("light clothing takes no layer (layer 0)", r.layers[a[0].id], 0);
+check("clothing over 3 counts as a layer", E.consumesLayer(piece("Thick coat", "Clothing", 4)), true);
+
+const shield = piece("Shield(Body/Steel)", "Rigid", 12, ["handLeft"], { isShield: true });
+check("shields are left alone", E.chooseBestArmor([shield]).worn, []);
+
+a = [piece("Gambeson", "Flexible", 3), Object.assign(piece("Gambeson", "Flexible", 3), { id: "dupe" })];
+check("two of the same piece are not both worn", E.chooseBestArmor(a).worn.length, 1);
+
+a = [piece("Nothing", "Flexible", 0, [])];
+check("a piece that covers nothing is not chosen", E.chooseBestArmor(a).worn, []);
+check("an empty kit is an empty answer", E.chooseBestArmor([]).worn, []);
+
+a = [piece("Heavy", "Flexible", 5), piece("Light", "Flexible", 5)];
+a[0].system.penalties.speed = -3;
+check("ties are broken by the lesser penalty (only one fits by name? both do -- both worn)", E.chooseBestArmor(a).worn.length, 2);
+
+// --- the real pack: every real kit gets a legal answer --------------------------------------------
+const pack = await (await fetch("../src/packs/documents/armor.json")).json();
+const real = (Array.isArray(pack) ? pack : Object.values(pack)).map((x, i) => ({ id: "real" + i, ...x }));
+r = E.chooseBestArmor(real);
+const worn = real.filter(x => r.worn.includes(x.id));
+check("the whole armour pack yields a legal set", E.isLegalSet(worn), true);
+check("...with something in it", worn.length > 0, true);
+check("...and no location ever has more than three layers",
+	E.ARMOR_LOCATIONS.every(l => E.getLocationStack(worn, l).stack.length <= 3), true);
+
+document.getElementById("out").textContent =
+	`${results.filter(s => s.startsWith("PASS")).length}/${results.length} passed\n\n` + results.join("\n");
+</script>

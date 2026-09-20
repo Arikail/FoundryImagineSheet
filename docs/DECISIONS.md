@@ -2832,3 +2832,13 @@ notifications. All five are listed in `FIRST-RUN.md` with what breaks if they do
 modules parse. `tools/item-preview.html` renders all three new sheets against real documents and
 every field carries its real value — the crowbar at 5 lb tagged Custom, the Bastard Sword at 5d6+1
 with cut available at +2 and missile unavailable, Herb Lore on KNW at rating 12.
+
+## Equip Best Armour and Remove All Arms (2026-09-19)
+
+Two buttons on the character sheet's Equipment tab, not in the generator (which has no equipment step yet).
+"Best" is the most total armour value across the body, chosen greedily under the layering rules in
+item-armor.mjs (max three layers, first layer flexible or padded, stiffness never decreasing outward,
+no rigid on rigid except Rigid/Rigid). The first-layer rule is applied after the greedy pass, since a plate
+is picked before the padding it needs. Shields and weapons are left alone. Remove All deletes (after a
+confirmation), it does not unequip. Rules live in `module/equip-rules.mjs`, tested by `tools/equip-test.html`.
+

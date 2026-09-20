@@ -13,6 +13,7 @@
 //==================================================================================================================
 
 import { rollWeaponAttack } from "../combat/attack.mjs";
+import { chooseBestArmor } from "../equip-rules.mjs";
 import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
 import {
 	resolveSkillOutcome, pickBestSkillRoll, canTransferSlot, canSacrificeSlot,
@@ -43,7 +44,9 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			deleteLanguage: ImagineCharacterSheet.#onDeleteLanguage,
 			createGear: ImagineCharacterSheet.#onCreateGear,
 			openItem: ImagineCharacterSheet.#onOpenItem,
-			deleteItem: ImagineCharacterSheet.#onDeleteItem
+			deleteItem: ImagineCharacterSheet.#onDeleteItem,
+				removeAllArms: ImagineCharacterSheet.#onRemoveAllArms,
+				equipBestArmor: ImagineCharacterSheet.#onEquipBestArmor
 		}
 	};
 
@@ -525,6 +528,47 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			modal: true
 		});
 		if (tmpconfirmed) { await tmpitem.delete(); }
+	}
+
+	// This is the function which strips a character of every weapon and every piece of armour,
+	// shields included, for starting again from bare hands. Asked first, with the count, because
+	// it deletes.
+	static async #onRemoveAllArms(event, target) {
+		event.preventDefault();
+		var tmparms = this.document.items.filter(tmpitem => ["weapon", "armor"].includes(tmpitem.type));
+		if (!tmparms.length) { ui.notifications.info(`${this.document.name} has no weapons or armour.`); return; }
+
+		var tmpweapons = tmparms.filter(tmpitem => tmpitem.type == "weapon").length;
+		var tmpconfirmed = await foundry.applications.api.DialogV2.confirm({
+			window: { title: "Imagine RPG" },
+			content: `<p>Remove all <strong>${tmpweapons}</strong> weapon(s) and <strong>${tmparms.length - tmpweapons}</strong>`
+				+ ` piece(s) of armour from ${this.document.name}? This cannot be undone.</p>`,
+			rejectClose: false,
+			modal: true
+		});
+		if (tmpconfirmed) { await this.document.deleteEmbeddedDocuments("Item", tmparms.map(tmpitem => tmpitem.id)); }
+	}
+
+	// This is the function which puts the character in the best armour they own: the strongest
+	// legal set under the layering rules (see module/equip-rules.mjs). Armour already worn but not in
+	// that set is taken off, to carried. Shields and weapons are not touched.
+	static async #onEquipBestArmor(event, target) {
+		event.preventDefault();
+		var tmparmor = this.document.items.filter(tmpitem => tmpitem.type == "armor" && !tmpitem.system.isShield);
+		if (!tmparmor.length) { ui.notifications.info(`${this.document.name} has no armour to wear.`); return; }
+
+		var tmpbest = chooseBestArmor(tmparmor.map(tmpitem => ({ id: tmpitem.id, name: tmpitem.name,
+			type: tmpitem.type, system: tmpitem.system.toObject() })));
+		var tmpupdates = tmparmor.map(tmpitem => {
+			var tmpwear = tmpbest.worn.includes(tmpitem.id);
+			var tmpchange = { _id: tmpitem.id, "system.location": tmpwear ? "equipped" : "carried" };
+			if (tmpwear) { tmpchange["system.layer"] = tmpbest.layers[tmpitem.id]; }
+			return tmpchange;
+		});
+		await this.document.updateEmbeddedDocuments("Item", tmpupdates);
+
+		if (!tmpbest.worn.length) { ui.notifications.warn("None of the armour carried can be worn."); return; }
+		ui.notifications.info(`${this.document.name} now wears ${tmpbest.worn.length} piece(s) of armour.`);
 	}
 
 	// This is the function which opens the Level Up window. Experience, goals and titles are all

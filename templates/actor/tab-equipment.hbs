@@ -18,6 +18,15 @@
 		<button type="button" data-action="createGear" data-type="armor">Add armour</button>
 	</div>
 
+	{{!-- Kitting out in one go. Equip Best Armour wears the strongest legal set the character owns
+	      (layering rules, module/equip-rules.mjs); Remove All Arms deletes every weapon and armour. --}}
+	<div class="gear-add">
+		<button type="button" data-action="equipBestArmor"
+			data-tooltip="Wear the strongest armour carried that layers legally; take off the rest">Equip best armour</button>
+		<button type="button" data-action="removeAllArms"
+			data-tooltip="Delete every weapon and piece of armour, shields included">Remove all weapons &amp; armour</button>
+	</div>
+
 	{{#if gear.length}}
 	<table class="gear-table">
 		<thead>
