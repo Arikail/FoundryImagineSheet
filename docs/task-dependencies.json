@@ -1,0 +1,53 @@
+{
+  "_about": "What each task on docs/PROGRESS.md depends on, for tools/progress.html. Keys are the START of a task's name on the board (case and backticks ignored); dependsOn lists other tasks the same way. The board itself carries no dependency data, so this file is where it lives. It was written 2026-09-19 from the architecture layers in CLAUDE.md and from what each board row says it builds on -- edit it freely. The tool warns on screen about a board task with no entry here, an entry that matches no task, or a prefix that matches two.",
+  "_waitingOn": "waitingOn names something outside the code that a task cannot proceed without ('the developer', 'a running Foundry V14'). A task that has not started and is waiting on something is shown as Blocked.",
+  "tasks": {
+    "Extract & map Roll20":               { "dependsOn": [] },
+    "Extract & map Player":               { "dependsOn": [] },
+    "Extract & map Master":               { "dependsOn": [] },
+    "Set up continuity":                  { "dependsOn": [] },
+    "Obtain Bestiary":                    { "dependsOn": [] },
+    "Obtain magic subsystem":             { "dependsOn": [] },
+    "Discover + extract":                 { "dependsOn": ["Extract & map Roll20"] },
+    "Confirm sheet-worker":               { "dependsOn": ["Discover + extract"], "waitingOn": "the developer", "note": "A yes/no from him: is sheet-worker.js his current ruleset? Everything is built on it." },
+
+    "Generic dictionary parser":          { "dependsOn": ["Discover + extract"] },
+    "Per-dictionary column maps":         { "dependsOn": ["Generic dictionary parser"] },
+    "Report the Monk":                    { "dependsOn": ["Per-dictionary column maps"] },
+    "Resolve the one non-literal":        { "dependsOn": ["Per-dictionary column maps"], "waitingOn": "the developer", "note": "Gaunt's random stat: by design, or a bug?" },
+    "Generate src/packs":                 { "dependsOn": ["Per-dictionary column maps"] },
+    "Compile JSON":                       { "dependsOn": ["Generate src/packs"], "waitingOn": "a running Foundry V14", "note": "The runtime importer has never run in a real V14 install." },
+    "Adding content to every pack":       { "dependsOn": ["Generate src/packs", "Compile JSON", "Design content/compendium layer"] },
+    "Extend extraction":                  { "dependsOn": ["Per-dictionary column maps"], "note": "Data for the deferred magic phase; nothing needs it yet." },
+
+    "Define Foundry system manifest":     { "dependsOn": [], "waitingOn": "", "note": "Not yet runtime-verified in a V14 install." },
+    "Design Actor data model":            { "dependsOn": ["Define Foundry system manifest"] },
+    "Implement attribute-save":           { "dependsOn": ["Design Actor data model"] },
+    "Implement skill-check":              { "dependsOn": ["Design Actor data model", "Implement attribute-save"] },
+    "Design content/compendium layer":    { "dependsOn": ["Design Actor data model", "Generate src/packs"] },
+
+    "Attributes module":                  { "dependsOn": ["Implement attribute-save", "Design Actor data model"] },
+    "Reconcile Character attribute":      { "dependsOn": ["Attributes module"] },
+    "Races & Classes":                    { "dependsOn": ["Design Actor data model", "Generate src/packs", "Design content/compendium layer", "Attributes module"] },
+    "Skills module":                      { "dependsOn": ["Attributes module", "Implement skill-check", "Generate src/packs"] },
+    "Dual Class":                         { "dependsOn": ["Races & Classes", "Skills module"] },
+
+    "Character Generation":               { "dependsOn": ["Attributes module", "Races & Classes", "Skills module", "Equipment module"] },
+    "Experience & Levelling":             { "dependsOn": ["Attributes module", "Races & Classes", "Skills module"], "note": "Added 2026-09-19 by the levelling pass; its magic side waits on Layer 4." },
+    "Combat module — phase 1":            { "dependsOn": ["Design Actor data model", "Attributes module"] },
+    "Combat module — phase 2":            { "dependsOn": ["Combat module — phase 1", "Equipment module"] },
+    "Visual attack-chart":                { "dependsOn": ["Combat module — phase 1", "Creature actor type"], "note": "Needs a design pass first: an adjacency model for each body chart." },
+    "Equipment module":                   { "dependsOn": ["Attributes module", "Generate src/packs", "Design content/compendium layer"] },
+
+    "Creature actor type":                { "dependsOn": ["Design Actor data model", "Combat module — phase 1", "Attributes module", "Obtain Bestiary"] },
+
+    "Base Magic":                         { "dependsOn": ["Combat module — phase 2", "Skills module", "Character Generation"], "note": "Deferred until the core phase is complete." },
+    "Base Divine Magic":                  { "dependsOn": ["Combat module — phase 2", "Skills module", "Character Generation"], "note": "Deferred until the core phase is complete." },
+    "Per-subsystem magic":                { "dependsOn": ["Base Magic", "Base Divine Magic", "Extend extraction"] },
+
+    "ApplicationV2 character sheet":      { "dependsOn": ["Design Actor data model", "Attributes module", "Skills module", "Equipment module"], "waitingOn": "a running Foundry V14" },
+    "Attribute save and skill roll":      { "dependsOn": ["Implement attribute-save", "Implement skill-check", "ApplicationV2 character sheet"], "waitingOn": "a running Foundry V14" },
+    "Remaining tabs":                     { "dependsOn": ["ApplicationV2 character sheet"] },
+    "Item sheets":                        { "dependsOn": ["Design Actor data model", "Races & Classes"] }
+  }
+}

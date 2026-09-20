@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imagine RPG progress</title>
+<style>
+	:root {
+		--bg: #f6f3ec; --panel: #fffdf8; --ink: #1f1c18; --muted: #6b655b; --rule: #d9d2c3; --accent: #6b4e2e;
+		--done: #2f7d3a; --done-bg: #e3f1e4;
+		--doing: #a86a00; --doing-bg: #fbecd0;
+		--todo: #55606e; --todo-bg: #e6eaf0;
+		--blocked: #a2362e; --blocked-bg: #f7dfdc;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--bg: #1c1a17; --panel: #26231f; --ink: #ece6da; --muted: #a39b8d; --rule: #423d35; --accent: #d2a877;
+			--done: #7fc98a; --done-bg: #1f3323;
+			--doing: #e6b25a; --doing-bg: #3a2c12;
+			--todo: #a3b0c0; --todo-bg: #2a3038;
+			--blocked: #ee8a82; --blocked-bg: #3e1f1c;
+		}
+	}
+	* { box-sizing: border-box; }
+	body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 "Segoe UI", system-ui, sans-serif; }
+	main { max-width: 1000px; margin: 0 auto; padding: 20px 16px 60px; }
+	h1 { margin: 0 0 2px; font-size: 22px; }
+	.sub { color: var(--muted); margin: 0 0 16px; font-size: 13px; }
+
+	.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
+	.stat { text-align: left; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel);
+	        color: var(--ink); font: inherit; cursor: pointer; border-left-width: 5px; }
+	.stat b { display: block; font-size: 24px; line-height: 1.1; }
+	.stat span { color: var(--muted); font-size: 12px; }
+	.stat[aria-pressed="true"] { outline: 2px solid var(--accent); }
+	.stat.completed { border-left-color: var(--done); } .stat.progress { border-left-color: var(--doing); }
+	.stat.notstarted { border-left-color: var(--todo); } .stat.blocked { border-left-color: var(--blocked); }
+	.bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--rule); margin-bottom: 16px; }
+	.bar i { display: block; height: 100%; }
+	.bar .completed { background: var(--done); } .bar .progress { background: var(--doing); }
+	.bar .notstarted { background: var(--todo); } .bar .blocked { background: var(--blocked); }
+
+	.filters { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 12px; margin-bottom: 12px;
+	           display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+	.filters .wide { grid-column: 1 / -1; }
+	.filters label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 3px; }
+	.filters input[type=search], .filters select { width: 100%; padding: 6px 8px; font: inherit; color: var(--ink);
+		background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; }
+	.filters .row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+	.pill { padding: 4px 10px; border: 1px solid var(--rule); border-radius: 14px; background: var(--bg); color: var(--ink);
+	        font: inherit; font-size: 12px; cursor: pointer; }
+	.pill[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+	.check { display: inline-flex; gap: 5px; align-items: center; font-size: 12px; font-weight: 400 !important; color: var(--ink) !important; }
+	.toolbar { display: flex; justify-content: space-between; align-items: center; margin: 4px 0 10px; color: var(--muted); font-size: 13px; }
+	button.link { background: none; border: none; color: var(--accent); cursor: pointer; font: inherit; text-decoration: underline; padding: 0; }
+
+	.warn { background: var(--doing-bg); color: var(--ink); border: 1px solid var(--doing); border-radius: 6px; padding: 8px 12px; margin-bottom: 12px; font-size: 13px; }
+	.warn ul { margin: 4px 0 0 18px; padding: 0; }
+
+	details.epic { margin-bottom: 14px; }
+	details.epic > summary { cursor: pointer; font-weight: 700; padding: 6px 2px; font-size: 15px; }
+	details.epic > summary small { color: var(--muted); font-weight: 400; margin-left: 8px; }
+	.task { background: var(--panel); border: 1px solid var(--rule); border-left-width: 5px; border-radius: 6px; padding: 10px 12px; margin: 6px 0; }
+	.task.completed { border-left-color: var(--done); } .task.progress { border-left-color: var(--doing); }
+	.task.notstarted { border-left-color: var(--todo); } .task.blocked { border-left-color: var(--blocked); }
+	.task h3 { margin: 0; font-size: 14.5px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+	.badge { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 10px; white-space: nowrap; }
+	.badge.completed { background: var(--done-bg); color: var(--done); } .badge.progress { background: var(--doing-bg); color: var(--doing); }
+	.badge.notstarted { background: var(--todo-bg); color: var(--todo); } .badge.blocked { background: var(--blocked-bg); color: var(--blocked); }
+	.board { font-size: 11px; color: var(--muted); font-weight: 400; }
+	.summary { margin: 5px 0 0; color: var(--ink); }
+	.note { margin: 4px 0 0; color: var(--muted); font-size: 12.5px; font-style: italic; }
+	.deps { margin: 7px 0 0; display: flex; gap: 5px; flex-wrap: wrap; align-items: center; font-size: 12px; }
+	.deps .lab { color: var(--muted); margin-right: 2px; }
+	.chip { padding: 1px 8px; border-radius: 10px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink);
+	        font: inherit; font-size: 12px; cursor: pointer; }
+	.chip.completed { border-color: var(--done); color: var(--done); } .chip.progress { border-color: var(--doing); color: var(--doing); }
+	.chip.blocked { border-color: var(--blocked); } .chip.external { border-color: var(--blocked); color: var(--blocked); cursor: default; }
+	.task details { margin-top: 6px; } .task details summary { cursor: pointer; color: var(--accent); font-size: 12.5px; }
+	.full { margin-top: 6px; padding: 8px 10px; background: var(--bg); border-radius: 4px; font-size: 13px; white-space: pre-wrap; max-height: 320px; overflow: auto; }
+	code { background: var(--bg); padding: 0 4px; border-radius: 3px; font-size: 12px; }
+	.empty { text-align: center; color: var(--muted); padding: 30px 0; }
+	@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } .filters { grid-template-columns: 1fr; } }
+</style>
+
+<main>
+	<h1>Imagine RPG &mdash; progress</h1>
+	<p class="sub" id="sub">Reading docs/PROGRESS.md ...</p>
+
+	<div class="stats" id="stats"></div>
+	<div class="bar" id="bar" title="Share of tasks by status"></div>
+	<div id="warnings"></div>
+
+	<section class="filters" aria-label="Filters">
+		<div class="wide">
+			<label for="q">Name</label>
+			<input id="q" type="search" placeholder="Type part of a task name..." autocomplete="off">
+		</div>
+		<div class="wide">
+			<label>Status</label>
+			<div class="row" id="statusPills"></div>
+		</div>
+		<div>
+			<label for="dependsOn">Depends on</label>
+			<select id="dependsOn"></select>
+		</div>
+		<div>
+			<label for="neededBy">Is needed by</label>
+			<select id="neededBy"></select>
+		</div>
+		<div class="wide">
+			<label>Dependencies</label>
+			<div class="row" id="depPills"></div>
+			<div class="row" style="margin-top:6px">
+				<label class="check"><input type="checkbox" id="indirect"> Include indirect dependencies in the two boxes above</label>
+			</div>
+		</div>
+	</section>
+
+	<div class="toolbar">
+		<span id="count"></span>
+		<span><button class="link" id="clear">Clear filters</button> &middot; <button class="link" id="reload">Reload the board</button></span>
+	</div>
+	<div id="list"></div>
+</main>
+
+<script>
+// Progress tool. Reads docs/PROGRESS.md (the board) and docs/task-dependencies.json, and shows every
+// task with its status and what it depends on, filterable by name, status and dependency.
+//
+// The board is the source of truth for status, so this page never goes out of date with it; press
+// "Reload the board" after it changes. The board carries no dependency data, so that lives in
+// docs/task-dependencies.json.
+//
+// Must be served over HTTP (fetch does not work from a file:// page), like the other tools:
+//     python -m http.server 8777 --bind 127.0.0.1
+//     open http://127.0.0.1:8777/tools/progress.html
+//
+// Status shown, and how it is worked out:
+//     Completed    the board says Done (including "Done (superseded)" and "Done (core scope)")
+//     In progress  the board says In Progress
+//     Blocked      the board says Blocked -- OR it is Backlog and either waiting on something outside the
+//                  code (waitingOn in the dependency file) or on a dependency that is not Done
+//     Not started  Backlog with every dependency Done
+"use strict";
+
+const STATUS = {
+	completed:  { label: "Completed",   order: 0 },
+	progress:   { label: "In progress", order: 1 },
+	blocked:    { label: "Blocked",     order: 2 },
+	notstarted: { label: "Not started", order: 3 }
+};
+
+let tasks = [];            // every task, in board order within each epic
+let byId = new Map();
+const state = { q: "", statuses: new Set(Object.keys(STATUS)), dependsOn: "", neededBy: "", indirect: false, depState: "any" };
+
+const $ = (id) => document.getElementById(id);
+const norm = (s) => String(s).replace(/`/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+
+// --- reading the board ------------------------------------------------------------------------
+// Cells are split on a pipe that is not escaped: a task's text can contain \| (his encoded attack
+// strings), and splitting on those would shear the row.
+function splitRow(line) {
+	return line.split(/(?<!\\)\|/).slice(1, -1).map(c => c.trim());
+}
+
+function parseBoard(text) {
+	const out = [];
+	let epic = null;
+	for (const line of text.split(/\r?\n/)) {
+		const h = line.match(/^##\s+Epic\s+(\d+)\s+[—-]\s+(.*)$/);
+		if (h) { epic = { num: parseInt(h[1]), title: h[2].trim() }; continue; }
+		if (/^##\s/.test(line)) { epic = null; continue; }
+		if (!epic || !line.startsWith("|")) { continue; }
+		const cells = splitRow(line);
+		if (cells.length < 3) { continue; }
+		const st = cells[1].replace(/[*~_]/g, "").trim().match(/^(Done|In Progress|Backlog|Blocked)\b\s*(.*)$/i);
+		if (!st) { continue; }                       // the header and separator rows
+		const kind = st[1].toLowerCase();
+		out.push({
+			epicNum: epic.num, epicTitle: epic.title,
+			name: cells[0].replace(/`/g, ""),
+			board: kind == "done" ? "completed" : kind == "in progress" ? "progress" : kind == "blocked" ? "blocked" : "notstarted",
+			boardLabel: (st[1] + " " + st[2]).trim(),
+			full: cells.slice(2).join(" | ")
+		});
+	}
+	return out;
+}
+
+// A short plain-text summary of a long board cell: the struck-through history is dropped, markdown
+// marks removed, and it is cut at a word.
+function summarise(text) {
+	let s = text.replace(/~~.*?~~/g, "").replace(/\\\|/g, "|").replace(/\*\*/g, "").replace(/`/g, "").replace(/\s+/g, " ").trim();
+	if (s.length > 260) { s = s.slice(0, 260).replace(/\s+\S*$/, "") + "..."; }
+	return s;
+}
+
+// --- dependencies ------------------------------------------------------------------------------
+// A key names a task by the start of its name. Returns the one matching task, or null, and records
+// why not, so a stale entry is reported on screen rather than silently ignored.
+function resolve(key, warnings, where) {
+	const k = norm(key);
+	const hits = tasks.filter(t => norm(t.name).startsWith(k));
+	if (hits.length == 1) { return hits[0]; }
+	warnings.push(hits.length ? `"${key}" (${where}) matches ${hits.length} tasks; make it longer.` : `"${key}" (${where}) matches no task on the board.`);
+	return null;
+}
+
+function attachDependencies(depFile, warnings) {
+	const entries = depFile.tasks ?? {};
+	const seen = new Set();
+	for (const t of tasks) { t.deps = []; t.waitingOn = ""; t.note = ""; }
+	for (const [key, entry] of Object.entries(entries)) {
+		const task = resolve(key, warnings, "dependency file");
+		if (!task) { continue; }
+		seen.add(task.id);
+		task.waitingOn = entry.waitingOn ?? "";
+		task.note = entry.note ?? "";
+		for (const depKey of entry.dependsOn ?? []) {
+			const dep = resolve(depKey, warnings, `a dependency of "${key}"`);
+			if (dep && dep.id != task.id && !task.deps.includes(dep.id)) { task.deps.push(dep.id); }
+		}
+	}
+	for (const t of tasks) { if (!seen.has(t.id)) { warnings.push(`"${t.name}" has no entry in docs/task-dependencies.json.`); } }
+	for (const t of tasks) { t.blocks = tasks.filter(o => o.deps.includes(t.id)).map(o => o.id); }
+}
+
+// The effective status, from the board status and the dependencies.
+function work(t) {
+	const unfinished = t.deps.map(id => byId.get(id)).filter(d => d.board != "completed");
+	t.unfinishedDeps = unfinished.map(d => d.id);
+	if (t.board == "completed") { t.status = "completed"; t.why = ""; return; }
+	if (t.board == "blocked") { t.status = "blocked"; t.why = "The board marks it Blocked."; return; }
+	if (t.board == "progress") { t.status = "progress"; t.why = unfinished.length ? "Started before everything it depends on is done." : ""; return; }
+	if (t.waitingOn) { t.status = "blocked"; t.why = `Waiting on ${t.waitingOn}.`; return; }
+	if (unfinished.length) { t.status = "blocked"; t.why = "Waiting on " + unfinished.map(d => d.name).join(", ") + "."; return; }
+	t.status = "notstarted"; t.why = "";
+}
+
+// Every task a task depends on, directly and through others.
+function ancestors(id, acc = new Set()) {
+	for (const d of byId.get(id).deps) { if (!acc.has(d)) { acc.add(d); ancestors(d, acc); } }
+	return acc;
+}
+
+// --- filtering ---------------------------------------------------------------------------------
+function visible(t) {
+	if (!state.statuses.has(t.status)) { return false; }
+	if (state.q && !norm(t.name).includes(norm(state.q))) { return false; }
+	if (state.dependsOn) {
+		const target = state.dependsOn;
+		if (!(state.indirect ? ancestors(t.id).has(target) : t.deps.includes(target))) { return false; }
+	}
+	if (state.neededBy) {
+		const needer = state.neededBy;
+		if (!(state.indirect ? ancestors(needer).has(t.id) : byId.get(needer).deps.includes(t.id))) { return false; }
+	}
+	if (state.depState == "none" && t.deps.length) { return false; }
+	if (state.depState == "unfinished" && !t.unfinishedDeps.length) { return false; }
+	if (state.depState == "allDone" && (!t.deps.length || t.unfinishedDeps.length)) { return false; }
+	return true;
+}
+
+// --- drawing -----------------------------------------------------------------------------------
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function markdown(s) {
+	return esc(s.replace(/\\\|/g, "|")).replace(/~~(.+?)~~/g, "<s>$1</s>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/`(.+?)`/g, "<code>$1</code>");
+}
+const chip = (id, extraClass = "") => {
+	const d = byId.get(id);
+	return `<button class="chip ${d.status} ${extraClass}" data-goto="${d.id}" title="${STATUS[d.status].label}. Click to find it.">${esc(d.name)}</button>`;
+};
+
+function drawStats() {
+	const counts = { completed: 0, progress: 0, blocked: 0, notstarted: 0 };
+	for (const t of tasks) { counts[t.status]++; }
+	$("stats").innerHTML = Object.keys(STATUS).map(k =>
+		`<button class="stat ${k}" data-stat="${k}" aria-pressed="${state.statuses.size == 1 && state.statuses.has(k)}">` +
+		`<b>${counts[k]}</b><span>${STATUS[k].label}</span></button>`).join("");
+	$("bar").innerHTML = Object.keys(STATUS).map(k => `<i class="${k}" style="width:${(counts[k] / tasks.length * 100).toFixed(2)}%"></i>`).join("");
+	const done = counts.completed;
+	$("sub").textContent = `${done} of ${tasks.length} tasks complete (${Math.round(done / tasks.length * 100)}%). Status comes from docs/PROGRESS.md; dependencies from docs/task-dependencies.json.`;
+}
+
+function drawControls() {
+	$("statusPills").innerHTML =
+		Object.keys(STATUS).map(k => `<button class="pill" data-pill="${k}" aria-pressed="${state.statuses.has(k)}">${STATUS[k].label}</button>`).join("") +
+		`<button class="pill" data-preset="todo">Needs doing</button><button class="pill" data-preset="all">All</button>`;
+	const depPills = [["any", "Any"], ["none", "No dependencies"], ["unfinished", "Has unfinished dependencies"], ["allDone", "All dependencies done"]];
+	$("depPills").innerHTML = depPills.map(([k, l]) => `<button class="pill" data-dep="${k}" aria-pressed="${state.depState == k}">${l}</button>`).join("");
+}
+
+function fillSelects() {
+	const opts = (first) => `<option value="">${first}</option>` + tasks.map(t => `<option value="${t.id}">${esc(t.name)}</option>`).join("");
+	$("dependsOn").innerHTML = opts("Any task"); $("neededBy").innerHTML = opts("Any task");
+	$("dependsOn").value = state.dependsOn; $("neededBy").value = state.neededBy;
+}
+
+function drawList() {
+	const shown = tasks.filter(visible);
+	$("count").textContent = `Showing ${shown.length} of ${tasks.length} tasks`;
+	if (!shown.length) { $("list").innerHTML = `<p class="empty">No task matches these filters.</p>`; return; }
+	const epics = [...new Set(shown.map(t => t.epicNum))].sort((a, b) => a - b);
+	$("list").innerHTML = epics.map(n => {
+		const inEpic = shown.filter(t => t.epicNum == n);
+		const total = tasks.filter(t => t.epicNum == n);
+		return `<details class="epic" open><summary>Epic ${n} &mdash; ${esc(inEpic[0].epicTitle)}` +
+			`<small>${total.filter(t => t.status == "completed").length} of ${total.length} complete</small></summary>` +
+			inEpic.map(taskHtml).join("") + `</details>`;
+	}).join("");
+}
+
+function taskHtml(t) {
+	const deps = t.deps.length ? `<div class="deps"><span class="lab">Depends on:</span>${t.deps.map(id => chip(id)).join("")}</div>` : "";
+	const external = (t.waitingOn && t.board != "completed") ? `<div class="deps"><span class="lab">Waiting on:</span><span class="chip external">${esc(t.waitingOn)}</span></div>` : "";
+	const unblocks = t.blocks.length ? `<div class="deps"><span class="lab">Unblocks:</span>${t.blocks.map(id => chip(id)).join("")}</div>` : "";
+	return `<article class="task ${t.status}" id="task-${t.id}">` +
+		`<h3>${esc(t.name)} <span class="badge ${t.status}">${STATUS[t.status].label}</span>` +
+		`<span class="board">board: ${esc(t.boardLabel)}</span></h3>` +
+		(t.why ? `<p class="note">${esc(t.why)}</p>` : "") +
+		`<p class="summary">${esc(t.summary)}</p>` +
+		(t.note ? `<p class="note">${esc(t.note)}</p>` : "") +
+		deps + external + unblocks +
+		`<details><summary>Full board entry</summary><div class="full">${markdown(t.full)}</div></details></article>`;
+}
+
+function redraw() { drawStats(); drawControls(); drawList(); }
+
+// --- wiring ------------------------------------------------------------------------------------
+function resetFilters() {
+	Object.assign(state, { q: "", statuses: new Set(Object.keys(STATUS)), dependsOn: "", neededBy: "", indirect: false, depState: "any" });
+	$("q").value = ""; $("indirect").checked = false; fillSelects(); redraw();
+}
+
+document.addEventListener("click", (e) => {
+	const el = e.target.closest("[data-stat],[data-pill],[data-preset],[data-dep],[data-goto]");
+	if (!el) { return; }
+	if (el.dataset.stat) {
+		const k = el.dataset.stat;
+		state.statuses = (state.statuses.size == 1 && state.statuses.has(k)) ? new Set(Object.keys(STATUS)) : new Set([k]);
+	} else if (el.dataset.pill) {
+		const k = el.dataset.pill;
+		state.statuses.has(k) ? state.statuses.delete(k) : state.statuses.add(k);
+	} else if (el.dataset.preset == "todo") {
+		state.statuses = new Set(["progress", "blocked", "notstarted"]);
+	} else if (el.dataset.preset == "all") {
+		state.statuses = new Set(Object.keys(STATUS));
+	} else if (el.dataset.dep) {
+		state.depState = el.dataset.dep;
+	} else if (el.dataset.goto) {
+		// Clear everything so the task is certainly on screen, then find it by name.
+		const t = byId.get(el.dataset.goto);
+		Object.assign(state, { q: t.name, statuses: new Set(Object.keys(STATUS)), dependsOn: "", neededBy: "", depState: "any" });
+		$("q").value = t.name; fillSelects();
+	}
+	redraw();
+});
+$("q").addEventListener("input", (e) => { state.q = e.target.value; drawList(); });
+$("dependsOn").addEventListener("change", (e) => { state.dependsOn = e.target.value; drawList(); });
+$("neededBy").addEventListener("change", (e) => { state.neededBy = e.target.value; drawList(); });
+$("indirect").addEventListener("change", (e) => { state.indirect = e.target.checked; drawList(); });
+$("clear").addEventListener("click", resetFilters);
+$("reload").addEventListener("click", load);
+
+async function load() {
+	const warnings = [];
+	try {
+		const stamp = "?t=" + Date.now();
+		const [board, deps] = await Promise.all([
+			fetch("../docs/PROGRESS.md" + stamp).then(r => { if (!r.ok) { throw new Error("PROGRESS.md: " + r.status); } return r.text(); }),
+			fetch("../docs/task-dependencies.json" + stamp).then(r => { if (!r.ok) { throw new Error("task-dependencies.json: " + r.status); } return r.json(); })
+		]);
+		tasks = parseBoard(board).map((t, i) => ({ ...t, id: "t" + i, summary: "" }));
+		tasks.forEach(t => { t.summary = summarise(t.full); });
+		byId = new Map(tasks.map(t => [t.id, t]));
+		attachDependencies(deps, warnings);
+		tasks.forEach(work);
+		$("warnings").innerHTML = warnings.length
+			? `<div class="warn"><b>The dependency file is out of step with the board:</b><ul>${warnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul></div>` : "";
+		fillSelects(); redraw();
+	} catch (err) {
+		$("sub").textContent = "Could not read the board.";
+		$("list").innerHTML = `<div class="warn">${esc(err.message)}<br>This page has to be served over HTTP, not opened as a file. From the project folder run
+			<code>python -m http.server 8777 --bind 127.0.0.1</code> and open <code>http://127.0.0.1:8777/tools/progress.html</code>.</div>`;
+	}
+}
+load();
+</script>
