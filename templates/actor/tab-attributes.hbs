@@ -73,6 +73,11 @@
 			{{#if system.encumbrance.penalty}}
 			<p class="loaded-heading">At current load: <span class="muted">{{system.encumbrance.penalty}}</span></p>
 			<table class="move-table loaded">
+				{{!-- The same three columns as the table above, named again: the two tables are
+				      separate elements, so a reader has nothing to carry the headings down from. --}}
+				<thead>
+					<tr><th></th><th>Hour</th><th>10 sec</th><th>1 sec</th></tr>
+				</thead>
 				<tbody>
 					<tr><td>Walk</td><td>{{system.movement.loaded.walk.hourly}}</td><td>{{system.movement.loaded.walk.tenSec}}</td><td>{{system.movement.loaded.walk.oneSec}}</td></tr>
 					<tr><td>Jog</td><td>{{system.movement.loaded.jog.hourly}}</td><td>{{system.movement.loaded.jog.tenSec}}</td><td>{{system.movement.loaded.jog.oneSec}}</td></tr>

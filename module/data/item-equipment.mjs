@@ -26,6 +26,11 @@ export default class ImagineEquipmentData extends foundry.abstract.TypeDataModel
 			// Set where this item's weight is already accounted for by another item, so it is
 			// not charged to encumbrance twice.
 			isTagalong: new fields.BooleanField({ required: true, initial: false }),
+			// Weighs nothing to carry: his "[Float]" marker, which his own sheet reads out of the
+			// item's NAME (sheet-worker.js:81815). The name is still honoured -- see itemFloats in
+			// combat-rules.mjs -- and this is the tidier way to say it on a sheet with real fields.
+			floats: new fields.BooleanField({ required: true, initial: false, label: "Floats (no carried weight)" }),
+
 
 			// @MARKER CARRIED STATE
 			location: new fields.StringField({ required: true, initial: "carried",

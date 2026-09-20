@@ -134,6 +134,10 @@ export default class ImagineArmorData extends foundry.abstract.TypeDataModel {
 			              choices: ["equipped", "carried", "mount", "stash"] }),
 			quantity: new fields.NumberField({ required: true, integer: true, initial: 1, min: 0 }),
 			weight:   new fields.NumberField({ required: true, initial: 0 }),
+			// Weighs nothing to carry: his "[Float]" marker, which his own sheet reads out of the
+			// item's NAME (sheet-worker.js:81815). The name is still honoured -- see itemFloats in
+			// combat-rules.mjs -- and this is the tidier way to say it on a sheet with real fields.
+			floats: new fields.BooleanField({ required: true, initial: false, label: "Floats (no carried weight)" }),
 
 			// @MARKER PROVENANCE
 			cost:        new fields.StringField({ required: true, initial: "" }),

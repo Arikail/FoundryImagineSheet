@@ -106,6 +106,12 @@
 			</ul>
 			<p class="encumbrance-status">{{system.encumbrance.status}}</p>
 			<p class="muted">{{system.encumbrance.carried}} / {{system.encumbrance.maxLoad}} lb</p>
+			{{!-- What the load actually costs. The character sheet has shown this since the
+			      encumbrance pass; the creature sheet showed the status and the weight but never
+			      the penalty, which is the part that changes play. --}}
+			{{#if system.encumbrance.penalty}}
+			<p class="muted">{{system.encumbrance.penalty}}</p>
+			{{/if}}
 		</div>
 	</div>
 

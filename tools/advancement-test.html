@@ -264,6 +264,89 @@ check("nonsense still reads as nothing", A.rollDiceString("Special", always(4)),
 check("11th reports both ceilings, matching what the character model enforces",
 	[A.getArchMortalGains(11).attributeMax, A.getArchMortalGains(11).magicalAttributeMax], [25, 27]);
 
+// --- what the window shows, from module/levelup-view.mjs --------------------------------------
+// The view takes a plain object rather than a Foundry Actor, which is the whole reason it is a
+// module of its own: the window, the preview and these tests all read the same one.
+const V = await import("../module/levelup-view.mjs");
+
+const viewActor = (identity, items) => ({
+	name: "Test",
+	system: {
+		identity: Object.assign({
+			title: 5, goal: 13, exp: 20000, titlesToRaise: 0, goalsToRaise: 0, titleToLevel: 0,
+			goalToLevel: 0, attributeIncreases: 0, levelUpPending: false, goalAttributes: ["str", "agl"],
+			nextGoalExp: 21000, expCap: 50999, archSpecialMet: false, cannotCast: false,
+			archMortal: { qualified: false, rows: [] }
+		}, identity),
+		attributes: Object.fromEntries(["str", "agl", "vit", "int", "wis", "knw", "app", "chm",
+			"soc", "aur", "pty", "wil"].map(k => [k, { value: 12, max: 20 }]))
+	},
+	items: items ?? []
+});
+
+const viewClass = {
+	id: "c1", name: "Warrior", type: "class",
+	system: { baseClass: "Warrior", nonClassed: false,
+	          advancement: { classSkillList: [{ title: 6, name: "Sever", core: true, requires: "" }] },
+	          archMortal: { special: "Slay a dragon." },
+	          getTitleName: (t) => "Title " + t }
+};
+const viewRace = { id: "r1", name: "Human", type: "race", system: { endurance: { titleFormula: "1d4+1" } } };
+const viewSkill = (name, title) => ({ id: "s" + name, name, type: "skill",
+	system: { category: "class", acquiredAtTitle: title, totalChance: 50 } });
+
+check("nothing queued shows the experience step",
+	V.buildLevelUpView(viewActor({}), null, false).isExperience, true);
+check("a queued title at or below the goal's title comes first",
+	V.buildLevelUpView(viewActor({ levelUpPending: true, titlesToRaise: 1, titleToLevel: 6,
+		goalsToRaise: 1, goalToLevel: 15 }), null, false).isTitle, true);
+check("...and once that title is taken, the goal step is next",
+	V.buildLevelUpView(viewActor({ levelUpPending: true, titlesToRaise: 0, titleToLevel: 0,
+		goalsToRaise: 1, goalToLevel: 15 }), null, false).isGoal, true);
+check("a title queued ABOVE the goal's title does not jump the queue",
+	V.buildLevelUpView(viewActor({ levelUpPending: true, titlesToRaise: 1, titleToLevel: 7,
+		goalsToRaise: 2, goalToLevel: 15 }), null, false).isGoal, true);
+
+check("the Arch Mortal panel is hidden below 10th title",
+	V.buildLevelUpView(viewActor({ title: 9 }), null, false).archMortal, null);
+check("...and appears from 10th, carrying the class's special requirement",
+	V.buildLevelUpView(viewActor({ title: 10 }), null, true, [viewClass]).archMortal !== null, true);
+check("...with the Game Master flag passed through",
+	V.buildLevelUpView(viewActor({ title: 10 }, [viewClass]), null, true).archMortal.isGM, true);
+check("...and the special requirement read off the class",
+	V.buildLevelUpView(viewActor({ title: 10 }, [viewClass]), null, false).archMortal.special,
+	"Slay a dragon.");
+
+// A goal will not commit until the attribute is settled AND every skill point is placed.
+const goalActor = viewActor({ levelUpPending: true, goalsToRaise: 1, goalToLevel: 15 },
+	[viewClass, viewSkill("Body Parry", 1)]);
+check("a goal cannot be committed before the roll",
+	V.buildGoalStep(goalActor, V.newLevelUpWorking()).canCommit, false);
+check("...nor with points still to place",
+	V.buildGoalStep(goalActor, { rolls: [{ key: "str", increased: true }], picked: [], spends: [], endurance: null })
+		.canCommit, false);
+check("...and can once both are settled",
+	V.buildGoalStep(goalActor, { rolls: [{ key: "str", increased: true }], picked: [],
+		spends: [{ itemId: "sBody Parry", name: "Body Parry", points: 17 }], endurance: null }).canCommit, true);
+
+// Only skills already acquired may take points -- his skill-point screens never show the rest.
+const mixedActor = viewActor({ levelUpPending: true, goalsToRaise: 1, goalToLevel: 15, title: 5 },
+	[viewClass, viewSkill("Held", 3), viewSkill("NotYet", 9)]);
+check("only class skills the character has reached are offered to spend on",
+	V.buildGoalStep(mixedActor, V.newLevelUpWorking()).skillPoints.skills.map(s => s.name), ["Held"]);
+
+// The Endurance flag is separate from the figure, because 0 is a real answer.
+const titleActor = viewActor({ levelUpPending: true, titlesToRaise: 1, titleToLevel: 6,
+	goalsToRaise: 1, goalToLevel: 15 }, [viewClass, viewRace]);
+check("a title step is not committable until the Endurance is rolled",
+	V.buildTitleStep(titleActor, V.newLevelUpWorking()).titleStep.canCommit, false);
+check("...and a roll of 0 still counts as rolled",
+	[V.buildTitleStep(titleActor, { rolls: null, picked: [], spends: [], endurance: 0 }).titleStep.canCommit,
+	 V.buildTitleStep(titleActor, { rolls: null, picked: [], spends: [], endurance: 0 }).titleStep.enduranceRolled],
+	[true, true]);
+check("the title step names the skills that title brings",
+	V.buildTitleStep(titleActor, V.newLevelUpWorking()).titleStep.skills.map(s => s.name), ["Sever"]);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

@@ -1255,6 +1255,86 @@ check("one held ahead of its title is refused, and says which title",
 	[mageling.parent.items[3].system.usableByTitle, mageling.parent.items[3].system.titleGateReason],
 	[false, "This skill cannot be used before title 7."]);
 
+// --- the title gate on a character with no class ----------------------------------------------
+// A class skill is refused until its title, measured against the class's title. A character whose
+// class was removed -- or a GME given a class skill by hand -- has no class to measure against,
+// and used to have every such skill refused for ever.
+const gatedSkill = (name, title) => ({ type: "skill", name, id: name,
+	system: { attr1: "str", attr2: "", skillRating: 10, category: "class", acquiredAtTitle: title,
+	          startingBonus: 0, abilityBonus: 0, misc: 0, isCommon: false, types: [] } });
+
+const noClassAt5 = makeCharacter({}, 5, [makeRace(), gatedSkill("Sever", 3)]);
+check("with no class at all, the character's own title works the gate",
+	noClassAt5.parent.items[1].system.usableByTitle, true);
+const noClassAt2 = makeCharacter({}, 2, [makeRace(), gatedSkill("Sever", 3)]);
+check("...and still refuses one whose title has not come",
+	[noClassAt2.parent.items[1].system.usableByTitle,
+	 noClassAt2.parent.items[1].system.titleGateReason.includes("title 3")], [false, true]);
+
+// --- the generated class documents themselves ------------------------------------------------
+// The model is exercised above against fixtures. These read the REAL documents the pack ships,
+// because the grant, the level-up window and the Arch Mortal screen all read them at runtime, and
+// a fixture cannot catch an extraction that quietly stopped producing a field.
+const classDocs = await (await fetch("../src/packs/documents/classes.json")).json();
+const classByName = (n) => classDocs.find(d => d.name === n);
+
+check("103 class documents: his 92, plus one per path of the seven that split",
+	classDocs.length, 103);
+check("every path document names the base class it came from, and its own path",
+	classDocs.filter(d => d.name.includes("(") && d.system.baseClass === "").map(d => d.name)
+		.filter(n => !["Archer(Arcane)", "Archer(Zen)", "Knight(Dark)", "Priest(Dark)",
+		               "Shaman(Drum)", "Shaman(Rune)", "Witch(Black)", "Witch(Gray)",
+		               "Witch(White)"].includes(n)),
+	[]);
+// A class that splits has NO document of its own -- Elementalist exists only as its two paths.
+// That is the design, and it is exactly why an availability override on the base class has to
+// reach its paths (getOverrideKeys in module/availability.mjs): switching off "class:Elementalist"
+// would otherwise switch off nothing, there being no such document.
+check("a class that splits into paths has no document of its own",
+	["Elemental Dancer", "Elementalist", "Summoner", "Innominate", "Inquisitor"]
+		.filter(n => classByName(n)), []);
+check("...but each of its paths does, and names it as the base",
+	classDocs.filter(d => d.system.baseClass === "Elementalist").map(d => d.name).sort(),
+	["Elementalist(Call of Death)", "Elementalist(Call of Life)"]);
+check("a class that does not split is its own base",
+	classByName("Warrior").system.baseClass, "Warrior");
+check("Elementalist's death path carries his alignment requirement",
+	classByName("Elementalist(Call of Death)").system.requirements.alignment,
+	"True Neutral or Neutral Evil");
+check("the Inquisitor's two paths differ in the skill they are named for",
+	[classByName("Inquisitor(Bless)").system.advancement.classSkillList
+		.some(e => e.name === "Bless" && e.title === 3),
+	 classByName("Inquisitor(Blasphemy)").system.advancement.classSkillList
+		.some(e => e.name === "Blasphemy" && e.title === 3)], [true, true]);
+check("Knight(Templar) takes Shield Knowledge where the plain Knight takes Stun, both at title 4",
+	[classByName("Knight(Templar)").system.advancement.classSkillList
+		.some(e => e.name === "Shield Knowledge" && e.title === 4),
+	 classByName("Knight").system.advancement.classSkillList
+		.some(e => e.name === "Stun" && e.title === 4)], [true, true]);
+check("Mage carries a no-casting alternative for a race that cannot cast",
+	classByName("Mage").system.advancement.classSkillList.some(e => e.requires === "nonCaster"), true);
+check("GME is non-classed, with no class skills at all",
+	[classByName("GME").system.nonClassed,
+	 classByName("GME").system.advancement.classSkillList.length], [true, 0]);
+check("Warrior bars no race", classByName("Warrior").system.blockedRaces, []);
+check("every class skill arrives at a title within his 1-15",
+	classDocs.filter(d => d.system.advancement.classSkillList
+		.some(e => e.title < 1 || e.title > 15)).map(d => d.name), []);
+check("every class has the twelve Arch Mortal attribute entries, and GME alone has no core skills",
+	[classDocs.filter(d => Object.keys(d.system.archMortal.attributes).length !== 12).length,
+	 classDocs.filter(d => d.system.archMortal.skills.length === 0).map(d => d.name)],
+	[0, ["GME"]]);
+// The defect he authorised the repair for (UPSTREAM-ISSUES item 1): Monk's row was a column
+// short, so every field from armour usage onward read the one to its left -- armour usage showed
+// the weapon list. The two now differ, and each reads as what it is.
+const monk = classByName("Monk").system;
+check("Monk's armour usage reads as armour, not as his weapon list",
+	[monk.armorUsage === monk.weaponUsage, monk.armorUsage.toLowerCase().includes("helm")],
+	[false, true]);
+check("...and the fields after it landed in the right columns too",
+	[monk.advancement.titles.length > 0, monk.classMods.length > 0,
+	 monk.requirements.attribQualify.length], [true, true, 12]);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

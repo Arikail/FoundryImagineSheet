@@ -104,7 +104,7 @@ Render both as 12-wide rows in **his canonical attribute order — str agl vit i
 aur pty wil** — not alphabetically. Every other attribute display in the system uses that order and
 this one must match it. `attributeLimits` is the field `getAttributeMax` reads, so it is load-bearing
 rather than decorative; label it clearly as the race's cap, and note on the sheet that title 11 and
-above discards it for a flat 27.
+above discards it for a flat 27 **[SUPERSEDED 2026-09-19: it is 25 ordinarily and 27 magically -- UPSTREAM-ISSUES item 16]**.
 
 Also surface `endurance`, `characteristicMods`, `resistanceMods` and `movement` (including
 `movement.special`).

@@ -2696,3 +2696,41 @@ weight 5, sourcebook "Custom". `tools/sheet-preview.html` renders all three Add 
 and remove button on each of the seven gear rows, with no console errors. Derivation 347,
 availability 46 and advancement 86 unchanged; every module parses. **Not verified:** the buttons in
 a running Foundry V14 -- creating the item, opening its sheet and the delete confirmation.
+
+### 2026-09-19 — Clearing the hand-off backlog, and three standing answers
+
+Nineteen hand-off notes had accumulated in `docs/sonnet/`. Each was checked against the code as it
+stands rather than against its own wording, which found several items already done and two
+obsolete. What follows is the part worth keeping: the answers that were being re-asked in note
+after note, settled here once so they stop costing anything.
+
+**Strings are not localised, and new ones should not be either.** Five notes asked whether their new
+strings should go through `lang/en.json`, each deferring to "what the other tabs do". What the other
+tabs do is nothing: `lang/en.json` carries sheet names, tab labels and the twelve attribute names --
+exactly what Foundry itself asks for -- and every other string in every template is hardcoded
+English. Two `localize` calls exist across eleven templates. So new strings stay hardcoded, matching
+the rest; localisation is a single later pass over everything, not a decision taken string by
+string. **This supersedes item 4 of `2026-09-18-language-allowance.md`, item 4 of
+`2026-09-18-races-classes.md` and the same question in three others.**
+
+**Multiple Missile Lore's six classes are confirmed, and acquiring a combination is typing it.**
+`multiMissileLoreTitle` and `projectileLoreTitle` name the identical six classes across the 103
+documents, which was the cross-check `2026-09-16-multi-missile.md` asked for. And his sheet has no
+acquisition roll for a missile combination at all: a player types the combination into the list and
+the skill applies to it. That is the whole of the mechanic, and the port does the same.
+
+**Changeling has no racial skill list, and that is the answer.** Its skills depend on the form it
+wears -- his `changelingRaceSkillDetailValues` holds one list for each of 41 forms -- so there is
+nothing to put in `racialSkills`. The race now carries a note saying so, and the build reports it as
+a known shape rather than as missing data every run. **Gremlin, reported the same way, WAS a real
+gap**: his `setRaceSkillSheet` answers it inline, before the dictionary is consulted, and that
+switch is now walked by `extract_combat_tables.py` the way the inline class rows already were.
+Gremlin has its ten skills. The two Fairies are answered inline as well and are deliberately not
+carried, having no row in `raceStatsAndMoveDetails` -- they are not races a character can be.
+
+**Also corrected:** `README.md` said "early scaffolding -- no system code yet", which it had said
+since before any of it was written; it now describes what works, what does not, and the fact that
+none of it has run in Foundry. The race item sheet and one old note still promised a "flat 27" at
+11th title, superseded by the 25/27 pair. The creature sheet showed a load and never what the load
+cost. The loaded movement table had no column headings, having been split from the table whose
+headings it was relying on.

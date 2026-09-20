@@ -21,3 +21,6 @@ __pycache__/
 # Per-developer Claude Code settings. The shared settings file is .claude/settings.json;
 # the .local one holds one person's own permission grants and is not the project's business.
 .claude/settings.local.json
+
+# Local test-server config: the port changes every run.
+.claude/launch.json

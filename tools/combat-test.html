@@ -946,6 +946,20 @@ check("...though it can still jog", heavy.jog.tenSec, 20);
 check("slightly encumbered keeps a decimal rather than truncating",
 	R.resolveLoadedMovement(move, { speedFactor: 0.75, canRun: true }).walk.hourly, 2.3);
 
+// --- his "[Float]" marker ----------------------------------------------------------------------
+// A thing that weighs nothing to carry. His own sheet reads it out of the item's NAME, so a player
+// marks a raft by typing it there; the field is the tidier way to say the same thing.
+const floatItem = (name, sys) => ({ name, type: "equipment",
+	system: Object.assign({ weight: 40, quantity: 1, location: "carried" }, sys) });
+check("an item named [Float] is not carried weight",
+	R.itemFloats(floatItem("Log Raft [Float]", {})), true);
+check("...whatever the case", R.itemFloats(floatItem("Air Bladder [FLOAT]", {})), true);
+check("...and the field says it too", R.itemFloats(floatItem("Raft", { floats: true })), true);
+check("an ordinary item does not float", R.itemFloats(floatItem("Iron Bar", {})), false);
+check("a floating item adds nothing to what is carried",
+	R.resolveEncumbrance([floatItem("Log Raft [Float]", {}), floatItem("Iron Bar", {})], 5, 180, 70).carried,
+	R.resolveEncumbrance([floatItem("Iron Bar", {})], 5, 180, 70).carried);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

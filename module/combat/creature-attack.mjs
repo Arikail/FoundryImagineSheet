@@ -14,8 +14,7 @@
 import { resolveAttack, resolveFumble, resolveOffhandPenalties } from "./combat-rules.mjs";
 import {
 	getCreatureAttackBehaviour, getAreaAttackSize, resolveTouchAttack,
-	getCreatureToHitModifiers, getCreatureDamageMods, getTriggeredEffects
-} from "./creature-rules.mjs";
+	getCreatureToHitModifiers, getCreatureDamageMods, getTriggeredEffects, getCreatureAttackSeconds } from "./creature-rules.mjs";
 
 	// This is the function which rolls a single die and returns the number.
 	async function rollDie(tmpformula) {
@@ -170,8 +169,7 @@ export async function rollCreatureAttack(tmpactor, tmpattackitem) {
 
 	// How long it takes. A creature's attack carries its own seconds; there is no weapon speed
 	// modifier to fold in. A called shot takes one more second (Player's Guide, Called Shots).
-	var tmpspeed = tmpa.speedSpecial ? 0 : (parseInt(tmpa.speed) || 0);
-	if (tmpoptions.calledShot && !tmpa.speedSpecial) { tmpspeed = tmpspeed + 1; }
+	var tmpspeed = getCreatureAttackSeconds(tmpa, tmpoptions.calledShot);
 
 	// A fumble, on the same three tiers a weapon attack uses.
 	var tmpfumble = null;

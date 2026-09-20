@@ -1,0 +1,308 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "function": "setRaceSkillSheet",
+    "line": 51727
+  },
+  "_note": "The ordinary branch of each case. The slight-physique branch is kept beside it under _slightPhysique, unused: the port has no slight-physique option.",
+  "entries": {
+    "Fairy": [
+      "race_skill_select_fourteen",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Cover Tracks",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          "+10%"
+        ],
+        [
+          "Wood Lore",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Fairy(Dark)": [
+      "race_skill_select_ten",
+      [
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          ""
+        ],
+        [
+          "Wood Lore",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Gremlin": [
+      "race_skill_select_ten",
+      [
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Climb",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          ""
+        ]
+      ],
+      "None"
+    ]
+  },
+  "_slightPhysique": {
+    "Fairy": [
+      "race_skill_select_twelve",
+      [
+        [
+          "Animal Shape",
+          "+20%"
+        ],
+        [
+          "Area Sense",
+          ""
+        ],
+        [
+          "Blend",
+          ""
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Herb Lore",
+          ""
+        ],
+        [
+          "Levitation",
+          "+10%"
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          ""
+        ],
+        [
+          "Phase",
+          "+10%"
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          "+10%"
+        ],
+        [
+          "Wood Lore",
+          "+10%"
+        ]
+      ],
+      "None"
+    ],
+    "Fairy(Dark)": [
+      "race_skill_select_nine",
+      [
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          ""
+        ]
+      ],
+      "None"
+    ],
+    "Gremlin": [
+      "race_skill_select_nine",
+      [
+        [
+          "Darkness",
+          "+10%"
+        ],
+        [
+          "Blend",
+          "+20%"
+        ],
+        [
+          "Detect Magic",
+          ""
+        ],
+        [
+          "Levitation",
+          ""
+        ],
+        [
+          "Mimic",
+          ""
+        ],
+        [
+          "Move Unheard",
+          "+10%"
+        ],
+        [
+          "Phase",
+          ""
+        ],
+        [
+          "Sing",
+          ""
+        ],
+        [
+          "Telekinesis",
+          ""
+        ]
+      ],
+      "None"
+    ]
+  }
+}

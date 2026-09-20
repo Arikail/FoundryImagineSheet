@@ -519,6 +519,21 @@ const called = C.getTriggeredEffects(riders, { isHit: true, isCalledShot: true, 
 check("a made called shot fires its rider", called[4].state, "fires");
 check("no riders at all is not an error", C.getTriggeredEffects(undefined, { isHit: true }), []);
 
+// --- how long an attack takes ------------------------------------------------------------------
+// "Special" timing is his marker for an attack that does not spend seconds at all -- a constant
+// aura, a gaze. Until this rule was split out of rollCreatureAttack it could only be checked by
+// eye in a preview, because that function needs Foundry's dice and chat.
+check("an ordinary attack spends its own seconds",
+	C.getCreatureAttackSeconds({ speed: 4, speedSpecial: false }, false), 4);
+check("a called shot takes one second more",
+	C.getCreatureAttackSeconds({ speed: 4, speedSpecial: false }, true), 5);
+check("special timing spends nothing",
+	C.getCreatureAttackSeconds({ speed: 4, speedSpecial: true }, false), 0);
+check("...and a called shot does not slow it either, there being nothing to slow",
+	C.getCreatureAttackSeconds({ speed: 4, speedSpecial: true }, true), 0);
+check("an attack with no speed at all reads as nothing, not as NaN",
+	C.getCreatureAttackSeconds({}, false), 0);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 document.getElementById("out").innerHTML =
 	results.map(r => `<span class="${r.startsWith("PASS") ? "p" : "f"}">${r}</span>`).join("\n")

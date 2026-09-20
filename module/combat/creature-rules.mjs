@@ -230,5 +230,21 @@ import { CREATURE_ATTACK_TYPES } from "../creature-tables.mjs";
 		return tmpout;
 	}
 
+	// @MARKER HOW LONG AN ATTACK TAKES
+	// This is the function which says how many of the round's ten seconds a creature's attack
+	// spends. A creature carries its own seconds on the attack -- there is no weapon speed to fold
+	// in -- and a called shot takes one second more (Player's Guide, Called Shots).
+	//
+	// "Special" timing is his own marker for an attack that does not spend seconds at all: a
+	// constant aura, a gaze, something that happens rather than being swung. It is zero, and a
+	// called shot does not add to it either, since there is nothing to be slower than.
+	//
+	// Split out of rollCreatureAttack so it can be tested: that function needs Foundry's dice and
+	// chat, so for a long time this rule was only ever exercised by eye in a preview.
+	export function getCreatureAttackSeconds(tmpattack, tmpcalledshot) {
+		if (tmpattack?.speedSpecial) { return 0; }
+		return (parseInt(tmpattack?.speed) || 0) + (tmpcalledshot ? 1 : 0);
+	}
+
 // @MARKER ADD NEW creature combat rule functions HERE
 // @END (CODE)

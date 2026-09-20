@@ -1749,6 +1749,20 @@ export const MODE_DAMAGE_TYPES = {
 	// tmpitems is the actor's items -- anything with a system.weight. Only what is equipped or
 	// carried counts; a mount or a stash is not on the being. A tagalong's weight is already part
 	// of another item (a scabbard is part of the sword), so it is skipped.
+	// This is the function which says whether a thing weighs nothing to carry, his "[Float]"
+	// (sheet-worker.js:81815 and its five siblings, one per carried-item list).
+	//
+	// HIS MARKER IS IN THE NAME, not in a field: his code asks whether the item's name contains
+	// "[Float]", so a player marks a raft or a bladder of air by typing it into the name at the
+	// table. No shipped item carries it, which is why it is a marker rather than data. The name
+	// check is honoured here so a player who knows his convention gets his behaviour -- and a
+	// `floats` field is read as well, which is the tidier way to say the same thing on a sheet
+	// with real fields.
+	export function itemFloats(tmpitem) {
+		if (tmpitem?.system?.floats) { return true; }
+		return ("" + (tmpitem?.name ?? "")).toLowerCase().includes("[float]");
+	}
+
 	export function resolveEncumbrance(tmpitems, tmploadlimit, tmpbodyweight, tmpheightinches) {
 		var tmpmaxload = (parseFloat(tmploadlimit) || 0) * (parseFloat(tmpbodyweight) || 0);
 		var tmpsizemulti = getSizeWeightMultiplier(tmpheightinches, tmpbodyweight);
@@ -1759,6 +1773,7 @@ export const MODE_DAMAGE_TYPES = {
 			var tmpsys = tmpitem.system ?? {};
 			if (tmpsys.weight === undefined) { continue; }
 			if (tmpsys.isTagalong) { continue; }
+			if (itemFloats(tmpitem)) { continue; }
 			if (tmpsys.location != "equipped" && tmpsys.location != "carried") { continue; }
 
 			var tmpweight = (parseFloat(tmpsys.weight) || 0)

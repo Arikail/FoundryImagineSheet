@@ -328,6 +328,49 @@ def class_skill_lists():
     return skills, start
 
 
+def inline_race_skills():
+    """
+    The racial skills his race-skill dictionary does not hold, from setRaceSkillSheet
+    (sheet-worker.js:51727).
+
+    Three races are answered by a switch BEFORE getRaceSkillDetails is consulted -- Fairy,
+    Fairy(Dark) and Gremlin -- each case assigning its whole row inline, in the same shape the
+    dictionary uses:
+
+        raceSkillDetails1=["race_skill_select_ten",[["Darkness","+10%"], ...],"None"];
+
+    Only Gremlin matters to the port: Fairy and Fairy(Dark) have no row in
+    raceStatsAndMoveDetails and so are not races a character can be. This is why the port first
+    reported Gremlin as having no racial skills at all -- it only looked in the dictionary.
+
+    EACH CASE HAS TWO BRANCHES, one for a slight physique and one for everything else. The port
+    carries no slight-physique option (a rules call still open with the developer), so the
+    ORDINARY branch is taken -- the `else` -- and the slight one is ignored. His two branches are
+    written in that order, so the LAST assignment in each case is the one wanted.
+
+    The switch appears twice, once for each half of a Half Race, identical in both. The first is
+    read; a disagreement between them would be reported rather than passed over.
+    """
+    start, body = function_body("setRaceSkillSheet")
+    rows, slight = {}, {}
+    label = None
+    for line in body:
+        m = re.search(r'case\s+"([^"]+)"\s*:', line)
+        if m:
+            label = m.group(1)
+        m = re.search(r'raceSkillDetails[12]?\s*=\s*(\[.*\])\s*;', line)
+        if m and label:
+            try:
+                row = json.loads(m.group(1))
+            except ValueError:
+                continue
+            # The slight-physique branch comes first in every case; the ordinary one overwrites it.
+            if label in rows:
+                slight.setdefault(label, rows[label])
+            rows[label] = row
+    return rows, slight, start
+
+
 def special_class_rows():
     """
     The five classes his class dictionary does not hold, from checkClassQualification
@@ -1305,6 +1348,23 @@ def main():
                         "line": class_skills_line},
             "entries": class_skills
         }, fh, indent=2, ensure_ascii=False)
+    # Racial skills his dictionary does not hold, answered inline instead. Only Gremlin is a race
+    # a character can be; the two Fairies have no row in raceStatsAndMoveDetails.
+    inline_skills, inline_slight, inline_line = inline_race_skills()
+    for tmpname in sorted(inline_skills):
+        if tmpname not in inline_slight:
+            print("  note: inline race skills for %s have only one branch" % tmpname)
+    with open(os.path.join(NAMED, "inlineRaceSkills.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js", "function": "setRaceSkillSheet",
+                        "line": inline_line},
+            "_note": "The ordinary branch of each case. The slight-physique branch is kept beside "
+                     "it under _slightPhysique, unused: the port has no slight-physique option.",
+            "entries": inline_skills,
+            "_slightPhysique": inline_slight
+        }, fh, indent=2, ensure_ascii=False)
+    print("inline race skills %d races (%s)" % (len(inline_skills), ", ".join(sorted(inline_skills))))
+
     special_rows, special_line = special_class_rows()
     for tmpname, tmprow in special_rows.items():
         if len(tmprow) != 22:

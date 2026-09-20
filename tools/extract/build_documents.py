@@ -332,6 +332,11 @@ def build_races():
     # His "(Slight Physique)" variants of a few races are separate keys in the first two and are
     # not carried: the port has no slight-physique option yet.
     raceskills = load_raw_entries("raceSkillDetailValues")
+    # Three races are answered inline by setRaceSkillSheet before that dictionary is consulted,
+    # and only one of them -- Gremlin -- is a race a character can be. Walked out of his switch by
+    # extract_combat_tables.py and laid UNDER the dictionary, so a dictionary row always wins.
+    for tmpinline, tmprow in ((load_named("inlineRaceSkills") or {}).get("entries", {})).items():
+        raceskills.setdefault(tmpinline, tmprow)
     racefeatures = load_raw_entries("raceFeatureAbilities")
     racefertile = load_raw_entries("racefertiledict")
     raceages = (load_named("raceAges") or {}).get("entries", {})
@@ -341,13 +346,28 @@ def build_races():
         where = "raceStatsAndMoveDetails/%s" % tmpname
         for tmptable, tmpsource in (("raceSkillDetailValues", raceskills), ("raceFeatureAbilities", racefeatures),
                                     ("racefertiledict", racefertile), ("getAge", raceages)):
-            if tmpname not in tmpsource:
-                note("race-missing-from-table", where, "no entry in %s" % tmptable)
+            if tmpname in tmpsource:
+                continue
+            # Changeling's racial skills depend on the FORM it is wearing, so his sheet keeps them
+            # in a dictionary of their own keyed by form (changelingRaceSkillDetailValues, 41 of
+            # them) rather than one list. There is nothing to put in racialSkills for it, and that
+            # is the answer rather than a gap -- so it is said once, plainly, instead of being
+            # reported as missing data every run.
+            if tmpname == "Changeling" and tmptable == "raceSkillDetailValues":
+                note("race-by-form", where,
+                     "racial skills depend on the form worn; his changelingRaceSkillDetailValues "
+                     "holds one list per form. Carried as a note on the race, not as a list.")
+                continue
+            note("race-missing-from-table", where, "no entry in %s" % tmptable)
 
         tmpskillrow = raceskills.get(tmpname, ["", [], ""])
         tmpracialskills = [{"name": clean_text(s[0]), "bonus": clean_text(str(s[1] or ""))}
                            for s in (tmpskillrow[1] or []) if s and s[0]]
         tmpskillnote = clean_text(str(tmpskillrow[2] if len(tmpskillrow) > 2 else ""))
+        if tmpname == "Changeling":
+            tmpskillnote = ("This race's skills depend on the form it wears: his "
+                            "changelingRaceSkillDetailValues holds a list for each of 41 forms. "
+                            "Choosing them belongs to the form swap, which is not built yet.")
         if tmpskillnote == "None":
             tmpskillnote = ""
         tmpfeatures = racefeatures.get(tmpname, ["", "", ""])

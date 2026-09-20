@@ -128,6 +128,60 @@ check("age rolls within the race's range",
 	[C.rollStartingAge({ startLow: 18, startHigh: 24 }, always(1)), C.rollStartingAge({ startLow: 18, startHigh: 24 }, always(7))],
 	[18, 24]);
 
+// --- assembleCharacter: what the generator actually creates ------------------------------------
+// Exercised by the preview but by no test until now. Small hand-made content, so every figure
+// here is worked out rather than looked up.
+const content = {
+	races: [{ name: "Testfolk", type: "race", system: {
+		racialSkills: [{ name: "Climb", bonus: "+10%" }],
+		ages: { startLow: 18, startHigh: 24, maxAge: "90" }, disabilities: [], abilities: [],
+		endurance: { startMod: 2 } } }],
+	classes: [{ name: "Tester", type: "class", system: {
+		nonClassed: false, classMods: [],
+		advancement: { classSkillList: [{ title: 1, name: "Poke", core: true, requires: "" }] } } },
+		{ name: "GME", type: "class", system: { nonClassed: true, classMods: [],
+			advancement: { classSkillList: [] } } }],
+	skills: [
+		{ name: "Poke", type: "skill", system: { attr1: "str", attr2: "", skillRating: 10, startingDice: "1d10", types: [] } },
+		{ name: "Climb", type: "skill", system: { attr1: "str", attr2: "agl", skillRating: 8, startingDice: "1d10", types: [] } },
+		{ name: "Chat", type: "skill", system: { attr1: "chm", attr2: "", skillRating: 9, startingDice: "1d10", types: [] } }
+	]
+};
+const choices = (patch) => Object.assign({
+	name: "Tester One", raceNames: ["Testfolk"], className: "Tester",
+	classSkills: [{ name: "Poke", core: true }], racialSkillNames: [], socialSkillNames: [],
+	ratings: { str: 15, agl: 14, vit: 13, int: 12, wis: 11, knw: 10, app: 10, chm: 10, soc: 10, aur: 10, pty: 10, wil: 10 },
+	languages: [], alignment: "", gender: ""
+}, patch);
+
+const assembled = C.assembleCharacter(choices({}), content, always(10));
+const itemsOf = (b) => b.items ?? b.actor?.items ?? [];
+const skillNamed = (b, n) => itemsOf(b).find(i => i.type === "skill" && i.name === n);
+
+check("a new character starts at title 1", assembled.actor.system.identity.title, 1);
+check("...and a non-classed one at title 0, his GME",
+	C.assembleCharacter(choices({ className: "GME", classSkills: [] }), content, always(10))
+		.actor.system.identity.title, 0);
+check("a core class skill carries the class's +30",
+	[skillNamed(assembled, "Poke").system.category, skillNamed(assembled, "Poke").system.abilityBonus],
+	["class", 30]);
+check("a racial skill's starting dice count double",
+	skillNamed(C.assembleCharacter(choices({ racialSkillNames: ["Climb"] }), content, always(10)), "Climb")
+		.system.startingBonus, 20);
+check("...and carries the race's own bonus on it",
+	skillNamed(C.assembleCharacter(choices({ racialSkillNames: ["Climb"] }), content, always(10)), "Climb")
+		.system.abilityBonus, 10);
+check("a skill the content does not hold is still created, and reported",
+	[!!skillNamed(C.assembleCharacter(choices({ socialSkillNames: ["Nonesuch"] }), content, always(10)), "Nonesuch"),
+	 C.assembleCharacter(choices({ socialSkillNames: ["Nonesuch"] }), content, always(10))
+		.issues.some(i => i.includes("Nonesuch"))], [true, true]);
+check("a language with no name is dropped",
+	C.assembleCharacter(choices({ languages: [{ name: "", speak: true, write: false },
+	                                          { name: "Trade", speak: true, write: false }] }),
+		content, always(10)).actor.system.languages.map(l => l.name), ["Trade"]);
+check("every skill's misc is set outright, never left to default to NaN",
+	itemsOf(assembled).filter(i => i.type === "skill").every(i => i.system.misc === 0), true);
+
 const passed = results.filter(r => r.startsWith("PASS")).length;
 const failed = results.length - passed;
 document.getElementById("out").innerHTML =

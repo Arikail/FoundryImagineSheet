@@ -294,6 +294,29 @@ await A.commitTitle(actor, 10);
 check("a better Sense Supernatural is left alone rather than cut to the title's figure",
 	actor.items.find(i => i.name === "Sense Supernatural").system.abilityBonus, 85);
 
+// --- the grant will not run twice at once ------------------------------------------------------
+// The other half of the duplicate-grant fix. commitTitle marking its own update stops the hook
+// joining in; this is the guard for everything else -- two calls racing would each read the held
+// skills before either had created anything, and every skill of that title would land twice.
+const G = await import("../module/class-advancement.mjs");
+// Give the grant something to do: take three skills off the character that their title entitles
+// them to, so both calls want to put them back.
+const owedAgain = actor.items.filter(i => i.type === "skill"
+	&& (parseInt(i.system.acquiredAtTitle) || 0) > 0).slice(0, 3);
+await actor.deleteEmbeddedDocuments("Item", owedAgain.map(i => i.id));
+const beforeRace = actor.items.filter(i => i.type === "skill").length;
+const [firstGrant, secondGrant] = await Promise.all([
+	G.grantClassSkills(actor, { notify: false }),
+	G.grantClassSkills(actor, { notify: false })
+]);
+const grantedNames = actor.items.filter(i => i.type === "skill").map(i => i.name);
+check("two grants racing on one actor do not both run",
+	[firstGrant.granted.length > 0, secondGrant.granted.length], [true, 0]);
+check("...so no skill is held twice",
+	grantedNames.filter((n, i) => grantedNames.indexOf(n) !== i), []);
+check("...and the second call left the character alone",
+	actor.items.filter(i => i.type === "skill").length, beforeRace + firstGrant.granted.length);
+
 // --- the bare cases: no class, no race, no skills ----------------------------------------------
 // Every one of these is a character a Game Master can make in two clicks, and each used to be a
 // plausible way to throw: the view reads a class for its goal attributes and skill points, a race

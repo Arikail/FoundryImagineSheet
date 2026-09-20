@@ -4,7 +4,7 @@ Agile-style tracking: epics map to the architecture layers in `CLAUDE.md`. Every
 
 Status values: `Backlog` / `In Progress` / `Blocked` / `Done`.
 
-**State as of 2026-09-18 (full board audit, commit after `74dbc40`).** Suites on a fresh port: combat 374, derivation 258, creature 139, availability 39, all passing; 27 modules parse. **Re-run 2026-09-19 after the class pass: combat 406, derivation 347, creature 140, availability 46, character generation 46, all passing; 33 modules parse.** **After the levelling pass the same day: advancement 77 as well, all six suites passing, and 38 modules parse.** **After the bug-fix pass that followed: advancement 86 and a seventh suite, `tools/levelup-walk.html` (34), which drives the real writing code against a stub actor. Seven real defects fixed, the worst a duplicate class-skill grant on every title advance; see `DECISIONS.md` 2026-09-19 'Bug-fix pass'.** **Three Backlog rows were substantially built and have moved on**: Attributes, now **Done** after its one gap, the language allowance, was built the same day (derivation now 275); Equipment, also **Done** the same day (his encumbrance ported whole, plus the book's movement penalty beside it) and Races & Classes (GME, the good/evil class split, racial ability mechanics). **The pack-compile row was re-described**, because a runtime importer replaced the compile step. **The attribute-maximum row was corrected** for the 25/27 split he confirmed. **The one module with nothing built is Character Generation.** Every "Not verified" note on this board still reduces to the same thing: no Foundry V14 install has run any of this.
+**State as of 2026-09-18 (full board audit, commit after `74dbc40`).** Suites on a fresh port: combat 374, derivation 258, creature 139, availability 39, all passing; 27 modules parse. **Re-run 2026-09-19 after the class pass: combat 406, derivation 347, creature 140, availability 46, character generation 46, all passing; 33 modules parse.** **After the levelling pass the same day: advancement 77 as well, all six suites passing, and 38 modules parse.** **After the bug-fix pass that followed: advancement 86 and a seventh suite, `tools/levelup-walk.html` (34), which drives the real writing code against a stub actor. Seven real defects fixed, the worst a duplicate class-skill grant on every title advance; see `DECISIONS.md` 2026-09-19 'Bug-fix pass'.** **After the backlog pass the same day: combat 411, derivation 364, creature 145, advancement 101, character generation 54, availability 46, level-up walk 37 -- 1,222 checks over seven suites, all passing, 38 modules parse.** **Three Backlog rows were substantially built and have moved on**: Attributes, now **Done** after its one gap, the language allowance, was built the same day (derivation now 275); Equipment, also **Done** the same day (his encumbrance ported whole, plus the book's movement penalty beside it) and Races & Classes (GME, the good/evil class split, racial ability mechanics). **The pack-compile row was re-described**, because a runtime importer replaced the compile step. **The attribute-maximum row was corrected** for the 25/27 split he confirmed. **The one module with nothing built is Character Generation.** Every "Not verified" note on this board still reduces to the same thing: no Foundry V14 install has run any of this.
 
 **Open with the developer:** `UPSTREAM-ISSUES.md` item 2 (Gaunt), item 3 (is the sheet current), item 4 (saves' half-chance vs ±20%), item 5 edge cases, item 10's Enhanced Perception double count, and items 28 and 29 (multi-missile).
 
@@ -91,6 +91,30 @@ Status values: `Backlog` / `In Progress` / `Blocked` / `Done`.
 4. Update this file's status column.
 5. Log any new architectural call in `docs/DECISIONS.md`.
 6. Commit with a message describing what changed and why.
+
+**The test routine.** Serve the repository over HTTP and open each suite; they stub Foundry, so
+they run in any browser. As of 2026-09-19 the figures are:
+
+| suite | file | checks |
+|---|---|---|
+| Combat rules | `tools/combat-test.html` | 411 |
+| Derivation (character model) | `tools/derive-test.html` | 364 |
+| Creature derivation | `tools/creature-test.html` | 145 |
+| Advancement rules | `tools/advancement-test.html` | 101 |
+| Character generation | `tools/chargen-test.html` | 54 |
+| Content availability | `tools/availability-test.html` | 46 |
+| Level-up walk (real writing code) | `tools/levelup-walk.html` | 34 |
+| Module parse check | `tools/syntax-check.html` | 38 modules |
+
+```bash
+python -m http.server 8777 --bind 127.0.0.1
+```
+
+The previews (`sheet-preview.html`, `item-preview.html`, `chargen-preview.html`,
+`levelup-preview.html`, `creature-preview.html`, `availability-preview.html`) render the real
+templates against real content and are worth a look whenever a template changes. A browser caches
+ES modules hard; if a change seems not to have taken, serve with `Cache-Control: no-store` rather
+than trusting the result.
 
 ## Epic 7 — Character Sheet UI
 

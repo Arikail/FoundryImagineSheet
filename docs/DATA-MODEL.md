@@ -76,14 +76,32 @@ The proposed `sourcebook` field is therefore not an invention imposed on the dat
 ```
 system:
   identity:
-    race          DocumentUUIDField -> race Item
-    class         DocumentUUIDField -> class Item
-    classType     string
+    # CORRECTED 2026-09-19: race and class are NOT UUID fields. They are embedded Items,
+    # found during data preparation, because resolving a UUID synchronously while preparing
+    # data is unreliable for compendium content that has not loaded yet. Dragging the item
+    # onto the sheet is what sets them. A character may hold TWO races (a Half Race) and more
+    # than one class (dual classing), so the model carries raceItems/classItems as lists and
+    # raceItem/classItem as the first of each.
     title         number
-    titleName     string   (derived, from classtitledict)
     goal, exp     number
-    nextGoalExp   number   (derived, from goalupdict)
     alignment, tendencies, gender  string
+
+    # the level-up queue, his titles_to_raise / goals_to_raise (2026-09-19)
+    titlesToRaise, goalsToRaise    number   # >0 means a level-up is outstanding
+    titleToLevel, goalToLevel      number   # which step is next
+    attributeIncreases             number   # career total, for his floor at goals 12/27/42
+    archSpecialMet                 bool     # the one Arch Mortal requirement only a GM can judge
+
+    # DERIVED, none of it stored:
+    #   raceName, raceType, isHalfRace, raceWarning, race{skills,abilities,...}, raceIssues
+    #   className, classType, classNames, titleName, classes[], isDualClass, isNonClassed
+    #   classSlotsNeeded, dualClassIssues, cannotCast
+    #   classProgression[]  per class: { rows[] (title, reached, skills), owed[] }
+    #   classSkillsOwed     count of earned-but-not-held class skills
+    #   classUsage[]        each class's armour and weapon usage, shown never enforced
+    #   nextGoalExp, expCap, levelUpPending, goalAttributes[]
+    #   combat.chosenAttackSkill  a GME picks its attack chart outright, having no class to earn it
+    #   archMortal { qualified, rows[] }, archQualified
 
   attributes:                       # str agl vit int wis knw app chm soc aur pty wil
     <attr>: { rating: number, permMod: number, tempMod: number }
@@ -143,12 +161,84 @@ skill Item system:
   startingBonus    number        # rolled; racial skills roll x2
   abilityBonus     number
   misc             number
-  acquiredAtTitle  number
+  acquiredAtTitle  number        # the class title it arrives at; 0 for racial and social
+  isRestricted     bool          # cannot be attempted untrained
+  # DERIVED: combinedAttributes, baseChance, totalChance,
+  #          usableByTitle + titleGateReason (his "cannot be used before <name> title")
 ```
 
 Derived: `baseChance = (combinedAttributes - skillRating) x 5`, `total = baseChance + startingBonus + abilityBonus + misc`. Untrained common-skill use = base chance only, which is why the sheet's `common_skill_#` fields carry only name and base.
 
 Class-skill Title progression belongs on the **class** Item (the sheet's `class_skill_#_#` double index is `[title][slot]`), not on the skill.
+
+## 4b. Race Item schema
+
+The whole schema is in `module/data/item-race.mjs`. A character may hold TWO race items, which the
+port combines into his Half Race (`module/race-rules.mjs`); the combined figures are derived, and
+nothing here is written back to either race.
+
+```
+race Item system:
+  attributeMods    { str..wil: number }   # added to the character's rating, folded into the base
+  attributeLimits  { str..wil: number }   # the highest rating a member may reach -- what
+                                          # getAttributeMax reads, and load-bearing.
+                                          # Title 11 discards it: 25 ordinary, 27 magical.
+  endurance:
+    startFormula, startMod                # Endurance at creation
+    titleFormula, titleDice, titleMax, titleMod
+                                          # what a title advance brings. Rolled below 11th; its
+                                          # MAXIMUM at 11-12; x2, x3, x4 at 13, 14, 15.
+                                          # One race writes a plain number here: Elf(Silver)'s "1".
+  characteristicMods  { perception, affinity, fortune }
+  resistanceMods      { magic, illusion, control, poison, disease }
+  movement          walk/jog/run modifiers, speed multiplier, and a special rate with its own
+                    kind and base -- these are MODIFIERS on a rate drawn from Agility, not
+                    finished rates (the bug that made every race read as unable to move)
+  bodyType          string                # which of the 45 body charts the character is built from
+
+  racialSkills      [ { name, bonus } ]   # the skills a member may choose, with his bonus on each
+  racialSkillNote   string                # Changeling's says its skills depend on the form worn:
+                                          # his changelingRaceSkillDetailValues holds 41 lists
+  abilities, disabilities, immunities  [string]
+                                          # listed and shown; the MECHANICS of them (infravision,
+                                          # hide values) are not ported -- see the board
+  ages              { startLow, startHigh, maxAge }   # maxAge becomes "Immortal" at 11th title
+  fertileWith       [string]              # which races this one can have children with; the list
+                                          # his Half Race picker offers
+```
+
+## 4a. Class Item schema — the parts the later passes added
+
+The whole schema is in `module/data/item-class.mjs`, field by field with a comment on each. What
+is worth naming here is what arrived after this document was first written:
+
+```
+class Item system:
+  advancement:
+    titles           [string]    # the title names, index 0 = Title 1
+    classSkills      [string]    # per-title skill TEXT, only for hand-authored classes
+    classSkillList   [ { title, name, core, requires } ]
+                                 # his setClassSkillLists, all 92 classes: the skill a title
+                                 # brings, whether it is a core skill (+30%), and whether it is
+                                 # only for a race that can cast ("caster") or cannot ("nonCaster")
+    goalAttr1, goalAttr2  string # the two attributes a goal advance may raise (his goalupdict)
+
+  baseClass, path    string      # a class with a choice is one document per path;
+                                 # "Elementalist" + "Call of Death". An availability override on
+                                 # the base class reaches every path (module/availability.mjs).
+  nonClassed         bool        # his GME: 0 title, no class skills, attack chart picked outright
+  blockedRaces       [string]    # races that may NOT take this class; empty means any
+  armorUsage, weaponUsage  string  # shown on the sheet, never enforced -- his sheet does neither
+
+  archMortal:                    # what is needed to pass 10th title (his archmortalqualifylist)
+    attributes  { str..wil: string }   # "" none, "RM" the racial maximum, n a rating,
+                                       # -n the racial maximum less n, floored at 0
+    skills      [ { name, chance } ]   # five core skills, each at a minimum chance
+    special     string                 # a sentence only a Game Master can judge; "" if none
+
+  # per-character state:
+  title              number      # 0 means "follow the character's own title"
+```
 
 ## 5. Content extraction pipeline
 

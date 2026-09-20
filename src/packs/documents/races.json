@@ -1842,7 +1842,7 @@
       "canSwim": true,
       "bodyType": "Humanoid",
       "racialSkills": [],
-      "racialSkillNote": "",
+      "racialSkillNote": "This race's skills depend on the form it wears: his changelingRaceSkillDetailValues holds a list for each of 41 forms. Choosing them belongs to the form swap, which is not built yet.",
       "abilities": [
         "Changeling Form"
       ],
@@ -7316,7 +7316,48 @@
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Wings)",
-      "racialSkills": [],
+      "racialSkills": [
+        {
+          "name": "Darkness",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": ""
+        }
+      ],
       "racialSkillNote": "",
       "abilities": [
         "Night Vision",
