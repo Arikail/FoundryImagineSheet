@@ -69,6 +69,11 @@ const ARMOR_LOCATION_LABELS = Object.fromEntries(ARMOR_COVERAGE_ROWS.flatMap((tm
 
 // @MARKER BASE ITEM SHEET
 
+// Where a carried thing can be. Equipped and carried weigh against the character; on a mount or
+// in a stash do not. One list, so the three sheets that offer it cannot drift apart.
+const CARRIED_LOCATIONS = ["equipped", "carried", "mount", "stash"];
+
+
 export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
 	static DEFAULT_OPTIONS = {
@@ -175,6 +180,110 @@ export class ImaginePowerSheet extends ImagineItemSheet {
 			powerKinds: ["unknown", "spell", "invocation", "magicItem", "divineItem"]
 		};
 		return tmpcontext;
+	}
+}
+
+
+// @MARKER EQUIPMENT, WEAPON AND SKILL SHEETS
+// These three went without a sheet of their own on purpose: broad but flat, read far more often
+// than written, and everything anyone needed was already on the character's own tabs. The trigger
+// named at the time for revisiting was hand-authored content landing in src/packs/manual/.
+//
+// It has now fired twice -- a crowbar authored there, and the Equipment tab's Add buttons, which
+// create gear on a character and open its sheet at once. A new item that opens on a sheet with no
+// weight field is no use, so all three have one now.
+
+export class ImagineEquipmentSheet extends ImagineItemSheet {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "item", "equipment"],
+		position: { width: 560, height: 520 }
+	};
+
+	static PARTS = {
+		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
+		body:   { template: "systems/imagine-rpg/templates/item/item-equipment.hbs" }
+	};
+
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+		tmpcontext.config = { locations: CARRIED_LOCATIONS };
+		return tmpcontext;
+	}
+}
+
+
+export class ImagineWeaponSheet extends ImagineItemSheet {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "item", "weapon"],
+		position: { width: 620, height: 680 }
+	};
+
+	static PARTS = {
+		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
+		body:   { template: "systems/imagine-rpg/templates/item/item-weapon.hbs" }
+	};
+
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+		// The four attack modes as rows, each carrying its own two values, so the template holds
+		// no list of field names. A mode switched off cannot be used AT ALL, which is not the same
+		// as a modifier of zero -- his source writes "Non" for one and 0 for the other.
+		var tmpsystem = this.document.system;
+		tmpcontext.config = {
+			locations: CARRIED_LOCATIONS,
+			hands: ["right", "left", "both"],
+			modes: [
+				{ key: "missile", label: "Missile" },
+				{ key: "thrust",  label: "Thrust" },
+				{ key: "cut",     label: "Cut" },
+				{ key: "smash",   label: "Smash" }
+			].map(tmpmode => ({
+				...tmpmode,
+				available: !!tmpsystem[tmpmode.key]?.available,
+				mod: parseInt(tmpsystem[tmpmode.key]?.mod) || 0
+			}))
+		};
+		return tmpcontext;
+	}
+}
+
+
+export class ImagineSkillSheet extends ImagineItemSheet {
+
+	static DEFAULT_OPTIONS = {
+		classes: ["imagine", "sheet", "item", "skill"],
+		position: { width: 600, height: 620 }
+	};
+
+	static PARTS = {
+		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
+		body:   { template: "systems/imagine-rpg/templates/item/item-skill.hbs" }
+	};
+
+	async _prepareContext(options) {
+		var tmpcontext = await super._prepareContext(options);
+		tmpcontext.config = { categories: ["class", "racial", "social"] };
+		// The types as one comma list, since that is how a person reads and writes them. The
+		// schema keeps an array, so it is split again on save -- see _processFormData below.
+		tmpcontext.typesText = (this.document.system.types ?? []).join(", ");
+		return tmpcontext;
+	}
+
+	// A skill's types are an ARRAY in the schema and a comma list on the sheet, so what the form
+	// hands back has to be split before it reaches the document, or the field fails validation.
+	//
+	// _processFormData returns an EXPANDED object -- system.types, not "system.types" -- which is
+	// documented on ApplicationV2 and is easy to get wrong: a flat key would simply never match,
+	// and the split would silently never happen.
+	_processFormData(event, form, formData) {
+		var tmpdata = super._processFormData(event, form, formData);
+		if (typeof tmpdata?.system?.types == "string") {
+			tmpdata.system.types = tmpdata.system.types
+				.split(",").map(tmptype => tmptype.trim()).filter(tmptype => tmptype);
+		}
+		return tmpdata;
 	}
 }
 

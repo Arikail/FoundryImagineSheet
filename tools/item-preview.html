@@ -32,6 +32,21 @@
 	<div class="window-content" id="class"></div>
 </div>
 
+<div class="frame imagine sheet item equipment">
+	<div class="frame-title">Equipment &mdash; item sheet (preview): a real Crowbar, the hand-authored one</div>
+	<div class="window-content" id="equipment"></div>
+</div>
+
+<div class="frame imagine sheet item weapon">
+	<div class="frame-title">Weapon &mdash; item sheet (preview): a real Bastard Sword, four attack modes</div>
+	<div class="window-content" id="weapon"></div>
+</div>
+
+<div class="frame imagine sheet item skill">
+	<div class="frame-title">Skill &mdash; item sheet (preview): a real Herb Lore</div>
+	<div class="window-content" id="skill"></div>
+</div>
+
 <div class="frame imagine sheet item armor">
 	<div class="frame-title">Armour &mdash; item sheet (preview)</div>
 	<div class="window-content" id="armor"></div>
@@ -220,7 +235,42 @@ const raceCtx = {
 	]
 };
 
+// @MARKER THE THREE SHEETS ADDED 2026-09-19
+// Equipment, weapon and skill used the core default sheet until the Equipment tab gained buttons
+// that create gear and open its sheet at once. Each is previewed against a REAL document: the
+// crowbar because it is the hand-authored one, the Bastard Sword because it can be used all four
+// ways, and Herb Lore because it is an ordinary two-attribute skill.
+const CARRIED = ["equipped", "carried", "mount", "stash"];
+const [equipDocs, weaponDocs, skillDocs] = await Promise.all(
+	["equipment", "weapons", "skills"].map(async f =>
+		(await (await fetch(`../src/packs/documents/${f}.json`)).json())));
+const pick = (list, name) => structuredClone(list.find(d => d.name === name) ?? list[0]);
+
+const crowbar = pick(equipDocs, "Crowbar");
+const equipmentCtx = { item: crowbar, system: Object.assign(
+	{ quantity: 1, location: "carried", isTagalong: false, floats: false, equipmentType: "", cost: "", page: "" },
+	crowbar.system), config: { locations: CARRIED } };
+
+const sword = pick(weaponDocs, "Bastard Sword");
+const weaponSystem = Object.assign({ quantity: 1, location: "equipped", hand: "right", floats: false,
+	weaponType: "", page: "", magicBonus: 0, reloadSpeed: 0 }, sword.system);
+const weaponCtx = { item: sword, system: weaponSystem, config: {
+	locations: CARRIED, hands: ["right", "left", "both"],
+	modes: [{ key: "missile", label: "Missile" }, { key: "thrust", label: "Thrust" },
+	        { key: "cut", label: "Cut" }, { key: "smash", label: "Smash" }]
+		.map(m => ({ ...m, available: !!weaponSystem[m.key]?.available,
+		             mod: parseInt(weaponSystem[m.key]?.mod) || 0 })) } };
+
+const herb = pick(skillDocs, "Herb Lore");
+const skillCtx = { item: herb, system: Object.assign({ category: "class", startingBonus: 0,
+	abilityBonus: 0, misc: 0, acquiredAtTitle: 0, isRestricted: false, isCommon: false }, herb.system),
+	config: { categories: ["class", "racial", "social"] },
+	typesText: (herb.system.types ?? []).join(", ") };
+
 for (const [id, ctx, body] of [
+	["equipment", equipmentCtx, "item-equipment"],
+	["weapon",    weaponCtx,    "item-weapon"],
+	["skill",     skillCtx,     "item-skill"],
 	["attack", attackCtx, "item-creature-attack"],
 	["power",  powerCtx,  "item-power"],
 	["trait",  traitCtx,  "item-trait"],

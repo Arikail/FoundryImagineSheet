@@ -29,7 +29,8 @@ import ImagineCharacterSheet from "./sheets/actor-character-sheet.mjs";
 import ImagineCreatureSheet from "./sheets/actor-creature-sheet.mjs";
 import {
 	ImagineCreatureAttackSheet, ImaginePowerSheet, ImagineTraitSheet,
-	ImagineClassSheet, ImagineArmorSheet, ImagineRaceSheet
+	ImagineClassSheet, ImagineArmorSheet, ImagineRaceSheet,
+	ImagineEquipmentSheet, ImagineWeaponSheet, ImagineSkillSheet
 } from "./sheets/item-sheet.mjs";
 import { importAllContent } from "./content-importer.mjs";
 import { grantClassSkills, registerClassAdvancement } from "./class-advancement.mjs";
@@ -162,6 +163,27 @@ Hooks.once("init", function () {
 		types: ["race"],
 		makeDefault: true,
 		label: "IMAGINE.Sheet.Race"
+	});
+
+	// Equipment, weapons and skills. These three used the core default sheet until 2026-09-19,
+	// when the Equipment tab gained buttons that create gear and open its sheet at once: a new
+	// item landing on a sheet with no weight field is no use to anyone.
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineEquipmentSheet, {
+		types: ["equipment"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Equipment"
+	});
+
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineWeaponSheet, {
+		types: ["weapon"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Weapon"
+	});
+
+	foundry.documents.collections.Items.registerSheet("imagine-rpg", ImagineSkillSheet, {
+		types: ["skill"],
+		makeDefault: true,
+		label: "IMAGINE.Sheet.Skill"
 	});
 
 	// @MARKER SYSTEM API

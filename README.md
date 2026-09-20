@@ -34,6 +34,7 @@ Foundry VTT **V14+**. No legacy/back-compat support — built exclusively on cur
 - `ImagineRoll20CharacterSheet-main/` — the original Roll20 sheet export, the source material
 - `docs/DECISIONS.md` — append-only log of architectural and scope decisions, with rationale
 - `docs/PROGRESS.md` — agile-style board (epics/stories/status) tracking the build
+- `docs/FIRST-RUN.md` — **what was checked against the V14 API, and the smoke test to run the first time the system is loaded**, in the order things will break
 - `docs/ADDING-CONTENT.md` — **how to add races, classes, skills, gear and the rest**, either in Foundry or in the content files, with no code change
 - `docs/DATA-MODEL.md` — the schemas, and what is stored against what is derived
 - `docs/UPSTREAM-ISSUES.md` — defects and questions raised with the original developer, with his answers where they have come

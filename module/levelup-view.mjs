@@ -52,9 +52,11 @@ import { getClassSkillsAtTitle } from "./class-rules.mjs";
 
 		var tmpview = {
 			step: tmpstep,
-			// As flags rather than a string compared in the template: this port's templates use no
-			// Handlebars helpers, whose presence in Foundry's environment cannot be checked here,
-			// and the previews render the same files outside it.
+			// As flags rather than a string compared in the template. Foundry V14 DOES register eq,
+			// ne, lt, gt, lte, gte, not, and and or (confirmed against the V14 API docs 2026-09-19,
+			// foundry.applications.handlebars), so a helper here would work in Foundry -- but the
+			// previews render these same templates through plain Handlebars, where a helper only
+			// works if the harness registers it. Flags work in both without anyone remembering to.
 			isExperience: tmpstep == "experience",
 			isTitle: tmpstep == "title",
 			isGoal: tmpstep == "goal",

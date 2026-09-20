@@ -1,0 +1,85 @@
+{{!--
+	Skill body. One root element, as the framework requires of every PART.
+
+	A skill is two things at once: a definition that belongs to the skill itself (its attributes,
+	its rating, what it costs to learn) and per-character state that only means anything once it is
+	on a character (the category it was taken under, the bonuses rolled for it, the title it
+	arrives at). They are kept apart here, because a skill sitting in a compendium has only the
+	first, and editing the second on one is meaningless.
+--}}
+<section class="imagine-item-body skill">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>The skill itself</h3>
+			<ul class="band-list">
+				<li><label>Attributes</label>
+					<span><input type="text" name="system.attr1" value="{{system.attr1}}" placeholder="str">
+						<input type="text" name="system.attr2" value="{{system.attr2}}" placeholder="agl"></span></li>
+				<li><label>Rating</label>
+					<span><input type="number" name="system.skillRating" value="{{system.skillRating}}"></span></li>
+				<li><label>Starting dice</label>
+					<span><input type="text" name="system.startingDice" value="{{system.startingDice}}" placeholder="2d6%"></span></li>
+				<li><label>Time to use</label>
+					<span><input type="text" name="system.time" value="{{system.time}}"></span></li>
+				<li><label>Learning</label>
+					<span><input type="text" name="system.learn" value="{{system.learn}}"></span></li>
+			</ul>
+			<p class="muted">Two attributes are averaged, rounding up. The chance is
+			(attributes &minus; rating) &times; 5, plus the bonuses beside it.</p>
+		</div>
+
+		<div class="panel">
+			<h3>On this character</h3>
+			<ul class="band-list">
+				<li><label>Taken as</label>
+					<span><select name="system.category">
+						{{#each config.categories as |c|}}
+						<option value="{{c}}" {{#if (eq c ../system.category)}}selected{{/if}}>{{c}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Starting bonus</label>
+					<span><input type="number" name="system.startingBonus" value="{{system.startingBonus}}">%</span></li>
+				<li><label>Ability</label>
+					<span><input type="number" name="system.abilityBonus" value="{{system.abilityBonus}}">%</span></li>
+				<li><label>Miscellaneous</label>
+					<span><input type="number" name="system.misc" value="{{system.misc}}">%</span></li>
+				<li><label>Arrives at title</label>
+					<span><input type="number" name="system.acquiredAtTitle" value="{{system.acquiredAtTitle}}" min="0"></span></li>
+			</ul>
+			<p class="muted">A class skill cannot be used before its title. Zero means no gate,
+			which is what a racial or social skill carries.</p>
+		</div>
+	</div>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>How it may be attempted</h3>
+			<ul class="band-list">
+				<li><label>Cannot be tried untrained</label>
+					<span><input type="checkbox" name="system.isRestricted" {{#if system.isRestricted}}checked{{/if}}></span></li>
+				<li><label>Being used untrained</label>
+					<span><input type="checkbox" name="system.isCommon" {{#if system.isCommon}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">Untrained use gets the base chance alone, with none of the bonuses.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Where it comes from</h3>
+			<ul class="band-list">
+				<li><label>Types</label>
+					<span><input type="text" name="system.types" value="{{typesText}}"
+						placeholder="Magical, Combat"></span></li>
+				<li><label>Sourcebook</label>
+					<span><input type="text" name="system.sourcebook" value="{{system.sourcebook}}"></span></li>
+				<li><label>Page</label>
+					<span><input type="text" name="system.page" value="{{system.page}}"></span></li>
+			</ul>
+			<p class="muted">A skill's types decide which magic switches can hide it: Magical belongs
+			to arcane, Divine to divine.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="5">{{system.description}}</textarea>
+</section>

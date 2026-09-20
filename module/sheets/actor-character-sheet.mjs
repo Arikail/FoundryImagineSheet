@@ -181,8 +181,10 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	// This is the function which assembles the Lore panel. Holding Weapon or Missile Lore at all
 	// comes from the class and the title, so it is derived; the two lists only name the weapons
 	// singled out for the larger bonus. Built here rather than in the template because joining a
-	// list and testing two flags at once both need Handlebars helpers whose presence in Foundry's
-	// environment this port cannot check.
+	// list and testing two flags at once both need Handlebars helpers. Foundry V14 does provide
+	// them (eq, gt, lt, and, or -- confirmed against the V14 API docs 2026-09-19), so this could
+	// now be done in the template; it is built here because the previews render the same file
+	// through plain Handlebars, which has them only if the harness registers them.
 	static #buildLorePanel(tmpsystem) {
 		var tmpweapon = !!tmpsystem.combat.hasWeaponLore;
 		var tmpmissile = !!tmpsystem.combat.hasMissileLore;

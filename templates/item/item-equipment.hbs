@@ -1,0 +1,70 @@
+{{!--
+	Equipment body. One root element, as the framework requires of every PART.
+
+	Nine flat fields, which is why this went without a sheet of its own for a long time. It has
+	one now because the Equipment tab can create gear by hand -- a rope cut in half, a Game
+	Master's invention -- and a new item that opens on a sheet with no weight on it is no use.
+--}}
+<section class="imagine-item-body equipment">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Carried</h3>
+			<ul class="band-list">
+				<li><label>Weight</label>
+					<span><input type="number" name="system.weight" value="{{system.weight}}" step="0.1"> lb</span></li>
+				<li><label>Quantity</label>
+					<span><input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></span></li>
+				<li><label>Where</label>
+					<span><select name="system.location">
+						{{#each config.locations as |l|}}
+						<option value="{{l}}" {{#if (eq l ../system.location)}}selected{{/if}}>{{l}}</option>
+						{{/each}}
+					</select></span></li>
+			</ul>
+			<p class="muted">Equipped and carried weigh against the character; on a mount or in a
+			stash do not.</p>
+		</div>
+
+		<div class="panel">
+			<h3>Weighs nothing</h3>
+			<ul class="band-list">
+				<li><label>Already counted elsewhere</label>
+					<span><input type="checkbox" name="system.isTagalong" {{#if system.isTagalong}}checked{{/if}}></span></li>
+				<li><label>Floats</label>
+					<span><input type="checkbox" name="system.floats" {{#if system.floats}}checked{{/if}}></span></li>
+			</ul>
+			<p class="muted">A scabbard is part of the sword's own weight, so counting it again would
+			charge the character twice. Floats is his "[Float]": a raft or a bladder of air costs
+			nothing to carry, and he marks it in the item's name.</p>
+		</div>
+	</div>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>What it is</h3>
+			<ul class="band-list">
+				<li><label>Kind</label>
+					<span><input type="text" name="system.equipmentType" value="{{system.equipmentType}}"
+						placeholder="Containers, Clothing, ..."></span></li>
+				<li><label>Cost</label>
+					<span><input type="text" name="system.cost" value="{{system.cost}}"></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Where it comes from</h3>
+			<ul class="band-list">
+				<li><label>Sourcebook</label>
+					<span><input type="text" name="system.sourcebook" value="{{system.sourcebook}}"></span></li>
+				<li><label>Page</label>
+					<span><input type="text" name="system.page" value="{{system.page}}"></span></li>
+			</ul>
+			<p class="muted">A sourcebook is a switch: a campaign can turn a whole book off, and
+			anything hand-authored is tagged Custom unless it says otherwise.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="5">{{system.description}}</textarea>
+</section>

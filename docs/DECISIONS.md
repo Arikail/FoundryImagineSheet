@@ -2789,3 +2789,46 @@ the three figures hang together: 5'6" between the Average and Medium bands, a Li
 STR 12 less AGL 19, and 110 lb at the bottom of what that frame runs to at that height. Her hair is
 offered from both parents' lists, Silvery and Green among them. **Not verified:** the Roll button in
 a running Foundry V14, and its chat card.
+
+### 2026-09-19 — The V14 API audit, and three sheets the Add buttons needed
+
+Nothing here has ever been loaded by Foundry, and every "not verified" note on the board reduces to
+that. This pass did what can be done without it: checked every Foundry API path the system calls
+against the published V14 documentation, fixed what was wrong, and wrote `docs/FIRST-RUN.md` — a
+smoke test ordered so that each failure is the smallest one left standing.
+
+**Everything checked out current.** `ActorSheetV2` / `ItemSheetV2`, `DialogV2.confirm` and its
+options, `Items.registerSheet` under `foundry.documents.collections`, `FormDataExtended` under
+`foundry.applications.ux`, `renderTemplate` under `foundry.applications.handlebars`,
+`CompendiumCollection.createCompendium`, `CONFIG.Actor.dataModels`, the `ApplicationV2` `title`
+getter and `element`, and the `updateDocument` hook's four parameters. `system.json`'s
+`documentTypes` declares all eleven sub-types and every one has a data model registered — a mismatch
+there is the classic first-run failure, and there is none.
+
+**Two defects found:**
+- *`_processFormData` returns an EXPANDED object.* The skill sheet written earlier this pass read
+  `tmpdata["system.types"]`, a flat key that would never have matched, so a skill's types would have
+  reached the document as a string and failed the `ArrayField`. It is `tmpdata.system.types`.
+- *Equipment, weapons and skills had no sheet of their own* — and the Equipment tab's new Add
+  buttons create exactly those three and open the sheet at once, which would have been Foundry's
+  generic fallback with none of this system's fields on it. The board named the trigger for
+  revisiting this in September ("hand-authored content landing in `src/packs/manual/`") and it has
+  now fired twice: the crowbar, and the Add buttons. All three have sheets now, following the six
+  that already existed. The weapon sheet keeps his "cannot be used this way at all" apart from "a
+  modifier of zero", which is the distinction his own data draws with "Non" against 0.
+
+**A comment corrected on evidence:** two places said Handlebars comparison helpers could not be
+checked for. They can, and Foundry V14 registers `eq`, `ne`, `lt`, `gt`, `lte`, `gte`, `not`, `and`
+and `or`. The templates still mostly avoid them, for a reason that survives the correction: the
+preview harnesses render the same files through plain Handlebars, where a helper exists only if the
+harness registered it. The comments now say that instead of guessing.
+
+**What the audit cannot settle**, and the first run must: whether arbitrary keys on an update's
+options survive to the `updateActor` hook — which is what stops a title advance granting its class
+skills twice — the timing of derived data against that hook, and anything involving dice, chat or
+notifications. All five are listed in `FIRST-RUN.md` with what breaks if they do not hold.
+
+**Verified:** derivation 364, character generation 75 and the other five suites unchanged; 40
+modules parse. `tools/item-preview.html` renders all three new sheets against real documents and
+every field carries its real value — the crowbar at 5 lb tagged Custom, the Bastard Sword at 5d6+1
+with cut available at +2 and missile unavailable, Herb Lore on KNW at rating 12.

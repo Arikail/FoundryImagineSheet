@@ -9,7 +9,10 @@
       "Trait": "Imagine Trait Sheet",
       "Class": "Imagine Class Sheet",
       "Armor": "Imagine Armour Sheet",
-      "Race": "Imagine Race Sheet"
+      "Race": "Imagine Race Sheet",
+      "Equipment": "Imagine Equipment Sheet",
+      "Weapon": "Imagine Weapon Sheet",
+      "Skill": "Imagine Skill Sheet"
     },
     "Tab": {
       "attributes": "Attributes",

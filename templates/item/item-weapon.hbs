@@ -1,0 +1,99 @@
+{{!--
+	Weapon body. One root element, as the framework requires of every PART.
+
+	The four attack modes are the shape of the thing: a weapon that cannot be used a given way
+	says so with "available" off, which is NOT the same as a modifier of zero -- his source
+	writes "Non" for the first and 0 for the second, and the combat resolver reads them apart.
+--}}
+<section class="imagine-item-body weapon">
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Damage and reach</h3>
+			<ul class="band-list">
+				<li><label>Damage</label>
+					<span><input type="text" name="system.damage" value="{{system.damage}}" placeholder="4d6"></span></li>
+				<li><label>Length</label>
+					<span><input type="text" name="system.length" value="{{system.length}}"></span></li>
+				<li><label>Magic bonus</label>
+					<span><input type="number" name="system.magicBonus" value="{{system.magicBonus}}"></span></li>
+				<li><label>Kind</label>
+					<span><input type="text" name="system.weaponType" value="{{system.weaponType}}"
+						placeholder="Blade, Bludgeon, ..."></span></li>
+			</ul>
+			<p class="muted">Each +1 of magic adds 1 to the attack roll and 1 to damage, and some
+			creatures can be struck by nothing else.</p>
+		</div>
+
+		<div class="panel">
+			<h3>How long a swing takes</h3>
+			<ul class="band-list">
+				<li><label>Speed</label>
+					<span><input type="number" name="system.speed" value="{{system.speed}}"> sec</span></li>
+				<li><label>Fastest it can get</label>
+					<span><input type="number" name="system.minSpeed" value="{{system.minSpeed}}"> sec</span></li>
+				<li><label>No ordinary speed</label>
+					<span><input type="checkbox" name="system.speedSpecial" {{#if system.speedSpecial}}checked{{/if}}></span></li>
+				<li><label>Reload</label>
+					<span><input type="number" name="system.reloadSpeed" value="{{system.reloadSpeed}}"> sec</span></li>
+			</ul>
+			<p class="muted">A lance depends on the charge and a garrote is a grapple; his source
+			writes "S" for those and the Game Master sets the timing.</p>
+		</div>
+	</div>
+
+	<h3 class="section-head">Attack modes</h3>
+	<table class="attack-mode-table">
+		<thead><tr><th>Mode</th><th class="col-num">Can be used</th><th class="col-num">Modifier</th></tr></thead>
+		<tbody>
+			{{#each config.modes as |m|}}
+			<tr>
+				<td>{{m.label}}</td>
+				<td class="col-num"><input type="checkbox" name="system.{{m.key}}.available" {{#if m.available}}checked{{/if}}></td>
+				<td class="col-num"><input type="number" name="system.{{m.key}}.mod" value="{{m.mod}}"></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<p class="muted">A mode switched off cannot be used at all, which is not the same as a modifier
+	of zero.</p>
+
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Carried</h3>
+			<ul class="band-list">
+				<li><label>Weight</label>
+					<span><input type="number" name="system.weight" value="{{system.weight}}" step="0.1"> lb</span></li>
+				<li><label>Quantity</label>
+					<span><input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></span></li>
+				<li><label>Where</label>
+					<span><select name="system.location">
+						{{#each config.locations as |l|}}
+						<option value="{{l}}" {{#if (eq l ../system.location)}}selected{{/if}}>{{l}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Hand</label>
+					<span><select name="system.hand">
+						{{#each config.hands as |h|}}
+						<option value="{{h}}" {{#if (eq h ../system.hand)}}selected{{/if}}>{{h}}</option>
+						{{/each}}
+					</select></span></li>
+				<li><label>Floats</label>
+					<span><input type="checkbox" name="system.floats" {{#if system.floats}}checked{{/if}}></span></li>
+			</ul>
+		</div>
+
+		<div class="panel">
+			<h3>Where it comes from</h3>
+			<ul class="band-list">
+				<li><label>Sourcebook</label>
+					<span><input type="text" name="system.sourcebook" value="{{system.sourcebook}}"></span></li>
+				<li><label>Page</label>
+					<span><input type="text" name="system.page" value="{{system.page}}"></span></li>
+			</ul>
+		</div>
+	</div>
+
+	<h3 class="section-head">Description</h3>
+	<textarea name="system.description" rows="4">{{system.description}}</textarea>
+</section>
