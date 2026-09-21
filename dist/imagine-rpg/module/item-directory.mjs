@@ -4,7 +4,10 @@
 // Fills Foundry's Items sidebar with the system's content, in folders.
 //
 // The compendia remain the system's own copy and are what the importer maintains; this puts a
-// working set in the world where a Game Master can see it, search it and drag from it. Daryl
+// working set in the world where a Game Master can see it, search it and drag from it. It is
+// filled FROM THE COMPENDIA, so whatever is in them -- including gear a Game Master added by hand
+// -- is what appears; the shipped JSON is only the fallback for a world whose compendia have not
+// been imported yet. Daryl
 // asked for it on 2026-09-21 after finding the sidebar empty, and it is the right answer to that:
 // a compendium is a library, and a library you have to go and open is not where you reach for a
 // sword mid-session.
@@ -113,6 +116,29 @@ function byLetter(tmpdoc) {
 		return await tmpresponse.json();
 	}
 
+	// This is the function which reads what one directory entry should contain. The world's own
+	// compendium wins, because that is where content is added and corrected; the shipped file is
+	// used only when that compendium is missing or empty. Returns the documents as plain data with
+	// the compendium's identity stripped, so each becomes a fresh world item.
+	async function loadEntryDocuments(tmpentry) {
+		var tmppack = game.packs.get(`world.imagine-${tmpentry.file}`);
+		if (tmppack) {
+			var tmpdocs = await tmppack.getDocuments();
+			if (tmpdocs.length) {
+				return { source: "compendium", docs: tmpdocs.map(tmpdoc => {
+					var tmpdata = tmpdoc.toObject();
+					delete tmpdata._id;
+					delete tmpdata._stats;
+					delete tmpdata.ownership;
+					delete tmpdata.folder;
+					delete tmpdata.sort;
+					return tmpdata;
+				}) };
+			}
+		}
+		return { source: "shipped file", docs: await loadContentFile(tmpentry.file) };
+	}
+
 	// This is the function which finds or makes one folder, by name and parent. Foundry allows two
 	// folders of the same name in different places, so the parent is part of the identity -- the
 	// "A-C" under Equipment must not be confused with the "A-C" under Abilities.
@@ -142,10 +168,12 @@ function byLetter(tmpdoc) {
 
 		var tmpcreated = 0;
 		var tmpskipped = 0;
+		var tmpfailed = [];
 		if (notify) { ui.notifications.info("Imagine RPG | filling the Items directory, this takes a moment..."); }
 
 		for (const tmpentry of DIRECTORY) {
-			var tmpdocs = await loadContentFile(tmpentry.file);
+			var tmploaded = await loadEntryDocuments(tmpentry);
+			var tmpdocs = tmploaded.docs;
 			var tmproot = await ensureFolder(tmpentry.folder, null, DIRECTORY.indexOf(tmpentry) * 100000);
 
 			// Everything already in this tree, by folder id and name, so nothing is added twice.
@@ -182,19 +210,31 @@ function byLetter(tmpdoc) {
 				}
 			}
 
+			// A batch that Foundry refuses is reported and the rest carry on. Before this, one bad
+			// document threw out of the whole run, and every folder after it was silently never made.
+			var tmpmade = 0;
 			for (var tmpat = 0; tmpat < tmptocreate.length; tmpat += BATCH) {
-				await Item.createDocuments(tmptocreate.slice(tmpat, tmpat + BATCH), { keepId: false });
+				try {
+					var tmpbatch = await Item.createDocuments(tmptocreate.slice(tmpat, tmpat + BATCH), { keepId: false });
+					tmpmade += tmpbatch.length;
+				} catch (tmperror) {
+					tmpfailed.push(`${tmpentry.folder}: ${tmperror.message}`);
+					console.error(`Imagine RPG | ${tmpentry.folder}: a batch of ${BATCH} failed`, tmperror);
+				}
 			}
-			tmpcreated += tmptocreate.length;
-			console.log(`Imagine RPG | ${tmpentry.folder}: ${tmptocreate.length} created`);
+			tmpcreated += tmpmade;
+			console.log(`Imagine RPG | ${tmpentry.folder}: ${tmpmade} created from the ${tmploaded.source}`);
 		}
 
 		if (notify) {
 			ui.notifications.info(tmpskipped
 				? `Imagine RPG | Items directory filled: ${tmpcreated} added, ${tmpskipped} already there.`
 				: `Imagine RPG | Items directory filled: ${tmpcreated} items.`);
+			if (tmpfailed.length) {
+				ui.notifications.warn(`Imagine RPG | ${tmpfailed.length} batch(es) failed -- ${tmpfailed[0]} (see the console).`);
+			}
 		}
-		return { created: tmpcreated, skipped: tmpskipped };
+		return { created: tmpcreated, skipped: tmpskipped, failed: tmpfailed };
 	}
 
 	// @MARKER EMPTY

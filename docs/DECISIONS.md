@@ -3528,3 +3528,24 @@ keeps its Wood Lore, which his tables give to both of its forms.
 
 **Verified, 2026-09-21:** the Dark Fairy ships with ten skills and no Wood Lore in either form; the
 plain Fairy still has it; the override is reported on every extraction run.
+
+## The Items sidebar is filled from the compendia, not the shipped file (2026-09-21)
+
+Daryl: "gear is in the compendium, but not the items list." The directory had been filling from
+`src/packs/documents/*.json`, the same source the importer reads, on the reasoning that the two were
+the same content. They stop being the same the moment a Game Master adds an item to a compendium —
+which `docs/ADDING-CONTENT.md` invites — so the sidebar was a copy of the shipped file and not of
+what the compendium held.
+
+It now reads `world.imagine-<file>` first, stripped of the compendium's identity (`_id`, `_stats`,
+`ownership`, `folder`, `sort`) so each becomes a fresh world item, and falls back to the shipped
+file only when the pack is missing or empty (a world that has never run the import).
+
+Two behaviours kept deliberately: it still adds only what is new and never overwrites an item that is
+already in the sidebar, because a world item a Game Master edited is theirs; and a failed batch is
+now reported and skipped rather than thrown, since one document Foundry refuses used to end the run
+with every later folder silently unmade.
+
+Not verified against a real V14 world (none available). Verified with a mocked Foundry over the
+shipped content plus two invented compendium items.
+
