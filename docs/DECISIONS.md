@@ -3443,3 +3443,59 @@ put, and nothing scrolls sideways. 43 modules parse. Eight suites, 1,200 checks,
 
 **Not verified:** no Foundry V14 install, so the pack index read and the document copy are unproven
 against a real compendium.
+
+## The Items sidebar is populated after all (2026-09-21)
+
+Asked for directly: fill the Items directory, grouped as he grouped things — Weapons, then each
+type, Armour, and so on.
+
+This reverses a call made earlier the same day. The compendia stay the system's own copy and remain
+what the importer maintains, but leaving the sidebar empty was defensible only while nobody needed
+to reach into it, and two testers in a row did. A compendium is a library; a library you have to go
+and open is not where you reach for a sword mid-session. `game.imagine.populateItems()` fills it and
+`game.imagine.clearItems()` takes it out again, so it is a choice rather than something imposed on a
+world.
+
+**His groupings where he has them, and only there.**
+
+    Weapons        his `type` -- Blade, Axe, Bludgeon, Pick, Piercer, Missile, Explosive, Special
+    Armour         shields first, then his flexibility classes
+    Skills         his class/social split, then the sourcebook
+    Classes        his classType
+
+Equipment, races and the three trait packs have NO category in his tables — his equipment
+dictionary is a name and a weight and nothing else. Those are bucketed by initial letter, which is
+labelled in the code as a way of finding things rather than a claim about the game, so an "A-C"
+folder is never mistaken for one of his categories.
+
+**Missile needed splitting and his data said how.** It is 408 of the 594 weapons, which is a folder
+nobody could use. A weapon with no speed of its own is ammunition — an arrow is loosed, not swung,
+and he gives it no swing — which separates 317 from the 91 bows, crossbows and thrown weapons. Each
+of those 317 names its launcher in its own brackets, "Arrow(Long Bow/Normal)", so they file under
+the thing they fit: 26 groups of about 24. That is both his grouping and the question a player
+actually asks.
+
+**Two data faults surfaced by trying to make folders out of the categories.** A folder has to be
+named, which is a sharper test of a category than anything that merely displays it:
+
+- **Beguiler's classType and description are swapped.** classType holds a 264-character paragraph
+  and description holds "Mage subclass". Left alone and reported (item 44), on the same footing as
+  the Monk column repair, which edits his data and was only made once he confirmed it. The
+  directory files Beguiler under "Other" rather than titling a folder with a paragraph.
+- **Two skills carry "?" as a sourcebook** — Open Slot and Unavailable, which are slot markers
+  rather than skills. They go in with the genuinely unattributed rather than making a folder
+  called "?".
+
+**Idempotent, and it does not overwrite.** Re-running adds what is new and leaves what is there:
+a Game Master who edited a world item meant to, and a refresh that silently reverted their work
+would be a poor trade for saving them a delete. Items are created in batches of 250, because one
+call with four thousand documents makes Foundry unresponsive with no sign of progress.
+
+**Verified, 2026-09-21:** the grouping rules run over the real content give 4,395 items in 86
+folders, the largest single folder being Abilities/S-U at 222. Beguiler lands in Other, no folder
+is named "?", and Missile resolves to 8 type folders plus 26 launcher groups. 44 modules parse;
+eight suites, 1,200 checks, passing.
+
+**Not verified:** no Foundry V14 install, so `Folder.create` and the batched `Item.createDocuments`
+are unproven against a real world. That is the first thing to watch: 4,395 documents is the largest
+single thing this system has ever asked Foundry to do.

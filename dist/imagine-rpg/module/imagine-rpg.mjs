@@ -47,6 +47,7 @@ import {
 	getAvailabilityRules, explainAvailability
 } from "./availability.mjs";
 import { refreshOpenWindows } from "./sheet-theme.mjs";
+import { populateItemDirectory, clearItemDirectory } from "./item-directory.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -205,6 +206,14 @@ Hooks.once("init", function () {
 
 	game.imagine = {
 		importContent: importAllContent,
+		// @MARKER ITEM DIRECTORY
+		// Fills Foundry's Items sidebar from the same content, in folders -- his own groupings
+		// where his tables have them. The compendia stay the system's copy; this is a working set
+		// in the world, which is where a Game Master reaches for a sword mid-session.
+		//     game.imagine.populateItems()   to fill it
+		//     game.imagine.clearItems()      to take it out again
+		populateItems: populateItemDirectory,
+		clearItems: clearItemDirectory,
 		rollWeaponAttack: rollWeaponAttack,
 		rollCreatureAttack: rollCreatureAttack,
 		getAvailabilityRules: getAvailabilityRules,

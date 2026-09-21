@@ -1320,3 +1320,29 @@ it is not mistaken for a typo later.
 **The port reports all four on every extraction run now** rather than letting them pass, which is
 the part that was missing: 472 skill references are followed and anything pointing at nothing is
 named. That check is what would have caught the traps.
+
+## 44. Beguiler's classType and description are swapped
+
+**Status:** open · **Severity:** one class has no category; the fix is unambiguous but is yours to confirm
+
+Every class in `classRequirementsAndDetails` carries a short category in its classType column —
+"Warrior subclass", "Mage subclass", "Rogue/Priest crossover", nine of them across 103 classes.
+Beguiler has the two columns **the wrong way round**:
+
+```
+classType    "This class has the focus of illusions and uses these skills to dazzle and confuse
+              their foes. They have some ability to control as well, starting with animals and
+              moving to manipulation and eventually outright control of other beings in ways both
+              subtle and overt."
+description  "Mage subclass"
+```
+
+So the category is not missing — it is sitting in the description, and the description is sitting in
+the category. Beguiler is a Mage subclass, and your data says so; it just says it in the wrong
+place.
+
+**The port has not swapped them**, on the same footing as the Monk column repair: that one edits
+your data and was only made after you confirmed it, and this would be a second such edit. Say the
+word and it becomes a one-line entry in `ROW_REPAIRS` beside Monk's, applied on load and printed on
+every extraction run. Meanwhile the Items directory files Beguiler under "Other" rather than
+creating a folder titled with a paragraph, and the class is otherwise complete and playable.
