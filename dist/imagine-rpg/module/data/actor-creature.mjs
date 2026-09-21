@@ -93,7 +93,7 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 			// Subtype, life cycle and habitat are free text: his Configurator takes them as
 			// typed input rather than from a list.
 			identity: new fields.SchemaField({
-				creatureType: new fields.StringField({ required: true, initial: "",
+				creatureType: new fields.StringField({ required: true, blank: true, initial: "",
 				                  choices: ["", ...CREATURE_TYPES], label: "Creature Type" }),
 				subtype:    new fields.StringField({ required: true, initial: "", label: "Subtype" }),
 				level:      new fields.NumberField({ required: true, integer: true, initial: 1, min: 0, label: "Level" }),
@@ -107,7 +107,7 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 				// sheets, set from a race's abilities for a character and left blank for a
 				// creature; blank reads as right-handed, which is what his equipShield does with
 				// anything that is not exactly "Left".
-				handedness: new fields.StringField({ required: true, initial: "",
+				handedness: new fields.StringField({ required: true, blank: true, initial: "",
 				                choices: ["", "Right", "Left", "Ambidextrous"], label: "Handedness" })
 				// DERIVED: title and powerLevel, both of which are simply the level
 				// (updateCreatureTitle and updatePowerLevel, sheet-worker.js:178477-178487).
@@ -177,7 +177,7 @@ export default class ImagineCreatureData extends foundry.abstract.TypeDataModel 
 			// (except worn armor)". It sits here rather than with the characteristics so that
 			// the damage pipeline, which reads body.hide for either actor type, needs no change.
 			body: new fields.SchemaField({
-				bodyType:  new fields.StringField({ required: true, initial: "Humanoid",
+				bodyType:  new fields.StringField({ required: true, blank: true, initial: "Humanoid",
 				               choices: ["", ...CREATURE_BODY_TYPES], label: "Body Type" }),
 				bodyChart: new fields.StringField({ required: true, initial: "", label: "Body Chart" }),
 				hide:      new fields.NumberField({ required: true, integer: true, initial: 0, min: 0, label: "Hide" }),

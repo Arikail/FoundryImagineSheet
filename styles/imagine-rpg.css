@@ -916,3 +916,52 @@
 .chargen-footer button { flex: none; width: auto; padding: 4px 14px; }
 .chargen-footer button.primary { background: var(--imagine-accent); color: #fff; border-color: var(--imagine-accent); }
 .imagine-chargen-button { flex: 1 1 100%; }
+
+/* @MARKER FORM FIELDS ON PAPER
+   Foundry V13 and later paint every form control from their own theme variables, and a Game
+   Master running the dark theme gets a near-black box with cream ink inside these cream sheets --
+   the value is invisible until it is selected, which is what Daryl reported on 2026-09-20 for
+   the trait and race sheets.
+   Two things fix it together, and both are wanted. Every Imagine application declares "themed"
+   and "theme-light" in its classes (item-sheet.mjs and the two actor sheets), so Foundry resolves
+   ITS variables to the light palette for controls this file never names -- checkboxes, file
+   pickers, the rich-text editor. The rules below then set the paper colours outright on the
+   controls the sheets actually use, so the fields stay legible even where a variable is missed.
+   A description box also spans its section and can be dragged taller: his entries run to a full
+   paragraph -- "Arch Physical" is five lines -- and a short fixed box simply cut them off. */
+.imagine.sheet, .imagine.character-generator, .imagine.level-up, .imagine.availability-config {
+	--input-background-color: #fff;
+	--input-text-color: var(--imagine-ink);
+	--input-border-color: var(--imagine-rule);
+	--input-placeholder-color: var(--imagine-muted);
+	--color-text-primary: var(--imagine-ink);
+}
+.imagine input[type="text"],
+.imagine input[type="number"],
+.imagine select,
+.imagine select option,
+.imagine textarea {
+	background: #fff;
+	color: var(--imagine-ink);
+	border: 1px solid var(--imagine-rule);
+}
+.imagine input::placeholder, .imagine textarea::placeholder { color: var(--imagine-muted); }
+
+/* A description is prose, not a one-line value: it gets the full width of its section, a floor of
+   roughly six lines, its own scrollbar once it passes that, and a grab handle to go taller. */
+.imagine textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 9em;
+	overflow-y: auto;
+	resize: vertical;
+	font: inherit;
+}
+
+/* A field whose value is a sentence, not a number: the label sits above and the input takes the
+   whole width, instead of the band-list's label-beside-field split that clipped Nixie's skill
+   note at "(water anim". */
+.imagine .wide-field { display: block; margin: 4px 0; font-size: 11px; font-weight: bold; }
+.imagine .wide-field input { display: block; width: 100%; box-sizing: border-box;
+	margin-top: 2px; font-weight: normal; }

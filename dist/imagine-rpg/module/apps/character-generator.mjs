@@ -28,7 +28,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	static DEFAULT_OPTIONS = {
 		id: "imagine-character-generator",
 		tag: "form",
-		classes: ["imagine", "character-generator"],
+		classes: ["imagine", "themed", "theme-light", "character-generator"],
 		window: { title: "Imagine RPG — New Character", resizable: true },
 		position: { width: 760, height: 760 },
 		// Enter in a text field submits the form; that only records the choices and redraws.

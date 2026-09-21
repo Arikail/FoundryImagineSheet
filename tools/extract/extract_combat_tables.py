@@ -328,6 +328,76 @@ def class_skill_lists():
     return skills, start
 
 
+def inline_race_stats():
+    """
+    The race stat rows his race dictionary does not hold, from applySingleRaceToAttribs
+    (sheet-worker.js:32987).
+
+    Seven races a character may actually be -- Fairy, Fairy(Dark), Famorian, Formless, Maginos,
+    Podling and Sporeling -- are answered by a switch BEFORE raceStatsAndMoveDetails is consulted,
+    each case assigning the whole row inline, in the same 62-column shape the dictionary uses:
+
+        case "Podling":
+            tempRaceStatMoves=[-4,3,-2,1,2,1,2,-1,0,1,0,3,9,21,16, ... ,-4,-2,"no","yes"];
+
+    This is why the port shipped 105 races and his species picker offers 112: the extractor only
+    ever read the dictionary. An earlier note in this file said Fairy and Fairy(Dark) "have no row
+    in raceStatsAndMoveDetails and so are not races a character can be" -- that inference was
+    wrong, and it is what hid all seven. They are in specieslist, and every other race table
+    (raceFeatureAbilities, racefertiledict, raceAges, the three colour tables) already has a row
+    for each of them; only the stats were missed. Reported by Daryl on 2026-09-20.
+
+    FOUR OF THE SEVEN ARE PLAIN ROWS: Fairy(Dark), Maginos, Podling and Sporeling. Maginos also
+    has four material variants -- Maginos(Clay), (Metal), (Stone), (Wood) -- which are NOT in
+    specieslist and are picked separately, the way Changeling's forms are; they are returned too,
+    for the document builder to carry as variants rather than as races of their own.
+
+    EACH CASE HAS TWO BRANCHES, one for a slight physique and one for everything else, written in
+    that order -- so the LAST assignment in each case is the ordinary one, exactly as in
+    inline_race_skills above. Both are returned: the port takes the ordinary branch, because it
+    carries no slight-physique option yet (a rules call still open with the developer), and the
+    slight rows are kept so that call can be answered without coming back here.
+
+    BEWARE what the ordinary branch means for these four. His own comments on the `else` read
+    "// not female" and "// non-female", and the two branches differ in the special-movement
+    column: the slight branch is "Fly:" and the ordinary one "None:". For Fairy, Fairy(Dark),
+    Podling and Sporeling the winged, flying form IS the slight-physique one, so taking the
+    ordinary branch ships a Fairy that cannot fly. That is faithful to the branch chosen, not to
+    what a player expects, and is recorded in UPSTREAM-ISSUES.md for the developer to settle.
+
+    THE REMAINING THREE ARE NOT PLAIN ROWS and are deliberately not returned here:
+      Fairy      its row is a plain array but the fortune column is the variable tmpFORmod, rolled
+                 when the race is applied -- a d6 picks high or low, then 1d10 signs it. Returned
+                 with the marker "@fortuneRoll" in that column for the builder to resolve, the
+                 same way special_class_rows marks "@align".
+      Famorian   593 lines of "evoke" logic (33032-33624) adding 1d3 apiece to STR, AGL and VIT
+                 from checkboxes. His evokedict is already extracted; the row is not a literal.
+      Formless   takes its physical half from a HOST race via setFormlessStartingRace and supplies
+                 only its own mental block. His formlessStartingRaceDetails is already extracted.
+    """
+    start, body = function_body("applySingleRaceToAttribs")
+    rows, slight = {}, {}
+    label = None
+    for line in body:
+        m = re.search(r'case\s+"([^"]+)"\s*:', line)
+        if m:
+            label = m.group(1)
+        m = re.search(r'tempRaceStatMoves\s*=\s*(\[.*\])\s*;', line)
+        if m and label:
+            # tmpFORmod is the one value in any of these rows that is not a literal: Fairy's
+            # fortune is rolled rather than fixed. Marked for the builder, as "@align" is.
+            tmpraw = m.group(1).replace("tmpFORmod", '"@fortuneRoll"')
+            try:
+                row = json.loads(tmpraw)
+            except ValueError:
+                continue
+            # The slight-physique branch comes first in every case; the ordinary one overwrites it.
+            if label in rows:
+                slight.setdefault(label, rows[label])
+            rows[label] = row
+    return rows, slight, start
+
+
 def inline_race_skills():
     """
     The racial skills his race-skill dictionary does not hold, from setRaceSkillSheet
@@ -339,9 +409,14 @@ def inline_race_skills():
 
         raceSkillDetails1=["race_skill_select_ten",[["Darkness","+10%"], ...],"None"];
 
-    Only Gremlin matters to the port: Fairy and Fairy(Dark) have no row in
-    raceStatsAndMoveDetails and so are not races a character can be. This is why the port first
-    reported Gremlin as having no racial skills at all -- it only looked in the dictionary.
+    All three matter to the port. This is why it first reported Gremlin as having no racial skills
+    at all -- it only looked in the dictionary.
+
+    This comment used to read "Fairy and Fairy(Dark) have no row in raceStatsAndMoveDetails and so
+    are not races a character can be". The first half is true and the conclusion does not follow:
+    their rows are assigned inline in applySingleRaceToAttribs instead, and both are in
+    specieslist. That wrong inference is what kept seven playable races out of the compendium
+    until 2026-09-20 -- see inline_race_stats above.
 
     EACH CASE HAS TWO BRANCHES, one for a slight physique and one for everything else. The port
     carries no slight-physique option (a rules call still open with the developer), so the
@@ -1348,8 +1423,8 @@ def main():
                         "line": class_skills_line},
             "entries": class_skills
         }, fh, indent=2, ensure_ascii=False)
-    # Racial skills his dictionary does not hold, answered inline instead. Only Gremlin is a race
-    # a character can be; the two Fairies have no row in raceStatsAndMoveDetails.
+    # Racial skills his dictionary does not hold, answered inline instead -- Fairy, Fairy(Dark)
+    # and Gremlin, all three of them races a character can be.
     inline_skills, inline_slight, inline_line = inline_race_skills()
     for tmpname in sorted(inline_skills):
         if tmpname not in inline_slight:
@@ -1364,6 +1439,28 @@ def main():
             "_slightPhysique": inline_slight
         }, fh, indent=2, ensure_ascii=False)
     print("inline race skills %d races (%s)" % (len(inline_skills), ", ".join(sorted(inline_skills))))
+
+    # Race stat rows his dictionary does not hold either, assigned inline in the same 62-column
+    # shape. Seven playable races live here and nowhere else -- see inline_race_stats.
+    stat_rows, stat_slight, stat_line = inline_race_stats()
+    for tmpname in sorted(stat_rows):
+        if tmpname not in stat_slight:
+            print("  note: inline race stats for %s have only one branch" % tmpname)
+    with open(os.path.join(NAMED, "inlineRaceStats.json"), "w", encoding="utf-8") as fh:
+        json.dump({
+            "_source": {"file": "docs/reference/sheet-worker.js",
+                        "function": "applySingleRaceToAttribs", "line": stat_line},
+            "_note": "The ordinary branch of each case, in raceStatsAndMoveDetails' column order. "
+                     "The slight-physique branch is kept beside it under _slightPhysique, unused: "
+                     "the port has no slight-physique option. For Fairy, Fairy(Dark), Podling and "
+                     "Sporeling the slight branch is the WINGED one, so the rows used here do not "
+                     "fly -- UPSTREAM-ISSUES.md, awaiting the developer. Famorian and Formless are "
+                     "absent on purpose: neither row is a literal.",
+            "_columns": "raceStatsAndMoveDetails",
+            "entries": stat_rows,
+            "_slightPhysique": stat_slight
+        }, fh, indent=2, ensure_ascii=False)
+    print("inline race stats %d rows (%s)" % (len(stat_rows), ", ".join(sorted(stat_rows))))
 
     special_rows, special_line = special_class_rows()
     for tmpname, tmprow in special_rows.items():

@@ -3,6 +3,7 @@
     "name": "Apocritara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 2,
@@ -169,6 +170,7 @@
     "name": "Arachen",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 1,
         "agl": 3,
@@ -349,6 +351,7 @@
     "name": "Avian(Dark)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -503,6 +506,7 @@
     "name": "Avian(Forest)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -694,6 +698,7 @@
     "name": "Avian(Mountain)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -857,6 +862,7 @@
     "name": "Ba’Cora",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -1036,6 +1042,7 @@
     "name": "Beastman",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 1,
         "agl": 1,
@@ -1211,6 +1218,7 @@
     "name": "Brachara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 0,
@@ -1381,6 +1389,7 @@
     "name": "Brok",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": -2,
@@ -1538,6 +1547,7 @@
     "name": "Brownie",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -4,
         "agl": 2,
@@ -1713,6 +1723,7 @@
     "name": "Centaur",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 0,
@@ -1879,6 +1890,7 @@
     "name": "Cervara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -2045,6 +2057,7 @@
     "name": "Changeling",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 0,
@@ -2174,6 +2187,7 @@
     "name": "Chetahl",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 4,
@@ -2340,6 +2354,7 @@
     "name": "Crystori",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 1,
@@ -2520,6 +2535,7 @@
     "name": "Dao",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -2680,6 +2696,7 @@
     "name": "Djinn",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 2,
@@ -2841,6 +2858,7 @@
     "name": "Dryad",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 0,
@@ -3018,6 +3036,7 @@
     "name": "Dwarf(Civilized)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": -2,
@@ -3201,6 +3220,7 @@
     "name": "Dwarf(Dark)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 0,
@@ -3385,6 +3405,7 @@
     "name": "Dwarf(Fire)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": -1,
@@ -3574,6 +3595,7 @@
     "name": "Dwarf(Iron)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": -2,
@@ -3782,6 +3804,7 @@
     "name": "Dwarf(Mountain)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -3969,6 +3992,7 @@
     "name": "Dwarf(Stone)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": -1,
@@ -4182,6 +4206,7 @@
     "name": "Elf(Dark)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -4383,6 +4408,7 @@
     "name": "Elf(Desert)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -4581,6 +4607,7 @@
     "name": "Elf(Dread)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -4765,6 +4792,7 @@
     "name": "Elf(Gray)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 0,
@@ -4945,6 +4973,7 @@
     "name": "Elf(High)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -5126,6 +5155,7 @@
     "name": "Elf(Ice)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -5312,6 +5342,7 @@
     "name": "Elf(Sea)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -5508,6 +5539,7 @@
     "name": "Elf(Shadow)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -5710,6 +5742,7 @@
     "name": "Elf(Silver)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -5912,6 +5945,7 @@
     "name": "Elf(Wild)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 3,
@@ -6113,6 +6147,7 @@
     "name": "Elf(Wood)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -6310,6 +6345,7 @@
     "name": "Equara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 1,
@@ -6468,6 +6504,7 @@
     "name": "Gaunt",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -6657,6 +6694,7 @@
     "name": "Geebra",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -6832,6 +6870,7 @@
     "name": "Giant(Civilized)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 5,
         "agl": -2,
@@ -7004,6 +7043,7 @@
     "name": "Giant(Civilized:Seafaring)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 5,
         "agl": -2,
@@ -7176,6 +7216,7 @@
     "name": "Giant(True)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 6,
         "agl": -3,
@@ -7363,6 +7404,7 @@
     "name": "Gnome",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -4,
         "agl": 0,
@@ -7566,6 +7608,7 @@
     "name": "Goblin(Forest)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 1,
         "agl": 2,
@@ -7761,6 +7804,7 @@
     "name": "Goblin(Mountain)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": -1,
@@ -7932,6 +7976,7 @@
     "name": "Goblin(Mountain:Magic)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": -1,
@@ -8112,6 +8157,7 @@
     "name": "Goblin(Plains)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": -1,
@@ -8291,6 +8337,7 @@
     "name": "Grahl",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 1,
@@ -8454,6 +8501,7 @@
     "name": "Gremlin",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -3,
         "agl": 1,
@@ -8633,6 +8681,7 @@
     "name": "Grethen",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -8797,6 +8846,7 @@
     "name": "Gryphara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 2,
@@ -8964,6 +9014,7 @@
     "name": "Hippotara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -9136,6 +9187,7 @@
     "name": "Hobgoblin",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -9319,6 +9371,7 @@
     "name": "Human(Barbaric)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 1,
@@ -9529,6 +9582,7 @@
     "name": "Human(Civilized:City)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 0,
@@ -9738,6 +9792,7 @@
     "name": "Human(Civilized:Port)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 0,
@@ -9948,6 +10003,7 @@
     "name": "Human(Civilized:Town)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 0,
@@ -10134,6 +10190,7 @@
     "name": "Human(Civilized:Village)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 0,
@@ -10336,6 +10393,7 @@
     "name": "Ifrit",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 2,
@@ -10495,6 +10553,7 @@
     "name": "Jumara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -10659,6 +10718,7 @@
     "name": "Katara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 1,
@@ -10829,6 +10889,7 @@
     "name": "Kenku",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -10994,6 +11055,7 @@
     "name": "Kerasara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -11165,6 +11227,7 @@
     "name": "Lagara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -11331,6 +11394,7 @@
     "name": "Leprechaun",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -11519,6 +11583,7 @@
     "name": "Lissara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -11675,6 +11740,7 @@
     "name": "Lotara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -11834,6 +11900,7 @@
     "name": "Loxodara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 0,
@@ -11992,6 +12059,7 @@
     "name": "Lutrinara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -12150,6 +12218,7 @@
     "name": "Marid",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 1,
@@ -12318,6 +12387,7 @@
     "name": "Mechanos",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": -1,
@@ -12505,6 +12575,7 @@
     "name": "Mellivara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 2,
@@ -12664,6 +12735,7 @@
     "name": "Mephyt(Fire)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -4,
         "agl": 2,
@@ -12851,6 +12923,7 @@
     "name": "Mephyt(Ice)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -3,
         "agl": 1,
@@ -13043,6 +13116,7 @@
     "name": "Merfolk",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 2,
@@ -13242,6 +13316,7 @@
     "name": "Midfolk(Forest)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 1,
@@ -13442,6 +13517,7 @@
     "name": "Midfolk(River)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 1,
@@ -13630,6 +13706,7 @@
     "name": "Midfolk(Town)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 1,
@@ -13818,6 +13895,7 @@
     "name": "Nixie",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -4,
         "agl": 2,
@@ -14006,6 +14084,7 @@
     "name": "Nymph",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -14187,6 +14266,7 @@
     "name": "Ogre",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -14367,6 +14447,7 @@
     "name": "Ogre(Magic)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -14556,6 +14637,7 @@
     "name": "Planar",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 1,
@@ -14717,6 +14799,7 @@
     "name": "Ratahl",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 2,
@@ -14890,6 +14973,7 @@
     "name": "S’rett",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 3,
@@ -15061,6 +15145,7 @@
     "name": "Sasquatch/Yeti",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 0,
@@ -15228,6 +15313,7 @@
     "name": "Satyr/Fawn",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -15407,6 +15493,7 @@
     "name": "Saurian",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -15585,6 +15672,7 @@
     "name": "Scethen",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -15758,6 +15846,7 @@
     "name": "Se’eth",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 3,
@@ -15933,6 +16022,7 @@
     "name": "Sha’Cora",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 1,
         "agl": 3,
@@ -16084,6 +16174,7 @@
     "name": "Sura’keth",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 1,
         "agl": 2,
@@ -16264,6 +16355,7 @@
     "name": "Sura’rath",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 0,
         "agl": 2,
@@ -16433,6 +16525,7 @@
     "name": "Susara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": -1,
@@ -16595,6 +16688,7 @@
     "name": "Sylph",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -16768,6 +16862,7 @@
     "name": "Taurian",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -16922,6 +17017,7 @@
     "name": "Testudara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": -2,
@@ -17075,6 +17171,7 @@
     "name": "Troll",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 1,
@@ -17230,6 +17327,7 @@
     "name": "Troll(Ice)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 1,
@@ -17413,6 +17511,7 @@
     "name": "Troll(Rock)",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -17572,6 +17671,7 @@
     "name": "Ursara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 1,
@@ -17735,6 +17835,7 @@
     "name": "Vulpara",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -1,
         "agl": 2,
@@ -17896,6 +17997,7 @@
     "name": "Whalrog",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 3,
         "agl": 0,
@@ -18057,6 +18159,7 @@
     "name": "Wildling",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": -2,
         "agl": 2,
@@ -18247,6 +18350,7 @@
     "name": "Wolfen",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 2,
         "agl": 2,
@@ -18418,6 +18522,7 @@
     "name": "Xar’Xeth",
     "type": "race",
     "system": {
+      "description": "",
       "attributeMods": {
         "str": 4,
         "agl": 0,
@@ -18583,6 +18688,980 @@
         "startLow": 9,
         "startHigh": 14,
         "maxAge": "70"
+      }
+    }
+  },
+  {
+    "name": "Fairy",
+    "type": "race",
+    "system": {
+      "description": "Fortune is rolled when this race is applied rather than being fixed: a d6 decides high or low, then 1d10 gives the size, for a result between -10 and +10. The Fortune modifier below is left at 0 until that roll is made. His sheet splits this race by physique, and only the slight-physique form has wings -- the ordinary form has no special movement at all. The port has no slight-physique option yet, so the figures below are the ordinary, wingless form. Awaiting the developer.",
+      "attributeMods": {
+        "str": -4,
+        "agl": 2,
+        "vit": -4,
+        "int": 1,
+        "wis": 0,
+        "knw": 2,
+        "app": 2,
+        "chm": 0,
+        "soc": 0,
+        "aur": 4,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 10,
+        "agl": 21,
+        "vit": 12,
+        "int": 20,
+        "wis": 18,
+        "knw": 22,
+        "app": 21,
+        "chm": 20,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -6,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": 0,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 25,
+        "illusion": 0,
+        "control": 10,
+        "poison": -15,
+        "disease": -15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true,
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Cover Tracks",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Phase",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "White",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "White",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Light Blue",
+          "Pale(Flesh)",
+          "Olive",
+          "Green",
+          "Pink",
+          "Tan",
+          "Black"
+        ]
+      },
+      "abilities": [
+        "Exceptional Sight",
+        "Special Shape"
+      ],
+      "disabilities": [
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
+    }
+  },
+  {
+    "name": "Fairy(Dark)",
+    "type": "race",
+    "system": {
+      "description": "His sheet splits this race by physique, and only the slight-physique form has wings -- the ordinary form has no special movement at all. The port has no slight-physique option yet, so the figures below are the ordinary, wingless form. Awaiting the developer.",
+      "attributeMods": {
+        "str": -4,
+        "agl": 2,
+        "vit": -4,
+        "int": 2,
+        "wis": 0,
+        "knw": 1,
+        "app": 0,
+        "chm": 0,
+        "soc": 0,
+        "aur": 4,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 11,
+        "agl": 21,
+        "vit": 12,
+        "int": 22,
+        "wis": 18,
+        "knw": 20,
+        "app": 19,
+        "chm": 18,
+        "soc": 20,
+        "aur": 22,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -4,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 5
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 15,
+        "poison": -15,
+        "disease": -15
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true,
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Darkness",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": ""
+        },
+        {
+          "name": "Wood Lore",
+          "bonus": "+10%"
+        }
+      ],
+      "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "White",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "White",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Light Blue",
+          "Pale(Flesh)",
+          "Olive",
+          "Green",
+          "Pink",
+          "Tan",
+          "Black"
+        ]
+      },
+      "abilities": [
+        "Exceptional Sight",
+        "Special Dark Shape"
+      ],
+      "disabilities": [
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Fairy",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
+    }
+  },
+  {
+    "name": "Maginos",
+    "type": "race",
+    "system": {
+      "description": "Clay: endurance 2, +1d4+1 per title (max 4, mod 1). Sinks. Metal: endurance 4, +1d6+2 per title (max 6, mod 2). Sinks. Stone: endurance 3, +1d6+1 per title (max 6, mod 1). Sinks. Wood: endurance 2, +1d4+2 per title (max 4, mod 2). Floats.",
+      "attributeMods": {
+        "str": 2,
+        "agl": -1,
+        "vit": 2,
+        "int": 0,
+        "wis": -2,
+        "knw": 3,
+        "app": -2,
+        "chm": -2,
+        "soc": 0,
+        "aur": -4,
+        "pty": 0,
+        "wil": 2
+      },
+      "attributeLimits": {
+        "str": 21,
+        "agl": 18,
+        "vit": 21,
+        "int": 20,
+        "wis": 18,
+        "knw": 21,
+        "app": 12,
+        "chm": 16,
+        "soc": 19,
+        "aur": 15,
+        "pty": 20,
+        "wil": 21
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": 2,
+        "titleFormula": "1d4+1",
+        "titleDice": "1",
+        "titleMax": 4,
+        "titleMod": 1
+      },
+      "characteristicMods": {
+        "perception": -5,
+        "affinity": -5,
+        "fortune": -5
+      },
+      "resistanceMods": {
+        "magic": 0,
+        "illusion": -20,
+        "control": 0,
+        "poison": 0,
+        "disease": 0
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "jog": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "run": {
+          "hourly": 0,
+          "tenSec": 0,
+          "oneSec": 0
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": 0,
+        "jumpUp": 0
+      },
+      "formless": false,
+      "canSwim": false,
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Body Control",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Brace",
+          "bonus": ""
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Direction Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Distance Knowledge",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Force",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Life Sense",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "",
+      "features": {
+        "hair": [],
+        "eyes": [],
+        "skin": [
+          "Bone",
+          "Horn",
+          "Earthern",
+          "Cloth",
+          "Hide",
+          "Crystal"
+        ]
+      },
+      "abilities": [
+        "Breathless",
+        "Construct Mind",
+        "Construct Form",
+        "Hide(1/6)",
+        "Magical Hearing",
+        "Magical Sight",
+        "Magical Touch",
+        "Magical Voice"
+      ],
+      "disabilities": [
+        "Construct Spirit",
+        "Infertile",
+        "No Intake",
+        "No Sense of Smell",
+        "No Sense of Taste",
+        "Cannot Swim"
+      ],
+      "immunities": [
+        "Aging",
+        "Disease",
+        "Fatigue",
+        "Fear",
+        "Fire Hardened",
+        "Frost Hardened",
+        "Poison(Greater)",
+        "Hold",
+        "Sleep",
+        "Transformation of Form(Lesser)"
+      ],
+      "fertileWith": [],
+      "ages": {
+        "startLow": 10,
+        "startHigh": 40,
+        "maxAge": "1000"
+      }
+    }
+  },
+  {
+    "name": "Podling",
+    "type": "race",
+    "system": {
+      "description": "His sheet splits this race by physique, and only the slight-physique form has wings -- the ordinary form has no special movement at all. The port has no slight-physique option yet, so the figures below are the ordinary, wingless form. Awaiting the developer.",
+      "attributeMods": {
+        "str": -4,
+        "agl": 3,
+        "vit": -2,
+        "int": 1,
+        "wis": 2,
+        "knw": 1,
+        "app": 2,
+        "chm": -1,
+        "soc": 0,
+        "aur": 1,
+        "pty": 0,
+        "wil": 3
+      },
+      "attributeLimits": {
+        "str": 9,
+        "agl": 21,
+        "vit": 16,
+        "int": 20,
+        "wis": 22,
+        "knw": 20,
+        "app": 20,
+        "chm": 16,
+        "soc": 17,
+        "aur": 20,
+        "pty": 20,
+        "wil": 21
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": 20,
+        "illusion": 0,
+        "control": 10,
+        "poison": 5,
+        "disease": -10
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -60
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true,
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Animal Shape",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Speak to Animal",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Summon Animal",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Tame Animal",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Track",
+          "bonus": "+20%"
+        }
+      ],
+      "racialSkillNote": "",
+      "features": {
+        "hair": [
+          "Black",
+          "Dark Brown",
+          "Brown",
+          "Dark Blonde",
+          "Blonde",
+          "Mixed",
+          "White",
+          "Green"
+        ],
+        "eyes": [
+          "Brown",
+          "Hazel",
+          "Black",
+          "Blue/Green",
+          "Green",
+          "Blue",
+          "Violet",
+          "White",
+          "Red",
+          "Silver"
+        ],
+        "skin": [
+          "Light Blue",
+          "Pale(Flesh)",
+          "Olive",
+          "Green",
+          "Pink",
+          "Tan",
+          "Black"
+        ]
+      },
+      "abilities": [
+        "Night Vision(Enhanced)",
+        "Animal Friendship",
+        "Animal Shape",
+        "Regeneration(Natural)"
+      ],
+      "disabilities": [
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Brownie",
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Sporeling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
+      }
+    }
+  },
+  {
+    "name": "Sporeling",
+    "type": "race",
+    "system": {
+      "description": "His sheet splits this race by physique, and only the slight-physique form has wings -- the ordinary form has no special movement at all. The port has no slight-physique option yet, so the figures below are the ordinary, wingless form. Awaiting the developer.",
+      "attributeMods": {
+        "str": -4,
+        "agl": 3,
+        "vit": -2,
+        "int": 1,
+        "wis": 2,
+        "knw": 1,
+        "app": 0,
+        "chm": -1,
+        "soc": 0,
+        "aur": 2,
+        "pty": 0,
+        "wil": 0
+      },
+      "attributeLimits": {
+        "str": 11,
+        "agl": 20,
+        "vit": 18,
+        "int": 20,
+        "wis": 22,
+        "knw": 20,
+        "app": 18,
+        "chm": 16,
+        "soc": 16,
+        "aur": 21,
+        "pty": 20,
+        "wil": 20
+      },
+      "endurance": {
+        "startFormula": "",
+        "startMod": -2,
+        "titleFormula": "1d2",
+        "titleDice": "1",
+        "titleMax": 2,
+        "titleMod": 0
+      },
+      "characteristicMods": {
+        "perception": 10,
+        "affinity": -10,
+        "fortune": 0
+      },
+      "resistanceMods": {
+        "magic": -10,
+        "illusion": 0,
+        "control": 0,
+        "poison": 20,
+        "disease": 30
+      },
+      "movement": {
+        "speedMultiplier": 0,
+        "walk": {
+          "hourly": -3,
+          "tenSec": -30,
+          "oneSec": -3
+        },
+        "jog": {
+          "hourly": -6,
+          "tenSec": -60,
+          "oneSec": -6
+        },
+        "run": {
+          "hourly": -9,
+          "tenSec": -90,
+          "oneSec": -9
+        },
+        "specialName": "None:",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "jumpStand": -4,
+        "jumpUp": -2
+      },
+      "formless": false,
+      "canSwim": true,
+      "bodyType": "Humanoid",
+      "racialSkills": [
+        {
+          "name": "Area Sense",
+          "bonus": ""
+        },
+        {
+          "name": "Blend",
+          "bonus": "+25%"
+        },
+        {
+          "name": "Climb",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Control Growth",
+          "bonus": "+30%"
+        },
+        {
+          "name": "Crystal Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Herb Lore",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Listen",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": ""
+        },
+        {
+          "name": "Plant Speak",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Plant Shape",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Stone Lore",
+          "bonus": ""
+        }
+      ],
+      "racialSkillNote": "Growth,Speak,Shape(mushroom/fungus only)",
+      "features": {
+        "hair": [
+          "Black",
+          "Brown",
+          "Auburn",
+          "White",
+          "Green",
+          "Gray"
+        ],
+        "eyes": [
+          "Brown",
+          "Black",
+          "Green",
+          "White",
+          "Tan",
+          "Gray"
+        ],
+        "skin": [
+          "Pale",
+          "Olive",
+          "Green",
+          "Pink",
+          "Ruddy",
+          "Tan",
+          "Light Brown",
+          "Brown",
+          "Black"
+        ]
+      },
+      "abilities": [
+        "Ultravision",
+        "Infravision180"
+      ],
+      "disabilities": [
+        "Easily Dehydrated",
+        "Requires Fairy Weapons"
+      ],
+      "immunities": [],
+      "fertileWith": [
+        "Brownie",
+        "Fairy",
+        "Fairy(Dark)",
+        "Gnome",
+        "Gremlin",
+        "Leprechaun",
+        "Mephyt(Fire)",
+        "Mephyt(Ice)",
+        "Nixie",
+        "Podling"
+      ],
+      "ages": {
+        "startLow": 16,
+        "startHigh": 5000,
+        "maxAge": "5000"
       }
     }
   }

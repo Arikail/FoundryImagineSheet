@@ -23,7 +23,7 @@ export default class ImagineAvailabilityConfig extends HandlebarsApplicationMixi
 	static DEFAULT_OPTIONS = {
 		id: "imagine-availability-config",
 		tag: "form",
-		classes: ["imagine", "availability-config"],
+		classes: ["imagine", "themed", "theme-light", "availability-config"],
 		window: { title: "Imagine RPG — Content Availability", contentClasses: ["standard-form"] },
 		position: { width: 580, height: 680 },
 		form: { handler: ImagineAvailabilityConfig.#onSubmit, closeOnSubmit: true },

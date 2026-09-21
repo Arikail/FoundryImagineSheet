@@ -31,7 +31,7 @@ export default class ImagineLevelUp extends HandlebarsApplicationMixin(Applicati
 	static DEFAULT_OPTIONS = {
 		id: "imagine-level-up",
 		tag: "form",
-		classes: ["imagine", "level-up"],
+		classes: ["imagine", "themed", "theme-light", "level-up"],
 		window: { title: "Imagine RPG — Level Up", resizable: true },
 		// Set per character in _prepareContext's sibling below, so two open windows are told apart.
 		position: { width: 640, height: 720 },

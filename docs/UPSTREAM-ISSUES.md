@@ -1077,3 +1077,65 @@ lines in your switch would settle it properly.
 **Worth a look while you are there:** every other race in that switch is listed individually, so
 these four look like omissions rather than intent — but if a City Human is meant to be something
 other than Average, say so and the port will follow.
+
+## 38. Four faerie races can only fly in their slight-physique form — is that intended?
+
+**Status:** open · **Severity:** a Fairy in the port cannot fly, which is almost certainly wrong
+
+`applySingleRaceToAttribs` (sheet-worker.js:33006) answers seven races inline instead of from
+`raceStatsAndMoveDetails`. Four of them split on physique, and the split decides whether the race
+has wings at all:
+
+```
+case "Fairy":
+    if (tmpslightphysique=="yes") { tempRaceStatMoves=[ ... ,"Fly:","Run",3,0,"Run",3,0,"Run",3,0, ... ]; }
+    else {                         tempRaceStatMoves=[ ... ,"None:","",0,0,"",0,0,"",0,0, ... ]; }
+```
+
+The same shape appears for `Fairy(Dark)`, `Podling` and `Sporeling`, and your comments on the
+`else` read `// not female` and `// non-female`. Taken literally: only the slight-physique (female)
+form of these four has any special movement, and every other member walks.
+
+The port carries no slight-physique option yet, so it takes the ordinary branch, and the result is
+a Fairy with no flight — which is why this is being asked rather than quietly followed. Three
+readings fit the code and we cannot tell them apart from here:
+
+1. **Intended.** Only females of these races are winged, and a wingless Fairy is correct.
+2. **The branches are backwards.** "Slight physique" was meant to be the *exception*, and the
+   common case should carry the wings.
+3. **Wings are a separate choice.** `fairy_wing_type` and the `Set Wings` / `Alt Wings` handling at
+   sheet-worker.js:6394 and 16724 suggest wings may be picked independently of physique, in which
+   case neither branch should be hard-coding "None:".
+
+Reading 3 looks most likely, because that wing code exists at all — but it only runs when
+`tmpslightphysique=="yes"`, which loops back to the same question.
+
+**What the port does meanwhile:** ships the ordinary branch, says so in each of the four races'
+descriptions so nobody is misled, and keeps the slight rows in
+`src/packs/named/inlineRaceStats.json` so answering this is a rebuild rather than another dig.
+
+## 39. Two slips in the inline race rows
+
+**Status:** open · **Severity:** one wrong movement rate, one ambiguous pair of flags
+
+Both are in the same switch as item 38, and neither depends on which branch is taken.
+
+1. **Podling's 1-second jog is `-60` where every other race has `-6`.** The movement columns run
+   hourly, 10-second, 1-second for each of walk, jog and run. Podling reads:
+
+   ```
+   ... ,-3,-30,-3,  -6,-60,-60,  -9,-90,-9, ...
+        walk         jog          run
+   ```
+
+   Walk and run follow the `-n, -n0, -n` pattern every other race uses; jog's third figure is
+   `-60` rather than `-6`. It is in **both** branches, so it is not a branch difference. The port
+   carries it as written — a tenfold penalty to a Podling's 1-second jog — rather than silently
+   correcting a number only you can confirm.
+
+2. **Sporeling's last two flags are `"no?"` and `"yes?"`.** Every other row in the table ends with
+   a plain `"no"`/`"yes"` pair for the formless and can-swim columns; the ordinary branch of
+   Sporeling ends `..."no?","yes?"` — with the question marks inside the strings. The slight branch
+   above it has the clean pair. The port reads them as the answers you wrote (not formless, can
+   swim), since the doubt is clearly about the values and not the format, but a strict reader would
+   turn `"yes?"` into false and quietly sink every Sporeling.

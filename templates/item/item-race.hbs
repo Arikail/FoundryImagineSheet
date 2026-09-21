@@ -171,6 +171,66 @@
 	exist across the kinds (Fly, Gallop, Swim, Scurry, Slither); see resolveSpecialMovement in
 	combat-rules.mjs. Leave the name blank for a race with no special movement.</p>
 
+	{{!-- What the race GIVES, as opposed to what it modifies. This block used to be missing
+	      altogether: the sheet showed a race's numbers and none of its skills, abilities or
+	      colours, so opening Nixie in the compendium gave no hint that its Animal Shape is water
+	      animals only -- the racialSkillNote was stored, and read by the character sheet, but
+	      never shown where a Game Master goes to read the race. Reported by Daryl on 2026-09-20.
+
+	      Shown as chips rather than as fields, in the same markup the character's Description tab
+	      uses for the same data, so a race reads the same in both places. These lists come from
+	      his tables and are edited through the raw-data editor on the rare occasion a Game Master
+	      wants to change one -- the note, which is prose about the skills, is editable here. --}}
+	<h3 class="section-head">What This Race Gives</h3>
+	<div class="panel race-panel">
+		<p><label>Racial skills</label>
+			{{#each system.racialSkills as |s|}}<span class="race-chip">{{s.name}}{{#if s.bonus}} {{s.bonus}}{{/if}}</span>{{else}}<span class="muted">none listed</span>{{/each}}</p>
+		{{#if system.abilities.length}}<p><label>Abilities</label>
+			{{#each system.abilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if system.disabilities.length}}<p><label>Disabilities</label>
+			{{#each system.disabilities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if system.immunities.length}}<p><label>Immunities</label>
+			{{#each system.immunities as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+		{{#if system.fertileWith.length}}<p><label>Fertile with</label>
+			{{#each system.fertileWith as |a|}}<span class="race-chip">{{a}}</span>{{/each}}</p>{{/if}}
+	</div>
+	{{!-- On its own line rather than in a band-list: the note is a sentence, and the band-list's
+	      label-and-field split left it about 90px wide, clipping Nixie's at "(water anim". --}}
+	<label class="wide-field">Skill note
+		<input type="text" name="system.racialSkillNote" value="{{system.racialSkillNote}}"
+			placeholder="Animal Shape: (water animals only)"></label>
+	<p class="muted">The skill note is the qualification his sheet prints beside the racial skills --
+	which forms a shapechanger may take, which sense works only in daylight. It is prose, and
+	nothing reads it automatically.</p>
+
+	<h3 class="section-head">Colouring and Age</h3>
+	<div class="panel-row">
+		<div class="panel">
+			<h3>Colours</h3>
+			<p class="muted">Hair, eyes and skin a member of this race is found in -- what the
+			&ldquo;Roll colours&rdquo; button on a character offers.</p>
+			<p><label>Hair</label>
+				{{#each system.features.hair as |c|}}<span class="race-chip">{{c}}</span>{{else}}<span class="muted">none listed</span>{{/each}}</p>
+			<p><label>Eyes</label>
+				{{#each system.features.eyes as |c|}}<span class="race-chip">{{c}}</span>{{else}}<span class="muted">none listed</span>{{/each}}</p>
+			<p><label>Skin</label>
+				{{#each system.features.skin as |c|}}<span class="race-chip">{{c}}</span>{{else}}<span class="muted">none listed</span>{{/each}}</p>
+		</div>
+		<div class="panel">
+			<h3>Age</h3>
+			<ul class="band-list">
+				<li><label>Starting, low</label>
+					<span><input type="number" name="system.ages.startLow" value="{{system.ages.startLow}}"></span></li>
+				<li><label>Starting, high</label>
+					<span><input type="number" name="system.ages.startHigh" value="{{system.ages.startHigh}}"></span></li>
+				<li><label>Maximum</label>
+					<span><input type="text" name="system.ages.maxAge" value="{{system.ages.maxAge}}" placeholder="5000"></span></li>
+			</ul>
+			<p class="muted">Maximum age is a number of years for most races and a word for a few
+			&mdash; &ldquo;Immortal&rdquo; &mdash; so it is text rather than a number.</p>
+		</div>
+	</div>
+
 	<h3 class="section-head">Description</h3>
 	<textarea name="system.description" rows="4">{{system.description}}</textarea>
 </section>

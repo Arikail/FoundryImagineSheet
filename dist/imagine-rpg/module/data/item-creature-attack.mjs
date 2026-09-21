@@ -42,10 +42,10 @@ const fields = foundry.data.fields;
 			                  choices: EFFECT_TRIGGERS, label: "Trigger" }),
 			description:  new fields.StringField({ required: true, initial: "", label: "Description" }),
 			damage:       new fields.StringField({ required: true, initial: "", label: "Damage" }),
-			damageType:   new fields.StringField({ required: true, initial: "",
+			damageType:   new fields.StringField({ required: true, blank: true, initial: "",
 			                  choices: ["", ...EFFECT_DAMAGE_TYPES], label: "Damage Type" }),
 			duration:     new fields.StringField({ required: true, initial: "", label: "Duration" }),
-			durationType: new fields.StringField({ required: true, initial: "",
+			durationType: new fields.StringField({ required: true, blank: true, initial: "",
 			                  choices: ["", ...EFFECT_DURATION_TYPES], label: "Duration Type" })
 		});
 	}
@@ -65,7 +65,7 @@ export default class ImagineCreatureAttackData extends foundry.abstract.TypeData
 			                choices: Object.keys(CREATURE_ATTACK_TYPES), label: "Attack Type" }),
 
 			damage:     new fields.StringField({ required: true, initial: "", label: "Damage" }),
-			damageType: new fields.StringField({ required: true, initial: "",
+			damageType: new fields.StringField({ required: true, blank: true, initial: "",
 			                choices: ["", ...CREATURE_DAMAGE_TYPES], label: "Damage Type" }),
 
 			// Which limb the attack comes from, when that means anything at all. Blank is "not
@@ -74,7 +74,7 @@ export default class ImagineCreatureAttackData extends foundry.abstract.TypeData
 			// Only Left, Right or Both (an off-hand claw, a two-fisted slam) make an attack
 			// eligible for the off-hand penalty at all; see isOffhandWeapon in combat-rules.mjs,
 			// which this reuses once the caller has ruled out blank.
-			hand: new fields.StringField({ required: true, initial: "",
+			hand: new fields.StringField({ required: true, blank: true, initial: "",
 			                choices: ["", "left", "right", "both"], label: "Hand" }),
 
 			// How many of the round's ten seconds the attack takes, and the floor it can be

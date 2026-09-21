@@ -50,7 +50,7 @@ export default class ImagineWeaponData extends foundry.abstract.TypeDataModel {
 			// does only 2d6 when THRUSTING. Stored as data tied to the mode rather than as
 			// weapon names in code, so a homebrew weapon can use the same rule.
 			damageAlt:     new fields.StringField({ required: true, initial: "" }),
-			damageAltMode: new fields.StringField({ required: true, initial: "",
+			damageAltMode: new fields.StringField({ required: true, blank: true, initial: "",
 			                   choices: ["", "missile", "thrust", "cut", "smash"] }),
 
 			// Launched missile weapons reload between shots, and the source writes the reload

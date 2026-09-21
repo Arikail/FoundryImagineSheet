@@ -26,7 +26,7 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "actor", "character"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "actor", "character"],
 		position: { width: 820, height: 720 },
 		window: { resizable: true },
 		form: { submitOnChange: true },

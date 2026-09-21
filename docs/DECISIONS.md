@@ -2842,3 +2842,61 @@ no rigid on rigid except Rigid/Rigid). The first-layer rule is applied after the
 is picked before the padding it needs. Shields and weapons are left alone. Remove All deletes (after a
 confirmation), it does not unequip. Rules live in `module/equip-rules.mjs`, tested by `tools/equip-test.html`.
 
+
+## Seven playable races were never extracted, and a wrong comment is why (2026-09-20)
+
+Daryl's first real install found the faeries missing from the race list. He was right, and the
+count was worse than it looked: his species picker offers 112 races and the compendium shipped 105.
+The seven absent ones — Fairy, Fairy(Dark), Famorian, Formless, Maginos, Podling and Sporeling —
+have no row in `raceStatsAndMoveDetails`, because `applySingleRaceToAttribs` (sheet-worker.js:32987)
+answers them from a switch BEFORE the dictionary is consulted, assigning each whole row inline in
+the dictionary's own 62-column shape. The extractor only ever read the dictionary.
+
+This was not a gap anyone had to guess at. `extract_combat_tables.py` already said, in
+`inline_race_skills`, that "Fairy and Fairy(Dark) have no row in `raceStatsAndMoveDetails` and so
+are not races a character can be". The first half is true; the conclusion does not follow, and it
+was never checked against `specieslist`, which names both. One wrong inference in a comment kept
+seven races out of the build for as long as the port has existed. The comment is now corrected in
+place rather than deleted, because the reasoning is the thing worth not repeating — and every
+**other** race table (`raceFeatureAbilities`, `racefertiledict`, `raceAges`, the three colour
+tables, `getRaceHeightType`) already had rows for all seven the whole time. Only the stats were
+missed, which is exactly why nothing else complained.
+
+**Five of the seven ship now.** Fairy, Fairy(Dark), Maginos, Podling and Sporeling are plain rows,
+extracted by `inline_race_stats` and laid beside the dictionary the way `special_class_rows` already
+handles the five inline classes. Races go 105 → 110.
+
+**Two do not, on purpose.** Famorian rolls 1d3 apiece into STR/AGL/VIT from its "evoke" checkboxes
+(593 lines, 33032–33624) and Formless takes its whole physical half from a host race via
+`setFormlessStartingRace`. Neither is a row; both need runtime logic. Shipping them with a row of
+zeros would give a character an attribute *limit* of 0 in all twelve — silently worse than the race
+being absent, because it looks like data. Their other tables, and his `evokedict` and
+`formlessStartingRaceDetails`, are already extracted and waiting.
+
+**The four Maginos material variants are not races.** Maginos(Clay), (Metal), (Stone) and (Wood) are
+absent from `specieslist` and picked separately, exactly as Changeling's forms are. They differ only
+in endurance and whether they float, so they are carried as a note on the Maginos race — the call
+already made for Changeling, reused rather than re-argued.
+
+**The ordinary branch is the wingless one, and that is a question for him, not a choice.** Each of
+these cases has two branches, slight physique and everything else, and the port takes the ordinary
+one because it carries no slight-physique option yet. For Fairy, Fairy(Dark), Podling and Sporeling
+that branch is the one his own comments mark "// not female", and it sets special movement to
+"None:" where the slight branch sets "Fly:". So the shipped Fairy cannot fly. That is faithful to
+the branch, not to what any player expects a fairy to do, so it is written into each race's
+description where a Game Master will see it and raised as UPSTREAM-ISSUES item 38. Both branches are
+kept in `inlineRaceStats.json` so the answer costs a rebuild, not another excavation.
+
+**Verified, 2026-09-20:** eight suites over a local HTTP server -- derivation 364, combat 411,
+creature 145, availability 46, character generation 75, advancement 101, level-up walk 37, equip 21
+-- 1,200 checks, all passing. `tools/item-preview.html` renders all eleven item sheets with no
+template error, and now previews TWO races: Elf(Sea) for the movement section as before, and Nixie,
+because it is the one document with a populated `racialSkillNote` and so the only thing that proves
+that field reaches the page. It renders "Animal Shape: (water animals only)" in full -- the note
+Daryl found missing. The harness throws if Nixie ever loses that note, so the regression cannot
+return quietly. A sweep of all 4,389 documents against every `choices` list declared in
+`module/data/*.mjs` finds nothing that can fail validation.
+
+**Not verified:** none of this has run in Foundry V14. The `themed`/`theme-light` classes in
+particular are a documented V13+ convention applied without a V14 install to confirm them, which is
+why the paper colours are also set outright on the controls rather than left to those classes alone.

@@ -1,9 +1,9 @@
 Imagine RPG system build
 version   0.1.0
-built     2026-09-19
-commit    41baf76
-files     79
-documents 4384 (abilities 1154, armor 719, classes 103, disabilities 249, equipment 637, immunities 149, races 105, skills 674, weapons 594)
+built     2026-09-20
+commit    6bcfc65
+files     80
+documents 4389 (abilities 1154, armor 719, classes 103, disabilities 249, equipment 637, immunities 149, races 110, skills 674, weapons 594)
 
 Rebuild with:  python tools/build_system.py --zip
 If the commit above is not the current HEAD, this build is stale.

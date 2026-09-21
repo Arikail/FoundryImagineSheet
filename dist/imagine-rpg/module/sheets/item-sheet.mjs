@@ -77,7 +77,7 @@ const CARRIED_LOCATIONS = ["equipped", "carried", "mount", "stash"];
 export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item"],
 		position: { width: 560, height: 520 },
 		window: { resizable: true },
 		form: { submitOnChange: true }
@@ -98,7 +98,7 @@ export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 export class ImagineCreatureAttackSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "creature-attack"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "creature-attack"],
 		position: { width: 620, height: 640 },
 		actions: {
 			addEffect: ImagineCreatureAttackSheet.#onAddEffect,
@@ -166,7 +166,7 @@ export class ImagineCreatureAttackSheet extends ImagineItemSheet {
 export class ImaginePowerSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "power"]
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "power"]
 	};
 
 	static PARTS = {
@@ -196,7 +196,7 @@ export class ImaginePowerSheet extends ImagineItemSheet {
 export class ImagineEquipmentSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "equipment"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "equipment"],
 		position: { width: 560, height: 520 }
 	};
 
@@ -216,7 +216,7 @@ export class ImagineEquipmentSheet extends ImagineItemSheet {
 export class ImagineWeaponSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "weapon"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "weapon"],
 		position: { width: 620, height: 680 }
 	};
 
@@ -253,7 +253,7 @@ export class ImagineWeaponSheet extends ImagineItemSheet {
 export class ImagineSkillSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "skill"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "skill"],
 		position: { width: 600, height: 620 }
 	};
 
@@ -293,7 +293,7 @@ export class ImagineSkillSheet extends ImagineItemSheet {
 export class ImagineTraitSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "trait"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "trait"],
 		position: { width: 560, height: 460 }
 	};
 
@@ -314,7 +314,7 @@ export class ImagineTraitSheet extends ImagineItemSheet {
 export class ImagineClassSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "class"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "class"],
 		position: { width: 640, height: 700 },
 		actions: {
 			addTitle: ImagineClassSheet.#onAddTitle,
@@ -413,7 +413,7 @@ export class ImagineClassSheet extends ImagineItemSheet {
 export class ImagineArmorSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "armor"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "armor"],
 		position: { width: 640, height: 760 }
 	};
 
@@ -459,7 +459,7 @@ export class ImagineArmorSheet extends ImagineItemSheet {
 export class ImagineRaceSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "sheet", "item", "race"],
+		classes: ["imagine", "themed", "theme-light", "sheet", "item", "race"],
 		position: { width: 640, height: 760 }
 	};
 

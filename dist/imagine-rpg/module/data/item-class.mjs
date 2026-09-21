@@ -63,7 +63,7 @@ export default class ImagineClassData extends foundry.abstract.TypeDataModel {
 					title:    new fields.NumberField({ required: true, integer: true, initial: 1, min: 0 }),
 					name:     new fields.StringField({ required: true, initial: "" }),
 					core:     new fields.BooleanField({ required: true, initial: false }),
-					requires: new fields.StringField({ required: true, initial: "",
+					requires: new fields.StringField({ required: true, blank: true, initial: "",
 						choices: { "": "Any race", caster: "Casting races", nonCaster: "No-casting races" } })
 				})),
 				goalAttr1:  new fields.StringField({ required: true, initial: "" }),

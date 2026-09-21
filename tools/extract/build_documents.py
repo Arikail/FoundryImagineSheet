@@ -32,6 +32,7 @@ from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from column_maps import CLASSREQUIREMENTSANDDETAILS  # noqa: E402 -- names the inline class rows too
+from column_maps import RACESTATSANDMOVEDETAILS      # noqa: E402 -- and the inline race rows
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAMED = os.path.join(HERE, "..", "..", "src", "packs", "named")
@@ -72,7 +73,11 @@ def to_number(tmpvalue, where, field, default=0):
 
 
 def to_bool(tmpvalue):
-    return str(tmpvalue).strip().lower() in ("yes", "true", "1")
+    # A trailing question mark is his own, not a typo of the port's: the ordinary branch of
+    # Sporeling's inline race row ends "no?","yes?" where every other row ends "no","yes". He was
+    # unsure of the pair, not of the format, so the answer he wrote is taken and the doubt is
+    # recorded in UPSTREAM-ISSUES.md rather than silently reading "yes?" as false.
+    return str(tmpvalue).strip().rstrip("?").lower() in ("yes", "true", "1")
 
 
 PAREN = re.compile(r'^\s*([^(]+?)\s*\(\s*([^)]+?)\s*\)\s*$')
@@ -360,8 +365,36 @@ def build_races():
     raceskin = load_raw_entries("raceFeatureSkin")
     raceages = (load_named("raceAges") or {}).get("entries", {})
 
+    # @MARKER INLINE RACE ROWS
+    # Seven playable races have no row in the dictionary at all: their stats are assigned inline in
+    # applySingleRaceToAttribs, in the dictionary's own 62-column shape, which is why his own
+    # column map names them here the way it names the inline class rows in build_classes below.
+    # Extracted by extract_combat_tables.py -- see inline_race_stats for which seven and why.
+    #
+    # Two of the seven are still absent after this, on purpose, because neither row is a literal:
+    # Famorian rolls 1d3 apiece into STR/AGL/VIT from its "evoke" checkboxes, and Formless takes
+    # its whole physical half from a host race. Both need runtime logic rather than a row, and
+    # shipping them with a row of zeros would give a character limits of 0 in every attribute --
+    # worse than the race being absent. Their other tables are all present and waiting.
+    #
+    # The four Maginos material variants are NOT races of their own -- they are not in specieslist,
+    # and are picked separately the way Changeling's forms are -- so they are carried on the
+    # Maginos race as variants rather than becoming four more entries in the picker.
+    rows = dict(payload["entries"])
+    tmpvariants = {}
+    for tmpinline, tmpcells in ((load_named("inlineRaceStats") or {}).get("entries", {})).items():
+        tmprow = dict(zip(RACESTATSANDMOVEDETAILS, tmpcells))
+        tmpbase, tmpsep, tmpform = tmpinline.partition("(")
+        if tmpbase == "Maginos" and tmpsep:
+            tmpvariants.setdefault(tmpbase, {})[tmpform.rstrip(")")] = tmprow
+            continue
+        if tmpinline in rows:
+            note("inline-race-duplicate", "inlineRaceStats/%s" % tmpinline,
+                 "also in raceStatsAndMoveDetails; the inline row is the one his code uses")
+        rows[tmpinline] = tmprow
+
     docs = []
-    for tmpname, tmprow in payload["entries"].items():
+    for tmpname, tmprow in rows.items():
         where = "raceStatsAndMoveDetails/%s" % tmpname
         for tmptable, tmpsource in (("raceSkillDetailValues", raceskills), ("raceFeatureAbilities", racefeatures),
                                     ("racefertiledict", racefertile), ("getAge", raceages)):
@@ -411,7 +444,48 @@ def build_races():
                 "oneSec": to_number(tmprow.get(prefix + "1Sec"), where, prefix + "1Sec"),
             }
 
+        # @MARKER WHAT A ROW CANNOT SAY
+        # Three things about the inline races are rules rather than numbers, and each is written
+        # into the description rather than given a schema field of its own -- the same call already
+        # made for Changeling's per-form skills, so a Game Master reads it where they read the rest
+        # of the race and nothing has to be re-decided.
+        tmpnotes = []
+
+        # Fairy's fortune is rolled when the race is applied, not fixed: a d6 picks high or low,
+        # then 1d10 gives the size. Left at 0 here, which is the honest resting value -- the roll
+        # belongs with the other creation rolls (height, frame, weight), not in a static row.
+        if tmprow.get("fortuneMod") == "@fortuneRoll":
+            tmprow = dict(tmprow, fortuneMod=0)
+            tmpnotes.append("Fortune is rolled when this race is applied rather than being fixed: "
+                            "a d6 decides high or low, then 1d10 gives the size, for a result "
+                            "between -10 and +10. The Fortune modifier below is left at 0 until "
+                            "that roll is made.")
+
+        # The material a Maginos is built from changes only its endurance and whether it floats.
+        if tmpname in tmpvariants:
+            for tmpform, tmpformrow in sorted(tmpvariants[tmpname].items()):
+                tmpnotes.append("%s: endurance %s, +%s per title (max %s%s). %s."
+                                % (tmpform,
+                                   tmpformrow.get("startEnduranceMod"),
+                                   tmpformrow.get("titleEnduranceFormula"),
+                                   tmpformrow.get("titleEnduranceMax"),
+                                   ", mod %s" % tmpformrow.get("titleEnduranceMod")
+                                   if tmpformrow.get("titleEnduranceMod") else "",
+                                   "Floats" if to_bool(tmpformrow.get("canSwim")) else "Sinks"))
+            note("race-by-variant", where,
+                 "the material variants (%s) differ only in endurance and swimming; carried as a "
+                 "note on the race, as Changeling's forms are"
+                 % ", ".join(sorted(tmpvariants[tmpname])))
+
+        # The winged form of these four is the slight-physique one, which the port does not carry.
+        if tmpname in ("Fairy", "Fairy(Dark)", "Podling", "Sporeling"):
+            tmpnotes.append("His sheet splits this race by physique, and only the slight-physique "
+                            "form has wings -- the ordinary form has no special movement at all. "
+                            "The port has no slight-physique option yet, so the figures below are "
+                            "the ordinary, wingless form. Awaiting the developer.")
+
         docs.append(make_doc(tmpname, "race", {
+            "description": " ".join(tmpnotes),
             "attributeMods": tmpmods,
             "attributeLimits": tmplimits,
             "endurance": {
