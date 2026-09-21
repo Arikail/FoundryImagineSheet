@@ -3354,3 +3354,45 @@ resolved to a real document, none by name only. With nothing ticked she gets non
 1,200 checks, passing.
 
 **Not verified:** no Foundry V14 install, so no character has been created through the window.
+
+## Set Trap was there; its two variants were not (2026-09-21)
+
+Daryl reported Set Trap missing from the skill compendium. It was in it — and he was right anyway.
+
+Three skills are ONE row in his `skilldict` and TWO entries in his `skilllist`: Set Trap, Detect
+Trap and Remove Trap each split into a wilderness form and an urban one. His own description says
+so: "hidden traps, either of a wilderness or urban nature". The row carries the numbers; the list
+is what a player picks from, and it offers only `Set Trap(w)` and `Set Trap(u)`, never the bare
+name.
+
+The port built the pack from the dictionary, so it shipped the three bare rows and none of the six
+variants. **His class skill lists name a variant 73 times and the bare form not once; his racial
+lists name a variant 33 times.** So a hundred and six grants pointed at a name with nothing behind
+it, and the only way to notice was for a player to go looking for a skill their class was supposed
+to have given them.
+
+The six variants are now built from the three rows, inheriting every number and gaining
+"Wilderness traps." or "Urban traps." on the front of the description. The bare rows are kept too:
+four racial lists still name them, and they are what his dictionary actually defines.
+
+**The check is the real fix.** A pack's document count cannot catch this — 674 skills looked
+perfectly healthy. `check_skill_references` now follows every skill name a class or race grants and
+reports any that resolves to nothing: 472 references, and it runs on every extraction. Four remain
+unresolved and they are all his to answer (UPSTREAM-ISSUES item 43):
+
+    Call of Fire          1 use,  against "Call of Flame" five times nearby
+    Divine Knowledge(w)   3 uses, and no (w) variant in his skill list, unlike the traps
+    Cover Track           1 use,  against "Cover Tracks"
+    Plant Speak          10 uses, but it is a SPELL -- the Sporeling's racial list names it
+
+The first three read as slips. `Plant Speak` is the interesting one: a race granting a spell rather
+than a skill, which cannot resolve until the magic layer exists, and is recorded so it is not
+mistaken for a typo later.
+
+**Nothing was corrected on his behalf.** A name that resolves to nothing is either his typo or a
+skill he has not written, and both are his to answer. What changed is that neither can hide again.
+
+**Verified, 2026-09-21:** every one of the 471 names in his skill list now resolves against the
+pack, where six did not. Skills 674 → 680. The six variants carry the base rows' attributes, rating
+and starting dice — Set Trap(w) is AGL/INT, rating 13, 2d10%, as Set Trap is. Eight suites, 1,200
+checks, passing.

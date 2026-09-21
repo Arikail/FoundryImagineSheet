@@ -12401,5 +12401,119 @@
       "category": "social",
       "description": "?"
     }
+  },
+  {
+    "name": "Detect Trap(w)",
+    "type": "skill",
+    "system": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": 13,
+      "startingDice": "2d10%",
+      "time": "10 Seconds",
+      "learn": "52",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "137",
+      "category": "class",
+      "description": "Wilderness traps. The ability to see activation sites for mechanical traps of either an urban or wilderness nature."
+    }
+  },
+  {
+    "name": "Detect Trap(u)",
+    "type": "skill",
+    "system": {
+      "attr1": "INT",
+      "attr2": "KNW",
+      "skillRating": 13,
+      "startingDice": "2d10%",
+      "time": "10 Seconds",
+      "learn": "52",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "137",
+      "category": "class",
+      "description": "Urban traps. The ability to see activation sites for mechanical traps of either an urban or wilderness nature."
+    }
+  },
+  {
+    "name": "Remove Trap(w)",
+    "type": "skill",
+    "system": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": 14,
+      "startingDice": "2d6%",
+      "time": "2-9 Seconds",
+      "learn": "",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "139",
+      "category": "class",
+      "description": "Wilderness traps. The capacity to remove or disarm existing traps, either of an urban or wilderness nature."
+    }
+  },
+  {
+    "name": "Remove Trap(u)",
+    "type": "skill",
+    "system": {
+      "attr1": "AGL",
+      "attr2": "",
+      "skillRating": 14,
+      "startingDice": "2d6%",
+      "time": "2-9 Seconds",
+      "learn": "",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "139",
+      "category": "class",
+      "description": "Urban traps. The capacity to remove or disarm existing traps, either of an urban or wilderness nature."
+    }
+  },
+  {
+    "name": "Set Trap(w)",
+    "type": "skill",
+    "system": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": 13,
+      "startingDice": "2d10%",
+      "time": "Varies",
+      "learn": "52",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "139",
+      "category": "class",
+      "description": "Wilderness traps. The ability to create hidden traps, either of a wilderness or urban nature, to confuse or harm the unwary."
+    }
+  },
+  {
+    "name": "Set Trap(u)",
+    "type": "skill",
+    "system": {
+      "attr1": "AGL",
+      "attr2": "INT",
+      "skillRating": 13,
+      "startingDice": "2d10%",
+      "time": "Varies",
+      "learn": "52",
+      "types": [
+        "Stealth/Intrusive"
+      ],
+      "sourcebook": "Player's Guide",
+      "page": "139",
+      "category": "class",
+      "description": "Urban traps. The ability to create hidden traps, either of a wilderness or urban nature, to confuse or harm the unwary."
+    }
   }
 ]

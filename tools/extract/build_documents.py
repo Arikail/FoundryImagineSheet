@@ -175,6 +175,40 @@ def build_skills():
                 "category": category,
                 "description": clean_text(tmprow.get("description", "")),
             }))
+
+    # @MARKER TRAP SKILL VARIANTS
+    # Three skills are ONE row in his dictionary and TWO entries in his skill list, and the port
+    # shipped only the row. Set Trap, Detect Trap and Remove Trap each split into a wilderness form
+    # and an urban one -- his own description says so: "hidden traps, either of a wilderness or
+    # urban nature". His `skilllist`, which is what a player actually picks from, offers
+    # "Set Trap(w)" and "Set Trap(u)" and never the bare name; his class skill lists name a variant
+    # 73 times and the bare form not once; his racial lists name a variant 33 times.
+    #
+    # So every class and race that grants one of these was pointing at a skill that did not exist
+    # in the compendium. Daryl reported it on 2026-09-21 as Set Trap not making it in, which is
+    # exactly right in effect even though the bare row was there all along.
+    #
+    # The bare rows are KEPT as well: four racial lists still name them, and they are the rows his
+    # dictionary actually defines. The variants are built from them, differing only in name and in
+    # a description that says which kind of trap.
+    TRAP_VARIANTS = (
+        # suffix   what it means, for the description
+        ("(w)", "Wilderness traps"),
+        ("(u)", "Urban traps"),
+    )
+    tmpvariants = []
+    for tmpdoc in docs:
+        if tmpdoc["name"] not in ("Set Trap", "Detect Trap", "Remove Trap"):
+            continue
+        for tmpsuffix, tmpkind in TRAP_VARIANTS:
+            tmpsystem = dict(tmpdoc["system"])
+            tmpsystem["description"] = ("%s. %s" % (tmpkind, tmpsystem.get("description", ""))).strip()
+            tmpvariants.append(make_doc(tmpdoc["name"] + tmpsuffix, "skill", tmpsystem))
+    if tmpvariants:
+        note("skill-variants-built", "skilldict/trap skills",
+             "built %d wilderness/urban variants his skill list offers and his dictionary does not "
+             "define: %s" % (len(tmpvariants), ", ".join(d["name"] for d in tmpvariants)))
+    docs.extend(tmpvariants)
     return docs
 
 
@@ -1122,6 +1156,48 @@ BUILDERS = {
 }
 
 
+# @MARKER SKILL CROSS-REFERENCE
+# This is the function which proves every skill a class or a race GRANTS is a skill that exists.
+#
+# It is here because nothing was checking it, and the gap was invisible until a player went looking
+# for a skill their race was supposed to give them. Three skills -- Set Trap, Detect Trap and
+# Remove Trap -- are one row each in his dictionary but TWO entries each in his skill list, a
+# wilderness form and an urban one, and only the bare rows were being built. Classes named a
+# variant 73 times and races 33 times, and every one of those pointed at nothing. Daryl found it on
+# 2026-09-21. A count of documents in a pack cannot catch that; only following the references can.
+#
+# Reported, never silently repaired: a name that resolves to nothing is either a typo of his or a
+# skill he has not written yet, and both are his to answer. What this does is make sure nobody has
+# to notice by accident again.
+def check_skill_references(tmpbuilt):
+    tmpskills = {tmpdoc["name"] for tmpdoc in tmpbuilt.get("skills", [])}
+    if not tmpskills:
+        return
+
+    tmpwanted = {}
+    for tmpdoc in tmpbuilt.get("classes", []):
+        for tmpentry in tmpdoc["system"].get("advancement", {}).get("classSkillList", []):
+            tmpname = (tmpentry.get("name") or "").strip()
+            # His angle-bracketed entries are placeholders his own templates resolve per class.
+            if tmpname and not tmpname.startswith("<"):
+                tmpwanted.setdefault(tmpname, []).append("class %s" % tmpdoc["name"])
+    for tmpdoc in tmpbuilt.get("races", []):
+        tmplists = [tmpdoc["system"].get("racialSkills", []),
+                    tmpdoc["system"].get("slightPhysique", {}).get("racialSkills", [])]
+        for tmplist in tmplists:
+            for tmpentry in tmplist:
+                tmpname = (tmpentry.get("name") or "").strip()
+                if tmpname:
+                    tmpwanted.setdefault(tmpname, []).append("race %s" % tmpdoc["name"])
+
+    tmpmissing = sorted(tmpname for tmpname in tmpwanted if tmpname not in tmpskills)
+    print("  skill references checked: %d name(s), %d unresolved" % (len(tmpwanted), len(tmpmissing)))
+    for tmpname in tmpmissing:
+        note("skill-reference-missing", tmpwanted[tmpname][0],
+             "%r is granted but no skill of that name is built (%d grant(s))"
+             % (tmpname, len(tmpwanted[tmpname])))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -1133,10 +1209,12 @@ def main():
         os.makedirs(OUT, exist_ok=True)
 
     total = 0
+    tmpbuilt = {}
     print(f"{'pack':14} {'documents':>10}")
     print("-" * 28)
     for tmpname, tmpbuilder in BUILDERS.items():
         docs = apply_manual_content(tmpname, tmpbuilder())
+        tmpbuilt[tmpname] = docs
         total += len(docs)
         print(f"{tmpname:14} {len(docs):10}")
         if args.write:
@@ -1144,6 +1222,8 @@ def main():
                 json.dump(docs, fh, indent=2, ensure_ascii=False)
     print("-" * 28)
     print(f"{'total':14} {total:10}")
+
+    check_skill_references(tmpbuilt)
 
     if issues:
         print(f"\n{len(issues)} issue(s) found:")

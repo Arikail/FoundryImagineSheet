@@ -1270,3 +1270,53 @@ kit invented here would be indistinguishable from one of yours. The extracted ta
 records social 5 as identical to social 6, and 12/13 as identical to 14 — and says so on every
 extraction run, so it cannot quietly become the intended behaviour. Six `break;` statements would
 settle it, and the port would pick the change up on the next extraction with nothing else to alter.
+
+## 43. The trap skills are one dictionary row and two list entries, and four names resolve to nothing
+
+**Status:** open · **Severity:** was 106 broken skill grants; the four below are what remain
+
+Daryl reported on 2026-09-21 that Set Trap had not made it into the skill compendium. The bare row
+was there all along — what was missing is the pair of variants your own skill list offers.
+
+**Set Trap, Detect Trap and Remove Trap are each ONE row in `skilldict` and TWO entries in
+`skilllist`:**
+
+```
+skilldict   "Set Trap"                          <- where the numbers live
+skilllist   "Set Trap(w)"   "Set Trap(u)"       <- what a player actually picks from
+```
+
+Your description says what the letters mean: *"hidden traps, either of a wilderness or urban
+nature"*. The bare name appears in `skilllist` not once. Your class skill lists name a variant **73
+times** and never the bare form; racial lists name a variant **33 times** and the bare form 4
+times. So every class and race granting one was pointing at a name with no row behind it.
+
+The port now builds the six variants from the three rows, inheriting the numbers and adding
+"Wilderness traps." or "Urban traps." to the description. Nothing else in your 471-name skill list
+is missing from the compendium. **No change is needed on your side for the traps** — this is
+recorded so the shape is on paper, because a skill that is one row and two picks is easy to port
+wrongly twice.
+
+**Four names still resolve to nothing, and these are yours to answer:**
+
+```
+Call of Fire          Elemental Dancer(Fire), slot 32    1 use   -- "Call of Flame" appears 5 times
+Divine Knowledge(w)   Druid and Ranger                   3 uses  -- "Divine Knowledge" exists; no (w)
+                                                                    variant is in skilllist, unlike the traps
+Cover Track           Midfolk(Forest)                    1 use   -- "Cover Tracks" is the skill
+Plant Speak           Sporeling                         10 uses  -- this is a SPELL, not a skill
+```
+
+The first three look like slips: a single use each against a well-used correct spelling nearby.
+`Divine Knowledge(w)` is the interesting one — it carries the trap skills' wilderness suffix, but
+unlike them it is not in `skilllist`, so either it is a stray `(w)` or it is a variant you meant to
+add and did not.
+
+`Plant Speak` is a different thing: it is in your spell and invocation lists, not your skill
+dictionary, and the Sporeling's RACIAL SKILL list names it. A race granting a spell may well be
+intended — it simply cannot resolve here yet, because the magic layer is not built. It is listed so
+it is not mistaken for a typo later.
+
+**The port reports all four on every extraction run now** rather than letting them pass, which is
+the part that was missing: 472 skill references are followed and anything pointing at nothing is
+named. That check is what would have caught the traps.
