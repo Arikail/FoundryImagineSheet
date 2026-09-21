@@ -3229,3 +3229,68 @@ Fortune. Every other percentile check in his sheet succeeds on a roll at or unde
 written a LOWER Fortune makes a character MORE likely to double their money. That is either a slip
 or a deliberate inversion, and it decides the sense of the whole roll, so it is going to him rather
 than being quietly "corrected" in either direction.
+
+## Slight Physique reaches the race, not just the ratings (2026-09-20)
+
+Daryl reported a Dark Fairy listing "Wood Lore +10%" as a racial skill, which is wrong. It is also,
+for a *wingless* Dark Fairy, exactly right — and that contradiction is the whole of this entry.
+
+He then answered UPSTREAM-ISSUES item 38, which had been open since the seven inline races were
+found. Slight Physique in the original rules was the modifier every female of every race carried;
+when he built the Roll20 sheet he cut it loose from gender and made it a free choice, so a slighter
+male and a stronger female are both ordinary characters. The wings follow the choice, not the
+gender.
+
+**The port already had the option and never let it reach the race.** The generator has carried the
+Slight Physique tick since it was built, and it did one thing: −1 Strength, +1 Agility on the
+ratings. Meanwhile the extractor pulled both branches of every inline race row, shipped the
+ordinary one, and filed the other under `_slightPhysique` against the day the question was
+answered. The two halves were never joined. So the tick was real, the data was there, and a player
+ticking it got two attribute points and a wingless Fairy either way.
+
+**The wingless form is a trade, not a penalty**, which is the part worth not losing:
+
+    Fairy         wings, or Climb and Cover Tracks
+    Fairy(Dark)   wings, or Climb and Wood Lore +10%
+    Podling       wings, or nothing — no skill difference
+    Sporeling     wings, or nothing
+    Gremlin       flies either way; the ORDINARY form gains Climb
+
+Gremlin is the one that would have been missed by reasoning from "faeries have wings": it has a
+slight-physique variant with no flight difference at all, and the difference is a skill going the
+other way. It was caught because the extractor carried both branches of the skill rows as well as
+the stat rows, and the builder was written to ask both.
+
+**Empty means "the same", not "none".** The slight form's skills are stored only where they differ
+from the ordinary form's, so a Podling's variant carries an empty skill list. `applySlightPhysique`
+therefore replaces the list only when the variant has one. Getting that backwards would strip a
+Podling of all thirteen racial skills for ticking a box about its build, and it would look like
+data rather than a bug.
+
+**The choice is applied before the two halves of a Half Race are combined**, so a half-Fairy gets
+the right form of each parent rather than the ordinary form of both.
+
+**The label was wrong and is fixed.** It read "Slight physique (female)", which is the original
+rule and not his sheet's. It now says what it is, with a line naming the five races where it
+decides more than two attribute points.
+
+**Verified, 2026-09-20:** against the real modules and the built documents. Fairy(Dark) ordinary
+gives "None:" and 11 skills, slight gives "Fly:" and 9, and the two the wingless form gains are
+Climb and Wood Lore. Fairy gains Climb and Cover Tracks. Podling's flight differs and its 13 skills
+do not. Gremlin flies both ways and gains Climb when ordinary. Nixie, which has no variant, is
+untouched by the tick. Eight suites, 1,200 checks, passing.
+
+## Two Dark Fairy traits are missing from his table, and were not invented (2026-09-20)
+
+Daryl also reported the Dark Fairy missing its Iron Aversion disability and its Night Vision
+ability. Checked: the port is faithful and his `raceFeatureAbilities` row is what is short — it
+gives the Dark Fairy only Exceptional Sight, Special Dark Shape and Requires Fairy Weapons.
+
+Both traits exist elsewhere in his sheet. Iron Aversion goes to Brownie, Changeling, Gremlin and
+Leprechaun — four of the faerie folk, which makes the two Fairies conspicuous by absence. Night
+Vision in some form goes to 31 races, including Brownie and Elf(Dark), but neither Fairy.
+
+**Nothing was added.** The sheet is the source of truth, and a racial trait invented on this side
+would be indistinguishable from one of his to everyone downstream, including him. It is
+UPSTREAM-ISSUES item 41, with the note that these two rows are also the two his sheet answers
+inline elsewhere and may simply have drifted from the rest of the table.

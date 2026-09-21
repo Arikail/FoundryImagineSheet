@@ -18,7 +18,7 @@
 //==================================================================================================================
 
 import { ATTRIBUTE_TABLES } from "./config-tables.mjs";
-import { combineHalfRace, isClassBlockedForRaces } from "./race-rules.mjs";
+import { combineHalfRace, isClassBlockedForRaces, applySlightPhysique } from "./race-rules.mjs";
 import {
 	ATTRIBUTE_ORDER, CHARACTER_TYPES, buildRatings, checkFinalAttributes, getCivilizedHumanAllowance,
 	checkClassQualification, getStartingClassSkills, assembleCharacter
@@ -79,7 +79,11 @@ import {
 		var tmpRace1 = tmpFind(tmpContent.races, tmpState.race1);
 		var tmpRace2 = tmpState.race2 ? tmpFind(tmpContent.races, tmpState.race2) : null;
 		var tmpRaceNames = [tmpRace1?.name, tmpRace2?.name].filter(tmpName => tmpName);
-		var tmpRace = tmpRace1 ? (tmpRace2 ? combineHalfRace(tmpRace1.system, tmpRace2.system) : tmpRace1.system) : null;
+		// The slight-physique form is chosen BEFORE the two halves are combined, so a half race
+		// gets the right form of each parent rather than the ordinary form of both.
+		var tmpSystem1 = tmpRace1 ? applySlightPhysique(tmpRace1.system, tmpState.slightPhysique) : null;
+		var tmpSystem2 = tmpRace2 ? applySlightPhysique(tmpRace2.system, tmpState.slightPhysique) : null;
+		var tmpRace = tmpSystem1 ? (tmpSystem2 ? combineHalfRace(tmpSystem1, tmpSystem2) : tmpSystem1) : null;
 
 		var tmpType = CHARACTER_TYPES[tmpState.charType] ?? CHARACTER_TYPES.adventurer;
 		var tmpBase = tmpState.manual ? tmpState.manualBase : (tmpState.rolled?.best ?? null);

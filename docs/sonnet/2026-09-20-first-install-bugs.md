@@ -255,3 +255,47 @@ whether it is offering the race's own list or every skill in the compendium.
 
 **Done looks like.** Either confirmed gone, or reproduced on a current build with a note of which
 skills were offered against which the race actually grants.
+
+## 12. Show the slight-physique form on the race item sheet
+
+**What to do.** Race documents now carry a second form under `system.slightPhysique` for the five
+races that have one (Fairy, Fairy(Dark), Podling, Sporeling, Gremlin) — see `DECISIONS.md`
+2026-09-20. The generator applies it; the race ITEM sheet does not show it at all, so a Game Master
+reading Fairy(Dark) in the compendium sees only the wingless form's skills with nothing saying
+there is another.
+
+Add it to the "What This Race Gives" block in `templates/item/item-race.hbs`, shown only when
+`system.slightPhysique.hasVariant` is true: the variant's special movement, and its racial skills
+where it carries any.
+
+**Files.** `templates/item/item-race.hbs`. No JS needed — the whole `system` object is already in
+context, the way the existing chips read `system.racialSkills`.
+
+**Done looks like.** Opening Fairy(Dark) shows both forms and which is which, and opening Nixie
+looks exactly as it does now. `tools/item-preview.html` already previews Nixie and Elf(Sea) —
+add Fairy(Dark) as a third so the variant block is exercised by the harness.
+
+**Already decided.** An empty `racialSkills` on the variant means "the same as the ordinary form",
+NOT "no skills" — Podling's variant is empty because only its flight differs. Render the ordinary
+list in that case rather than an empty one. `applySlightPhysique` in `module/race-rules.mjs` makes
+the same distinction and is the reference.
+
+## 13. Racial bonuses to SOCIAL skills — check whether they are carried at all
+
+**What to do.** Daryl, 2026-09-20: *"I'm pretty sure it isn't covering the Racial Skill Bonuses for
+Social Skills."* Not yet investigated. `raceSkillDetailValues` holds each race's racial skills with
+a bonus on each, and those are class/racial skills; whether his sheet gives a race a bonus to
+SOCIAL skills specifically, and from where, is the open question.
+
+Start by grepping `docs/reference/sheet-worker.js` for how social skills are totalled and whether
+any racial term enters it — `socialskilldict` and the social-skill rows on the character are the
+places to look. Compare against `module/skills-rules.mjs`, which is where a racial bonus would have
+to be applied on this side.
+
+**Done looks like.** Either a named function in his sheet that applies a racial bonus to social
+skills and a port of it, or a note in `DECISIONS.md` saying there is no such rule in the sheet and
+that Daryl's recollection is of the books rather than the code — with the grep that establishes it.
+
+**Already decided.** If the sheet has no such rule, do NOT add one from the rulebooks. The Roll20
+sheet is the source of truth and a bonus invented here would be indistinguishable from one of his.
+Raise it as an upstream question instead, the way items 38 and 41 were.

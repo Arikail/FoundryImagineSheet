@@ -123,6 +123,47 @@ export default class ImagineRaceData extends foundry.abstract.TypeDataModel {
 				jumpUp:    new fields.NumberField({ required: true, initial: 0 })
 			}),
 
+			// @MARKER SLIGHT PHYSIQUE
+			// What changes for a member of this race who is of slight build, where anything does.
+			//
+			// Slight Physique in the original rules was the modifier carried by every female of
+			// every race. When he built the Roll20 sheet he cut it loose from gender and made it a
+			// choice any character may take -- so a stronger female or a slighter male are both
+			// ordinary characters now. He confirmed this on 2026-09-20.
+			//
+			// For all but a handful of races it is only -1 Strength and +1 Agility, which is
+			// applied to the ratings and needs nothing here. Four races carry a second, larger
+			// difference: FAIRY, FAIRY(DARK), PODLING and SPORELING have WINGS in the slight form
+			// and none in the ordinary one, and the two Fairies trade that flight for extra racial
+			// skills -- a wingless Dark Fairy gains Climb and Wood Lore +10%, a wingless Fairy
+			// gains Climb and Cover Tracks. That trade is the reason this block exists: it cannot
+			// be derived from the ordinary row, so both forms are carried and the character's own
+			// choice picks between them.
+			//
+			// `hasVariant` is false for the hundred-odd races where the two forms are identical,
+			// and the rest of the block is then ignored.
+			slightPhysique: new fields.SchemaField({
+				hasVariant:   new fields.BooleanField({ required: true, initial: false }),
+				specialName:  new fields.StringField({ required: true, initial: "" }),
+				special: new fields.SchemaField({
+					hourly:           new fields.StringField({ required: true, initial: "" }),
+					hourlyMultiplier: new fields.NumberField({ required: true, initial: 0 }),
+					hourlyMod:        new fields.NumberField({ required: true, initial: 0 }),
+					tenSec:           new fields.StringField({ required: true, initial: "" }),
+					tenSecMultiplier: new fields.NumberField({ required: true, initial: 0 }),
+					tenSecMod:        new fields.NumberField({ required: true, initial: 0 }),
+					oneSec:           new fields.StringField({ required: true, initial: "" }),
+					oneSecMultiplier: new fields.NumberField({ required: true, initial: 0 }),
+					oneSecMod:        new fields.NumberField({ required: true, initial: 0 })
+				}),
+				// Empty where the slight form's skills match the ordinary form's.
+				racialSkills: new fields.ArrayField(new fields.SchemaField({
+					name:  new fields.StringField({ required: true, initial: "" }),
+					bonus: new fields.StringField({ required: true, initial: "" })
+				}), { initial: [] }),
+				canSwim: new fields.BooleanField({ required: true, initial: false })
+			}),
+
 			// @MARKER TRAITS
 			// formless marks a race with no fixed body, which matters to the body chart and to
 			// transformation. canSwim is stored per race because it is not universal.

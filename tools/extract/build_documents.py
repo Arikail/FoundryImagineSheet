@@ -327,6 +327,55 @@ def build_equipment():
 ATTRS = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"]
 
 
+# @MARKER SLIGHT PHYSIQUE
+# This is the function which builds a race's second form, where it has one.
+#
+# Slight Physique is a CHOICE in his Roll20 sheet, not a consequence of gender -- he cut it loose
+# from the original rules' "every female" when he built the sheet, and confirmed that on
+# 2026-09-20. For most races it is only -1 Strength and +1 Agility, which lands on the ratings and
+# leaves the race itself untouched, so `hasVariant` stays false and nothing else here matters.
+#
+# Four races differ for real, and only in one thing each: Fairy, Fairy(Dark), Podling and Sporeling
+# have WINGS in the slight form and none in the ordinary one. The two Fairies additionally trade
+# that flight for extra racial skills -- the wingless form of each gains two -- which is why the
+# skills are carried here as well and not derived.
+def build_slight_physique(tmpname, tmprow, tmpslightstats, tmpslightskills):
+    tmpstats = tmpslightstats.get(tmpname)
+    tmpskillrow = tmpslightskills.get(tmpname)
+    if not tmpstats and not tmpskillrow:
+        return {"hasVariant": False, "specialName": "", "special": {
+            "hourly": "", "hourlyMultiplier": 0, "hourlyMod": 0,
+            "tenSec": "", "tenSecMultiplier": 0, "tenSecMod": 0,
+            "oneSec": "", "oneSecMultiplier": 0, "oneSecMod": 0}, "racialSkills": [], "canSwim": False}
+
+    where = "slightPhysique/%s" % tmpname
+    tmpstats = tmpstats or tmprow
+
+    # The slight form's own skill list, kept only where it actually differs from the ordinary one:
+    # an identical copy would be a second thing to keep in step for no gain.
+    tmpskills = []
+    if tmpskillrow and len(tmpskillrow) > 1:
+        tmpskills = [{"name": clean_text(s[0]), "bonus": clean_text(s[1] if len(s) > 1 else "")}
+                     for s in tmpskillrow[1] if s and s[0]]
+    return {
+        "hasVariant": True,
+        "specialName": clean_text(str(tmpstats.get("specialMoveName", ""))),
+        "special": {
+            "hourly": clean_text(str(tmpstats.get("specialHourly", ""))),
+            "hourlyMultiplier": to_number(tmpstats.get("specialHourlyMultiplier"), where, "specialHourlyMultiplier"),
+            "hourlyMod": to_number(tmpstats.get("specialHourlyMod"), where, "specialHourlyMod"),
+            "tenSec": clean_text(str(tmpstats.get("special10Sec", ""))),
+            "tenSecMultiplier": to_number(tmpstats.get("special10SecMultiplier"), where, "special10SecMultiplier"),
+            "tenSecMod": to_number(tmpstats.get("special10SecMod"), where, "special10SecMod"),
+            "oneSec": clean_text(str(tmpstats.get("special1Sec", ""))),
+            "oneSecMultiplier": to_number(tmpstats.get("special1SecMultiplier"), where, "special1SecMultiplier"),
+            "oneSecMod": to_number(tmpstats.get("special1SecMod"), where, "special1SecMod"),
+        },
+        "racialSkills": tmpskills,
+        "canSwim": to_bool(tmpstats.get("canSwim")),
+    }
+
+
 def build_races():
     payload = load_named("raceStatsAndMoveDetails")
     if not payload:
@@ -381,6 +430,13 @@ def build_races():
     # and are picked separately the way Changeling's forms are -- so they are carried on the
     # Maginos race as variants rather than becoming four more entries in the picker.
     rows = dict(payload["entries"])
+    # The slight-physique half of each inline row and of the inline skill rows. Four races have a
+    # genuinely different second form -- see the @MARKER SLIGHT PHYSIQUE note in item-race.mjs --
+    # and both forms are carried so the character's own choice can pick between them.
+    tmpslightstats = {}
+    for tmpinline, tmpcells in ((load_named("inlineRaceStats") or {}).get("_slightPhysique", {})).items():
+        tmpslightstats[tmpinline] = dict(zip(RACESTATSANDMOVEDETAILS, tmpcells))
+    tmpslightskills = (load_named("inlineRaceSkills") or {}).get("_slightPhysique", {})
     tmpvariants = {}
     for tmpinline, tmpcells in ((load_named("inlineRaceStats") or {}).get("entries", {})).items():
         tmprow = dict(zip(RACESTATSANDMOVEDETAILS, tmpcells))
@@ -528,6 +584,7 @@ def build_races():
                 "jumpStand": to_number(tmprow.get("jumpStand"), where, "jumpStand"),
                 "jumpUp": to_number(tmprow.get("jumpUp"), where, "jumpUp"),
             },
+            "slightPhysique": build_slight_physique(tmpname, tmprow, tmpslightstats, tmpslightskills),
             "formless": to_bool(tmprow.get("formless")),
             "canSwim": to_bool(tmprow.get("canSwim")),
             "bodyType": bodymap.get(tmpname, "Humanoid"),

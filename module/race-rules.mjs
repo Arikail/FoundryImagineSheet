@@ -165,6 +165,46 @@
 	// holds a pair: titleMax and titleMod. Nothing in the port reads either yet -- the title
 	// Endurance roll (his setNewCharacteristics) is not ported -- and his pair is kept whole in
 	// titleFormula/titleDice beside them, so the second race's figures are not lost.
+	// @MARKER SLIGHT PHYSIQUE
+	// This is the function which gives back a race as a character of slight build has it.
+	//
+	// Slight Physique is a CHOICE on his Roll20 sheet, not a consequence of gender. The original
+	// rules applied it to every female of every race; he cut it loose when he built the sheet, so a
+	// slighter male and a stronger female are both ordinary characters. He confirmed this on
+	// 2026-09-20, which is what closed UPSTREAM-ISSUES item 38.
+	//
+	// For almost every race the choice is only -1 Strength and +1 Agility, which applyPhysique
+	// handles on the ratings and which never touches the race. Five races carry a second
+	// difference, and it is always a TRADE rather than a bonus:
+	//     Fairy, Fairy(Dark)   wings in the slight form; the wingless form gains two racial skills
+	//                          instead -- Climb and Cover Tracks for a Fairy, Climb and Wood Lore
+	//                          +10% for a Dark Fairy
+	//     Podling, Sporeling   wings in the slight form, no skill difference
+	//     Gremlin              flies either way; the ORDINARY form gains Climb
+	//
+	// Returns the race untouched when it has no second form, so a caller may pass anything.
+	export function applySlightPhysique(tmpRaceSystem, tmpIsSlight) {
+		if (!tmpIsSlight || !tmpRaceSystem?.slightPhysique?.hasVariant) { return tmpRaceSystem; }
+		var tmpVariant = tmpRaceSystem.slightPhysique;
+		var tmpOut = { ...tmpRaceSystem };
+
+		// Flight, where the two forms differ in it.
+		tmpOut.movement = {
+			...tmpRaceSystem.movement,
+			specialName: tmpVariant.specialName,
+			special: { ...tmpVariant.special }
+		};
+		tmpOut.canSwim = tmpVariant.canSwim;
+
+		// The skills are carried only where they differ, so an empty list means "the same list",
+		// not "no racial skills at all". Getting that backwards would silently strip a Podling of
+		// all thirteen of its skills for ticking a box about its build.
+		if ((tmpVariant.racialSkills ?? []).length) {
+			tmpOut.racialSkills = tmpVariant.racialSkills.map(tmpSkill => ({ ...tmpSkill }));
+		}
+		return tmpOut;
+	}
+
 	export function combineHalfRace(tmpRace1, tmpRace2) {
 		var tmpMove1 = tmpRace1.movement ?? {};
 		var tmpMove2 = tmpRace2.movement ?? {};

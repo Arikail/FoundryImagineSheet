@@ -1080,7 +1080,31 @@ other than Average, say so and the port will follow.
 
 ## 38. Four faerie races can only fly in their slight-physique form — is that intended?
 
-**Status:** open · **Severity:** a Fairy in the port cannot fly, which is almost certainly wrong
+**Status:** ANSWERED 2026-09-20 by Daryl · the third reading was right, and the port now follows it
+
+> "In the original version, only female faeries have wings. Males do not have wings. In the
+> original rules, Slight Physique was the modifier applied to all females of all races. When he
+> did the sheet for Roll20, he changed it so that each player chooses if their character is
+> normal, or slight physique, regardless of chosen gender... Do note that for Faeries without
+> flight, at least for Dark Faeries, they gain some additional Racial Skills."
+
+So Slight Physique is a CHOICE, not a gender, and the wings follow the choice. The port had the
+option all along — the generator has carried the tick since it was built — but never let it reach
+the race. Both forms are now shipped on the race document and the tick picks between them.
+
+The wingless form is a TRADE, not a penalty: a wingless Fairy gains Climb and Cover Tracks, a
+wingless Dark Fairy gains Climb and Wood Lore +10%. That extra skill is what he first reported as
+"Wood Lore +10%, and that is incorrect" — it was correct for the form being shipped, and the wrong
+form was being shipped for a winged Dark Fairy.
+
+**One point to confirm when convenient.** He recalled the split being Fairy and Dark Fairy only.
+The data has it for **Podling and Sporeling** too (wings in the slight form, none otherwise, no
+skill difference), and for **Gremlin** the other way about — it flies either way, and the ORDINARY
+form gains Climb. He said he had not checked the others, so the sheet has been followed.
+
+*The original question is kept below, since the reasoning is what made the answer usable.*
+
+**Severity when open:** a Fairy in the port cannot fly, which is almost certainly wrong
 
 `applySingleRaceToAttribs` (sheet-worker.js:33006) answers seven races inline instead of from
 `raceStatsAndMoveDetails`. Four of them split on physique, and the split decides whether the race
@@ -1171,3 +1195,31 @@ Three readings fit, and we cannot choose between them from the code:
 **What the port does meanwhile:** nothing. Starting money is not rolled at all yet, and this is why
 the rest of the rule was transcribed into the notes but not implemented — the multiplier table is
 unambiguous and this one line decides who it applies to.
+
+## 41. A Dark Fairy has no Iron Aversion and no Night Vision in `raceFeatureAbilities`
+
+**Status:** open · **Severity:** two racial traits missing from both Fairies
+
+Daryl, 2026-09-20: *"Dark Faery is also missing it's Iron Aversion disability and it's Night Vision
+Special Ability/Power in the racial write up."*
+
+He is reading the port, but the port is faithful here — your own table is what is short. The rows
+read:
+
+```
+"Fairy"       : ["Exceptional Sight,Special Shape",      "Requires Fairy Weapons", ""]
+"Fairy(Dark)" : ["Exceptional Sight,Special Dark Shape", "Requires Fairy Weapons", ""]
+```
+
+Abilities, disabilities, immunities. Neither Fairy carries Iron Aversion or any Night Vision.
+
+Both traits exist in your sheet and are given to other races. `Iron Aversion` goes to **Brownie,
+Changeling, Gremlin and Leprechaun** — four of the faerie folk, which makes the two Fairies
+conspicuous by absence. Some form of `Night Vision` goes to **31 races**, including Brownie and
+Elf(Dark), but not to either Fairy.
+
+The port has not added them, because the sheet is the source of truth and a racial trait invented
+on our side would be indistinguishable from one of yours. Two lines in `raceFeatureAbilities` would
+settle it — and it is worth checking whether the same omission reaches the other faerie races,
+since these two rows are also the two the sheet answers inline elsewhere and may have drifted from
+the rest of the table.

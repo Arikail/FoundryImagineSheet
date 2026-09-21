@@ -20,8 +20,14 @@
 		<h2>Who is this?</h2>
 		<label class="row">Name <input type="text" name="name" value="{{state.name}}" placeholder="New Character"></label>
 		<label class="row">Gender <input type="text" name="gender" value="{{state.gender}}"></label>
+		{{!-- NOT gendered. The original rules gave this to every female; he cut it loose when he
+		      built the Roll20 sheet, so it is any character's to take -- a slighter male and a
+		      stronger female are both ordinary. Confirmed 2026-09-20. --}}
 		<label class="row check"><input type="checkbox" name="slightPhysique" {{#if state.slightPhysique}}checked{{/if}}>
-			Slight physique (female): -1 Strength, +1 Agility</label>
+			Slight physique: &minus;1 Strength, +1 Agility</label>
+		<p class="muted">Anyone may take this, whatever their gender. For five races it decides more
+		than the two points: a Fairy, Dark Fairy, Podling or Sporeling has wings only in the slight
+		form, and the wingless form of a Fairy or Dark Fairy gains two racial skills instead.</p>
 		<label class="row">Character type
 			<select name="charType">{{#each charTypes as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
 		<p class="muted">Ask the Game Master which type the campaign uses. Rolls are kept per attribute; each type lets points be moved between attributes at its ratio later.</p>

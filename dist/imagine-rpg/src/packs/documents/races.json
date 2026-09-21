@@ -84,6 +84,23 @@
         "jumpStand": 4,
         "jumpUp": 2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Insectoid(Wings)",
@@ -250,6 +267,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -432,6 +466,23 @@
         "jumpStand": 3,
         "jumpUp": 2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Wings)",
@@ -586,6 +637,23 @@
         },
         "jumpStand": 3,
         "jumpUp": 2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -779,6 +847,23 @@
         "jumpStand": 3,
         "jumpUp": 2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Wings)",
@@ -942,6 +1027,23 @@
         },
         "jumpStand": 0,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -1123,6 +1225,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -1299,6 +1418,23 @@
         "jumpStand": -5,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Brachara",
@@ -1470,6 +1606,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -1627,6 +1780,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -1804,6 +1974,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Centaur",
@@ -1970,6 +2157,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -2138,6 +2342,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -2267,6 +2488,23 @@
         },
         "jumpStand": 3,
         "jumpUp": 2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -2434,6 +2672,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -2616,6 +2871,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -2776,6 +3048,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -2938,6 +3227,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -3116,6 +3422,23 @@
         },
         "jumpStand": -1,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -3301,6 +3624,23 @@
         "jumpStand": -1,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -3485,6 +3825,23 @@
         },
         "jumpStand": -1,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -3675,6 +4032,23 @@
         },
         "jumpStand": -1,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -3885,6 +4259,23 @@
         "jumpStand": -1,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -4072,6 +4463,23 @@
         },
         "jumpStand": -1,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -4287,6 +4695,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -4489,6 +4914,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -4688,6 +5130,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -4873,6 +5332,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -5053,6 +5529,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -5235,6 +5728,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -5422,6 +5932,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -5619,6 +6146,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -5823,6 +6367,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -6026,6 +6587,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -6228,6 +6806,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -6426,6 +7021,23 @@
         "jumpStand": -0.5,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Hooves)",
@@ -6584,6 +7196,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -6775,6 +7404,23 @@
         "jumpStand": 0,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -6951,6 +7597,23 @@
         "jumpStand": -3,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -7124,6 +7787,23 @@
         "jumpStand": -3,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -7296,6 +7976,23 @@
         },
         "jumpStand": -3,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -7484,6 +8181,23 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -7689,6 +8403,23 @@
         "jumpStand": -0.5,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -7885,6 +8616,23 @@
         "jumpStand": -0.5,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -8056,6 +8804,23 @@
         },
         "jumpStand": -0.5,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -8238,6 +9003,23 @@
         "jumpStand": -0.5,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -8418,6 +9200,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -8581,6 +9380,60 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": true,
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "racialSkills": [
+          {
+            "name": "Darkness",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Blend",
+            "bonus": "+20%"
+          },
+          {
+            "name": "Detect Magic",
+            "bonus": ""
+          },
+          {
+            "name": "Levitation",
+            "bonus": ""
+          },
+          {
+            "name": "Mimic",
+            "bonus": ""
+          },
+          {
+            "name": "Move Unheard",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Phase",
+            "bonus": ""
+          },
+          {
+            "name": "Sing",
+            "bonus": ""
+          },
+          {
+            "name": "Telekinesis",
+            "bonus": ""
+          }
+        ],
+        "canSwim": true
       },
       "formless": false,
       "canSwim": true,
@@ -8762,6 +9615,23 @@
         "jumpStand": 0,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -8926,6 +9796,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -9094,6 +9981,23 @@
         },
         "jumpStand": -3,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -9267,6 +10171,23 @@
         },
         "jumpStand": -0.5,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -9451,6 +10372,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -9663,6 +10601,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -9872,6 +10827,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -10084,6 +11056,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -10270,6 +11259,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -10474,6 +11480,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -10633,6 +11656,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -10798,6 +11838,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -10970,6 +12027,23 @@
         "jumpStand": 3,
         "jumpUp": 2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Wings)",
@@ -11135,6 +12209,23 @@
         },
         "jumpStand": -3,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -11308,6 +12399,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Tail)",
@@ -11474,6 +12582,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -11664,6 +12789,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Tail)",
@@ -11820,6 +12962,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -11981,6 +13140,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Tail)",
@@ -12140,6 +13316,23 @@
         "jumpStand": 0,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Tail)",
@@ -12298,6 +13491,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -12467,6 +13677,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": false,
@@ -12656,6 +13883,23 @@
         "jumpStand": -1,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Tail)",
@@ -12815,6 +14059,23 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -13003,6 +14264,23 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -13196,6 +14474,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -13396,6 +14691,23 @@
         },
         "jumpStand": 0,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -13598,6 +14910,23 @@
         "jumpStand": 0,
         "jumpUp": -1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -13786,6 +15115,23 @@
         },
         "jumpStand": 0,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -13976,6 +15322,23 @@
         "jumpStand": -4,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -14165,6 +15528,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -14347,6 +15727,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -14527,6 +15924,23 @@
         },
         "jumpStand": -3,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -14718,6 +16132,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -14879,6 +16310,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -15054,6 +16502,23 @@
         "jumpStand": 0.5,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Saurian",
@@ -15226,6 +16691,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -15393,6 +16875,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -15574,6 +17073,23 @@
         "jumpStand": 0.5,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Saurian",
@@ -15753,6 +17269,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Scethen",
@@ -15926,6 +17459,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -16103,6 +17653,23 @@
         "jumpStand": 0.5,
         "jumpUp": 5
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -16254,6 +17821,23 @@
         },
         "jumpStand": 0.5,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -16436,6 +18020,23 @@
         "jumpStand": 0.5,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Saurian",
@@ -16606,6 +18207,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Hooves/Tail)",
@@ -16768,6 +18386,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -16943,6 +18578,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Hooves)",
@@ -17098,6 +18750,23 @@
         "jumpStand": -1,
         "jumpUp": -0.5
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid(Tail)",
@@ -17251,6 +18920,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -17407,6 +19093,23 @@
         },
         "jumpStand": 0,
         "jumpUp": 0
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -17592,6 +19295,23 @@
         "jumpStand": -3,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -17751,6 +19471,23 @@
         },
         "jumpStand": 0.5,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -17916,6 +19653,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid(Large Tail)",
@@ -18078,6 +19832,23 @@
         "jumpStand": 0.5,
         "jumpUp": 5
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -18239,6 +20010,23 @@
         },
         "jumpStand": 0,
         "jumpUp": -1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -18431,6 +20219,23 @@
         "jumpStand": 2,
         "jumpUp": 1
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -18602,6 +20407,23 @@
         },
         "jumpStand": 2,
         "jumpUp": 1
+      },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
       },
       "formless": false,
       "canSwim": true,
@@ -18775,6 +20597,72 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": true,
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "racialSkills": [
+          {
+            "name": "Animal Shape",
+            "bonus": "+20%"
+          },
+          {
+            "name": "Area Sense",
+            "bonus": ""
+          },
+          {
+            "name": "Blend",
+            "bonus": ""
+          },
+          {
+            "name": "Detect Magic",
+            "bonus": ""
+          },
+          {
+            "name": "Herb Lore",
+            "bonus": ""
+          },
+          {
+            "name": "Levitation",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Mimic",
+            "bonus": ""
+          },
+          {
+            "name": "Move Unheard",
+            "bonus": ""
+          },
+          {
+            "name": "Phase",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Sing",
+            "bonus": ""
+          },
+          {
+            "name": "Telekinesis",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Wood Lore",
+            "bonus": "+10%"
+          }
+        ],
+        "canSwim": true
       },
       "formless": false,
       "canSwim": true,
@@ -18982,6 +20870,60 @@
         "jumpStand": -4,
         "jumpUp": -2
       },
+      "slightPhysique": {
+        "hasVariant": true,
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "racialSkills": [
+          {
+            "name": "Darkness",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Blend",
+            "bonus": "+20%"
+          },
+          {
+            "name": "Detect Magic",
+            "bonus": ""
+          },
+          {
+            "name": "Levitation",
+            "bonus": ""
+          },
+          {
+            "name": "Mimic",
+            "bonus": ""
+          },
+          {
+            "name": "Move Unheard",
+            "bonus": "+10%"
+          },
+          {
+            "name": "Phase",
+            "bonus": ""
+          },
+          {
+            "name": "Sing",
+            "bonus": ""
+          },
+          {
+            "name": "Telekinesis",
+            "bonus": ""
+          }
+        ],
+        "canSwim": true
+      },
       "formless": false,
       "canSwim": true,
       "bodyType": "Humanoid",
@@ -19176,6 +21118,23 @@
         "jumpStand": 0,
         "jumpUp": 0
       },
+      "slightPhysique": {
+        "hasVariant": false,
+        "specialName": "",
+        "special": {
+          "hourly": "",
+          "hourlyMultiplier": 0,
+          "hourlyMod": 0,
+          "tenSec": "",
+          "tenSecMultiplier": 0,
+          "tenSecMod": 0,
+          "oneSec": "",
+          "oneSecMultiplier": 0,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": false
+      },
       "formless": false,
       "canSwim": false,
       "bodyType": "Humanoid",
@@ -19352,6 +21311,23 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": true,
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": true
       },
       "formless": false,
       "canSwim": true,
@@ -19557,6 +21533,23 @@
         },
         "jumpStand": -4,
         "jumpUp": -2
+      },
+      "slightPhysique": {
+        "hasVariant": true,
+        "specialName": "Fly:",
+        "special": {
+          "hourly": "Run",
+          "hourlyMultiplier": 3,
+          "hourlyMod": 0,
+          "tenSec": "Run",
+          "tenSecMultiplier": 3,
+          "tenSecMod": 0,
+          "oneSec": "Run",
+          "oneSecMultiplier": 3,
+          "oneSecMod": 0
+        },
+        "racialSkills": [],
+        "canSwim": true
       },
       "formless": false,
       "canSwim": true,
