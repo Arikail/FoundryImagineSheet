@@ -2900,3 +2900,44 @@ return quietly. A sweep of all 4,389 documents against every `choices` list decl
 **Not verified:** none of this has run in Foundry V14. The `themed`/`theme-light` classes in
 particular are a documented V13+ convention applied without a V14 install to confirm them, which is
 why the paper colours are also set outright on the controls rather than left to those classes alone.
+
+## Sheet windows could not scroll at all (2026-09-20)
+
+Daryl, on the same install: "all windows need scroll bars". He was describing every sheet in the
+system. Anything taller than its window was simply unreachable — his earlier note that Tab would
+"allow you to see more" was him discovering that keyboard focus was the only way to reach a field
+below the fold.
+
+**`scrollable` does not make anything scroll, and that is the trap here.** The three windows in
+`module/apps/` already declared it and the twelve sheets did not, which looks like the whole
+diagnosis and is not. A part's `scrollable` array is a list of selectors whose scroll position
+Foundry saves and restores across a re-render; it sets no overflow and creates no scroll region.
+It is still worth having — these sheets re-render on every field change, so without it a Game
+Master editing something near the bottom is thrown back to the top on each keystroke — and it is
+now declared on all nine item bodies and all nine actor tabs. But it is the smaller half.
+
+**What makes a part scroll is having its height bounded.** The window content is now an explicit
+flex column that does not itself scroll; the header and tab strip keep their natural size; the part
+holding the form takes the rest, with `overflow-y: auto`. The load-bearing line is `min-height: 0`
+on that part: a flex child defaults to `min-height: auto` and refuses to shrink below its own
+content, so without it nothing overflows and nothing scrolls — indistinguishable from the original
+bug. Scoped to `.imagine.sheet`, because the three apps scroll an inner body of their own and would
+otherwise get two nested scrollbars.
+
+**And a horizontal scrollbar that should never have existed.** With vertical scrolling working, the
+race sheet still scrolled sideways: `.panel-row` was `repeat(3, 1fr)`, which is a floor as well as
+a ceiling. Three panels wanting ~240px each demanded 745px inside a 640px window. A form should not
+scroll sideways, so the row now wraps — `repeat(auto-fit, minmax(min(230px, 100%), 1fr))` — giving
+three panels across when there is room and two or one when there is not.
+
+**Verified, 2026-09-20:** against a reproduction of Foundry's own window chrome — a fixed-height
+`.application` holding `.window-content` with real parts inside. All seven item sheets at the width
+each declares in its own `DEFAULT_OPTIONS`: race 1830px of content in 642px, class 1490 in 582,
+armour 886 in 642, weapon 586 in 562, skill 568 in 502, equipment 497 in 402, all scrolling
+vertically, none overflowing horizontally; trait fits its window and correctly gets no scrollbar.
+An actor sheet's tab likewise scrolls 2400px of content in 596px with the header and tab strip
+staying put. Eight suites, 1,200 checks, still passing; `item-preview.html` renders all eleven
+sheets with no template error.
+
+**Not verified:** no Foundry V14 install. The reproduction asserts the CSS given that DOM shape; it
+cannot prove Foundry V14 builds that shape. `FIRST-RUN.md` is where that gets checked.

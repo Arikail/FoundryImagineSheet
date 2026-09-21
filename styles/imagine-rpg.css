@@ -204,9 +204,15 @@
 
 /* @MARKER PANELS */
 
+/* Three panels across when there is room for three, fewer when there is not. This was
+   repeat(3, 1fr), which is a floor as well as a ceiling: three panels of Endurance /
+   Characteristics / Resistances want about 240px each, so on a 640px race sheet they demanded
+   745px and pushed a horizontal scrollbar under every window that uses a panel row. A form should
+   not scroll sideways, so the row wraps instead. The min() guard keeps a single panel from
+   overflowing a window narrower than one panel's own minimum. */
 .panel-row {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
 	gap: 10px;
 }
 
@@ -965,3 +971,44 @@
 .imagine .wide-field { display: block; margin: 4px 0; font-size: 11px; font-weight: bold; }
 .imagine .wide-field input { display: block; width: 100%; box-sizing: border-box;
 	margin-top: 2px; font-weight: normal; }
+
+/* @MARKER SCROLLING
+   Every sheet window needs a scrollbar and none of them had one: on 2026-09-20 Daryl could not
+   reach the bottom of a race or a class at all, and walking the fields with Tab was the only way
+   to see what was below the fold.
+   THE SCROLLING ITSELF IS DONE HERE, not by the `scrollable` entries added to each PART at the
+   same time. It is worth being exact about that, because the name invites the opposite reading:
+   a part's `scrollable` array is a list of selectors whose scroll position Foundry SAVES AND
+   RESTORES across a re-render, and it makes nothing scroll on its own. It is still wanted --
+   these sheets re-render on every field change, and without it the reader is thrown back to the
+   top of the form each time they type -- but a sheet with `scrollable` and no CSS scrolls exactly
+   as badly as one with neither.
+   What makes a part scroll is having its height bounded by something. So the window content is an
+   explicit flex column that does not itself scroll, the header and the tab strip keep their
+   natural size, and the part that holds the form takes whatever is left. `min-height: 0` is the
+   load-bearing line: a flex child defaults to min-height:auto and refuses to shrink below its own
+   content, so without it nothing ever overflows and nothing ever scrolls -- which looks precisely
+   like the bug being fixed here.
+   Both element shapes are named because the two kinds of sheet differ: an item sheet's form is a
+   part called "body", and an actor sheet's is one <section class="tab"> per tab.
+   Scoped to .imagine.sheet on purpose -- the generator, the level-up window and the availability
+   window are .imagine.character-generator, .imagine.level-up and .imagine.availability-config,
+   they already scroll an inner body of their own, and they would get two nested scrollbars if
+   this caught them. */
+.imagine.sheet .window-content {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+.imagine.sheet .window-content > [data-application-part="header"],
+.imagine.sheet .window-content > [data-application-part="tabs"],
+.imagine.sheet .window-content > nav.tabs {
+	flex: 0 0 auto;
+}
+.imagine.sheet .window-content > [data-application-part="body"],
+.imagine.sheet .window-content > section.tab,
+.imagine.sheet .window-content > [data-tab] {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+}

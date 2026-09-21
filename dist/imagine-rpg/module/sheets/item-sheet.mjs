@@ -108,7 +108,7 @@ export class ImagineCreatureAttackSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-creature-attack.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-creature-attack.hbs", scrollable: [""] }
 	};
 
 	// This is the function which adds the option lists the attack's dropdowns need, and numbers
@@ -171,7 +171,7 @@ export class ImaginePowerSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-power.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-power.hbs", scrollable: [""] }
 	};
 
 	async _prepareContext(options) {
@@ -202,7 +202,7 @@ export class ImagineEquipmentSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-equipment.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-equipment.hbs", scrollable: [""] }
 	};
 
 	async _prepareContext(options) {
@@ -222,7 +222,7 @@ export class ImagineWeaponSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-weapon.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-weapon.hbs", scrollable: [""] }
 	};
 
 	async _prepareContext(options) {
@@ -259,7 +259,7 @@ export class ImagineSkillSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-skill.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-skill.hbs", scrollable: [""] }
 	};
 
 	async _prepareContext(options) {
@@ -299,7 +299,7 @@ export class ImagineTraitSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-trait.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-trait.hbs", scrollable: [""] }
 	};
 
 	async _prepareContext(options) {
@@ -326,7 +326,7 @@ export class ImagineClassSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-class.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-class.hbs", scrollable: [""] }
 	};
 
 	// This is the function which assembles the attribute-qualification grid and pairs each title
@@ -419,7 +419,7 @@ export class ImagineArmorSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-armor.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-armor.hbs", scrollable: [""] }
 	};
 
 	// This is the function which lays the nineteen coverage locations out as rows -- one input for
@@ -465,7 +465,7 @@ export class ImagineRaceSheet extends ImagineItemSheet {
 
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/item/item-header.hbs" },
-		body:   { template: "systems/imagine-rpg/templates/item/item-race.hbs" }
+		body:   { template: "systems/imagine-rpg/templates/item/item-race.hbs", scrollable: [""] }
 	};
 
 	// This is the function which stacks the two 12-wide attribute rows under one shared header, in

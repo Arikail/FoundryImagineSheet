@@ -80,7 +80,32 @@ this machine (confirmed 2026-09-20), which is also why the test harnesses are br
 `choices` list built by spreading a table (`["", ...CREATURE_TYPES]`) cannot be resolved this way;
 skip those and say how many were skipped rather than pretending to have checked them.
 
-## 4. BLOCKED on Daryl — Famorian and Formless, the last two missing races
+## 4. A harness for the window chrome itself
+
+**What to do.** The scrolling fix (`@MARKER SCROLLING` in `styles/imagine-rpg.css`) was verified by
+building a throwaway page that reproduced Foundry's window chrome — a fixed-height `.application`
+holding a `.window-content` with real parts inside — and asserting that each sheet's form part
+overflows and scrolls while the header stays put. That page was deleted after use.
+
+It is worth having permanently, because nothing else in the harness set can catch this class of
+bug: `item-preview.html` renders every sheet in an unbounded frame, which is exactly the condition
+under which a missing scrollbar is invisible. Build `tools/window-test.html` on the pattern of the
+other harnesses: for each item sheet, at the width and height its own `DEFAULT_OPTIONS` declares,
+assert `scrollHeight > clientHeight` where the content is taller than the window, and assert
+`scrollWidth <= clientWidth` always — a form should never scroll sideways.
+
+**Files.** New `tools/window-test.html`. Widths and heights come from `module/sheets/item-sheet.mjs`;
+read them from there rather than retyping them, so a sheet that is resized cannot drift from its test.
+
+**Done looks like.** The suite fails if `.panel-row` goes back to a fixed `repeat(3, 1fr)`, if
+`min-height: 0` is dropped from the scrolling part, or if a new sheet is added without a scroll
+region. Report `PASS`/`FAIL` lines like the other harnesses so the counts can join the total.
+
+**Already decided.** Reproduce the chrome rather than trying to load Foundry: there is no V14 on
+this machine and no Node. The reproduction asserts the CSS given that DOM shape and does not claim
+to prove Foundry builds that shape — `FIRST-RUN.md` is where that gets checked.
+
+## 5. BLOCKED on Daryl — Famorian and Formless, the last two missing races
 
 **Do not start this one.** It is written down so it does not turn into a silent omission, not
 because it is ready.

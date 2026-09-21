@@ -55,11 +55,11 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	static PARTS = {
 		header:      { template: "systems/imagine-rpg/templates/actor/header.hbs" },
 		tabs:        { template: "templates/generic/tab-navigation.hbs" },
-		attributes:  { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs" },
-		skills:      { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs" },
-		combat:      { template: "systems/imagine-rpg/templates/actor/tab-combat.hbs" },
-		equipment:   { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs" },
-		description: { template: "systems/imagine-rpg/templates/actor/tab-description.hbs" }
+		attributes:  { template: "systems/imagine-rpg/templates/actor/tab-attributes.hbs", scrollable: [""] },
+		skills:      { template: "systems/imagine-rpg/templates/actor/tab-skills.hbs", scrollable: [""] },
+		combat:      { template: "systems/imagine-rpg/templates/actor/tab-combat.hbs", scrollable: [""] },
+		equipment:   { template: "systems/imagine-rpg/templates/actor/tab-equipment.hbs", scrollable: [""] },
+		description: { template: "systems/imagine-rpg/templates/actor/tab-description.hbs", scrollable: [""] }
 	};
 
 	static TABS = {

@@ -40,10 +40,10 @@ export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(Act
 	static PARTS = {
 		header: { template: "systems/imagine-rpg/templates/actor/creature-header.hbs" },
 		tabs:   { template: "templates/generic/tab-navigation.hbs" },
-		stats:  { template: "systems/imagine-rpg/templates/actor/tab-creature-stats.hbs" },
-		skills: { template: "systems/imagine-rpg/templates/actor/tab-creature-skills.hbs" },
-		combat: { template: "systems/imagine-rpg/templates/actor/tab-creature-combat.hbs" },
-		traits: { template: "systems/imagine-rpg/templates/actor/tab-creature-traits.hbs" }
+		stats:  { template: "systems/imagine-rpg/templates/actor/tab-creature-stats.hbs", scrollable: [""] },
+		skills: { template: "systems/imagine-rpg/templates/actor/tab-creature-skills.hbs", scrollable: [""] },
+		combat: { template: "systems/imagine-rpg/templates/actor/tab-creature-combat.hbs", scrollable: [""] },
+		traits: { template: "systems/imagine-rpg/templates/actor/tab-creature-traits.hbs", scrollable: [""] }
 	};
 
 	static TABS = {
