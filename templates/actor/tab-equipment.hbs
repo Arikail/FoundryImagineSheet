@@ -3,7 +3,7 @@
 	together and what matters most is where a thing is: worn and carried weight counts against
 	the character, stowed on a mount or left in a stash does not.
 --}}
-<section class="tab imagine-equipment" data-tab="equipment" data-group="primary">
+<section class="tab imagine-equipment{{#if tab.active}} active{{/if}}" data-tab="equipment" data-group="primary">
 
 	<div class="encumbrance-bar">
 		<span class="status">{{system.encumbrance.status}}</span>
@@ -18,13 +18,15 @@
 		<button type="button" data-action="createGear" data-type="armor">Add armour</button>
 	</div>
 
-	{{!-- Kitting out in one go. Equip Best Armour wears the strongest legal set the character owns
-	      (layering rules, module/equip-rules.mjs); Remove All Arms deletes every weapon and armour. --}}
+	{{!-- Kitting out in one go, and the exact reverse of it. Equip Best Armour wears the strongest
+	      legal set the character owns (layering rules, module/equip-rules.mjs); Take Everything Off
+	      unequips the lot back to carried. Neither destroys anything -- an item that really is to go
+	      has its own delete on its row. --}}
 	<div class="gear-add">
 		<button type="button" data-action="equipBestArmor"
 			data-tooltip="Wear the strongest armour carried that layers legally; take off the rest">Equip best armour</button>
 		<button type="button" data-action="removeAllArms"
-			data-tooltip="Delete every weapon and piece of armour, shields included">Remove all weapons &amp; armour</button>
+			data-tooltip="Unequip every weapon and piece of armour, shields included. Nothing is deleted &mdash; it all stays carried">Take everything off</button>
 	</div>
 
 	{{#if gear.length}}

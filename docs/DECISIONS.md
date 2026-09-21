@@ -3156,3 +3156,76 @@ version was raised to 0.3.0.
 
 **Not verified:** no Foundry V14 install, so the update has not been performed. And nothing is
 published — the commits are local, so the manifest still advertises 0.1.0 until `git push`.
+
+## Daryl's testing pass, six fixes (2026-09-20)
+
+Six from his log, and the first is the one worth reading.
+
+**A tab went blank whenever anything on it was added or deleted.** Add a language, add a piece of
+gear, and the whole tab disappeared until you clicked to another and back. One cause, every tab,
+both actor sheets.
+
+Foundry computes an `active` class for the current tab and hands it to the template as
+`tab.cssClass`; `changeTab` — the only other thing that puts `active` on a section — runs on a
+CLICK and nowhere else, and early-returns when the group is already on that tab. Our tab templates
+hardcoded `class="tab imagine-equipment"` and never wrote the active class, so it survived only
+until the next re-render regenerated the part's HTML. Adding a language updates the document, the
+document re-renders the sheet, the fresh HTML has no `active`, and `.tab` is `display: none`.
+Clicking away and back called `changeTab`, which put it back — exactly the workaround he found.
+
+The fix is the pattern every core Foundry sheet already uses and ours did not: pass the part its own
+tab entry in `_preparePartContext`, and render `{{#if tab.active}} active{{/if}}`.
+
+**Rolling height did nothing.** `rollPhysique` was passed `this.#state.raceNames`, and the choices
+object has no such field — it holds `race1` and `race2`, and `raceNames` is what `deriveGenerator`
+builds from them. So it was asked for the physique of a character with no race, found no height
+table, returned no height, and with no height there is no weight either. Age was never affected
+because it reads the race's own ages object, which is why one worked and the other did not.
+
+**Remove All deleted instead of unequipping.** It did what its tooltip said and what it said was the
+wrong offer. It sits beside Equip Best Armour and reads as its opposite, and the opposite of
+dressing is undressing, not burning the wardrobe. It now unequips to carried, needs no confirmation
+because nothing is lost, and is called "Take everything off". An item that really is to go still has
+its own delete on its row.
+
+**"Starting age 16-5000" was the race's range, sitting above a panel showing the real age.** He read
+it as the character's, which is the only sensible reading of a number on a character sheet. It now
+says what it is and gives the character's age beside it.
+
+**Handedness could still be re-rolled**, which he asked to remove and was right to: "Michael's sheet
+had it hard coded to make that roll and stick with it. For a reason." Ambidextrous is a large
+advantage, and a button that re-rolls until it appears is choosing it with extra steps. The die is
+gone from the generator, and on the sheet it survives only while the value is blank — a character
+made by hand never passes through the generator and still needs its first roll. A Game Master who
+wants it chosen can tick the setting, which is an honest choice rather than a disguised one.
+
+**Colours can be rolled now**, from his own per-race lists, so a rolled colour can never be one that
+could not have been chosen. It fills only what is blank, so a chosen colour survives — the same
+restraint the handedness roll shows, for the same reason.
+
+**Checked and found correct, needing a re-test on a current build:** the Nixie racial skills. He
+suspected "+20% Speak to Stone" was being granted wrongly. Our Nixie row matches his
+`raceSkillDetailValues` entry exactly — ten skills, Animal Shape at +20%, the water-animals note —
+and Speak to Stone is not among them. Whatever he saw came from elsewhere on a build where the
+class and weapon packs had failed to import entirely.
+
+**Verified, 2026-09-20:** the height bug reproduced and fixed in the real modules — the old call
+returns no height and "this race has no height table", the new one gives a Nixie 0'10", Wispy frame,
+6 lb. All nine tab templates gain `active` when the part is active and not otherwise. Eight suites,
+1,200 checks, passing.
+
+## Starting money is not guessed at (2026-09-20)
+
+Asked for, and deliberately not built in this pass. His rule is fully specified and was read:
+`doing_coins` (sheet-worker.js:74150) rolls an apparent social class of 5d4 for anything outside
+5-20, gives non-Nobles (under 15) a Fortune roll, turns a success into a multiplier off a d100
+(x2/x3/x4/x5/x8/x10), and then switches on social class 5 through 20 for the coins themselves. That
+last part is a sixteen-case table, which is extraction work rather than judgement, and it is written
+up for a cheaper window with the line numbers attached.
+
+**One thing in it is a question for him, not a transcription.** The Fortune check reads
+`if (tempfort <= getDieRoll(100))` — success when the d100 rolls AT OR ABOVE the character's
+Fortune. Every other percentile check in his sheet succeeds on a roll at or under the chance, so as
+written a LOWER Fortune makes a character MORE likely to double their money. That is either a slip
+or a deliberate inversion, and it decides the sense of the whole roll, so it is going to him rather
+than being quietly "corrected" in either direction.

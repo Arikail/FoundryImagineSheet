@@ -5,7 +5,7 @@
 	defence, weapon speed), the weapons they can swing, and the state of their body -- every
 	area's Endurance, the wounds on it and the armour covering it.
 --}}
-<section class="tab imagine-combat" data-tab="combat" data-group="primary">
+<section class="tab imagine-combat{{#if tab.active}} active{{/if}}" data-tab="combat" data-group="primary">
 
 	<div class="combat-stats">
 		<div class="char-box"><label>Attack Skill</label><span class="value small">{{system.combat.attackSkill}}</span>
@@ -184,9 +184,14 @@
 				{{/each}}
 			</select>
 			{{else}}
+			{{!-- No die here either, for the reason in the generator: a re-roll is a choice wearing
+			      a dice icon. A character made by hand rather than generated still needs a first
+			      roll, so the die appears only while the value is blank and goes once it is set. --}}
 			<span class="rolled-value">{{handednessLabel}}</span>
-			<button type="button" data-action="rollHandedness" data-tooltip="Roll handedness">
+			{{#unless system.physical.handedness}}
+			<button type="button" data-action="rollHandedness" data-tooltip="Roll handedness once">
 				<i class="fa-solid fa-dice"></i></button>
+			{{/unless}}
 			{{/if}}
 		</label>
 	</h3>

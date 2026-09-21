@@ -8,7 +8,7 @@
 	handedness stays on the Combat tab -- it drives shield coverage and off-hand resolution, so
 	it belongs beside the things that read it, and is not repeated here.
 --}}
-<section class="tab imagine-description" data-tab="description" data-group="primary">
+<section class="tab imagine-description{{#if tab.active}} active{{/if}}" data-tab="description" data-group="primary">
 
 	<ul class="band-list tendencies-row">
 		<li><label>Tendencies</label>
@@ -22,7 +22,13 @@
 	{{#with system.identity.race as |race|}}
 	<div class="panel race-panel">
 		<h3>{{#if ../system.identity.isHalfRace}}Half Race{{else}}Race{{/if}}: {{../system.identity.raceName}}</h3>
-		<p class="muted">Starting age {{race.ages.startLow}}&ndash;{{race.ages.startHigh}}, maximum {{race.ages.maxAge}}</p>
+		{{!-- This is the RACE's range, not this character's age, and it used to read "Starting age
+		      16-5000" directly above a Physical Features panel showing the real one. Daryl read it
+		      as the character's on 2026-09-20 and was right to: a figure on a character sheet is
+		      taken to be about that character unless it says otherwise. It now says otherwise. --}}
+		<p class="muted">A member of this race begins play between {{race.ages.startLow}} and
+			{{race.ages.startHigh}} years old and may live to {{race.ages.maxAge}}.
+			This one is <strong>{{../system.physical.age}}</strong>.</p>
 		<p><label>Racial skills</label>
 			{{#each race.skills as |s|}}<span class="race-chip">{{s.name}}{{#if s.bonus}} {{s.bonus}}{{/if}}</span>{{else}}<span class="muted">none listed</span>{{/each}}
 			{{#if race.skillNote}}<span class="muted">({{race.skillNote}})</span>{{/if}}</p>

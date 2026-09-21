@@ -26,6 +26,23 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
 export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+	// @MARKER TAB STATE
+	// Hands each tab part its own entry from the prepared tab data, which is what lets the template
+	// render the `active` class. Foundry's own sheets all do this and ours did not, and the symptom
+	// was odd enough to be worth recording: a tab went BLANK the moment anything on it was added or
+	// deleted, and came back if you clicked to another tab and back again.
+	// The reason is that `changeTab` -- the only thing that puts `active` on a section -- runs on a
+	// CLICK and nowhere else, and it early-returns when the group is already on that tab. So the
+	// class survived only until the next re-render regenerated the part's HTML from a template that
+	// never wrote it, after which the section was still `.tab` with no `.active`, and `.tab` is
+	// display:none. Adding a language or a piece of gear updates the document, the document
+	// re-renders the sheet, and the tab the player was looking at disappeared.
+	async _preparePartContext(partId, context, options) {
+		var tmpcontext = await super._preparePartContext(partId, context, options);
+		if (tmpcontext.tabs && (partId in tmpcontext.tabs)) { tmpcontext.tab = tmpcontext.tabs[partId]; }
+		return tmpcontext;
+	}
+
 
 	// @MARKER SHEET THEME
 	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
@@ -549,23 +566,29 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		if (tmpconfirmed) { await tmpitem.delete(); }
 	}
 
-	// This is the function which strips a character of every weapon and every piece of armour,
-	// shields included, for starting again from bare hands. Asked first, with the count, because
-	// it deletes.
+	// This is the function which TAKES OFF every weapon and every piece of armour, shields
+	// included, leaving them carried.
+	//
+	// It used to delete them outright, which is what Daryl reported on 2026-09-20: "The Remove all
+	// Weapons and Armor button deletes the items from the character entirely, rather than
+	// unequipping them." It was doing what its tooltip said, and what it said was the wrong thing
+	// to offer. This button sits beside Equip Best Armour and is read as its opposite -- and the
+	// opposite of dressing is undressing, not burning the wardrobe. Destroying a character's whole
+	// kit is not an everyday action and does not belong one careless click from wearing it; an item
+	// that really is to go still has its own delete on its row.
+	// No confirmation now, because there is nothing to confirm: everything is still there, still
+	// carried, and Equip Best Armour puts it back on.
 	static async #onRemoveAllArms(event, target) {
 		event.preventDefault();
-		var tmparms = this.document.items.filter(tmpitem => ["weapon", "armor"].includes(tmpitem.type));
-		if (!tmparms.length) { ui.notifications.info(`${this.document.name} has no weapons or armour.`); return; }
-
-		var tmpweapons = tmparms.filter(tmpitem => tmpitem.type == "weapon").length;
-		var tmpconfirmed = await foundry.applications.api.DialogV2.confirm({
-			window: { title: "Imagine RPG" },
-			content: `<p>Remove all <strong>${tmpweapons}</strong> weapon(s) and <strong>${tmparms.length - tmpweapons}</strong>`
-				+ ` piece(s) of armour from ${this.document.name}? This cannot be undone.</p>`,
-			rejectClose: false,
-			modal: true
-		});
-		if (tmpconfirmed) { await this.document.deleteEmbeddedDocuments("Item", tmparms.map(tmpitem => tmpitem.id)); }
+		var tmpworn = this.document.items.filter(tmpitem => ["weapon", "armor"].includes(tmpitem.type)
+			&& tmpitem.system.location == "equipped");
+		if (!tmpworn.length) {
+			ui.notifications.info(`${this.document.name} has nothing equipped.`);
+			return;
+		}
+		await this.document.updateEmbeddedDocuments("Item",
+			tmpworn.map(tmpitem => ({ _id: tmpitem.id, "system.location": "carried" })));
+		ui.notifications.info(`${this.document.name} takes off ${tmpworn.length} item(s), still carried.`);
 	}
 
 	// This is the function which puts the character in the best armour they own: the strongest

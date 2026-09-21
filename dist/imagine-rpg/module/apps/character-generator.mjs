@@ -16,7 +16,8 @@
 import { explainAvailability } from "../availability.mjs";
 import { rollAttributeSets, rollHandedness, rollStartingAge, assembleCharacter, ATTRIBUTE_ORDER } from "../chargen-rules.mjs";
 import { rollPhysique } from "../physique-rules.mjs";
-import { STEPS, newGeneratorState, deriveGenerator, checkStep, buildGeneratorView, choicesFromState } from "../chargen-view.mjs";
+import { STEPS, newGeneratorState, deriveGenerator, checkStep, buildGeneratorView, choicesFromState,
+	colourChoices } from "../chargen-view.mjs";
 import { applySheetTheme } from "../sheet-theme.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
@@ -44,6 +45,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 			rollHandedness:  ImagineCharacterGenerator.#onRollHandedness,
 			rollAge:         ImagineCharacterGenerator.#onRollAge,
 			rollPhysique:    ImagineCharacterGenerator.#onRollPhysique,
+			rollColours:     ImagineCharacterGenerator.#onRollColours,
 			createCharacter: ImagineCharacterGenerator.#onCreateCharacter
 		}
 	};
@@ -247,12 +249,48 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	//
 	// It uses the character's FINAL attributes, race included, since the frame is read off
 	// Strength less Agility and a racial modifier moves both.
+	// @MARKER COLOURING
+	// This is the function which picks hair, eyes and skin from the colours his tables say a member
+	// of this race is found in -- the same lists the dropdowns offer, so rolling can never produce
+	// a colour that could not have been chosen. Asked for on 2026-09-20: the fields were pick-only.
+	//
+	// Only fills what is still empty, so a player who has chosen a hair colour and wants the rest
+	// decided for them does not lose it. Nothing is re-rolled; pressing it again fills any gaps and
+	// leaves the rest alone, which is the same restraint the handedness roll shows for the same
+	// reason.
+	static async #onRollColours(event, target) {
+		event.preventDefault();
+		this.#captureForm();
+		var tmpderived = deriveGenerator(this.#state, this.#content, ImagineCharacterGenerator.#isAvailable);
+		var tmpraces = [tmpderived.race1, tmpderived.race2].filter(tmpdoc => tmpdoc);
+
+		var tmpfilled = [];
+		for (const tmpwhich of ["hair", "eyes", "skin"]) {
+			if (this.#state[tmpwhich]) { continue; }
+			var tmpoptions = colourChoices(tmpraces, tmpwhich, "").map(tmpoption => tmpoption.value);
+			if (!tmpoptions.length) { continue; }
+			this.#state[tmpwhich] = tmpoptions[ImagineCharacterGenerator.#die(tmpoptions.length) - 1];
+			tmpfilled.push(`${tmpwhich} ${this.#state[tmpwhich]}`);
+		}
+		if (!tmpfilled.length) {
+			ui.notifications.info("Nothing left to roll -- clear a colour to have it decided for you.");
+		}
+		this.render();
+	}
+
 	static async #onRollPhysique(event, target) {
 		event.preventDefault();
 		this.#captureForm();
 		var tmpderived = deriveGenerator(this.#state, this.#content, ImagineCharacterGenerator.#isAvailable);
 		var tmpfinals = tmpderived.finals ?? {};
-		var tmprolled = rollPhysique(this.#state.raceNames ?? [],
+		// The race names come from the DERIVED object, not from the choices. The choices hold
+		// `race1` and `race2`; `raceNames` is what deriveGenerator builds out of them, dropping a
+		// blank second race. Reading it off #state gave undefined, so rollPhysique was asked for
+		// the physique of a character with no race at all -- it found no height table, returned no
+		// height, and with no height there is no weight either. That is Daryl's "Rolling Age works.
+		// Rolling Height does not" on 2026-09-20: age is rolled from the race's own ages object and
+		// was never affected.
+		var tmprolled = rollPhysique(tmpderived.raceNames ?? [],
 			tmpfinals.str?.final ?? 0, tmpfinals.agl?.final ?? 0, ImagineCharacterGenerator.#die);
 
 		if (tmprolled.height) {

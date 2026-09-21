@@ -206,3 +206,52 @@ fallback on purpose, so a Foundry variable that is renamed or missing degrades t
 readable rather than to nothing. Keep that when adding more. And do not remove the
 `:not(.imagine-foundry)` scoping on the paper theme's input-variable block — that is what stops the
 definition cycle described in `DECISIONS.md`.
+
+## 10. Starting money: the table is ready to transcribe, the rule is not
+
+**What to do.** Roll starting coins in the character generator, which is currently entry-only.
+The whole rule is in `doing_coins` (sheet-worker.js:74150 onward) and has three parts:
+
+1. **Apparent social class.** Social class below 5 or above 20 does not exist in the mortal realms,
+   so those beings roll `5d4` for an apparent one and use it from there. Between 5 and 20, the real
+   one is used and `tmp_apparent_social_class` is blanked.
+2. **The Fortune roll**, for non-Nobles only (social class under 15). Fortune is
+   `ceil((AUR + PTY + WIL) / 3)`, plus 5 if the class carries "+5% Fortune". **Do not implement the
+   comparison yet** — see below.
+3. **The multiplier**, on a success, from one d100: under 51 → x2, under 71 → x3, under 91 → x4,
+   under 96 → x5, under 100 → x8, exactly 100 → x10.
+4. **The coins**, a switch on social class 5 through 20, each case rolling dice and assigning
+   copper/silver/gold/platinum. Sixteen cases, plainly written, e.g. class 5 is
+   `getDiceRollNoMod(5, 4)` copper and class 6 is `getDiceRollNoMod(5, 8)` copper.
+
+**Files.** A `rollStartingMoney` in `module/chargen-rules.mjs` (keep it Foundry-free, taking a roll
+function, as `rollHandedness` and `rollStartingAge` do), the table in `module/chargen-tables.mjs` or
+beside the other extracted tables, an action in `module/apps/character-generator.mjs`, and a button
+in the Details step of `templates/apps/character-generator.hbs` beside the age and physique rolls.
+
+**Done looks like.** Pressing it fills the four coin fields, and a line beneath says what happened —
+the social class used, whether the Fortune roll landed, and the multiplier — the way the physique
+roll already narrates itself. Test it in `tools/chargen-test.html` against each social class from 5
+to 20 with a stubbed roll function.
+
+**BLOCKED on one line, and only one.** The Fortune comparison reads
+`if (tempfort <= getDieRoll(100))`, which succeeds when the d100 rolls at or ABOVE the character's
+Fortune — the opposite of every other percentile check in the sheet, and it makes "+5% Fortune"
+a penalty. That is `UPSTREAM-ISSUES.md` item 40 and it is with him. Build parts 1, 3 and 4, which
+are unambiguous, and leave the comparison behind a single named function with both readings written
+out so answering it is a one-line change. Do not pick one silently.
+
+## 11. Re-test the Nixie racial skills on a current build
+
+**What to do.** Daryl suspected on 2026-09-20 that a Nixie was being granted "+20% Speak to Stone",
+which is not a Nixie racial skill. Checked this pass: our Nixie row matches his
+`raceSkillDetailValues` entry exactly — ten skills, Animal Shape at +20%, the water-animals note —
+and Speak to Stone is not among them. The data is right.
+
+He was on a build where the class and weapon packs had failed to import entirely, so what he saw
+almost certainly came from that. Re-check once he is on a current build before spending anything on
+it. If it recurs, the place to look is the racial skill PICKER in the generator's Skills step —
+whether it is offering the race's own list or every skill in the compendium.
+
+**Done looks like.** Either confirmed gone, or reproduced on a current build with a note of which
+skills were offered against which the race actually grants.

@@ -1139,3 +1139,35 @@ Both are in the same switch as item 38, and neither depends on which branch is t
    above it has the clean pair. The port reads them as the answers you wrote (not formless, can
    swim), since the doubt is clearly about the values and not the format, but a strict reader would
    turn `"yes?"` into false and quietly sink every Sporeling.
+
+## 40. The Fortune check for starting money succeeds on a HIGH roll
+
+**Status:** open · **Severity:** decides whether low Fortune or high Fortune doubles a character's
+starting money — the rule is inverted either way round
+
+In `doing_coins` (sheet-worker.js:74161), a non-Noble character gets one roll to multiply their
+starting coins:
+
+```
+tempfort = parseInt(([tempattrib1+tempattrib2+tempattrib3]/3)+.99)||0;   // AUR, PTY, WIL
+if (values.class_modifiers=="+5% Fortune") { tempfort = tempfort+5; }
+if (tempfort <= getDieRoll(100) ) {
+    madefortune=true;
+}
+```
+
+`madefortune` is true when the d100 comes up **at or above** the character's Fortune. Every other
+percentile check in the sheet succeeds on a roll **at or under** the chance — an attribute save, a
+skill check, the Fortune checks elsewhere. As written here, a character with Fortune 10 doubles
+their money 91 times in 100 and a character with Fortune 90 manages it 11 times in 100, and the
+`+5% Fortune` class modifier makes a character *less* likely to succeed.
+
+Three readings fit, and we cannot choose between them from the code:
+
+1. **A slip**, and it should be `getDieRoll(100) <= tempfort` like every other check.
+2. **Deliberate**, on some reading where an unlucky character stumbles into money.
+3. **The variable means something else here** — a target number rather than a chance.
+
+**What the port does meanwhile:** nothing. Starting money is not rolled at all yet, and this is why
+the rest of the rule was transcribed into the notes but not implemented — the multiplier table is
+unambiguous and this one line decides who it applies to.

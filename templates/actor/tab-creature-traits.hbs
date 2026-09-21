@@ -10,7 +10,7 @@
 	Powers sit here too. A Power is an innate spell or invocation with a use count; resolving one
 	needs the deferred magic phase, so the button spends a use and reports it.
 --}}
-<section class="tab imagine-creature-traits" data-tab="traits" data-group="primary">
+<section class="tab imagine-creature-traits{{#if tab.active}} active{{/if}}" data-tab="traits" data-group="primary">
 
 	<h3 class="section-head">Powers <span class="count">{{powers.length}}</span></h3>
 	{{#if powers.length}}

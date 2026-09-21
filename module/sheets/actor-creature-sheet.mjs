@@ -22,6 +22,23 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
 export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+	// @MARKER TAB STATE
+	// Hands each tab part its own entry from the prepared tab data, which is what lets the template
+	// render the `active` class. Foundry's own sheets all do this and ours did not, and the symptom
+	// was odd enough to be worth recording: a tab went BLANK the moment anything on it was added or
+	// deleted, and came back if you clicked to another tab and back again.
+	// The reason is that `changeTab` -- the only thing that puts `active` on a section -- runs on a
+	// CLICK and nowhere else, and it early-returns when the group is already on that tab. So the
+	// class survived only until the next re-render regenerated the part's HTML from a template that
+	// never wrote it, after which the section was still `.tab` with no `.active`, and `.tab` is
+	// display:none. Adding a language or a piece of gear updates the document, the document
+	// re-renders the sheet, and the tab the player was looking at disappeared.
+	async _preparePartContext(partId, context, options) {
+		var tmpcontext = await super._preparePartContext(partId, context, options);
+		if (tmpcontext.tabs && (partId in tmpcontext.tabs)) { tmpcontext.tab = tmpcontext.tabs[partId]; }
+		return tmpcontext;
+	}
+
 	// @MARKER SHEET THEME
 	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
 	// when the Game Master changes the theme repaints on its next render instead of having to be

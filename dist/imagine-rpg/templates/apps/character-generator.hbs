@@ -160,17 +160,21 @@
 	{{!-- @MARKER DETAILS --}}
 	{{#if isDetails}}
 		<h2>Details</h2>
-		{{!-- Rolled by default, as his determineHandedness does it; the dropdown appears only when
-		      the Game Master has ticked "Players may choose handedness". The Roll button stays in
-		      both cases -- with the tick off it is a re-roll, and with it on it is the shortcut for
-		      a player who would rather leave it to the dice. --}}
+		{{!-- Rolled once when the race is known, and then it STANDS. There is no re-roll button
+		      here, deliberately: "Michael's sheet had it hard coded to make that roll and stick
+		      with it. For a reason" -- Ambidextrous is a large advantage in this system, and a
+		      button that re-rolls until it appears is the same as choosing it. A Game Master who
+		      wants it chosen outright can tick "Players may choose handedness", which is an honest
+		      choice rather than a disguised one; only then does the dropdown, and the die beside
+		      it, come back. --}}
 		<label class="row">Handedness
 			{{#if handednessSelectable}}
 			<select name="handedness">{{#each handednessOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			<button type="button" data-action="rollHandedness"><i class="fa-solid fa-dice"></i> Roll</button>
 			{{else}}
 			<span class="rolled-value">{{#if state.handedness}}{{state.handedness}}{{else}}&mdash; choose a race first &mdash;{{/if}}</span>
-			{{/if}}
-			<button type="button" data-action="rollHandedness"><i class="fa-solid fa-dice"></i> Roll</button></label>
+			<span class="muted">rolled once, and it stands</span>
+			{{/if}}</label>
 		<label class="row">Age <input type="number" name="age" value="{{state.age}}">
 			<button type="button" data-action="rollAge"><i class="fa-solid fa-dice"></i> Roll</button>
 			{{#if ages}}<span class="muted">{{ages.startLow}}&ndash;{{ages.startHigh}}, maximum {{ages.maxAge}}</span>{{/if}}</label>
@@ -186,6 +190,12 @@
 		<label class="row">Frame <input type="text" name="frame" value="{{state.frame}}"></label>
 		{{#if physique}}
 		<p class="muted">{{physique.summary}}</p>
+		{{/if}}
+		{{!-- His tables say which colours a member of each race is found in, so they can be rolled
+		      as well as picked. Fills only what is still blank, so a chosen colour survives. --}}
+		{{#if hairChoices.length}}
+		<p><button type="button" data-action="rollColours"><i class="fa-solid fa-dice"></i>
+			Roll the ones left blank</button></p>
 		{{/if}}
 		<label class="row">Hair
 			{{#if hairChoices.length}}
