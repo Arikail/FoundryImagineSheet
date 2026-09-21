@@ -3103,3 +3103,56 @@ scrolling region. Eight suites, 1,200 checks, passing.
 
 **Not verified:** no Foundry V14 install. As before, the reproduction asserts the CSS given that
 DOM shape and cannot prove V14 builds it.
+
+## Updates ship through Foundry's own updater (2026-09-20)
+
+Asked for: "a way to send differential updates... check version vs the git and update that way."
+That is Foundry's built-in mechanism, and it was one field away from working.
+
+`system.json` already declared `manifest`, pointing at the copy of itself on the repository's main
+branch. It did not declare `download`, and without that Foundry has somewhere to CHECK and nowhere
+to FETCH FROM, so the update button never appears. Adding it is the whole change:
+
+    manifest   .../main/system.json            what Foundry reads to see if a newer version exists
+    download   .../main/dist/imagine-rpg.zip   what it fetches when one does
+
+**The archive is committed, which is normally poor practice and is right here.** The alternatives
+were worse. A GitHub Release asset is the usual home for it, but there is no `gh` on this machine
+and a release would be a manual web step on every publish — the mechanism would rot the first busy
+week. A tag archive that GitHub generates on demand would cost nothing, but it contains the whole
+repository under a top-level folder, and a Foundry system archive must have `system.json` at its
+root. So the zip goes in the repository, where `git push` publishes the manifest and the archive in
+the same commit and the two can never disagree about what version is being offered. It is 0.5 MB,
+which is a fair price for the update button working. `.gitignore` gains an exception for exactly
+that one file; any other zip in `dist/` is still scratch.
+
+**The zip is now built on every build, not on `--zip`.** It stopped being a convenience copy the
+moment `download` pointed at it. A build that refreshed `dist/` and left the archive alone would
+serve the previous version's code under the new version's manifest, which is the exact failure this
+is meant to prevent. `--no-zip` remains for a scratch build.
+
+**And a guard, because the failure mode is silence.** Foundry decides whether an update exists by
+comparing version numbers and nothing else — not dates, not hashes, not the contents of the
+archive. Shipping changed code under an unchanged version is therefore invisible: every install
+keeps reporting itself current and nobody is offered the fix. That is not hypothetical here; it is
+what happened twice on 2026-09-20, with a version that had read 0.1.0 since the file was created.
+The build now compares the version being built against the version at HEAD and, when shipped files
+have changed and the version has not, says so in as many words. A warning rather than a failure,
+because building repeatedly without bumping is the normal state of a working day and only becomes a
+mistake at the moment it is pushed.
+
+**There is one unavoidable manual step left.** An install from before 0.3.0 has no `download` in
+its own manifest and so cannot update itself — the mechanism can only be delivered by the old
+means. That folder has to be replaced by hand once; everything after it is a button. The shipped
+README says so under "Updating".
+
+**Verified, 2026-09-20:** the manifest URL resolves and the repository is public — it currently
+serves 0.1.0, main being thirteen commits behind, which is itself the mechanism working as
+designed. The built archive holds 83 entries with `system.json`, `README.md`, `FIRST-RUN.md` and
+`BUILD.txt` at its root and no wrapper folder, and the `system.json` inside it carries version
+0.3.0 with both URLs. The version guard was exercised in both directions: it warned while the
+version sat at 0.2.0 with `system.json` modified, and reported "this build is an update" once the
+version was raised to 0.3.0.
+
+**Not verified:** no Foundry V14 install, so the update has not been performed. And nothing is
+published — the commits are local, so the manifest still advertises 0.1.0 until `git push`.

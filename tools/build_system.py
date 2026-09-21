@@ -37,6 +37,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 import zipfile
 
@@ -76,6 +77,30 @@ path reads:
 Then restart Foundry. The system appears in the Game Systems list and can be chosen when creating a
 world. (If you have the zip, unpack it so its contents land directly in a folder of that name —
 the archive has no top-level folder of its own.)
+
+## Updating
+
+**Version {version} and later update themselves.** In Foundry's **Game Systems** tab, press
+**Check for Updates**; if a newer version has been published, an **Update** button appears and
+Foundry fetches and installs it. Nothing needs to be copied by hand.
+
+This works because the manifest names where to look:
+
+    manifest   the current system.json in the project repository
+    download   the archive beside it
+
+Foundry compares the version in your installed `system.json` against the version in the manifest,
+and offers the update when they differ. It compares the version number and **nothing else** — not
+dates, not file contents — so a build published without raising the version is invisible to every
+existing install.
+
+One catch, once: an install from BEFORE {version} has no `download` in its manifest and cannot
+update itself. Replace that folder by hand one last time, and every update after it is a button.
+
+After updating, rebuild the compendium content so new and corrected entries come through — the
+packs are built in your world, not shipped:
+
+    game.imagine.importContent()
 
 ## First launch
 
@@ -123,7 +148,15 @@ def copy_tree(tmpsource, tmpdest, tmpsuffixes):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--zip", action="store_true", help="also write dist/imagine-rpg.zip")
+    # The zip is written on EVERY build, and --no-zip is the escape rather than --zip being the
+    # opt-in it used to be. system.json's `download` points at that archive, so it is not a
+    # convenience copy any more -- it is what Foundry fetches when someone presses Update. A build
+    # that refreshed dist/ and left the zip alone would serve the previous version's code under the
+    # new version's manifest, which is the one failure this whole mechanism exists to prevent.
+    ap.add_argument("--zip", action="store_true",
+                    help="deprecated: the zip is always written now, the flag is accepted and ignored")
+    ap.add_argument("--no-zip", action="store_true",
+                    help="skip the zip (for a scratch build that will not be committed)")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
 
@@ -160,7 +193,6 @@ def main():
     # and a stale one is worse than none.
     tmpcommit = ""
     try:
-        import subprocess
         tmpcommit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
                                    capture_output=True, text=True).stdout.strip()
     except Exception:
@@ -237,14 +269,14 @@ def main():
         "documents %d (%s)" % (sum(tmpcounts.values()),
                                ", ".join("%s %d" % (k, v) for k, v in tmpcounts.items())),
         "",
-        "Rebuild with:  python tools/build_system.py --zip",
+        "Rebuild with:  python tools/build_system.py",
         "If the commit above is not the current HEAD, this build is stale.",
         "",
     ]
     with open(os.path.join(OUT, "BUILD.txt"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(tmpstamp))
 
-    if args.zip:
+    if not args.no_zip:
         tmpzip = os.path.join(DIST, SYSTEM_ID + ".zip")
         with zipfile.ZipFile(tmpzip, "w", zipfile.ZIP_DEFLATED) as fh:
             for tmpdir, _, tmpfiles in os.walk(OUT):
@@ -255,6 +287,60 @@ def main():
                     fh.write(tmpfull, os.path.relpath(tmpfull, OUT))
         print("  wrote %s (%.1f MB)" % (os.path.relpath(tmpzip, ROOT),
                                         os.path.getsize(tmpzip) / 1024 / 1024))
+
+    # @MARKER RELEASE CHECK
+    # Foundry decides whether an update exists by comparing the version in the INSTALLED
+    # system.json against the version in the one at the manifest URL. Nothing else is consulted --
+    # not a date, not a hash, not the contents of the archive. So shipping changed code under an
+    # unchanged version number is invisible: every existing install keeps reporting itself
+    # up to date and nobody is ever offered the fix. That is precisely what happened on
+    # 2026-09-20, twice, with a version that had read 0.1.0 since the file was created.
+    #
+    # Hence this check, and why it is a warning rather than a failure: building repeatedly without
+    # bumping is the normal state of a working day, and only becomes a mistake at the moment the
+    # build is committed and pushed.
+    check_release_version(tmpmanifest["version"])
+
+
+# This is the function which says whether this build could actually reach anybody. It compares the
+# version being built against the version in the last commit, and only speaks up when shipped files
+# have changed and the version has not -- the one combination that silently strands every install.
+def check_release_version(tmpversion):
+    tmphead = git_output(["git", "show", "HEAD:system.json"])
+    if not tmphead:
+        return
+    try:
+        tmpwas = json.loads(tmphead).get("version")
+    except ValueError:
+        return
+
+    # Only the files that actually ship matter here. A change to docs/ or tools/ reaches nobody
+    # through the system and needs no version bump.
+    tmpchanged = [tmpline[3:] for tmpline in (git_output(["git", "status", "--porcelain"]) or "").splitlines()
+                  if tmpline[3:].startswith(("module/", "templates/", "styles/", "lang/",
+                                             "src/packs/", "system.json"))]
+    if tmpversion != tmpwas:
+        print("  version    %s (was %s at HEAD) -- this build is an update" % (tmpversion, tmpwas))
+        return
+    if not tmpchanged:
+        print("  version    %s, unchanged, and no shipped file has changed" % tmpversion)
+        return
+    print("")
+    print("  VERSION NOT BUMPED. %d shipped file(s) changed and system.json still says %s."
+          % (len(tmpchanged), tmpversion))
+    print("  Commit this as it stands and no existing install will ever be offered it:")
+    print("  Foundry compares version numbers and nothing else. Raise the version in system.json")
+    print("  before pushing, or this build reaches only a fresh manual install.")
+
+
+# This is the function which runs a git command and returns its output, or None where git is not
+# available or the command fails -- a build outside a checkout must still work.
+def git_output(tmpargs):
+    try:
+        tmpresult = subprocess.run(tmpargs, cwd=ROOT, capture_output=True, text=True, timeout=15)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return tmpresult.stdout if tmpresult.returncode == 0 else None
 
 
 if __name__ == "__main__":

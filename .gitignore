@@ -25,6 +25,9 @@ __pycache__/
 # Local test-server config: the port changes every run.
 .claude/launch.json
 
-# The built system zip. The folder beside it IS committed -- it is the deliverable -- but the
-# archive is regenerated from it and would be a new binary blob on every build.
+# The built system zip IS committed, deliberately. It is what system.json's `download` points at,
+# so Foundry can fetch an update itself: manifest and archive travel in the same commit and
+# therefore can never disagree about what version is being offered. It is ~0.5 MB, which is a fair
+# price for the update button working. Any OTHER zip in dist/ is still scratch.
 dist/*.zip
+!dist/imagine-rpg.zip
