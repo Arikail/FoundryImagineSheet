@@ -916,7 +916,7 @@
 	--imagine-accent: #6b4e2e;
 }
 .imagine.character-generator .window-content { background: var(--imagine-paper); color: var(--imagine-ink); font-size: 13px; }
-.chargen { display: flex; flex-direction: column; height: 100%; gap: 8px; }
+.chargen { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; gap: 8px; }
 .chargen-steps { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0 0 6px;
 	border-bottom: 2px solid var(--imagine-rule); }
 .chargen-steps li { flex: 1; }
@@ -1110,4 +1110,55 @@
 .imagine.imagine-foundry select option {
 	background: var(--color-bg, #1b1b1b);
 	color: var(--imagine-ink);
+}
+
+/* @MARKER SCROLLING -- THE THREE WINDOWS
+   The sheets were given scroll regions earlier; these three were left alone because each already
+   scrolled "its own inner body", and that turned out to be true only on paper. The generator sized
+   its body with `height: 100%` and the other two named a scrollable part -- but a percentage height
+   resolves against a parent that has no definite height of its own, and a named part still needs
+   somewhere to overflow, so in both cases nothing was ever bounded and nothing ever scrolled.
+   Reported as "need to scroll up and down too on every page".
+   So the same three-step shape as the sheets, applied here: the window content is a flex column
+   that does not itself scroll, the part inside it fills that column, and the one region within
+   the part that should scroll gets `min-height: 0` and `overflow-y: auto`. The header and footer
+   of each window keep their natural size and stay put, which is the point of scrolling the body
+   rather than the window: the generator's step buttons and the level-up standing line stay on
+   screen while their contents move.
+   Kept separate from the .imagine.sheet block rather than merged into it. These three have an
+   inner scroller and the sheets do not, so one rule covering both would have to scroll the part
+   AND the body and would give every window two nested scrollbars. */
+.imagine.character-generator .window-content,
+.imagine.level-up .window-content,
+.imagine.availability-config .window-content {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+/* Each window's single part fills the column it sits in. The availability window is absent here
+   on purpose: its template root IS its part root, so it is the scroller itself (below) rather than
+   a column holding one. Making it both would leave its fieldsets as flex children, free to shrink
+   instead of overflowing, and it would scroll only after they had been squashed. */
+.imagine.character-generator .window-content > .chargen,
+.imagine.level-up .window-content > .level-up {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+/* And the region inside it that actually moves. The availability window has no inner body of its
+   own -- its part root IS the scroller, which is what its `scrollable: [""]` always meant. */
+.imagine.character-generator .chargen-body,
+.imagine.level-up .level-up-body,
+.imagine.availability-config .imagine-availability {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+}
+
+/* A form footer is chrome, not content: it never scrolls away. */
+.imagine.availability-config .window-content > [data-application-part="footer"] {
+	flex: 0 0 auto;
 }

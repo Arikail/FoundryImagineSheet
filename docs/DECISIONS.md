@@ -3063,3 +3063,43 @@ even with none of Foundry's own variables present. Row striping and the sticky h
 All 42 modules parse, including the new `module/sheet-theme.mjs`; eight suites, 1,200 checks,
 passing. Not verified: no Foundry V14 install, so the mapping onto Foundry's real variable values
 is unproven — which is why every `var()` in that block carries a literal fallback.
+
+## The other three windows could not scroll either (2026-09-20)
+
+"Need to scroll up and down too on every page." The sheets were given scroll regions earlier the
+same day; these three -- the character generator, Level Up and Content Availability -- were left
+out of that fix deliberately, on the grounds that each already scrolled an inner body of its own.
+That was true on paper and false on screen, and the reasoning was the interesting part of the
+mistake.
+
+Each of the three looked like it had already solved this, in two different ways, and neither
+worked for the same underlying reason:
+
+- The generator sized its body with `height: 100%`. A percentage height resolves against the
+  parent's height, and `.window-content` had none -- so it resolved against `auto`, the body was
+  never bounded, and `overflow-y: auto` on it had nothing to overflow.
+- Level Up and Availability named a `scrollable` part. As recorded earlier today, that only
+  persists scroll POSITION across a re-render; it sets no overflow and creates no scroll region.
+  `.level-up-body` had no CSS at all.
+
+So the same three-step shape the sheets got: the window content is a flex column that does not
+itself scroll, the part inside fills that column, and the one region within it that should move
+gets `min-height: 0` and `overflow-y: auto`. Headers and footers keep their natural size, which is
+the point of scrolling the body rather than the whole window -- the generator's step buttons and
+Level Up's standing line stay on screen while their contents move.
+
+**Kept as a separate block from the sheets' rule rather than merged into it.** These three have an
+inner scroller and the sheets do not, so a single rule covering both would have to scroll the part
+AND the body, giving every window two nested scrollbars. The availability window is the odd one
+again: its template root IS its part root, so it is the scroller itself rather than a column
+holding one -- making it both would leave its fieldsets as flex children, free to shrink instead of
+overflowing, and it would only scroll after they had been squashed.
+
+**Verified, 2026-09-20:** against the same reproduction of Foundry's window chrome. In a 420px
+window: the generator scrolls 908px of content through 330px with its footer fixed; Level Up 1068px
+through 364px with its standing line fixed; Availability 552px through 383px with its form footer
+fixed. None scrolls sideways, and all three report `overflow-y: auto` with `min-height: 0` on the
+scrolling region. Eight suites, 1,200 checks, passing.
+
+**Not verified:** no Foundry V14 install. As before, the reproduction asserts the CSS given that
+DOM shape and cannot prove V14 builds it.
