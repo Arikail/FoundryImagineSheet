@@ -3602,3 +3602,29 @@ Verified: 98% on the skills ground truth, 1,163 checks across eight suites passi
 parsing, the red XXX rendered and read back out of the DOM, and XXX proven to survive its own
 sourcebook being switched off. Not verified: no Foundry V14 install. Version 0.11.0.
 
+## Legends of the Unknown arrived; Conquest of the Eternal may not exist (2026-09-21)
+
+Two of the seven books his content cites had no PDF. Asked about them, he said they may be
+unreleased and to put a pin in it -- then produced Legends of the Unknown ten minutes later.
+
+**Legends of the Unknown** is extracted (465 pages) and its back-of-book index, pages 462-465 at
+an offset of 6, is in `BOOK_INDEXES`. It confirmed 23 more page numbers. It did not move the XXX
+count, because his Master Index Source column already named the book for that content -- the book
+itself adds the page, not the attribution.
+
+**Conquest of the Eternal** stays unavailable, and 100 documents cite it. Those documents are not
+a gap: they carry his book name, from his own data, and are simply not page-referenced. The
+distinction now lives in the code rather than in a conversation -- `UNRELEASED_BOOKS` in
+`build_documents.py`, which puts a note at the top of `docs/UNATTRIBUTED.md` saying the list is a
+ceiling rather than a backlog, and marks the book in the attributed table. The comment beside it
+records that Legends was on that list for ten minutes, so the list reads as unavailable-so-far
+rather than known-not-to-exist.
+
+**docs/UNATTRIBUTED.md is generated now, which it claimed to be and was not.** It went in saying
+"rebuilt from the content every time" while having been produced once by a throwaway script, so
+the single guarantee it made about itself was the untrue one. `build_documents.py --write` writes
+it, so it cannot drift from the content it describes.
+
+Verified: 98% on the skills ground truth, unchanged; 1,163 checks across eight suites passing;
+41 modules parsing. Version 0.11.1.
+

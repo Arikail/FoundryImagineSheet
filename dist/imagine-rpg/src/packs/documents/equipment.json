@@ -2644,7 +2644,7 @@
       "weight": 0.03,
       "isTagalong": false,
       "sourcebook": "Imagine Master Index",
-      "page": "411"
+      "page": "440"
     }
   },
   {
@@ -2952,7 +2952,7 @@
       "weight": 1,
       "isTagalong": false,
       "sourcebook": "Imagine Master Index",
-      "page": "442"
+      "page": "411"
     }
   },
   {
@@ -3506,7 +3506,8 @@
     "system": {
       "weight": 2,
       "isTagalong": false,
-      "sourcebook": "Legends of the Unknown"
+      "sourcebook": "Legends of the Unknown",
+      "page": "66"
     }
   },
   {

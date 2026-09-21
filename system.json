@@ -2,7 +2,7 @@
   "id": "imagine-rpg",
   "title": "Imagine Role Playing System",
   "description": "A Foundry VTT system for the Imagine Role Playing System (role-playing.com), converted from its original Roll20 character sheet with permission from the rights holder.",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14.367"

@@ -82,6 +82,11 @@ BOOK_INDEXES = [
     ("players-guide",            "Player's Guide",            range(362, 367),    18),
     ("masters-manual",           "Master's Manual",           range(316, 320),    10),
     ("mysteries-of-the-planes",  "Mysteries of the Planes",   range(650, 657),     6),
+    ("legends-of-the-unknown",   "Legends of the Unknown",    range(462, 466),     6),
+    # Epitaph of the Fallen and Aspects of the Wild are NOT absent by oversight: both were
+    # extracted and checked and neither carries a back-of-book index, so there is no page map in
+    # them to read. Content of theirs is still attributed -- his Master Index names the book --
+    # it simply cannot be given a page this way. Do not go looking for these again.
 ]
 
 MASTER_INDEX = "master-index"

@@ -38,12 +38,19 @@ a table-aware pass may recover them and give real book pages instead of Master I
 PDFs are in `C:/Users/samwy/Downloads/` (`IRP_playersguide.pdf`, `IRP_mastersmanual_scan.pdf`,
 `IRP_aspects.pdf`, `IRP_mysteries.pdf`).
 
-## 4. Two books are still missing entirely
+## 4. One book is still missing, and it may not exist
 
-**Conquest of the Eternal** and **Legends of the Unknown** — cited by his skill data (80 and 31
-skills) and by Master Index Source columns, with no PDF on disk. **Epitaph of the Fallen** was
-found and extracted this pass. Nothing to do until the files arrive; when they do, extract them
-and add them to `BOOK_INDEXES` in `extract_sources.py` if they carry a back-of-book index.
+**Conquest of the Eternal** -- cited by 100 documents, no PDF. He said on 2026-09-21 that it may
+be unreleased, so treat this as pinned, not as a task. Those documents are NOT a gap: they carry
+his book name from his own data and are merely not page-referenced.
+
+**Legends of the Unknown** arrived the same day and is done (465 pages, index at 462-465, offset
+6, in `BOOK_INDEXES`). **Epitaph of the Fallen** and **Aspects of the Wild** are extracted but
+carry no back-of-book index, so they can never contribute page numbers -- checked, commented in
+`extract_sources.py`, do not look again.
+
+If Conquest ever appears: extract it, check the last twenty pages for an index, and add it to
+`BOOK_INDEXES` only if it has one. Then re-run `--verify` before regenerating.
 
 ## 5. An "XXX — no source found" folder in the Items sidebar
 

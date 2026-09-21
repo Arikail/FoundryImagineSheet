@@ -2263,25 +2263,32 @@
    "page": "101"
   },
   "Call of Air": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "61"
   },
   "Call of Aura": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "62"
   },
   "Call of Death": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "62"
   },
   "Call of Earth": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "63"
   },
   "Call of Flame": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "64"
   },
   "Call of Life": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "64"
   },
   "Call of Water": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "65"
   },
   "Call of the Light": {
    "sourcebook": "Epitaph of the Fallen"
@@ -2453,7 +2460,8 @@
    "sourcebook": "Epitaph of the Fallen"
   },
   "Chant": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "65"
   },
   "Chariot Driving": {
    "sourcebook": "Player's Guide",
@@ -2947,7 +2955,7 @@
   },
   "Crossbow(Hand)": {
    "sourcebook": "Imagine Master Index",
-   "page": "400"
+   "page": "331"
   },
   "Crossbow(Hand/Double)": {
    "sourcebook": "Imagine Master Index",
@@ -2997,7 +3005,8 @@
    "sourcebook": "Epitaph of the Fallen"
   },
   "Crystal Lore": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "65"
   },
   "Crystori": {
    "sourcebook": "Imagine Master Index",
@@ -3187,7 +3196,8 @@
    "sourcebook": "Player's Guide"
   },
   "Devastation": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "66"
   },
   "Devil Spike": {
    "sourcebook": "Imagine Master Index",
@@ -3379,7 +3389,8 @@
    "page": "62"
   },
   "Drum": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "66"
   },
   "Dryad": {
    "sourcebook": "Imagine Master Index",
@@ -3467,13 +3478,16 @@
    "sourcebook": "Conquest of the Eternal"
   },
   "Elemental Knowledge": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "66"
   },
   "Elemental Mastery": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "67"
   },
   "Elemental Supremacy": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "67"
   },
   "Elementalist(Call of Death)": {
    "sourcebook": "Legends of the Unknown"
@@ -3903,7 +3917,8 @@
    "sourcebook": "Conquest of the Eternal"
   },
   "Find Legend": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "68"
   },
   "Find Treasure": {
    "sourcebook": "Mysteries of the Planes",
@@ -4848,7 +4863,8 @@
    "sourcebook": "Legends of the Unknown"
   },
   "Gypsy Wagon": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "68"
   },
   "Haberdasher": {
    "sourcebook": "Mysteries of the Planes",
@@ -5463,7 +5479,8 @@
    "page": "401"
   },
   "High Pain Threshold": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "323"
   },
   "Highly Polished Orb": {
    "sourcebook": "Imagine Master Index",
@@ -6911,7 +6928,8 @@
    "sourcebook": "Legends of the Unknown"
   },
   "Mobility": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "325"
   },
   "Mock": {
    "sourcebook": "Conquest of the Eternal"
@@ -7000,7 +7018,8 @@
    "page": "325"
   },
   "Narrate": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "68"
   },
   "Nature Lore": {
    "sourcebook": "Player's Guide",
@@ -7183,7 +7202,8 @@
    "page": "410"
   },
   "Percussion Lore": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "68"
   },
   "Perfect Shot": {
    "sourcebook": "Master's Manual",
@@ -7888,10 +7908,12 @@
    "page": "151"
   },
   "Rhythm Lore": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "69"
   },
   "Rhythmic Mastery": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "69"
   },
   "Riding": {
    "sourcebook": "Player's Guide",
@@ -8976,7 +8998,8 @@
    "page": "112"
   },
   "Speak to Stone": {
-   "sourcebook": "Legends of the Unknown"
+   "sourcebook": "Legends of the Unknown",
+   "page": "70"
   },
   "Speaker of the Gods": {
    "sourcebook": "Conquest of the Eternal"
@@ -9003,7 +9026,7 @@
   },
   "Spectacles(Reading)": {
    "sourcebook": "Imagine Master Index",
-   "page": "411"
+   "page": "440"
   },
   "Speed": {
    "sourcebook": "Master's Manual"
@@ -9484,7 +9507,7 @@
   },
   "Tongs(Small)": {
    "sourcebook": "Imagine Master Index",
-   "page": "442"
+   "page": "411"
   },
   "Tongue Drum": {
    "sourcebook": "Imagine Master Index",
