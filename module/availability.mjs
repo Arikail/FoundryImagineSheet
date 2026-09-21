@@ -39,6 +39,10 @@ export const SOURCEBOOKS = {
 	"conquest-of-the-eternal": "Conquest of the Eternal",
 	"legends-of-the-unknown":  "Legends of the Unknown",
 	"epitaph-of-the-fallen":   "Epitaph of the Fallen",
+	// His own cross-book consolidation, and a real place to look something up. It is where the
+	// content build gets a page for anything his per-book Source columns do not cover -- the
+	// Heroic Melee Weapons table names no book, so Angel Sword cites the Master Index at 326.
+	"imagine-master-index":    "Imagine Master Index",
 	"custom":                  "Custom / Homebrew"
 };
 
@@ -81,6 +85,16 @@ const SKILL_TYPE_SUBSYSTEMS = {
 	// for the "?" his data uses where the book is unknown.
 	export function getSourcebookId(tmpname) {
 		var tmptext = String(tmpname ?? "").toLowerCase();
+
+		// "XXX" IS A MARK, NOT A BOOK. The content build writes it into the sourcebook field of
+		// anything his Master Index does not list, so that a gap is searchable rather than an
+		// empty box. It must not become a switchable sourcebook: this window discovers books from
+		// the content, so an "XXX" row would appear beside the real ones and one tick would hide
+		// the 1,702 items that merely have not been traced to a book yet. Returning no id puts
+		// them on the same footing as content that carries no sourcebook at all -- always
+		// available here, and still forbiddable one at a time by an override.
+		if (tmptext == "xxx") { return ""; }
+
 		tmptext = tmptext.replace(/[`']/g, "");
 		tmptext = tmptext.replace(/[^a-z0-9]+/g, "-");
 		tmptext = tmptext.replace(/^-+|-+$/g, "");

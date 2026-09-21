@@ -7,7 +7,7 @@
       "canonicalName": "Acid Sensitivity",
       "value1": "1",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Sensitivity(-10% Magic Resist vs acid. +1 per die damage from acid)."
     }
@@ -20,8 +20,8 @@
       "canonicalName": "Ancient Ghost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a long dead being. The Ancient Ghost's Mind is so far gone that it suffers from a random form of Insanity, and has a 20% chance of having an additional form of Insanity. Should the Ancient Ghost be smitten with a second form of Insanity, there is a 5% chance that it will also have a third form of Insanity. The Ancient Ghost must make a Knowledge save to remember anything at all about its life before death."
     }
   },
@@ -33,7 +33,7 @@
       "canonicalName": "Animal Aversion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Loses ability to use racial skills Speak to Animal, Tame Animal, and/or Animal Shape. Animals seem uneasy in the presence of the being and will either become aggressive toward the being or shy away from them."
     }
@@ -46,7 +46,7 @@
       "canonicalName": "Armor Fur Chafe",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Armor Fur Chafe(chain/scale as 1st layer of armor chafes losing 1 APP per week. -3 APP Max)."
     }
@@ -59,8 +59,8 @@
       "canonicalName": "Aversion(Fire)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "Avoids all sources of fire."
     }
   },
@@ -72,8 +72,8 @@
       "canonicalName": "Aversion(Holy)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "Takes damage from holy water, blessed weapons, etc."
     }
   },
@@ -85,8 +85,8 @@
       "canonicalName": "Aversion(Life)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "Avoids living beings when at all possible."
     }
   },
@@ -98,8 +98,8 @@
       "canonicalName": "Aversion(Light)",
       "value1": "1d4+1",
       "value2": "-1",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "When exposed to bright light or sunlight, this creature is initially blinded for 1d4+1 seconds and is -1 to hit and +1 to initiative thereafter. Sunlight causes this entity to take 1 point of damage per 10 minutes to all exposed areas."
     }
   },
@@ -111,8 +111,8 @@
       "canonicalName": "Aversion(Physical)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "Avoids being in physical form at all costs. Prefers to be on the Phase or Shadow Plane, and must make a Will Force save to unphase/unshift. Once unphased/unshifted, will lose 1 Will Force per hour until returning to the Phase or Shadow Plane."
     }
   },
@@ -124,8 +124,8 @@
       "canonicalName": "Aversion(Social)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "303",
       "description": "Solitary by nature, and does not function well with others of their kind. When in a group of others of the same type, they are -1 to all Mental attributes and must make a Will Force save once per day or leave the group."
     }
   },
@@ -137,7 +137,7 @@
       "canonicalName": "Bad Eyes",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Bad Eyes(-2 to hit with missile weapons)."
     }
@@ -150,7 +150,7 @@
       "canonicalName": "Bad Swimmer",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Bad Swimmer(Cannot swim or is such a poor swimmer that the being cannot keep its head above water for more than a few moments)."
     }
@@ -163,8 +163,8 @@
       "canonicalName": "Blind",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "243",
       "description": "The being or creature cannot see being -8 to hit and no defensive adjustment."
     }
   },
@@ -176,8 +176,8 @@
       "canonicalName": "Blind(Partial)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "243",
       "description": "The being or creature cannot physically see beyond a certain set distance."
     }
   },
@@ -189,8 +189,8 @@
       "canonicalName": "Blind(Partial)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "243",
       "description": "The being or creature cannot physically see beyond a certain set distance."
     }
   },
@@ -202,7 +202,7 @@
       "canonicalName": "Brightly Patterned Fur",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-20% to Blend/Move Unseen."
     }
@@ -215,7 +215,7 @@
       "canonicalName": "Cannot Cast Spells",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot Cast Spells(No ability to channel or use Aura)."
     }
@@ -228,7 +228,7 @@
       "canonicalName": "Cannot Speak",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no verbal communication ability."
     }
@@ -241,7 +241,7 @@
       "canonicalName": "Cannot Swim",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot Swim(Has no buoyancy or ability to keep oneself at the surface of water)."
     }
@@ -254,7 +254,7 @@
       "canonicalName": "Climbing Impaired",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Climbing Impaired(cannot use Climb skill)."
     }
@@ -267,7 +267,7 @@
       "canonicalName": "Clumsiness",
       "value1": "1",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "+1 to Initiative, -10% to all Agility saves."
     }
@@ -280,7 +280,7 @@
       "canonicalName": "Cold Blooded",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Takes +1 per die of damage from fire and heat sources."
     }
@@ -293,7 +293,7 @@
       "canonicalName": "Compliant",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Completely controllable. Has 0% Control Resistance and takes direction either from an identified master or masters. Otherwise, they respond to anyone they understand and try to comply."
     }
@@ -306,7 +306,7 @@
       "canonicalName": "Compound Eyes",
       "value1": "-4",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Compound Eyes(Poor depth perception, Missile Weapons -4 to Hit)."
     }
@@ -319,7 +319,7 @@
       "canonicalName": "Compulsion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "A compulsion to a specific behavior requiring a Will Force save to avoid."
     }
@@ -332,7 +332,7 @@
       "canonicalName": "Compulsion(Blood)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Burning desire to consume blood. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
     }
@@ -345,7 +345,7 @@
       "canonicalName": "Compulsion(Cruelty)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Predisposed to cruel and malicious acts. It will do everything in its power to treat all living things in the cruelest manner possible."
     }
@@ -358,7 +358,7 @@
       "canonicalName": "Compulsion(Fear)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Thrives on the fear of others. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
     }
@@ -371,7 +371,7 @@
       "canonicalName": "Compulsion(Flesh)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Unnatural compulsion to eat flesh. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
     }
@@ -384,7 +384,7 @@
       "canonicalName": "Compulsion(Living Nerve Tissue)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Unnatural compulsion to eat living nerve tissue (such as brains). Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
     }
@@ -397,7 +397,7 @@
       "canonicalName": "Compulsion(Task)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Bound by metaphysical forces to continuously perform the same task over and over or to comple a single overriding  goal."
     }
@@ -410,7 +410,7 @@
       "canonicalName": "Compulsion(Will Force)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Unnatural compulsion to drain the life force (Will Force) of others. Temporary loss of Physical, Mental and Will Force attributes if this need is not met."
     }
@@ -423,7 +423,7 @@
       "canonicalName": "Construct Spirit",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Construct Spirit(Spirit that has difficulty inhabiting a non-fleshed form. The being must enter a state of quiescence; a sleep like period where cannot waken from until the period completes so that the spirit can recharge and allow the being's mind and body to function normally again. This state lasts half the normal sleep time based on VIT.)"
     }
@@ -436,7 +436,7 @@
       "canonicalName": "Darkness Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with shadow for a minimum of 10 minutes per day or lose 1 point of Endurance in all areas."
     }
@@ -449,7 +449,7 @@
       "canonicalName": "Deaf",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No sense of hearing: -1 to hit, -1 damage, +1 defense."
     }
@@ -462,7 +462,7 @@
       "canonicalName": "Death Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with death (corpse) or death magic once per day or lose 1 point of Endurance in all areas."
     }
@@ -475,7 +475,7 @@
       "canonicalName": "Detached Psyche",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This non-corporeal being's metaphysical breakdown has been reversed in that its Soul houses its Mind and Spirit. The being has no physical form of its own, and is dependant upon the possession of other physical forms to maintain its existence. It cannot possess a physical form that already has a psyche (Mind, Spirit and Soul). The Detached Psyche can survive for 1 hour per Will Force point outside of a physical form. Each hour thereafter, a Control Resistance save must be made to avoid a temporarily loss of 1 Will Force point. If a Will Force point is lost, a separate Will Force save is required or a random (or GM chosen) form of insanity is applied. While not in possession of a physical form, normal Will Force recovery (1 per hour) is suppressed. When a being reaches 0 Will Force, it dies."
     }
@@ -488,7 +488,7 @@
       "canonicalName": "Diseased",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Afflicted with a hereditary disease that only affects that being/creature type."
     }
@@ -501,7 +501,7 @@
       "canonicalName": "Divine Magnetic",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature causes all invocations or divine powers used within 1' per Will Force point to strike the creature instead of their intended focus."
     }
@@ -514,8 +514,8 @@
       "canonicalName": "Earthbound",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Mysteries of the Planes",
+      "page": "400",
       "description": "The creature cannot fly even if magically or divine magically aided."
     }
   },
@@ -527,7 +527,7 @@
       "canonicalName": "Earthen Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with earth or rock once per day or lose 1 point of Endurance in all areas."
     }
@@ -540,7 +540,7 @@
       "canonicalName": "Easily Dehydrated",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Easily Dehydrated(Outside of a damp environment (swamp or high humidity), requires 2x water. Without it, they lose any healing or regenerative ability and fatigue x2 normal rate.)"
     }
@@ -553,7 +553,7 @@
       "canonicalName": "Easily Tracked",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Easily Tracked(This creature leaves clear markins when it moves over most surfaces/+50% to Track rolls to follow this being)."
     }
@@ -566,7 +566,7 @@
       "canonicalName": "Electrical Sensitivity",
       "value1": "1",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
     }
@@ -579,7 +579,7 @@
       "canonicalName": "Electrical Sensitivity",
       "value1": "1",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
     }
@@ -592,7 +592,7 @@
       "canonicalName": "Electrical Sensitivity",
       "value1": "1",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electrical Sensitivity(-10% Magic Resist vs electricity. +1 per die damage from electricity)."
     }
@@ -605,7 +605,7 @@
       "canonicalName": "Emotion(Combat)",
       "value1": "-10",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-10% to combat skills while not affected by one emotion."
     }
@@ -618,7 +618,7 @@
       "canonicalName": "Emotion(Divine)",
       "value1": "-10",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-10% to divine magical skills while not affected by one emotion."
     }
@@ -631,7 +631,7 @@
       "canonicalName": "Emotion(Magic)",
       "value1": "-10",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-10% to magical skills while not affected by one emotion."
     }
@@ -644,7 +644,7 @@
       "canonicalName": "Emotion(Stealth)",
       "value1": "-10",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-10% to stealth/intrusive skills while not affected by one emotion."
     }
@@ -657,7 +657,7 @@
       "canonicalName": "Energy Cannibalization",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature uses itself to power a power or ability. Each time the power or ability is used, the creature loses one base Endurance temporarily."
     }
@@ -670,7 +670,7 @@
       "canonicalName": "Weakness(Extreme Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight does 1 point of damage per 10 seconds to all creature areas, bright light does 1 point of damage per minute, and magical light does 1d4 damage per 2 aura or PC per 10 seconds, and finger of light does triple damage, brilliance requires the creature to make a Magic Resistance or be disintegrated."
     }
@@ -683,7 +683,7 @@
       "canonicalName": "Fair Skinned",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature takes double damage any effects from sunlight exposure."
     }
@@ -696,7 +696,7 @@
       "canonicalName": "Ferrous",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Made of a rustable, magnetic material, and thus takes 1 additional point of damage from all liquid attacks. Also conducts electricity (if present)."
     }
@@ -709,7 +709,7 @@
       "canonicalName": "Fire Magic Weakness",
       "value1": "-20",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fire Magic Weakness(-20% Magic Resist vs fire/heat)."
     }
@@ -722,7 +722,7 @@
       "canonicalName": "Fire Sensitivity",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fire Sensitivity(-10% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
     }
@@ -735,7 +735,7 @@
       "canonicalName": "Fire Weakness",
       "value1": "-20",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fire Weakness(-20% Magic Resist vs fire/heat. +1 per die damage from fire/heat)."
     }
@@ -748,7 +748,7 @@
       "canonicalName": "Flightless",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has feathers and wings but they are weak or useless, not even capable of gliding."
     }
@@ -761,7 +761,7 @@
       "canonicalName": "Forged Form",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Forged Form(Inner iron metallic body with a viscous magical metal fluid flowing throughout to provide energy and increase motion. Outer casing can be of any metal. Requires the digestion of at least 1 oz. of magical metal per month. Any wound which reduces a body area to below 0 END causes a leak of magical metallic blood which cools and hardens outside the body. This reduces Base END by 1d6 per minute until either all blood is lost and the being hardens (dies) or a source of magical fire is applied to the wound for an entire minute (sealing it). Healing does not occur naturally but requires the ingestion of 1 oz. of magical metal for each point to be healed up to the maximum normal healing for that being per day. VIT Healing Rate. Somewhere on their form is a seal. This seal is used to add and remove their metallic blood. If it is found and opened the being can be drained as noted in damage above)."
     }
@@ -774,7 +774,7 @@
       "canonicalName": "Forged Offspring",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Forged Offspring(reproduction occurs by gathering gems, iron and other metals, normal and magical. Then a metal body is cast and forged with many hollow areas for the flow of magical metal. Gems are used in the head in a secret arangement in fittings for the brain. They are also used as eyes. Magical metal is then superheated, mixed and the parent adds some of their own magical metal blood. The chance of the offspring coming to life varies by how much blood is used. WIL is lost from the parent whether the forged offspring comes alive or not. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
     }
@@ -787,7 +787,7 @@
       "canonicalName": "Frost Magic Weakness(Greater)",
       "value1": "-30",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Magic Weakness(Greater):(-30% Magic Resist vs cold)."
     }
@@ -800,7 +800,7 @@
       "canonicalName": "Frost Sensitivity",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Sensitivity(-10% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
     }
@@ -813,7 +813,7 @@
       "canonicalName": "Frost Weakness",
       "value1": "-20",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Weakness(-20% Magic Resist vs frost/cold. +1 per die damage from frost/cold)."
     }
@@ -826,7 +826,7 @@
       "canonicalName": "Gaseous Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be immersed in gases once per day or lose 1 point of Endurance in all areas."
     }
@@ -839,8 +839,8 @@
       "canonicalName": "Ghost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a once-living being. Ghosts must remain within 100' of their remains per Will Force point, and are unable to attack in any way."
     }
   },
@@ -852,8 +852,8 @@
       "canonicalName": "Ghost(Ancient)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a long dead being. The Ancient Ghost's Mind is so far gone that it suffers from a random form of Insanity, and has a 20% chance of having an additional form of Insanity. Should the Ancient Ghost be smitten with a second form of Insanity, there is a 5% chance that it will also have a third form of Insanity. The Ancient Ghost must make a Knowledge save to remember anything at all about its life before death."
     }
   },
@@ -865,8 +865,8 @@
       "canonicalName": "Ghost(New)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a once-living being. The New Ghost must remain within 10' of its remains per Will Force point. If a New Ghost sights a gateway to its plane of rest or torment, it must make a Will Force save at -5% for each day it has been dead, or it will be unable to resist entering the gate. Once 30 days minus 1 per Will Force point have passed, the New Ghost becomes a Ghost. The New Ghost is unable to attack any being."
     }
   },
@@ -878,8 +878,8 @@
       "canonicalName": "Ghost(Old)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a once-living being. The Mind of an Old Ghost is so precariously balanced that if it should come into mental contact with a living being, it must make a Will Force save or suffer a random form of Insanity. Likewise, if the Old Ghost is in an unphased state and its material body is destroyed, it must make a Will Force save or suffer a random form of Insanity. The Old Ghost must make a Knowledge save to remember anything from its former life not directly related to its perceived purpose. Old Ghosts must remain within 1 mile of their remains per Will Force point."
     }
   },
@@ -891,7 +891,7 @@
       "canonicalName": "Greedy",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Alignment shifts towards neutral in matters of money or treasure only. Will always attempt to keep some of any treasure."
     }
@@ -904,7 +904,7 @@
       "canonicalName": "Greedy",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Alignment shifts towards neutral in matters of money or treasure only. Will always attempt to keep some of any treasure."
     }
@@ -917,7 +917,7 @@
       "canonicalName": "Hatred",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must go berserk when in the presence of a set enemy type."
     }
@@ -930,8 +930,8 @@
       "canonicalName": "Heat Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "193",
       "description": "Must be in contact with a heat source capable of boiling water or an open flame once per day or lose 1 point of Endurance in all areas."
     }
   },
@@ -943,7 +943,7 @@
       "canonicalName": "Heavy Sleeper",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature takes 6+3d6 seconds to awaken from sleep."
     }
@@ -956,7 +956,7 @@
       "canonicalName": "Hemophilia",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cut wounds cannot be bound. Wounds bleed at twice the normal rate. Once per hour a Vitality save can be made to indicate the wound has stopped bleeding on its own. Blood loss from wounds is also subtracted from base Endurance resulting in unconsciousness at 0 and death at 0 minus the being's Vitality."
     }
@@ -969,7 +969,7 @@
       "canonicalName": "Hot Tempered",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "+10%(more) to Berserking racial skill, -20% to any saves or resistances involved with anger."
     }
@@ -982,7 +982,7 @@
       "canonicalName": "Immobile",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creatrure has no mobility."
     }
@@ -995,7 +995,7 @@
       "canonicalName": "Inability to Consume Normal Food",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires some other form of sustenance."
     }
@@ -1008,7 +1008,7 @@
       "canonicalName": "Inability to Consume Normal Food",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires some other form of sustenance."
     }
@@ -1021,7 +1021,7 @@
       "canonicalName": "Infertile",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Inability to produce offspring."
     }
@@ -1034,7 +1034,7 @@
       "canonicalName": "Insanity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Suffers from a type of insanity."
     }
@@ -1047,7 +1047,7 @@
       "canonicalName": "Insanity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Suffers from a type of insanity."
     }
@@ -1060,7 +1060,7 @@
       "canonicalName": "Insect Leg Loss",
       "value1": "-25",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Insect Leg Loss(-25% to Agility saves for each pair of legs incapacitated)."
     }
@@ -1073,7 +1073,7 @@
       "canonicalName": "Iron Aversion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Iron Aversion(Iron/Blessed weapons are +1 per die against this being. Contact with iron causes 1-3 damage per 10 seconds.)"
     }
@@ -1086,7 +1086,7 @@
       "canonicalName": "Iron Fear",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Affected as the skill Fear whenever seeing iron."
     }
@@ -1099,7 +1099,7 @@
       "canonicalName": "Laziness",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Will not pursue prey unless hungry."
     }
@@ -1112,7 +1112,7 @@
       "canonicalName": "Lesser Weakness(Acid)",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Lesser Weakness(Acid):(+1 damage per die from acid. -10% to Magic Resistances for acid.)"
     }
@@ -1125,7 +1125,7 @@
       "canonicalName": "Lesser Weakness(Electricity)",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Lesser Weakness(Electricity):(+1 damage per die from electricity. -10% to Magic Resistances for electricity.)"
     }
@@ -1138,7 +1138,7 @@
       "canonicalName": "Lesser Weakness(Fire)",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Lesser Weakness(Fire):(+1 damage per die from fire/heat. -10% to Magic Resistances for fire/heat.)"
     }
@@ -1151,7 +1151,7 @@
       "canonicalName": "Lesser Weakness(Frost)",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Lesser Weakness(Frost):(+1 damage per die from frost/cold. -10% to Magic Resistances for frost/cold.)"
     }
@@ -1164,7 +1164,7 @@
       "canonicalName": "Living Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with living thing or in a verdant area once per day or lose 1 point of Endurance in all areas."
     }
@@ -1177,7 +1177,7 @@
       "canonicalName": "Light Adversity",
       "value1": "1d4+1",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Blinded for 1d4+1 seconds when exposed to moderate light (the Light skill, the invocation Light, etc.). After this initial time period, the creature is -1 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 2-20 seconds, and is -3 to hit and +1 to initiative thereafter. Sunlight causes this entity to take 1 point of damage per 10 seconds to all exposed areas."
     }
@@ -1190,7 +1190,7 @@
       "canonicalName": "Light Blindness",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Moderate Light: blinds for 1d6+1 seconds and gives -2 to hit, -1 initiate penalty). Bright Light/Sunlight: blinds for 3-30 seconds and gives -4 to hit, -2 initiate penalty). Sunlight also causes 1 point of damage per hour to all exposed areas."
     }
@@ -1203,7 +1203,7 @@
       "canonicalName": "Light Conversion(Crystal)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight turns the victim into the Crystal after 10 seconds of exposure to any portion of the body."
     }
@@ -1216,7 +1216,7 @@
       "canonicalName": "Light Conversion(Metal)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight turns the victim into the Metal after 10 seconds of exposure to any portion of the body."
     }
@@ -1229,7 +1229,7 @@
       "canonicalName": "Light Conversion(Stone)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight turns the victim into the Stone after 10 seconds of exposure to any portion of the body."
     }
@@ -1242,7 +1242,7 @@
       "canonicalName": "Light Conversion(Wood)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight turns the victim into the Wood after 10 seconds of exposure to any portion of the body."
     }
@@ -1255,7 +1255,7 @@
       "canonicalName": "Light Damaged",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Light striking these creatures causes these creatures damage. Dim (candle): 1d6, Average (Lantern): 2d6, Strong(Magic): 3d6, Bright(Sunlight): 4d6."
     }
@@ -1268,7 +1268,7 @@
       "canonicalName": "Light Death Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with death (corpse) or death magic once per week or lose 1 point of Endurance in all areas."
     }
@@ -1281,7 +1281,7 @@
       "canonicalName": "Light Earthen Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with earth or rock once per week or lose 1 point of Endurance in all areas."
     }
@@ -1294,7 +1294,7 @@
       "canonicalName": "Light Gaseous Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be immersed in gases once per week or lose 1 point of Endurance in all areas."
     }
@@ -1307,7 +1307,7 @@
       "canonicalName": "Light Heat Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with a heat source capable of boiling water or an open flame once per week or lose 1 point of Endurance in all areas."
     }
@@ -1320,8 +1320,8 @@
       "canonicalName": "Light Intolerance",
       "value1": "-2",
       "value2": "1",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "194",
       "description": "Blinded for ld6+1 seconds when exposed to moderate light (the Light skill, or the invocation Light. etc.). After this initial time period, the being/creature is -2 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 3-30 seconds, and is -4 to hit and +2 to initiative thereafter. Sunlight also does 1 point of damage per hour to all exposed areas."
     }
   },
@@ -1333,7 +1333,7 @@
       "canonicalName": "Light Living Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with living thing or in a verdant area once per week or lose 1 point of Endurance in all areas."
     }
@@ -1346,7 +1346,7 @@
       "canonicalName": "Light Magic Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with a source of magic once per week or lose 1 point of Endurance in all areas."
     }
@@ -1359,7 +1359,7 @@
       "canonicalName": "Light Sensitivity",
       "value1": "-3",
       "value2": "-2",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Light Sensitivity(Blinded by bright light for 2d6+2 seconds and is -3 to hit and -2 initiative afterwards)."
     }
@@ -1372,7 +1372,7 @@
       "canonicalName": "Light Torpid",
       "value1": "-6",
       "value2": "2",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is lethargic in daylight, and has -6 to hit and damage, +2 defensive adjustment and +6 initiative while in daylight."
     }
@@ -1385,7 +1385,7 @@
       "canonicalName": "Light Torpid(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature slows down in dim light to half speed and becomes completely immobile in darkness."
     }
@@ -1398,7 +1398,7 @@
       "canonicalName": "Light Torpid(Magical)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature loses some or all of its magical powers and abilities in darkness."
     }
@@ -1411,7 +1411,7 @@
       "canonicalName": "Light Torpid(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature slows down in dim light to half speed and becomes completely immobile in darkness."
     }
@@ -1424,7 +1424,7 @@
       "canonicalName": "Light Torpid(Magical)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature loses some or all of its magical powers and abilities in darkness."
     }
@@ -1437,7 +1437,7 @@
       "canonicalName": "Light Toxicity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Blinded for 1d6+1 seconds when exposed to moderate light (the Light skill, the invocation Light, etc.). After this initial time period, the creature is -2 to hit and +1 to initiative. When exposed to bright light or sunlight, the creature is initially blinded for 3-30 seconds, and is -4 to hit and +2 to initiative thereafter. Sunlight causes this entity to take 1d4 damage per 10 seconds to all areas affected."
     }
@@ -1450,7 +1450,7 @@
       "canonicalName": "Light Water Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be immersed in water once per week or lose 1 point of Endurance in all areas."
     }
@@ -1463,7 +1463,7 @@
       "canonicalName": "Living Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must be in contact with living thing or in a verdant area once per day or lose 1 point of Endurance in all areas."
     }
@@ -1476,7 +1476,7 @@
       "canonicalName": "Living Touch Aversion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Living Touch Aversion(strong desire to avoid touching other living things because touch causes harm. Requires a WIL save to touch another living thing.)"
     }
@@ -1489,7 +1489,7 @@
       "canonicalName": "Loner",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot form close ties with its own type."
     }
@@ -1502,7 +1502,7 @@
       "canonicalName": "Long Gestation",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Being/Creature takes twice as long to be born."
     }
@@ -1515,7 +1515,7 @@
       "canonicalName": "Loud",
       "value1": "-50",
       "value2": "-20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Loud(-50% to surprise. -20% to Surprise Attack)."
     }
@@ -1528,7 +1528,7 @@
       "canonicalName": "Loud Flier",
       "value1": "-20",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Loud Flier(-20% to surprise when attacking from the air)."
     }
@@ -1541,7 +1541,7 @@
       "canonicalName": "Low Circulation",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fatigues at x3 normal rate."
     }
@@ -1554,7 +1554,7 @@
       "canonicalName": "Low Pain Threshold",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature suffers +1 point of physical damage per blow or energy attack."
     }
@@ -1567,8 +1567,8 @@
       "canonicalName": "Magic Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "193",
       "description": "Must be in contact with a source of magic once per day or lose 1 point of Endurance in all areas."
     }
   },
@@ -1580,7 +1580,7 @@
       "canonicalName": "Magic Magnetic",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Causes all spells or magical powers used within 1' per Will Force point to instead strike the being/creature instead of their intended focus."
     }
@@ -1593,7 +1593,7 @@
       "canonicalName": "Magical Light Aversion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Light destroys the creature or turns it to stone, or some other permanently devastating effect."
     }
@@ -1606,7 +1606,7 @@
       "canonicalName": "Mechanical Engine",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Mechanical Engine(Has a Mechanical engine. Must be fed energy through a described mechanism. Power sources are as follows: Clockwork: 10 minutes of winding per day; Steam: 10 gallons of water per day; Combustion: 10 pounds of flammable material per day. If this energy runs out, then the being becomes immobile and unconscious. Outside influence is needed to be restarted. This engine fills the being's entire torso, and if destroyed, so is the being. Also has the disabilities Infertile, No Healing, No Regeneration, No Resurrection, No Sense of Smell, and No Sense of Taste.)"
     }
@@ -1619,7 +1619,7 @@
       "canonicalName": "Mental Remnant",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This creature is left with only a shadow of their former Mind. Their memories are so vague and detached that they may as well not exist. For all intents and purposes, this creature has no Mind of his own."
     }
@@ -1632,8 +1632,8 @@
       "canonicalName": "Mute",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "244",
       "description": "The being or creature cannot speak"
     }
   },
@@ -1645,8 +1645,8 @@
       "canonicalName": "Near Insanity",
       "value1": "-10",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "188",
       "description": "Near Insanity(-10% to WIL saves to avoid Insanity)."
     }
   },
@@ -1658,7 +1658,7 @@
       "canonicalName": "Nearly Immobile",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has almost no movement (less than 1 foot per 10 seconds)."
     }
@@ -1671,7 +1671,7 @@
       "canonicalName": "Negative Life Force",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This creature is sustained by Negative Life Force rather than Positive Life Force."
     }
@@ -1684,8 +1684,8 @@
       "canonicalName": "New Ghost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a once-living being. The New Ghost must remain within 10' of its remains per Will Force point. If a New Ghost sights a gateway to its plane of rest or torment, it must make a Will Force save at -5% for each day it has been dead, or it will be unable to resist entering the gate. Once 30 days minus 1 per Will Force point have passed, the New Ghost becomes a Ghost. The New Ghost is unable to attack any being."
     }
   },
@@ -1697,7 +1697,7 @@
       "canonicalName": "No Attacks",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no direct attacks."
     }
@@ -1710,7 +1710,7 @@
       "canonicalName": "No Feeling",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no tactile sense and cannot feel physical objects."
     }
@@ -1723,7 +1723,7 @@
       "canonicalName": "No Form",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature has no physical form (not even one that reforms) and must be ended in some other way than destroying a physical form."
     }
@@ -1736,7 +1736,7 @@
       "canonicalName": "No Free Will",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Ths being or creature has no ability to make their own decisions. It is completely under the command of another."
     }
@@ -1749,7 +1749,7 @@
       "canonicalName": "No Gift of Stone",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot use racial skill Stone Lore."
     }
@@ -1762,7 +1762,7 @@
       "canonicalName": "No Healing",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Healing(Unaffected by healing effects such as invocations, songs, potions, etc., may be repaired with tools and parts)."
     }
@@ -1775,7 +1775,7 @@
       "canonicalName": "No Intake",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Intake(Cannot imbibe food or water. Cannot use potions/ingested herbs/elixirs/etc. Those that apply to the body may be used. If they make sense.)"
     }
@@ -1788,7 +1788,7 @@
       "canonicalName": "No Limbs",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This being possesses no limbs whatsoever, treat as No Locomotive Limbs. The being cannot learn skills using Strength or Agility unless possessing the skill Telekinesis. Beings with this disability gain +20% Telekinesis if it is an acquired skill."
     }
@@ -1801,7 +1801,7 @@
       "canonicalName": "No Locomotive Limbs",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Locomotive Limbs(No normal movement, slither or crawl at 1/4 walk)."
     }
@@ -1814,7 +1814,7 @@
       "canonicalName": "No Regeneration",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Regeneration(Cannot regenerate)."
     }
@@ -1827,7 +1827,7 @@
       "canonicalName": "No Ressurection",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
     }
@@ -1840,7 +1840,7 @@
       "canonicalName": "No Ressurection",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
     }
@@ -1853,7 +1853,7 @@
       "canonicalName": "No Rigid Armor(Shins)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Rigid Armor(Shins):(Cannot wear rigid armor in the shins)."
     }
@@ -1866,7 +1866,7 @@
       "canonicalName": "No Rigid Armor(Tail)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Rigid Armor(Tail):(Cannot wear rigid armor in the tail)."
     }
@@ -1879,7 +1879,7 @@
       "canonicalName": "No Sense of Smell",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Sense of Smell(Cannot smell)."
     }
@@ -1892,7 +1892,7 @@
       "canonicalName": "No Sense of Smell/Taste",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no olfactory senses and cannot smell or taste."
     }
@@ -1905,7 +1905,7 @@
       "canonicalName": "No Sense of Smell/Taste",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no olfactory senses and cannot smell or taste."
     }
@@ -1918,7 +1918,7 @@
       "canonicalName": "No Sense of Taste",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No Sense of Taste(Cannot taste)."
     }
@@ -1931,7 +1931,7 @@
       "canonicalName": "No Sense of Touch",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no tactile sense and cannot feel physical objects."
     }
@@ -1944,7 +1944,7 @@
       "canonicalName": "No Sense of Smell/Taste",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no olfactory senses and cannot smell or taste."
     }
@@ -1957,7 +1957,7 @@
       "canonicalName": "No Sense of Smell/Taste",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has no olfactory senses and cannot smell or taste."
     }
@@ -1970,7 +1970,7 @@
       "canonicalName": "No Venom",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Normally poisonous being has ineffective venom."
     }
@@ -1983,7 +1983,7 @@
       "canonicalName": "Non-Corporeal",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This creature has no physical form."
     }
@@ -1996,8 +1996,8 @@
       "canonicalName": "Obsession",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "188",
       "description": "Race is obsessed with this person, place or thing, causing Will Force saves to avoid the pursuit of it when presented with such opportunities."
     }
   },
@@ -2009,7 +2009,7 @@
       "canonicalName": "Obsessive",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Obsessive(perfection, knowledge, understanding: -10% to INT saves when obsessing about these things)."
     }
@@ -2022,7 +2022,7 @@
       "canonicalName": "Odd Coloration",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Strong coloration makes the being/creature more visible, -25% Blend, Move Unseen and Move Unheard."
     }
@@ -2035,8 +2035,8 @@
       "canonicalName": "Old Ghost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "The non-corporeal form of a once-living being. The Mind of an Old Ghost is so precariously balanced that if it should come into mental contact with a living being, it must make a Will Force save or suffer a random form of Insanity. Likewise, if the Old Ghost is in an unphased state and its material body is destroyed, it must make a Will Force save or suffer a random form of Insanity. The Old Ghost must make a Knowledge save to remember anything from its former life not directly related to its perceived purpose. Old Ghosts must remain within 1 mile of their remains per Will Force point."
     }
   },
@@ -2048,7 +2048,7 @@
       "canonicalName": "Oversleeper",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Oversleeper(+10-30 seconds to awaken time and +1 hour to required sleep)."
     }
@@ -2061,7 +2061,7 @@
       "canonicalName": "Passivity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Must choose passive as an Alignment Tendency. Must make a Will Force save to act in conflict situations."
     }
@@ -2074,7 +2074,7 @@
       "canonicalName": "Phylactery",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Epitaph of the Fallen",
       "page": "",
       "description": "The Soul of this undead is magically bound to an object. The object must have at least one shiny, smooth surface. When the undead’s body is destroyed, its Soul flees to the phylactery. Its body will reform from even the smallest mote of dust that remains in 30 days minus 1 day per Will Force. Should the phylactery be destroyed, the undead will continue to exist until its physical form has been defeated. The undead must be Level 10 or higher to receive this disability."
     }
@@ -2087,7 +2087,7 @@
       "canonicalName": "Physically Bound",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The body of this undead is metaphysically bound to a certain place. The undead is unable to leave the place to which its body is bound."
     }
@@ -2100,7 +2100,7 @@
       "canonicalName": "Physically Bound",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The body of this undead is metaphysically bound to a certain place. The undead is unable to leave the place to which its body is bound."
     }
@@ -2113,7 +2113,7 @@
       "canonicalName": "Plane Fixed",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature cannot travel to other planes or dimensions (not even phase)."
     }
@@ -2126,7 +2126,7 @@
       "canonicalName": "Plate Ruins Terrain Fur",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Plate Ruins Terrain Fur(Plate causes loss of terrain bonuses unless covered/dulled)."
     }
@@ -2139,7 +2139,7 @@
       "canonicalName": "Poor Circulation",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fatigue at x2 the nromal rate. Cannot be upside-down for more than 1 hour or their brains cease functioning due to lack of oxygen; treat as asphyxiation."
     }
@@ -2152,7 +2152,7 @@
       "canonicalName": "Poor Eyesight",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poor Eyesight(-2 to hit with missile weapons)."
     }
@@ -2165,7 +2165,7 @@
       "canonicalName": "Poor Flexibility",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poor Flexibility(+1 weapon speed and +1 defensive adjustment)."
     }
@@ -2178,7 +2178,7 @@
       "canonicalName": "Poor Healing",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Heals at half normal rate for its Vitality rating."
     }
@@ -2191,7 +2191,7 @@
       "canonicalName": "Poor Mimic",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "-25% to any mimicking or disguise based skills."
     }
@@ -2204,7 +2204,7 @@
       "canonicalName": "Pressure Sensitive",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot dive or be submersed because of soft tissues that will cause harm (1d6 per minute) at even minimaldepth."
     }
@@ -2217,7 +2217,7 @@
       "canonicalName": "Quick Temper",
       "value1": "10",
       "value2": "-10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Quick Temper(+10% to Berserking skill/-10% to Wisdom saves)."
     }
@@ -2230,7 +2230,7 @@
       "canonicalName": "Reduced Jumping",
       "value1": "-1",
       "value2": "-0.5",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Reduced Jumping(-2 feet running, -1 foot standing, -1/2 foot upward leap)."
     }
@@ -2243,8 +2243,8 @@
       "canonicalName": "No Regeneration",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "110",
       "description": "No Regeneration(Cannot regenerate)."
     }
   },
@@ -2256,7 +2256,7 @@
       "canonicalName": "Requires Fairy Weapons",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires Fairy Weapons(Uses undersized weapons fitting their size)."
     }
@@ -2269,7 +2269,7 @@
       "canonicalName": "Requires Giant Weapons",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires Giant Weapons(Uses oversized weapons fitting their size)."
     }
@@ -2282,7 +2282,7 @@
       "canonicalName": "Requires Titan Weapons",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires Titan Weapons(Uses oversized weapons fitting their size)."
     }
@@ -2295,8 +2295,8 @@
       "canonicalName": "No Ressurection",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "110",
       "description": "No Ressurection(Cannot be resurrected or returned to life in any manner once destroyed/killed)."
     }
   },
@@ -2308,7 +2308,7 @@
       "canonicalName": "Rooted",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "These creatures have no locomotion."
     }
@@ -2321,7 +2321,7 @@
       "canonicalName": "Salt Water Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Salt Water Dependence(Must be submerged in salt water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
     }
@@ -2334,7 +2334,7 @@
       "canonicalName": "Scale Armor Chafe",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Scale Armor Chafe(wearing chain or plate chafes scales, losing 1 point of hide per day, wearing plate/chain causes fatigue at twice normal rate from overheating)."
     }
@@ -2347,7 +2347,7 @@
       "canonicalName": "Sculpted Form",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sculpted Form(Magical granite inner body, molten rock blood flowing throughout to provide energy and increase motion. Outer skin of any stone. Requires the application of a magical fire to skin once per month for one hour. Any wound which reduces a body area to below 0 END, causes a leak of magical molten stone. Leak loses base END by 1d6 per min. A source of magical fire applied to the wound for 1 min seals it. Healing requires magical fire applied to the wound for 1 hour per each point to be healed up to normal healing. VIT healing rate. Somewhere on their form is a seal. This seal is used to add and remove molten blood. If it is found and opened the being can be drained as noted in damage above.)"
     }
@@ -2360,7 +2360,7 @@
       "canonicalName": "Sculpted Offspring",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sculpted Offspring(Reproduce by gathering normal/magical gems/stone. A granite body is cast and many hollow areas and cavities are drilled into it for flow of molten stone blood. Gems are set within the head cavity in a special arrangement for the brain and then on the surface of the face for the eyes. Magical stone is then melted and the sculpting parent has to mix their own molten blood in. This is poured into the offspring. Some of the parent essence is then transferred into the offspring; it then has a chance to come alive. 10% parent blood used: -10% parent base END. -1 WIL. 30% offspring awakens. 25% parent blood used: -25% parent base END. -2 WIL. 60% offspring awakens. 50% parent blood used: -50% parent base END. -3 WIL. 90% offspring awakens.)"
     }
@@ -2373,8 +2373,8 @@
       "canonicalName": "Slow",
       "value1": "1d4+1",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "245",
       "description": "Loses 1d4+1 seconds per combat round and moves at 1/2 normal speed for its body size."
     }
   },
@@ -2386,7 +2386,7 @@
       "canonicalName": "Slow Adult Learner",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Slow Adult Learner(As adult is -20% to learn a new skill, other than starting Social Skills, Racial Skills and Class Skills. Takes x2 as long to learn.)"
     }
@@ -2399,7 +2399,7 @@
       "canonicalName": "Slow Breeding",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Slow Breeding(Is fertile half as often as similiar beings)."
     }
@@ -2412,7 +2412,7 @@
       "canonicalName": "Slow Footed",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Has a slow ground movement."
     }
@@ -2425,7 +2425,7 @@
       "canonicalName": "Slow Metabolism",
       "value1": "-10",
       "value2": "1",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature has -10% food intake requirement, +10% to weight, +1 initiative and -10% to Agility saves."
     }
@@ -2438,7 +2438,7 @@
       "canonicalName": "Slow Reproduction",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Is half as likely to conceive a child as other beings or creatures of its type."
     }
@@ -2451,7 +2451,7 @@
       "canonicalName": "Soulless",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This being or creature has no Soul."
     }
@@ -2464,7 +2464,7 @@
       "canonicalName": "Soulless",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This being or creature has no Soul."
     }
@@ -2477,7 +2477,7 @@
       "canonicalName": "Sound Sensitive",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Loud noise causes 1d4 damage per 10 seconds, and requires a Vitality save once per 10 seconds or 1d4+1 seconds are lost due to disorientation. Also sound based damage is doubled against this creature."
     }
@@ -2490,7 +2490,7 @@
       "canonicalName": "Spiritless",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This being or creature has no Spirit."
     }
@@ -2503,7 +2503,7 @@
       "canonicalName": "Spiritually Bound",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The Spirit of this undead is metaphysically bound to an object. Should this object be destroyed, the undead is also destroyed. The object can function as a container for the Spirit should the Spirit's body be destroyed."
     }
@@ -2516,7 +2516,7 @@
       "canonicalName": "Spook",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Being or creature startles easily and will flee if it feels threatened."
     }
@@ -2529,7 +2529,7 @@
       "canonicalName": "Infertile",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Inability to produce offspring."
     }
@@ -2542,7 +2542,7 @@
       "canonicalName": "Sticky Skin",
       "value1": "4",
       "value2": "20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Creature is easily grabbed or grappled. All rolls involving grappling and Martial Knowledge are at +4 or +20% to the attacker."
     }
@@ -2555,7 +2555,7 @@
       "canonicalName": "Sunlight Conversion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight Conversion(Bright light blinds for 3-30 sec. Sunlight converts body to stone permanently)."
     }
@@ -2568,7 +2568,7 @@
       "canonicalName": "Sunlight Intolerant",
       "value1": "-4",
       "value2": "2",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sunlight Intolerant(Bright light: blinds 3-30 sec. -4 to hit/+2 initiative after. Sunlight causes 1 damage per hour to exposed skin.)"
     }
@@ -2581,7 +2581,7 @@
       "canonicalName": "Telepathically Blocked",
       "value1": "-2",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is unable to use Thought Projection or any form of telepathy even if magically aided. The creature can be attacked mentally, and is -2 to all mental combat rolls."
     }
@@ -2594,7 +2594,7 @@
       "canonicalName": "Thin Skin",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Thin Skin(The being has 1d4 less END than its body size would indicate)."
     }
@@ -2607,7 +2607,7 @@
       "canonicalName": "Thin Skinned",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Thin Skinned(The being has 1d4 less END than its body size would indicate)."
     }
@@ -2620,7 +2620,7 @@
       "canonicalName": "Time Sense Reversal",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "These beings see their possible future as their remembered past and cannot remember their actual past. While this obviously has some benefits, it makes it difficult to understand their lives."
     }
@@ -2633,7 +2633,7 @@
       "canonicalName": "Time Split Communication",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature speaks in threeword sentences that are randomly jumbled and spoken each by one part of a time-split creature. For instance, “who are you?” might come out as “you”, “who”, “are.”"
     }
@@ -2646,7 +2646,7 @@
       "canonicalName": "Unholy",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "This being or creature takes 1d4 additional damage from all things holy. Any being taking the Unholy disability must also take Aversion(Holy)."
     }
@@ -2659,7 +2659,7 @@
       "canonicalName": "Upper Armor Off-balance",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Upper Armor Off-balance(20+ lb. armor above the waist causes -2 AGL)."
     }
@@ -2672,7 +2672,7 @@
       "canonicalName": "Very Low Fertility",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Very Low Fertility(Able to conceive less often than once per year)."
     }
@@ -2685,7 +2685,7 @@
       "canonicalName": "Water Avoidance",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Water Avoidance(Will Force save required to enter or be upon water)."
     }
@@ -2698,8 +2698,8 @@
       "canonicalName": "Water Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "191",
       "description": "Water Dependence(Must be submerged in water at least once per day or lose 1 base END per day. Base END returns at a rate of 1 per hour after submersion)."
     }
   },
@@ -2711,7 +2711,7 @@
       "canonicalName": "Water Soluble",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Water contact causes 10 Endurance damage every 10 seconds."
     }
@@ -2724,7 +2724,7 @@
       "canonicalName": "Waterbound",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot fly at all. Cannot leave connection with body of water at least as big as they are for more than 1 minute or they begin to lose Endurance at a rate of 1d10 per minute."
     }
@@ -2737,7 +2737,7 @@
       "canonicalName": "Weak Changeling Form",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Can change form but only to become like beings of roughly the same height and frame as themselves."
     }
@@ -2750,7 +2750,7 @@
       "canonicalName": "Weak Cry",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Weak cry or calls actually cause predators to lose fear conditions."
     }
@@ -2763,7 +2763,7 @@
       "canonicalName": "Weak Sight",
       "value1": "-20",
       "value2": "0.5",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is at -20% to surprise, and can see 1/2 normal distance."
     }
@@ -2776,7 +2776,7 @@
       "canonicalName": "Weak Vision",
       "value1": "-20",
       "value2": "0.5",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is at -20% to surprise, and can see 1/2 normal distance."
     }
@@ -2789,8 +2789,8 @@
       "canonicalName": "Weakness(Acid)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Acid):(-20% Magic Resist vs acid. x2 damage from acid.)"
     }
   },
@@ -2802,8 +2802,8 @@
       "canonicalName": "Weakness(Frost)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
     }
   },
@@ -2815,8 +2815,8 @@
       "canonicalName": "Weakness(Crowds)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -3, all powers are at half effect, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2828,8 +2828,8 @@
       "canonicalName": "Weakness(Day)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "This creature suffers adverse effects during the daytime. When the sun is up in the area that this entity inhabits, their Strength, Agility, and Vitality are all at half of their normal values. This being cannot use any powers during this time, nor can they use any Magical or Divine Magical skills. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
     }
   },
@@ -2841,8 +2841,8 @@
       "canonicalName": "Weakness(Electricity)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Electricity):(-20% Magic Resist vs electricity. x2 damage from electricity.)"
     }
   },
@@ -2854,8 +2854,8 @@
       "canonicalName": "Weakness(Extreme Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Sunlight does 1 point of damage per 10 seconds to all creature areas, bright light does 1 point of damage per minute, and magical light does 1d4 damage per 2 aura or PC per 10 seconds, and finger of light does triple damage, brilliance requires the creature to make a Magic Resistance or be disintegrated."
     }
   },
@@ -2867,8 +2867,8 @@
       "canonicalName": "Weakness(Fire)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Fire):(-20% Magic Resist vs fire/heat. x2 damage from fire/heat.)"
     }
   },
@@ -2880,8 +2880,8 @@
       "canonicalName": "Weakness(Frost)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
     }
   },
@@ -2893,8 +2893,8 @@
       "canonicalName": "Weakness(Greater Crowds)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2906,8 +2906,8 @@
       "canonicalName": "Weakness(Greater Day)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "This creature suffers numerous adverse effects during the daytime. When the sun is up in the area that this entity inhabits, their Strength, Agility, and Vitality are all reduced to 5. This being cannot use any powers during this time, nor can they use any Magical or Divine Magical skills. They is also unable to move whatsoever during this time. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
     }
   },
@@ -2919,8 +2919,8 @@
       "canonicalName": "Weakness(Greater Joy/Laughter)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -3, all powers are at half effect, as do magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2932,8 +2932,8 @@
       "canonicalName": "Weakness(Greater Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When bathed in a strong light: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2945,8 +2945,8 @@
       "canonicalName": "Weakness(Joy/Laughter)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -5, all powers do not operate, magical and divine skills fail, movement is reduced by half. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2958,8 +2958,8 @@
       "canonicalName": "Weakness(Lesser Crowds)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When surrounded more than twelve non-allies within sight: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2971,8 +2971,8 @@
       "canonicalName": "Weakness(Lesser Day)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "This creature suffers numerous adverse effects during the daytime. When the sun is up in the area that this entity inhabits, its Strength, Agility, and Vitality are all -5, any powers that are possessed are only half effective, and both Magical and Divine Magical skills are only successful when a half skill check is made. These negatives apply from the time the sun rises until the sun sets. The creature need not be exposed to sunlight for these penalties to be in effect. Note: The skills Life Sense, Telepathy, and Thought Projection are unaffected by this Disability."
     }
   },
@@ -2984,8 +2984,8 @@
       "canonicalName": "Weakness(Lesser Joy/Laughter)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness (lesser joy/laughter): Within sight or hearing of three or more beings experiencing joy or laughing: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as do magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -2997,8 +2997,8 @@
       "canonicalName": "Weakness(Lesser Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When bathed in a strong light: Physical attributes are -2, all powers require a Will Force save to begin and concentration save (Intelligence save) to succeed, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -3010,8 +3010,8 @@
       "canonicalName": "Weakness(Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "When bathed in a strong light: Physical attributes are -3, all powers are at half effect, as are magical and divine skills. Life Sense and Thought Projection are unaffected. Note: Physical attributes are unaffected if the being is another form: Change True)."
     }
   },
@@ -3023,8 +3023,8 @@
       "canonicalName": "Weakness(Fire)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Fire):(-20% Magic Resist vs fire/heat. x2 damage from fire/heat.)"
     }
   },
@@ -3036,8 +3036,8 @@
       "canonicalName": "Weakness(Frost)",
       "value1": "-20",
       "value2": "2",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "261",
       "description": "Weakness(Frost):(-20% Magic Resist vs frost/cold. x2 damage from frost/cold.)"
     }
   },
@@ -3049,7 +3049,7 @@
       "canonicalName": "Worsened Acid Weakness",
       "value1": "-30",
       "value2": "3",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Worsened Acid Weakness(Takes x3 damage from acid and is -30% to Magic Resistances involving acid)."
     }
@@ -3062,7 +3062,7 @@
       "canonicalName": "Worsened Death Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence for death (corpse) or death magic contact is worsened, and must spend 1 extra hour per day in contact."
     }
@@ -3075,7 +3075,7 @@
       "canonicalName": "Worsened Living Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
     }
@@ -3088,7 +3088,7 @@
       "canonicalName": "Worsened Earthen Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence for earth and rock contact is worsened, and must spend 1 extra hour per day in contact."
     }
@@ -3101,7 +3101,7 @@
       "canonicalName": "Worsened Electricity Weakness",
       "value1": "-30",
       "value2": "3",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Worsened Electricity Weakness(Takes x3 damage from electricity and is -30% to Magic Resistances involving electricity)."
     }
@@ -3114,7 +3114,7 @@
       "canonicalName": "Worsened Electricity Weakness",
       "value1": "-30",
       "value2": "3",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Worsened Electricity Weakness(Takes x3 damage from electricity and is -30% to Magic Resistances involving electricity)."
     }
@@ -3127,8 +3127,8 @@
       "canonicalName": "Worsened Fire Weakness",
       "value1": "-30",
       "value2": "3",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "135",
       "description": "Worsened Fire Weakness(Takes x3 damage from fire/heat and is -30% to Magic Resistances involving fire/heat)."
     }
   },
@@ -3140,7 +3140,7 @@
       "canonicalName": "Worsened Frost Weakness",
       "value1": "-30",
       "value2": "3",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Worsened Frost Weakness(Takes x3 damage from cold/frost and is -30% to Magic Resistances involving cold/frost)."
     }
@@ -3153,7 +3153,7 @@
       "canonicalName": "Worsened Gaseous Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on gases is worsened, and must spend 1 extra hour per day in gases."
     }
@@ -3166,7 +3166,7 @@
       "canonicalName": "Worsened Heat Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on heat is worsened, and must spend 1 extra hour per day in contact with a heat source capable of boiling water or an open flame."
     }
@@ -3179,7 +3179,7 @@
       "canonicalName": "Worsened Life Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
     }
@@ -3192,7 +3192,7 @@
       "canonicalName": "Worsened Living Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on life is worsened, and must spend 1 extra hour per day in contact with living thing or in a verdant area or lose 1 point of endurance in all areas."
     }
@@ -3205,7 +3205,7 @@
       "canonicalName": "Worsened Magic Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence on magic is worsened, and must spend 1 extra hour per day in contact with a magic source."
     }
@@ -3218,7 +3218,7 @@
       "canonicalName": "Worsened Water Dependence",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Natural dependence for water submersion is worsened, and must spend 1 extra hour per day in water."
     }
@@ -3231,7 +3231,7 @@
       "canonicalName": "Inability to Consume Normal Food",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Requires some other form of sustenance."
     }

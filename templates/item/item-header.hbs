@@ -14,9 +14,14 @@
 
 		<div class="identity-line">
 			<span class="field"><label>Sourcebook</label>
-				<input type="text" name="system.sourcebook" value="{{system.sourcebook}}" placeholder="&mdash;"></span>
+				<input type="text" name="system.sourcebook" value="{{system.sourcebook}}" placeholder="&mdash;"
+					class="{{#if sourceUnknown}}source-unknown{{/if}}"></span>
 			<span class="field"><label>Page</label>
 				<input type="text" name="system.page" value="{{system.page}}" placeholder="&mdash;"></span>
 		</div>
+		{{#if sourceUnknown}}
+		<p class="source-unknown-note">XXX &mdash; not found in his Master Index. Type the book
+			and page over the XXX if you know them.</p>
+		{{/if}}
 	</div>
 </header>

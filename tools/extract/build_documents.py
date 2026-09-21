@@ -1198,6 +1198,56 @@ def check_skill_references(tmpbuilt):
              % (tmpname, len(tmpwanted[tmpname])))
 
 
+# @MARKER SOURCE ATTRIBUTION
+# Which book each document comes from, out of src/packs/named/itemSources.json -- built from the
+# Source column of HIS Master Index by tools/extract/extract_sources.py, which see.
+#
+# Only skills carry a book and page in his own dictionaries. Everything else shipped blank, so a
+# weapon's sheet had two empty fields where a skill's reads "Player's Guide 147". This fills them.
+#
+# ANYTHING HE DOES NOT LIST IS MARKED "XXX", not guessed at and not left quietly blank. Asked for
+# directly on 2026-09-21, and it is the right treatment: a blank field is indistinguishable from a
+# field nobody has got to yet, whereas XXX is a search term. The name is NOT touched -- item names
+# are lookup keys (the character generator finds races and classes by name, class advancement
+# grants skills by name, the starting kits name their equipment, and the compendium importer
+# matches by name, so a renamed document would be DUPLICATED by the next import rather than
+# updated). The mark goes in the field, and the item sheet shows it in red.
+SOURCE_MAP = None
+
+
+def apply_sources(tmpdocs):
+    global SOURCE_MAP
+    if SOURCE_MAP is None:
+        tmppath = os.path.join(NAMED, "itemSources.json")
+        if os.path.exists(tmppath):
+            with open(tmppath, encoding="utf-8") as fh:
+                SOURCE_MAP = json.load(fh).get("entries", {})
+        else:
+            SOURCE_MAP = {}
+            note("sources-missing", "named/itemSources.json",
+                 "not there -- every document will be marked XXX; "
+                 "rebuild it with tools/extract/extract_sources.py")
+
+    for tmpdoc in tmpdocs:
+        tmpsystem = tmpdoc.get("system", {})
+        # Most builders never emit the two fields at all -- every item data model declares them
+        # and they fall back to the schema's "" on import, which is why a weapon's sheet showed
+        # two empty boxes. Absent is treated as empty here, not as a document to leave alone.
+        #
+        # His own answer, where he gave one: skills carry a book and page of their own, and a
+        # hand-authored entry is tagged Custom. Neither is overwritten.
+        if clean_text(str(tmpsystem.get("sourcebook", ""))) not in ("", "?"):
+            continue
+        tmpfound = SOURCE_MAP.get(tmpdoc["name"])
+        if tmpfound:
+            tmpsystem["sourcebook"] = tmpfound["sourcebook"]
+            if tmpfound.get("page") and not clean_text(str(tmpsystem.get("page", ""))):
+                tmpsystem["page"] = tmpfound["page"]
+        else:
+            tmpsystem["sourcebook"] = "XXX"
+    return tmpdocs
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -1213,7 +1263,9 @@ def main():
     print(f"{'pack':14} {'documents':>10}")
     print("-" * 28)
     for tmpname, tmpbuilder in BUILDERS.items():
-        docs = apply_manual_content(tmpname, tmpbuilder())
+        # Sources first, then the manual layer: a hand-authored entry that names its own
+        # sourcebook must still win, and an override exists precisely to overrule what we derived.
+        docs = apply_manual_content(tmpname, apply_sources(tmpbuilder()))
         tmpbuilt[tmpname] = docs
         total += len(docs)
         print(f"{tmpname:14} {len(docs):10}")

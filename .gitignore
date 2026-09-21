@@ -2,14 +2,16 @@
 #
 # Kept local, never committed. Permission to build and publish a Foundry conversion is not
 # permission to republish the books themselves, and this repository is public -- committing
-# them would put the complete text of four commercial titles where anyone can read them.
+# them would put the complete text of commercial titles where anyone can read them.
+#
+# A PATTERN, not a list of the books we happened to have first. The four titles were named
+# here one per line, so extracting a fifth -- the Master Index, Epitaph of the Fallen --
+# silently produced a file that WAS NOT IGNORED and would have been committed by the next
+# `git add -A`. Anything the extractor writes is book text and none of it is publishable.
 #
 # Regenerate from the PDFs when needed:
 #     python tools/extract/extract_book_text.py <book.pdf> <name>
-docs/reference/players-guide-fulltext.txt
-docs/reference/masters-manual-fulltext.txt
-docs/reference/aspects-of-the-wild-fulltext.txt
-docs/reference/mysteries-of-the-planes-fulltext.txt
+docs/reference/*-fulltext.txt
 
 # Source PDFs, if they ever land inside the working tree.
 *.pdf

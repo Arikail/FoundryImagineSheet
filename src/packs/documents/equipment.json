@@ -4,7 +4,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -12,7 +14,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -20,7 +24,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -28,7 +33,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -36,7 +42,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -44,7 +52,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "246"
     }
   },
   {
@@ -52,7 +62,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -60,7 +72,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -68,7 +81,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.31,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -76,7 +91,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -84,7 +100,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -92,7 +110,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -100,7 +120,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -108,7 +129,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -116,7 +139,8 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -124,7 +148,8 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -132,7 +157,8 @@
     "type": "equipment",
     "system": {
       "weight": 10,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -140,7 +166,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -148,7 +176,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -156,7 +185,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -164,7 +194,9 @@
     "type": "equipment",
     "system": {
       "weight": 30,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -172,7 +204,9 @@
     "type": "equipment",
     "system": {
       "weight": 70,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -180,7 +214,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -188,7 +224,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -196,7 +233,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -204,7 +243,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "331"
     }
   },
   {
@@ -212,7 +253,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -220,7 +262,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -228,7 +271,9 @@
     "type": "equipment",
     "system": {
       "weight": 50,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "326"
     }
   },
   {
@@ -236,7 +281,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -244,7 +291,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -252,7 +300,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -260,7 +309,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -268,7 +319,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -276,7 +329,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -284,7 +338,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -292,7 +348,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -300,7 +357,8 @@
     "type": "equipment",
     "system": {
       "weight": 2.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -308,7 +366,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -316,7 +375,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -324,7 +384,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -332,7 +393,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -340,7 +402,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -348,7 +411,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -356,7 +420,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -364,7 +429,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -372,7 +438,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -380,7 +447,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -388,7 +456,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -396,7 +465,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -404,7 +474,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -412,7 +483,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -420,7 +492,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -428,7 +501,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "433"
     }
   },
   {
@@ -436,7 +511,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "433"
     }
   },
   {
@@ -444,7 +521,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -452,7 +531,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -460,7 +541,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -468,7 +551,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -476,7 +561,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -484,7 +571,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -492,7 +581,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -500,7 +591,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -508,7 +600,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -516,7 +610,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -524,7 +619,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -532,7 +628,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -540,7 +637,8 @@
     "type": "equipment",
     "system": {
       "weight": 75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -548,7 +646,8 @@
     "type": "equipment",
     "system": {
       "weight": 50,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -556,7 +655,8 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -564,7 +664,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -572,7 +673,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -580,7 +683,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -588,7 +692,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -596,7 +701,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -604,7 +710,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -612,7 +719,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -620,7 +728,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -628,7 +737,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -636,7 +746,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -644,7 +755,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -652,7 +764,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -660,7 +774,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -668,7 +783,8 @@
     "type": "equipment",
     "system": {
       "weight": 3.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -676,7 +792,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -684,7 +801,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -692,7 +811,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -700,7 +821,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "272"
     }
   },
   {
@@ -708,7 +831,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -716,7 +841,9 @@
     "type": "equipment",
     "system": {
       "weight": 21,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -724,7 +851,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -732,7 +861,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -740,7 +871,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -748,7 +881,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Legends of the Unknown"
     }
   },
   {
@@ -756,7 +890,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Legends of the Unknown"
     }
   },
   {
@@ -764,7 +899,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -772,7 +908,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -780,7 +918,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -788,7 +927,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -796,7 +937,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -804,7 +947,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -812,7 +957,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -820,7 +967,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -828,7 +976,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "395"
     }
   },
   {
@@ -836,7 +986,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "395"
     }
   },
   {
@@ -844,7 +996,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "395"
     }
   },
   {
@@ -852,7 +1006,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -860,7 +1015,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -868,7 +1024,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -876,7 +1033,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -884,7 +1042,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -892,7 +1051,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -900,7 +1061,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -908,7 +1071,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -916,7 +1081,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -924,7 +1090,9 @@
     "type": "equipment",
     "system": {
       "weight": 30,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -932,7 +1100,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -940,7 +1110,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.13,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -948,7 +1120,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -956,7 +1129,8 @@
     "type": "equipment",
     "system": {
       "weight": 3.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -964,7 +1138,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -972,7 +1147,8 @@
     "type": "equipment",
     "system": {
       "weight": 3.1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -980,7 +1156,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -988,7 +1165,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -996,7 +1174,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1004,7 +1183,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1012,7 +1192,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1020,7 +1201,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1028,7 +1210,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1036,7 +1220,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "272"
     }
   },
   {
@@ -1044,7 +1230,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1052,7 +1240,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1060,7 +1249,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1068,7 +1259,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "272"
     }
   },
   {
@@ -1076,7 +1269,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1084,7 +1278,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1092,7 +1287,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1100,7 +1296,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1108,7 +1305,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1116,7 +1314,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1124,7 +1323,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1132,7 +1332,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1140,7 +1341,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1148,7 +1350,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1156,7 +1359,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1164,7 +1368,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1172,7 +1377,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1180,7 +1387,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1188,7 +1397,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1196,7 +1407,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1204,7 +1417,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1212,7 +1427,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1220,7 +1437,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1228,7 +1447,9 @@
     "type": "equipment",
     "system": {
       "weight": 36,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1236,7 +1457,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1244,7 +1467,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.13,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "329"
     }
   },
   {
@@ -1252,7 +1477,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1260,7 +1487,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1268,7 +1496,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1276,7 +1505,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1284,7 +1515,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "240"
     }
   },
   {
@@ -1292,7 +1525,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "240"
     }
   },
   {
@@ -1300,7 +1535,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1308,7 +1545,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1316,7 +1555,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1324,7 +1564,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1332,7 +1573,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1340,7 +1583,9 @@
     "type": "equipment",
     "system": {
       "weight": 18,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1348,7 +1593,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1356,7 +1603,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1364,7 +1613,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1372,7 +1623,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1380,7 +1632,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "396"
     }
   },
   {
@@ -1388,7 +1642,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1396,7 +1651,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1404,7 +1661,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1412,7 +1670,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1420,7 +1679,9 @@
     "type": "equipment",
     "system": {
       "weight": 18,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1428,7 +1689,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "482"
     }
   },
   {
@@ -1436,7 +1699,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "482"
     }
   },
   {
@@ -1444,7 +1709,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1452,7 +1719,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1460,7 +1729,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1468,7 +1739,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1476,7 +1749,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1484,7 +1759,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1492,7 +1769,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1500,7 +1778,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1508,7 +1787,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1516,7 +1796,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1524,7 +1805,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1532,7 +1814,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1540,7 +1823,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.33,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1548,7 +1832,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1556,7 +1842,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1564,7 +1852,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1572,7 +1862,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1580,7 +1872,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1588,7 +1882,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1596,7 +1891,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1604,7 +1900,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1612,7 +1910,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -1620,7 +1920,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1628,7 +1929,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1636,7 +1938,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1644,7 +1948,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1652,7 +1958,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1660,7 +1968,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1668,7 +1978,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1676,7 +1988,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1684,7 +1997,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1692,7 +2007,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1700,7 +2017,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -1708,7 +2027,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1716,7 +2037,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1724,7 +2047,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1732,7 +2057,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1740,7 +2067,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1748,7 +2077,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1756,7 +2087,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1764,7 +2097,9 @@
     "type": "equipment",
     "system": {
       "weight": 30,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1772,7 +2107,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1780,7 +2117,8 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1788,7 +2126,8 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1796,7 +2135,8 @@
     "type": "equipment",
     "system": {
       "weight": 2.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1804,7 +2144,8 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1812,7 +2153,8 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1820,7 +2162,8 @@
     "type": "equipment",
     "system": {
       "weight": 2.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1828,7 +2171,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1836,7 +2180,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1844,7 +2190,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1852,7 +2200,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1860,7 +2210,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1868,7 +2220,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1876,7 +2229,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1884,7 +2238,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1892,7 +2247,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1900,7 +2256,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1908,7 +2265,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "252"
     }
   },
   {
@@ -1916,7 +2275,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1924,7 +2285,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1932,7 +2295,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1940,7 +2305,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1948,7 +2315,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -1956,7 +2325,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -1964,7 +2335,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -1972,7 +2345,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -1980,7 +2355,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -1988,7 +2365,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1996,7 +2374,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2004,7 +2384,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2012,7 +2394,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2020,7 +2404,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2028,7 +2414,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2036,7 +2424,9 @@
     "type": "equipment",
     "system": {
       "weight": 10,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2044,7 +2434,9 @@
     "type": "equipment",
     "system": {
       "weight": 12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "486"
     }
   },
   {
@@ -2052,7 +2444,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "486"
     }
   },
   {
@@ -2060,7 +2454,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.31,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2068,7 +2464,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2076,7 +2474,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2084,7 +2484,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2092,7 +2494,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2100,7 +2504,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2108,7 +2514,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2116,7 +2524,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2124,7 +2533,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2132,7 +2543,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2140,7 +2553,9 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2148,7 +2563,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2156,7 +2572,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "272"
     }
   },
   {
@@ -2164,7 +2582,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2172,7 +2592,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2180,7 +2602,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2188,7 +2612,9 @@
     "type": "equipment",
     "system": {
       "weight": 12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2196,7 +2622,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2204,7 +2632,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2212,7 +2642,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2220,7 +2652,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2228,7 +2662,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2236,7 +2672,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2244,7 +2682,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2252,7 +2691,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2260,7 +2700,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2268,7 +2709,8 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2276,7 +2718,8 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2284,7 +2727,8 @@
     "type": "equipment",
     "system": {
       "weight": 16,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2292,7 +2736,8 @@
     "type": "equipment",
     "system": {
       "weight": 32,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2300,7 +2745,8 @@
     "type": "equipment",
     "system": {
       "weight": 64,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2308,7 +2754,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2316,7 +2764,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2324,7 +2773,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2332,7 +2782,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2340,7 +2791,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2348,7 +2801,8 @@
     "type": "equipment",
     "system": {
       "weight": 18,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2356,7 +2810,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2364,7 +2819,8 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2372,7 +2828,8 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2380,7 +2837,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2388,7 +2846,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2396,7 +2856,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2404,7 +2866,8 @@
     "type": "equipment",
     "system": {
       "weight": 30,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2412,7 +2875,8 @@
     "type": "equipment",
     "system": {
       "weight": 60,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2420,7 +2884,8 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2428,7 +2893,8 @@
     "type": "equipment",
     "system": {
       "weight": 150,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2436,7 +2902,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2444,7 +2911,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2452,7 +2920,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2460,7 +2930,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2468,7 +2940,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2476,7 +2950,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "442"
     }
   },
   {
@@ -2484,7 +2960,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "240"
     }
   },
   {
@@ -2492,7 +2970,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2500,7 +2979,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2508,7 +2988,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2516,7 +2997,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2524,7 +3006,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2532,7 +3015,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2540,7 +3024,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2548,7 +3033,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2556,7 +3042,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2564,7 +3052,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2572,7 +3061,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.44,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2580,7 +3070,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2588,7 +3079,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2596,7 +3088,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "439"
     }
   },
   {
@@ -2604,7 +3098,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "439"
     }
   },
   {
@@ -2612,7 +3108,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2620,7 +3117,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2628,7 +3126,8 @@
     "type": "equipment",
     "system": {
       "weight": 0,
-      "isTagalong": true
+      "isTagalong": true,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2636,7 +3135,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2644,7 +3145,8 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2652,7 +3154,8 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2660,7 +3163,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2668,7 +3172,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2676,7 +3181,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2684,7 +3190,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2692,7 +3200,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2700,7 +3209,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2708,7 +3218,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2716,7 +3227,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2724,7 +3236,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2732,7 +3245,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2740,7 +3254,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2748,7 +3263,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2756,7 +3272,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2764,7 +3281,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2772,7 +3290,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2780,7 +3299,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2788,7 +3308,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2796,7 +3317,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "439"
     }
   },
   {
@@ -2804,7 +3327,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2812,7 +3336,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2820,7 +3346,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "411"
     }
   },
   {
@@ -2828,7 +3356,9 @@
     "type": "equipment",
     "system": {
       "weight": 10,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2836,7 +3366,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2844,7 +3376,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2852,7 +3386,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2860,7 +3396,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2868,7 +3406,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2876,7 +3416,8 @@
     "type": "equipment",
     "system": {
       "weight": 62,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2884,7 +3425,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2892,7 +3435,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2900,7 +3445,9 @@
     "type": "equipment",
     "system": {
       "weight": 4.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2908,7 +3455,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2916,7 +3465,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2924,7 +3475,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2932,7 +3485,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2940,7 +3495,9 @@
     "type": "equipment",
     "system": {
       "weight": 12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2948,7 +3505,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Legends of the Unknown"
     }
   },
   {
@@ -2956,7 +3514,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2964,7 +3524,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2972,7 +3534,9 @@
     "type": "equipment",
     "system": {
       "weight": 28,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2980,7 +3544,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2988,7 +3554,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2996,7 +3564,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3004,7 +3574,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3012,7 +3584,9 @@
     "type": "equipment",
     "system": {
       "weight": 61,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3020,7 +3594,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3028,7 +3604,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3036,7 +3614,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3044,7 +3624,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3052,7 +3634,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3060,7 +3644,9 @@
     "type": "equipment",
     "system": {
       "weight": 110,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3068,7 +3654,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3076,7 +3664,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3084,7 +3674,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3092,7 +3684,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3100,7 +3694,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3108,7 +3704,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3116,7 +3714,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3124,7 +3724,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3132,7 +3734,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3140,7 +3744,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3148,7 +3754,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3156,7 +3764,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3164,7 +3774,9 @@
     "type": "equipment",
     "system": {
       "weight": 12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3172,7 +3784,9 @@
     "type": "equipment",
     "system": {
       "weight": 9,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3180,7 +3794,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3188,7 +3804,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3196,7 +3814,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3204,7 +3824,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3212,7 +3834,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3220,7 +3844,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3228,7 +3854,9 @@
     "type": "equipment",
     "system": {
       "weight": 2.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3236,7 +3864,9 @@
     "type": "equipment",
     "system": {
       "weight": 18,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3244,7 +3874,9 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3252,7 +3884,9 @@
     "type": "equipment",
     "system": {
       "weight": 24,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3260,7 +3894,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3268,7 +3904,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3276,7 +3914,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3284,7 +3924,9 @@
     "type": "equipment",
     "system": {
       "weight": 22,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3292,7 +3934,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3300,7 +3944,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3308,7 +3954,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3316,7 +3964,9 @@
     "type": "equipment",
     "system": {
       "weight": 9,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3324,7 +3974,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3332,7 +3983,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3340,7 +3993,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3348,7 +4003,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3356,7 +4013,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3364,7 +4023,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3372,7 +4033,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3380,7 +4043,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3388,7 +4053,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3396,7 +4063,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3404,7 +4073,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3412,7 +4083,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3420,7 +4093,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3428,7 +4102,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3436,7 +4112,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3444,7 +4122,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3452,7 +4132,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3460,7 +4142,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3468,7 +4152,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3476,7 +4162,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3484,7 +4172,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3492,7 +4182,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3500,7 +4192,8 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3508,7 +4201,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3516,7 +4211,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3524,7 +4221,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3532,7 +4231,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3540,7 +4241,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3548,7 +4250,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3556,7 +4260,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3564,7 +4270,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3572,7 +4280,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3580,7 +4290,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3588,7 +4300,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3596,7 +4310,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3604,7 +4320,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3612,7 +4330,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3620,7 +4339,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3628,7 +4348,8 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3636,7 +4357,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3644,7 +4366,8 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3652,7 +4375,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3660,7 +4384,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3668,7 +4393,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "74"
     }
   },
   {
@@ -3676,7 +4403,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3684,7 +4412,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3692,7 +4421,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3700,7 +4430,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3708,7 +4439,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3716,7 +4449,9 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "413"
     }
   },
   {
@@ -3724,7 +4459,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3732,7 +4468,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3740,7 +4477,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3748,7 +4486,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3756,7 +4496,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3764,7 +4505,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3772,7 +4514,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3780,7 +4523,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3788,7 +4532,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3796,7 +4541,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3804,7 +4550,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3812,7 +4559,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3820,7 +4568,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3828,7 +4577,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "188"
     }
   },
   {
@@ -3836,7 +4587,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3844,7 +4596,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3852,7 +4605,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3860,7 +4615,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3868,7 +4625,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3876,7 +4635,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3884,7 +4645,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3892,7 +4655,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "301"
     }
   },
   {
@@ -3900,7 +4665,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3908,7 +4674,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -3916,7 +4684,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "482"
     }
   },
   {
@@ -3924,7 +4694,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3932,7 +4703,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -3940,7 +4713,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.63,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -3948,7 +4723,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.31,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -3956,7 +4733,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -3964,7 +4743,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -3972,7 +4753,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.63,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -3980,7 +4763,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.31,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -3988,7 +4773,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -3996,7 +4783,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4004,7 +4793,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4012,7 +4803,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4020,7 +4813,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4028,7 +4823,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4036,7 +4833,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4044,7 +4843,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4052,7 +4853,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4060,7 +4863,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4068,7 +4873,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4076,7 +4883,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4084,7 +4893,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4092,7 +4903,9 @@
     "type": "equipment",
     "system": {
       "weight": 100,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4100,7 +4913,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "324"
     }
   },
   {
@@ -4108,7 +4923,9 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4116,7 +4933,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4124,7 +4943,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4132,7 +4953,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4140,7 +4962,9 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4148,7 +4972,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4156,7 +4982,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4164,7 +4992,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4172,7 +5001,9 @@
     "type": "equipment",
     "system": {
       "weight": 30,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4180,7 +5011,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4188,7 +5021,9 @@
     "type": "equipment",
     "system": {
       "weight": 6,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4196,7 +5031,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4204,7 +5040,9 @@
     "type": "equipment",
     "system": {
       "weight": 25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4212,7 +5050,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4220,7 +5060,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "414"
     }
   },
   {
@@ -4228,7 +5070,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4236,7 +5079,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4244,7 +5088,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {
@@ -4252,7 +5098,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4260,7 +5107,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4268,7 +5116,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4276,7 +5125,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.75,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4284,7 +5134,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4292,7 +5144,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4300,7 +5154,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.32,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4308,7 +5164,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4316,7 +5174,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4324,7 +5183,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4332,7 +5193,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4340,7 +5203,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4348,7 +5213,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4356,7 +5223,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.13,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4364,7 +5233,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -4372,7 +5243,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.08,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4380,7 +5253,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.08,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4388,7 +5263,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4396,7 +5272,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.13,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4404,7 +5281,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4412,7 +5290,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.19,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4420,7 +5299,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4428,7 +5308,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4436,7 +5317,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.32,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "339"
     }
   },
   {
@@ -4444,7 +5327,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4452,7 +5336,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4460,7 +5346,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4468,7 +5355,8 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4476,7 +5364,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4484,7 +5373,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4492,7 +5382,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4500,7 +5392,9 @@
     "type": "equipment",
     "system": {
       "weight": 32,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4508,7 +5402,8 @@
     "type": "equipment",
     "system": {
       "weight": 9,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4516,7 +5411,8 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4524,7 +5420,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4532,7 +5430,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4540,7 +5439,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4548,7 +5449,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.06,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4556,7 +5459,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.13,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4564,7 +5469,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.44,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4572,7 +5479,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4580,7 +5488,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4588,7 +5498,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4596,7 +5508,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4604,7 +5518,9 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4612,7 +5528,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -4620,7 +5538,8 @@
     "type": "equipment",
     "system": {
       "weight": 4,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4628,7 +5547,8 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4636,7 +5556,8 @@
     "type": "equipment",
     "system": {
       "weight": 15,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4644,7 +5565,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4652,7 +5575,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "331"
     }
   },
   {
@@ -4660,7 +5585,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4668,7 +5595,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4676,7 +5605,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.25,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4684,7 +5614,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4692,7 +5623,8 @@
     "type": "equipment",
     "system": {
       "weight": 10,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4700,7 +5632,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4708,7 +5641,8 @@
     "type": "equipment",
     "system": {
       "weight": 10,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4716,7 +5650,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -4724,7 +5660,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -4732,7 +5670,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "402"
     }
   },
   {
@@ -4740,7 +5680,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4748,7 +5690,9 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4756,7 +5700,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4764,7 +5710,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4772,7 +5719,8 @@
     "type": "equipment",
     "system": {
       "weight": 7.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4780,7 +5728,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4788,7 +5738,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4796,7 +5748,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4804,7 +5758,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4812,7 +5768,9 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4820,7 +5778,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4828,7 +5788,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4836,7 +5798,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.01,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4844,7 +5808,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4852,7 +5818,8 @@
     "type": "equipment",
     "system": {
       "weight": 250,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4860,7 +5827,8 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4868,7 +5836,8 @@
     "type": "equipment",
     "system": {
       "weight": 250,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4876,7 +5845,8 @@
     "type": "equipment",
     "system": {
       "weight": 20,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4884,7 +5854,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4892,7 +5864,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4900,7 +5874,9 @@
     "type": "equipment",
     "system": {
       "weight": 1.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -4908,7 +5884,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4916,7 +5893,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4924,7 +5902,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4932,7 +5911,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4940,7 +5920,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4948,7 +5929,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4956,7 +5938,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -4964,7 +5948,8 @@
     "type": "equipment",
     "system": {
       "weight": 1,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4972,7 +5957,8 @@
     "type": "equipment",
     "system": {
       "weight": 5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4980,7 +5966,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4988,7 +5975,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.12,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4996,7 +5984,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.5,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5004,7 +5993,9 @@
     "type": "equipment",
     "system": {
       "weight": 8,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -5012,7 +6003,9 @@
     "type": "equipment",
     "system": {
       "weight": 32,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -5020,7 +6013,8 @@
     "type": "equipment",
     "system": {
       "weight": 1.2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -5028,7 +6022,9 @@
     "type": "equipment",
     "system": {
       "weight": 0.38,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -5036,7 +6032,9 @@
     "type": "equipment",
     "system": {
       "weight": 3,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -5044,7 +6042,8 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5052,7 +6051,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.03,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5060,7 +6060,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.04,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5068,7 +6069,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5076,7 +6078,8 @@
     "type": "equipment",
     "system": {
       "weight": 0.02,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5084,7 +6087,9 @@
     "type": "equipment",
     "system": {
       "weight": 2,
-      "isTagalong": false
+      "isTagalong": false,
+      "sourcebook": "Imagine Master Index",
+      "page": "410"
     }
   },
   {

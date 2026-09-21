@@ -3549,3 +3549,56 @@ with every later folder silently unmade.
 Not verified against a real V14 world (none available). Verified with a mocked Foundry over the
 shipped content plus two invented compendium items.
 
+## Where every item comes from, out of his own Master Index (2026-09-21)
+
+Asked for directly: find the source and page for all the items, and mark what cannot be found.
+
+**Only skills ever had it.** His `SKILLDICT` and `SOCIALSKILLDICT` carry a sourcebook and a page
+per row. `WEAPONVALUESLIST`, `ARMORVALUESLIST`, `EQUIPVALUESLIST`, the race and class tables and
+the trait lists carry neither, so 3,715 of 4,395 documents shipped with both fields blank. That is
+the whole of the reported difference between the Animal Husbandry sheet and the Angel Sword sheet.
+
+**His Master Index is the answer, and it outranks anything we could infer.** `Nearly-master-index.pdf`
+is the "Imagine Master Index", version 0.976, his own consolidation of "all the disparate pieces of
+the Imagine Role Playing System ... found across many books". Its tables carry a `Source` column
+naming the originating book, and it tells the reader to "see the original source material in the
+volumes indicated". Under the source-of-truth rule that is his answer to this exact question.
+
+It also reaches three books we have no PDF of -- Conquest of the Eternal, Legends of the Unknown,
+Epitaph of the Fallen -- which is why **Angel Sword could not be found in any of the four books on
+disk**. It is a Heroic Melee Weapon on Master Index page 326, and his table says so.
+
+**Proven before it was allowed to write anything.** Skills already carry his own sourcebook on all
+680 rows, so the method was run against them as a ground truth first. It reproduced his answer
+**662 times out of the 670 it committed to, 98%**; the misses are names that appear in more than
+one book. `extract_sources.py --verify` re-runs it and must be re-run whenever the tool changes.
+
+**A heuristic tried and rejected, in writing so it is not tried again.** Preferring the earliest
+book he published when a name appears in several sounds right -- a thing is introduced in the base
+rules and referred back to later -- and measured *worse*, 97% against 98%, because it drags
+anything the Player's Guide so much as mentions onto the Player's Guide. The first Source column in
+his page order is the better signal.
+
+**What the fields now hold.** 983 documents name a book of his; a page is recorded only where that
+book's own index confirms it, so a page never belongs to a different book than the sourcebook
+beside it. 1,710 name the Master Index and its page, for the tables of his that carry no Source
+column of their own. 1,702 carry `XXX`.
+
+**XXX is a mark, not a book, and not a rename.** Asked for as a rename -- "change name of the item
+to XXX-item". It went in the field instead, because item names are lookup keys: the character
+generator finds races and classes by name, class advancement grants skills by name, the starting
+kits name their equipment, and the compendium importer matches by name, so renaming 1,702
+documents would have made the next import DUPLICATE them rather than update them. The field
+carries the mark, the item sheet shows it in red with a note, and `docs/UNATTRIBUTED.md` lists
+them. `getSourcebookId` returns no id for "XXX" specifically so it cannot appear in the
+availability window as a switchable book -- discovery reads books off the content, and one tick on
+an "XXX" row would otherwise have hidden 1,702 items that have merely not been traced yet.
+
+**A rights bug found on the way.** `.gitignore` named the four extracted books one line each, so
+extracting a fifth produced a file that was not ignored and would have gone into a public
+repository on the next `git add -A`. It is a pattern now.
+
+Verified: 98% on the skills ground truth, 1,163 checks across eight suites passing, 41 modules
+parsing, the red XXX rendered and read back out of the DOM, and XXX proven to survive its own
+sourcebook being switched off. Not verified: no Foundry V14 install. Version 0.11.0.
+

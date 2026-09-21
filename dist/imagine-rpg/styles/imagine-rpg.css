@@ -211,6 +211,23 @@
 .strong  { font-weight: 700; }
 .muted   { color: var(--imagine-muted); }
 
+/* @MARKER UNATTRIBUTED CONTENT
+   "XXX" in the sourcebook box means the content build could not find the entry in his Master
+   Index. Red so it reads as a gap at a glance across a directory of four thousand items, and
+   bold so it survives the small type the header uses. Editing the box clears the colour on the
+   next render, because the mark is the VALUE, not a flag stored beside it. */
+input.source-unknown {
+	color: #a4161a;
+	font-weight: 700;
+}
+
+.source-unknown-note {
+	margin: 2px 0 0;
+	font-size: 11px;
+	font-style: italic;
+	color: #a4161a;
+}
+
 .col-mods .mod {
 	display: inline-block;
 	margin-right: 9px;

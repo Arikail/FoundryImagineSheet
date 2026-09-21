@@ -7,7 +7,7 @@
       "canonicalName": "Energy(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Energy magical or otherwise has no effect."
     }
@@ -20,8 +20,8 @@
       "canonicalName": "Acid",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "580",
       "description": "Acid(Acid does not harm this being whether magical or mundane)."
     }
   },
@@ -33,7 +33,7 @@
       "canonicalName": "Acid Hardened",
       "value1": "-1",
       "value2": "10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Acid Hardened(-1 per die of damage from acid. +10% to Magic Resistances to acid.)"
     }
@@ -46,7 +46,7 @@
       "canonicalName": "Acid Resistant",
       "value1": "0.5",
       "value2": "20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Acid Resistant(Half damage from acid. +20% Magic Resistance to acid.)"
     }
@@ -59,7 +59,7 @@
       "canonicalName": "Aging",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Aging(Does not decay or age. The being is immortal. No spells or effects which cause aging will have an effect.)"
     }
@@ -72,7 +72,7 @@
       "canonicalName": "Physical(Arch)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
     }
@@ -85,8 +85,8 @@
       "canonicalName": "Aura",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "11",
       "description": "Aura(Aura does not harm this being whether magical or mundane)."
     }
   },
@@ -98,7 +98,7 @@
       "canonicalName": "Energy(Lesser Aura)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Aura energy does half damage."
     }
@@ -111,7 +111,7 @@
       "canonicalName": "Energy(Lesser Aura)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Aura energy does half damage."
     }
@@ -124,7 +124,7 @@
       "canonicalName": "Aura",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Aura(Aura does not harm this being whether magical or mundane)."
     }
@@ -137,7 +137,7 @@
       "canonicalName": "Sleep",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
     }
@@ -150,8 +150,8 @@
       "canonicalName": "Frost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "580",
       "description": "Frost(Cold does not harm this being whether magical or mundane)."
     }
   },
@@ -163,7 +163,7 @@
       "canonicalName": "Physical(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
     }
@@ -176,7 +176,7 @@
       "canonicalName": "Control",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The being or creature is immune to control in any form, save those effects which use true names. This includes spells of aspect control."
     }
@@ -189,7 +189,7 @@
       "canonicalName": "Control(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
     }
@@ -202,7 +202,7 @@
       "canonicalName": "Control(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Immune to all forms of control, even those that name this creature or creature type and/or use a truename."
     }
@@ -215,7 +215,7 @@
       "canonicalName": "Control(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The being or creature is immune to control that does not target their type."
     }
@@ -228,7 +228,7 @@
       "canonicalName": "Damage Immunity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Specified types of damage are removed or reduced."
     }
@@ -241,8 +241,8 @@
       "canonicalName": "Death(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "86",
       "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
     }
   },
@@ -254,7 +254,7 @@
       "canonicalName": "Death(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
     }
@@ -267,7 +267,7 @@
       "canonicalName": "Death(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
     }
@@ -280,8 +280,8 @@
       "canonicalName": "Death(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "86",
       "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
     }
   },
@@ -293,8 +293,8 @@
       "canonicalName": "Death(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "86",
       "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
     }
   },
@@ -306,7 +306,7 @@
       "canonicalName": "Disease",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Disease(Unaffected by harmful parasites or infections)."
     }
@@ -319,7 +319,7 @@
       "canonicalName": "Divinity(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
     }
@@ -332,7 +332,7 @@
       "canonicalName": "Divinity(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
     }
@@ -345,7 +345,7 @@
       "canonicalName": "Divinity(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
     }
@@ -358,7 +358,7 @@
       "canonicalName": "Divinity(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
     }
@@ -371,7 +371,7 @@
       "canonicalName": "Electricity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
     }
@@ -384,7 +384,7 @@
       "canonicalName": "Electricity Hardened",
       "value1": "-1",
       "value2": "10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electricity Hardened(-1 per die of damage from electricity. +10% to Magic Resistances to electricity.)"
     }
@@ -397,7 +397,7 @@
       "canonicalName": "Electricity Resistant",
       "value1": "0.5",
       "value2": "20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electricity Resistant(Half damage from electricity. +20% Magic Resistance to electricity.)"
     }
@@ -410,7 +410,7 @@
       "canonicalName": "Energy(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "All energy attacks do half damage."
     }
@@ -423,8 +423,8 @@
       "canonicalName": "Energy(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "442",
       "description": "Energy magical or otherwise has no effect."
     }
   },
@@ -436,8 +436,8 @@
       "canonicalName": "Energy(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Energy magical or otherwise has no effect."
     }
   },
@@ -449,8 +449,8 @@
       "canonicalName": "Energy(Lesser Acid)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Chemical energy(Acid) does half damage."
     }
   },
@@ -462,8 +462,8 @@
       "canonicalName": "Energy(Lesser Aura)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Aura energy does half damage."
     }
   },
@@ -475,8 +475,8 @@
       "canonicalName": "Energy(Lesser Cold)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Frost does half damage."
     }
   },
@@ -488,8 +488,8 @@
       "canonicalName": "Energy(Lesser Electricity)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Electrical energy does half damage."
     }
   },
@@ -501,8 +501,8 @@
       "canonicalName": "Energy(Lesser Fire)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Heat energy does half damage."
     }
   },
@@ -514,8 +514,8 @@
       "canonicalName": "Energy(Lesser Frost)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Frost does half damage."
     }
   },
@@ -527,8 +527,8 @@
       "canonicalName": "Energy(Lesser Heat)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Heat energy does half damage."
     }
   },
@@ -540,8 +540,8 @@
       "canonicalName": "Energy(Lesser Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Life energy does half damage."
     }
   },
@@ -553,8 +553,8 @@
       "canonicalName": "Energy(Lesser Light)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Light energy does half damage."
     }
   },
@@ -566,8 +566,8 @@
       "canonicalName": "Energy(Lesser Repulsion)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Repulsive energy does half damage."
     }
   },
@@ -579,8 +579,8 @@
       "canonicalName": "Energy(Lesser Sonic)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Sonic energy does half damage."
     }
   },
@@ -592,8 +592,8 @@
       "canonicalName": "Energy(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "One specific type of energy has does half damage."
     }
   },
@@ -605,8 +605,8 @@
       "canonicalName": "Energy(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "Energy magical or otherwise has no effect."
     }
   },
@@ -618,8 +618,8 @@
       "canonicalName": "Fatigue",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "300",
       "description": "Fatigue(May need to rest but is unaffected by Fatigue)."
     }
   },
@@ -631,8 +631,8 @@
       "canonicalName": "Fear",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "106",
       "description": "Fear(Immune to fear)"
     }
   },
@@ -644,7 +644,7 @@
       "canonicalName": "Fire",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Master's Manual",
       "page": "",
       "description": "Fire(Heat does not harm this being whether magical or mundane)."
     }
@@ -657,7 +657,7 @@
       "canonicalName": "Fire Hardened",
       "value1": "-1",
       "value2": "10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fire Hardened(-1 per die of damage from fire/heat. +10% to Magic Resistances to fire/heat.)"
     }
@@ -670,7 +670,7 @@
       "canonicalName": "Fire Resistant",
       "value1": "0.5",
       "value2": "20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Fire Resistant(Half damage from fire/heat. +20% Magic Resistance to fire/heat.)"
     }
@@ -683,7 +683,7 @@
       "canonicalName": "Frost",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost(Cold does not harm this being whether magical or mundane)."
     }
@@ -696,7 +696,7 @@
       "canonicalName": "Frost Hardened",
       "value1": "-1",
       "value2": "10",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Hardened(-1 per die of damage from frost/cold. +10% to Magic Resistances to frost/cold.)"
     }
@@ -709,7 +709,7 @@
       "canonicalName": "Frost Resistant",
       "value1": "0.5",
       "value2": "20",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Frost Resistant(Half damage from frost/cold, +20% Magic Resistance to frost/cold)."
     }
@@ -722,7 +722,7 @@
       "canonicalName": "Death(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Any magic that would kill or destroy this creature will instead return it to its home plane, or a soul container on the earthly realm where it can reform its physical body. The creature can only be permanently destroyed by a special predetermined method, up to the Game Master and his specific setting. Examples might be killing the creature on its own plane or destroying its soul container."
     }
@@ -735,7 +735,7 @@
       "canonicalName": "Divinity(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all forms of divine magic, whether skills or invocations."
     }
@@ -748,7 +748,7 @@
       "canonicalName": "Mind(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being cannot be contacted or attacked mentally at all."
     }
@@ -761,7 +761,7 @@
       "canonicalName": "Physical(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
     }
@@ -774,7 +774,7 @@
       "canonicalName": "Poison(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
     }
@@ -787,8 +787,8 @@
       "canonicalName": "Fire",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "580",
       "description": "Fire(Heat does not harm this being whether magical or mundane)."
     }
   },
@@ -800,8 +800,8 @@
       "canonicalName": "Hold",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "236",
       "description": "Hold(Cannot be held with the Hold spell or invocation)."
     }
   },
@@ -813,7 +813,7 @@
       "canonicalName": "Illusion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
     }
@@ -826,7 +826,7 @@
       "canonicalName": "Illusion(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
     }
@@ -839,8 +839,8 @@
       "canonicalName": "Illusion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "380",
       "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
     }
   },
@@ -852,7 +852,7 @@
       "canonicalName": "Hold",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Hold(Cannot be held with the Hold spell or invocation)."
     }
@@ -865,7 +865,7 @@
       "canonicalName": "Indestructible",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot be damaged by weapons, energy, nor can the being or creature be changed, transformed, disintegrated or affected by touch powers."
     }
@@ -878,7 +878,7 @@
       "canonicalName": "Insanity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The being cannot be driven insane."
     }
@@ -891,8 +891,8 @@
       "canonicalName": "Invulnerability",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "259",
       "description": "No damage from normal weapons. +1 or better weapons to damage."
     }
   },
@@ -904,7 +904,7 @@
       "canonicalName": "Invulnerable",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. +1 or better weapons to damage."
     }
@@ -917,7 +917,7 @@
       "canonicalName": "Control(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being or creature is immune to control that does not target their type."
     }
@@ -930,7 +930,7 @@
       "canonicalName": "Death(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Magics based on death or negative life force have no affect on the creature, unless they do damage, in which case the damage heals. This includes spells with the aspect death."
     }
@@ -943,7 +943,7 @@
       "canonicalName": "Divinity(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all divine magics that do not target its type specifically, i.e. Summon Elemental, Turn Undead."
     }
@@ -956,7 +956,7 @@
       "canonicalName": "Illusion(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is considered to always pass an Illusion Resistance for the basic 5 senses."
     }
@@ -969,7 +969,7 @@
       "canonicalName": "Lesser Life",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Life-based magic effects heal."
     }
@@ -982,7 +982,7 @@
       "canonicalName": "Magic(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
     }
@@ -995,7 +995,7 @@
       "canonicalName": "Mind(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
     }
@@ -1008,7 +1008,7 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
@@ -1021,7 +1021,7 @@
       "canonicalName": "Poison(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
     }
@@ -1034,7 +1034,7 @@
       "canonicalName": "Transformation of Form(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
     }
@@ -1047,7 +1047,7 @@
       "canonicalName": "Life",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Epitaph of the Fallen",
       "page": "",
       "description": "Immune to the effects of Life-based magic (negative life force beings only)."
     }
@@ -1060,8 +1060,8 @@
       "canonicalName": "Light",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Player's Guide",
+      "page": "108",
       "description": "Immune to blinding from light and light energy damage."
     }
   },
@@ -1073,7 +1073,7 @@
       "canonicalName": "Magic",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The creature is immune to all forms of Aura magic, whether skills or spells."
     }
@@ -1086,7 +1086,7 @@
       "canonicalName": "Magic(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
     }
@@ -1099,7 +1099,7 @@
       "canonicalName": "Magic(One Type)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
     }
@@ -1112,7 +1112,7 @@
       "canonicalName": "Magic(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The creature is immune to all Aura magics that do not target its type specifically, i.e. Summon Elemental, Control Undead, etc."
     }
@@ -1125,7 +1125,7 @@
       "canonicalName": "Magic(One Type)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "The being is immune to all magics of one type, including magical skills. This cost can be used to for one kind of divine magic. Double the cost if the type from magic and divine do not work."
     }
@@ -1138,7 +1138,7 @@
       "canonicalName": "Physical(Major)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
     }
@@ -1151,7 +1151,7 @@
       "canonicalName": "Mind(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being cannot be contacted or attacked mentally at all."
     }
@@ -1164,7 +1164,7 @@
       "canonicalName": "Mind(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
     }
@@ -1177,8 +1177,8 @@
       "canonicalName": "Mind(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "The being cannot be contacted or attacked mentally at all."
     }
   },
@@ -1190,8 +1190,8 @@
       "canonicalName": "Mind(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "The being cannot be mentally contacted, except for purposes mental combat. The being is also immune to all mental spells and effects which do not specifically target its type, i.e. Control Undead (includes spells of aspect mind). This immunity is negated by the opponent if mental combat is won."
     }
   },
@@ -1203,7 +1203,7 @@
       "canonicalName": "Physical(Minor)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
     }
@@ -1216,7 +1216,7 @@
       "canonicalName": "Paralysis",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Cannot be paralyized, or held."
     }
@@ -1229,7 +1229,7 @@
       "canonicalName": "Physical(Arch)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
     }
@@ -1242,7 +1242,7 @@
       "canonicalName": "Physical(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
     }
@@ -1255,7 +1255,7 @@
       "canonicalName": "Physical(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
     }
@@ -1268,7 +1268,7 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
@@ -1281,7 +1281,7 @@
       "canonicalName": "Physical(Major)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
     }
@@ -1294,7 +1294,7 @@
       "canonicalName": "Physical(Minor)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
     }
@@ -1307,8 +1307,8 @@
       "canonicalName": "Physical(Arch)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
     }
   },
@@ -1320,8 +1320,8 @@
       "canonicalName": "Physical(Arch)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
     }
   },
@@ -1333,8 +1333,8 @@
       "canonicalName": "Physical(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
     }
   },
@@ -1346,8 +1346,8 @@
       "canonicalName": "Physical(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
     }
   },
@@ -1359,8 +1359,8 @@
       "canonicalName": "Physical(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
     }
   },
@@ -1372,8 +1372,8 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
   },
@@ -1385,8 +1385,8 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
   },
@@ -1398,8 +1398,8 @@
       "canonicalName": "Physical(Major)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
     }
   },
@@ -1411,8 +1411,8 @@
       "canonicalName": "Physical(Major Silver)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical as well as silver do full."
     }
   },
@@ -1424,8 +1424,8 @@
       "canonicalName": "Physical(Major)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
     }
   },
@@ -1437,8 +1437,8 @@
       "canonicalName": "Physical(Minor)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
     }
   },
@@ -1450,8 +1450,8 @@
       "canonicalName": "Physical(Special)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "A special immunity versus specified physical attacks."
     }
   },
@@ -1463,8 +1463,8 @@
       "canonicalName": "Physical(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
     }
   },
@@ -1476,8 +1476,8 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
   },
@@ -1489,8 +1489,8 @@
       "canonicalName": "Physical(Special)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "A special immunity versus specified physical attacks."
     }
   },
@@ -1502,7 +1502,7 @@
       "canonicalName": "Poison(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
     }
@@ -1515,7 +1515,7 @@
       "canonicalName": "Poison(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
     }
@@ -1528,7 +1528,7 @@
       "canonicalName": "Poison(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
     }
@@ -1541,7 +1541,7 @@
       "canonicalName": "Poison(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
     }
@@ -1554,7 +1554,7 @@
       "canonicalName": "Poison(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Poison(Greater):(Unaffected by any poisons, even magical)."
     }
@@ -1567,7 +1567,7 @@
       "canonicalName": "Poison(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Poison(Lesser):The being or creature is unaffected by non-magical poisons."
     }
@@ -1580,8 +1580,8 @@
       "canonicalName": "Pressure",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "321",
       "description": "Pressure(Immunity from pressure or lack of pressure)."
     }
   },
@@ -1593,7 +1593,7 @@
       "canonicalName": "Shock",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "Player's Guide",
       "page": "",
       "description": "Shock(Unaffected by shock)."
     }
@@ -1606,8 +1606,8 @@
       "canonicalName": "Sleep",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "303",
       "description": "Sleep(cannot be made to sleep through magical or mundane methods)."
     }
   },
@@ -1619,7 +1619,7 @@
       "canonicalName": "Sleepless",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Immune to effects which cause sleep and needs no dormant time."
     }
@@ -1632,8 +1632,8 @@
       "canonicalName": "Sonic",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "580",
       "description": "Sonic energy has no effect on the being or creature, including deafness effects."
     }
   },
@@ -1645,7 +1645,7 @@
       "canonicalName": "Stubborn",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Stubborn(+20% to CR)."
     }
@@ -1658,8 +1658,8 @@
       "canonicalName": "Time",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "319",
       "description": "The flow of time around the being cannot be altered or distorted, i.e. Stasis, Time Sight, etc."
     }
   },
@@ -1671,8 +1671,8 @@
       "canonicalName": "Touch",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "132",
       "description": "No powers or effects that require touch work against this creature. This power also applies without additional cost to any creature which has no form, is completely insubstantial and cannot be physically contacted."
     }
   },
@@ -1684,8 +1684,8 @@
       "canonicalName": "Transformation of Form",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "Transformation of Form(The creature cannot be changed from its physical form)."
     }
   },
@@ -1697,8 +1697,8 @@
       "canonicalName": "Transformation of Form(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
     }
   },
@@ -1710,8 +1710,8 @@
       "canonicalName": "Transformation of Form(Partial)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
     }
   },
@@ -1723,8 +1723,8 @@
       "canonicalName": "Transformation of Form(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "Transformation of Form(Lesser):(The creature cannot be changed from its physical form. It can be destroyed through disentegration)."
     }
   },
@@ -1736,8 +1736,8 @@
       "canonicalName": "Transformation of Form(Partial)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "127",
       "description": "Most spells, invocations or effects which would transform the creature in size or shape have no effect on the creature. Touch based and gaze based transformation powers of a creature still work if the required Resistance fails."
     }
   },
@@ -1749,7 +1749,7 @@
       "canonicalName": "Water Pressure",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Complete protection from liquid pressure."
     }
@@ -1762,7 +1762,7 @@
       "canonicalName": "Weapon Damage Immunity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being takes adjusted or no damage from one or more types of damage (cutting, smashing, piercing, etc.)."
     }
@@ -1775,7 +1775,7 @@
       "canonicalName": "Magic(One Type)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being is immune to all magics of type control."
     }
@@ -1788,7 +1788,7 @@
       "canonicalName": "Weapon Damage Immunity(Non-Cutting)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "1/4 damage from edged weapons, all other weapon damage types do none."
     }
@@ -1801,7 +1801,7 @@
       "canonicalName": "Electricity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "Electricity(Electricity does not harm this being whether magical or mundane)."
     }
@@ -1814,7 +1814,7 @@
       "canonicalName": "Illusion",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The creature is considered to always pass an Illusion Resistance, and is never affected by illusions."
     }
@@ -1827,7 +1827,7 @@
       "canonicalName": "Insanity",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
+      "sourcebook": "XXX",
       "page": "",
       "description": "The being cannot be driven insane."
     }
@@ -1840,8 +1840,8 @@
       "canonicalName": "Mind(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "425",
       "description": "The being cannot be contacted or attacked mentally at all."
     }
   },
@@ -1853,8 +1853,8 @@
       "canonicalName": "Physical(Arch)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal or blessed weapons, +1/+2 weapons do 1/4, +3/+4 or magical/divine magical do 1/2, +5/6 magical/divine magical do 3/4, +7 weapons do full."
     }
   },
@@ -1866,8 +1866,8 @@
       "canonicalName": "Physical(Complete)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "Cannot be harmed by physical weapons of any kind, magical, divine magical or otherwise. Energy effects and physical magical/divine effects still damage this creature."
     }
   },
@@ -1879,8 +1879,8 @@
       "canonicalName": "Physical(Greater)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed weapons do 1/4, +1/+2 weapons do 1/2, +3/+4 or magical/divine magical do 3/4, +5 or better magical/divine magical do full."
     }
   },
@@ -1892,8 +1892,8 @@
       "canonicalName": "Physical(Lesser)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed or magical/divine magical weapons do full."
     }
   },
@@ -1905,8 +1905,8 @@
       "canonicalName": "Physical(Major)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed and +1/+2 weapons do half, +3 or better magical/divine magical do full."
     }
   },
@@ -1918,8 +1918,8 @@
       "canonicalName": "Physical(Minor)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "No damage from normal weapons. Blessed weapons do 1/2, +1 or better magical/divine magical do full."
     }
   },
@@ -1931,8 +1931,8 @@
       "canonicalName": "Physical(Special)",
       "value1": "",
       "value2": "",
-      "sourcebook": "",
-      "page": "",
+      "sourcebook": "Imagine Master Index",
+      "page": "1",
       "description": "A special immunity versus specified physical attacks."
     }
   }

@@ -34,7 +34,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.3
+      "weight": 0.3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -72,7 +73,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -110,7 +112,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -148,7 +151,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -186,7 +190,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "433"
     }
   },
   {
@@ -224,7 +230,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "433"
     }
   },
   {
@@ -262,7 +270,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -300,7 +310,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -338,7 +350,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -376,7 +390,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -414,7 +430,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -452,7 +470,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.13
+      "weight": 0.13,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -490,7 +510,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -528,7 +550,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -566,7 +590,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -604,7 +630,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -642,7 +670,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -680,7 +710,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -718,7 +750,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -756,7 +790,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -794,7 +830,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -832,7 +870,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -870,7 +909,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -908,7 +949,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -946,7 +989,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -984,7 +1028,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1022,7 +1067,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1060,7 +1106,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1098,7 +1145,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1136,7 +1185,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1174,7 +1225,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1212,7 +1265,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1250,7 +1305,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1288,7 +1345,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1326,7 +1385,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1364,7 +1424,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.1
+      "weight": 0.1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1402,7 +1463,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1440,7 +1502,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.1
+      "weight": 0.1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1478,7 +1541,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.1
+      "weight": 0.1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1516,7 +1580,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1554,7 +1619,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1592,7 +1658,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1630,7 +1697,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1668,7 +1736,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1706,7 +1775,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1744,7 +1814,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1782,7 +1853,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1820,7 +1892,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1858,7 +1932,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1896,7 +1972,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.44
+      "weight": 0.44,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -1934,7 +2012,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -1972,7 +2051,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2010,7 +2091,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2048,7 +2131,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2086,7 +2170,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2124,7 +2210,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2162,7 +2249,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2200,7 +2289,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2238,7 +2329,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2276,7 +2368,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2314,7 +2407,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2352,7 +2447,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2390,7 +2487,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2428,7 +2527,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2466,7 +2567,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2504,7 +2607,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2542,7 +2647,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.4
+      "weight": 0.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2580,7 +2687,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.6
+      "weight": 0.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2618,7 +2727,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2656,7 +2766,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2694,7 +2805,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2732,7 +2845,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.63
+      "weight": 0.63,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2770,7 +2885,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2808,7 +2924,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -2846,7 +2964,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2884,7 +3003,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2922,7 +3042,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2960,7 +3081,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -2998,7 +3120,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3036,7 +3160,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3074,7 +3200,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.6
+      "weight": 2.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3112,7 +3240,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3150,7 +3279,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3188,7 +3318,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3226,7 +3358,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3264,7 +3398,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3302,7 +3438,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3340,7 +3477,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3378,7 +3516,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3416,7 +3555,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3454,7 +3595,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3492,7 +3635,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3530,7 +3675,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3568,7 +3714,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3606,7 +3753,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3644,7 +3792,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3682,7 +3831,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3720,7 +3871,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3758,7 +3910,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3796,7 +3950,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3834,7 +3990,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3872,7 +4030,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.3
+      "weight": 2.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3910,7 +4070,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -3948,7 +4109,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -3986,7 +4149,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4024,7 +4189,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4062,7 +4229,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4100,7 +4269,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "434"
     }
   },
   {
@@ -4138,7 +4309,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4176,7 +4349,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4214,7 +4389,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4252,7 +4429,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.4
+      "weight": 0.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4290,7 +4469,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.6
+      "weight": 0.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4328,7 +4509,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4366,7 +4549,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4404,7 +4589,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4442,7 +4629,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4480,7 +4669,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4518,7 +4709,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4556,7 +4748,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4594,7 +4788,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4632,7 +4828,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4670,7 +4868,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4708,7 +4908,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4746,7 +4948,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "392"
     }
   },
   {
@@ -4784,7 +4988,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.13
+      "weight": 0.13,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4822,7 +5027,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.06
+      "weight": 0.06,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4860,7 +5066,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.19
+      "weight": 0.19,
+      "sourcebook": "Player's Guide"
     }
   },
   {
@@ -4898,7 +5105,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.6
+      "weight": 0.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -4936,7 +5145,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.6
+      "weight": 0.6,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -4974,7 +5184,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5012,7 +5224,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5050,7 +5264,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5088,7 +5304,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5126,7 +5344,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5164,7 +5384,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5202,7 +5424,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5240,7 +5464,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5278,7 +5504,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5316,7 +5544,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -5354,7 +5584,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "419"
     }
   },
   {
@@ -5392,7 +5624,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -5430,7 +5664,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -5468,7 +5704,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "339"
     }
   },
   {
@@ -5506,7 +5744,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -5544,7 +5784,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -5582,7 +5824,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -5620,7 +5864,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "334"
     }
   },
   {
@@ -5658,7 +5904,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5696,7 +5943,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5734,7 +5983,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5772,7 +6023,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5810,7 +6062,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5848,7 +6101,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -5886,7 +6140,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5924,7 +6180,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -5962,7 +6220,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6000,7 +6259,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.56
+      "weight": 0.56,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6038,7 +6299,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -6076,7 +6339,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6114,7 +6378,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6152,7 +6417,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6190,7 +6456,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -6228,7 +6496,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "418"
     }
   },
   {
@@ -6266,7 +6536,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6304,7 +6575,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.31
+      "weight": 0.31,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6342,7 +6615,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6380,7 +6655,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "417"
     }
   },
   {
@@ -6418,7 +6695,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.63
+      "weight": 0.63,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -6456,7 +6735,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.62
+      "weight": 0.62,
+      "sourcebook": "Imagine Master Index",
+      "page": "435"
     }
   },
   {
@@ -6494,7 +6775,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -6532,7 +6815,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6570,7 +6854,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6608,7 +6893,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.63
+      "weight": 0.63,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6646,7 +6932,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6684,7 +6971,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6722,7 +7010,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -6760,7 +7049,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6798,7 +7089,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6836,7 +7129,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "416"
     }
   },
   {
@@ -6874,7 +7169,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.9
+      "weight": 2.9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -6912,7 +7209,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.9
+      "weight": 2.9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -6950,7 +7249,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -6988,7 +7289,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7026,7 +7329,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7064,7 +7369,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7102,7 +7409,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7140,7 +7449,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7178,7 +7489,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7219,7 +7532,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7260,7 +7575,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7301,7 +7618,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7339,7 +7658,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7377,7 +7698,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7415,7 +7738,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7453,7 +7778,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7491,7 +7818,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7529,7 +7858,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7567,7 +7898,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.25
+      "weight": 0.25,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7605,7 +7938,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7643,7 +7978,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7681,7 +8018,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7719,7 +8058,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7757,7 +8098,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.6
+      "weight": 1.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7795,7 +8138,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.6
+      "weight": 1.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7833,7 +8178,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7871,7 +8218,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.6
+      "weight": 1.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7909,7 +8258,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7947,7 +8298,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -7985,7 +8338,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8023,7 +8378,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8061,7 +8418,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8099,7 +8458,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8137,7 +8498,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8175,7 +8538,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8216,7 +8581,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8254,7 +8621,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8292,7 +8661,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8330,7 +8701,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8368,7 +8741,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8406,7 +8781,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8444,7 +8821,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8482,7 +8861,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8520,7 +8901,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -8558,7 +8941,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8596,7 +8981,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8634,7 +9021,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8672,7 +9061,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8710,7 +9101,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8750,7 +9143,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8788,7 +9183,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8826,7 +9223,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8864,7 +9263,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8902,7 +9303,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.3
+      "weight": 5.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8940,7 +9343,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -8978,7 +9383,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9016,7 +9423,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9054,7 +9463,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9092,7 +9503,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9130,7 +9543,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9170,7 +9585,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9210,7 +9627,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.8
+      "weight": 3.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9250,7 +9669,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.2
+      "weight": 3.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9288,7 +9709,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9328,7 +9751,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9368,7 +9793,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9406,7 +9833,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9444,7 +9873,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9482,7 +9913,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9523,7 +9956,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.2
+      "weight": 3.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9564,7 +9999,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9604,7 +10041,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9644,7 +10083,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9684,7 +10125,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.2
+      "weight": 4.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9724,7 +10167,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.5
+      "weight": 4.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9762,7 +10207,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9800,7 +10247,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.8
+      "weight": 3.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9838,7 +10287,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9876,7 +10327,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9914,7 +10367,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.2
+      "weight": 5.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9952,7 +10407,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -9990,7 +10447,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10028,7 +10487,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10066,7 +10527,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10104,7 +10567,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.5
+      "weight": 4.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10142,7 +10607,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.8
+      "weight": 4.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10180,7 +10647,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10218,7 +10687,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10256,7 +10727,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10294,7 +10767,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.5
+      "weight": 4.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10332,7 +10807,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10370,7 +10847,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10408,7 +10887,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.6
+      "weight": 6.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10446,7 +10927,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10484,7 +10967,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10522,7 +11007,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10560,7 +11047,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.8
+      "weight": 5.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10598,7 +11087,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10636,7 +11127,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10674,7 +11167,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10712,7 +11207,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.8
+      "weight": 5.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10752,7 +11249,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10792,7 +11291,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.8
+      "weight": 2.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10830,7 +11331,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10868,7 +11371,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "263"
     }
   },
   {
@@ -10906,7 +11411,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -10944,7 +11451,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -10987,7 +11496,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11030,7 +11541,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11068,7 +11581,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11106,7 +11621,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11144,7 +11661,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 11
+      "weight": 11,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11182,7 +11701,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11220,7 +11741,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11258,7 +11781,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11296,7 +11821,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11334,7 +11861,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11372,7 +11901,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -11410,7 +11941,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.5
+      "weight": 4.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11448,7 +11981,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.1
+      "weight": 3.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11489,7 +12024,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11530,7 +12067,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11568,7 +12107,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11606,7 +12147,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11644,7 +12187,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11682,7 +12227,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11720,7 +12267,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11758,7 +12307,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11796,7 +12347,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11834,7 +12387,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11872,7 +12427,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "378"
     }
   },
   {
@@ -11910,7 +12467,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -11948,7 +12506,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -11986,7 +12545,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12024,7 +12584,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12064,7 +12625,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12102,7 +12664,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12140,7 +12703,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12180,7 +12744,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.56
+      "weight": 0.56,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12218,7 +12783,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12256,7 +12822,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.43
+      "weight": 0.43,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12294,7 +12861,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -12332,7 +12900,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12370,7 +12940,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12408,7 +12980,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12446,7 +13020,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12484,7 +13060,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12524,7 +13102,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12564,7 +13144,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.56
+      "weight": 0.56,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12602,7 +13184,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12640,7 +13224,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12678,7 +13264,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.43
+      "weight": 0.43,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12716,7 +13304,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12754,7 +13344,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12792,7 +13384,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12830,7 +13424,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12868,7 +13464,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12906,7 +13504,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12944,7 +13544,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -12982,7 +13584,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13023,7 +13627,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13061,7 +13667,9 @@
         "initiative": 2,
         "speed": 1
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13099,7 +13707,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 18
+      "weight": 18,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13137,7 +13747,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13175,7 +13787,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13213,7 +13827,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13251,7 +13867,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13289,7 +13907,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13327,7 +13947,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13365,7 +13987,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13403,7 +14027,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13441,7 +14067,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 60
+      "weight": 60,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13479,7 +14107,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 50
+      "weight": 50,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13517,7 +14147,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13555,7 +14187,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13593,7 +14227,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13651,7 +14287,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13709,7 +14347,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13747,7 +14387,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13785,7 +14427,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 55
+      "weight": 55,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13823,7 +14467,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13861,7 +14507,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13899,7 +14547,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13937,7 +14587,9 @@
         "initiative": 1,
         "speed": 2
       },
-      "weight": 70
+      "weight": 70,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -13975,7 +14627,9 @@
         "initiative": 1,
         "speed": 2
       },
-      "weight": 80
+      "weight": 80,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14013,7 +14667,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14051,7 +14707,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14089,7 +14747,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14127,7 +14787,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 35
+      "weight": 35,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14165,7 +14827,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14203,7 +14867,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14241,7 +14907,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14279,7 +14947,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14327,7 +14997,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14375,7 +15047,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 28
+      "weight": 28,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14413,7 +15087,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14451,7 +15127,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14489,7 +15167,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14527,7 +15207,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14565,7 +15247,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14603,7 +15287,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 14
+      "weight": 14,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14641,7 +15327,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14679,7 +15367,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14717,7 +15407,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14755,7 +15447,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 28
+      "weight": 28,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14793,7 +15487,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14831,7 +15527,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14869,7 +15567,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14907,7 +15607,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14952,7 +15654,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -14997,7 +15701,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15035,7 +15741,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15073,7 +15781,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 25
+      "weight": 25,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15111,7 +15821,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 25
+      "weight": 25,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15149,7 +15861,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15187,7 +15901,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15225,7 +15941,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15263,7 +15981,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15301,7 +16021,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15339,7 +16061,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15377,7 +16101,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 40
+      "weight": 40,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15415,7 +16141,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15453,7 +16181,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15491,7 +16221,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10.5
+      "weight": 10.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15529,7 +16261,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15579,7 +16313,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15629,7 +16365,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 28
+      "weight": 28,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15667,7 +16405,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15705,7 +16445,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 35
+      "weight": 35,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15743,7 +16485,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 38
+      "weight": 38,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15781,7 +16525,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15819,7 +16565,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15857,7 +16605,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15895,7 +16645,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 35
+      "weight": 35,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15933,7 +16685,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -15971,7 +16725,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 14
+      "weight": 14,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16009,7 +16765,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16047,7 +16804,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 25
+      "weight": 25,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16085,7 +16843,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16123,7 +16882,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16161,7 +16921,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16208,7 +16969,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16255,7 +17017,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16293,7 +17056,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16331,7 +17095,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 21
+      "weight": 21,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16369,7 +17134,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 28
+      "weight": 28,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16407,7 +17173,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16445,7 +17212,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16483,7 +17251,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16521,7 +17290,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 28
+      "weight": 28,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16559,7 +17329,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16597,7 +17368,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 14
+      "weight": 14,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -16635,7 +17407,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16673,7 +17447,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16711,7 +17487,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16749,7 +17527,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16789,7 +17569,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6.5
+      "weight": 6.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16829,7 +17611,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16869,7 +17653,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16907,7 +17693,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16945,7 +17733,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -16983,7 +17773,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17021,7 +17813,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17059,7 +17853,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17097,7 +17893,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17135,7 +17933,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17173,7 +17973,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17211,7 +18013,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17249,7 +18053,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17287,7 +18093,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17325,7 +18133,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17363,7 +18173,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17401,7 +18213,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17443,7 +18257,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17485,7 +18301,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17527,7 +18345,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17565,7 +18385,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17603,7 +18425,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17641,7 +18465,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17679,7 +18505,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17717,7 +18545,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17755,7 +18585,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17793,7 +18625,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17831,7 +18665,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17869,7 +18705,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4.6
+      "weight": 4.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17907,7 +18745,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17945,7 +18785,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 13
+      "weight": 13,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -17983,7 +18825,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18021,7 +18865,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18059,7 +18905,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18097,7 +18945,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18143,7 +18993,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18189,7 +19041,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18227,7 +19081,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18265,7 +19121,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12.5
+      "weight": 12.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18303,7 +19161,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 8.5
+      "weight": 8.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18341,7 +19201,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18379,7 +19241,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18417,7 +19281,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18455,7 +19321,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18493,7 +19361,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.63
+      "weight": 0.63,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18531,7 +19401,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18569,7 +19441,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18607,7 +19481,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18645,7 +19521,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18683,7 +19561,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18724,7 +19604,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18762,7 +19644,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18800,7 +19684,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18838,7 +19724,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18876,7 +19764,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18914,7 +19804,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18952,7 +19844,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -18990,7 +19884,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19028,7 +19924,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19066,7 +19964,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19104,7 +20004,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19142,7 +20044,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19180,7 +20084,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19218,7 +20124,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -19256,7 +20164,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -19297,7 +20207,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.6
+      "weight": 1.6,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -19338,7 +20250,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "412"
     }
   },
   {
@@ -19376,7 +20290,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19414,7 +20330,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19452,7 +20370,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19495,7 +20415,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19538,7 +20460,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19576,7 +20500,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19614,7 +20540,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19652,7 +20580,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19690,7 +20620,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19731,7 +20663,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19769,7 +20703,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19807,7 +20743,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.4
+      "weight": 2.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19845,7 +20783,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.4
+      "weight": 2.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19883,7 +20823,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.1
+      "weight": 2.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19921,7 +20863,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.44
+      "weight": 0.44,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19959,7 +20903,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -19997,7 +20943,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20035,7 +20983,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20073,7 +21023,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20111,7 +21063,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20149,7 +21103,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20187,7 +21143,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -20225,7 +21183,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20263,7 +21223,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20301,7 +21263,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20339,7 +21303,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20380,7 +21346,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20418,7 +21386,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20456,7 +21426,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20494,7 +21466,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20532,7 +21506,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20570,7 +21546,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20608,7 +21586,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20646,7 +21626,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20684,7 +21666,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20722,7 +21706,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -20760,7 +21746,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20798,7 +21785,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20836,7 +21824,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20874,7 +21863,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.8
+      "weight": 0.8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20915,7 +21905,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20956,7 +21947,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.88
+      "weight": 0.88,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -20994,7 +21986,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21032,7 +22025,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.3
+      "weight": 1.3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21070,7 +22064,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21108,7 +22103,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21146,7 +22142,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21184,7 +22181,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.44
+      "weight": 0.44,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21222,7 +22220,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21260,7 +22259,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.5
+      "weight": 3.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21298,7 +22298,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21336,7 +22337,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21374,7 +22376,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21412,7 +22415,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21450,7 +22454,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21488,7 +22493,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21526,7 +22532,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -21564,7 +22571,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21602,7 +22611,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21640,7 +22651,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21678,7 +22691,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21716,7 +22731,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21754,7 +22771,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21792,7 +22811,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21833,7 +22854,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21871,7 +22894,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21909,7 +22934,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.4
+      "weight": 2.4,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21947,7 +22974,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -21985,7 +23014,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22023,7 +23054,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22061,7 +23094,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.44
+      "weight": 0.44,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22099,7 +23134,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22137,7 +23174,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22175,7 +23214,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22213,7 +23254,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.38
+      "weight": 0.38,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22251,7 +23294,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22289,7 +23334,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.57
+      "weight": 0.57,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22327,7 +23374,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22365,7 +23414,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.33
+      "weight": 0.33,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22403,7 +23454,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "337"
     }
   },
   {
@@ -22441,7 +23494,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22479,7 +23533,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.63
+      "weight": 0.63,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22517,7 +23572,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.4
+      "weight": 1.4,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22555,7 +23611,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22596,7 +23653,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22634,7 +23692,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22672,7 +23731,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22710,7 +23770,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22748,7 +23809,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.1
+      "weight": 1.1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22786,7 +23848,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22824,7 +23887,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22862,7 +23926,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22900,7 +23965,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22938,7 +24004,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.33
+      "weight": 0.33,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -22976,7 +24043,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -23014,7 +24082,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.3
+      "weight": 1.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23052,7 +24122,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.5
+      "weight": 0.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23090,7 +24162,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23128,7 +24202,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23168,7 +24244,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.1
+      "weight": 2.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23206,7 +24284,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.2
+      "weight": 2.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23244,7 +24324,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23282,7 +24364,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23320,7 +24404,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.3
+      "weight": 1.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23358,7 +24444,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23396,7 +24484,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.2
+      "weight": 1.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23434,7 +24524,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.1
+      "weight": 2.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23472,7 +24564,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23510,7 +24604,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 0.75
+      "weight": 0.75,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23548,7 +24644,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23586,7 +24684,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1
+      "weight": 1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23624,7 +24724,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23662,7 +24764,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2.5
+      "weight": 2.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23703,7 +24807,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.1
+      "weight": 3.1,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23741,7 +24847,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3.2
+      "weight": 3.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23779,7 +24887,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23817,7 +24927,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.8
+      "weight": 1.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23855,7 +24967,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23893,7 +25007,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23931,7 +25047,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -23969,7 +25087,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24007,7 +25127,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24045,7 +25167,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24083,7 +25207,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24121,7 +25247,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 1.5
+      "weight": 1.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24159,7 +25287,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24197,7 +25327,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24239,7 +25371,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.3
+      "weight": 5.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24277,7 +25411,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5.5
+      "weight": 5.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24315,7 +25451,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24353,7 +25491,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24391,7 +25531,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24429,7 +25571,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24467,7 +25611,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24505,7 +25651,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24543,7 +25691,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24581,7 +25731,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24619,7 +25771,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 2
+      "weight": 2,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24657,7 +25811,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24695,7 +25851,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24738,7 +25896,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24776,7 +25936,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24814,7 +25976,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24852,7 +26016,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24890,7 +26056,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24928,7 +26096,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 11
+      "weight": 11,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -24966,7 +26136,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 5
+      "weight": 5,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25004,7 +26176,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25042,7 +26216,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 4
+      "weight": 4,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25080,7 +26256,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25118,7 +26296,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 3
+      "weight": 3,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25156,7 +26336,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25194,7 +26376,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25240,7 +26424,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 14
+      "weight": 14,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25278,7 +26464,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25316,7 +26504,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25354,7 +26544,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25392,7 +26584,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25430,7 +26624,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 16
+      "weight": 16,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25468,7 +26664,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25506,7 +26704,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25544,7 +26744,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 6
+      "weight": 6,
+      "sourcebook": "Imagine Master Index",
+      "page": "338"
     }
   },
   {
@@ -25582,7 +26784,9 @@
         "initiative": 2,
         "speed": 1
       },
-      "weight": 78
+      "weight": 78,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25620,7 +26824,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 65
+      "weight": 65,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25658,7 +26864,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 80
+      "weight": 80,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25696,7 +26904,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 33.8
+      "weight": 33.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25734,7 +26944,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 22
+      "weight": 22,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25772,7 +26984,9 @@
         "initiative": 1,
         "speed": 2
       },
-      "weight": 99
+      "weight": 99,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25810,7 +27024,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 39.2
+      "weight": 39.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25848,7 +27064,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 17.2
+      "weight": 17.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25886,7 +27104,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 60
+      "weight": 60,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25924,7 +27144,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 38
+      "weight": 38,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -25962,7 +27184,9 @@
         "initiative": 4,
         "speed": 2
       },
-      "weight": 112
+      "weight": 112,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26000,7 +27224,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 27.3
+      "weight": 27.3,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26038,7 +27264,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 36
+      "weight": 36,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26076,7 +27304,9 @@
         "initiative": 2,
         "speed": 0
       },
-      "weight": 53.5
+      "weight": 53.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26114,7 +27344,9 @@
         "initiative": 1,
         "speed": 0
       },
-      "weight": 38.2
+      "weight": 38.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26152,7 +27384,9 @@
         "initiative": 1,
         "speed": 2
       },
-      "weight": 85
+      "weight": 85,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26190,7 +27424,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 26
+      "weight": 26,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26228,7 +27464,9 @@
         "initiative": 5,
         "speed": 1
       },
-      "weight": 47.7
+      "weight": 47.7,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26266,7 +27504,9 @@
         "initiative": 1,
         "speed": 1
       },
-      "weight": 70
+      "weight": 70,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26304,7 +27544,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 14
+      "weight": 14,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26342,7 +27584,9 @@
         "initiative": 2,
         "speed": 2
       },
-      "weight": 37
+      "weight": 37,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26380,7 +27624,9 @@
         "initiative": 2,
         "speed": 1
       },
-      "weight": 31.5
+      "weight": 31.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26418,7 +27664,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 50
+      "weight": 50,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26456,7 +27704,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 51
+      "weight": 51,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26494,7 +27744,9 @@
         "initiative": 2,
         "speed": 2
       },
-      "weight": 100
+      "weight": 100,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26532,7 +27784,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 80
+      "weight": 80,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26570,7 +27824,9 @@
         "initiative": 4,
         "speed": 2
       },
-      "weight": 105
+      "weight": 105,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26608,7 +27864,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 31
+      "weight": 31,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26646,7 +27904,9 @@
         "initiative": 3,
         "speed": 1
       },
-      "weight": 70
+      "weight": 70,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26684,7 +27944,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 95.5
+      "weight": 95.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26722,7 +27984,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 36
+      "weight": 36,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26760,7 +28024,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 88
+      "weight": 88,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26798,7 +28064,9 @@
         "initiative": 0,
         "speed": 1
       },
-      "weight": 72.5
+      "weight": 72.5,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26836,7 +28104,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 29.2
+      "weight": 29.2,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26874,7 +28144,9 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 40.8
+      "weight": 40.8,
+      "sourcebook": "Imagine Master Index",
+      "page": "406"
     }
   },
   {
@@ -26912,7 +28184,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 100
+      "weight": 100,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -26950,7 +28223,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -26988,7 +28262,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27026,7 +28301,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 20
+      "weight": 20,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27064,7 +28340,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 30
+      "weight": 30,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27102,7 +28379,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 130
+      "weight": 130,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27140,7 +28418,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 11
+      "weight": 11,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27178,7 +28457,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 9
+      "weight": 9,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27216,7 +28496,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 7
+      "weight": 7,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27254,7 +28535,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 75
+      "weight": 75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27292,7 +28574,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27330,7 +28613,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22.5
+      "weight": 22.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27368,7 +28652,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 97.5
+      "weight": 97.5,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27406,7 +28691,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 12
+      "weight": 12,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27444,7 +28730,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 10
+      "weight": 10,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27482,7 +28769,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 8
+      "weight": 8,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27520,7 +28808,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 75
+      "weight": 75,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27558,7 +28847,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 15
+      "weight": 15,
+      "sourcebook": "XXX"
     }
   },
   {
@@ -27596,7 +28886,8 @@
         "initiative": 0,
         "speed": 0
       },
-      "weight": 22.5
+      "weight": 22.5,
+      "sourcebook": "XXX"
     }
   }
 ]

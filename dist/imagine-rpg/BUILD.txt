@@ -1,7 +1,7 @@
 Imagine RPG system build
-version   0.10.1
+version   0.11.0
 built     2026-09-21
-commit    00a5086
+commit    f228c9d
 files     86
 documents 4395 (abilities 1154, armor 719, classes 103, disabilities 249, equipment 637, immunities 149, races 110, skills 680, weapons 594)
 

@@ -100,6 +100,15 @@ export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 		var tmpcontext = await super._prepareContext(options);
 		tmpcontext.item = this.document;
 		tmpcontext.system = this.document.system;
+
+		// @MARKER UNATTRIBUTED CONTENT
+		// "XXX" is the mark the content build leaves on anything his Master Index does not list,
+		// so an entry nobody has traced to a book is a thing you can search for rather than a
+		// blank box indistinguishable from one that simply has not been filled in yet. The
+		// header shows it in red. Worked out here because the Handlebars environment Foundry
+		// provides has no equality helper to rely on -- the same reason the creature sheet
+		// counts its effect rows in code rather than in the template.
+		tmpcontext.sourceUnknown = (tmpcontext.system?.sourcebook == "XXX");
 		return tmpcontext;
 	}
 }
