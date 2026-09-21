@@ -16,14 +16,24 @@
 
 import { CREATURE_TYPES, CREATURE_BODY_TYPES, CREATURE_ATTACK_CHARTS } from "../creature-tables.mjs";
 import { isOffhandWeapon } from "../combat/combat-rules.mjs";
+import { applySheetTheme } from "../sheet-theme.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
 export default class ImagineCreatureSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+	// @MARKER SHEET THEME
+	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
+	// when the Game Master changes the theme repaints on its next render instead of having to be
+	// closed and reopened. See module/sheet-theme.mjs.
+	_onRender(context, options) {
+		super._onRender?.(context, options);
+		applySheetTheme(this.element);
+	}
+
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "actor", "creature"],
+		classes: ["imagine", "sheet", "actor", "creature"],
 		position: { width: 820, height: 720 },
 		window: { resizable: true },
 		form: { submitOnChange: true },

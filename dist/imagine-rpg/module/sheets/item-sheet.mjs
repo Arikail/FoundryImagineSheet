@@ -28,6 +28,8 @@ import {
 	EFFECT_TRIGGERS, EFFECT_DAMAGE_TYPES, EFFECT_DURATION_TYPES, MAX_ATTACK_EFFECTS
 } from "../creature-tables.mjs";
 
+import { applySheetTheme } from "../sheet-theme.mjs";
+
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 
 // The twelve attributes in the Player's Guide's order -- physical, mental, personal, mystical.
@@ -76,8 +78,18 @@ const CARRIED_LOCATIONS = ["equipped", "carried", "mount", "stash"];
 
 export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
+	// @MARKER SHEET THEME
+	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
+	// when the Game Master changes the theme repaints on its next render instead of having to be
+	// closed and reopened. See module/sheet-theme.mjs.
+	_onRender(context, options) {
+		super._onRender?.(context, options);
+		applySheetTheme(this.element);
+	}
+
+
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item"],
+		classes: ["imagine", "sheet", "item"],
 		position: { width: 560, height: 520 },
 		window: { resizable: true },
 		form: { submitOnChange: true }
@@ -98,7 +110,7 @@ export class ImagineItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 export class ImagineCreatureAttackSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "creature-attack"],
+		classes: ["imagine", "sheet", "item", "creature-attack"],
 		position: { width: 620, height: 640 },
 		actions: {
 			addEffect: ImagineCreatureAttackSheet.#onAddEffect,
@@ -166,7 +178,7 @@ export class ImagineCreatureAttackSheet extends ImagineItemSheet {
 export class ImaginePowerSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "power"]
+		classes: ["imagine", "sheet", "item", "power"]
 	};
 
 	static PARTS = {
@@ -196,7 +208,7 @@ export class ImaginePowerSheet extends ImagineItemSheet {
 export class ImagineEquipmentSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "equipment"],
+		classes: ["imagine", "sheet", "item", "equipment"],
 		position: { width: 560, height: 520 }
 	};
 
@@ -216,7 +228,7 @@ export class ImagineEquipmentSheet extends ImagineItemSheet {
 export class ImagineWeaponSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "weapon"],
+		classes: ["imagine", "sheet", "item", "weapon"],
 		position: { width: 620, height: 680 }
 	};
 
@@ -253,7 +265,7 @@ export class ImagineWeaponSheet extends ImagineItemSheet {
 export class ImagineSkillSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "skill"],
+		classes: ["imagine", "sheet", "item", "skill"],
 		position: { width: 600, height: 620 }
 	};
 
@@ -293,7 +305,7 @@ export class ImagineSkillSheet extends ImagineItemSheet {
 export class ImagineTraitSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "trait"],
+		classes: ["imagine", "sheet", "item", "trait"],
 		position: { width: 560, height: 460 }
 	};
 
@@ -314,7 +326,7 @@ export class ImagineTraitSheet extends ImagineItemSheet {
 export class ImagineClassSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "class"],
+		classes: ["imagine", "sheet", "item", "class"],
 		position: { width: 640, height: 700 },
 		actions: {
 			addTitle: ImagineClassSheet.#onAddTitle,
@@ -413,7 +425,7 @@ export class ImagineClassSheet extends ImagineItemSheet {
 export class ImagineArmorSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "armor"],
+		classes: ["imagine", "sheet", "item", "armor"],
 		position: { width: 640, height: 760 }
 	};
 
@@ -459,7 +471,7 @@ export class ImagineArmorSheet extends ImagineItemSheet {
 export class ImagineRaceSheet extends ImagineItemSheet {
 
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "item", "race"],
+		classes: ["imagine", "sheet", "item", "race"],
 		position: { width: 640, height: 760 }
 	};
 

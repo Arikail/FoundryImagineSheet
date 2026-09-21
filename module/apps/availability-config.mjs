@@ -12,6 +12,7 @@
 //==================================================================================================================
 
 import { SOURCEBOOKS, MAGIC_SUBSYSTEMS, getSourcebookId } from "../availability.mjs";
+import { applySheetTheme } from "../sheet-theme.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
@@ -20,10 +21,20 @@ const OVERRIDE_TYPES = ["skill", "race", "class", "weapon", "armor", "equipment"
 
 export default class ImagineAvailabilityConfig extends HandlebarsApplicationMixin(ApplicationV2) {
 
+	// @MARKER SHEET THEME
+	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
+	// when the Game Master changes the theme repaints on its next render instead of having to be
+	// closed and reopened. See module/sheet-theme.mjs.
+	_onRender(context, options) {
+		super._onRender?.(context, options);
+		applySheetTheme(this.element);
+	}
+
+
 	static DEFAULT_OPTIONS = {
 		id: "imagine-availability-config",
 		tag: "form",
-		classes: ["imagine", "themed", "theme-light", "availability-config"],
+		classes: ["imagine", "availability-config"],
 		window: { title: "Imagine RPG — Content Availability", contentClasses: ["standard-form"] },
 		position: { width: 580, height: 680 },
 		form: { handler: ImagineAvailabilityConfig.#onSubmit, closeOnSubmit: true },

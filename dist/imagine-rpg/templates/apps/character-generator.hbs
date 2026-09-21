@@ -108,8 +108,17 @@
 	{{!-- @MARKER CLASS --}}
 	{{#if isClass}}
 		<h2>Class</h2>
+		{{!-- Each class that this character cannot take says why in its own label, and the count
+		      below says how many are open, so a low attribute reads as a rule rather than as a
+		      broken list. Nothing is hidden or disabled: the requirement is a rule the player may
+		      knowingly break with the override below. --}}
 		<label class="row">Class
-			<select name="className">{{#each classOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select></label>
+			<select name="className">{{#each classOptions as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}} class="{{#if o.qualified}}qualified{{else}}unqualified{{/if}}">{{o.label}}</option>{{/each}}</select></label>
+		{{#if classOfferedCount}}
+		<p class="muted">{{classQualifiedCount}} of {{classOfferedCount}} classes are open to this
+			character as rolled. The rest name what they are short of, and can still be taken with
+			the override.</p>
+		{{/if}}
 		{{#if klass}}
 		<div class="chargen-class">
 			<h3>{{klass.name}} <span class="muted">{{klass.classType}}</span></h3>

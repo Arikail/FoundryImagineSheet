@@ -223,12 +223,47 @@ import {
 			toOptions: tmpAttrOptions(tmpState.humanMoves[tmpN]?.to, false) }));
 
 		// @MARKER CLASS
+		// Every class the campaign allows is offered, and each one that this character cannot take
+		// SAYS SO IN ITS OWN LABEL rather than only after it has been picked.
+		//
+		// This list used to be bare names. Picking one and being told "This character does not
+		// qualify" was the only way to find out, so a player had to walk the dropdown one entry at
+		// a time -- and for a character with a low attribute that is most of the list. Daryl
+		// reported it on 2026-09-20 as "cannot select any class but GME", which is exactly what it
+		// looks like from the outside: GME is the one class with no attribute requirement at all,
+		// so on a Nixie -- Strength capped at 11 by its race, against the 13, 14 or 15 that 28
+		// classes ask for -- it can be the only name that does not refuse.
+		//
+		// Nothing is hidden and nothing is disabled. The requirement is a rule the player may
+		// knowingly break with the override tick, so the entry stays selectable and the label
+		// carries the reason; hiding them would silently shrink a list the Game Master expects to
+		// be complete, and would make the override unreachable for the very classes it is for.
 		var tmpClasses = (tmpContent.classes ?? []).filter(tmpDoc => tmpD.available(tmpDoc))
 			.sort((a, b) => a.name.localeCompare(b.name));
+		var tmpQualifiedCount = 0;
 		tmpView.classOptions = [tmpOption("", "-- choose --", tmpState.className)]
-			.concat(tmpClasses.map(tmpDoc => tmpOption(tmpDoc.name,
-				tmpDoc.name + (isClassBlockedForRaces(tmpDoc.system.blockedRaces, tmpD.raceNames) ? " (not usual for this race)" : ""),
-				tmpState.className)));
+			.concat(tmpClasses.map(tmpDoc => {
+				var tmpDocBlocked = isClassBlockedForRaces(tmpDoc.system.blockedRaces, tmpD.raceNames);
+				var tmpDocIssues = tmpD.hasBase
+					? checkClassQualification(tmpDoc.system, tmpD.finals, tmpD.raceNames, false) : [];
+				if (!tmpDocIssues.length && !tmpDocBlocked) { tmpQualifiedCount += 1; }
+
+				// "Needs STR 13; has 6." is the right sentence once a class has been chosen and
+				// there is room to explain. In a dropdown it has to fit beside ninety-nine others,
+				// so the shortfalls collapse to "needs STR 13, INT 15".
+				var tmpWhy = [];
+				if (tmpDocIssues.length) {
+					tmpWhy.push("needs " + tmpDocIssues
+						.map(tmpIssue => (tmpIssue.match(/Needs (\w+ \d+)/) ?? [])[1])
+						.filter(tmpShort => tmpShort).join(", "));
+				}
+				if (tmpDocBlocked) { tmpWhy.push("not usual for this race"); }
+				return tmpOption(tmpDoc.name,
+					tmpDoc.name + (tmpWhy.length ? " — " + tmpWhy.join("; ") : ""),
+					tmpState.className, { qualified: !tmpDocIssues.length && !tmpDocBlocked });
+			}));
+		tmpView.classQualifiedCount = tmpQualifiedCount;
+		tmpView.classOfferedCount = tmpClasses.length;
 		tmpView.klass = tmpD.klass ? {
 			name: tmpD.klass.name, classType: tmpD.klass.system.classType,
 			alignment: tmpD.klass.system.requirements?.alignment ?? "",

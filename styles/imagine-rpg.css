@@ -6,17 +6,40 @@
  * text. On a sheet with this many numbers, that distinction carries a lot of weight.
  */
 
-.imagine.sheet {
+/* @MARKER PALETTE
+   Every colour the sheets use is named here and nowhere else, so the whole look can be swapped by
+   redefining the names rather than by hunting hexes. That is what the "Sheet colours" setting
+   does: "Imagine paper" leaves these as they are, and "Foundry standard" maps each one onto
+   Foundry's own theme variable further down, so the sheets follow the interface into dark mode.
+   Declared on .imagine rather than .imagine.sheet because the generator, the level-up window and
+   the availability window are not sheets and need the same palette. */
+.imagine {
 	--imagine-ink: #1c1a17;
 	--imagine-muted: #6d675e;
 	--imagine-rule: #cfc7b8;
 	--imagine-panel: #f7f4ee;
 	--imagine-accent: #6b4e2e;
 	--imagine-derived: #2f2a22;
+
+	/* The page itself, and the fields on it. */
+	--imagine-paper: #fdfbf6;
+	--imagine-field: #fff;
+
+	/* @MARKER TABLE COLOURS
+	   A table on these sheets is long and almost entirely numbers, so the eye needs help holding a
+	   row. Three separate jobs, which is why there are three colours and not one: a tint that
+	   alternates so a row can be followed across to its far column, a heavier tint on hover for
+	   the row under the pointer, and a hairline between rows that is lighter than the rule used
+	   around panels -- a full-strength line every few pixels turns a long table into a grid and is
+	   harder to read, not easier. */
+	--imagine-row-alt: #f6f2e9;
+	--imagine-row-hover: #ece5d5;
+	--imagine-rule-soft: #e4ddcd;
+	--imagine-head: #efe9dc;
 }
 
 .imagine.sheet .window-content {
-	background: #fdfbf6;
+	background: var(--imagine-paper);
 	color: var(--imagine-ink);
 	font-size: 13px;
 }
@@ -132,7 +155,13 @@
 	margin-bottom: 10px;
 }
 
+/* The header sits on its own tint and is anchored to the top of the scroll region, so a long table
+   still says which column is which once the first screen has gone by. */
 .imagine.sheet thead th {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--imagine-head);
 	font-size: 9px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -145,11 +174,17 @@
 
 .imagine.sheet tbody td {
 	padding: 3px 6px;
-	border-bottom: 1px solid #ece7dc;
+	border-bottom: 1px solid var(--imagine-rule-soft);
+}
+
+/* Alternating rows, so a value in the last column can be traced back to the name in the first.
+   These tables run to seventy skills, and an unbroken field of numbers cannot be read across. */
+.imagine.sheet tbody tr:nth-child(even) td {
+	background: var(--imagine-row-alt);
 }
 
 .imagine.sheet tbody tr:hover td {
-	background: #f3efe6;
+	background: var(--imagine-row-hover);
 }
 
 .col-num, .col-roll { text-align: center; width: 1%; white-space: nowrap; }
@@ -166,7 +201,7 @@
 .attribute-table input[type="number"] {
 	width: 46px;
 	text-align: center;
-	background: #fff;
+	background: var(--imagine-field);
 	border: 1px solid var(--imagine-rule);
 	border-radius: 2px;
 	padding: 1px 2px;
@@ -786,7 +821,7 @@
 .body-table .wound-input {
 	width: 46px;
 	text-align: center;
-	background: #fff;
+	background: var(--imagine-field);
 	border: 1px solid var(--imagine-rule);
 	border-radius: 2px;
 	padding: 1px 2px;
@@ -880,7 +915,7 @@
 	--imagine-panel: #f7f4ee;
 	--imagine-accent: #6b4e2e;
 }
-.imagine.character-generator .window-content { background: #fdfbf6; color: var(--imagine-ink); font-size: 13px; }
+.imagine.character-generator .window-content { background: var(--imagine-paper); color: var(--imagine-ink); font-size: 13px; }
 .chargen { display: flex; flex-direction: column; height: 100%; gap: 8px; }
 .chargen-steps { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0 0 6px;
 	border-bottom: 2px solid var(--imagine-rule); }
@@ -935,19 +970,25 @@
    controls the sheets actually use, so the fields stay legible even where a variable is missed.
    A description box also spans its section and can be dragged taller: his entries run to a full
    paragraph -- "Arch Physical" is five lines -- and a short fixed box simply cut them off. */
-.imagine.sheet, .imagine.character-generator, .imagine.level-up, .imagine.availability-config {
-	--input-background-color: #fff;
+/* :not(.imagine-foundry) is load-bearing, not tidiness. These five lines push the paper palette
+   INTO Foundry's own variables; the Foundry-standard theme below reads Foundry's variables back
+   OUT into the palette. Left unscoped, the two definitions reference each other, CSS declares the
+   whole cycle invalid, and every colour in it resolves to nothing -- which showed up as black text
+   on a transparent sheet the first time the theme was switched. */
+.imagine.sheet:not(.imagine-foundry), .imagine.character-generator:not(.imagine-foundry),
+.imagine.level-up:not(.imagine-foundry), .imagine.availability-config:not(.imagine-foundry) {
+	--input-background-color: var(--imagine-field);
 	--input-text-color: var(--imagine-ink);
 	--input-border-color: var(--imagine-rule);
 	--input-placeholder-color: var(--imagine-muted);
 	--color-text-primary: var(--imagine-ink);
 }
-.imagine input[type="text"],
-.imagine input[type="number"],
-.imagine select,
-.imagine select option,
-.imagine textarea {
-	background: #fff;
+.imagine:not(.imagine-foundry) input[type="text"],
+.imagine:not(.imagine-foundry) input[type="number"],
+.imagine:not(.imagine-foundry) select,
+.imagine:not(.imagine-foundry) select option,
+.imagine:not(.imagine-foundry) textarea {
+	background: var(--imagine-field);
 	color: var(--imagine-ink);
 	border: 1px solid var(--imagine-rule);
 }
@@ -1029,4 +1070,44 @@
 	line-height: 1;
 	padding: 0 6px;
 	font-size: 11px;
+}
+
+/* @MARKER FOUNDRY STANDARD THEME
+   What "Sheet colours: Foundry standard" does. The setting puts `imagine-foundry` on the window
+   root INSTEAD of the themed/theme-light pair (module/sheet-theme.mjs), and this block re-points
+   every name in the palette at Foundry's own variable. Nothing else in this stylesheet changes:
+   because the colours were all named in one place, the whole look follows from these twenty lines.
+   Each var() carries a fallback, so if Foundry ever renames one of its variables the sheet comes
+   out plainly readable rather than transparent-on-transparent. */
+.imagine.imagine-foundry {
+	--imagine-ink: var(--color-text-primary, #dcd7cd);
+	--imagine-muted: var(--color-text-secondary, #a6a096);
+	--imagine-rule: var(--color-border, #6a6a6a);
+	--imagine-panel: var(--color-bg-option, rgba(255, 255, 255, 0.05));
+	--imagine-accent: var(--color-warm-2, #7a6a52);
+	--imagine-derived: var(--color-text-primary, #dcd7cd);
+
+	--imagine-paper: transparent;
+	--imagine-field: var(--input-background-color, rgba(0, 0, 0, 0.25));
+
+	--imagine-row-alt: rgba(255, 255, 255, 0.035);
+	--imagine-row-hover: rgba(255, 255, 255, 0.09);
+	--imagine-rule-soft: rgba(255, 255, 255, 0.09);
+	--imagine-head: rgba(255, 255, 255, 0.06);
+}
+
+/* The form-field rules earlier in this file set the paper colours OUTRIGHT as a backstop, which is
+   right for the paper look and wrong here -- it would paint white boxes onto a dark sheet. Under
+   this theme the fields go back to inheriting, and Foundry's own input styling shows through. */
+.imagine.imagine-foundry input[type="text"],
+.imagine.imagine-foundry input[type="number"],
+.imagine.imagine-foundry select,
+.imagine.imagine-foundry textarea {
+	background: var(--imagine-field);
+	color: var(--imagine-ink);
+	border-color: var(--imagine-rule);
+}
+.imagine.imagine-foundry select option {
+	background: var(--color-bg, #1b1b1b);
+	color: var(--imagine-ink);
 }

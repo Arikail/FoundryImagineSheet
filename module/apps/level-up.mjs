@@ -23,15 +23,26 @@ import { resolveGoalAdvance, checkSkillPointSpend, getTitleEndurance } from "../
 import { buildLevelUpView, buildGoalStep, buildTitleStep, newLevelUpWorking,
          ATTRIBUTE_LABELS } from "../levelup-view.mjs";
 import { addExperience, commitGoal, commitTitle } from "../advancement.mjs";
+import { applySheetTheme } from "../sheet-theme.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
 export default class ImagineLevelUp extends HandlebarsApplicationMixin(ApplicationV2) {
 
+	// @MARKER SHEET THEME
+	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
+	// when the Game Master changes the theme repaints on its next render instead of having to be
+	// closed and reopened. See module/sheet-theme.mjs.
+	_onRender(context, options) {
+		super._onRender?.(context, options);
+		applySheetTheme(this.element);
+	}
+
+
 	static DEFAULT_OPTIONS = {
 		id: "imagine-level-up",
 		tag: "form",
-		classes: ["imagine", "themed", "theme-light", "level-up"],
+		classes: ["imagine", "level-up"],
 		window: { title: "Imagine RPG — Level Up", resizable: true },
 		// Set per character in _prepareContext's sibling below, so two open windows are told apart.
 		position: { width: 640, height: 720 },

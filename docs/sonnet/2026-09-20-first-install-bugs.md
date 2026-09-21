@@ -160,3 +160,49 @@ make it selectable; the creature sheet still shows a plain dropdown and that is 
 creature is Game Master content, authored rather than generated, and his rule is about characters.
 It is written here only so the asymmetry reads as a decision rather than an oversight if someone
 diffs the two sheets. `DECISIONS.md` 2026-09-20 carries the reasoning.
+
+## 8. Carry the qualification labels into the character sheet's class display
+
+**What to do.** The generator's class dropdown now names what each class is short of
+("Acrobat — needs STR 13") and counts how many are open, which is what turned "class selection is
+broken" back into "this character has a low Strength". The character sheet's own class display has
+no equivalent: a Game Master looking at a finished character cannot see which classes it could
+change to, or why the one it has was allowed.
+
+Add the same to the character sheet's class area — read `checkClassQualification` against the
+actor's final attributes, the way `chargen-view.mjs` does for the dropdown.
+
+**Files.** `module/sheets/actor-character-sheet.mjs` (context), `templates/actor/tab-description.hbs`
+or wherever the class is shown. `checkClassQualification` is exported from `module/chargen-rules.mjs`
+and takes `(classSystem, finals, raceNames, isBlocked)`.
+
+**Done looks like.** A character taken with the override says so on its sheet rather than looking
+like any other, and the reason it did not qualify is still readable after creation.
+
+**Already decided.** Shortfall only in tight spaces, the full "Needs STR 13; has 6." sentence where
+there is room — that is the split the generator already makes, and the reason is in the @MARKER
+CLASS comment in `chargen-view.mjs`. Do not hide or disable anything.
+
+## 9. Check the rest of the stylesheet for colours the theme switch cannot reach
+
+**What to do.** The Foundry-standard theme works by re-pointing the palette names in `@MARKER
+PALETTE`, so any colour written as a literal hex somewhere else in `styles/imagine-rpg.css` will
+stay put when the theme changes and may end up unreadable. The obvious ones were hoisted this pass
+(`#fdfbf6`, `#fff`, `#f3efe6`, `#ece7dc`); the alarm red (`#a2462e`), the confirm green (`#3f6b2e`),
+the chip border and the chargen panel colours were not.
+
+Walk the file for remaining literals, decide for each whether it is a palette colour (hoist it) or
+genuinely fixed regardless of theme (leave it, with a comment saying so), and check the result in
+both themes.
+
+**Files.** `styles/imagine-rpg.css`.
+
+**Done looks like.** Switching to Foundry standard leaves nothing illegible. The quick check is the
+one used this pass: render a sheet, read `getComputedStyle` for text and background on each region
+in both themes, and confirm the pair never collapses to the same colour or to black-on-transparent.
+
+**Already decided.** Every `var()` in the `@MARKER FOUNDRY STANDARD THEME` block carries a literal
+fallback on purpose, so a Foundry variable that is renamed or missing degrades to something
+readable rather than to nothing. Keep that when adding more. And do not remove the
+`:not(.imagine-foundry)` scoping on the paper theme's input-variable block — that is what stops the
+definition cycle described in `DECISIONS.md`.

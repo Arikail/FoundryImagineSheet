@@ -17,6 +17,7 @@ import { explainAvailability } from "../availability.mjs";
 import { rollAttributeSets, rollHandedness, rollStartingAge, assembleCharacter, ATTRIBUTE_ORDER } from "../chargen-rules.mjs";
 import { rollPhysique } from "../physique-rules.mjs";
 import { STEPS, newGeneratorState, deriveGenerator, checkStep, buildGeneratorView, choicesFromState } from "../chargen-view.mjs";
+import { applySheetTheme } from "../sheet-theme.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
@@ -28,7 +29,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	static DEFAULT_OPTIONS = {
 		id: "imagine-character-generator",
 		tag: "form",
-		classes: ["imagine", "themed", "theme-light", "character-generator"],
+		classes: ["imagine", "character-generator"],
 		window: { title: "Imagine RPG — New Character", resizable: true },
 		position: { width: 760, height: 760 },
 		// Enter in a text field submits the form; that only records the choices and redraws.
@@ -159,6 +160,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	// is never interrupted by a redraw.
 	_onRender(context, options) {
 		super._onRender?.(context, options);
+		applySheetTheme(this.element);
 		if (context.noContent) {
 			ui.notifications.warn("No Imagine content found. The Game Master needs to import it first: game.imagine.importContent()");
 		}

@@ -16,6 +16,7 @@ import { rollWeaponAttack } from "../combat/attack.mjs";
 import { chooseBestArmor } from "../equip-rules.mjs";
 import { rollHandedness } from "../chargen-rules.mjs";
 import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
+import { applySheetTheme } from "../sheet-theme.mjs";
 import {
 	resolveSkillOutcome, pickBestSkillRoll, canTransferSlot, canSacrificeSlot,
 	SLOT_TRANSFERS, SLOT_SACRIFICE_DICE, SACRIFICEABLE_SLOTS
@@ -26,8 +27,18 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 
 export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
+	// @MARKER SHEET THEME
+	// Painted at render rather than declared in DEFAULT_OPTIONS.classes, so a window already open
+	// when the Game Master changes the theme repaints on its next render instead of having to be
+	// closed and reopened. See module/sheet-theme.mjs.
+	_onRender(context, options) {
+		super._onRender?.(context, options);
+		applySheetTheme(this.element);
+	}
+
+
 	static DEFAULT_OPTIONS = {
-		classes: ["imagine", "themed", "theme-light", "sheet", "actor", "character"],
+		classes: ["imagine", "sheet", "actor", "character"],
 		position: { width: 820, height: 720 },
 		window: { resizable: true },
 		form: { submitOnChange: true },

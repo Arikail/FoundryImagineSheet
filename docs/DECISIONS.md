@@ -2997,3 +2997,69 @@ whenever a build is handed over, so Foundry itself can tell the builds apart. An
 prints it — "Imagine RPG | Initialising system, version 0.2.0" — so "which build am I actually
 running" is answerable from the console (F12) and comparable against `dist/imagine-rpg/BUILD.txt`,
 which already carries the date and commit.
+
+## "Cannot select any class but GME" was the attribute requirements, unexplained (2026-09-20)
+
+Reported as class selection being broken. It is not: the list offers every class the campaign
+allows, and the selection works. What was broken was that a class said nothing about whether this
+character could take it until after it had been picked — and then only "This character does not
+qualify", with no way to tell which of the ninety-nine others would fare better.
+
+`checkClassQualification` compares each class's `attribQualify` row against the character's FINAL
+attributes, after racial modifiers and the racial ceiling. Driving the real modules: a Nixie with
+rolled attributes qualifies for **43 of 103** classes, and a Nixie with 10s across the board
+qualifies for **1** — GME, the only class in the game with no attribute requirement at all. That is
+exactly the reported symptom, reproduced, and it is the rules working. A Nixie's Strength is capped
+at 11 by its own race against the 13, 14 or 15 that twenty-eight classes ask for, so a middling roll
+closes most of the list.
+
+**The fix is to say so in the list.** Every class now carries its own shortfall in its label —
+"Acrobat — needs STR 13", "Alchemist — needs KNW 14, AUR 15, WIL 14" — and a line under the
+dropdown says how many are open ("7 of 103 classes are open to this character as rolled"). The long
+sentence stays for the chosen class, where there is room for it; in a dropdown competing with a
+hundred siblings it collapses to the shortfall alone.
+
+**Nothing is hidden and nothing is disabled.** The requirement is a rule the player may knowingly
+break with the override tick, exactly as his sheet allows. Hiding the entries would silently shrink
+a list the Game Master expects to be complete, and would put the override out of reach of the very
+classes it exists for.
+
+## A theme switch, and the definition cycle it exposed (2026-09-20)
+
+Asked for: better colours in the tables, and a tick to use the standard theme instead.
+
+**Tables.** One tint was doing three jobs badly. There are now three: alternating rows, so a value
+in the last column can be traced back to the name in the first — these tables run to seventy skills
+and an unbroken field of numbers cannot be read across; a heavier tint under the pointer; and a
+hairline between rows lighter than the rule around panels, because a full-strength line every few
+pixels turns a long table into a grid and is harder to read, not easier. Table headers are also
+sticky now, so a long table still says which column is which after the first screen.
+
+**The switch** is `Sheet colours`: "Imagine paper" (the default, unchanged) or "Foundry standard".
+It is a CLIENT setting, not a world one — unlike handedness, which is a rule and belongs to the
+table, this is eyesight and preference, and two players at one table may reasonably want different
+answers. The classes are applied in `_onRender` rather than declared in `DEFAULT_OPTIONS.classes`,
+because a window's static classes are fixed when it is constructed and a sheet already open would
+have kept the old palette until closed and reopened; the setting's `onChange` re-renders instead.
+
+**What made this cheap** is that every colour was already named in one place. The whole
+Foundry-standard theme is twenty lines that re-point those names at Foundry's own variables, and
+nothing else in the stylesheet changes. Getting there meant hoisting the last hardcoded hexes
+(`#fdfbf6`, `#fff`, `#f3efe6`, `#ece7dc`) into the palette first.
+
+**The trap, found by testing rather than by reading.** The paper theme pushes its colours INTO
+Foundry's input variables (`--input-background-color`, `--color-text-primary`, ...) so that controls
+this stylesheet never names still come out right. The new theme read those same variables back OUT
+into the palette. That is a definition cycle: CSS declares the whole cycle invalid and every colour
+in it resolves to nothing, which rendered as BLACK TEXT ON A TRANSPARENT SHEET the first time the
+theme was switched. The fix is `:not(.imagine-foundry)` on the pushing half, and the reason is
+written beside it, because the two blocks are four hundred lines apart and the cycle is invisible
+from either end.
+
+**Verified, 2026-09-20:** both themes resolved off a real rendered sheet. Paper gives ink
+`rgb(28,26,23)` on `rgb(253,251,246)` with white fields; Foundry standard gives `rgb(220,215,205)`
+on transparent with `rgba(0,0,0,0.25)` fields — light on dark, legible, and the fallbacks resolve
+even with none of Foundry's own variables present. Row striping and the sticky header work in both.
+All 42 modules parse, including the new `module/sheet-theme.mjs`; eight suites, 1,200 checks,
+passing. Not verified: no Foundry V14 install, so the mapping onto Foundry's real variable values
+is unproven — which is why every `var()` in that block carries a literal fallback.

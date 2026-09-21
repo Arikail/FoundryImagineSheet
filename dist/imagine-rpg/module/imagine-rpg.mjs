@@ -46,6 +46,7 @@ import {
 	registerAvailabilitySettings, registerAvailabilityEnforcement,
 	getAvailabilityRules, explainAvailability
 } from "./availability.mjs";
+import { refreshOpenWindows } from "./sheet-theme.mjs";
 
 // @MARKER SYSTEM CONSTANTS
 export const IMAGINE = {
@@ -228,6 +229,25 @@ Hooks.once("init", function () {
 		config: false,
 		type: Boolean,
 		default: false
+	});
+
+	// @MARKER SHEET THEME
+	// Which palette the Imagine windows paint themselves in. The system's own look is cream paper
+	// with brown ink, and that is the default for a reason -- a sheet with this many numbers reads
+	// better as a printed page, and entered values are told from derived ones by field-against-flat
+	// text, which wants a light ground. But a Game Master running a dark table had these windows
+	// glaring out of an otherwise dark screen with no way to say otherwise, so the other choice is
+	// to stop overriding and let Foundry's own theme through. See module/sheet-theme.mjs.
+	game.settings.register("imagine-rpg", "sheetTheme", {
+		name: "Sheet colours",
+		hint: "Imagine paper: the system's own cream-and-ink look, the same in every world. "
+		    + "Foundry standard: follow whatever theme Foundry itself is using, light or dark.",
+		scope: "client",
+		config: true,
+		type: String,
+		choices: { paper: "Imagine paper", foundry: "Foundry standard" },
+		default: "paper",
+		onChange: refreshOpenWindows
 	});
 
 	// @MARKER HANDEDNESS
