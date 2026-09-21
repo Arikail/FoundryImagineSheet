@@ -1,0 +1,43 @@
+{{!--
+	Add an item. One root element, as the framework requires of every PART.
+
+	The system's content lives in compendia, not in Foundry's Items sidebar, so this is how a real
+	item gets onto a character without opening a compendium window and dragging. See
+	module/apps/item-picker.mjs for why the sidebar is left empty.
+--}}
+<div class="imagine item-picker">
+
+	{{#if noContent}}
+	<p class="alarm">No Imagine {{label}} content was found. The Game Master needs to import it
+		first, from the console: <code>game.imagine.importContent()</code></p>
+	{{else}}
+
+	<header class="picker-head">
+		<label class="row">Search
+			<input type="text" name="search" value="{{search}}" placeholder="part of a name"
+				autocomplete="off"></label>
+		<p class="muted">
+			{{#if search}}{{matched}} of {{total}} match{{else}}{{total}} available{{/if}}{{#if truncated}},
+			showing the first {{limit}} &mdash; type to narrow it{{/if}}
+		</p>
+	</header>
+
+	<section class="picker-body">
+		{{#each shown as |e|}}
+		<button type="button" class="picker-row" data-action="pickItem" data-id="{{e.id}}">
+			<span class="picker-name">{{e.name}}</span>
+			{{#if e.system.sourcebook}}<span class="muted">{{e.system.sourcebook}}</span>{{/if}}
+		</button>
+		{{else}}
+		<p class="empty">Nothing matches &ldquo;{{search}}&rdquo;.</p>
+		{{/each}}
+	</section>
+
+	<footer class="picker-foot">
+		<p class="muted">Added items are <strong>carried</strong>, not equipped. The window stays
+			open so a character can be kitted out in one go.</p>
+		<button type="button" data-action="blankItem">Make a blank {{label}} instead</button>
+	</footer>
+
+	{{/if}}
+</div>

@@ -1162,3 +1162,67 @@
 .imagine.availability-config .window-content > [data-application-part="footer"] {
 	flex: 0 0 auto;
 }
+
+/* @MARKER ITEM PICKER
+   The window the Equipment tab's Add buttons open. Its content lives in compendia rather than in
+   Foundry's Items sidebar, so this is the route to a real item -- see module/apps/item-picker.mjs.
+   A fixed head and foot with the list scrolling between them, the same shape the sheets use. */
+.imagine.item-picker .window-content {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--imagine-paper);
+	color: var(--imagine-ink);
+	font-size: 13px;
+}
+.imagine.item-picker .window-content > .item-picker {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.imagine.item-picker .picker-head,
+.imagine.item-picker .picker-foot { flex: 0 0 auto; }
+.imagine.item-picker .picker-head .row { display: flex; align-items: center; gap: 8px; }
+.imagine.item-picker .picker-head input[type="text"] { flex: 1; }
+.imagine.item-picker .picker-head p { margin: 2px 0 0; font-size: 11px; }
+
+.imagine.item-picker .picker-body {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	border: 1px solid var(--imagine-rule);
+	border-radius: 3px;
+	background: var(--imagine-panel);
+}
+
+/* Each row is a button, so it is reachable by keyboard and reads as the action it is. */
+.imagine.item-picker .picker-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 10px;
+	width: 100%;
+	text-align: left;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--imagine-rule-soft);
+	border-radius: 0;
+	padding: 4px 8px;
+	font: inherit;
+	/* A button does NOT inherit colour -- the user agent gives it `buttontext` -- so without this
+	   the names came out as pale grey on cream and were all but unreadable. The same trap the form
+	   fields fell into; see @MARKER FORM FIELDS ON PAPER. */
+	color: inherit;
+	cursor: pointer;
+}
+.imagine.item-picker .picker-row:hover {
+	background: var(--imagine-accent);
+	color: #fff;
+}
+.imagine.item-picker .picker-row:hover .muted { color: #f0e6d6; }
+.imagine.item-picker .picker-name { font-weight: 600; }
+.imagine.item-picker .picker-foot { display: flex; align-items: center; gap: 10px; }
+.imagine.item-picker .picker-foot p { flex: 1; margin: 0; font-size: 11px; }
+.imagine.item-picker .empty { padding: 10px; color: var(--imagine-muted); }

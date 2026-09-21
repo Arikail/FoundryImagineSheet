@@ -17,6 +17,7 @@ import { chooseBestArmor } from "../equip-rules.mjs";
 import { rollHandedness } from "../chargen-rules.mjs";
 import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
 import { applySheetTheme } from "../sheet-theme.mjs";
+import ImagineItemPicker from "../apps/item-picker.mjs";
 import {
 	resolveSkillOutcome, pickBestSkillRoll, canTransferSlot, canSacrificeSlot,
 	SLOT_TRANSFERS, SLOT_SACRIFICE_DICE, SACRIFICEABLE_SLOTS
@@ -528,19 +529,15 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 	// Equipment" weighing nothing is not what anyone wanted; the sheet is where it becomes real.
 	// Dragging from a compendium still works and is still the better route for anything the
 	// system already knows -- see docs/ADDING-CONTENT.md for putting it in a pack instead.
+	// This used to create a blank "New Weapon" outright, which is why Daryl could not find a way to
+	// put a real one on a character on 2026-09-21: the system's content lives in COMPENDIA and
+	// nothing is ever put in Foundry's Items sidebar, so an empty sidebar and a button that made
+	// blanks left no route to the 594 weapons that exist. It opens the picker now, which lists
+	// them; the blank is still one click away inside it, for homebrew.
 	static async #onCreateGear(event, target) {
 		event.preventDefault();
 		var tmptype = target.dataset.type || "equipment";
-		var tmplabel = { equipment: "Equipment", weapon: "Weapon", armor: "Armour" }[tmptype] ?? "Equipment";
-
-		var tmpcreated = await this.document.createEmbeddedDocuments("Item", [{
-			name: `New ${tmplabel}`,
-			type: tmptype,
-			// Carried rather than equipped: a thing just picked up is in a pack, not in a hand,
-			// and carried is what counts against encumbrance either way.
-			system: { location: "carried", quantity: 1, weight: 0 }
-		}]);
-		if (tmpcreated?.length) { tmpcreated[0].sheet.render(true); }
+		new ImagineItemPicker(this.document, tmptype).render(true);
 	}
 
 	// This is the function which opens a carried item's own sheet, to edit what it is.

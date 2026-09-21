@@ -3396,3 +3396,50 @@ skill he has not written, and both are his to answer. What changed is that neith
 pack, where six did not. Skills 674 → 680. The six variants carry the base rows' attributes, rating
 and starting dice — Set Trap(w) is AGL/INT, rating 13, 2d10%, as Set Trap is. Eight suites, 1,200
 checks, passing.
+
+## The Items sidebar is empty on purpose, and that was a dead end (2026-09-21)
+
+Daryl: "the items menu is empty. So I can't add items to my character." Both halves are true, and
+the second follows from a decision that had never been finished.
+
+The system's content lives in COMPENDIA — `world.imagine-weapons` and its eight siblings, built by
+the importer — and nothing is ever put in Foundry's Items sidebar. That is right: four and a half
+thousand documents in the sidebar would bury whatever a Game Master made themselves, and the
+sidebar is theirs. But the Equipment tab's Add buttons made a blank "New Weapon" rather than
+offering any of the 594 real ones, so the only route to a real item was opening a compendium window
+and dragging — and nothing anywhere said so. An empty sidebar plus a button that makes blanks reads
+as a system with no content in it.
+
+**The Add buttons now open a picker**: the pack for that gear type, searchable, sorted, newest
+constraints honoured. Choosing one copies the compendium document onto the character, carried
+rather than equipped, because a thing just acquired is in a pack and not in a hand. The blank item
+is still one click away inside the picker, because homebrew needs a way in and that was the old
+button's only real use.
+
+**Three things it does deliberately:**
+
+- **Reads the pack INDEX, not the documents.** The list needs a name and a sourcebook; fetching 594
+  full weapon documents to show 594 names would be slow for nothing. Only the one picked is loaded
+  in full.
+- **Honours availability.** A weapon from a sourcebook the campaign has switched off does not
+  appear, the same rule the character generator applies to races and classes.
+- **Stays open after adding.** Kitting a character out is many additions, not one; reopening the
+  window and retyping the search for each would be its own annoyance.
+
+Long packs are cut to the first sixty until a search narrows them, with the true count always shown
+above — "594 available, showing the first 60 — type to narrow it". Nine hundred rows of armour
+render slowly and read worse.
+
+**One bug worth recording, because it is the third time the same trap has bitten.** The rows are
+`<button>` elements, and a button does NOT inherit colour — the user agent gives it `buttontext`.
+The names came out pale grey on cream and were practically invisible, exactly as the form fields did
+on a dark theme and for the same underlying reason. Caught by looking at the rendered window rather
+than by reading the CSS: contrast is 15.8:1 now.
+
+**Verified, 2026-09-21:** the template renders 594 weapons, a search for "bastard" narrows to the
+four that match, a search with no matches says so, and the blank button is present. In a 560×620
+window the list scrolls 1,500px of rows through 529px with the search box and the footer staying
+put, and nothing scrolls sideways. 43 modules parse. Eight suites, 1,200 checks, passing.
+
+**Not verified:** no Foundry V14 install, so the pack index read and the document copy are unproven
+against a real compendium.
