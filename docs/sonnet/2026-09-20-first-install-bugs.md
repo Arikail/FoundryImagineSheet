@@ -131,3 +131,32 @@ Formless's host would — so building those two first risks building them twice.
 a character an attribute *limit* of 0 in all twelve, which looks like data and is worse than the
 race being absent. This is stated in `build_documents.build_races` at the `@MARKER INLINE RACE ROWS`
 comment so it is not quietly undone.
+
+---
+
+## 6. Bump the version on every handover, and consider automating it
+
+**What to do.** `system.json` sat at `0.1.0` from the commit that created it until 2026-09-20, which
+is how the same fixed bug got reported twice from a stale install — nothing distinguished the build
+Foundry was running from the one being edited. It is now `0.2.0`, and the init line prints it.
+
+Make this mechanical rather than remembered. `tools/build_system.py` already stamps the date and
+commit into `BUILD.txt`; have it also refuse to build, or warn loudly, when `system.json`'s version
+matches the version of the last build whose commit differs from HEAD.
+
+**Files.** `tools/build_system.py`, `system.json`.
+
+**Done looks like.** Building after a code change without bumping the version prints a warning
+naming the previous version and commit. Do not auto-increment silently — the number should be a
+decision, and a silent bump is as hard to reason about as no bump at all.
+
+**Already decided.** The version is for telling builds apart when one is handed over, not a release
+number, and `BUILD.txt` stays the detailed record (date, commit, file and document counts).
+
+## 7. Give the creature sheet the handedness treatment only if asked
+
+**Do not do this speculatively.** Characters now roll handedness by default, with a world setting to
+make it selectable; the creature sheet still shows a plain dropdown and that is deliberate — a
+creature is Game Master content, authored rather than generated, and his rule is about characters.
+It is written here only so the asymmetry reads as a decision rather than an oversight if someone
+diffs the two sheets. `DECISIONS.md` 2026-09-20 carries the reasoning.

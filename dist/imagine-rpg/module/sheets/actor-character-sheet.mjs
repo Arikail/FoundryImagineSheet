@@ -14,6 +14,7 @@
 
 import { rollWeaponAttack } from "../combat/attack.mjs";
 import { chooseBestArmor } from "../equip-rules.mjs";
+import { rollHandedness } from "../chargen-rules.mjs";
 import { getWeaponSpeed, getLoreModifiers, isOffhandWeapon } from "../combat/combat-rules.mjs";
 import {
 	resolveSkillOutcome, pickBestSkillRoll, canTransferSlot, canSacrificeSlot,
@@ -46,7 +47,8 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 			openItem: ImagineCharacterSheet.#onOpenItem,
 			deleteItem: ImagineCharacterSheet.#onDeleteItem,
 				removeAllArms: ImagineCharacterSheet.#onRemoveAllArms,
-				equipBestArmor: ImagineCharacterSheet.#onEquipBestArmor
+				equipBestArmor: ImagineCharacterSheet.#onEquipBestArmor,
+				rollHandedness: ImagineCharacterSheet.#onRollHandedness
 		}
 	};
 
@@ -87,8 +89,14 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 		tmpcontext.gear = this.document.items.filter(i =>
 			["weapon", "armor", "equipment"].includes(i.type));
 		tmpcontext.weapons = ImagineCharacterSheet.#buildWeaponRows(this.document);
+		// Handedness is rolled rather than chosen unless the Game Master has ticked the setting,
+		// so the dropdown is built only when it will actually be shown -- see the @MARKER
+		// HANDEDNESS note in imagine-rpg.mjs for why rolling is the default.
+		tmpcontext.handednessSelectable = game.settings.get("imagine-rpg", "handednessSelectable");
 		tmpcontext.handednessChoices =
 			ImagineCharacterSheet.#buildHandednessChoices(this.document.system.physical.handedness);
+		tmpcontext.handednessLabel = ImagineCharacterSheet.#buildHandednessChoices(
+			this.document.system.physical.handedness).find(tmpchoice => tmpchoice.selected)?.label ?? "Right (default)";
 		// A GME picks its attack chart outright; the same selected-flag list the handedness
 		// dropdown uses, so it renders the same way everywhere.
 		tmpcontext.chosenAttackSkillChoices = ["Beginner", "Novice", "Intermediate", "Advanced", "Expert", "Master"]
@@ -569,6 +577,26 @@ export default class ImagineCharacterSheet extends HandlebarsApplicationMixin(Ac
 
 		if (!tmpbest.worn.length) { ui.notifications.warn("None of the armour carried can be worn."); return; }
 		ui.notifications.info(`${this.document.name} now wears ${tmpbest.worn.length} piece(s) of armour.`);
+	}
+
+	// @MARKER HANDEDNESS
+	// This is the function which rolls handedness, the same roll the character generator makes and
+	// through the same rules function -- his determineHandedness, sheet-worker.js:49200. It is on
+	// the sheet as well as in the generator because a character made by hand in the Actors
+	// directory never passes through the generator, and with the dropdown gone there would
+	// otherwise be no way to give that character a handedness at all.
+	// The die is CONFIG.Dice.randomUniform, the same one the character generator's #die uses and
+	// for the same reason: it goes through Foundry's own random source, so a world using a
+	// third-party dice module gets that module's randomness here too. Deliberately NOT a Roll with
+	// a chat card, unlike the attribute saves and skill checks above -- those are moments at the
+	// table, and this is a detail of who the character is, settled once and quietly.
+	static async #onRollHandedness(event, target) {
+		event.preventDefault();
+		var tmpabilities = this.document.system.identity?.race?.abilities ?? [];
+		var tmphandedness = rollHandedness(tmpabilities,
+			(tmpsides) => Math.ceil(CONFIG.Dice.randomUniform() * tmpsides) || 1);
+		await this.document.update({ "system.physical.handedness": tmphandedness });
+		ui.notifications.info(`${this.document.name} is ${tmphandedness.toLowerCase()}-handed.`);
 	}
 
 	// This is the function which opens the Level Up window. Experience, goals and titles are all

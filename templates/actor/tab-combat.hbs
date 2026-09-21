@@ -171,13 +171,23 @@
 	{{!-- Handedness decides which side of the body a shield covers: a shield is held in the off
 	      hand, so a right-hander is shielded down the left. Anything but "Left" reads as
 	      right-handed, which is what his equipShield does. --}}
+	{{!-- Rolled, not chosen, unless the Game Master has ticked the setting -- his sheet never
+	      offers the choice. With the tick off the dropdown is GONE rather than disabled, and the
+	      die beside the value is the only way to change it; see @MARKER HANDEDNESS in
+	      imagine-rpg.mjs. --}}
 	<h3 class="section-head">Body <span class="muted">{{system.body.type}}</span>
 		<label class="handedness">Handedness
+			{{#if handednessSelectable}}
 			<select name="system.physical.handedness">
 				{{#each handednessChoices as |h|}}
 				<option value="{{h.value}}" {{#if h.selected}}selected{{/if}}>{{h.label}}</option>
 				{{/each}}
 			</select>
+			{{else}}
+			<span class="rolled-value">{{handednessLabel}}</span>
+			<button type="button" data-action="rollHandedness" data-tooltip="Roll handedness">
+				<i class="fa-solid fa-dice"></i></button>
+			{{/if}}
 		</label>
 	</h3>
 	<table class="body-table">

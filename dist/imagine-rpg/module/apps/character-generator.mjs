@@ -128,6 +128,26 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	async _prepareContext(options) {
 		var tmpcontext = await super._prepareContext(options);
 		var tmpcontent = await this.#loadContent();
+
+		// @MARKER HANDEDNESS
+		// Rolled as soon as a race is known, unless the Game Master has ticked the setting -- his
+		// determineHandedness fires the moment a race is applied, so waiting for the player to
+		// reach the Details step and press a button would be a choice about WHEN, which is still
+		// a choice. Guarded on being blank so it rolls once and then stands: this runs on every
+		// render, and a re-roll on each keystroke would be a slot machine.
+		// The setting is read here rather than inside chargen-view.mjs on purpose. That module and
+		// chargen-rules.mjs are pure and Foundry-free, which is what lets tools/chargen-test.html
+		// import and drive them with no Foundry present; reaching for game.settings there would
+		// end that.
+		tmpcontext.handednessSelectable = game.settings.get("imagine-rpg", "handednessSelectable");
+		if (!tmpcontext.handednessSelectable && !this.#state.handedness) {
+			var tmpderived = deriveGenerator(this.#state, tmpcontent, ImagineCharacterGenerator.#isAvailable);
+			if (tmpderived.race) {
+				this.#state.handedness = rollHandedness(tmpderived.race.abilities ?? [],
+					ImagineCharacterGenerator.#die);
+			}
+		}
+
 		Object.assign(tmpcontext, buildGeneratorView(this.#state, tmpcontent, ImagineCharacterGenerator.#isAvailable));
 		tmpcontext.noContent = !tmpcontent.races.length;
 		return tmpcontext;

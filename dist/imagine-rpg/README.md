@@ -1,6 +1,6 @@
 # Imagine Role Playing System — Foundry VTT system
 
-Version 0.1.0. A conversion of the Imagine Role Playing System from its Roll20 character sheet,
+Version 0.2.0. A conversion of the Imagine Role Playing System from its Roll20 character sheet,
 built with permission from the rights holder. Foundry VTT **V14** or later.
 
 ## Installing

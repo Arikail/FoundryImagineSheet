@@ -90,7 +90,12 @@ export const IMAGINE = {
 
 // @MARKER SYSTEM INITIALISATION
 Hooks.once("init", function () {
-	console.log("Imagine RPG | Initialising system");
+	// The version is printed, not just the name. The system is installed by copying dist/imagine-rpg
+	// into Foundry's systems folder, so the copy Foundry runs is not the copy being edited -- and
+	// on 2026-09-20 an import error that had already been fixed was reported twice from a stale
+	// install, with nothing on screen to tell the two apart. This line is the answer to "which
+	// build am I actually running": read it in the console (F12) and compare it with BUILD.txt.
+	console.log("Imagine RPG | Initialising system, version " + (game.system?.version ?? "unknown"));
 
 	CONFIG.IMAGINE = IMAGINE;
 	CONFIG.IMAGINE.sourcebooks = SOURCEBOOKS;
@@ -221,6 +226,27 @@ Hooks.once("init", function () {
 	game.settings.register("imagine-rpg", "contentImported", {
 		scope: "world",
 		config: false,
+		type: Boolean,
+		default: false
+	});
+
+	// @MARKER HANDEDNESS
+	// Handedness is ROLLED, not chosen, because that is what his sheet does: determineHandedness
+	// (sheet-worker.js:49200) rolls d100 the moment a race is applied -- 1-75 right, 76-95 left,
+	// 96-100 ambidextrous -- and a race carrying the Ambidextrous ability always is, with no roll
+	// at all. Nothing in his sheet offers the player a choice, so rolling is the default here too.
+	// The tick is for tables that would rather pick, and is a world setting so the decision is the
+	// Game Master's and is the same for everyone at that table. It is deliberately the ONLY
+	// handedness switch: with it off the dropdown is not merely ignored but gone, on the character
+	// sheet and in the generator both, because a control that silently does nothing is worse than
+	// no control. Creatures are unaffected -- they are Game Master content and always selectable.
+	game.settings.register("imagine-rpg", "handednessSelectable", {
+		name: "Players may choose handedness",
+		hint: "Off, as his sheet has it: handedness is rolled -- 1-75 right, 76-95 left, 96-100 "
+		    + "ambidextrous, and a race with the Ambidextrous ability always is. On: it is picked "
+		    + "from a dropdown instead. Affects characters only, not creatures.",
+		scope: "world",
+		config: true,
 		type: Boolean,
 		default: false
 	});

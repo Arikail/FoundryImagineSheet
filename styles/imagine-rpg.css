@@ -1012,3 +1012,21 @@
 	min-height: 0;
 	overflow-y: auto;
 }
+
+/* @MARKER ROLLED VALUES
+   A value the dice decided rather than the player, shown where a control would otherwise be: the
+   handedness on the Combat tab and in the generator's Details step when "Players may choose
+   handedness" is off. It reads as a value with a die beside it, not as a disabled dropdown --
+   a greyed-out control invites clicking and says the wrong thing about why it cannot be used. */
+.imagine .rolled-value {
+	font-weight: bold;
+	padding: 0 6px;
+}
+.imagine.sheet .section-head .handedness .rolled-value { font-weight: 600; }
+.imagine.sheet .section-head .handedness button {
+	width: auto;
+	height: 20px;
+	line-height: 1;
+	padding: 0 6px;
+	font-size: 11px;
+}

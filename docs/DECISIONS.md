@@ -2941,3 +2941,59 @@ sheets with no template error.
 
 **Not verified:** no Foundry V14 install. The reproduction asserts the CSS given that DOM shape; it
 cannot prove Foundry V14 builds that shape. `FIRST-RUN.md` is where that gets checked.
+
+## Handedness is rolled, with a tick to make it selectable (2026-09-20)
+
+Asked for by the user, and it turns out to be what his sheet already does. `determineHandedness`
+(sheet-worker.js:49200) rolls d100 the moment a race is applied — 1-75 Right, 76-95 Left, 96-100
+Ambidextrous — and a race whose standard abilities include "Ambidextrous" always is, with no roll
+at all. Nothing anywhere in his sheet offers the player a choice. The port had a dropdown on the
+Combat tab and another in the generator, which was the port inventing a decision the game does not
+have; the rule was already ported as `rollHandedness` and simply was not the default.
+
+**Default off: rolled.** The generator rolls it as soon as a race is known rather than waiting for
+the player to reach the Details step, because his does it on race application and making the player
+press a button at a chosen moment is still a choice about when. It is guarded on being blank, so it
+rolls once and then stands — `_prepareContext` runs on every render, and an unguarded roll there
+would be a slot machine.
+
+**Tick on: selectable.** A world setting, so the decision belongs to the Game Master and is the
+same for everyone at that table. With it off the dropdown is GONE rather than disabled, in both
+places: a greyed-out control invites clicking and misstates why it cannot be used.
+
+**A die is on the sheet too**, which the request did not ask for and the feature needs. A character
+made by hand in the Actors directory never passes through the generator, so with the dropdown gone
+there would otherwise be no way to give that character any handedness at all. It rolls through
+`CONFIG.Dice.randomUniform`, the same source the generator's `#die` uses, so a world running a
+third-party dice module gets that module's randomness. Deliberately not a `Roll` with a chat card,
+unlike the attribute saves and skill checks beside it: those are moments at the table, this is a
+detail of who the character is, settled once and quietly.
+
+**Creatures are untouched** and stay selectable. They are Game Master content, authored rather than
+generated, and his rule is about characters.
+
+**Where the setting is read matters.** `chargen-rules.mjs` and `chargen-view.mjs` are pure and
+Foundry-free, which is exactly what lets `tools/chargen-test.html` import and drive them with no
+Foundry present. The setting is therefore read in the generator *application* and passed down as
+context, never reached for inside those two.
+
+**Verified, 2026-09-20:** the roll walked across all 100 faces gives Right 1-75 (75), Left 76-95
+(20), Ambidextrous 96-100 (5), and an Ambidextrous race short-circuits without rolling — his rule
+exactly. Both templates rendered both ways: with the tick off the Combat tab and the generator have
+no `<select>` and show the value with a die beside it, and with it on the dropdown is back and the
+sheet's die is gone. All 41 modules parse with no syntax error; eight suites, 1,200 checks, passing.
+
+## The same fixed bug reported twice, from a stale install (2026-09-20)
+
+The `damageAltMode` validation error came back after being fixed. The fix was in `dist/`, nothing
+else in the system writes that field, and the error text was byte-identical to the first report —
+so it was the previous build still installed. The system is installed by COPYING `dist/imagine-rpg`
+into Foundry's `Data/systems/`, so the copy Foundry runs is never the copy being edited, and
+nothing on screen distinguished them: `system.json` had said `0.1.0` since the first commit that
+created it.
+
+Two changes so this cannot waste another round. The version is now **0.2.0** and will be bumped
+whenever a build is handed over, so Foundry itself can tell the builds apart. And the init line
+prints it — "Imagine RPG | Initialising system, version 0.2.0" — so "which build am I actually
+running" is answerable from the console (F12) and comparable against `dist/imagine-rpg/BUILD.txt`,
+which already carries the date and commit.
