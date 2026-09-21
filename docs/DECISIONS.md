@@ -3499,3 +3499,32 @@ eight suites, 1,200 checks, passing.
 **Not verified:** no Foundry V14 install, so `Folder.create` and the batched `Item.createDocuments`
 are unproven against a real world. That is the first thing to watch: 4,395 documents is the largest
 single thing this system has ever asked Foundry to do.
+
+## Wood Lore taken off the Dark Fairy, as an override (2026-09-21)
+
+Asked for twice: first as "pull Wood Lore off of the Dark Faery's Racial Skill list", then again
+after the contradiction was put to him. So it is done — and done through the manual layer rather
+than by editing the extraction, because his own data says otherwise and the two should stay
+distinguishable.
+
+His `raceSkillDetailValues` gives the Dark Fairy's WINGLESS form eleven skills, two of which the
+winged form does not get: Climb and Wood Lore +10%. That is not a bug in his data and Daryl himself
+described the rule — "for Faeries without flight, at least for Dark Faeries, they gain some
+additional Racial Skills". The instruction overrides the rule rather than correcting a slip, which
+is exactly the case the manual layer exists for.
+
+So `src/packs/manual/races.json` gains a Fairy(Dark) entry with `_override: true` and the ten-skill
+list. The mechanism merges field by field, so everything else about the race still comes from his
+tables; only `racialSkills` is laid over. Every build prints `manual-override  manual/races/
+Fairy(Dark)  fields laid over his: racialSkills`, so it can never become invisible, and deleting the
+entry restores his version exactly.
+
+**Climb was left alone**, because only Wood Lore was asked for. It is the other skill the wingless
+form gains, so if the intent was "the wingless form should not gain anything", Climb is the second
+half and has not been assumed.
+
+**The winged form never had Wood Lore** and is untouched — it stays at nine skills. The plain Fairy
+keeps its Wood Lore, which his tables give to both of its forms.
+
+**Verified, 2026-09-21:** the Dark Fairy ships with ten skills and no Wood Lore in either form; the
+plain Fairy still has it; the override is reported on every extraction run.

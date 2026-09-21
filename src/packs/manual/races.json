@@ -40,5 +40,52 @@
       "bodyType": "Humanoid"
     }
   },
-  "entries": {}
+  "entries": {
+    "Fairy(Dark)": {
+      "_override": true,
+      "_why": "Wood Lore removed from the Dark Fairy's racial skills at the developer's instruction, 2026-09-21. His raceSkillDetailValues gives the WINGLESS form eleven skills, two of which -- Climb and Wood Lore +10% -- the winged form does not get; this drops Wood Lore from that list. Climb is left, because only Wood Lore was asked for. The winged (slight-physique) form never had it and is untouched. Remove this entry to go back to what his sheet says.",
+      "racialSkills": [
+        {
+          "name": "Darkness",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Blend",
+          "bonus": "+20%"
+        },
+        {
+          "name": "Climb",
+          "bonus": ""
+        },
+        {
+          "name": "Detect Magic",
+          "bonus": ""
+        },
+        {
+          "name": "Levitation",
+          "bonus": ""
+        },
+        {
+          "name": "Mimic",
+          "bonus": ""
+        },
+        {
+          "name": "Move Unheard",
+          "bonus": "+10%"
+        },
+        {
+          "name": "Phase",
+          "bonus": ""
+        },
+        {
+          "name": "Sing",
+          "bonus": ""
+        },
+        {
+          "name": "Telekinesis",
+          "bonus": ""
+        }
+      ]
+    }
+  }
 }
