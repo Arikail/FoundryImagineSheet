@@ -3294,3 +3294,63 @@ Vision in some form goes to 31 races, including Brownie and Elf(Dark), but neith
 would be indistinguishable from one of his to everyone downstream, including him. It is
 UPSTREAM-ISSUES item 41, with the note that these two rows are also the two his sheet answers
 inline elsewhere and may simply have drifted from the rest of the table.
+
+## The three optional starting-kit rules (2026-09-20)
+
+Asked for as "equip by skills, status and lore". Two of the three matched his sheet at once; "lore"
+matched nothing, and rather than guess it was asked about — the answer was "gear by culture,
+misremembered", which is his wilderness-equipment rule. Worth the question: the wrong guess would
+have been armour lore, a combat rule with nothing to do with starting equipment.
+
+    by CULTURE   do_coins override -- wilderness gear suited to the race, INSTEAD of coins
+    by STATUS    do_clothing      -- free clothing by race, social class, gender and style
+    by SKILLS    do_social_skill_equip -- each social skill taken brings its own tools
+
+All three OFF by default, because they are optional on his sheet and a Game Master who has not
+asked for them should not find gear appearing on their players. They live in the generator, which
+is where his own sheet puts them.
+
+**Parsed, not transcribed.** This is about 1,230 lines of switch across seven functions. Copying it
+by hand would have been a day of work and one slip would be a wrong sword on somebody's character
+with nothing to catch it. `tools/extract/extract_starting_kit.py` walks the switches, so the tables
+can be regenerated when he sends a corrected sheet. Three things the parser had to get right, each
+of which produced visibly wrong data first:
+
+- **A nested switch is not a social band.** Above social 11 the weapon choice is a
+  `switch(randomnum1)` with `case 1:` to `case 4:` inside the band. Read as social classes, they
+  invented a social class 1 and left every band above 11 with no weapons at all. Brace depth tells
+  them apart: bands sit one level inside the social switch, alternatives two.
+- **A comma inside parentheses is not a separator.** "Hood(Bird, Leather)" is one item. Splitting on
+  every comma produced "Hood(Bird" and "Leather)", which match nothing.
+- **Fall-through has to be resolved backwards.** See below.
+
+**His fall-throughs are real, and are followed.** Five of the six kits have bands with no `break`,
+so they run on into the next band, whose assignments overwrite everything they just set. Social 5
+rolls a club and a stone knife and then walks out with the social 6-7 dagger and quarterstaff;
+social 12/13 ends up in the 14-and-above gear. The port reproduces this, because the sheet is the
+source of truth, and reports it on every extraction run so it cannot quietly become the intended
+behaviour. It is UPSTREAM-ISSUES item 42. Resolving it correctly means working from the END of the
+switch backwards: a band's real outcome is its own values with the next band's resolved values laid
+over the top. Laying only the next band's outright values over, and keeping the earlier band's own
+die-roll branches, produced a social-5 kit his sheet never makes — the 6/7 tunic with the social-5
+club.
+
+**Grouped the way he grouped it.** Written one race at a time the clothing is 202 KB for 124
+distinct strings, because forty-one races share a single case body. Collapsing identical bodies
+gives twelve wardrobes and a race-to-wardrobe map: a tenth of the size, and closer to his source,
+where they genuinely are one case.
+
+**A name that is not in his equipment tables still becomes an item.** About one name in sixteen is
+absent — Cape, Hose, Pantaloons, the Boubou dresses, mostly clothing. Dropping them would leave a
+character short with nothing to say so, so they are created carrying the name and listed in the
+generator's issues instead.
+
+**Verified, 2026-09-20:** every extracted value spot-checked against the source by hand, including
+the two-alternative bands and the renaissance corset. End to end through the real modules: a
+Female Human(Civilized:Town) of social class 10 with all three ticked and the renaissance style
+gets thirteen items — Armor Suit(Leather), Spear and Hand Axe from her culture, six pieces of
+clothing for her status, and an abacus, costume and mask from Accounting and Acting — every one
+resolved to a real document, none by name only. With nothing ticked she gets none. Eight suites,
+1,200 checks, passing.
+
+**Not verified:** no Foundry V14 install, so no character has been created through the window.

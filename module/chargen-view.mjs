@@ -19,12 +19,16 @@
 
 import { ATTRIBUTE_TABLES } from "./config-tables.mjs";
 import { combineHalfRace, isClassBlockedForRaces, applySlightPhysique } from "./race-rules.mjs";
+import { buildStartingKit } from "./starting-kit.mjs";
 import {
 	ATTRIBUTE_ORDER, CHARACTER_TYPES, buildRatings, checkFinalAttributes, getCivilizedHumanAllowance,
 	checkClassQualification, getStartingClassSkills, assembleCharacter
 } from "./chargen-rules.mjs";
 
 	export const STEPS = ["Basics", "Race", "Attributes", "Class", "Skills", "Details", "Review"];
+
+	// The clothing styles his setClothing tests for, in the order it tests them.
+	export const CLOTHING_STYLES = ["western", "renaissance", "eastern", "african", "kilted"];
 
 	// This is the function which lists the colours a race is found in, for one of the three
 	// features. A Half Race is offered both parents' lists, with anything on both shown once.
@@ -65,7 +69,13 @@ import {
 			// What the last height/frame/weight roll said, kept so the Details step can show it.
 			physiqueSummary: "", physiqueIssues: [],
 			frame: "", hair: "", eyes: "", skin: "",
-			alignment: "", languages: [], wealth: { copper: 0, silver: 0, gold: 0, platinum: 0 }
+			alignment: "", languages: [], wealth: { copper: 0, silver: 0, gold: 0, platinum: 0 },
+			// @MARKER STARTING KIT
+			// His three optional ways of giving a new character its kit, each its own tick and all
+			// three off unless asked for -- see module/starting-kit.mjs. The style only matters to
+			// the clothing, and only for the races whose wardrobe varies by it.
+			startingKit: { byCulture: false, byStatus: false, bySkills: false },
+			clothingStyle: "western"
 		};
 	}
 
@@ -304,6 +314,26 @@ import {
 		// @MARKER DETAILS
 		tmpView.handednessOptions = ["", "Right", "Left", "Ambidextrous"]
 			.map(tmpValue => tmpOption(tmpValue, tmpValue || "-- roll or choose --", tmpState.handedness));
+
+		// @MARKER STARTING KIT
+		// The styles his clothing tables actually carry, and a preview of what the ticked rules
+		// would bring. The preview is built with a FIXED die rather than a random one: it is there to
+		// show the shape of the kit before the character is made, and a list that reshuffled itself on
+		// every keystroke would be worse than none. The real kit is rolled once, at creation.
+		tmpView.clothingStyles = CLOTHING_STYLES.map(tmpStyle =>
+			tmpOption(tmpStyle, tmpStyle.charAt(0).toUpperCase() + tmpStyle.slice(1), tmpState.clothingStyle));
+		tmpView.startingKitPreview = [];
+		var tmpWanted = tmpState.startingKit ?? {};
+		if (tmpD.race1 && (tmpWanted.byCulture || tmpWanted.byStatus || tmpWanted.bySkills)) {
+			var tmpPreview = buildStartingKit({
+				raceName: tmpD.raceNames[0] ?? "", social: tmpD.finals?.soc?.final ?? 0,
+				gender: tmpState.gender, style: tmpState.clothingStyle,
+				socialSkillNames: tmpState.socialSkillNames,
+				byCulture: !!tmpWanted.byCulture, byStatus: !!tmpWanted.byStatus, bySkills: !!tmpWanted.bySkills
+			}, () => 1);
+			tmpView.startingKitPreview = tmpPreview.items.map(tmpEntry =>
+				tmpEntry.count > 1 ? `${tmpEntry.name} ×${tmpEntry.count}` : tmpEntry.name);
+		}
 		tmpView.ages = tmpD.race?.ages ?? null;
 		// @MARKER COLOURING
 		// The colours a member of this race is found in. Offered as choices with anything already
@@ -345,6 +375,8 @@ import {
 			heightFeet: tmpState.heightFeet, heightInches: tmpState.heightInches, weight: tmpState.weight,
 			frame: tmpState.frame, hair: tmpState.hair, eyes: tmpState.eyes, skin: tmpState.skin,
 			alignment: tmpState.alignment, languages: tmpState.languages, wealth: tmpState.wealth,
+			startingKit: tmpState.startingKit, clothingStyle: tmpState.clothingStyle,
+			socialClass: tmpDerived.finals?.soc?.final ?? 0,
 			maxAge: tmpDerived.race?.ages?.maxAge ?? ""
 		};
 	}

@@ -1,6 +1,6 @@
 # Imagine Role Playing System — Foundry VTT system
 
-Version 0.5.0. A conversion of the Imagine Role Playing System from its Roll20 character sheet,
+Version 0.6.0. A conversion of the Imagine Role Playing System from its Roll20 character sheet,
 built with permission from the rights holder. Foundry VTT **V14** or later.
 
 ## Installing
@@ -16,7 +16,7 @@ the archive has no top-level folder of its own.)
 
 ## Updating
 
-**Version 0.5.0 and later update themselves.** In Foundry's **Game Systems** tab, press
+**Version 0.6.0 and later update themselves.** In Foundry's **Game Systems** tab, press
 **Check for Updates**; if a newer version has been published, an **Update** button appears and
 Foundry fetches and installs it. Nothing needs to be copied by hand.
 
@@ -30,7 +30,7 @@ and offers the update when they differ. It compares the version number and **not
 dates, not file contents — so a build published without raising the version is invisible to every
 existing install.
 
-One catch, once: an install from BEFORE 0.5.0 has no `download` in its manifest and cannot
+One catch, once: an install from BEFORE 0.6.0 has no `download` in its manifest and cannot
 update itself. Replace that folder by hand one last time, and every update after it is a button.
 
 After updating, rebuild the compendium content so new and corrected entries come through — the

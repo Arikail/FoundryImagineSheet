@@ -23,7 +23,11 @@ import { applySheetTheme } from "../sheet-theme.mjs";
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
 // The compendiums the generator draws from, as the content importer names them.
-const CHARGEN_PACKS = { races: "world.imagine-races", classes: "world.imagine-classes", skills: "world.imagine-skills" };
+// The kit rules name items by the same names the equipment, armour and weapon packs carry, so
+// those three are loaded as well -- without them the optional starting-kit rules would create
+// every item by name only.
+const CHARGEN_PACKS = { races: "world.imagine-races", classes: "world.imagine-classes", skills: "world.imagine-skills",
+	equipment: "world.imagine-equipment", armor: "world.imagine-armor", weapons: "world.imagine-weapons" };
 
 export default class ImagineCharacterGenerator extends HandlebarsApplicationMixin(ApplicationV2) {
 
@@ -69,7 +73,7 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 	// that is missing -- content never imported -- loads as empty, and the window says so.
 	async #loadContent() {
 		if (this.#content) { return this.#content; }
-		var tmpcontent = { races: [], classes: [], skills: [] };
+		var tmpcontent = { races: [], classes: [], skills: [], equipment: [], armor: [], weapons: [] };
 		for (const [tmpkey, tmpid] of Object.entries(CHARGEN_PACKS)) {
 			var tmppack = game.packs.get(tmpid);
 			if (!tmppack) { continue; }
@@ -102,6 +106,14 @@ export default class ImagineCharacterGenerator extends HandlebarsApplicationMixi
 		}
 		for (const tmpkey of ["slightPhysique", "manual", "override"]) {
 			if (tmpkey in tmpdata) { tmpstate[tmpkey] = tmpdata[tmpkey] === true; }
+		}
+		if ("clothingStyle" in tmpdata) { tmpstate.clothingStyle = tmpdata.clothingStyle ?? "western"; }
+		if ("startingKit" in tmpdata) {
+			for (const tmpkey of ["byCulture", "byStatus", "bySkills"]) {
+				if (tmpkey in tmpdata.startingKit) {
+					tmpstate.startingKit[tmpkey] = tmpdata.startingKit[tmpkey] === true;
+				}
+			}
 		}
 		if ("manualBase" in tmpdata) { tmpstate.manualBase = tmpdata.manualBase; }
 		if ("swaps" in tmpdata) {

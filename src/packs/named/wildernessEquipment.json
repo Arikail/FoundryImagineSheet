@@ -1,0 +1,4395 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "function": "setWildernessEquipmentByRace",
+    "line": 73810
+  },
+  "_note": "His optional wilderness-equipment rule, taken INSTEAD of starting coins. raceKit maps a race to one of six kits; kits maps a kit and a social class to the alternatives for that band. More than one alternative means his code rolls a die to choose between them.",
+  "raceKit": {
+    "Apocritara": "setStandardWildernessEquipment",
+    "Arachen": "setNoArmorCompressedSocialWildernessEquipment",
+    "Avian(Dark)": "setStandardWildernessEquipment",
+    "Avian(Forest)": "setStandardWildernessEquipment",
+    "Avian(Mountain)": "setStandardWildernessEquipment",
+    "Ba’Cora": "setStandardWildernessEquipment",
+    "Beastman": "setStandardWildernessEquipment",
+    "Bracharia": "setNoArmorCompressedSocialWildernessEquipment",
+    "Brok": "setStandardWildernessEquipment",
+    "Brownie": "setGnomeWildernessEquipment",
+    "Centaur": "setNoArmorCompressedSocialWildernessEquipment",
+    "Cervara": "setStandardWildernessEquipment",
+    "Changeling": "setStandardWildernessEquipment",
+    "Chetahl": "setStandardWildernessEquipment",
+    "Crystori": "setNoArmorCompressedSocialWildernessEquipment",
+    "Dao": "setLightChainWildernessEquipment",
+    "Djinn": "setStandardWildernessEquipment",
+    "Dryad": "setStandardWildernessEquipment",
+    "Dwarf(Civilized)": "setLightChainWildernessEquipment",
+    "Dwarf(Dark)": "setLightChainWildernessEquipment",
+    "Dwarf(Fire)": "setLightChainWildernessEquipment",
+    "Dwarf(Iron)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Dwarf(Mountain)": "setLightChainWildernessEquipment",
+    "Dwarf(Stone)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Elf(Dark)": "setStandardWildernessEquipment",
+    "Elf(Desert)": "setStandardWildernessEquipment",
+    "Elf(Dread)": "setStandardWildernessEquipment",
+    "Elf(Gray)": "setStandardWildernessEquipment",
+    "Elf(High)": "setStandardWildernessEquipment",
+    "Elf(Ice)": "setStandardWildernessEquipment",
+    "Elf(Sea)": "setStandardWildernessEquipment",
+    "Elf(Shadow)": "setStandardWildernessEquipment",
+    "Elf(Silver)": "setStandardWildernessEquipment",
+    "Elf(Wild)": "setStandardWildernessEquipment",
+    "Elf(Wood)": "setStandardWildernessEquipment",
+    "Equara": "setLightChainWildernessEquipment",
+    "Fairy": "setGnomeWildernessEquipment",
+    "Fairy(Dark)": "setGnomeWildernessEquipment",
+    "Famorian": "setLightChainWildernessEquipment",
+    "Formless": "setStandardWildernessEquipment",
+    "Gaunt": "setStandardWildernessEquipment",
+    "Geebra": "setStandardWildernessEquipment",
+    "Giant(Civilized)": "setGiantWildernessEquipment",
+    "Giant(Civilized:Seafaring)": "setGiantWildernessEquipment",
+    "Giant(True)": "setGiantWildernessEquipment",
+    "Gnome": "setGnomeWildernessEquipment",
+    "Goblin(Forest)": "setGoblinForestWildernessEquipment",
+    "Goblin(Mountain)": "setLightChainWildernessEquipment",
+    "Goblin(Mountain:Magic)": "setLightChainWildernessEquipment",
+    "Goblin(Plains)": "setLightChainWildernessEquipment",
+    "Grahl": "setLightChainWildernessEquipment",
+    "Gremlin": "setStandardWildernessEquipment",
+    "Grethen": "setStandardWildernessEquipment",
+    "Gryphara": "setStandardWildernessEquipment",
+    "Hippotara": "setLightChainWildernessEquipment",
+    "Hobgoblin": "setLightChainWildernessEquipment",
+    "Human(Barbaric)": "setLightChainWildernessEquipment",
+    "Human(Civilized:City)": "setLightChainWildernessEquipment",
+    "Human(Civilized:Port)": "setLightChainWildernessEquipment",
+    "Human(Civilized:Town)": "setLightChainWildernessEquipment",
+    "Human(Civilized:Village)": "setLightChainWildernessEquipment",
+    "Ifrit": "setStandardWildernessEquipment",
+    "Jumara": "setStandardWildernessEquipment",
+    "Katara": "setNoArmorCompressedSocialWildernessEquipment",
+    "Kenku": "setStandardWildernessEquipment",
+    "Kerasara": "setLightChainWildernessEquipment",
+    "Lagara": "setStandardWildernessEquipment",
+    "Leprechaun": "setStandardWildernessEquipment",
+    "Lissara": "setStandardWildernessEquipment",
+    "Lotara": "setStandardWildernessEquipment",
+    "Loxodara": "setLightChainWildernessEquipment",
+    "Lutrinara": "setStandardWildernessEquipment",
+    "Maginos": "setNoArmorCompressedSocialWildernessEquipment",
+    "Maginos(Clay)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Maginos(Metal)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Maginos(Stone)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Maginos(Wood)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Marid": "setStandardWildernessEquipment",
+    "Mechanos": "setNoArmorCompressedSocialWildernessEquipment",
+    "Mellivara": "setStandardWildernessEquipment",
+    "Mephyt(Fire)": "setStandardWildernessEquipment",
+    "Mephyt(Ice)": "setStandardWildernessEquipment",
+    "Merfolk": "setStandardWildernessEquipment",
+    "Midfolk(Forest)": "setStandardWildernessEquipment",
+    "Midfolk(River)": "setStandardWildernessEquipment",
+    "Midfolk(Town)": "setStandardWildernessEquipment",
+    "Nixie": "setGnomeWildernessEquipment",
+    "Nymph": "setStandardWildernessEquipment",
+    "Ogre": "setLightChainWildernessEquipment",
+    "Ogre(Magic)": "setLightChainWildernessEquipment",
+    "Planar": "setLightChainWildernessEquipment",
+    "Podling": "setGnomeWildernessEquipment",
+    "Ratahl": "setStandardWildernessEquipment",
+    "S’rett": "setStandardWildernessEquipment",
+    "Sasquatch/Yeti": "setLightChainWildernessEquipment",
+    "Satyr/Fawn": "setStandardWildernessEquipment",
+    "Saurian": "setStandardWildernessEquipment",
+    "Scethen": "setNoArmorCompressedSocialWildernessEquipment",
+    "Se’eth": "setStandardWildernessEquipment",
+    "Sha’Cora": "setStandardWildernessEquipment",
+    "Sporeling": "setGnomeWildernessEquipment",
+    "Sura’keth": "setStandardWildernessEquipment",
+    "Sura’rath": "setStandardWildernessEquipment",
+    "Susara": "setStandardWildernessEquipment",
+    "Sylph": "setStandardWildernessEquipment",
+    "Taurian": "setLightChainWildernessEquipment",
+    "Testudara": "setStandardWildernessEquipment",
+    "Troll": "setNoArmorCompressedSocialWildernessEquipment",
+    "Troll(Ice)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Troll(Rock)": "setNoArmorCompressedSocialWildernessEquipment",
+    "Ursara": "setLightChainWildernessEquipment",
+    "Vulpara": "setStandardWildernessEquipment",
+    "Whalrog": "setStandardWildernessEquipment",
+    "Wildling": "setStandardWildernessEquipment",
+    "Wolfen": "setStandardWildernessEquipment",
+    "Xar’Xeth": "setNoArmorCompressedSocialWildernessEquipment"
+  },
+  "kits": {
+    "setGiantWildernessEquipment": {
+      "5": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Giant Dagger",
+            "Giant Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Giant Dagger",
+            "Giant Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Giant Dagger",
+            "Giant Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Dagger",
+            "Giant Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Dagger",
+            "Giant Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Medium Tree",
+            "Giant Dagger"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Medium Tree",
+            "Giant Dagger"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Spear",
+            "Giant Giant Medium Tree",
+            "Giant Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Dagger",
+            "Giant Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Giant Battle Axe",
+            "Giant Hand Axe",
+            "Giant Bastard Sword"
+          ]
+        }
+      ]
+    },
+    "setGnomeWildernessEquipment": {
+      "5": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Fairy Dagger",
+            "Fairy Staff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Fairy Dagger",
+            "Fairy Staff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Fairy Dagger",
+            "Fairy Staff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Dagger",
+            "Fairy Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Dagger",
+            "Fairy Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy War Hammer",
+            "Fairy Dagger"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy War Hammer",
+            "Fairy Dagger"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "armorClothing": [
+            "Armor(Hard Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Spear",
+            "Fairy War Hammer",
+            "Fairy Short Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Dagger",
+            "Fairy Broad Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Long Sword"
+          ]
+        },
+        {
+          "weapons": [
+            "Fairy Battle Axe",
+            "Fairy Hand Axe",
+            "Fairy Bastard Sword"
+          ]
+        }
+      ]
+    },
+    "setGoblinForestWildernessEquipment": {
+      "5": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ]
+    },
+    "setLightChainWildernessEquipment": {
+      "5": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Light Chain)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ]
+    },
+    "setNoArmorCompressedSocialWildernessEquipment": {
+      "5": [
+        {
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ]
+    },
+    "setStandardWildernessEquipment": {
+      "0": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "1": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "2": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "4": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "5": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Stone)"
+          ],
+          "generalEquipment": [
+            "Waterskin(3-days)"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Tunic(Leather)"
+          ],
+          "weapons": [
+            "Club",
+            "Knife(Obsidian)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "6": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "7": [
+        {
+          "armorClothing": [
+            "Tunic(Leather)",
+            "Breeches(Leather)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Quarterstaff"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ]
+        }
+      ],
+      "8": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "9": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Dagger",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear"
+          ]
+        }
+      ],
+      "10": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "11": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "Hand Axe"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "War Club",
+            "Dagger"
+          ]
+        }
+      ],
+      "12": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "13": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "14": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "15": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "16": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "17": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "18": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "19": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Spear",
+            "War Club",
+            "Short Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Dagger",
+            "Broad Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Long Sword"
+          ]
+        },
+        {
+          "armorClothing": [
+            "Armor Suit(Leather)",
+            "Shield(Medium/Wood)"
+          ],
+          "generalEquipment": [
+            "Waterskin(1-week)"
+          ],
+          "weapons": [
+            "Battle Axe",
+            "Hand Axe",
+            "Bastard Sword"
+          ]
+        }
+      ]
+    }
+  }
+}

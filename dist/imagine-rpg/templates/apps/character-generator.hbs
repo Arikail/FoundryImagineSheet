@@ -229,6 +229,27 @@
 			<label>Gold <input type="number" name="wealth.gold" value="{{state.wealth.gold}}"></label>
 			<label>Platinum <input type="number" name="wealth.platinum" value="{{state.wealth.platinum}}"></label>
 		</div>
+
+		{{!-- @MARKER STARTING KIT
+		      His three optional ways of giving a character its gear, each its own tick and all three
+		      off unless asked for -- as on his own sheet. A Game Master who has not asked should not
+		      find equipment appearing on their players. Any combination may be on at once, and
+		      anything two of them bring is carried twice rather than listed twice. --}}
+		<h3>Starting kit <span class="muted">optional &mdash; ask your Game Master</span></h3>
+		<label class="row check"><input type="checkbox" name="startingKit.byCulture" {{#if state.startingKit.byCulture}}checked{{/if}}>
+			Gear by culture &mdash; the wilderness kit his tables give this race, <em>instead of</em> starting coins</label>
+		<label class="row check"><input type="checkbox" name="startingKit.byStatus" {{#if state.startingKit.byStatus}}checked{{/if}}>
+			Clothing by status &mdash; free clothing for this race at this social class</label>
+		{{#if state.startingKit.byStatus}}
+		<label class="row">Style
+			<select name="clothingStyle">{{#each clothingStyles as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+			<span class="muted">only some races’ wardrobes vary by style</span></label>
+		{{/if}}
+		<label class="row check"><input type="checkbox" name="startingKit.bySkills" {{#if state.startingKit.bySkills}}checked{{/if}}>
+			Tools by skill &mdash; each social skill taken brings its own equipment</label>
+		{{#if startingKitPreview.length}}
+		<p class="muted">This would bring: {{#each startingKitPreview as |i|}}<span class="race-chip">{{i}}</span>{{/each}}</p>
+		{{/if}}
 	{{/if}}
 
 	{{!-- @MARKER REVIEW --}}

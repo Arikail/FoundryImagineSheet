@@ -1223,3 +1223,50 @@ on our side would be indistinguishable from one of yours. Two lines in `raceFeat
 settle it — and it is worth checking whether the same omission reaches the other faerie races,
 since these two rows are also the two the sheet answers inline elsewhere and may have drifted from
 the rest of the table.
+
+## 42. Ten of the wilderness-gear bands have no `break`, so they take the next band's kit
+
+**Status:** open · **Severity:** a character of social class 5, 12 or 13 gets the wrong band's gear
+
+Each of the six `set...WildernessEquipment` functions is a `switch(tempsocial)`. Five of the six
+have bands that do not end in `break`, so they fall into the next band, whose assignments then
+overwrite everything they just set. The character ends up with the LATER band's kit entirely.
+
+```
+case 5:
+    setAttrs({start_armor_clothing:  "Tunic(Leather)" });
+    randomnum1=getDieRoll(2);
+    if (randomnum1==1) { ...Club,Knife(Stone)...  } else { ...Club,Knife(Obsidian)... }
+                                    <-- no break
+case 6:
+case 7:
+    setAttrs({start_armor_clothing:  "Tunic(Leather),Breeches(Leather)" });
+    setAttrs({start_weapons:  "Dagger,Quarterstaff" });
+    setAttrs({start_general_equipment:  "Waterskin(1-week)" });
+    break;
+```
+
+A social class 5 character rolls the club-and-knife line, and then has it thrown away: they walk
+out with the social 6-7 dagger and quarterstaff. The same shape appears at social 12/13, which
+falls into 14 and so carries the 14-and-above gear -- Light Chain and a shield in that kit, rather
+than the Armor Suit(Leather) its own band names.
+
+Where it happens:
+
+```
+Giant                     social 5 -> 6/7      social 12/13 -> 14..20
+Gnome                     social 5 -> 6/7      social 12/13 -> 14/15
+GoblinForest              social 5 -> 6/7      social 12/13 -> 14/15
+LightChain                social 5 -> 6/7      social 12/13 -> 14..20
+NoArmorCompressedSocial   social 5 -> 6
+Standard                  (none -- every band breaks)
+```
+
+Standard having none is the tell: the same table written correctly once and not the other five
+times. The effect is that the social 5 band and the social 12/13 band are dead code in five kits.
+
+**What the port does meanwhile:** follows the code, because the sheet is the source of truth and a
+kit invented here would be indistinguishable from one of yours. The extracted table therefore
+records social 5 as identical to social 6, and 12/13 as identical to 14 — and says so on every
+extraction run, so it cannot quietly become the intended behaviour. Six `break;` statements would
+settle it, and the port would pick the change up on the next extraction with nothing else to alter.

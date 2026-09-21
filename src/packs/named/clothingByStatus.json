@@ -1,0 +1,1385 @@
+{
+  "_source": {
+    "file": "docs/reference/sheet-worker.js",
+    "function": "setClothing",
+    "line": 75027
+  },
+  "_note": "His optional free-clothing rule. raceWardrobe maps a race to a wardrobe; a wardrobe is style -> gender -> social band, where a band key is the social class AT OR ABOVE which that clothing is worn (14, 11, 9, 6) and 0 is everything below the lowest rung. A style or gender of 'any' means that wardrobe does not vary by it. The grouping is his own: forty-one races share one case body in setClothing.",
+  "bands": [
+    14,
+    11,
+    9,
+    6,
+    0
+  ],
+  "raceWardrobe": {
+    "Apocritara": "wardrobe01",
+    "Arachen": "wardrobe02",
+    "Avian(Dark)": "wardrobe01",
+    "Avian(Forest)": "wardrobe01",
+    "Avian(Mountain)": "wardrobe01",
+    "Ba’Cora": "wardrobe01",
+    "Beastman": "wardrobe03",
+    "Bracharia": "wardrobe02",
+    "Brok": "wardrobe03",
+    "Brownie": "wardrobe04",
+    "Centaur": "wardrobe05",
+    "Cervara": "wardrobe03",
+    "Changeling": "wardrobe04",
+    "Chetahl": "wardrobe03",
+    "Crystori": "wardrobe06",
+    "Dao": "wardrobe04",
+    "Djinn": "wardrobe01",
+    "Dryad": "wardrobe03",
+    "Dwarf(Civilized)": "wardrobe04",
+    "Dwarf(Dark)": "wardrobe07",
+    "Dwarf(Fire)": "wardrobe04",
+    "Dwarf(Iron)": "wardrobe06",
+    "Dwarf(Mountain)": "wardrobe03",
+    "Dwarf(Stone)": "wardrobe06",
+    "Elf(Dark)": "wardrobe07",
+    "Elf(Desert)": "wardrobe07",
+    "Elf(Dread)": "wardrobe04",
+    "Elf(Gray)": "wardrobe04",
+    "Elf(High)": "wardrobe04",
+    "Elf(Ice)": "wardrobe04",
+    "Elf(Sea)": "wardrobe04",
+    "Elf(Shadow)": "wardrobe04",
+    "Elf(Silver)": "wardrobe04",
+    "Elf(Wild)": "wardrobe03",
+    "Elf(Wood)": "wardrobe03",
+    "Equara": "wardrobe03",
+    "Fairy": "wardrobe04",
+    "Fairy(Dark)": "wardrobe04",
+    "Famorian": "wardrobe04",
+    "Formless": "wardrobe04",
+    "Gaunt": "wardrobe04",
+    "Geebra": "wardrobe03",
+    "Giant(Civilized)": "wardrobe08",
+    "Giant(Civilized:Seafaring)": "wardrobe08",
+    "Giant(True)": "wardrobe08",
+    "Gnome": "wardrobe03",
+    "Goblin(Forest)": "wardrobe03",
+    "Goblin(Mountain)": "wardrobe03",
+    "Goblin(Mountain:Magic)": "wardrobe03",
+    "Goblin(Plains)": "wardrobe03",
+    "Grahl": "wardrobe04",
+    "Gremlin": "wardrobe03",
+    "Grethen": "wardrobe03",
+    "Gryphara": "wardrobe01",
+    "Hippotara": "wardrobe09",
+    "Hobgoblin": "wardrobe03",
+    "Human(Barbaric)": "wardrobe03",
+    "Human(Civilized:City)": "wardrobe04",
+    "Human(Civilized:Port)": "wardrobe04",
+    "Human(Civilized:Town)": "wardrobe04",
+    "Human(Civilized:Village)": "wardrobe04",
+    "Ifrit": "wardrobe04",
+    "Jumara": "wardrobe03",
+    "Katara": "wardrobe05",
+    "Kenku": "wardrobe01",
+    "Kerasara": "wardrobe03",
+    "Lagara": "wardrobe03",
+    "Leprechaun": "wardrobe04",
+    "Lissara": "wardrobe10",
+    "Lotara": "wardrobe03",
+    "Loxodara": "wardrobe03",
+    "Lutrinara": "wardrobe09",
+    "Maginos": "wardrobe06",
+    "Maginos(Clay)": "wardrobe06",
+    "Maginos(Metal)": "wardrobe06",
+    "Maginos(Stone)": "wardrobe06",
+    "Maginos(Wood)": "wardrobe06",
+    "Marid": "wardrobe09",
+    "Mechanos": "wardrobe06",
+    "Mellivara": "wardrobe03",
+    "Mephyt(Fire)": "wardrobe01",
+    "Mephyt(Ice)": "wardrobe01",
+    "Merfolk": "wardrobe09",
+    "Midfolk(Forest)": "wardrobe03",
+    "Midfolk(River)": "wardrobe04",
+    "Midfolk(Town)": "wardrobe04",
+    "Nixie": "wardrobe09",
+    "Nymph": "wardrobe04",
+    "Ogre": "wardrobe03",
+    "Ogre(Magic)": "wardrobe03",
+    "Planar": "wardrobe04",
+    "Podling": "wardrobe04",
+    "Ratahl": "wardrobe03",
+    "Sasquatch/Yeti": "wardrobe03",
+    "Satyr/Fawn": "wardrobe03",
+    "Saurian": "wardrobe11",
+    "Scethen": "wardrobe02",
+    "Se’eth": "wardrobe12",
+    "Sha’Cora": "wardrobe09",
+    "Sporeling": "wardrobe04",
+    "Sura’keth": "wardrobe01",
+    "Sura’rath": "wardrobe10",
+    "Susara": "wardrobe03",
+    "Sylph": "wardrobe01",
+    "S’rett": "wardrobe11",
+    "Taurian": "wardrobe03",
+    "Testudara": "wardrobe03",
+    "Troll": "wardrobe03",
+    "Troll(Ice)": "wardrobe03",
+    "Troll(Rock)": "wardrobe03",
+    "Ursara": "wardrobe03",
+    "Vulpara": "wardrobe03",
+    "Whalrog": "wardrobe09",
+    "Wildling": "wardrobe03",
+    "Wolfen": "wardrobe03",
+    "Xar’Xeth": "wardrobe07"
+  },
+  "wardrobes": {
+    "wardrobe01": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Silk)",
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Cloak(Fur-lined)",
+            "Scarf(Silk)",
+            "Goggles(Flying)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Tunic(Wool)",
+            "Breeches(Wool)",
+            "Cloak",
+            "Scarf(Wool)",
+            "Goggles(Flying)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Scarf(Cloth)",
+            "Goggles(Flying)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        }
+      }
+    },
+    "wardrobe02": {
+      "any": {
+        "any": {
+          "14": [
+            "Hat",
+            "Tunic(Decorative)",
+            "Insectaur Barding(Wool)",
+            "Cloak(Fur-lined)",
+            "Belt(w/Buckle)"
+          ],
+          "11": [
+            "Tunic(Wool)",
+            "Insectaur Barding(Wool)",
+            "Cloak",
+            "Belt(w/Buckle)"
+          ],
+          "9": [
+            "Tunic(Cloth)",
+            "Insectaur Barding(Cloth)",
+            "Belt"
+          ],
+          "6": [
+            "Poncho(Wool)",
+            "Insectaur Barding(Cloth)",
+            "Belt(Rope)"
+          ],
+          "0": [
+            "Poncho(Rags)",
+            "Insectaur Barding(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe03": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Decorative)",
+            "Jacket",
+            "Tunic(Decorative)",
+            "Breeches(Wool)",
+            "Cloak(Fur-lined)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Hat(Decorative)",
+            "Tunic(Wool)",
+            "Breeches(Wool)",
+            "Cloak(Fur-lined)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "9": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Cloak",
+            "Belt",
+            "Boots(Leather)"
+          ],
+          "6": [
+            "Poncho(Wool)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Shoes"
+          ],
+          "0": [
+            "Poncho(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      }
+    },
+    "wardrobe04": {
+      "western": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Dress(Fine)",
+            "Cloak(Fur-lined)",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Fine)",
+            "Dress(Fine)",
+            "Scarf(Silk)",
+            "Belt",
+            "Shoes(Fine)"
+          ],
+          "9": [
+            "Hat",
+            "Dress(Wool)",
+            "Belt",
+            "Scarf(Wool)",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Gusseted)",
+            "Skirt(Cloth)",
+            "Scarf(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Skirt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Suit(Fine)",
+            "Cloak(Fur-lined)",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Wide-brimmed)",
+            "Tunic(Wool)",
+            "Breeches(Wool)",
+            "Cloak",
+            "Scarf(Wool)",
+            "Belt(w/Buckle)",
+            "Boots(Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Cloak",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "renaissance": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Dress(Fine)",
+            "Corset",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Decorative)",
+            "Dress(Fine)",
+            "Corset",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Hat",
+            "Dress(Wool)",
+            "Corset",
+            "Belt",
+            "Scarf(Wool)",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Gusseted)",
+            "Skirt(Cloth)",
+            "Scarf(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Skirt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Suit(Fine)",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Narrow-rimmed)",
+            "Tunic(Wool)",
+            "Pantaloons",
+            "Cape(Fur-lined)",
+            "Scarf(Wool)",
+            "Belt(w/Buckle)",
+            "Boots(Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Shirt(Billowed)",
+            "Hose(Silk)",
+            "Cape",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Billowed)",
+            "Hose",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "kilted": {
+        "any": {
+          "14": [
+            "Hat(Fine)",
+            "Shirt(Billowed)",
+            "Kilt(Wool)",
+            "Cloak(Fur-lined)",
+            "Scarf(Wool)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Hat(Fine)",
+            "Shirt(Gusseted)",
+            "Kilt(Wool)",
+            "Cloak",
+            "Scarf(Wool)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Kilt(Cloth)",
+            "Cloak",
+            "Belt",
+            "Boots(Leather)"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Kilt(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Kilt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Female": {
+          "14": [
+            "Headdress(Silk)",
+            "Sarong(Silk)",
+            "Veil(Silk)",
+            "Scarf(Dust)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Decorative)",
+            "Sarong(Wool)",
+            "Scarf(Dust)",
+            "Belt(w/Buckle)",
+            "Shoes(Sand)"
+          ],
+          "9": [
+            "Headdress",
+            "Sarong(Wool)",
+            "Veil(Wool)",
+            "Belt",
+            "Scarf(Dust)",
+            "Sandals(Sand)"
+          ],
+          "6": [
+            "Headdress",
+            "Sarong(Cloth)",
+            "Veil(Cloth)",
+            "Scarf(Dust)",
+            "Belt",
+            "Sandals(Sand)"
+          ],
+          "0": [
+            "Headdress",
+            "Sarong(Rags)",
+            "Veil(Cloth)",
+            "Scarf(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Turban(Silk)",
+            "Thawb(Silk)",
+            "Scarf(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Turban(Wool)",
+            "Thawb(Wool)",
+            "Scarf(Dust)",
+            "Belt(w/Buckle)",
+            "Shoes(Sand)"
+          ],
+          "9": [
+            "Turban(Cloth)",
+            "Thawb(Cloth)",
+            "Belt",
+            "Scarf(Dust)",
+            "Shoes(Sand)"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Scarf(Dust)",
+            "Belt",
+            "Sandals(Sand)"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Scarf(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "african": {
+        "Female": {
+          "14": [
+            "Headdress(Silk)",
+            "Tunic(Decorative)",
+            "Wrap Skirt(Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Tunic(Wool)",
+            "Wrap Skirt(Wool)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Wrap Skirt(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Headdress(Silk)",
+            "Dress(Boubou/Silk)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Dress(Boubou/Wool)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Dress(Boubou/Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        }
+      },
+      "eastern": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Kimono(Silk)",
+            "Jacket(Haori)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "11": [
+            "Hat",
+            "Kimono(Cloth)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Kimono(Silk)",
+            "Hakama(Silk)",
+            "Jacket(Haori)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "11": [
+            "Hat",
+            "Kimono(Wool)",
+            "Hakama(Wool)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Hakama(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        }
+      }
+    },
+    "wardrobe05": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Decorative)",
+            "Tunic(Decorative)",
+            "Centaur Barding(Wool)",
+            "Cloak(Fur-lined)",
+            "Belt(w/Buckle)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Tunic(Wool)",
+            "Centaur Barding(Wool)",
+            "Cloak",
+            "Belt(w/Buckle)"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Centaur Barding(Cloth)",
+            "Belt"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Centaur Barding(Cloth)",
+            "Belt(Rope)"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Centaur Barding(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe06": {
+      "any": {
+        "any": {
+          "14": [
+            "Tabard(Satin)",
+            "Belt(w/Buckle)"
+          ],
+          "11": [
+            "Tabard(Cloth)",
+            "Belt(w/Buckle)"
+          ],
+          "9": [
+            "Tabard(Cloth)",
+            "Belt"
+          ],
+          "6": [
+            "Poncho(Cloth)",
+            "Belt"
+          ],
+          "0": [
+            "Poncho(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe07": {
+      "western": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Dress(Fine)",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Decorative)",
+            "Dress(Fine)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Hat",
+            "Dress(wool)",
+            "Belt",
+            "Scarf(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Gusseted)",
+            "Skirt(Cloth)",
+            "Scarf(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Skirt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Suit(Fine)",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Wide-brimmed)",
+            "Tunic(Wool)",
+            "Breeches(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Cloak(Fur-lined)",
+            "Scarf(Wool)",
+            "Belt(w/Buckle)",
+            "Boots(Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Cloak",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "renaissance": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Dress(Fine)",
+            "Corset",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Decorative)",
+            "Dress(Fine)",
+            "Corset",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Hat",
+            "Dress(Wool)",
+            "Corset",
+            "Belt",
+            "Scarf(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Gusseted)",
+            "Skirt(Cloth)",
+            "Scarf(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Skirt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Suit(Fine)",
+            "Cape(Fur-lined)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Hat(Narrow-rimmed)",
+            "Tunic(Wool)",
+            "Pantaloons",
+            "Cape(Fur-lined)",
+            "Scarf(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Boots(Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Shirt(Billowed)",
+            "Hose(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Cape",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Shirt(Billowed)",
+            "Hose",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Shirt(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "kilted": {
+        "any": {
+          "14": [
+            "Hat(Fine)",
+            "Shirt(Billowed)",
+            "Kilt(Wool)",
+            "Cloak(Fur-lined)",
+            "Scarf(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Hat(Fine)",
+            "Shirt(Gusseted)",
+            "Kilt(Wool)",
+            "Cloak",
+            "Scarf(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Kilt(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Cloak",
+            "Belt",
+            "Boots(Leather)"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Kilt(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Kilt(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Female": {
+          "14": [
+            "Headdress(Silk)",
+            "Sarong(Silk)",
+            "Veil(Silk)",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Decorative)",
+            "Sarong(Wool) Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Sand)"
+          ],
+          "9": [
+            "Headdress",
+            "Sarong(Wool)",
+            "Veil(Wool)",
+            "Belt",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Sandals(Sand)"
+          ],
+          "6": [
+            "Headdress",
+            "Sarong(Cloth)",
+            "Veil(Cloth)",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Sandals(Sand)"
+          ],
+          "0": [
+            "Headdress",
+            "Sarong(Rags)",
+            "Veil(Cloth)",
+            "Scarf(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Turban(Silk)",
+            "Thawb(Silk)",
+            "Scarf(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Turban(Wool)",
+            "Thawb(Wool)",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Sand)"
+          ],
+          "9": [
+            "Turban(Cloth)",
+            "Thawb(Cloth)",
+            "Belt",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Shoes(Sand)"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Scarf(Dust)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Sandals(Sand)"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Scarf(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      },
+      "african": {
+        "Female": {
+          "14": [
+            "Headdress(Silk)",
+            "Tunic(Silk)",
+            "Wrap Skirt(Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Tunic(Wool)",
+            "Wrap Skirt(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Wrap Skirt(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Headdress(Silk)",
+            "Dress(Boubou/Silk)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes(Fine)"
+          ],
+          "11": [
+            "Headdress(Wool)",
+            "Dress(Boubou/Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(w/Buckle)",
+            "Shoes"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Dress(Boubou/Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        }
+      },
+      "eastern": {
+        "Female": {
+          "14": [
+            "Hat(Fine)",
+            "Kimono(Silk)",
+            "Jacket(Haori)",
+            "Goggles(Sun/Tinted)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "11": [
+            "Hat",
+            "Kimono(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        },
+        "Other": {
+          "14": [
+            "Hat(Fine)",
+            "Kimono(Silk)",
+            "Hakama(Silk)",
+            "Jacket(Haori)",
+            "Goggles(Sun/Tinted)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "11": [
+            "Hat",
+            "Kimono(Wool)",
+            "Hakama(Wool)",
+            "Goggles(Sun/Tinted)",
+            "Belt(Obi)",
+            "Sandals(Zōri)"
+          ],
+          "9": [
+            "Hat",
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Goggles(Sun/Tinted)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Hakama(Cloth)",
+            "Belt",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Hakama(Rags)",
+            "Belt(Rope)",
+            "Sandals(Worn)"
+          ]
+        }
+      }
+    },
+    "wardrobe08": {
+      "any": {
+        "any": {
+          "14": [
+            "Hat",
+            "Tunic(Decorative)",
+            "Breeches(Wool)",
+            "Cloak(Fur-lined)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Tunic(Wool)",
+            "Breeches(Wool)",
+            "Cloak",
+            "Belt(w/Buckle)",
+            "Boots(Leather)"
+          ],
+          "9": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Poncho(Wool)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Sandals"
+          ],
+          "0": [
+            "Poncho(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)",
+            "Sandals"
+          ]
+        }
+      }
+    },
+    "wardrobe09": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Silk)",
+            "Skin Suit(Watertight)",
+            "Goggles(Diving)",
+            "Belt(w/Buckle)",
+            "Sandals"
+          ],
+          "11": [
+            "Skin Suit(Watertight)",
+            "Goggles(Diving)",
+            "Belt(w/Buckle)",
+            "Sandals"
+          ],
+          "9": [
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Goggles(Diving)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe10": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Decorative)",
+            "Skin Suit(Watertight)",
+            "Goggles(Diving)",
+            "Belt(w/Buckle)",
+            "Sandals"
+          ],
+          "11": [
+            "Headdress(Silk)",
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Goggles(Diving)",
+            "Belt(w/Buckle)",
+            "Sandals"
+          ],
+          "9": [
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Goggles(Diving)",
+            "Belt",
+            "Sandals"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Sandals"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe11": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Decorative)",
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "11": [
+            "Headdress(Silk)",
+            "Tunic(Silk)",
+            "Breeches(Silk)",
+            "Belt(w/Buckle)",
+            "Boots(High/Leather)"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Breeches(Cloth)",
+            "Belt",
+            "Shoes"
+          ],
+          "6": [
+            "Poncho(Cloth)",
+            "Breeches(Cloth)",
+            "Belt(Rope)",
+            "Sandals"
+          ],
+          "0": [
+            "Poncho(Rags)",
+            "Breeches(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    },
+    "wardrobe12": {
+      "any": {
+        "any": {
+          "14": [
+            "Headdress(Decorative)",
+            "Tunic(Silk)",
+            "Wrap Skirt(Silk)",
+            "Belt(w/Buckle)"
+          ],
+          "11": [
+            "Headdress(Silk)",
+            "Tunic(Silk)",
+            "Wrap Skirt(Silk)",
+            "Belt(w/Buckle)"
+          ],
+          "9": [
+            "Headdress(Cloth)",
+            "Tunic(Cloth)",
+            "Wrap Skirt(Cloth)",
+            "Belt"
+          ],
+          "6": [
+            "Tunic(Cloth)",
+            "Wrap Skirt(Cloth)",
+            "Belt(Rope)"
+          ],
+          "0": [
+            "Tunic(Rags)",
+            "Wrap Skirt(Rags)",
+            "Belt(Rope)"
+          ]
+        }
+      }
+    }
+  }
+}

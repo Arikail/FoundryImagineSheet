@@ -19,6 +19,8 @@
 // so every rule can be tested with known dice -- the same practice as the combat rules.
 //==================================================================================================================
 
+import { buildStartingKit } from "./starting-kit.mjs";
+
 	// The twelve attributes, in the order his sheet and the Player's Guide list them.
 	export const ATTRIBUTE_ORDER = ["str", "agl", "vit", "int", "wis", "knw", "app", "chm", "soc", "aur", "pty", "wil"];
 
@@ -441,6 +443,51 @@
 				combat: { chosenAttackSkill: tmpChoices.chosenAttackSkill || "Beginner" }
 			}
 		};
+		// @MARKER STARTING KIT
+		// The three optional rules, each only if it was asked for -- see module/starting-kit.mjs.
+		// Off by default, because they are optional in his sheet too and a Game Master who has not
+		// asked for them should not find gear appearing on their players.
+		//
+		// A kit names items the way his tables write them, and the great majority are real entries
+		// in the equipment, armour and weapon packs. A name that is NOT found still becomes an item
+		// carrying that name rather than being dropped: about one name in sixteen is absent from
+		// his own equipment tables -- Cape, Hose, Pantaloons and the rest, mostly clothing -- and
+		// losing them silently would leave a character short with nothing to say so. They are
+		// listed in the issues instead, so the generator can show them.
+		if (tmpChoices.startingKit) {
+			var tmpKit = buildStartingKit({
+				raceName: (tmpChoices.raceNames ?? [])[0] ?? "",
+				social: tmpChoices.socialClass,
+				gender: tmpChoices.gender,
+				style: tmpChoices.clothingStyle,
+				socialSkillNames: tmpChoices.socialSkillNames,
+				byCulture: !!tmpChoices.startingKit.byCulture,
+				byStatus: !!tmpChoices.startingKit.byStatus,
+				bySkills: !!tmpChoices.startingKit.bySkills
+			}, tmpRoll);
+			for (const tmpIssue of tmpKit.issues) { tmpIssues.push(tmpIssue); }
+
+			var tmpMissing = [];
+			for (const tmpEntry of tmpKit.items) {
+				var tmpGear = tmpByName(tmpContent.equipment, tmpEntry.name)
+					?? tmpByName(tmpContent.armor, tmpEntry.name)
+					?? tmpByName(tmpContent.weapons, tmpEntry.name);
+				for (var tmpCopy = 0; tmpCopy < tmpEntry.count; tmpCopy += 1) {
+					if (tmpGear) {
+						tmpItems.push(tmpItem(tmpGear, { location: "carried" }));
+					} else {
+						tmpItems.push({ name: tmpEntry.name, type: "equipment", img: "",
+							system: { location: "carried", description:
+								"From the starting kit. This name is not in his equipment tables." } });
+					}
+				}
+				if (!tmpGear) { tmpMissing.push(tmpEntry.name); }
+			}
+			if (tmpMissing.length) {
+				tmpIssues.push(`Not in the equipment tables, added by name only: ${tmpMissing.join(", ")}.`);
+			}
+		}
+
 		return { actor: tmpActor, items: tmpItems, issues: tmpIssues };
 	}
 
